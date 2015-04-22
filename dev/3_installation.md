@@ -28,7 +28,7 @@ First you will need to download the Kerberos image; click on the image below. Th
 
 The Raspberry Pi is a credit-card sized computer that plugs into your TV and a keyboard. It’s a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video.
 
-![Kerberos.io image](3_kerberos-image.png)
+[![Kerberos.io image](3_kerberos-image.png)](https://mega.co.nz/#!vY4WjKJD!2sZUuhzeVDFu47hSOQ94Jh27v0BLYpf6MRTBBzGfkrc)
 
 #### Raspberry Pi Model 2
 
