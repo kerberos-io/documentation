@@ -34,7 +34,7 @@ The Raspberry Pi is a credit-card sized computer that plugs into your TV and a k
 
 The Raspberry Pi 2 is the successor to the Raspberry Pi. It builds upon the original model B+ upgrading to 1 GB of RAM, and replacing the aged ARMv6l single-core with an ARMv7l Cortex-A7 quad-core.
 
-![Kerberos.io image](3_kerberos-image.png)
+[![Kerberos.io image](3_kerberos-image.png)](https://mega.co.nz/#!SVZFxaRQ!-2C48Z84KM7B_hRw9UmAqbJ6ucfwzGKao-33Wo3BM24)
 
 <a name="insert-your-sd-card"></a>
 ### 2. Insert your SD Card
