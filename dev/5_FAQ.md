@@ -8,6 +8,7 @@ The FAQ, Frequently Asked Questions, page contains **technical solutions** for c
 * [How to setup WIFI connection on Raspberry Pi](#setup-wifi)
 * [How to enable Raspberry Pi Camera Module](#how-to-enable-camera-module)
     * [Arch Linux](#how-to-enable-camera-module-archlinux)
+* [Clean up disk and memory space](#clean-up-disk)
 
 <a name="expand-sd-card"></a>
 ## How to expand SD card root partition
@@ -227,3 +228,50 @@ To enable the camera module, you will need to add these lines to your /boot/conf
     start_file=start_x.elf
     fixup_file=fixup_x.dat
     disable_camera_led=1
+
+<a name="clean-up-disk"></a>
+## Clean up disk and memory space
+
+The SD card of your Raspberry Pi, has limited space, therefore we need some process to clean up the images taken by the machinery.
+
+    mkdir /home/bash
+    nano /home/bash/run.sh
+
+Copy paste the bash script
+
+    #!/bin/bash
+
+    ################################################################
+    # Check if memory is more than 70%, if so refresh nodejs scripts
+    ##
+    if [[ $(free | grep Mem | awk -F' ' '{ print $3/$2*100 }' | echo $0 ) > 70.0 ]];
+    then
+            /usr/bin/forever restartall ;
+    fi;
+
+    ##############################################################
+    # Check if disk size is more than 95%, if so remove some files
+    # from the capture directory.
+    ##
+    if [[ $(df -h | grep /dev/root | awk -F' ' '{ print $5/1 }' | tr ['%'] ["0"]) -gt 95 ]];
+    then
+            rm -f $( ls -d -1tr /home/kerberos-web/public/capture/* | head -n 500);
+    fi;
+
+    #############################################
+    # Only keep images of last 3 days on sd-card.
+    ##
+    find /home/kerberos-web/public/capture/ -type f -name '*.jpg' -mtime +1 -exec rm {} \;
+
+Give rights to bash script
+
+    chmod +x /home/bash/run.sh
+    chmod 755 /home/bash/run.sh
+
+Start cronjob that will run this bash script
+
+    crontab -e
+
+Add following line
+
+    */10 * * * * /bin/sh /home/bash/run.sh 
