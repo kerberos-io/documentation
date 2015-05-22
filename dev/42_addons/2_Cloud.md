@@ -60,7 +60,7 @@ Enable the service to start on boot
 
 ## Reset disk and memory space
 
-The SD card of your RPi has limited space, therefore we need some process to clean up the images taken by the machinery.
+The SD card of your Raspberry Pi, has limited space, therefore we need some process to clean up the images taken by the machinery.
 
     mkdir /home/bash
     nano /home/bash/run.sh
