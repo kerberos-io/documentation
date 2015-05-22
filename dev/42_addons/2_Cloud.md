@@ -20,20 +20,21 @@ The cloud application is attached to the production bucket, so only images that 
 
 If you installed Kerberos from the image, you don't need to follow this tutorial as the service is installed natively.
 
-	cd /home
+    cd /home
 
 Create a new directory
 
-	mkdir cloud && cd cloud
+    mkdir cloud && cd cloud
 
 Checkout sync repository
 
-	git clone https://github.com/kerberos-io/sync-s3 .
+    git clone https://github.com/kerberos-io/sync-s3 .
 
 Install node plugins
 
-	npm install
-	npm install -g grunt-cli
+    npm install
+    npm install -g grunt-cli
+    npm install -g forever
 
 ## Auto-start grunt
 
@@ -48,13 +49,57 @@ Copy and paste the configuration to the cloud.service
 
     [Service]
     Type=oneshot
-    ExecStart= /usr/bin/grunt --gruntfile /home/cloud/Gruntfile.js sync --force &
+    ExecStart= /usr/bin/forever /usr/bin/grunt --gruntfile /home/cloud/Gruntfile.js sync --force &
 
     [Install]
     WantedBy=multi-user.target
 
-
-
 Enable the service to start on boot
 
     systemctl enable cloud.service
+
+## Reset disk and memory space
+
+The SD card of your RPi has limited space, therefore we need some process to clean up the images taken by the machinery.
+
+    mkdir /home/bash
+    nano /home/bash/run.sh
+
+Copy paste the bash script
+
+    #!/bin/bash
+
+    ################################################################
+    # Check if memory is more than 70%, if so refresh nodejs scripts
+    ##
+    if [[ $(free | grep Mem | awk -F' ' '{ print $3/$2*100 }' | echo $0 ) > 70.0 ]];
+    then
+            /usr/bin/forever restartall ;
+    fi;
+
+    ##############################################################
+    # Check if disk size is more than 95%, if so remove some files
+    # from the capture directory.
+    ##
+    if [[ $(df -h | grep /dev/root | awk -F' ' '{ print $5/1 }' | tr ['%'] ["0"]) -gt 95 ]];
+    then
+            rm -f $( ls -d -1tr /home/kerberos-web/public/capture/* | head -n 500);
+    fi;
+
+    #############################################
+    # Only keep images of last 3 days on sd-card.
+    ##
+    find /home/kerberos-web/public/capture/ -type f -name '*.jpg' -mtime +1 -exec rm {} \;
+
+Give rights to bash script
+
+    chmod +x /home/bash/run.sh
+    chmod 755 /home/bash/run.sh
+
+Start cronjob that will run this bash script
+
+    crontab -e
+
+Add following line
+
+    */10 * * * * /bin/sh /home/bash/run.sh 
