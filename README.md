@@ -1,6 +1,6 @@
 #KERBEROS.IO - documentation
 
-This repository contains all the documentation that is displayed on the [documentation website](http://kerberos.io/docs). The documentation is written in [markdown](http://markdowntutorial.com/) The documentation includes information about: how kerberos works, how to install it and also some technical information for developers who are willing to contribute; for example how to add a new algorithm or a new output device.
+This repository contains all the documentation that is displayed on the [documentation website](https://doc.kerberos.io/). The documentation is written in [markdown](http://markdowntutorial.com/) The documentation includes information about: how kerberos works, how to install it and also some technical information for developers who are willing to contribute; for example how to add a new algorithm or a new output device.
 
 
 ## Folder structure
