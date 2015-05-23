@@ -244,10 +244,15 @@ Copy paste the bash script
     ################################################################
     # Check if memory is more than 70%, if so refresh nodejs scripts
     ##
-    if [[ $(free | grep Mem | awk -F' ' '{ print $3/$2*100 }' | echo $0 ) > 70.0 ]];
+    if [[ $(free | grep Mem | awk -F' ' '{ print $3/$2*100 }') > 70.0 ]];
     then
             /usr/bin/forever restartall ;
     fi;
+
+    #############################################
+    # Only keep images of last 3 days on sd-card.
+    ##
+    find /home/kerberos-web/public/capture/ -type f -name '*.jpg' -mtime +1 -exec rm {} \;
 
     ##############################################################
     # Check if disk size is more than 95%, if so remove some files
@@ -257,11 +262,6 @@ Copy paste the bash script
     then
             rm -f $( ls -d -1tr /home/kerberos-web/public/capture/* | head -n 500);
     fi;
-
-    #############################################
-    # Only keep images of last 3 days on sd-card.
-    ##
-    find /home/kerberos-web/public/capture/ -type f -name '*.jpg' -mtime +1 -exec rm {} \;
 
 Give rights to bash script
 
