@@ -145,7 +145,7 @@ Check and it is done :-)
     tmpfs           231M     0  231M   0% /tmp
     /dev/mmcblk0p1   90M   24M   67M  27% /boot
 
-### Arch Linux (Raspberry Pi 2
+### Arch Linux (Raspberry Pi 2)
 
 After logging in you view the status of filesystem (the output can be different):
 
