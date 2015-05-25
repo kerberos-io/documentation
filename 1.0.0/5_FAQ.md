@@ -14,7 +14,7 @@ The FAQ, Frequently Asked Questions, page contains **technical solutions** for c
 ## How to expand SD card root partition
 
 <a name="expand-sd-card-archlinux"></a>
-### Arch Linux
+### Arch Linux (Raspberry Pi A, B, B+)
 
 After logging in you view the status of filesystem (the output can be different):
 
@@ -144,6 +144,116 @@ Check and it is done :-)
     tmpfs           231M     0  231M   0% /sys/fs/cgroup
     tmpfs           231M     0  231M   0% /tmp
     /dev/mmcblk0p1   90M   24M   67M  27% /boot
+
+### Arch Linux (Raspberry Pi 2
+
+After logging in you view the status of filesystem (the output can be different):
+
+    [root@alarmpi ~]# df -h
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/root       3.2G  2.8G  161M  95% /
+    devtmpfs        427M     0  427M   0% /dev
+    tmpfs           431M     0  431M   0% /dev/shm
+    tmpfs           431M  392K  431M   1% /run
+    tmpfs           431M     0  431M   0% /sys/fs/cgroup
+    tmpfs           431M     0  431M   0% /tmp
+    /dev/mmcblk0p1  100M   18M   83M  18% /boot
+    tmpfs            87M     0   87M   0% /run/user/0
+
+Using the command fdisk will edit the filesystem /dev/mmcblk0:
+
+    [root@alarmpi ~]# fdisk /dev/mmcblk0
+    Welcome to fdisk (util-linux 2.23.1).
+    Changes will remain in memory only, until you decide to write them.
+    Be careful before using the write command.
+     
+    Command (m for help):
+
+    List the information and delete partition 2:
+
+    Command (m for help): p
+
+    Disk /dev/mmcblk0: 7.2 GiB, 7746879488 bytes, 15130624 sectors
+    Units: sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disklabel type: dos
+    Disk identifier: 0x4bce3dec
+
+    Device         Boot  Start     End Sectors  Size Id Type
+    /dev/mmcblk0p1        2048  206847  204800  100M  c W95 FAT32 (LBA)
+    /dev/mmcblk0p2      206848 7000000 6793153  3.2G 83 Linux
+
+    Command (m for help): d
+    Partition number (1,2,5, default 5): 2
+
+    Partition 2 has been deleted.
+
+    Command (m for help): 
+
+Create a new extended partition a logical volume:
+
+    Command (m for help): n
+    Partition type:
+       p   primary (1 primary, 0 extended, 3 free)
+       e   extended
+    Select (default p): p
+    Partition number (2-4, default 2): 
+    First sector (206848-15130623, default 206848): 
+    Last sector, +sectors or +size{K,M,G,T,P} (206848-15130623, default 15130623): 
+
+    Created a new partition 2 of type 'Linux' and of size 7.1 GiB.
+
+Check whether top block starts in the same place as the original (start)
+
+    Command (m for help): p
+ 
+    Disk /dev/mmcblk0: 7.2 GiB, 7746879488 bytes, 15130624 sectors
+    Units: sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disklabel type: dos
+    Disk identifier: 0x4bce3dec
+
+    Device         Boot  Start      End  Sectors  Size Id Type
+    /dev/mmcblk0p1        2048   206847   204800  100M  c W95 FAT32 (LBA)
+    /dev/mmcblk0p2      206848 15130623 14923776  7.1G 83 Linux
+     
+    Command (m for help):
+
+If it starts again (in this case on 186368 p2 a 188416 p5) write changes and reboot.
+
+    Command (m for help): w
+    The partition table has been altered!
+     
+    Calling ioctl() to re-read partition table.
+     
+    WARNING: Re-reading the partition table failed with error 16: Device or resource busy.
+    The kernel still uses the old table. The new table will be used at
+    the next reboot or after you run partprobe(8) or kpartx(8)
+    Syncing disks.
+    [root@alarmpi ~]# reboot
+
+After booting the system we online enlarge root partitions
+
+    [root@alarmpi ~]# resize2fs /dev/mmcblk0p2
+    resize2fs 1.42.12 (29-Aug-2014)
+    Filesystem at /dev/mmcblk0p2 is mounted on /; on-line resizing required
+    old_desc_blocks = 1, new_desc_blocks = 1
+    The filesystem on /dev/mmcblk0p2 is now 1865472 (4k) blocks long.
+
+Check and it is done :-)
+    
+    [root@alarmpi ~]# df -h
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/root       7.0G  2.8G  3.9G  43% /
+    devtmpfs        427M     0  427M   0% /dev
+    tmpfs           431M     0  431M   0% /dev/shm
+    tmpfs           431M  392K  431M   1% /run
+    tmpfs           431M     0  431M   0% /sys/fs/cgroup
+    tmpfs           431M     0  431M   0% /tmp
+    /dev/mmcblk0p1  100M   18M   83M  18% /boot
+    tmpfs            87M     0   87M   0% /run/user/0
 
 <a name="backup-sd-card"></a>
 ## How to backup SD card
