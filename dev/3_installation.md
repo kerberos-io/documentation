@@ -16,9 +16,6 @@ Kerberos is **easy to install**, you just have to copy the Kerberos image to you
 
 If you want to use Kerberos.io **as a service**, this would be the preferred way. Kerberos is provided as an image, a pre-installed operating system. The only thing you have to do to make things work, is to transfer the image to your SD card. After transferring you can just plug the SD card into your Raspberry Pi and kerberos will work; isn't that great! 
 
-
-The're a lot of different ways to accomplish this, and they are different according the operating system you will be using to transfer the image.
-
 <a name="download-the-image"></a>
 ### 1. Download the image
 

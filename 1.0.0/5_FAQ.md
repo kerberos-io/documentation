@@ -267,7 +267,7 @@ You can backup your SD card, by typing following command in your terminal. This 
 
 ### Installed Kerberos.io from image
 
-When kerberos is installed with the image, you can edit the wireless.conf file on the SD card. Insert the SD card in your workstation and open the file **/boot/wireless.conf**. You will see a similar config like below, edit the ESSID property with the name of your WIFI connection and the property Key with the WIFI password.
+When kerberos is installed with the image, you can edit the wireless.conf file on the SD card. Insert the SD card in your workstation and open the file **wireless.conf**. You will see a similar config like below, edit the ESSID property with the name of your WIFI connection and the property Key with the WIFI password.
 
     Description='A simple WPA encrypted wireless connection'
 
