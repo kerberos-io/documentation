@@ -1,6 +1,6 @@
 # TCP/IP client
 
-The TCP/IP client will send a TCP package to a server. 
+The TCP/IP client will send a TCP packet to a server. 
 
 ## Web interface 
 
@@ -22,7 +22,7 @@ The parameters of the TCP/IP client can be found in the config/io.xml file, but 
 
 ### Server
 
-The ip of the TCP server.
+The IP of the TCP server.
 
 ### Port
 
@@ -34,4 +34,4 @@ You can send some data to a TCP server.
 
 ## Examples
 
-More information can be found [here](/1.0.0/addons/TCP_listener).
+More information can be found [here](/dev/addons/TCP_Listener).
