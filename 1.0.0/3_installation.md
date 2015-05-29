@@ -25,13 +25,13 @@ First you will need to download the Kerberos image; click on the image below. Th
 
 The Raspberry Pi is a credit-card sized computer that plugs into your TV and a keyboard. It’s a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video.
 
-[![Kerberos.io image](3_kerberos-image.png)](https://mega.co.nz/#!iFpkQa4L!w19AJKk_j6e0NWUyrGWjhY0pTFsXpkWgW_tc0dSYdsE)
+[![Kerberos.io image](3_kerberos-image.png)](https://mega.co.nz/#!iV5x1AJD!i4dFeGjZNAxKw18Mmh4SPKeeWVavf1M4UKJK_oxaXcg)
 
 #### Raspberry Pi Model 2
 
 The Raspberry Pi 2 is the successor to the Raspberry Pi. It builds upon the original model B+ upgrading to 1 GB of RAM, and replacing the aged ARMv6l single-core with an ARMv7l Cortex-A7 quad-core.
 
-[![Kerberos.io image](3_kerberos-image.png)](https://mega.co.nz/#!qZ5ySbYI!0KHsR5pB5buXzyALS_4b7-3AYr2yIi7KqcX3GI0Jexg)
+[![Kerberos.io image](3_kerberos-image.png)](https://mega.co.nz/#!SEp1FS5K!7NIaUrywprNEWvGKHtFDwapqM92L32w7XWE1NkxjwsQ)
 
 <a name="insert-your-sd-card"></a>
 ### 2. Insert your SD Card
