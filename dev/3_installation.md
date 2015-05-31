@@ -90,9 +90,21 @@ In Terminal, enter the following command ensuring that you identify the correct 
 <a name="setup-wifi-connection"></a>
 ### 4. (Optional) Setup WIFI connection
 
-If you will be using Kerberos.io with a WIFI dongle, then check out the [F.A.Q. page](/1.0.0/FAQ#setup-wifi).
+If you will be using Kerberos.io with a WIFI dongle, then check out the [F.A.Q. page](/dev/FAQ#setup-wifi).
+
+<a name="power-on-raspberry-pi"></a>
+### 5. Power on the Raspberry Pi
+
+When the installation is completed, you can plugin the SD card in your Raspberry Pi, and that's all what you need to do. From this point all you need is to figure out the IP address of your Raspberry Pi. If you found your IP address (dynamic or static), you can open your favorite browser and type in the IP address. This will open the kerberos login page, which you can access with the username: **root** and password: **root**.
+
+![Login page kerberos.io webinterface](1_how-to-access.png)
+
+<a name="access-raspberry-pi"></a>
+### 6. (Optional) Access the Raspberry Pi with SSH
+
+To use Kerberos you only need access to the webinterface, however you can also [access the system with SSH](/dev/FAQ#how-to-access-the-pi).
 
 <a name="install-from-source"></a>
 ## Install from source
 
-This will be the procedure if you want to contribute to Kerberos or if you want to use Kerberos on your local machine. To install Kerberos from source; you will need to [compile the machinery](/1.0.0/machinery/installation) from source and [import the webinterface](/1.0.0/web/installation) into your favorite webserver.
+This will be the procedure if you want to contribute to Kerberos or if you want to use Kerberos on your local machine. To install Kerberos from source; you will need to [compile the machinery](/dev/machinery/installation) from source and [import the webinterface](/dev/web/installation) into your favorite webserver1.

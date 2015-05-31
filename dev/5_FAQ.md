@@ -2,6 +2,7 @@
 
 The FAQ, Frequently Asked Questions, page contains **technical solutions** for common problems concerning the installation of Kerberos. This page does **NOT** contain non-technical questions and answers; The Raspberry Pi doesn't turn on, I don't have WIFI access, etc. Therefore you can access our [**knowledge base**](https://kerberosio.zendesk.com).
 
+* [How to access the Raspberry Pi](#how-to-access-the-pi)
 * [How to expand SD card root partition](#expand-sd-card)
     * [Arch Linux](#expand-sd-card-archlinux)
 * [How to backup SD card](#backup-sd-card)
@@ -9,6 +10,16 @@ The FAQ, Frequently Asked Questions, page contains **technical solutions** for c
 * [How to enable Raspberry Pi Camera Module](#how-to-enable-camera-module)
     * [Arch Linux](#how-to-enable-camera-module-archlinux)
 * [Clean up disk and memory space](#clean-up-disk)
+
+<a name="how-to-access-the-pi"></a>
+## How to access the Raspberry Pi
+
+Kerberos is built on Arch Linux, which by default is installad **without** a **Graphical User Interface**. This means that when attaching the Raspberry Pi to a monitor or connecting with SSH, will **only show you a command prompt**.
+
+    macbook:~ cedricverstraeten$ ssh root@192.168.0.10
+    root@192.168.0.10's password: 
+
+You can sign in with the default Arch Linux credentials: username "root" and password "root".
 
 <a name="expand-sd-card"></a>
 ## How to expand SD card root partition

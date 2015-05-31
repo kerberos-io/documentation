@@ -92,6 +92,18 @@ In Terminal, enter the following command ensuring that you identify the correct 
 
 If you will be using Kerberos.io with a WIFI dongle, then check out the [F.A.Q. page](/1.0.0/FAQ#setup-wifi).
 
+<a name="power-on-raspberry-pi"></a>
+### 5. Power on the Raspberry Pi
+
+When the installation is completed, you can plugin the SD card in your Raspberry Pi, and that's all what you need to do. From this point all you need is to figure out the IP address of your Raspberry Pi. If you found your IP address (dynamic or static), you can open your favorite browser and type in the IP address. This will open the kerberos login page, which you can access with the username: **root** and password: **root**.
+
+![Login page kerberos.io webinterface](1_how-to-access.png)
+
+<a name="access-raspberry-pi"></a>
+### 6. (Optional) Access the Raspberry Pi with SSH
+
+To use Kerberos you only need access to the webinterface, however you can also [access the system with SSH](/1.0.0/FAQ#how-to-access-the-pi).
+
 <a name="install-from-source"></a>
 ## Install from source
 
