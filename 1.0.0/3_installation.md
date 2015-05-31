@@ -7,6 +7,8 @@
 	* [Windows: transfer image](#windows-transfer-image)
 	* [OSX/Linux: transfer image with terminal](#transfer-image-with-terminal)
 	* [(Optional) Setup WIFI connection](#setup-wifi-connection)
+	* [Power on the Raspberry Pi](#power-on-raspberry-pi)
+	* [(Optional) Access the Raspberry Pi with SSH](#access-raspberry-pi)
 * [Install from source](#install-from-source)
 
 Kerberos is **easy to install**, you just have to copy the Kerberos image to your SD card, plug the SD card into your Raspberry Pi and that's it. It can also be installed on other devices than the Raspberry Pi; for development or production. Therefore you will need to compile the machinery from source and install the webinterface with your favorite webserver.
