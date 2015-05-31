@@ -16,7 +16,7 @@ The FAQ, Frequently Asked Questions, page contains **technical solutions** for c
 
 Kerberos is built on Arch Linux, which by default is installad **without** a **Graphical User Interface**. This means that when attaching the Raspberry Pi to a monitor or connecting with SSH, will **only show you a command prompt**.
 
-    macbook:~ cedricverstraeten$ ssh root@192.168.0.10
+    macbook:~ cedricverstraeten$ ssh root@ 192.168.0.10
     root@192.168.0.10's password: 
 
 You can sign in with the default Arch Linux credentials: username "root" and password "root".

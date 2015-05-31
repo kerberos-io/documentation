@@ -102,9 +102,9 @@ When the installation is completed, you can plugin the SD card in your Raspberry
 <a name="access-raspberry-pi"></a>
 ### 6. (Optional) Access the Raspberry Pi with SSH
 
-To use Kerberos you only need access to the webinterface, however you can also [access the system with SSH](/1.0.0/FAQ#how-to-access-the-pi).
+To use Kerberos you only need access to the webinterface, however you can also **[access the system with SSH](/1.0.0/FAQ#how-to-access-the-pi)**.
 
 <a name="install-from-source"></a>
 ## Install from source
 
-This will be the procedure if you want to contribute to Kerberos or if you want to use Kerberos on your local machine. To install Kerberos from source; you will need to [compile the machinery](/1.0.0/machinery/installation) from source and [import the webinterface](/1.0.0/web/installation) into your favorite webserver.
+This will be the procedure if you want to contribute to Kerberos or if you want to use Kerberos on your local machine. To install Kerberos from source; you will need to **[compile the machinery](/1.0.0/machinery/installation)** from source and **[import the webinterface](/1.0.0/web/installation)** into your favorite webserver.
