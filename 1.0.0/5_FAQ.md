@@ -19,7 +19,7 @@ Kerberos is built on Arch Linux, which by default is installed **without** a **G
     macbook:~ cedricverstraeten$ ssh root@ 192.168.0.10
     root@ 192.168.0.10's password: 
 
-You can sign in with the default Arch Linux credentials: username "root" and password "root".
+You can sign in with the default Arch Linux credentials: username "**root**" and password "**root**".
 
 <a name="expand-sd-card"></a>
 ## How to expand SD card root partition
