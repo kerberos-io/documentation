@@ -1,3 +1,5 @@
+# NAS
+
 By default images are stored on the SD card of the Raspberry Pi, in the folder **/home/kerberos-web/public/capture**. However it's also possible to store the images directly on a NAS (e.g. WD MyBook). To achieve this, you will need to do some minimal modifications to the Kerberos image. 
 
 ## Let's get started
