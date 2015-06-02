@@ -22,4 +22,4 @@ Check if the mount was **successful**, you should see the already existing conte
 
     cd /home/kerberos-web/public/capture && ls -l
 
-And *that's it*. From now the machinery will store it's images directly on your NAS, and the web interface will visualize them.
+And *that's it*. From now the machinery will store its images directly on your NAS, and the web interface will visualize them.
