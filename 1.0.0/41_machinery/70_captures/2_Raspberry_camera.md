@@ -1,4 +1,4 @@
-# USB Camera
+# Raspberry Camera
 
 You can use the Raspberry Pi Camera Module with Kerberos. You just need to attach the camera module and you're ready to go. The Raspberry Pi Camera Module is enabled by default in the web interface.
 
