@@ -370,10 +370,6 @@ Copy paste the bash script
             /usr/bin/forever restartall ;
     fi;
 
-    #############################################
-    # Only keep images of last 3 days on sd-card.
-    ##
-    find /home/kerberos-web/public/capture/ -type f -name '*.jpg' -mtime +1 -exec rm {} \;
 
     ##############################################################
     # Check if disk size is more than 95%, if so remove some files
@@ -381,7 +377,7 @@ Copy paste the bash script
     ##
     if [[ $(df -h | grep /dev/root | awk -F' ' '{ print $5/1 }' | tr ['%'] ["0"]) -gt 95 ]];
     then
-            rm -f $( ls -d -1tr /home/kerberos-web/public/capture/* | head -n 500);
+            rm -f $( ls -d -1tr /home/kerberos-web/public/capture/* | head -n 1000);
     fi;
 
 Give rights to bash script

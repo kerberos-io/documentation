@@ -62,22 +62,6 @@ Copy and paste the configuration to the kerberos.service
     [Install]
     WantedBy=multi-user.target
 
-Create timer file for kerberos
-
-    nano /etc/systemd/system/kerberos.timer
-
-Copy and paste the configuration to the kerberos.timer
-
-    [Unit]
-    Description=Runs kerberos.service, 1 min after system boot.
-
-    [Timer]
-    OnBootSec=1min
-    Unit=kerberos.service
-
-    [Install]
-    WantedBy=multi-user.target
-
 Enable the service to start on boot
 
-    systemctl enable kerberos.timer
+    systemctl enable kerberos.service
