@@ -9,19 +9,39 @@
 
 #### Web
 
+* Optimize performance, new datastructure has been implemented.
+
+#### Machinery
+
+* Memory optimization.
+* Removal of images older than 3 days have been removed.
+* Start machinery automatically (delay has been removed).
+
+#### Cloud
+
+* Resolved file exist problem.
+
+<a name="1-0-2"></a>
+## 1.0.2
+
+#### Web
+
 * Timezone on settings page is also used for the webinterface.
 
 #### Machinery
 
-* Added extra timezones to timezone.xml
+* Added extra timezones to timezone.xml.
 
 <a name="1-0-1"></a>
 ## 1.0.1
 
-#### Hot fixes
+#### Web
 
-* Improved error handling (date search)
-* Improved memory cleanup
+* Improved error handling (date search).
+
+#### Machinery
+
+* Improved memory cleanup.
 
 <a name="1-0-0"></a>
 ## 1.0.0

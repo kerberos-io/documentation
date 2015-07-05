@@ -23,17 +23,16 @@ If you want to use Kerberos.io **as a service**, this would be the preferred way
 
 First you will need to download the Kerberos image; click on the image below. The Kerberos.io image contains a Linux operating system, built on Arch Linux. The image has the machinery and webinterface installed, and ofcourse all the dependencies Kerberos needs. With this image you just have to plugin the SD card in your Raspberry Pi and you're done. 
 
+#### Raspberry Pi Model 2 (Recommended)
+
+The Raspberry Pi 2 is the successor to the Raspberry Pi. It builds upon the original model B+ upgrading to 1 GB of RAM, and replacing the aged ARMv6l single-core with an ARMv7l Cortex-A7 quad-core.
+
+[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuUmxxOURISjQweGc)
 #### Raspberry Pi Model A, A+, B and B+
 
 The Raspberry Pi is a credit-card sized computer that plugs into your TV and a keyboard. It’s a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video.
 
-[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuWk1ob1phVGRQTWc)
-
-#### Raspberry Pi Model 2
-
-The Raspberry Pi 2 is the successor to the Raspberry Pi. It builds upon the original model B+ upgrading to 1 GB of RAM, and replacing the aged ARMv6l single-core with an ARMv7l Cortex-A7 quad-core.
-
-[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuRGFCVFZHYktzQTA)
+[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuMWpLcU8zWjl2cTg)
 
 <a name="insert-your-sd-card"></a>
 ### 2. Insert your SD Card
@@ -92,7 +91,7 @@ In Terminal, enter the following command ensuring that you identify the correct 
 <a name="setup-wifi-connection"></a>
 ### 4. (Optional) Setup WIFI connection
 
-If you will be using Kerberos.io with a WIFI dongle, then check out the [F.A.Q. page](/dev/FAQ#setup-wifi).
+If you will be using Kerberos.io with a WIFI dongle, then check out the [F.A.Q. page](/1.0.0/FAQ#setup-wifi).
 
 <a name="power-on-raspberry-pi"></a>
 ### 5. Power on the Raspberry Pi
@@ -104,9 +103,9 @@ When the installation is completed, you can **plug the SD card** into your Raspb
 <a name="access-raspberry-pi"></a>
 ### 6. (Optional) Access the Raspberry Pi with SSH
 
-To use Kerberos you only need access to the webinterface, however you can also **[access the system with SSH](/dev/FAQ#how-to-access-the-pi)**.
+To use Kerberos you only need access to the webinterface, however you can also **[access the system with SSH](/1.0.0/FAQ#how-to-access-the-pi)**.
 
 <a name="install-from-source"></a>
 ## Install from source
 
-This will be the procedure if you want to contribute to Kerberos or if you want to use Kerberos on your local machine. To install Kerberos from source; you will need to **[compile the machinery](/dev/machinery/installation)** from source and **[import the webinterface](/dev/web/installation)** into your favorite webserver1.
+This will be the procedure if you want to contribute to Kerberos or if you want to use Kerberos on your local machine. To install Kerberos from source; you will need to **[compile the machinery](/1.0.0/machinery/installation)** from source and **[import the webinterface](/1.0.0/web/installation)** into your favorite webserver.
