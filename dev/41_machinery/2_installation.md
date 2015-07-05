@@ -35,10 +35,6 @@ Compile kerberos
     cd kerberos-io && mkdir build && cd build
     cmake .. && make && make check
 
-Add link library to path
-
-	 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/home/kerberos-io/build/thirdparty/lib/
-
 Give rights to config files
 
     chmod -R 777 ../config
