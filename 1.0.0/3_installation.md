@@ -21,9 +21,7 @@ If you want to use Kerberos.io **as a service**, this would be the preferred way
 <a name="download-the-image"></a>
 ### 1. Download the image
 
-First you will need to download the Kerberos image; click on the image below. The Kerberos.io image contains a Linux operating system, built on Arch Linux. The image has the machinery and webinterface installed, and ofcourse all the dependencies Kerberos needs. With this image you just have to plugin the SD card in your Raspberry Pi and you're done. 
-
-**Please note that the image is compressed, to open it on Linux/OSX use the "unzip" command to decompress.**
+First you will need to download the Kerberos image; click on the image below. The Kerberos.io image contains a Linux operating system, built on Arch Linux. The image has the machinery and webinterface installed, and ofcourse all the dependencies Kerberos needs. With this image you just have to plugin the SD card in your Raspberry Pi and you're done. **Please note** that the image is compressed, open your terminal and use the "unzip" command to decompress.
 
 #### Raspberry Pi Model 2 (Recommended)
 
