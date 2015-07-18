@@ -21,11 +21,15 @@ If you want to use Kerberos.io **as a service**, this would be the preferred way
 <a name="download-the-image"></a>
 ### 1. Download the image
 
-First you will need to download the Kerberos image; click on the image below. The Kerberos.io image contains a Linux operating system, built on Arch Linux. The image has the machinery and webinterface installed, and ofcourse all the dependencies Kerberos needs. With this image you just have to plugin the SD card in your Raspberry Pi and you're done. **Please note** that the image is compressed, open your terminal and use the "unzip" command to decompress.
+First you will need to download the Kerberos image; click on the image below. The Kerberos.io image contains a Linux operating system, built on Arch Linux. The image has the machinery and webinterface installed, and ofcourse all the dependencies Kerberos needs. With this image you just have to plugin the SD card in your Raspberry Pi and you're done. 
 
 #### Raspberry Pi Model 2 (Recommended)
 
 The Raspberry Pi 2 is the successor to the Raspberry Pi. It builds upon the original model B+ upgrading to 1 GB of RAM, and replacing the aged ARMv6l single-core with an ARMv7l Cortex-A7 quad-core.
+
+**Please note** that the image is compressed, open your terminal and use the "unzip" command to decompress.
+
+    unzip kerberos-io-armv6-4GB-..
 
 [![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuUmxxOURISjQweGc)
 #### Raspberry Pi Model A, A+, B and B+
@@ -34,6 +38,11 @@ The Raspberry Pi is a credit-card sized computer that plugs into your TV and a k
 
 [![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuMWpLcU8zWjl2cTg)
 
+
+**Please note** that the image is compressed, open your terminal and use the "unzip" command to decompress.
+
+    unzip kerberos-io-armv7-4GB-...
+    
 <a name="insert-your-sd-card"></a>
 ### 2. Insert your SD Card
 
