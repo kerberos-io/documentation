@@ -27,11 +27,17 @@ First you will need to download the Kerberos image; click on the image below. Th
 
 The Raspberry Pi 2 is the successor to the Raspberry Pi. It builds upon the original model B+ upgrading to 1 GB of RAM, and replacing the aged ARMv6l single-core with an ARMv7l Cortex-A7 quad-core.
 
-**Please note** that the image is compressed, open your terminal and use the "unzip" command to decompress.
+#### Raspberry Pi Model 2 (Recommended)
+
+The Raspberry Pi 2 is the successor to the Raspberry Pi. It builds upon the original model B+ upgrading to 1 GB of RAM, and replacing the aged ARMv6l single-core with an ARMv7l Cortex-A7 quad-core.
+
+[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuUmxxOURISjQweGc)
+
+**Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "unzip" command to decompress.
 
     unzip kerberos-io-armv6-4GB-..
 
-[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuUmxxOURISjQweGc)
+
 #### Raspberry Pi Model A, A+, B and B+
 
 The Raspberry Pi is a credit-card sized computer that plugs into your TV and a keyboard. It’s a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video.
@@ -39,7 +45,7 @@ The Raspberry Pi is a credit-card sized computer that plugs into your TV and a k
 [![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuMWpLcU8zWjl2cTg)
 
 
-**Please note** that the image is compressed, open your terminal and use the "unzip" command to decompress.
+**Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "unzip" command to decompress.
 
     unzip kerberos-io-armv7-4GB-...
     
