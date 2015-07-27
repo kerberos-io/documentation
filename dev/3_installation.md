@@ -35,7 +35,13 @@ Checksum
     
 **Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "7zip" command to decompress.
 
+OSX
+
     7za x kerberos-io-armv6-4GB-..
+
+Linux
+
+    7z e from/kerberos-io-armv6-4GB-..  to/kerberos-io-armv6-4GB-..
     
 #### Raspberry Pi Model A, A+, B and B+
 
@@ -49,7 +55,13 @@ Checksum
 
 **Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "7zip" command to decompress.
 
+OSX
+
     7za x kerberos-io-armv7-4GB-..
+
+Linux
+
+    7z e from/kerberos-io-armv7-4GB-..  to/kerberos-io-armv7-4GB-..
     
 <a name="insert-your-sd-card"></a>
 ### 2. Insert your SD Card
