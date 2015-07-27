@@ -31,15 +31,11 @@ The Raspberry Pi 2 is the successor to the Raspberry Pi. It builds upon the orig
 
 Checksum
 
-    MD5 (kerberos-io-armv7-4GB-v103.img.zip) = 80d720199369c6843fc092a360f44df4
+    80d720199369c6843fc092a360f44df4
     
-**Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "unzip" or "7zip" command to decompress.
+**Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "7zip" command to decompress.
 
     7za x kerberos-io-armv6-4GB-..
-
-    or
-    
-    unzip kerberos-io-armv6-4GB-..
     
 #### Raspberry Pi Model A, A+, B and B+
 
@@ -49,15 +45,11 @@ The Raspberry Pi is a credit-card sized computer that plugs into your TV and a k
 
 Checksum
 
-    MD5 (kerberos-io-armv6-4GB-v103.img.zip) = 29a94d754d6181a468f6528559c9e395
+    29a94d754d6181a468f6528559c9e395
 
-**Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "unzip" or "7zip" command to decompress.
+**Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "7zip" command to decompress.
 
     7za x kerberos-io-armv7-4GB-..
-    
-    or
-    
-    unzip kerberos-io-armv7-4GB-..
     
 <a name="insert-your-sd-card"></a>
 ### 2. Insert your SD Card
