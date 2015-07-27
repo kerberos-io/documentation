@@ -31,9 +31,12 @@ The Raspberry Pi 2 is the successor to the Raspberry Pi. It builds upon the orig
 
 **Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "unzip" command to decompress.
 
+    7za x kerberos-io-armv6-4GB-..
+
+    or
+    
     unzip kerberos-io-armv6-4GB-..
-
-
+    
 #### Raspberry Pi Model A, A+, B and B+
 
 The Raspberry Pi is a credit-card sized computer that plugs into your TV and a keyboard. It’s a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video.
@@ -43,7 +46,11 @@ The Raspberry Pi is a credit-card sized computer that plugs into your TV and a k
 
 **Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "unzip" command to decompress.
 
-    unzip kerberos-io-armv7-4GB-...
+    7za x kerberos-io-armv7-4GB-..
+    
+    or
+    
+    unzip kerberos-io-armv7-4GB-..
     
 <a name="insert-your-sd-card"></a>
 ### 2. Insert your SD Card
