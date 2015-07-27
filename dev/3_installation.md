@@ -41,7 +41,7 @@ OSX
 
 Linux
 
-    7z e from/kerberos-io-armv6-4GB-..  to/kerberos-io-armv6-4GB-..
+    7z e from/kerberos-io-armv6-4GB-..  to/
     
 #### Raspberry Pi Model A, A+, B and B+
 
@@ -61,7 +61,7 @@ OSX
 
 Linux
 
-    7z e from/kerberos-io-armv7-4GB-..  to/kerberos-io-armv7-4GB-..
+    7z e from/kerberos-io-armv7-4GB-..  to/
     
 <a name="insert-your-sd-card"></a>
 ### 2. Insert your SD Card
