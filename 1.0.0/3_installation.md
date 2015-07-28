@@ -5,7 +5,8 @@
 	* [Insert your SD card](#insert-your-sd-card)
 	* [OSX: transfer image](#osx-transfer-image)
 	* [Windows: transfer image](#windows-transfer-image)
-	* [OSX/Linux: transfer image with terminal](#transfer-image-with-terminal)
+	* [OSX: transfer image with terminal](#transfer-image-with-terminal-with-osx)
+	* [Linux: transfer image with terminal](#transfer-image-with-terminal-with-linux)
 	* [(Optional) Setup WIFI connection](#setup-wifi-connection)
 	* [Power on the Raspberry Pi](#power-on-raspberry-pi)
 	* [(Optional) Access the Raspberry Pi with SSH](#access-raspberry-pi)
@@ -88,8 +89,8 @@ Ensure that you have inserted the SD card, that you wish to clone, into the SD c
 *	Download and install the [Win32DiskImager](http://sourceforge.net/projects/win32diskimager/files/latest/download).
 *	Select the image file you've downloaded earlier and the drive letter of the SD card.
 
-<a name="transfer-image-with-terminal"></a>
-### 3. OSX/Linux: transfer image with terminal
+<a name="transfer-image-with-terminal-osx"></a>
+### 3. OSX: transfer image with terminal
 
 #### Locate Your SD Card
 
@@ -116,6 +117,25 @@ To format the SD card, enter the following command:
 In Terminal, enter the following command ensuring that you identify the correct destination disc.
 
 	sudo dd if=~/Desktop/kerberos-io.img of=/dev/disk3
+
+<a name="transfer-image-with-terminal-linux"></a>
+### 3. Linux: transfer image with terminal
+
+#### Format SD card
+
+Select SD card and delete all partitions with gparted
+
+	gparted
+
+To format the SD card, enter the following command:
+
+	sudo mkdosfs -F 16 -v /dev/sdb -I
+
+#### Transfer image to your SD card
+
+In Terminal, enter the following command ensuring that you identify the correct destination disc.
+
+	sudo dd if="kerberos-io-armvx-4GB-vy.img" of=/dev/sdb bs=2M
 
 <a name="setup-wifi-connection"></a>
 ### 4. (Optional) Setup WIFI connection
