@@ -37,11 +37,11 @@ Checksum
 
 OSX
 
-    7za x kerberos-io-armv6-4GB-..
+    7za x kerberos-io-armv7-4GB-..
 
 Linux
 
-    7z e from/kerberos-io-armv6-4GB-..  to/
+    7z e from/kerberos-io-armv7-4GB-..
     
 #### Raspberry Pi Model A, A+, B and B+
 
@@ -57,12 +57,12 @@ Checksum
 
 OSX
 
-    7za x kerberos-io-armv7-4GB-..
+    7za x kerberos-io-armv6-4GB-..
 
 Linux
 
-    7z e from/kerberos-io-armv7-4GB-..  to/
-    
+    7z e from/kerberos-io-armv6-4GB-..
+   
 <a name="insert-your-sd-card"></a>
 ### 2. Insert your SD Card
 
