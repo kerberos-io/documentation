@@ -4,7 +4,7 @@ Kerberos can be used with any IP camera, that provides a streaming URL. Make sur
 
 ## Web interface 
 
-![USB camera](1_usb-camera.png)
+![IP camera](2_ip-camera.png)
 
 ## Parameters
 
