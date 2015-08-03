@@ -4,7 +4,7 @@ You can use the Raspberry Pi Camera Module with Kerberos. You just need to attac
 
 ## Web interface 
 
-![Raspberry PI Camera Module](2_raspi-camera.png)
+![Raspberry PI Camera Module](3_raspi-camera.png)
 
 ## Parameters
 
