@@ -1,6 +1,8 @@
 # Webhook
 
-Detailed information (a JSON object) is send as a POST request to a webhook. The JSON object contains the number of changes, the region, the URL of the image, etc. **Make sure that the *Webhook* comes after the Disk device, otherwise the URL of the image is not included.**
+Detailed information (a JSON object) is send as a POST request to a webhook. The JSON object contains the number of changes, the region, the URL of the image, etc. 
+
+**Make sure that the Webhook comes after the Disk device, otherwise the URL of the image is not included.**
 
 ## Web interface 
 
