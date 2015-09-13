@@ -20,7 +20,7 @@ Kerberos is **easy to install**, you just have to copy the Kerberos image to you
 If you want to use Kerberos.io **as a service**, this would be the preferred way. Kerberos is provided as an image, a pre-installed operating system. The only thing you have to do to make things work, is to transfer the image to your SD card. After transferring you can just plug the SD card into your Raspberry Pi and kerberos will work; isn't that great! 
 
 <a name="download-the-image"></a>
-### 1. Download the image
+### 1. Download the image (v1.1.0)
 
 First you will need to download the Kerberos image; click on the image below. The Kerberos.io image contains a Linux operating system, built on Arch Linux. The image has the machinery and webinterface installed, and ofcourse all the dependencies Kerberos needs. With this image you just have to plugin the SD card in your Raspberry Pi and you're done. 
 
@@ -28,11 +28,11 @@ First you will need to download the Kerberos image; click on the image below. Th
 
 The Raspberry Pi 2 is the successor to the Raspberry Pi. It builds upon the original model B+ upgrading to 1 GB of RAM, and replacing the aged ARMv6l single-core with an ARMv7l Cortex-A7 quad-core.
 
-[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuUmxxOURISjQweGc)
+[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuODZ6eEE2bXN5eXM)
 
 Checksum
 
-    c1234d6cc3df8f81510b36cd1589e2c5
+    10557f21beacbceaee172bd20e420e3e
     
 **Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "7zip" command to decompress.
 
@@ -48,11 +48,11 @@ Linux
 
 The Raspberry Pi is a credit-card sized computer that plugs into your TV and a keyboard. It’s a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video.
 
-[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuMWpLcU8zWjl2cTg)
+[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuRkZNa19Gam5BMjg)
 
 Checksum
 
-    689343d72bcfae8a6b13f86b0d9c3075
+    2b67a4ca6af0cdde39f4a428047da607
 
 **Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "7zip" command to decompress.
 
@@ -63,7 +63,7 @@ OSX
 Linux
 
     7z e from/kerberos-io-armv6-4GB-..
-    
+   
 <a name="insert-your-sd-card"></a>
 ### 2. Insert your SD Card
 
@@ -116,7 +116,7 @@ To format the SD card, enter the following command:
 
 In Terminal, enter the following command ensuring that you identify the correct destination disc.
 
-	sudo dd if=~/Desktop/kerberos-io.img of=/dev/disk3
+	sudo dd if=~kerberos-io.img of=/dev/disk3
 
 <a name="transfer-image-with-terminal-linux"></a>
 ### 3. Linux: transfer image with terminal

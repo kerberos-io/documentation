@@ -15,6 +15,8 @@ The parameters of the USB capture device can be found in the *config/capture.xml
 		<USBCamera>
 	    	<frameWidth type="number">1280</frameWidth>
 	    	<frameHeight type="number">720</frameHeight>
+            <delay type="number">0</delay>
+            <angle type="number">0</angle>
 	    </USBCamera>
 	    
 	</captures>
@@ -22,3 +24,11 @@ The parameters of the USB capture device can be found in the *config/capture.xml
 ### Framewidth and -height
 
 You can set the resolution of the capture device, make sure the resolution you've defined is valid with your camera. Please check the specs of the USB camera you're using.
+
+### Delay
+
+You can provide a delay/interval (milliseconds) between two captures.
+
+### Angle
+
+By defining an angle (degrees), you can rotate the images taken by the capture device. For example if you would mount the camera upside down, than you could enter the value 180 as the angle; this will flip the images.

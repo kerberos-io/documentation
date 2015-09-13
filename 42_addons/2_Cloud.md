@@ -20,20 +20,20 @@ The cloud application is attached to the production bucket, so only images that 
 
 If you installed Kerberos from the image, you don't need to follow this tutorial as the service is installed natively.
 
-	cd /home
+    cd /home
 
 Create a new directory
 
-	mkdir cloud && cd cloud
+    mkdir cloud && cd cloud
 
 Checkout sync repository
 
-	git clone https://github.com/kerberos-io/sync-s3 .
+    git clone https://github.com/kerberos-io/sync-s3 .
 
 Install node plugins
 
-	npm install
-	npm install -g grunt-cli
+    npm install
+    npm install -g grunt-cli
     npm install -g forever
 
 ## Auto-start grunt

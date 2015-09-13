@@ -1,9 +1,32 @@
 # Release notes
 
+* [1.1.0](#1-1-0)
 * [1.0.3](#1-0-3)
 * [1.0.2](#1-0-2)
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
+
+<a name="1-1-0"></a>
+## 1.1.0
+
+#### Web
+
+* Support IP camera's with MJPEG stream. [#3](https://github.com/kerberos-io/web/issues/3)
+* Introduce new API methods to configure the machinery, using basic auth. [#4](https://github.com/kerberos-io/web/issues/4)
+* Optimization of loading image and dashboard page, completely redesigned the retrieval of images. [#5](https://github.com/kerberos-io/web/issues/5)
+* Optimization of settings page. [#5](https://github.com/kerberos-io/web/issues/5)
+* Timebar gradient only works in Chrome. [#6](https://github.com/kerberos-io/web/issues/6)
+* Minor CSS fixes for responsive layout.
+
+#### Machinery
+
+* Flip/rotate option for capture devices. [#5](https://github.com/kerberos-io/machinery/issues/1)
+* Support IP camera's with MJPEG stream. [#4](https://github.com/kerberos-io/machinery/issues/4)
+* Introduced webhook io device. [#5](https://github.com/kerberos-io/machinery/issues/5)
+
+#### Cloud
+
+* Fixed problem when syncing a huge amount of images. [#1](https://github.com/kerberos-io/sync-s3/issues/1)
 
 <a name="1-0-3"></a>
 ## 1.0.3

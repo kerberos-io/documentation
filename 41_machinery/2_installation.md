@@ -20,7 +20,7 @@ Update the ArchLinux kernel
 
 Install git, subversion, development tools (c++, cmake) and V4L utils.
 
-    pacman -S git subversion cmake base-devel v4l-utils eigen
+    pacman -S git subversion cmake base-devel v4l-utils eigen ffmpeg curl
 
 Go to home directory
 	
