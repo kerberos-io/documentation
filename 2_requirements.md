@@ -18,7 +18,7 @@ A **micro USB 5V** charger.
 
 ![Micro USB 5V charger](2_micro-usb-5V-charger.png)
 
-A **USB camera** or the **Raspberry Pi camera** module.
+A **USB camera**, **IP camera** or the **Raspberry Pi camera** module.
 
 ![Raspberry Pi Camera Module](2_raspberry-camera-module.png)
 
