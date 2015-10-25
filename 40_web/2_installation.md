@@ -2,7 +2,8 @@
 
 * [Install from source](#install-from-source)
     * [Install on Arch Linux](#install-from-source-on-arch-linux)
-
+    * [Install on Raspbian](#install-from-source-on-raspbian)
+    
 The web interface is already installed on the Kerberos image, however you can also install the webinterface from source; you don't need to do this if you've deployed the Kerberos image on the SD card.
 
 <a name="install-from-source"></a>
@@ -104,3 +105,76 @@ Install Front end dependencies with bower
     
     cd public
     bower --allow-root install
+    
+<a name="install-from-source-on-raspbian"></a>
+### Install on Raspbian
+    
+Update the Raspbian kernel
+
+    sudo apt-get update
+
+Install subversion, development tools (c++, cmake) and V4L utils.
+
+    sudo apt-get install nginx php5-fpm php5-gd php5-mcrypt  php5-curl npm
+
+Edit nginx config
+
+    sudo nano /etc/nginx/sites-enabled/default 
+    
+Copy and paste following config
+
+    server
+    {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /home/kerberos-web/public;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name kerberos.rpi kerberos.rpi;
+        index index.php index.html index.htm;
+
+        location /
+        {
+                autoindex on;
+                try_files $uri $uri/ /index.php?$query_string;
+        }
+
+        location ~ \.php$
+        {
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/var/run/php5-fpm.sock;
+        }
+    }
+
+Go to home directory
+    
+    cd /home
+
+Get the source code from github
+
+    sudo git clone https://github.com/kerberos-io/web kerberos-web
+
+Install php packages by using composer
+
+    cd kerberos-web
+    composer install
+
+Change config file: edit the "config" variable, link it to the config directory of the kerberos-io repository. If you don't have the kerberos-io repository installed on that specific server, you can make it an empty string. In this case the option "settings" won't show up in the navigation menu. Please note that the default value is set to the destination of the machinery when installed on the Raspberry Pi.
+
+    sudo nano app/config/app.php
+
+Change write permission on the storage directory
+
+    sudo chmod -R 777 app/storage
+
+Install bower globally by using node package manager, this is installed when installing nodejs.
+
+    sudo apt-get install npm
+    sudo ln -s /usr/bin/nodejs /usr/bin/node
+    sudo npm -g install bower
+
+Install Front end dependencies with bower
+    
+    cd public
+    sudo bower --allow-root install
