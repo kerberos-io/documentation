@@ -158,6 +158,9 @@ Get the source code from github
 Install php packages by using composer
 
     cd kerberos-web
+    
+    curl -sS https://getcomposer.org/installer | sudo php
+    sudo mv composer.phar /usr/bin/composer
     composer install
 
 Change config file: edit the "config" variable, link it to the config directory of the kerberos-io repository. If you don't have the kerberos-io repository installed on that specific server, you can make it an empty string. In this case the option "settings" won't show up in the navigation menu. Please note that the default value is set to the destination of the machinery when installed on the Raspberry Pi.
