@@ -116,7 +116,8 @@ Update the Raspbian kernel
 
 Install subversion, development tools (c++, cmake) and V4L utils.
 
-    sudo apt-get install nginx php5-cli php5-fpm php5-gd php5-mcrypt  php5-curl npm
+    curl -sL https://deb.nodesource.com/setup | sudo bash - 
+    sudo apt-get install nginx php5-cli php5-fpm php5-gd php5-mcrypt php5-curl nodejs
 
 Edit nginx config
 
