@@ -112,7 +112,6 @@ Install Front end dependencies with bower
 Update the Raspbian kernel
 
     sudo apt-get update
-    
     sudo apt-get upgrade
 
 Install subversion, development tools (c++, cmake) and V4L utils.

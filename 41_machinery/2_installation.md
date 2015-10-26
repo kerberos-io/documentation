@@ -76,6 +76,7 @@ Enable raspberry pi camera (if needed) and expand SD-card.
 Update the Raspbian kernel
 
     sudo apt-get update
+    sudo apt-get upgrade
 
 Install subversion, development tools (c++, cmake) and V4L utils.
 
