@@ -112,13 +112,16 @@ Install Front end dependencies with bower
 Update the Raspbian kernel
 
     sudo apt-get update
+    
+    sudo apt-get upgrade
 
 Install subversion, development tools (c++, cmake) and V4L utils.
 
-    sudo apt-get install nginx php5-fpm php5-gd php5-mcrypt  php5-curl npm
+    sudo apt-get install nginx php5-cli php5-fpm php5-gd php5-mcrypt  php5-curl npm
 
 Edit nginx config
 
+    sudo rm -f /etc/nginx/sites-enabled/default
     sudo nano /etc/nginx/sites-enabled/default 
     
 Copy and paste following config
@@ -181,3 +184,7 @@ Install Front end dependencies with bower
     
     cd public
     sudo bower --allow-root install
+    
+Restart nginx
+
+    sudo service nginx restart
