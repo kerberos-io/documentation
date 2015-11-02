@@ -14,7 +14,7 @@ The parameters of the Disk output device can be found in the **config/io**.xml f
 
 	    <Disk>
 	    	<fileFormat type="text">timestamp_microseconds_instanceName_regionCoordinates_numberOfChanges_token.jpg</fileFormat>
-	    	<directory type="directory">/home/kerberos-web/public/capture>
+	    	<directory type="directory">/srv/capture>
 	    </Disk>
 		    
 	</ios>
@@ -25,4 +25,4 @@ The format that will be used for the name of the image. One or more variables ca
 
 ### Directory
 
-The directory where the image will be saved to.
+The directory where the image will be saved to. By default images are saved to the **/srv/capture** directory.
