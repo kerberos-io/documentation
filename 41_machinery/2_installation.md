@@ -17,13 +17,13 @@ The machinery is already installed on the Kerberos image, however you can also i
 ### Install Arch Linux
 
     todo..
-    
+
 <a name="install-on-raspbian"></a>
 ### Install on Raspbian
 
 Add kerberos apt repository
 
-    sudo echo 'https://apt.kerberos.io/ / >> /etc/apt/sources.list'
+    sudo echo 'http://apt.kerberos.io/ / >> /etc/apt/sources.list'
 
 Update apt
     
@@ -31,7 +31,7 @@ Update apt
 
 Install kerberosio
 
-    sudo apt-get install kerberos
+    sudo apt-get install kerberosio
 
 Force kerberosio to start on boot
 
