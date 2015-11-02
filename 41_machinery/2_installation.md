@@ -1,19 +1,49 @@
 # Installation
 
-* [Install from source](#install-from-source)
-    * [Install on Arch Linux](#install-from-source-on-arch-linux)
+* [Install from package manager](#install-from-package-manager)
+    * [Install on Arch Linux](#install-on-arch-linux)
+    * [Install on Raspbian](#install-on-raspbian)
+* [Compile from source](#compile-from-source)
+    * [Compile on Arch Linux](#compile-from-source-on-arch-linux)
         * [Auto start](#start-kerberos-on-boot-archlinux)
-    * [Install on Raspbian](#install-from-source-on-raspbian)
+    * [Compile on Raspbian](#compile-from-source-on-raspbian)
 
 The machinery is already installed on the Kerberos image, however you can also install the machinery from source.
 
+<a name="install-from-package-manager"></a>
+## Install from package manager
+
+<a name="install-on-arch-linux"></a>
+### Install Arch Linux
+
+    todo..
+    
+<a name="install-on-raspbian"></a>
+### Install on Raspbian
+
+Add kerberos apt repository
+
+    sudo echo 'https://apt.kerberos.io/ / >> /etc/apt/sources.list'
+
+Update apt
+    
+    sudo apt-get update
+
+Install kerberosio
+
+    sudo apt-get install kerberos
+
+Force kerberosio to start on boot
+
+    service kerberosio enable
+
 <a name="install-from-source"></a>
-## Install from source
+## Compile source
 
 The machinery can be installed standalone.
 
-<a name="install-from-source-on-arch-linux"></a>
-### Install on ArchLinux
+<a name="compile-from-source-on-arch-linux"></a>
+### Compile on ArchLinux
 
 Update the ArchLinux kernel
 
@@ -34,11 +64,7 @@ Get the source code from github
 Compile kerberos
 
     cd kerberos-io && mkdir build && cd build
-    cmake .. && make && make check
-
-Give rights to config files
-
-    chmod -R 777 ../config
+    cmake .. && make && make check && sudo make install
 
 <a name="start-kerberos-on-boot-archlinux"></a>
 #### Auto start
@@ -54,7 +80,7 @@ Copy and paste the configuration to the kerberos.service
     
     [Service]
     Type=oneshot
-    ExecStart=/home/kerberos-io/bin/kerberos
+    ExecStart=/usr/bin/local/kerberosio
 
     [Install]
     WantedBy=multi-user.target
@@ -63,8 +89,8 @@ Enable the service to start on boot
 
     systemctl enable kerberos.service
     
-<a name="install-from-source-on-raspbian"></a>
-### Install on Raspbian
+<a name="compile-from-source-on-raspbian"></a>
+### Compile on Raspbian
 
 Enable raspberry pi camera (if needed) and expand SD-card.
 
@@ -93,8 +119,4 @@ Get the source code from github
 Compile kerberos
 
     cd kerberos-io && sudo mkdir build && cd build
-    cmake .. && make && make check
-
-Give rights to config files
-
-    sudo chmod -R 777 ../config
+    cmake .. && make && make check && sudo make install
