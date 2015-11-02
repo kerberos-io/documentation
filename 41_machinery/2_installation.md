@@ -66,25 +66,6 @@ Compile kerberos
     cd kerberos-io && mkdir build && cd build
     cmake .. && make && make check && sudo make install
 
-<a name="start-kerberos-on-boot-archlinux"></a>
-#### Auto start
-
-Create service file for kerberos
-
-    nano /etc/systemd/system/kerberos.service
-
-Copy and paste the configuration to the kerberos.service 
-
-    [Unit]
-    Description=Kerberos.io Video Surveillance
-    
-    [Service]
-    Type=oneshot
-    ExecStart=/usr/bin/local/kerberosio
-
-    [Install]
-    WantedBy=multi-user.target
-
 Enable the service to start on boot
 
     systemctl enable kerberos.service
@@ -120,3 +101,7 @@ Compile kerberos
 
     cd kerberos-io && sudo mkdir build && cd build
     cmake .. && make && make check && sudo make install
+    
+Enable the service to start on boot
+
+    systemctl enable kerberos.service
