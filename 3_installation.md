@@ -149,8 +149,8 @@ When the installation is completed, you can **plug the SD card** into your Raspb
 
 To use Kerberos you only need access to the webinterface, however you can also **[access the system with SSH**.
 
-    macbook:~ cedricverstraeten$ ssh root@ 192.168.0.10
-    root@ 192.168.0.10's password: 
+    macbook:~ cedricverstraeten$ ssh root@ 192.168.0.11
+    root@ 192.168.0.11's password: 
 
 You can sign in with the default Arch Linux credentials: username "**root**" and password "**root**".
 
