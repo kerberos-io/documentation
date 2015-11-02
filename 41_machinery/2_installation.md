@@ -23,7 +23,7 @@ The machinery is already installed on the Kerberos image, however you can also i
 
 Add kerberos apt repository
 
-    sudo echo 'http://apt.kerberos.io/ / >> /etc/apt/sources.list'
+    echo 'deb http://apt.kerberos.io/ debs all' | sudo tee -a /etc/apt/sources.list
 
 Update apt
     
