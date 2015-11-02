@@ -147,7 +147,12 @@ When the installation is completed, you can **plug the SD card** into your Raspb
 <a name="access-raspberry-pi"></a>
 ### 6. Access the Raspberry Pi with SSH
 
-To use Kerberos you only need access to the webinterface, however you can also **[access the system with SSH](/FAQ#how-to-access-the-pi)**.
+To use Kerberos you only need access to the webinterface, however you can also **[access the system with SSH**.
+
+    macbook:~ cedricverstraeten$ ssh root@ 192.168.0.10
+    root@ 192.168.0.10's password: 
+
+You can sign in with the default Arch Linux credentials: username "**root**" and password "**root**".
 
 <a name="install-from-source"></a>
 ## Install from source
