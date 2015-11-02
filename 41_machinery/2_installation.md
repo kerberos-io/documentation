@@ -40,7 +40,7 @@ Force kerberosio to start on boot
 <a name="install-from-source"></a>
 ## Compile source
 
-The machinery can be installed standalone.
+You can compile the machinery yourself. This will be the way to go if you would like to contribute to the kerberos project.
 
 <a name="compile-from-source-on-arch-linux"></a>
 ### Compile on ArchLinux
