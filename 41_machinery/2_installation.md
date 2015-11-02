@@ -68,7 +68,7 @@ Compile kerberos
 
 Enable the service to start on boot
 
-    systemctl enable kerberos.service
+    systemctl enable kerberosio.service
     
 <a name="compile-from-source-on-raspbian"></a>
 ### Compile on Raspbian
@@ -104,4 +104,4 @@ Compile kerberos
     
 Enable the service to start on boot
 
-    systemctl enable kerberos.service
+    systemctl enable kerberosio.service
