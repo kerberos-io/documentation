@@ -5,7 +5,6 @@
     * [Install on Raspbian](#install-on-raspbian)
 * [Compile from source](#compile-from-source)
     * [Compile on Arch Linux](#compile-from-source-on-arch-linux)
-        * [Auto start](#start-kerberos-on-boot-archlinux)
     * [Compile on Raspbian](#compile-from-source-on-raspbian)
 
 The machinery is already installed on the Kerberos image, however you can also install the machinery from source.
