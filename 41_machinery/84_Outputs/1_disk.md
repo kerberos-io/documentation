@@ -14,7 +14,7 @@ The parameters of the Disk output device can be found in the **config/io**.xml f
 
 	    <Disk>
 	    	<fileFormat type="text">timestamp_microseconds_instanceName_regionCoordinates_numberOfChanges_token.jpg</fileFormat>
-	    	<directory type="directory">/srv/capture>
+	    	<directory type="directory">/srv/capture</directory>
 	    </Disk>
 		    
 	</ios>
