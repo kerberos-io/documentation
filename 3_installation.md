@@ -28,41 +28,13 @@ First you will need to download the Kerberos image; click on the image below. Th
 
 The Raspberry Pi 2 is the successor to the Raspberry Pi. It builds upon the original model B+ upgrading to 1 GB of RAM, and replacing the aged ARMv6l single-core with an ARMv7l Cortex-A7 quad-core.
 
-[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuODZ6eEE2bXN5eXM)
-
-Checksum
-
-    10557f21beacbceaee172bd20e420e3e
-    
-**Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "7zip" command to decompress.
-
-OSX
-
-    7za x kerberos-io-armv7-4GB-..
-
-Linux
-
-    7z e from/kerberos-io-armv7-4GB-..
+[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/file/d/0B-2b4NYY_1xuOTU5X1l0cEhseWs/view?usp=sharing)
     
 #### Raspberry Pi Model A, A+, B and B+
 
 The Raspberry Pi is a credit-card sized computer that plugs into your TV and a keyboard. It’s a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video.
 
-[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/open?id=0B-2b4NYY_1xuRkZNa19Gam5BMjg)
-
-Checksum
-
-    2b67a4ca6af0cdde39f4a428047da607
-
-**Please note** that the image is compressed, (on Linux/OSX) open your terminal and use the "7zip" command to decompress.
-
-OSX
-
-    7za x kerberos-io-armv6-4GB-..
-
-Linux
-
-    7z e from/kerberos-io-armv6-4GB-..
+[![Kerberos.io image](3_kerberos-image.png)](https://drive.google.com/file/d/0B-2b4NYY_1xuVnE5OXAyWmpUNU0/view?usp=sharing)
    
 <a name="insert-your-sd-card"></a>
 ### 2. Insert your SD Card
