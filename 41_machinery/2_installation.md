@@ -32,7 +32,7 @@ Install kerberosio
 
 Force kerberosio to start on boot
 
-    service kerberosio enable
+    systemctl kerberosio enable
 
 <a name="install-from-source"></a>
 ## Compile source
