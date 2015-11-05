@@ -8,9 +8,7 @@
     * [Compile on Raspbian](#compile-from-source-on-raspbian)
 * [Configure](#configure)
 * [Run](#run)
-* 
-The machinery is already installed on the Kerberos image, however you can also install the machinery from source.
-
+ 
 <a name="install-from-package-manager"></a>
 ## Install from package manager
 
