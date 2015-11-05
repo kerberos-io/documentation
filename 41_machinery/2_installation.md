@@ -6,7 +6,9 @@
 * [Compile from source](#compile-from-source)
     * [Compile on Arch Linux](#compile-from-source-on-arch-linux)
     * [Compile on Raspbian](#compile-from-source-on-raspbian)
-
+* [Configure](#configure)
+* [Run](#run)
+* 
 The machinery is already installed on the Kerberos image, however you can also install the machinery from source.
 
 <a name="install-from-package-manager"></a>
@@ -102,3 +104,15 @@ Compile kerberos
 Enable the service to start on boot
 
     systemctl enable kerberosio.service
+
+<a name="configure"></a>
+##Configure
+
+The configuration files can be found at **/etc/kerberosio/config**. By default the Raspberry Pi Camera module is set as capture device. You can update the **config.xml** file to change it to **USBCamera** or **IPCamera**. Images are stored in the **/srv/capture** directory; this location can be changed by editing the **io.xml** file.
+
+<a name="run"></a>
+##Run
+
+After kerberos is installed a binary is available at **/usr/bin/kerberosio**. Just run following command in your terminal to start kerberosio.
+
+    kerberosio
