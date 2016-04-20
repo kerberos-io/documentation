@@ -20,7 +20,7 @@ Update system and install dependency avcodec
 
 Download the debian file from [the web repository](https://github.com/cedricve/version-test/releases/v2.1.0); Please download the correct version for your Raspberry Pi, **replace X by the version**.
 
-    sudo wget https://github.com/cedricve/version-test/releases/download/v2.1.0/rpiX-machinery-kerberosio-armhf-2.0.0.deb
+    sudo wget https://github.com/kerberos-io/machinery/releases/download/v2.0.0/rpiX-machinery-kerberosio-armhf-2.0.0.deb
 
 Unpackage the file 
 
@@ -105,7 +105,7 @@ Create a www location.
 
 Get the source code from Github.
 
-    sudo wget https://github.com/cedricve/version-test/releases/download/v2.1.0/web.tar.gz
+    sudo wget https://github.com/kerberos-io/web/releases/download/v2.0.0/web.tar.gz
 
 Unpack
 
