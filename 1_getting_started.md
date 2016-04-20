@@ -1,34 +1,55 @@
 # Getting started
 
+* [Why Kerberos.io](#why-kerberos-io)
 * [What is Kerberos.io](#what-is-kerberos-io)
 * [How does it work](#how-does-it-work)
-* [Installation](#installation)
-* [Contribute](#contribute)
+* [Features](#features)
 
-## Let's get started
+<a name="why-kerberos-io"></a>
+## Why Kerberos.io?
 
-In the video below you get a quick overview of how Kerberos works and how you can configure it. The video isn't technical but explains the different features Kerberos offers you.
+As burgalary is very common, we believe that video surveillance is a **trivial tool** in our daily lifes which helps us to **feel** a little bit more **secure**. Responding to this need, a lot of companies have started developing their own video surveillance software in the past few years.
 
-<iframe src="https://player.vimeo.com/video/121532472?autoplay=0&color=943633" style="width:100%; height: 400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+Nowadays we have a myriad of **expensive** camera's, recorders and software solutions which are mainly **outdated** and **difficult** to install and use. Kerberos.io's goal is to solve these problems and to provide every human being in this world to have its own **ecological**, **affordable**, **easy-to-use** and **innovative** surveillance solution.
 
 <a name="what-is-kerberos-io"></a>
 ## What's Kerberos.io?
 
-Kerberos is a low-budget surveillance solution created for the **Rapsberry Pi**. Kerberos is open source, so you and others, can customize the source code to your needs and share it. It has a *low-energy* footprint when deploying on the Raspberry Pi and it's *easy to install*, you only need to transfer the image to your SD card and you're done.
+Kerberos.io is a **low-budget** video surveillance solution, that uses computer vision algorithms to detect changes, and that can trigger other devices. Kerberos.io is open source so everyone can customize the source code to its needs and share it with the community. When deployed on the Raspberry Pi, it has a **green footprint** and it's **easy to install**; you only need to transfer the [**Kerberos.io OS (KIOS)**](installation/KiOS) to your SD card and that's it.
 
-Use your mobile phone, tablet or PC to keep an eye on your property. View the activity with our *responsive* and *user-friendly* web interface. Look at the dashboard to get a graphical overview of the past days. *Multiple* Kerberos *instances* can be installed and can be viewed with [only one web interface](/addons/Cloud).
+<iframe src="https://player.vimeo.com/video/121532472?autoplay=0&color=943633" style="width:100%; height: 400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 <a name="how-does-it-work"></a>
 ## How does it work?
 
-Kerberos is devided into two parts: the **machinery** (Back end, C++) and the **webinterface** (Front end, PHP). The machinery is responsible for the image processing and the webinterface is used to configure the machinery and to view the events that were detected by the machinery. Both parts are installed on the device, in most cases the Raspberry Pi. The machinery can trigger multiple output devices when an event occurred; it can trigger a GPIO pin, save an image to disk or send a TCP packet.
+When installed Kerberos.io on a Raspberry Pi or local working station, two applications are available: the [**machinery**](https://github.com/kerberos-io/machinery) and the [**web**](https://github.com/kerberos-io/web).
 
-<a name="installation"></a>
-## Installation
+The machinery is responsible for the processing. It's **an image processing framework** which takes images from the type of camera (USB-, IP- or RPi-camera) you've configured in the configuration files and executes one ore more algorithms and post-processes (e.g. save a snapshot). The configuration files allow you to define the type of camera, post-processes, conditions and much more; it's **highly configurable**. It's important to note that the machinery, out-of-the-box, can handle only one camera at a time.
 
-Kerberos is **easy to install**, you just have to copy the kerberos image to your SD card, plug it into your Raspberry Pi and that's it. Kerberos can be installed on other devices than the Raspberry Pi; for development or production. Therefore you will need to compile the machinery yourself and install the webinterface with your favorite webserver; nginx, apache, etc.
+The web is responsible for the visualization. It's a **GUI** which helps the user to find activity at a specific period, configure the machinery, view a live stream, see system information and much more. It's important to note that the machinery can work without the web, however we don't recommend this.
 
-<a name="contribute"></a>
-## Contribute
+The cloud is an extra service, which is available by default but is not required. The main goal of this service is **to view your activity from everywhere** in the world. By [**subscribing to a plan**](https://cloud.kerberos.io), you can **sync your events** to the cloud application; you can sync **multiple instances** with only one subscription. 
 
-Want to contribute? You're a front end designer, user experience guru, an ambitious programmer, or a Ph.D. in Computer Vision who wants to take kerberos.io to the next level? Then we like to welcome you to the community. Contributions are taken very seriously, besides your code, testing and documentation are very important!
+To have a more detailed explanation go to the [**machinery**](machinery/introduction) and [**web**](web/introduction) pages.
+
+![How does it work](1_how_does_it_work.png)
+
+<a name="features"></a>
+## Features
+
+Kerberos.io comes with **a bunch of features**, below you can find a short list of the most important ones.
+
+ * Full range camera support (USB-, Raspberry Pi-, and IP-camera (RTSP or MJPEG)).
+ * Constraints to make detection more intelligent (time interval, regions, etc).
+ * Post-processes which are executed after a valid activity (GPIO pin, webhook, etc).
+ * Live streaming (MJPEG) on the web or with another program like VLC or IP camera viewer.
+ * Heatmap and latest sequence of activity.
+ * Fluent and responsive overview of snapshots by day and hour.
+ * System information (CPU, disk, network, etc).
+ * View you activity everywhere with kerberos.io cloud.
+ * ..
+ 
+Features **NOT** included:
+
+ * Video recording (only snapshots are taken); third-party solutions are available (IP camera viewer).
+ * Multiple camera support; not supported out-of-the-box, but it's possible with some technical skills.

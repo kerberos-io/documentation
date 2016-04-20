@@ -1,10 +1,42 @@
 # Release notes
 
+* [2.0.0](#2-0-0)
 * [1.1.0](#1-1-0)
 * [1.0.3](#1-0-3)
 * [1.0.2](#1-0-2)
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
+
+<a name="2-0-0"></a>
+## 2.0.0
+
+#### Web
+
+* Add simple ON/OFF toggle. [#24](https://github.com/kerberos-io/web/issues/24)
+* Added update strategy when using KiOS. [#23](https://github.com/kerberos-io/web/issues/23)
+* A system page which shows system information. [#20](https://github.com/kerberos-io/web/issues/20)
+* Heatmap on dashboard page [#19](https://github.com/kerberos-io/web/issues/19)
+* Added live stream view on the dashboard page [#2](https://github.com/kerberos-io/web/issues/2)
+* Fixed bug cloud syncing [#16](https://github.com/kerberos-io/web/issues/16)
+* Fixed broken settings page when space in instane name [#16](https://github.com/kerberos-io/web/issues/16)
+
+#### Machinery
+
+* RTSP support for IP-camera's. [#21](https://github.com/kerberos-io/machinery/issues/21)
+* Verbose logging. [#35](https://github.com/kerberos-io/machinery/issues/35)
+* IO-devices are executed in a seperate thread. [#28](https://github.com/kerberos-io/machinery/issues/28)
+* Live streaming (MJPEG). [#26](https://github.com/kerberos-io/machinery/issues/26)
+* Execute multiple instances on a machine. [#24](https://github.com/kerberos-io/machinery/issues/24)
+* Override config by arguments. [#22](https://github.com/kerberos-io/machinery/issues/22)
+* Move S3 upload to machinery and remove sync-s3 repository. [#16](https://github.com/kerberos-io/machinery/issues/16)
+
+#### Docker
+
+* Added Docker image (x86_x64) to Docker Hub.
+
+#### Kios
+
+* Add support for Raspberry Pi 1, 2 and 3. [#1](https://github.com/kerberos-io/kios/issues/1)
 
 <a name="1-1-0"></a>
 ## 1.1.0
