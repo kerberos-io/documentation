@@ -17,8 +17,6 @@ Nowadays we have a myriad of **expensive** camera's, recorders and software solu
 
 Kerberos.io is a **low-budget** video surveillance solution, that uses computer vision algorithms to detect changes, and that can trigger other devices. Kerberos.io is open source so everyone can customize the source code to its needs and share it with the community. When deployed on the Raspberry Pi, it has a **green footprint** and it's **easy to install**; you only need to transfer the [**Kerberos.io OS (KIOS)**](installation/KiOS) to your SD card and that's it.
 
-<iframe src="https://player.vimeo.com/video/121532472?autoplay=0&color=943633" style="width:100%; height: 400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
 <a name="how-does-it-work"></a>
 ## How does it work?
 
