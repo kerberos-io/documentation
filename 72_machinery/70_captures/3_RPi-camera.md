@@ -1,4 +1,4 @@
-# Raspberry-camera
+# RPi-camera
 
 You can use the Raspberry Pi Camera Module with Kerberos.io. You just need [**to attach the camera module**](https://www.raspberrypi.org/help/camera-module-setup/) and you're ready to go. The Raspberry Pi Camera Module is enabled by default in the web.
 
