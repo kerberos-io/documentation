@@ -19,4 +19,4 @@ Kerberos can be used with any IP camera, that provides a streaming URL. Make sur
 <a name="raspberry-pi-camera-module"></a>
 ## Raspberry Pi Camera Module
 
-You can use the Raspberry Pi Camera Module with Kerberos, you just need to attach the camera module and you are ready to go. The Raspberry Pi Camera Module is enabled by default in the web interface. Please note that if you didn't installed Kerberos with the image, you will need to [enable the camera module](/FAQ#how-to-enable-camera-module) yourself.
+You can use the Raspberry Pi Camera Module with Kerberos, you just need to attach the camera module and you are ready to go. The Raspberry Pi Camera Module is enabled by default in the web interface. Please note that if you didn't installed Kerberos with the image, you will need to enable the camera module yourself.
