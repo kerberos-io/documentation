@@ -8,15 +8,11 @@ You will need to **mount the NAS to the filesystem** of your Rapsberry Pi. In or
 
 ### KiOS
 
-Before you can add your NAS to KiOS, you will need to change the **cmdline.txt** file. By default the root partition is **read-only**, therefore you will need to change it to **read-write**. Insert the SD card into your working station and open the **cmdline.txt** file. Change the value **ro** to **rw**.
+Before you can add your NAS to KiOS, you will need to modify the **/data/etc/os.conf** file. By default the root partition is **read-only**, therefore you will need to change it to **read-write**. To do this you will need to activate **os_debug** option.
 
-    .. rootfstype=ext4 rootwait ro rootflags=noload ...
-
-to
-
-    .. rootfstype=ext4 rootwait rw rootflags=noload ...
+    os_debug="true"
     
-After you've updated the **cmdline.txt** file you can put it back into your Raspberry Pi; your root system is **writeable** now. When it's booted you can open and edit the **fstab** file.
+After you've changed the value to **true**, you need to reboot the system. You will see see that the root partition is now **writeable**, and you're able to modify the fstab file.
 
     nano /etc/fstab
 
