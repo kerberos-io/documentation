@@ -8,6 +8,8 @@
     * [Install webserver + PHP (optional)](#web-installation-webserver)
     * [Install source](#web-installation-source)
 
+<iframe src="https://player.vimeo.com/video/163983055?autoplay=0&color=943633" style="width:100%; height: 400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 <a name="machinery"></a>
 ## Machinery
 
