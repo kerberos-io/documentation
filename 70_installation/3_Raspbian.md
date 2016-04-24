@@ -26,7 +26,7 @@ Update system and install dependency avcodec
 
     sudo apt-get update && sudo apt-get install libav-tools
 
-Download the debian file from [the web repository](https://github.com/cedricve/version-test/releases/v2.1.0); Please download the correct version for your Raspberry Pi, **replace X by the version**.
+Download the debian file from [the machinery repository](https://github.com/cedricve/version-test/releases/v2.1.0); Please download the correct version for your Raspberry Pi, **replace X by the version**.
 
     sudo wget https://github.com/kerberos-io/machinery/releases/download/v2.0.0/rpiX-machinery-kerberosio-armhf-2.0.0.deb
 
