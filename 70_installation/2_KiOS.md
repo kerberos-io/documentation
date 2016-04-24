@@ -106,11 +106,9 @@ To use Kerberos.io you only need access to the webinterface, however you can als
     Welcome to kios-79e30bbb!
     [root@kios-79e30bbb ~]# 
 
-Note that by default no root password is set, you can define a password with the **passwd** command.
+Note that by default no root password is set, you can define a password in the **/data/etc/kios.conf** file.
 
-    [root@kios-79e30bbb ~]# passwd
-    Changing password for root
-    New password: 
-    Retype password: 
-    Password for root changed by root
-    [root@kios-79e30bbb ~]#  
+    [root@kios-79e30bbb ~]# nano /data/etc/kios.conf
+    [root@kios-79e30bbb ~]# reboot
+    
+Add your password, save the file and reboot the system. 
