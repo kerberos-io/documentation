@@ -10,10 +10,12 @@
 
 [KiOS](https://github.com/kerberos-io/kios) (Kerberos.io Operating System) is a custom linux OS created for the Raspberry Pi by buildroot, which runs Kerberos.io out-of-the-box. KiOS is **installed like every other OS** for the Raspberry Pi, you need to flash the OS (.img) to a SD card and update your network configration; no manual compilation or horrible configurations. If you want to get Kerberos.io up and running at a short time frame, this is the **most simple** and **basic** installation procedure; it takes about 15-30 min to download, install and configure.
 
+<iframe src="https://player.vimeo.com/video/164054497?autoplay=0&color=943633" style="width:100%; height: 400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 <a name="download"></a>
 ## 1. Download the .img
 
-All releases are stored on the KiOS [**github repository**](https://github.com/kerberos-io/kios), each release contains several images (for every Raspberry Pi version a different image is created). It's important to download the correct image; installing an image for another Raspberry Pi version will not work. After downloading, make sure to unzip the release.
+All releases are stored on the KiOS [**Github repository**](https://github.com/kerberos-io/kios), each release contains several images (for every Raspberry Pi version a different image is created). It's important to download the correct image; installing an image for another Raspberry Pi version will not work. After downloading, make sure to unzip the release.
 
 [![Download KiOS](2_kerberos-image.png)](https://github.com/kerberos-io/kios/releases)
 
