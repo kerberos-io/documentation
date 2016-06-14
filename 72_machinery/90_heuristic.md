@@ -1,13 +1,16 @@
 # Heuristic
 
 * [Sequence](#sequence)
+* [Counter](#counter)
 
-When the expositor detected one or more regions, a heuristic will evaluate, the current and previous evaluations. This step is less loosly coupled as the connection between algorithms and expositors, because it can require specific parameters from the expositor or algorithm.
-
-However, the main convention is that an expositor would always modify a JSON object with minimal information; as explained above, one or more regions and the number of pixels of interest. For flexibility, one can choose to add additional parameters or remove (required) parameters. Therefore it is possible that some expositors can't be used with some heuristics; we strongly disrecommend this feature.
-
-To keep things simple: a heuristic is some kind of memory which makes decision and tells Kerberos if the evaluation was true or false. 
+The heuristic is the last step in the four passway which will decide if the detection is valid or not. It will do this by using information from the previous steps (the expositor and the algorithm); e.g. number of changed pixels.
 
 <a name="sequence"></a>
 ## Sequence
-This is a trivial heuristic. The sequence heuristic returns true if the recognition was positive for x times in a row.
+In most cases motion contains a sequence of events; for example someone who walks by or a car which is parking on the street. The sequence heuristic will measure this by returning true if the recognition was positive for x times in a row. By using this heuristic most of the false-positives (invalid detections) are removed.
+
+<a name="counter"></a>
+## Counter
+Counting objects forms the basis for a range of high-tech solutions, including retail analytics, queue management, building management and security applications. By using this counter heuristic you can count incoming and outgoing objects (e.g. people).
+
+![Counter heuristic](83_heuristics/2_counter-heuristic.png)

@@ -40,7 +40,7 @@ After the algorithm is executed, the expositor will determine, a region, where t
 <a name="heuristic"></a>
 ### Heuristic
 
-When the expositor detected a region where activity was detection, a **heuristic** will evaluate, the current and previous detections. The heuristic is basically some kind of memory which makes decision and tells the machinery if the detection was true or false.
+When the expositor detected a region where activity was detection, a **heuristic** will evaluate, the current and previous detections. The heuristic is basically some kind of memory which makes a decision and tells the machinery if the detection was true or false.
 
 <a name="io"></a>
 ### IO
