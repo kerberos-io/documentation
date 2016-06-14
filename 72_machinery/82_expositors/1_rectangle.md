@@ -2,10 +2,6 @@
 
 This rectangle is a trivial expositor. A rectangle region can be defined to constrain the locations of pixels of interest; for example if you only want to have detection at your front door. The rectangle repositor will return the bounding rectangle of the pixels of interest.
 
-## Web 
-
-![Rectangle expositor](1_rectangle-expositor.png)
-
 ## Parameters
 
 The parameters of the rectangle expositor can be found in the **config/expositor.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.

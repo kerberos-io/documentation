@@ -2,10 +2,6 @@
 
 A GPIO pin can be set as output device.
 
-## Web 
-
-![GPIO io](3_gpio-io.png)
-
 ## Parameters
 
 The parameters of the GPIO pin can be found in the **config/io.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.

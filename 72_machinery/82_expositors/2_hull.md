@@ -2,8 +2,6 @@
 
 This hull is a more complex expositor than the rectangle. A hull can be selected with the web, you can select one or more coordinates to create a flexible region. The coordinates can be adjusted afterwards and be removed by double clicking on the coordinate. You can expand the hull by removing the start coordinate, which is marked by the white bullet.
 
-## Web 
-
 ![Hull expositor](2_hull-expositor.png)
 
 ## Parameters

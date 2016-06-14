@@ -14,10 +14,6 @@ The main idea of the Colins et al. method, is that it will erase "ghosting". In 
 
 A more detailed explanation can be found [here](http://blog.cedric.ws/opencv-simple-motion-detection).
 
-## Web 
-
-![Differential algoritmh](1_differential-images.png)
-
 ## Parameters
 
 The parameters of the Differential image algorithm can be found in the *config/algorithm.xml* file, but you can also use the web to modify the parameters. Below you see a default configuration file.

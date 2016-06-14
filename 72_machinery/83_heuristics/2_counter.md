@@ -1,6 +1,6 @@
 # Counter
 
-Counting objects forms the basis for a range of high-tech solutions, including retail analytics, queue management, building management and security applications. By using the counter heuristic **you can count incoming and outgoing objects** (e.g. people). By defining two lines, the counter heuristics can count the incoming (green line) and outgoing (red line) objects.
+**Counting objects/people** forms the basis for a range of high-tech solutions, including retail analytics, queue management, building management and security applications. By using the counter heuristic **you can count incoming and outgoing objects** (e.g. people). By defining two lines, the counter heuristics can count the incoming (green line) and outgoing (red line) objects.
 
 ![Counter heuristic](2_counter-heuristic.png)
 

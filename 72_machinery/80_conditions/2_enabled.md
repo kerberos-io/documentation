@@ -2,10 +2,6 @@
 
 This condition makes it possible to **disable/enable Kerberos.io**, with a simple true/false parameter. This is helpful when you're expecting a lot of activity, and you don't want Kerberos.io to trigger all those events.
 
-## Web 
-
-![Enabled condition](2_enabled-condition.png)
-
 ## Parameters
 
 The parameters of the Time condition can be found in the **config/condition.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.
@@ -18,8 +14,6 @@ The parameters of the Time condition can be found in the **config/condition.xml*
 	    </Enabled>
 	    
 	</conditions>
-
-
 
 ### Active
 
