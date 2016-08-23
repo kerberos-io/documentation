@@ -16,7 +16,7 @@ A more detailed explanation can be found [here](http://blog.cedric.ws/opencv-sim
 
 ## Parameters
 
-The parameters of the Differential image algorithm can be found in the *config/algorithm.xml* file, but you can also use the web to modify the parameters. Below you see a default configuration file.
+The parameters of the Differential images algorithm can be found in the *config/algorithm.xml* file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<algorithms>
 

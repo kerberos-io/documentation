@@ -23,6 +23,7 @@
 * Settings page is now visible on mobile (+ changed icon). [#16](https://github.com/kerberos-io/web/issues/16)
 * Fixed sorting of news articles. [#16](https://github.com/kerberos-io/web/issues/16)
 * Removed links to assets in the cloud (.css files). [#16](https://github.com/kerberos-io/web/issues/16)
+* Design: improved layout of login page, async loading of image view.
 
 #### Machinery
 
@@ -36,6 +37,7 @@
 #### Kios
 
 * Fix removal images if disk is almost full (wrong path was defined). [#1](https://github.com/kerberos-io/kios/issues/1)
+* Support for the Raspberry Pi Camera module v2.1. [#3](https://github.com/kerberos-io/kios/issues/3)
 
 
 <a name="2-0-0"></a>

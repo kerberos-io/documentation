@@ -28,7 +28,7 @@ The machinery is responsible for the processing. It's **an image processing fram
 
 The web is responsible for the visualization. It's a **GUI** which helps the user to find activity at a specific period, configure the machinery, view a live stream, see system information and much more. It's important to note that the machinery can work without the web, however we don't recommend this.
 
-The cloud is an extra service, which is available by default but is not required. The main goal of this service is **to view your activity from everywhere** in the world. By [**subscribing to a plan**](https://cloud.kerberos.io), you can **sync your events** to the cloud application; you can sync **multiple instances** with only one subscription. 
+The cloud is an extra service, which is available by default but is not required. The main goal of this service is **to view your activity from everywhere** in the world. By [**subscribing to a plan**](https://cloud.kerberos.io), you can **sync your images** to the cloud application; you can sync **multiple instances** with **only one subscription**. 
 
 To have a more detailed explanation go to the [**machinery**](machinery/introduction) and [**web**](web/introduction) pages.
 
@@ -39,7 +39,7 @@ To have a more detailed explanation go to the [**machinery**](machinery/introduc
 
 Kerberos.io comes with **a bunch of features**, below you can find a short list of the most important ones.
 
- * Full range camera support (USB-, Raspberry Pi-, and IP-camera (RTSP or MJPEG)).
+ * Full range camera support (USB-, Raspberry Pi (v1.3 and v2.1)-, and IP-camera (RTSP or MJPEG stream)).
  * Constraints to make detection more intelligent (time interval, regions, etc).
  * Post-processes which are executed after a valid activity (GPIO pin, webhook, etc).
  * Live streaming (MJPEG) on the web or with another program like VLC or IP camera viewer.

@@ -11,6 +11,7 @@ The parameters of the USB-camera can be found in the **config/capture.xml** file
 		<USBCamera>
 	    	<frameWidth type="number">1280</frameWidth>
 	    	<frameHeight type="number">720</frameHeight>
+        	<deviceNumber type="number">0</deviceNumber>
             <delay type="number">0</delay>
             <angle type="number">0</angle>
 	    </USBCamera>
@@ -20,6 +21,10 @@ The parameters of the USB-camera can be found in the **config/capture.xml** file
 ### Framewidth and -height
 
 You can set the resolution of the capture device, make sure the resolution you've defined is valid with your camera. Please check the specs of the USB camera you're using.
+
+### Device number
+
+If more than one device is connected, you can specify the index of the USB-camera. The index is an integer (1-5).
 
 ### Delay
 

@@ -1,10 +1,10 @@
 #First things first
 
-The reason why you're on this page is because you want to know how to install Kerberos.io on your Raspberry Pi, local working station, server or whatever machine you prefer. The good news is that we have **different approaches** from basic to advanced; it depends on how you want to install it.
+The reason why you're on this page is because you want to know how to install Kerberos.io on your Raspberry Pi, local working station, server or whatever Linux machine you prefer. The good news is that we have **different approaches** from basic to advanced; it depends on how you want to install it.
 
 ## Raspberry Pi (ARM)
 
-When deploying on the Raspberry Pi there are two possible solutions. You can use our custom OS, **KiOS** (Kerberos.io Operating System), which is production-ready or install it on an existing OS, **Raspbian**.
+When deploying on the Raspberry Pi there are two possible solutions. You can use our custom OS, [**KiOS**](installation/KiOS) (Kerberos.io Operating System), which is production-ready or install it on an existing OS, [**Raspbian**](installation/Raspbian).
 
 ###KiOS
 

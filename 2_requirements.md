@@ -6,9 +6,11 @@ Kerberos.io runs on every machine but its main goal is to run on a **Raspberry P
 
 ### Raspberry Pi 
 
-As said, you can run Kerberos.io **on every machine**, however we recommend to run Kerberos.io on a **Raspberry Pi**, as it is a low-budget microcontroller which can you buy in almost every electronic shop. Besides that Kerberos.io comes with a custom OS called **KIOS** (Kerberos.io Operating System), which you can deploy to your Raspberry Pi in just a few minutes. Kerberos.io supports **all Raspberry Pi versions** (1, 2 and 3). 
+As said, you can run Kerberos.io **on every Linux based machine**, however we recommend to run Kerberos.io on a **Raspberry Pi**, as it is a low-budget microcontroller which can you buy in almost every (online) electronic shop. Therefore Kerberos.io comes with a custom ARM OS called [**KIOS**](installation/KiOS) (Kerberos.io Operating System), which you can deploy to your Raspberry Pi in just a few minutes. Kerberos.io supports **all Raspberry Pi versions** (1, 2, 3 and Zero). 
 
 ![Raspberry Pi Model A](2_raspberry-pi-a.png)
+
+For the moment of writing (2016), we do **not support other boards**.
 
 ### SD card
 
@@ -24,7 +26,7 @@ You will need to have a **micro USB 5V** charger, to give the Raspberry Pi some 
 
 ### Camera
 
-Kerberos.io works with the full range of camera's. You can use an **USB-**, **IP-** or the **Raspberry Pi camera**.
+Kerberos.io works with the full range of camera's. You can use an **USB-**, **IP-** or the **Raspberry Pi camera (v1.3 and v2.1)**.
 
 ![Raspberry Pi Camera Module](2_raspberry-camera-module.png)
 
