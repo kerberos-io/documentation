@@ -26,7 +26,7 @@ When opening the counter heuristic, you'll see two lines (a green and red one) w
 
 ### Specify the webhook url
 
-The **Webhook Io device** is used to retrieve the number of incoming and outgoing objects; therefore we need to specify an endpoint to which the webhook will post the JSON object. The web application we will create in next paragraph will listen on port 25000, therefore we chage the url of the webhook to: 
+The **Webhook Io device** is used to send the number of incoming and outgoing objects to your own application; therefore we need to specify an endpoint to which the webhook will post the JSON object (e.g. your own API). We will demonstrate how this works with a traditional NodeJS application, which we will create in next paragraph. The application will run on our local machine, and listen on port 25000, therefore we need to change the url of the webhook to: 
 
 	http://localhost:250000
 

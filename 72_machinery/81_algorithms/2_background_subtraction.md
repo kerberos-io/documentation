@@ -2,7 +2,7 @@
 
 This Background subtraction algorithm is **a more advanced** method in comparison to the **Differential images** method. The key difference is that it uses and calculates a background image. Images taken from the capture device are then subtracted from the background image, resulting in a more robust segmentation of the foreground. As this method is more accurate, it also **consumes a lot more CPU power and memory**; the background model is adapted by every iteration.
 
-# Parameters
+## Parameters
 
 The parameters of the Background images algorithm can be found in the *config/algorithm.xml* file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 

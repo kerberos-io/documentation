@@ -13,7 +13,7 @@ The machinery is an **image processing framework** which is devided into four st
 
 The steps belong to a four passway; illustrated on the image below. In each cycle a sequence of images is processed. Each step will process the sequence, and will return some result to the next step. For example: an algorithm will process the images and returns an array to the Expositor, which contains boolean values. The steps are **loosly coupled**, so they have **simple conventions**, just like the example before.
 
-Thanks to the loosly coupling, each step can be developed indepently. So algorithms, expositors, heuristics and conditions can be switched on the fly. This makes it easier for other developers who want to contribute to kerberos. They can create a new algorithm without knowing how a specific expositor or heuristic works. They just need to be aware of the convention an algorithm should meet.
+Thanks to the loosly coupling, each step can be developed indepently. So algorithms, expositors, heuristics and conditions can be switched on the fly. This makes it easier for other developers who want to contribute to Kerberos.io. They can create a new algorithm without knowing how a specific expositor or heuristic works. They just need to be aware of the convention an algorithm should meet.
 
 ![Lifecycle](1_project_structure.png)
 

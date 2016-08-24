@@ -38,7 +38,8 @@
 
 * Fix removal images if disk is almost full (wrong path was defined). [#1](https://github.com/kerberos-io/kios/issues/1)
 * Support for the Raspberry Pi Camera module v2.1. [#3](https://github.com/kerberos-io/kios/issues/3)
-
+* Support for the Raspberry Pi Zero; updated kernel to latest Raspbian. [#3](https://github.com/kerberos-io/kios/issues/3)
+* KiOS GUI installer.
 
 <a name="2-0-0"></a>
 ## 2.0.0
