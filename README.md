@@ -1,4 +1,4 @@
-#KERBEROS.IO - documentation
+#KERBEROS.**IO**
 
 [![Join the chat at https://gitter.im/kerberos-io/hades](https://img.shields.io/badge/GITTER-join chat-green.svg)](https://gitter.im/kerberos-io/hades?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
