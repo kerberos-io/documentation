@@ -4,6 +4,7 @@
 * [What is Kerberos.io](#what-is-kerberos-io)
 * [How does it work](#how-does-it-work)
 * [Features](#features)
+* [Installation](#installation)
 
 <a name="why-kerberos-io"></a>
 ## Why Kerberos.io?
@@ -53,3 +54,16 @@ Features **NOT** included:
 
  * Video recording (only snapshots are taken); third-party solutions are available (IP camera viewer).
  * Multiple camera support; not supported out-of-the-box, but it's possible with some technical skills.
+
+<a name="installation"></a>
+## Installation
+	
+Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By using our <b>cross-platform</b> installer, you can run a <b>fully configured</b> video surveillance system within <b>3 minutes</b>. Indeed, we also think that's awesome!
+
+<a href="installation/KiOS" alt="install kios">
+<img src="/images/kios-install.gif" style="border-radius: 0; margin: 0 0 10px 0; width: 100%;"/>
+</a>
+
+By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and **flash KiOS to your SD card**. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; **it can't be easier**.
+
+If you **don't want to reflash you SD card**, you can run also run Kerberos.io on your [**Raspbian**](installation/Raspbian) installation, or even run it as a [**docker container**](installation/Docker).

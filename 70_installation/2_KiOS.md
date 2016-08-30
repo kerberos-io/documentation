@@ -19,21 +19,21 @@ To install KiOS you can <b>use our own installer</b>, which gives you a nice GUI
 	<h2>Easy Installation</h2>
 	
 	 <p>
-                    Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By using our <b>cross-platform</b> installer, you can run a <b>fully configured</b> video surveillance system within <b>3 minutes</b>. Indeed, we also think that's awesome!
-                </p>
+        Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By using our <b>cross-platform</b> installer, you can run a <b>fully configured</b> video surveillance system within <b>3 minutes</b>. Indeed, we also think that's awesome!
+    </p>
 
-	<img src="/images/kios-install.gif" style="border-radius: 0; margin: 0px 0 30px 0; width: 100%;"/>
-	
-	<p>By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and flash KiOS to your SD card. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; it can't be easier.</p>
+	<img src="/images/kios-install.gif" style="border-radius: 0; margin: 0; width: 100%;"/>
 
-	<div id="bottom-download" class="btn-group" style="margin-top: 20px;">
-        <a class="current-version btn btn-success btn-lg" style="border: 3px solid #fff; color: #fff; border-right: none; font-size: 18px;" data-track-id="jumbotron button" role="button"></a>
-                        <button type="button" class="btn btn-success btn-lg dropdown-toggle" style="border: 3px solid #fff; border-left: none; font-size: 18px;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div id="bottom-download" class="btn-group" style="margin: 20px 0; width: 100%">
+        <a class="current-version btn btn-success btn-lg" style="color: #fff; margin-bottom: 5px;font-size: 18px; width: 90%;" data-track-id="jumbotron button" role="button"></a>
+                        <button type="button" class="btn btn-success btn-lg dropdown-toggle" style="font-size: 18px; width: 10%;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="caret"></span>
                             <span class="sr-only">Toggle Dropdown</span>
                         </button>
-                        <ul class="dropdown-menu" style="min-width: 403px;"></ul>
+                        <ul class="dropdown-menu" style="width:100%; margin: 0; padding:0"></ul>
                     </div>
+
+	<p>By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and flash KiOS to your SD card. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; it can't be easier.</p>
 	     
 	    <script type="text/javascript">
 		    require([_jsBase + 'main.js'], function(common)
@@ -110,7 +110,6 @@ To install KiOS you can <b>use our own installer</b>, which gives you a nice GUI
 		        });
 		    });
 		</script>
-	</div>
 </div>
 <div id="advanced" style="display: none;">
 	<h2>Advanced Installation</h2>
