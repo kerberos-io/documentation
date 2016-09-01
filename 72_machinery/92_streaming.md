@@ -10,7 +10,7 @@ The parameters for the supported streaming protocols can be found in the *config
 
 		<Mjpg>
 	    	<enabled type="bool">true</enabled>
-	    	<streamPort type="number">8888</streamPort>
+	    	<streamPort type="number">8889</streamPort>
 	    	<quality type="number">75</quality>
 	    </Mjpg>
     
