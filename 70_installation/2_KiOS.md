@@ -1,10 +1,12 @@
 #KiOS
 
-* [Download the .img](#download)
-* [Flash the .img to a SD card](#flash)
-* [Network configuration](#network)
-* [Power on the Raspberry Pi](#poweron)
-* [Access the Raspberry Pi with SSH](#access)
+* [Easy Installation](#installer)
+* [Advanced Installation](#advanced)
+	* [Download the .img](#download)
+	* [Flash the .img to a SD card](#flash)
+	* [Network configuration](#network)
+	* [Power on the Raspberry Pi](#poweron)
+	* [Access the Raspberry Pi with SSH](#access)
 
 ## Introduction 
 
@@ -38,7 +40,7 @@ To install KiOS you can <b>use our own installer</b>, which gives you a nice GUI
 	    <script type="text/javascript">
 		    require([_jsBase + 'main.js'], function(common)
 		    {
-		        require(["jquery"], function($)
+		        require(["jquery", "//kerberos.io/etcher-versions.js"], function($)
 		        {
 		            $(function()
 		            {
@@ -55,41 +57,6 @@ To install KiOS you can <b>use our own installer</b>, which gives you a nice GUI
 		            		$("#advanced").hide();
 		            		$("#installer").show();
 		            	})
-
-						var platform = window.navigator.platform;
-						var versions = [
-						    {
-
-						        name: "KiOS for Mac",
-						        long_name: "Download Installer for OSX &gt;= 10.9",
-						        href: "https://google.com",
-						        os: "MacIntel",
-						    },
-						    {
-						        name: "KiOS for for Linux (x86)",
-						        long_name: "Download Installer for Linux (32 bit)",
-						        href: "https://google.com",
-						        os: "Linux i686",
-						    },
-						    {
-						        name: "KiOS for for Linux (x64)",
-						        long_name: "Download Installer for Linux (64 bit)",
-						        href: "https://google.com",
-						        os: "Linux x86_64",
-						    },
-						    {
-						        name: "KiOS for Windows (x86)",
-						        long_name: "Download Installer for Windows (32 bit)",
-						        href: "https://google.com",
-						        os: "Win32",
-						    },
-						    {
-						        name: "KiOS for Windows (x64)",
-						        long_name: "Download Installer for Windows (64 bit)",
-						        href: "https://google.com",
-						        os: "Win16",
-						    }
-						];
 
 						// Specify current version
 						var currentVersion = $.grep(versions, function(el){
