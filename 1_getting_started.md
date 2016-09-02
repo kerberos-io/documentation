@@ -16,7 +16,7 @@ Nowadays we have a myriad of **expensive** camera's, recorders and software solu
 <a name="what-is-kerberos-io"></a>
 ## What's Kerberos.io?
 
-Kerberos.io is a **low-budget** video surveillance solution, that uses computer vision algorithms to detect changes, and that can trigger other devices. Kerberos.io is open source so everyone can customize the source code to its needs and share it with the community. When deployed on the Raspberry Pi, it has a **green footprint** and it's **easy to install**; you only need to transfer the [**Kerberos.io OS (KIOS)**](installation/KiOS) to your SD card and that's it.
+Kerberos.io is a **low-budget** video surveillance solution, that uses computer vision algorithms to detect changes, and that can trigger other devices. Kerberos.io is open source so everyone can customize the source code to its needs and share it with the community. When deployed on the Raspberry Pi, it has a **green footprint** and it's **easy to install**; you only need to transfer the [**Kerberos.io OS (KIOS)**](/installation/KiOS) to your SD card and that's it.
 
 <iframe src="https://player.vimeo.com/video/163975947?autoplay=0&color=943633" style="width:100%; height: 400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
@@ -31,7 +31,7 @@ The web is responsible for the visualization. It's a **GUI** which helps the use
 
 The cloud is an extra service, which is available by default but is not required. The main goal of this service is **to view your activity from everywhere** in the world. By [**subscribing to a plan**](https://cloud.kerberos.io), you can **sync your images** to the cloud application; you can sync **multiple instances** with **only one subscription**. 
 
-To have a more detailed explanation go to the [**machinery**](machinery/introduction) and [**web**](web/introduction) pages.
+To have a more detailed explanation go to the [**machinery**](/machinery/introduction) and [**web**](/web/introduction) pages.
 
 ![How does it work](1_how_does_it_work.png)
 
@@ -60,7 +60,7 @@ Features **NOT** included:
 	
 Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By using our <b>cross-platform</b> installer, you can run a <b>fully configured</b> video surveillance system within <b>3 minutes</b>. Indeed, we also think that's awesome!
 
-<a href="installation/KiOS" alt="install kios">
+<a href="/installation/KiOS" alt="install kios">
 <img src="/images/kios-install.gif" style="border-radius: 0; margin: 0 0 10px 0; width: 100%;"/>
 </a>
 
