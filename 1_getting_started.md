@@ -40,7 +40,7 @@ To have a more detailed explanation go to the [**machinery**](/machinery/introdu
 
 Kerberos.io comes with **a bunch of features**, below you can find a short list of the most important ones.
 
- * Full range camera support (USB-, Raspberry Pi (v1.3 and v2.1)-, and IP-camera (RTSP or MJPEG stream)).
+ * Full range camera support (USB-, Raspberry Pi v1.3 and v2.1-, and IP-cameras which support a RTSP or MJPEG stream).
  * Constraints to make detection more intelligent (time interval, regions, etc).
  * Post-processes which are executed after a valid activity (GPIO pin, webhook, etc).
  * Live streaming (MJPEG) on the web or with another program like VLC or IP camera viewer.
@@ -60,9 +60,7 @@ Features **NOT** included:
 	
 Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By using our <b>cross-platform</b> installer, you can run a <b>fully configured</b> video surveillance system within <b>3 minutes</b>. Indeed, we also think that's awesome!
 
-<a href="/installation/KiOS" alt="install kios">
-<img src="/images/kios-install.gif" style="border-radius: 0; margin: 0 0 10px 0; width: 100%;"/>
-</a>
+[![Installation kios](images/kios-install.gif)](/installation/KiOS)
 
 By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and **flash KiOS to your SD card**. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; **it can't be easier**.
 
