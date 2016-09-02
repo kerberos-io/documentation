@@ -2,10 +2,6 @@
 
 Kerberos.io can be used with any IP-camera, that provides a RTSP (or MJPEG) stream. Make sure that you know the correct URL of your IP camera, you can find [a list here](http://www.ispyconnect.com/sources.aspx). Make sure you have updated the web, to make Kerberos.io aware you will be using an IP-camera.
 
-## Web 
-
-![IP camera](2_ip-camera.png)
-
 ## Parameters
 
 The parameters of the IP capture device can be found in the **config/capture.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.

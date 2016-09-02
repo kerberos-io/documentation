@@ -2,10 +2,6 @@
 
 You can use the Raspberry Pi Camera Module with Kerberos.io. You just need [**to attach the camera module**](https://www.raspberrypi.org/help/camera-module-setup/) and you're ready to go. The Raspberry Pi Camera Module is enabled by default in the web.
 
-## Web 
-
-![Raspberry PI Camera Module](3_raspi-camera.png)
-
 ## Parameters
 
 The parameters of the Raspberry Pi Camera Module can be found in the **config/capture.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.

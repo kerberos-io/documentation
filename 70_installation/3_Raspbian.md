@@ -26,13 +26,13 @@ Update system and install dependency avcodec
 
     sudo apt-get update && sudo apt-get install libav-tools
 
-Download the debian file from [the machinery repository](https://github.com/cedricve/version-test/releases/v2.1.0); Please download the correct version for your Raspberry Pi, **replace X by the version**.
+Download the debian file from [the machinery repository](https://github.com/cedricve/version-test/releases/v%machineryversion%); Please download the correct version for your Raspberry Pi, **replace X by the version**.
 
-    sudo wget https://github.com/kerberos-io/machinery/releases/download/v2.0.0/rpiX-machinery-kerberosio-armhf-2.0.0.deb
+    sudo wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
 
 Unpackage the file 
 
-    sudo dpkg -i rpiX-machinery-kerberosio-armhf-2.0.0.deb
+    sudo dpkg -i rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
      
 Enable Raspberry Pi camera (if needed)
 
@@ -113,7 +113,7 @@ Create a www location.
 
 Get the source code from Github.
 
-    sudo wget https://github.com/kerberos-io/web/releases/download/v2.0.0/web.tar.gz
+    sudo wget https://github.com/kerberos-io/web/releases/download/v%webversion%/web.tar.gz
 
 Unpack
 

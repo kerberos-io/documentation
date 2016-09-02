@@ -2,10 +2,6 @@
 
 It can be helpful to **enable or disable Kerberos.io at specific times**. Therefore the time condition makes it possible to select a time range for each day of the week. When the current time is within the time range, Kerberos.io will be enabled.
 
-## Web 
-
-![Time condition](1_time-condition.png)
-
 ## Parameters
 
 The parameters of the Time condition can be found in the **config/condition.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.

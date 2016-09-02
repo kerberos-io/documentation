@@ -4,6 +4,7 @@
 * [What is Kerberos.io](#what-is-kerberos-io)
 * [How does it work](#how-does-it-work)
 * [Features](#features)
+* [Installation](#installation)
 
 <a name="why-kerberos-io"></a>
 ## Why Kerberos.io?
@@ -15,7 +16,7 @@ Nowadays we have a myriad of **expensive** camera's, recorders and software solu
 <a name="what-is-kerberos-io"></a>
 ## What's Kerberos.io?
 
-Kerberos.io is a **low-budget** video surveillance solution, that uses computer vision algorithms to detect changes, and that can trigger other devices. Kerberos.io is open source so everyone can customize the source code to its needs and share it with the community. When deployed on the Raspberry Pi, it has a **green footprint** and it's **easy to install**; you only need to transfer the [**Kerberos.io OS (KIOS)**](installation/KiOS) to your SD card and that's it.
+Kerberos.io is a **low-budget** video surveillance solution, that uses computer vision algorithms to detect changes, and that can trigger other devices. Kerberos.io is open source so everyone can customize the source code to its needs and share it with the community. When deployed on the Raspberry Pi, it has a **green footprint** and it's **easy to install**; you only need to transfer the [**Kerberos.io OS (KIOS)**](/installation/KiOS) to your SD card and that's it.
 
 <iframe src="https://player.vimeo.com/video/163975947?autoplay=0&color=943633" style="width:100%; height: 400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
@@ -28,9 +29,9 @@ The machinery is responsible for the processing. It's **an image processing fram
 
 The web is responsible for the visualization. It's a **GUI** which helps the user to find activity at a specific period, configure the machinery, view a live stream, see system information and much more. It's important to note that the machinery can work without the web, however we don't recommend this.
 
-The cloud is an extra service, which is available by default but is not required. The main goal of this service is **to view your activity from everywhere** in the world. By [**subscribing to a plan**](https://cloud.kerberos.io), you can **sync your events** to the cloud application; you can sync **multiple instances** with only one subscription. 
+The cloud is an extra service, which is available by default but is not required. The main goal of this service is **to view your activity from everywhere** in the world. By [**subscribing to a plan**](https://cloud.kerberos.io), you can **sync your images** to the cloud application; you can sync **multiple instances** with **only one subscription**. 
 
-To have a more detailed explanation go to the [**machinery**](machinery/introduction) and [**web**](web/introduction) pages.
+To have a more detailed explanation go to the [**machinery**](/machinery/introduction) and [**web**](/web/introduction) pages.
 
 ![How does it work](1_how_does_it_work.png)
 
@@ -39,7 +40,7 @@ To have a more detailed explanation go to the [**machinery**](machinery/introduc
 
 Kerberos.io comes with **a bunch of features**, below you can find a short list of the most important ones.
 
- * Full range camera support (USB-, Raspberry Pi-, and IP-camera (RTSP or MJPEG)).
+ * Full range camera support (USB-, Raspberry Pi v1.3 and v2.1-, and IP-cameras which support a RTSP or MJPEG stream).
  * Constraints to make detection more intelligent (time interval, regions, etc).
  * Post-processes which are executed after a valid activity (GPIO pin, webhook, etc).
  * Live streaming (MJPEG) on the web or with another program like VLC or IP camera viewer.
@@ -53,3 +54,14 @@ Features **NOT** included:
 
  * Video recording (only snapshots are taken); third-party solutions are available (IP camera viewer).
  * Multiple camera support; not supported out-of-the-box, but it's possible with some technical skills.
+
+<a name="installation"></a>
+## Installation
+	
+Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By using our <b>cross-platform</b> installer, you can run a <b>fully configured</b> video surveillance system within <b>3 minutes</b>. Indeed, we also think that's awesome!
+
+[![Installation kios](images/kios-install.gif)](/installation/KiOS)
+
+By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and **flash KiOS to your SD card**. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; **it can't be easier**.
+
+If you **don't want to reflash you SD card**, you can run also run Kerberos.io on your [**Raspbian**](installation/Raspbian) installation, or even run it as a [**docker container**](installation/Docker).

@@ -1,11 +1,45 @@
 # Release notes
 
+* [2.1.0](#2-1-0)
 * [2.0.0](#2-0-0)
 * [1.1.0](#1-1-0)
 * [1.0.3](#1-0-3)
 * [1.0.2](#1-0-2)
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
+
+<a name="2-1-0"></a>
+## 2.1.0
+
+#### Web
+
+* Added PhotoSwipe for image overview (easier to browse through images). [#24](https://github.com/kerberos-io/web/issues/24)
+* Added reboot and shutdown commands. [#23](https://github.com/kerberos-io/web/issues/23)
+* Added logging view to system page. [#20](https://github.com/kerberos-io/web/issues/20)
+* Added labels to check if machinery is running. [#19](https://github.com/kerberos-io/web/issues/19)
+* Added error handling if web interface isn’t working properly. [#2](https://github.com/kerberos-io/web/issues/2)
+* Fixed Heatmap.js fail to load by ad-blocker. [#16](https://github.com/kerberos-io/web/issues/16)
+* Show additional information on the dashboard (streaming is opening or not) there is no data available. [#16](https://github.com/kerberos-io/web/issues/16)
+* Settings page is now visible on mobile (+ changed icon). [#16](https://github.com/kerberos-io/web/issues/16)
+* Fixed sorting of news articles. [#16](https://github.com/kerberos-io/web/issues/16)
+* Removed links to assets in the cloud (.css files). [#16](https://github.com/kerberos-io/web/issues/16)
+* Design: improved layout of login page, async loading of image view.
+
+#### Machinery
+
+* Added configurable streaming port and quality. [#21](https://github.com/kerberos-io/machinery/issues/21)
+* Added new algorithm: Background subtraction. [#35](https://github.com/kerberos-io/machinery/issues/35)
+* Added new heuristic: Counter (for object/people counting). [#28](https://github.com/kerberos-io/machinery/issues/28)
+* Added video capture, which can be used for debugging purposes (replay a video fragment).. [#26](https://github.com/kerberos-io/machinery/issues/26)
+* It’s now possible to mark the images with a timestamp. [#24](https://github.com/kerberos-io/machinery/issues/24)
+* Fixed blocking streaming socket. [#22](https://github.com/kerberos-io/machinery/issues/22)
+
+#### Kios
+
+* Fix removal images if disk is almost full (wrong path was defined). [#1](https://github.com/kerberos-io/kios/issues/1)
+* Support for the Raspberry Pi Camera module v2.1. [#3](https://github.com/kerberos-io/kios/issues/3)
+* Support for the Raspberry Pi Zero; updated kernel to latest Raspbian. [#3](https://github.com/kerberos-io/kios/issues/3)
+* KiOS GUI installer.
 
 <a name="2-0-0"></a>
 ## 2.0.0

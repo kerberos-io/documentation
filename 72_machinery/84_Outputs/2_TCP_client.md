@@ -2,10 +2,6 @@
 
 The TCP/IP client will send a TCP packet to a server. 
 
-## Web 
-
-![TCP socket io](2_tcp-io.png)
-
 ## Parameters
 
 The parameters of the TCP/IP client can be found in the **config/io.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.
