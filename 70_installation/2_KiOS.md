@@ -10,9 +10,9 @@
 
 ## Introduction 
 
-[KiOS](https://github.com/kerberos-io/kios) (Kerberos.io Operating System) is a custom linux OS created for the Raspberry Pi by buildroot, which runs Kerberos.io out-of-the-box. KiOS is **installed like every other OS** for the Raspberry Pi, you need to flash the OS (.img) to a SD card and update your network configration; no manual compilation or horrible configurations. If you want to get Kerberos.io up and running at a short time frame, this is the **most simple** and **basic** installation procedure; it takes about 15-30 min to download, install and configure.
+[KiOS](https://github.com/kerberos-io/kios) (Kerberos.io Operating System) is our own **custom linux OS**, which runs Kerberos.io out-of-the-box. KiOS is **installed like every other OS** for the Raspberry Pi, you need to flash the OS (.img) to a SD card. If you want to get Kerberos.io up and running at a short time frame, this is the **most simple** and **basic** installation procedure.
 
-To install KiOS you can <b>use our own installer</b>, which gives you a nice GUI that will handle the flashing for you, <b>or you can do the flashing yourself</b>.
+You can install KiOS by using our **own installer**, which gives you a nice GUI that will handle the flashing for you, or you can do the flashing **yourself** by using your terminal or another GUI.
 
 <button id="installer-btn" class="btn" style="width: 49%; height: 50px; background-color: #943633; font-size: 16px; color: #fff; outline: 0;">Easy installation</button> 
 <button id="advanced-btn" class="btn" style="width: 49%; height: 50px; background-color: #ddd; font-size: 16px; color: #fff; outline: 0;">Advanced installation</button> 
