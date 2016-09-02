@@ -60,7 +60,7 @@ Features **NOT** included:
 	
 Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By using our <b>cross-platform</b> installer, you can run a <b>fully configured</b> video surveillance system within <b>3 minutes</b>. Indeed, we also think that's awesome!
 
-<a href="https://kerberos.io/installation/KiOS" alt="install kios">
+<a href="/installation/KiOS" alt="install kios">
 <img src="/images/kios-install.gif" style="border-radius: 0; margin: 0 0 10px 0; width: 100%;"/>
 </a>
 
