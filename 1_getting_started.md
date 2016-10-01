@@ -66,4 +66,4 @@ Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By usi
 
 By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and **flash KiOS to your SD card**. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; **it can't be easier**.
 
-If you **don't want to reflash you SD card**, you can run also run Kerberos.io on your [**Raspbian**](installation/Raspbian) installation, or even run it as a [**docker container**](installation/Docker).
+If you **don't want to reflash you SD card**, you can run also run Kerberos.io on your [**Raspbian**](/installation/Raspbian) installation, or even run it as a [**docker container**](/installation/Docker).
