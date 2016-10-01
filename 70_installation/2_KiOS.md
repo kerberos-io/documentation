@@ -91,7 +91,7 @@ You can install KiOS by using our **own installer**, which gives you a nice GUI 
 <div id="advanced" style="display: none;">
 	<h2>Advanced Installation</h2>
 
-	<p>If you prefer <b>the hard way</b>, you can also flash **Kerberos.io** to your SD card manually. So it's not a problem if you don't want to use the KiOS installer. It goes as follows: download the KiOS .img yourself, flash it to your SD card with your terminal and edit some configuration files in the boot directory.</p>
+	<p>If you prefer <b>the hard way</b>, you can also flash <b>Kerberos.io</b> to your SD card manually. So it's not a problem if you don't want to use the KiOS installer. It goes as follows: download the KiOS .img yourself, flash it to your SD card with your terminal and edit some configuration files in the boot directory.</p>
 
 	<iframe src="https://player.vimeo.com/video/164054497?autoplay=0&color=943633" style="width:100%; height: 400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
@@ -128,8 +128,6 @@ You can install KiOS by using our **own installer**, which gives you a nice GUI 
 
 	<h3>Linux</h3>
 
-	<h4>Format SD card</h4>
-
 	<p>Select SD card and delete all partitions with gparted</p>
 
 	<pre><code>gparted</code></pre>
@@ -137,8 +135,6 @@ You can install KiOS by using our **own installer**, which gives you a nice GUI 
 	<p>To format the SD card, enter the following command:</p>
 
 	<pre><code>sudo mkdosfs -F 16 -v /dev/sdb -I</code></pre>
-
-	<h4>Transfer image to your SD card</h4>
 
 	<p>In Terminal, enter the following command ensuring that you identify the correct destination disc.</p>
 
