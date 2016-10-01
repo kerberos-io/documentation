@@ -9,7 +9,7 @@ Create a docker-compose.yml file and following configuration:
     machinery:
         image: kerberos/machinery
         ports:
-        - "8888:8888"
+        - "8889:8889"
 
     web:
         image: kerberos/web
