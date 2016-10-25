@@ -48,12 +48,12 @@ Kerberos.io comes with **a bunch of features**, below you can find a short list 
  * Fluent and responsive overview of snapshots by day and hour.
  * System information (CPU, disk, network, etc).
  * View you activity everywhere with kerberos.io cloud.
+ * Multiple cameras with Docker or Raspbian.
  * ..
  
 Features **NOT** included:
 
  * Video recording (only snapshots are taken); third-party solutions are available (IP camera viewer).
- * Multiple camera support; not supported out-of-the-box, but it's possible with some technical skills.
 
 <a name="installation"></a>
 ## Installation
