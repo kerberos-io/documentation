@@ -9,13 +9,15 @@ Create a **docker-compose.yml** file and following configuration:
     machinery:
         image: kerberos/machinery
         ports:
-        - "8889:8889"
+        - "8889"
 
     web:
         image: kerberos/web
         ports:
-        - "80:80"
+        - "80"
         volumes_from:
+        - machinery
+        links:
         - machinery
 
 Run following command; this will download the Kerberos.io docker images and configure them properly.
