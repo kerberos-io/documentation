@@ -1,6 +1,6 @@
 # Multi-camera with Docker
 
-If you own multiple IP-cameras, then you probably **don't want** to setup **a Raspberry Pi for each camera**. Thanks to Docker there is an easier approach: instead of running multiple machines you can run multiple containers on a single machine. And when you're processing a lot of cameras, you can **distribute the cameras/containers across multiple machines** by using **Docker Swarm**.
+If you own multiple IP-cameras, then you probably **don't want** to setup **a Raspberry Pi for each camera**. Thanks to Docker there is an easier approach: instead of running multiple machines you can run multiple containers on a single machine. When you're processing a lot of cameras, you can **distribute the cameras/containers across multiple machines** by using **Docker Swarm**.
 
 ## This is how it goes..
 
