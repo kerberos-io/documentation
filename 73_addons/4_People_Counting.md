@@ -45,7 +45,7 @@ Please note that if the NodeJS application runs on another machine than on which
 
 ### GUI
 
-We will create a simple **nodejs** application using **socket.io** which will listen on port 250000 for **POST** events. When the application receives a **POST** event, it will dynamically increase the incoming and/or outgoing counters. To get started we will clone following repository:
+We will create a simple **nodejs** application using **socket.io** which will listen on port 25000 for **POST** events. When the application receives a **POST** event, it will dynamically increase the incoming and/or outgoing counters. To get started we will clone following repository:
 
 	git clone https://github.com/cedricve/kerberosio-people-counter
 	cd kerberosio-people-counter
