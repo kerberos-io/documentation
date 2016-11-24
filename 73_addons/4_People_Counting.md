@@ -18,6 +18,17 @@ To get started, make sure you have properly [**installed Kerberos.io**](/install
 * Heuristic: Counter and
 * Io: Disk and Webhook.
 
+### Customize parameters
+
+To work properly on a Raspberry Pi we need to tweak the **Capture** device, the **Background Subtraction** algorithm and the **Counter** heuristic a bit.
+
+* Capture device: **minimize** delay times. To count properly we need to process as much images we can, therefore we need to make sure the **delay time** of the **capture device** is **set to 0**.
+* Background Subtraction: **set** the **shadow** parameter to false. This is required because it consumes too much CPU, especially when running on a Raspberry Pi Zero.
+* Counter: decrease the minArea parameter to 50, and experiment with it (increase it little by little). Finding the ideal minArea is done by trial and error, as it depends on your environment, distance of the camera, etc. 
+
+[**Read this post**](https://kerberosio.zendesk.com/hc/en-us/articles/213586849-People-counter-not-working) for more details.
+
+
 ### Specific the incoming and outgoing lines
 
 When opening the counter heuristic, you'll see two lines (a green and red one) which you can move to the position you prefer. Important to note is that the green line is used for counting incoming objects and the red line for outgoing objects. E.g. if we want to count the people which are entering your home, you should arrange the lines as follows.
@@ -28,7 +39,7 @@ When opening the counter heuristic, you'll see two lines (a green and red one) w
 
 The **Webhook Io device** is used to send the number of incoming and outgoing objects to your own application; therefore we need to specify an endpoint to which the webhook will post the JSON object (e.g. your own API). We will demonstrate how this works with a traditional NodeJS application, which we will create in next paragraph. The application will run on our local machine, and listen on port 25000, therefore we need to change the url of the webhook to: 
 
-	http://localhost:250000
+	http://localhost:25000
 
 ### GUI
 
