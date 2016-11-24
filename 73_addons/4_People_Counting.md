@@ -63,6 +63,6 @@ Following output will be generated:
 	info  - socket.io started
 	Server running on port 25000
 
-Open your browser and browse to **http://localhost:25000**
+Open your browser and browse to **http://localhost:25000** (or the IP-address of the remote machine on which the application is running).
 
 ![Hostname for people counting](4_people_counting_hostname.png)
