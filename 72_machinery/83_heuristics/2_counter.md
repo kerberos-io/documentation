@@ -54,7 +54,7 @@ While calculating the center of masses, the best match is searched for each one.
 ### Min Area
 
 The center of mass is calculated for each segment which has an area which is larger than the minimum area.
-e
+
 ### Only true when counted
 
 By default the heuristic will only return true when one or more objects are marked as incoming or outgoing. However by unchecking this option you can make the heuristic return true when something changed (same behaviour as the sequence heuristic). The idea is that one wants to track the incoming and outgoing objects, but also want to have images for every change.
