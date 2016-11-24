@@ -41,6 +41,8 @@ The **Webhook Io device** is used to send the number of incoming and outgoing ob
 
 	http://localhost:25000
 
+Please note that if the NodeJS application runs on another machine than on which Kerberos.io is running, you should replace localhost by the ip-address of that remote machine. 
+
 ### GUI
 
 We will create a simple **nodejs** application using **socket.io** which will listen on port 250000 for **POST** events. When the application receives a **POST** event, it will dynamically increase the incoming and/or outgoing counters. To get started we will clone following repository:
