@@ -40,20 +40,18 @@ To have a more detailed explanation go to the [**machinery**](/machinery/introdu
 
 Kerberos.io comes with **a bunch of features**, below you can find a short list of the most important ones.
 
- * Full range camera support (USB-, Raspberry Pi v1.3 and v2.1-, and IP-cameras which support a RTSP or MJPEG stream).
+ * Full range camera support (**USB**, **Raspberry Pi** v1.3 and v2.1, and **IP cameras** which support a RTSP or MJPEG stream).
  * Constraints to make detection more intelligent (time interval, regions, etc).
- * Post-processes which are executed after a valid activity (GPIO pin, webhook, etc).
- * Live streaming (MJPEG) on the web or with another program like VLC or IP camera viewer.
- * Heatmap and latest sequence of activity.
- * Fluent and responsive overview of snapshots by day and hour.
+ * Ability to save snapshots and **video recording** and execute/trigger a bash script, webhooks or GPIO pin.
+ * **Live streaming** (MJPEG) on the web or with another program like VLC or IP camera viewer.
+ * **Heatmap** and latest sequence of activity.
+ * Fluent and **responsive overview** of snapshots by day and hour (smartphone, Tablet and PC).
  * System information (CPU, disk, network, etc).
- * View you activity everywhere with kerberos.io cloud.
- * Multiple cameras with Docker or Raspbian.
+ * View you activity everywhere with [**Kerberos.cloud**](https://cloud.kerberos.io).
+ * **Multiple cameras** with Docker or Raspbian.
+ * **REST API** to control Kerberos.io from your solution
+ * **Cross-browser support** (IE, Chrome, Safari, Firefox, etc.)
  * ..
- 
-Features **NOT** included:
-
- * Video recording (only snapshots are taken); third-party solutions are available (IP camera viewer).
 
 <a name="installation"></a>
 ## Installation

@@ -1,5 +1,6 @@
 # Release notes
 
+* [2.2.0](#2-2-0)
 * [2.1.0](#2-1-0)
 * [2.0.0](#2-0-0)
 * [1.1.0](#1-1-0)
@@ -8,35 +9,57 @@
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
 
+<a name="2-2-0"></a>
+## 2.2.0
+
+#### Web
+
+* Bug: Issue format instance name. [#57](https://github.com/kerberos-io/web/issues/57)
+* Redesign settings page (better UX). [#39](https://github.com/kerberos-io/web/issues/39)
+* Possibility to edit password through web interface. [#63](https://github.com/kerberos-io/web/issues/63)
+* Support for viewing videos.
+* Update radius of heatmap.
+* PHP7 support. [#60](https://github.com/kerberos-io/web/issues/60)
+* Welcome/installation page. [#60](https://github.com/kerberos-io/web/issues/60)
+* Translation added: Catalan. [#74](https://github.com/kerberos-io/web/issues/74)
+
+#### Machinery
+
+* Output as video file. [#60](https://github.com/kerberos-io/machinery/issues/60)
+* Bug: System hangs when a wrong IP camera url was defined. [#48](https://github.com/kerberos-io/machinery/issues/48)
+* Run arbitrary script/program. [#31](https://github.com/kerberos-io/machinery/issues/31)
+* Bug: Weird colors from RPi Camera. [#64](https://github.com/kerberos-io/machinery/issues/64)
+* Upgrade to OpenCV 3.2.0.
+
 <a name="2-1-0"></a>
 ## 2.1.0
 
 #### Web
 
-* Added PhotoSwipe for image overview (easier to browse through images). [#24](https://github.com/kerberos-io/web/issues/24)
-* Added reboot and shutdown commands. [#23](https://github.com/kerberos-io/web/issues/23)
-* Added logging view to system page. [#20](https://github.com/kerberos-io/web/issues/20)
-* Added labels to check if machinery is running. [#19](https://github.com/kerberos-io/web/issues/19)
-* Added error handling if web interface isn’t working properly. [#2](https://github.com/kerberos-io/web/issues/2)
-* Fixed Heatmap.js fail to load by ad-blocker. [#16](https://github.com/kerberos-io/web/issues/16)
-* Show additional information on the dashboard (streaming is opening or not) there is no data available. [#16](https://github.com/kerberos-io/web/issues/16)
-* Settings page is now visible on mobile (+ changed icon). [#16](https://github.com/kerberos-io/web/issues/16)
-* Fixed sorting of news articles. [#16](https://github.com/kerberos-io/web/issues/16)
-* Removed links to assets in the cloud (.css files). [#16](https://github.com/kerberos-io/web/issues/16)
+* Added PhotoSwipe for image overview (easier to browse through images). [#45](https://github.com/kerberos-io/web/issues/45)
+* Added reboot and shutdown commands. [#46](https://github.com/kerberos-io/web/issues/46)
+* Added logging view to system page. [#33](https://github.com/kerberos-io/web/issues/33)
+* Added labels to check if machinery is running.
+* Added error handling if web interface isn’t working properly.
+* Fixed Heatmap.js fail to load by ad-blocker. [#42](https://github.com/kerberos-io/web/issues/42)
+* Show additional information on the dashboard (streaming is opening or not) there is no data available.
+* Settings page is now visible on mobile (+ changed icon).
+* Fixed sorting of news articles.
+* Removed links to assets in the cloud (.css files).
 * Design: improved layout of login page, async loading of image view.
 
 #### Machinery
 
-* Added configurable streaming port and quality. [#21](https://github.com/kerberos-io/machinery/issues/21)
-* Added new algorithm: Background subtraction. [#35](https://github.com/kerberos-io/machinery/issues/35)
-* Added new heuristic: Counter (for object/people counting). [#28](https://github.com/kerberos-io/machinery/issues/28)
-* Added video capture, which can be used for debugging purposes (replay a video fragment).. [#26](https://github.com/kerberos-io/machinery/issues/26)
-* It’s now possible to mark the images with a timestamp. [#24](https://github.com/kerberos-io/machinery/issues/24)
-* Fixed blocking streaming socket. [#22](https://github.com/kerberos-io/machinery/issues/22)
+* Added configurable streaming port and quality. [#41](https://github.com/kerberos-io/machinery/issues/41)
+* Added new algorithm: Background subtraction.
+* Added new heuristic: Counter (for object/people counting). [#42](https://github.com/kerberos-io/machinery/issues/42)
+* Added video capture, which can be used for debugging purposes (replay a video fragment).
+* It’s now possible to mark the images with a timestamp. [#36](https://github.com/kerberos-io/machinery/issues/36)
+* Fixed blocking streaming socket. [#39](https://github.com/kerberos-io/machinery/issues/39)
 
 #### Kios
 
-* Fix removal images if disk is almost full (wrong path was defined). [#1](https://github.com/kerberos-io/kios/issues/1)
+* Fix removal images if disk is almost full (wrong path was defined).
 * Support for the Raspberry Pi Camera module v2.1. [#3](https://github.com/kerberos-io/kios/issues/3)
 * Support for the Raspberry Pi Zero; updated kernel to latest Raspbian. [#3](https://github.com/kerberos-io/kios/issues/3)
 * KiOS GUI installer.
