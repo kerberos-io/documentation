@@ -23,15 +23,13 @@ Kerberos.io is a **low-budget** video surveillance solution, that uses computer 
 <a name="how-does-it-work"></a>
 ## How does it work?
 
-When installed Kerberos.io on a Raspberry Pi or local working station, two applications are available: the [**machinery**](https://github.com/kerberos-io/machinery) and the [**web**](https://github.com/kerberos-io/web).
+When installed Kerberos.io on a Raspberry Pi or any other Linux device, two applications are available: the [**machinery**](https://github.com/kerberos-io/machinery) and the [**web**](https://github.com/kerberos-io/web).
 
 The machinery is responsible for the processing. It's **an image processing framework** which takes images from the type of camera (USB-, IP- or RPi-camera) you've configured in the configuration files and executes one ore more algorithms and post-processes (e.g. save a snapshot). The configuration files allow you to define the type of camera, post-processes, conditions and much more; it's **highly configurable**. It's important to note that the machinery, out-of-the-box, can handle only one camera at a time.
 
 The web is responsible for the visualization. It's a **GUI** which helps the user to find activity at a specific period, configure the machinery, view a live stream, see system information and much more. It's important to note that the machinery can work without the web, however we don't recommend this.
 
-The cloud is an extra service, which is available by default but is not required. The main goal of this service is **to view your activity from everywhere** in the world. By [**subscribing to a plan**](https://cloud.kerberos.io), you can **sync your images** to the cloud application; you can sync **multiple instances** with **only one subscription**. 
-
-To have a more detailed explanation go to the [**machinery**](/machinery/introduction) and [**web**](/web/introduction) pages.
+The cloud is an extra service, which is available by default but is not required. The main goal of this service is **to view your activity from everywhere** in the world. By [**subscribing to a plan**](https://cloud.kerberos.io), you can sync your images to the cloud application. To have a more detailed explanation go to the [**machinery**](/machinery/introduction) and [**web**](/web/introduction) pages.
 
 ![How does it work](1_how_does_it_work.png)
 
@@ -45,13 +43,12 @@ Kerberos.io comes with **a bunch of features**, below you can find a short list 
  * Ability to save snapshots and **video recording** and execute/trigger a bash script, webhooks or GPIO pin.
  * **Live streaming** (MJPEG) on the web or with another program like VLC or IP camera viewer.
  * **Heatmap** and latest sequence of activity.
- * Fluent and **responsive overview** of snapshots by day and hour (smartphone, Tablet and PC).
+ * Fluent and **responsive overview** (Smartphone, Tablet and PC) of snapshots by day and hour.
  * System information (CPU, disk, network, etc).
- * View you activity everywhere with [**Kerberos.cloud**](https://cloud.kerberos.io).
+ * Use [**Kerberos.cloud**](https://cloud.kerberos.io) to view your activity from anywhere in the world.
  * **Multiple cameras** with Docker or Raspbian.
- * **REST API** to control Kerberos.io from your solution
- * **Cross-browser support** (IE, Chrome, Safari, Firefox, etc.)
- * ..
+ * **REST API** to control Kerberos.io from your custom solution/program.
+ * **Cross-browser support**: IE, Chrome, Safari, Firefox.
 
 <a name="installation"></a>
 ## Installation
@@ -62,6 +59,4 @@ Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By usi
 <img src="/images/kios-install.gif" style="border-radius: 0; margin: 0 0 10px 0; width: 100%;"/>
 </a>
 
-By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and **flash KiOS to your SD card**. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; **it can't be easier**.
-
-If you **don't want to reflash you SD card**, you can run also run Kerberos.io on your [**Raspbian**](/installation/Raspbian) installation, or even run it as a [**docker container**](/installation/Docker).
+By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and **flash KiOS to your SD card**. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; **it can't be easier**. If you **don't want to reflash you SD card**, you can run Kerberos.io on your [**Raspbian**](/installation/Raspbian) or [**Armbian**](/installation/armbian) installation, or as a [**Docker container**](/installation/Docker).
