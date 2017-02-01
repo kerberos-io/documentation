@@ -1,6 +1,6 @@
 # Multi-camera with Docker
 
-** --- This approach only works for IP-cameras --- **
+** --- For the moment this approach only works for IP cameras, we don't have a cross-platform method to inject a USB camera or Raspberry Pi camera --- **
 
 If you own multiple IP-cameras, then you probably **don't want** to setup **a Raspberry Pi for each camera**. Thanks to Docker there is an easier approach: instead of running multiple machines you can run multiple containers on a single machine. When you're processing a lot of cameras, you can **distribute the cameras/containers across multiple machines** by using **Docker Swarm**.
 
