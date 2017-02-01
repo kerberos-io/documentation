@@ -81,3 +81,36 @@ Change the name of your instance.
 **Response**
 
 Similar to **GET api/v1/name**.
+
+<div class="api-method">
+	GET api/v1/condition/enabled
+</div>
+<br/>
+**Description** 
+
+Check if enabled or disabled.
+
+**Response**
+
+	{
+	 	"active": "true",
+	 	"delay": "5000"
+	}
+
+<div class="api-method">
+	PUT api/v1/condition/enabled
+</div>
+<br/>
+**Description** 
+
+Activate or disable the system
+
+**Data**
+
+	{
+	 	"active": "false"
+	}
+
+**Response**
+
+Similar to **GET api/v1/condition/enabled**.
