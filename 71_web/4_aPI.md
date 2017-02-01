@@ -114,3 +114,33 @@ Activate or disable the system
 **Response**
 
 Similar to **GET api/v1/condition/enabled**.
+
+<div class="api-method">
+	GET api/v1/system/health
+</div>
+<br/>
+**Description** 
+
+Check if the machinery is running (the stream is connected).
+
+**Response**
+
+	{
+	 	"status": "false"
+	}
+
+<div class="api-method">
+	POST api/v1/system/reboot
+</div>
+<br/>
+**Description** 
+
+Restart the system.
+
+<div class="api-method">
+	POST api/v1/system/shutdown
+</div>
+<br/>
+**Description** 
+
+Shutdown the system.
