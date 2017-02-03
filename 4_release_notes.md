@@ -21,7 +21,8 @@
 * Update radius of heatmap.
 * PHP7 support. [#60](https://github.com/kerberos-io/web/issues/60)
 * Welcome/installation page. [#60](https://github.com/kerberos-io/web/issues/60)
-* Translation added: Catalan. [#74](https://github.com/kerberos-io/web/issues/74)
+* Translation updated, and added languages: Catalan. [#74](https://github.com/kerberos-io/web/issues/74)
+* Privacy mode [#54](https://github.com/kerberos-io/web/issues/54)
 
 #### Machinery
 

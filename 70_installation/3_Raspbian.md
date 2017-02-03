@@ -58,7 +58,9 @@ After kerberos is installed a binary is available at **/usr/bin/kerberosio**. Ju
 ## Web
 
 <a name="web-installation-webserver"></a>
-### Install webserver + PHP (optional)
+### Install Nginx + PHP
+
+Before you can run the web interface, you'll need to download and configure a webserver. Kerberos.io recommends to use Nginx, as it is a light-weight and fast webserver. The web interface is written in PHP, so we also need to download PHP and some packages.
     
 Update the packages and kernel.
 
@@ -119,6 +121,7 @@ Unpack
 
     sudo tar xvf web.tar.gz .
 
-Change write permission on the storage directory.
+Add write permission for the storage directory, and the kerberos config file.
 
     sudo chmod -R 777 app/storage
+    sudo chmod 777 app/config/kerberos.php
