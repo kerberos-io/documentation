@@ -2,7 +2,7 @@
 
 ## Which hardware do I need?
 
-Kerberos.io runs on every machine but its main goal is to run on a **Raspberry Pi**. We provide multiple ways (KIOS, Raspbian, Armbian, Docker, etc) to install Kerberos.io on the device your prefer. If you want to run Kerberos.io on a Raspberry Pi or any other board you'll first need to buy some hardware.
+Kerberos.io runs on every machine but its main goal is to run on a Raspberry Pi or any other board. We provide multiple ways (KIOS, Raspbian, Armbian, Docker, etc) to install Kerberos.io on the device your prefer. If you want to run Kerberos.io on a Raspberry Pi or any other board you'll first need to **buy some hardware**.
 
 ### Raspberry Pi 
 
@@ -14,7 +14,7 @@ To simplify the lives of our Raspberry Pi users, Kerberos.io comes with a custom
 
 ### What about other boards?
 
-Kerberos.io can also be installed on other boards by following the [**Armbian**](/installation/armbian) installation. This is a short list of microcontrollers which work properly:
+Kerberos.io can also be installed on other boards by following the [**Armbian**](/installation/armbian) installation. This is a short list of microcontrollers on which we have tested Kerberos.io using the Armbian OS:
 
  * PCDuino3 Nano (Allwinner A20)
  * Orange Pi + (Allwinner H3)
