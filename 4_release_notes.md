@@ -15,6 +15,7 @@
 #### Ecosystem
 
 * Added support for Armbian. 
+* Raspbian: Async requests causes session corruption. [#78](https://github.com/kerberos-io/web/issues/78)
 
 #### Web
 
@@ -26,7 +27,7 @@
 * PHP7 support. [#60](https://github.com/kerberos-io/web/issues/60)
 * Welcome/installation page. [#60](https://github.com/kerberos-io/web/issues/60)
 * Translation updated. [#74](https://github.com/kerberos-io/web/issues/74)
-* Privacy mode [#54](https://github.com/kerberos-io/web/issues/54)
+* Privacy mode. [#54](https://github.com/kerberos-io/web/issues/54)
 
 #### Machinery
 
