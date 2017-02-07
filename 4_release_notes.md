@@ -12,6 +12,10 @@
 <a name="2-2-0"></a>
 ## 2.2.0
 
+#### Ecosystem
+
+* Added support for Armbian. 
+
 #### Web
 
 * Bug: Issue format instance name. [#57](https://github.com/kerberos-io/web/issues/57)
@@ -21,7 +25,7 @@
 * Update radius of heatmap.
 * PHP7 support. [#60](https://github.com/kerberos-io/web/issues/60)
 * Welcome/installation page. [#60](https://github.com/kerberos-io/web/issues/60)
-* Translation updated, and added languages: Catalan. [#74](https://github.com/kerberos-io/web/issues/74)
+* Translation updated. [#74](https://github.com/kerberos-io/web/issues/74)
 * Privacy mode [#54](https://github.com/kerberos-io/web/issues/54)
 
 #### Machinery
