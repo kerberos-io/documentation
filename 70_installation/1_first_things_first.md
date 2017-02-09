@@ -32,6 +32,6 @@ A Docker image is available on the Docker Hub for **x86 machines**. By using doc
 
 ##Generic
 
-You can install Kerberos.io an Linux based OS like Ubuntu, Debian, OSX, etc. However we don't have a prepackaged solution, there fore you will need to compile the machinery and install the web interface.
+You can install Kerberos.io on any Linux based OS like Ubuntu, Debian, OSX, etc. The only thing you need to do is to compile the machinery and install the web interface.
 
-<div style="float:right;margin-top:-15px;"><a href="installation/advanced" style="color:#fff;background-color:#943633;border-radius:7px;padding:8px;">Compile yourself</a></div>
+<div style="float:right;margin-top:-15px;"><a href="installation/generic" style="color:#fff;background-color:#943633;border-radius:7px;padding:8px;">Compile yourself</a></div>

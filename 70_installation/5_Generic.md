@@ -1,4 +1,4 @@
-# Advanced
+# Generic
 
 * [Machinery](#machinery)
     * [Compile](#machinery-compile)
