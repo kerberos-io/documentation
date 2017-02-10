@@ -13,6 +13,7 @@ The parameters of the Disk output device can be found in the **config/io**.xml f
     		<directory type="text">/etc/opt/kerberosio/capture/</directory>
         	<markWithTimestamp type="bool">false</markWithTimestamp>
         	<timestampColor type="text">white</timestampColor>
+	        <privacy type="bool">false</privacy>
     	</Disk>
 		    
 	</ios>
@@ -27,10 +28,20 @@ The directory where the image will be saved to. By default images are saved to t
 
 ### Mark with timestamp
 
-When true images are marked with a timestamp.
+When this settings is set to **true**, the image is marked with a timestamp .
 
 ![Disk timestamp](1_disk-io-timestamp.png)
 
 ### Timestamp color
 
 A color can be defined for timestamp: white, black, red, green and blue.
+
+### Privacy
+
+The privacy mode can be activated to remove some parts from the image. This especially helpful if you want to filter out public areas.
+
+![Video privacy](1_privacy-mode.png)
+
+After updating the configuration, you'll see that the pixels outside your region of interest (ROI) are made black; the image below illustrates this.
+
+![Video privacy](1_disk-io-privacy.png)

@@ -1,4 +1,4 @@
-# Advanced
+# Generic
 
 * [Machinery](#machinery)
     * [Compile](#machinery-compile)
@@ -115,10 +115,11 @@ Install PHP packages by using composer.
     sudo mv composer.phar /usr/bin/composer
     sudo composer install
 
-Change write permission on the storage directory.
+Add write permission for the storage directory, and the kerberos config file.
 
     sudo chmod -R 777 app/storage
-
+    sudo chmod 777 app/config/kerberos.php
+    
 Install bower globally by using node package manager, this is installed when installing nodejs.
 
     sudo apt-get install npm

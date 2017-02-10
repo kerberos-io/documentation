@@ -1,40 +1,24 @@
 # Requirements
 
-## Which hardware do I need?
+## Which type of machines can you use?
 
-Kerberos.io runs on every machine but its main goal is to run on a **Raspberry Pi**. Therefore there are multiple ways (KIOS, Raspbian, Docker, etc) to install Kerberos.io on your specific device, it's your choice. If you want to run Kerberos.io on a Raspberry Pi you'll first need to buy some hardware.
+Kerberos.io runs on every Linux based machine but its main goal is to run on a Raspberry Pi or other boards due to its low energy consumption. We provide multiple ways (KIOS, Raspbian, Armbian, Docker, etc) to install Kerberos.io on the device your prefer. If you will install Kerberos.io with Docker, or on your local Linux machine, nothing special should be purchased except a video camera.
+
+![Machines](2_machines.png)
 
 ### Raspberry Pi 
 
-As said, you can run Kerberos.io **on every Linux based machine**, however we recommend to run Kerberos.io on a **Raspberry Pi**, as it is a low-budget microcontroller which can you buy in almost every (online) electronic shop. Therefore Kerberos.io comes with a custom ARM OS called [**KIOS**](installation/KiOS) (Kerberos.io Operating System), which you can deploy to your Raspberry Pi in just a few minutes. Kerberos.io supports **all Raspberry Pi versions** (1, 2, 3 and Zero). 
+We recommend to run Kerberos.io on a **Raspberry Pi**, as it is a very popluar microcontroller which can you buy in almost every (online) electronic shop. To simplify the lives of our Raspberry Pi users, Kerberos.io comes with a custom ARM OS called [**KIOS**](installation/KiOS) (Kerberos.io Operating System), which you can deploy to your Raspberry Pi in just a few minutes. Kerberos.io supports **all Raspberry Pi versions** (1, 2, 3 and Zero). 
 
-![Raspberry Pi Model A](2_raspberry-pi-a.png)
+### What about other boards?
 
-For the moment of writing (2016), we do **not support other boards**.
+Kerberos.io can also be installed on other boards by following the [**Armbian**](/installation/armbian) installation. At the moment of writing we don't have support for KiOS, so the installation is a little bit harder. This is a short list of microcontrollers on which we have tested Kerberos.io using the Armbian OS:
 
-### SD card
+ * PCDuino3 Nano (Allwinner A20)
+ * Orange Pi + (Allwinner H3)
 
-If you want to use your Raspberry Pi, you will need to have a SD card, on which an OS will be installed. Therefore you will need a **2GB or bigger SD card**.
+## Which type of camera can you use?
 
-![4GB SD card](2_sandisk_4gb_sd_card.png)
+Kerberos.io works with the full range of camera's. You can use an **USB-**, **IP-** or the **Raspberry Pi camera (v1.3 and v2.1)**. If you want to use an IP camera, we recommend to use the RTSP connection if available; note that it's possible that cheap IP cameras will not work properly.
 
-### Power supply 
-
-You will need to have a **micro USB 5V** charger, to give the Raspberry Pi some juice.
-
-![Micro USB 5V charger](2_micro-usb-5V-charger.png)
-
-### Camera
-
-Kerberos.io works with the full range of camera's. You can use an **USB-**, **IP-** or the **Raspberry Pi camera (v1.3 and v2.1)**.
-
-![Raspberry Pi Camera Module](2_raspberry-camera-module.png)
-
-
-### Optional 
-
-You can use a **WIFI dongle** instead of an ethernet cable, but this is not required. We recommend the **Edimax** ew-7811un WIFI dongle; this is not necessary for the Raspberry Pi 3 as this is built-in.
-
-![Edimax WIFI dongle](2_edimax-wifi-dongle.png)
-
-The **Scorpi B+**, a flexible Mount for the Raspberry Pi camera.
+![Cameras](2_cameras.png)

@@ -1,4 +1,4 @@
-# Raspbian
+#Armbian
 
 * [How to install](#how-to-install)
 * [Machinery](#machinery)
@@ -10,33 +10,23 @@
     * [Install source](#web-installation-source)
 
 
-<a name="how-to-install"></a>
-## How to install
-A short video explaining how to install Kerberos.io on Raspbian.
-
-<iframe src="https://player.vimeo.com/video/163983055?autoplay=0&color=943633" style="width:100%; height: 400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
 <a name="machinery"></a>
 ## Machinery
 
 <a name="machinery-install-package"></a>
 ###Install package 
 
-Update system
+Update system and install dependency avcodec. These installation instructions assume that a fresh Armbian 5.24 or 5.25 installed.
 
-    sudo apt-get update
+    sudo apt-get update && sudo apt-get install libav-tools
 
-Download the debian file from [**the machinery repository**](https://github.com/kerberos-io/machinery/releases/v%machineryversion%/); Please download the correct version for your Raspberry Pi, **replace X by the version**.
+Download the debian file from [**the machinery repository**](https://github.com/kerberos-io/machinery/releases/v%machineryversion%/); This should work on all Armbian supported boards. If not: inform us!.
 
-    sudo wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
+    sudo wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/armbian-machinery-kerberosio-armhf-%machineryversion%.deb
 
 Unpackage the file 
 
-    sudo dpkg -i rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
-     
-Enable Raspberry Pi camera (if needed)
-
-    sudo raspi-config
+    sudo dpkg -i armbian-machinery-kerberosio-armhf-%machineryversion%.deb     
 
 Start the machinery on start-up, and reboot the system.
 
@@ -45,7 +35,7 @@ Start the machinery on start-up, and reboot the system.
 <a name="machinery-configure"></a>
 ###Configure
 
-The configuration files can be found at **/etc/opt/kerberosio/config**. By default the Raspberry Pi Camera module is set as capture device. You can update the **config.xml** file to change it to **USBCamera** or **IPCamera**. Images are stored in the **/etc/opt/kerberosio/capture** directory by default; this location can be changed by editing the **io.xml** file.
+The configuration files can be found at **/etc/opt/kerberosio/config**. By default the Raspberry Pi Camera module is set as capture device. This must be changed in the **config.xml** to **USBCamera** or **IPCamera** depending on your camera. Images / videos are stored in the **/etc/opt/kerberosio/capture** directory by default; this location can be changed by editing the **io.xml** file.
 
 <a name="machinery-run"></a>
 ###Run
@@ -54,13 +44,15 @@ After kerberos is installed a binary is available at **/usr/bin/kerberosio**. Ju
 
     kerberosio
 
+In case kerberosio does not start and complains about missing libraries, install the following libraries.
+
+    sudo apt-get install pkg-config libavcodec-dev libavformat-dev libswscale-dev
+
 <a name="web"></a>
 ## Web
 
 <a name="web-installation-webserver"></a>
-### Install Nginx + PHP
-
-Before you can run the web interface, you'll need to download and configure a webserver. Kerberos.io recommends to use Nginx, as it is a light-weight and fast webserver. The web interface is written in PHP, so we also need to download PHP and some packages.
+### Install webserver + PHP (optional)
     
 Update the packages and kernel.
 
@@ -119,9 +111,9 @@ Get the source code from Github.
 
 Unpack
 
-    sudo tar xvf web.tar.gz .
+    sudo tar xvf web.tar.gz
 
-Add write permission for the storage directory, and the kerberos config file.
+Change write permission on the storage directory.
 
     sudo chmod -R 777 app/storage
     sudo chmod 777 app/config/kerberos.php

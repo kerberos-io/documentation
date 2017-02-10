@@ -29,9 +29,3 @@ The settings page allows you to configure the machinery. You can define the type
 The system page allows you to **monitor** the system. On this page you'll get an overview of the **system specifications** (CPU, Memory, Network, etc). When installed KiOS, you'll also get the possibility to **update Kerberos.io** to a newer release. Several actions are available: you can **download system information** (for debugging purposes) and **download or remove** your images.
 
 ![System](1_system.png)
-
-### Cloud 
-
-On the cloud page you can configure Kerberos.io to **sync the images** to your cloud subscription. All you need to do is fill in your credentials and you're ready to go.
-
-![Cloud](1_cloud.png)
