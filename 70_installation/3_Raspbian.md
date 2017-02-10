@@ -26,7 +26,7 @@ Update system
 
     sudo apt-get update
 
-Download the debian file from [the machinery repository](https://github.com/cedricve/version-test/releases/v%machineryversion%); Please download the correct version for your Raspberry Pi, **replace X by the version**.
+Download the debian file from [**the machinery repository**](https://github.com/kerberos-io/machinery/releases/v%machineryversion%/); Please download the correct version for your Raspberry Pi, **replace X by the version**.
 
     sudo wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
 
