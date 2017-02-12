@@ -11,7 +11,7 @@
 
 As burgalary is very common, we believe that video surveillance is a **trivial tool** in our daily lifes which helps us to **feel** a little bit more **secure**. Responding to this need, a lot of companies have started developing their own video surveillance software in the past few years.
 
-Nowadays we have a myriad of **expensive** camera's, recorders and software solutions which are mainly **outdated** and **difficult** to install and use. Kerberos.io's goal is to solve these problems and to provide every human being in this world to have its own **ecological**, **affordable**, **easy-to-use** and **innovative** surveillance solution.
+Nowadays we have a myriad of **expensive** camera's, recorders and software solutions which are mainly **outdated** and **difficult** to install and use. Kerberos.io's goal is to solve these problems and to provide every human being in this world to have its own **ecological**, **affordable**, **easy-to-use** and **innovative** surveillance solution. Read more about [**our strategy here**](/strategy).
 
 <a name="what-is-kerberos-io"></a>
 ## What's Kerberos.io?
@@ -46,7 +46,7 @@ Kerberos.io comes with **a bunch of features**, below you can find a short list 
  * Fluent and **responsive overview** (Smartphone, Tablet and PC) of snapshots by day and hour.
  * System information (CPU, disk, network, etc).
  * Use [**Kerberos.cloud**](https://cloud.kerberos.io) to view your activity from anywhere in the world.
- * **Multiple cameras** with Docker or Raspbian.
+ * **Multiple cameras** with Docker or Raspbian; read more about the [**best practices**](/best_practices).
  * **REST API** to control Kerberos.io from your custom solution/program.
  * **Cross-browser support**: IE, Chrome, Safari, Firefox.
 

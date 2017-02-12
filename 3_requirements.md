@@ -4,7 +4,7 @@
 
 Kerberos.io runs on every Linux based machine but its main goal is to run on a Raspberry Pi or other boards due to its low energy consumption. We provide multiple ways (KIOS, Raspbian, Armbian, Docker, etc) to install Kerberos.io on the device your prefer. If you will install Kerberos.io with Docker, or on your local Linux machine, nothing special should be purchased except a video camera.
 
-![Machines](2_machines.png)
+![Machines](3_machines.png)
 
 ### Raspberry Pi 
 
@@ -21,4 +21,4 @@ Kerberos.io can also be installed on other boards by following the [**Armbian**]
 
 Kerberos.io works with the full range of camera's. You can use an **USB-**, **IP-** or the **Raspberry Pi camera (v1.3 and v2.1)**. If you want to use an IP camera, we recommend to use the RTSP connection if available; note that it's possible that cheap IP cameras will not work properly.
 
-![Cameras](2_cameras.png)
+![Cameras](3_cameras.png)
