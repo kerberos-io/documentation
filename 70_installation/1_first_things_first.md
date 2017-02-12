@@ -2,6 +2,8 @@
 
 The reason why you're on this page is because you want to know **how to install Kerberos.io** on your microcontroller, Docker, local working station, server or whatever Linux environment you prefer. The good news is that we have **different approaches** from basic to advanced; it depends on how you want to install it.
 
+Before you decide which installation method you will use, it might be interesting to read about our [**best practices**](/best_practices) and the [**one vs multi camera support**](/strategy#one-vs-multi) discussion.
+
 ## Raspberry Pi
 
 When deploying on the Raspberry Pi there are two possible solutions. You can use our custom OS, [**KiOS**](installation/KiOS) (Kerberos.io Operating System), which is production-ready or install it on an existing OS, [**Raspbian**](installation/Raspbian).
