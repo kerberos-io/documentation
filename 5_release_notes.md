@@ -1,5 +1,6 @@
 # Release notes
 
+* [2.2.1](#2-2-1)
 * [2.2.0](#2-2-0)
 * [2.1.0](#2-1-0)
 * [2.0.0](#2-0-0)
@@ -9,12 +10,27 @@
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
 
+<a name="2-2-1"></a>
+## 2.2.1
+
+#### Ecosystem
+
+* Upgraded FFmpeg and libx264 on KiOS
+
+#### Web
+
+* Add Bulgarian translation. [#81](https://github.com/kerberos-io/web/pull/81)
+
+#### Machinery
+
+* Bug: IoVideo crashes due to a memory leak. [#70](https://github.com/kerberos-io/machinery/issues/70)
+
 <a name="2-2-0"></a>
 ## 2.2.0
 
 #### Ecosystem
 
-* Added support for Armbian. 
+* Added support for Armbian.
 * Raspbian: Async requests causes session corruption. [#78](https://github.com/kerberos-io/web/issues/78)
 
 #### Web
