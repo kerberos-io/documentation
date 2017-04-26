@@ -1,5 +1,6 @@
 # Release notes
 
+* [2.3.0](#2-3-0)
 * [2.2.1](#2-2-1)
 * [2.2.0](#2-2-0)
 * [2.1.0](#2-1-0)
@@ -10,12 +11,19 @@
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
 
+<a name="2-3-0"></a>
+## 2.3.0
+
+#### Ecosystem
+
+* Support for Raspberry Pi Zero W. [#8](https://github.com/kerberos-io/kios/issues/8)
+
 <a name="2-2-1"></a>
 ## 2.2.1
 
 #### Ecosystem
 
-* Upgraded FFmpeg and libx264 on KiOS
+* Upgraded FFmpeg and libx264 on KiOS.
 
 #### Web
 
@@ -79,7 +87,7 @@
 * It’s now possible to mark the images with a timestamp. [#36](https://github.com/kerberos-io/machinery/issues/36)
 * Fixed blocking streaming socket. [#39](https://github.com/kerberos-io/machinery/issues/39)
 
-#### Kios
+#### Ecosystem
 
 * Fix removal images if disk is almost full (wrong path was defined).
 * Support for the Raspberry Pi Camera module v2.1. [#3](https://github.com/kerberos-io/kios/issues/3)
@@ -113,7 +121,7 @@
 
 * Added Docker image (x86_x64) to Docker Hub.
 
-#### Kios
+#### Ecosystem
 
 * Add support for Raspberry Pi 1, 2 and 3. [#1](https://github.com/kerberos-io/kios/issues/1)
 

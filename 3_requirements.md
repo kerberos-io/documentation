@@ -6,9 +6,9 @@ Kerberos.io runs on every Linux based machine but its main goal is to run on a R
 
 ![Machines](3_machines.png)
 
-### Raspberry Pi 
+### Raspberry Pi
 
-We recommend to run Kerberos.io on a **Raspberry Pi**, as it is a very popluar microcontroller which can you buy in almost every (online) electronic shop. To simplify the lives of our Raspberry Pi users, Kerberos.io comes with a custom ARM OS called [**KIOS**](installation/KiOS) (Kerberos.io Operating System), which you can deploy to your Raspberry Pi in just a few minutes. Kerberos.io supports **all Raspberry Pi versions** (1, 2, 3 and Zero). 
+We recommend to run Kerberos.io on a **Raspberry Pi**, as it is a very popluar microcontroller which can you buy in almost every (online) electronic shop. To simplify the lives of our Raspberry Pi users, Kerberos.io comes with a custom ARM OS called [**KIOS**](installation/KiOS) (Kerberos.io Operating System), which you can deploy to your Raspberry Pi in just a few minutes. Kerberos.io supports **all Raspberry Pi versions**: 1, 2, 3 and Zero (W). 
 
 ### What about other boards?
 
