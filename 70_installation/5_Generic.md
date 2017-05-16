@@ -7,7 +7,7 @@
 * [Web](#web)
     * [Install webserver + PHP (optional)](#web-installation-webserver)
     * [Install source](#web-installation-source)
- 
+
 <a name="machinery"></a>
 ## Machinery
 
@@ -18,9 +18,16 @@ Update the packages and kernel.
 
     sudo apt-get update && sudo apt-get upgrade
 
-Install development tools (c++, cmake) and V4L utils.
+Install development tools (c++, cmake).
 
-    sudo apt-get install git libav-tools cmake subversion dh-autoreconf libcurl4-openssl-dev
+    sudo apt-get install git cmake subversion dh-autoreconf libcurl4-openssl-dev
+
+If you want to use IP cameras, make sure to compile FFMPEG with x264 support.
+
+    git clone https://github.com/FFmpeg/FFmpeg ffmpeg
+    cd ffmpeg && git checkout remotes/origin/release/2.8
+    ./configure --enable-gpl --enable-libx264
+    make && make install
 
 Go to home directory and pull the machinery from github.
 
@@ -34,7 +41,7 @@ Compile the machinery; this can take some time.
 Start the machinery on start-up.
 
      sudo systemctl enable kerberosio
-     
+
 <a name="machinery-configure"></a>
 ###Configure
 
@@ -52,21 +59,21 @@ After kerberos is installed a binary is available at **/usr/bin/kerberosio**. Ju
 
 <a name="web-installation-webserver"></a>
 ### Install webserver + PHP (optional)
-    
+
 Update the packages and kernel.
 
     sudo apt-get update && sudo apt-get upgrade
 
 Install git, nginx, php (+extension) and nodejs.
 
-    curl -sL https://deb.nodesource.com/setup | sudo bash - 
+    curl -sL https://deb.nodesource.com/setup | sudo bash -
     sudo apt-get install git nginx php5-cli php5-fpm php5-gd php5-mcrypt php5-curl nodejs
 
 Creating a nginx config.
 
     sudo rm -f /etc/nginx/sites-enabled/default
-    sudo nano /etc/nginx/sites-enabled/default 
-    
+    sudo nano /etc/nginx/sites-enabled/default
+
 Copy and paste following config file; this file tells nginx where the web will be installed and that it requires PHP.
 
     server
@@ -93,7 +100,7 @@ Copy and paste following config file; this file tells nginx where the web will b
                 include fastcgi_params;
         }
     }
-    
+
 Restart nginx
 
     sudo service nginx restart
@@ -102,7 +109,7 @@ Restart nginx
 ### Install source
 
 Create a www location.
-    
+
     mkdir -p /var/www
 
 Get the source code from Github.
@@ -119,7 +126,7 @@ Add write permission for the storage directory, and the kerberos config file.
 
     sudo chmod -R 777 app/storage
     sudo chmod 777 app/config/kerberos.php
-    
+
 Install bower globally by using node package manager, this is installed when installing nodejs.
 
     sudo apt-get install npm
@@ -127,6 +134,6 @@ Install bower globally by using node package manager, this is installed when ins
     sudo npm -g install bower
 
 Install Front-end dependencies with bower
-    
+
     cd public
     sudo bower --allow-root install
