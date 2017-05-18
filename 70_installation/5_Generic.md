@@ -31,7 +31,7 @@ If you want to use IP cameras, make sure to compile FFMPEG with x264 support.
 
 Go to home directory and pull the machinery from github.
 
-	cd && sudo git clone https://github.com/kerberos-io/machinery
+    cd && git clone https://github.com/kerberos-io/machinery
 
 Compile the machinery; this can take some time.
 
