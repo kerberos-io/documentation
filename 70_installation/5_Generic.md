@@ -26,7 +26,7 @@ If you want to use IP cameras, make sure to compile FFMPEG with x264 support.
 
     git clone https://github.com/FFmpeg/FFmpeg ffmpeg
     cd ffmpeg && git checkout remotes/origin/release/2.8
-    ./configure --enable-gpl --enable-libx264
+    ./configure --enable-gpl --enable-libx264 --enable-shared --prefix=/usr/local
     make && make install
 
 Go to home directory and pull the machinery from github.
