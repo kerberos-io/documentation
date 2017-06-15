@@ -1,6 +1,6 @@
-#KERBEROS.**IO**
+# KERBEROS.**IO**
 
-[![Join the chat at https://gitter.im/kerberos-io/hades](https://img.shields.io/badge/GITTER-join chat-green.svg)](https://gitter.im/kerberos-io/hades?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat](https://img.shields.io/gitter/room/TechnologyAdvice/Stardust.svg?style=flat)](https://gitter.im/kerberos-io/hades?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This repository contains all the documentation that is displayed on the [documentation website](https://doc.kerberos.io/). The documentation is written in [markdown](http://markdowntutorial.com/) The documentation includes information about: how kerberos works, how to install it and also some technical information for developers who are willing to contribute; for example how to add a new algorithm or a new output device.
 
