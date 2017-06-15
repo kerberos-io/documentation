@@ -12,7 +12,7 @@
 ## Machinery
 
 <a name="machinery-compile"></a>
-###Compile
+### Compile
 
 Update the packages and kernel.
 
@@ -20,14 +20,14 @@ Update the packages and kernel.
 
 Install development tools (c++, cmake).
 
-    sudo apt-get install git cmake subversion libav-tools dh-autoreconf libcurl4-openssl-dev
+    sudo apt-get install git cmake subversion libav-tools dh-autoreconf libcurl4-openssl-dev yasm libx264-dev pkg-config
 
 If you want to use IP cameras, make sure to compile FFMPEG with x264 support.
 
     git clone https://github.com/FFmpeg/FFmpeg ffmpeg
     cd ffmpeg && git checkout remotes/origin/release/2.8
     ./configure --enable-gpl --enable-libx264 --enable-shared --prefix=/usr/local
-    make && make install
+    make && sudo make install 
 
 Go to home directory and pull the machinery from github.
 
@@ -43,12 +43,12 @@ Start the machinery on start-up.
      sudo systemctl enable kerberosio
 
 <a name="machinery-configure"></a>
-###Configure
+### Configure
 
 The configuration files can be found at **/etc/opt/kerberosio/config**. By default the Raspberry Pi Camera module is set as capture device. You can update the **config.xml** file to change it to **USBCamera** or **IPCamera**. Images are stored in the **/etc/opt/kerberosio/capture** directory by default; this location can be changed by editing the **io.xml** file.
 
 <a name="machinery-run"></a>
-###Run
+### Run
 
 After kerberos is installed a binary is available at **/usr/bin/kerberosio**. Just run following command in your terminal to start kerberosio.
 
