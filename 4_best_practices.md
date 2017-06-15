@@ -14,7 +14,7 @@ IP cameras have outnumbered the video camera industry, they come with many diffe
 
 ### Desire
 
-What we often see is that users ask for, or desire to have, one single application where they can access and manage all there different IP cameras. This desire may look obvious at first sight, but has **limitations on the long run**. 
+What we often see is that users ask for, or desire to have, one single application where they can access and manage all their different IP cameras. This desire may look obvious at first sight, but has **limitations on the long run**. 
 
 Many video surveillance solutions, other than Kerberos.io, uses the approach previously described. However this approach is against the Kerberos.io strategy/philosophy, read more about it on the [**strategy page**](/strategy) and the [**one vs multi camera support**](/strategy#one-vs-multi) discussion.
 
