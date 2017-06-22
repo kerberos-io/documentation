@@ -20,7 +20,7 @@ You can install KiOS by using our **own installer**, which gives you a nice GUI 
 <div id="installer">
 	<h2>Easy Installation</h2>
 
-	 <p><b>Attention!</b>
+	 <p><b>ATTENTION!</b><br/>
 	 We've experiencing issues with the basic installation if you are running <b>Windows 10</b>. If you are also experiencing issues, please follow the advanced installation using the Etcher installer. Meanwhile we'll try to resolve those issues.
 	 </p>
 
