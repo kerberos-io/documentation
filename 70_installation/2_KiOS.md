@@ -3,23 +3,27 @@
 * [Easy Installation](#installer)
 * [Advanced Installation](#advanced)
 	* [Download the .img](#download)
-	* [Flash the .img to a SD card](#flash)
+	* [Flash the .img to a SD card with Etcher.io](#flash)
 	* [Network configuration](#network)
 * [Power on the Raspberry Pi](#poweron)
 * [Access the Raspberry Pi with SSH](#access)
 
-## Introduction 
+## Introduction
 
 [KiOS](https://github.com/kerberos-io/kios) (Kerberos.io Operating System) is our own **custom linux OS**, which runs Kerberos.io out-of-the-box. KiOS is **installed like every other OS** for the Raspberry Pi, you need to flash the OS (.img) to a SD card. If you want to get Kerberos.io up and running at a short time frame, this is the **most simple** and **basic** installation procedure.
 
-You can install KiOS by using our **own installer**, which gives you a nice GUI that will handle the flashing for you, or you can do the flashing **yourself** by using your terminal or another GUI.
+You can install KiOS by using our **own installer**, which gives you a nice GUI that will handle the flashing and network configuration for you, or you can do the flashing **yourself** by using Etcher.
 
-<button id="installer-btn" class="btn" style="width: 49%; height: 50px; background-color: #943633; font-size: 16px; color: #fff; outline: 0;">Easy installation</button> 
-<button id="advanced-btn" class="btn" style="width: 49%; height: 50px; background-color: #ddd; font-size: 16px; color: #fff; outline: 0;">Advanced installation</button> 
+<button id="installer-btn" class="btn" style="width: 49%; height: 50px; background-color: #943633; font-size: 16px; color: #fff; outline: 0;">Easy installation</button>
+<button id="advanced-btn" class="btn" style="width: 49%; height: 50px; background-color: #ddd; font-size: 16px; color: #fff; outline: 0;">Advanced installation</button>
 
 <div id="installer">
 	<h2>Easy Installation</h2>
-	
+
+	 <p><b>ATTENTION!</b><br/>
+	 We've experiencing <b>issues with the easy installation</b> if you are running <b>Windows 10</b>. When you're also experiencing issues, please follow the advanced installation using the Etcher installer. Meanwhile we'll try to resolve those issues.
+	 </p>
+
 	 <p>
         Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By using our <b>cross-platform</b> installer, you can run a <b>fully configured</b> video surveillance system within <b>3 minutes</b>. Indeed, we also think that's awesome!
     </p>
@@ -36,7 +40,7 @@ You can install KiOS by using our **own installer**, which gives you a nice GUI 
                     </div>
 
 	<p>By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and flash KiOS to your SD card. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; it can't be easier.</p>
-	     
+
 	    <script type="text/javascript">
 		    require([_jsBase + 'main.js'], function(common)
 		    {
@@ -89,56 +93,25 @@ You can install KiOS by using our **own installer**, which gives you a nice GUI 
 		</script>
 </div>
 <div id="advanced" style="display: none;">
-	<h2>Advanced Installation</h2>
+<h2>Advanced Installation</h2>
 
-	<p>If you prefer <b>the hard way</b>, you can also flash <b>Kerberos.io</b> to your SD card manually. So it's not a problem if you don't want to use the KiOS installer. It goes as follows: download the KiOS .img yourself, flash it to your SD card with your terminal and edit some configuration files in the boot directory.</p>
+<p>If you prefer <b>the hard way</b>, you can also flash <b>Kerberos.io</b> to your SD card manually. So it's not a problem if you don't want to use the KiOS installer. It goes as follows: download the KiOS .img yourself, flash it to your SD card with Etcher and edit some configuration files at the boot directory. The big difference with the easy installation, is that you'll need to download the image manually, and edit some files on the SD card to setup your network configuration.</p>
 
-	<iframe src="https://player.vimeo.com/video/164054497?autoplay=0&color=943633" style="width:100%; height: 400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<a name="download"></a>
+<h2>1. Download the .img</h2>
 
-	<a name="download"></a>
-	<h2>1. Download the .img</h2>
+<p>All releases are stored on the KiOS <a href="https://github.com/kerberos-io/kios"><b>Github repository</b></a>, each release contains several images (for every Raspberry Pi version a different image is created). It's important to download the correct image; installing an image for another Raspberry Pi version will not work. After downloading, make sure to unzip the release.</p>
 
-	<p>All releases are stored on the KiOS <a href="https://github.com/kerberos-io/kios"><b>Github repository</b></a>, each release contains several images (for every Raspberry Pi version a different image is created). It's important to download the correct image; installing an image for another Raspberry Pi version will not work. After downloading, make sure to unzip the release.</p>
+<a href="https://github.com/kerberos-io/kios/releases"><img alt="Download KiOS" src="2_kerberos-image.png"/></a>
 
-	<a href="https://github.com/kerberos-io/kios/releases"><img alt="Download KiOS" src="2_kerberos-image.png"/></a>
+<a name="flash"></a>
+<h2>2. Flash the .img to a SD card with Etcher.io</h2>
 
-	<a name="flash"></a>
-	<h2>2. Flash the .img to a SD card</h2>
+<p>For the advanced installation <b>we'll use Etcher</b>, it will handle the flashing for us. As you may have noticed the installer, used in the <b>Basic installation</b>, is forked from the original Etcher application. The major difference between Etcher and our own installer is that we've added some configurational sugar on top of Etcher, setup your network configuration and automatic downloading of the KiOS release.</p>
 
-	<p>Ensure that you have inserted the SD card, that you wish to clone, into the SD card reader. If you dont have an internal SD card reader, you will need to plug in an external SD card reader via a USB socket.</p>
+<img alt="Installing Etcher.io" src="2_etcher.png"/>
 
-	<h3>OSX</h3>
-
-	<ul>
-	<li>Download and install <a href="https://mega.co.nz/#!PZc2HTTQ!eD9dtFpoKnbZqP1hkvrv43_Pvc9xadMVxRP2K-M8n88">RPi-sd card builder v1.2</a>.</li>
-	<li>Run the app.</li>
-	<li>Select the kios-x-y.img.</li>
-	<li>Select your SD card.</li>
-	<li>Insert your password, as the program will need administrator privileges.</li>
-	<li>The system will start transferring the image to your SD card.</li>
-	<li>A confirmation is shown that the transferred is completed and SD card unmounted.</li>
-	</ul>
-
-	<h3>Windows</h3>
-
-	<ul>
-	<li>Download and install <a href="http://sourceforge.net/projects/win32diskimager/files/latest/download">Win32DiskImager</a>.</li>
-	<li>Select the KiOS image and the drive letter of the SD card.</li>
-	</ul>
-
-	<h3>Linux</h3>
-
-	<p>Select SD card and delete all partitions with gparted</p>
-
-	<pre><code>gparted</code></pre>
-
-	<p>To format the SD card, enter the following command:</p>
-
-	<pre><code>sudo mkdosfs -F 16 -v /dev/sdb -I</code></pre>
-
-	<p>In Terminal, enter the following command ensuring that you identify the correct destination disc.</p>
-
-	<pre><code>sudo dd if="kios-x-y.img" of=/dev/sdb bs=2M</code></pre>
+<p>So the only thing you'll need to do for flashing, the hard way, is to <b><a target="_blank" href="https://etcher.io">go to Etcher.io</a></b> and download the Etcher installer that matches your OS. After installation you can simply open Etcher and go with the flow: <b>select the KiOS image</b> which you've previously downloaded, <b>select your SD card</b> and <b>click the flash button</b>. Tadaaaa, and you're ready to rumble.</p>
 
 	<a name="network"></a>
 	<h2>3. Network configuration</h2>
