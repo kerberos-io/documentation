@@ -21,7 +21,7 @@ You can install KiOS by using our **own installer**, which gives you a nice GUI 
 	<h2>Easy Installation</h2>
 
 	 <p><b>ATTENTION!</b><br/>
-	 We've experiencing issues with the basic installation if you are running <b>Windows 10</b>. If you are also experiencing issues, please follow the advanced installation using the Etcher installer. Meanwhile we'll try to resolve those issues.
+	 We've experiencing <b>issues with the easy installation</b> if you are running <b>Windows 10</b>. If you are also experiencing issues, please follow the advanced installation using the Etcher installer. Meanwhile we'll try to resolve those issues.
 	 </p>
 
 	 <p>
@@ -95,7 +95,7 @@ You can install KiOS by using our **own installer**, which gives you a nice GUI 
 <div id="advanced" style="display: none;">
 <h2>Advanced Installation</h2>
 
-<p>If you prefer <b>the hard way</b>, you can also flash <b>Kerberos.io</b> to your SD card manually. So it's not a problem if you don't want to use the KiOS installer. It goes as follows: download the KiOS .img yourself, flash it to your SD card with Etcher and edit some configuration files at the boot directory. The big difference with the basic installation, is that you'll need to download the image manually, and edit some files on the SD card to setup your network configuration.</p>
+<p>If you prefer <b>the hard way</b>, you can also flash <b>Kerberos.io</b> to your SD card manually. So it's not a problem if you don't want to use the KiOS installer. It goes as follows: download the KiOS .img yourself, flash it to your SD card with Etcher and edit some configuration files at the boot directory. The big difference with the easy installation, is that you'll need to download the image manually, and edit some files on the SD card to setup your network configuration.</p>
 
 <a name="download"></a>
 <h2>1. Download the .img</h2>
