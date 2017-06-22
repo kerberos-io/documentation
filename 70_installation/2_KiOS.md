@@ -12,7 +12,7 @@
 
 [KiOS](https://github.com/kerberos-io/kios) (Kerberos.io Operating System) is our own **custom linux OS**, which runs Kerberos.io out-of-the-box. KiOS is **installed like every other OS** for the Raspberry Pi, you need to flash the OS (.img) to a SD card. If you want to get Kerberos.io up and running at a short time frame, this is the **most simple** and **basic** installation procedure.
 
-You can install KiOS by using our **own installer**, which gives you a nice GUI that will handle the flashing for you, or you can do the flashing **yourself** by using your terminal or another GUI.
+You can install KiOS by using our **own installer**, which gives you a nice GUI that will handle the flashing and network configuration for you, or you can do the flashing **yourself** by using Etcher.
 
 <button id="installer-btn" class="btn" style="width: 49%; height: 50px; background-color: #943633; font-size: 16px; color: #fff; outline: 0;">Easy installation</button>
 <button id="advanced-btn" class="btn" style="width: 49%; height: 50px; background-color: #ddd; font-size: 16px; color: #fff; outline: 0;">Advanced installation</button>
