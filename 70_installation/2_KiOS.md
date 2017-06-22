@@ -109,7 +109,7 @@ You can install KiOS by using our **own installer**, which gives you a nice GUI 
 
 <p>For the advanced installation <b>we'll use Etcher</b>, it will handle the flashing for us. As you may have noticed the installer, used in the <b>Basic installation</b>, is forked from the original Etcher application. The major difference between Etcher and our own installer is that we've added some configurational sugar on top of Etcher, setup your network configuration and automatic downloading of the KiOS release.</p>
 
-<img alt="Installing Etcher.io" src="2_etcher.png"/>
+<a target="_blank" href="https://etcher.io"><img alt="Installing Etcher.io" src="2_etcher.png"/></a>
 
 <p>So the only thing you'll need to do for flashing, the hard way, is to <b><a target="_blank" href="https://etcher.io">go to Etcher.io</a></b> and download the Etcher installer that matches your OS. After installation you can simply open Etcher and go with the flow: <b>select the KiOS image</b> which you've previously downloaded, <b>select your SD card</b> and <b>click the flash button</b>. Tadaaaa, and you're ready to rumble.</p>
 
