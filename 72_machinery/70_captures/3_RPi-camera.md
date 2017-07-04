@@ -9,16 +9,16 @@ The parameters of the Raspberry Pi Camera Module can be found in the **config/ca
 	<captures>
 
 	    <RaspiCamera>
-				<frameWidth type="number">640</frameWidth>
-				<frameHeight type="number">480</frameHeight>
-				<delay type="number">1400</delay>
-				<angle type="number">0</angle>
-				<framerate type="number">30</framerate>
-				<sharpness type="number">0</sharpness>
-				<saturation type="number">0</saturation>
-				<contrast type="number">0</contrast>
-				<brightness type="number">50</brightness>
-	    </RaspiCamera>
+					<frameWidth type="number">640</frameWidth>
+					<frameHeight type="number">480</frameHeight>
+					<delay type="number">1400</delay>
+					<angle type="number">0</angle>
+					<framerate type="number">30</framerate>
+					<sharpness type="number">0</sharpness>
+					<saturation type="number">0</saturation>
+					<contrast type="number">0</contrast>
+					<brightness type="number">50</brightness>
+			</RaspiCamera>
 
 	</captures>
 
