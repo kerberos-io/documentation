@@ -9,13 +9,13 @@ The parameters of the IP capture device can be found in the **config/capture.xml
 	<captures>
 
 		<IPCamera>
-            <url type="text">http://username:password@ipaddress/image.jpg</url>
-            <frameWidth type="number">800</frameWidth>
-            <frameHeight type="number">640</frameHeight>
-            <delay type="number">0</delay>
-            <angle type="number">0</angle>
-        </IPCamera>
-	    
+        <url type="text">http://username:password@ipaddress/image.jpg</url>
+        <frameWidth type="number">800</frameWidth>
+        <frameHeight type="number">640</frameHeight>
+        <delay type="number">0</delay>
+        <angle type="number">0</angle>
+    </IPCamera>
+
 	</captures>
 
 ### URL
