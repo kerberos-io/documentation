@@ -62,7 +62,7 @@ After kerberos is installed a binary is available at **/usr/bin/kerberosio**. Ju
 
 If you want to install **the web**, you'll need to have **a webserver** (e.g. Nginx) and **PHP** running with some extensions. You also need **NodeJS** and **npm** installed to install **Bower**. Below you can find the installation procedure to install the web on your preferred environment.
 
-#### Install Dependencies
+**Install Dependencies**
 
 Install Git, PHP7 (+extensions) and NodeJS.
 
@@ -83,7 +83,7 @@ C) OSX
 
     brew install php7.0 php7.0-curl php7.0-gd php7.0-fpm php7.0-cli php7.0-opcache php7.0-mbstring php7.0-xml php7.0-zip php7.0-mcrypt nodejs npm
 
-#### Configure webserver
+**Configure webserver**
 
 Install Nginx,
 
@@ -125,7 +125,7 @@ Copy and paste following config file; this file tells nginx where the web will b
         }
     }
 
-#### Clone source
+**Clone source**
 
 Create a www location.
 
