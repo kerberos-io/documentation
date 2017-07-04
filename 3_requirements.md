@@ -8,7 +8,7 @@ Kerberos.io runs on every Linux based machine but its main goal is to run on a R
 
 ### Raspberry Pi
 
-We recommend to run Kerberos.io on a **Raspberry Pi**, as it is a very popluar microcontroller which can you buy in almost every (online) electronic shop. To simplify the lives of our Raspberry Pi users, Kerberos.io comes with a custom ARM OS called [**KIOS**](installation/KiOS) (Kerberos.io Operating System), which you can deploy to your Raspberry Pi in just a few minutes. Kerberos.io supports **all Raspberry Pi versions**: 1, 2, 3 and Zero (W). 
+We recommend to run Kerberos.io on a **Raspberry Pi**, as it is a very popluar microcontroller which can you buy in almost every (online) electronic shop. To simplify the lives of our Raspberry Pi users, Kerberos.io comes with a custom ARM OS called [**KIOS**](installation/KiOS) (Kerberos.io Operating System), which you can deploy to your Raspberry Pi in just a few minutes. Kerberos.io supports **all Raspberry Pi versions**: 1, 2, 3 and Zero (W).
 
 ### What about other boards?
 
@@ -19,6 +19,6 @@ Kerberos.io can also be installed on other boards by following the [**Armbian**]
 
 ## Which type of camera can you use?
 
-Kerberos.io works with the full range of camera's. You can use an **USB-**, **IP-** or the **Raspberry Pi camera (v1.3 and v2.1)**. If you want to use an IP camera, we recommend to use the RTSP connection if available; note that it's possible that cheap IP cameras will not work properly.
+Kerberos.io works with the full range of camera's. You can use an **USB-**, **IP-** or the **Raspberry Pi camera (v1.3 and v2.1)**. When using the Raspberry Pi camera, you'll benefit from its **hardware encoding** which makes it possible to record video at 30 FPS on a Raspbery Pi Zero. If you want to use an IP camera, we recommend to use the RTSP connection if available; note that it's possible that cheap IP cameras will not work properly. USB camera's that need special drivers will probably **NOT work**.
 
 ![Cameras](3_cameras.png)
