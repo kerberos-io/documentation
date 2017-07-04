@@ -9,17 +9,20 @@ The parameters of the Video output device can be found in the **config/io**.xml 
 	<ios>
 
     	<Video>
-	        <fps type="number">3</fps>
-	        <recordAfter type="number">5</recordAfter>
-	        <extension type="number">mp4</extension>
-	        <codec type="number">h264</codec>
-	        <fileFormat type="text">timestamp_microseconds_instanceName_regionCoordinates_numberOfChanges_token</fileFormat>
-	        <directory type="text">/etc/opt/kerberosio/capture/</directory>
-	        <markWithTimestamp type="bool">false</markWithTimestamp>
-	        <timestampColor type="text">white</timestampColor>
-	        <privacy type="bool">false</privacy>
+					<fps type="number">3</fps>
+					<recordAfter type="number">5</recordAfter>
+					<maxDuration type="number">120</maxDuration>
+					<extension type="number">mp4</extension>
+					<codec type="number">h264</codec>
+					<fileFormat type="text">timestamp_microseconds_instanceName_regionCoordinates_numberOfChanges_token</fileFormat>
+					<directory type="text">/etc/opt/kerberosio/capture/</directory>
+					<hardwareDirectory type="text">/etc/opt/kerberosio/h264/</hardwareDirectory>
+					<enableHardwareEncoding type="bool">true</enableHardwareEncoding>
+					<markWithTimestamp type="bool">false</markWithTimestamp>
+					<timestampColor type="text">white</timestampColor>
+					<privacy type="bool">false</privacy>
 	    </Video>
-		    
+
 	</ios>
 
 ### FPS
@@ -47,6 +50,14 @@ The format that will be used for the name of the image. One or more variables ca
 ### Directory
 
 The directory where the image will be saved to. By default images are saved to the **/etc/opt/kerberosio/capture** directory.
+
+### Hardware directory
+
+When using onboard hardware encoding (e.g. with Raspberry Pi camera), **h264 video files are generated** and stored in this directory. **Afterwards** these h264 files will be **containerized to mp4 files**, and stored in the Directory path.
+
+### Enable Hardware encoding
+
+A boolean which can enable or disable hardware encoding. Please note that this option is enabled by default, but does not mean that it will work if you choose to use an USB camera.
 
 ### Mark with timestamp
 

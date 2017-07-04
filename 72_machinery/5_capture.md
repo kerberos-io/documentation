@@ -19,4 +19,6 @@ Kerberos can be used with any IP camera, that provides a streaming URL. Make sur
 <a name="raspberry-pi-camera"></a>
 ## Raspberry Pi camera
 
-You can use the Raspberry Pi camera (v1.3 and v2.1) with Kerberos.io, you just need to attach the camera and you are ready to go. The Raspberry Pi Camera Module is enabled by default in the web interface. Please note that if you didn't installed Kerberos with the image, you will need to enable the camera module yourself.
+You can use the Raspberry Pi camera (v1.3 and v2.1) with Kerberos.io, you just need to attach the camera and you are ready to go. The Raspberry Pi Camera Module is enabled by default in the web interface. Please note that if you are running Raspbian, you'll **need to enable the camera module** yourself.
+
+Using the Raspberry Pi camera will give **the best performance**, because Kerberos.io uses hardware acceleration for both the live streaming and the video recording. On a Raspberry Pi Zero W, **HD/30 FPS** can be achieved **with ease**.

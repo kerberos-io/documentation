@@ -11,12 +11,12 @@ The parameters of the Script output device can be found in the **config/io**.xml
     	<Script>
 	        <path type="text">/etc/opt/kerberosio/scripts/run.sh</path>
 	    </Script>
-		    
+
 	</ios>
 
 ### Path
 
-The frames per second of the video being recorded. Please note that this number is limited, and depends heavily on your hardware setup. You'll be receiving following warning in the systems logs, if Kerberos.io can't write the desired FPS. For recommend recording at 5-8FPS for a Rasberry Pi 2/3.
+The location of the script that will be executed on detection.
 
 ## Example
 

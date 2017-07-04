@@ -14,41 +14,12 @@ Contributing to the **web** repository requires both front- and back-end sklls. 
 <a name="installation"></a>
 ## Installation
 
-The complete installation can be found on [**the advanced installation page**](/installation/advanced), describing the complete set of instructions. However for simplicity we will give a summarized version, as probably you will already have a development environment set up.
-
-Install PHP dependencies
-
-    sudo apt-get install php5-cli php5-fpm php5-gd php5-mcrypt php5-curl nodejs
-    
-Get the source code from Github.
-
-    git clone https://github.com/kerberos-io/web && cd web
-
-Install PHP packages by using composer.
-
-    curl -sS https://getcomposer.org/installer | sudo php
-    sudo mv composer.phar /usr/bin/composer
-    composer install
-
-Change write permission on the storage directory.
-
-    chmod -R 777 app/storage
-
-Install bower globally by using node package manager, this is installed when installing nodejs.
-
-    npm -g install bower
-
-Install Front-end dependencies with bower
-    
-    cd public
-    sudo bower --allow-root install
-
-That's it..
+The installation can be found on [**the generic installation page**](/installation/generic), describing the complete set of instructions.
 
 <a name="versioning"></a>
 ## Versioning
 
-As you've probably seen in the **installation summary** we are hosting our repositories on [**github**](https://github.com/kerberos-io). As any larger project we are also using a versioning strategy; an easy one :) we don't want to get the things complicated. The version strategy is based on this [**branching model**](http://nvie.com/posts/a-successful-git-branching-model/). 
+As you've probably seen in the **installation summary** we are hosting our repositories on [**github**](https://github.com/kerberos-io). As any larger project we are also using a versioning strategy; an easy one :) we don't want to get the things complicated. The version strategy is based on this [**branching model**](http://nvie.com/posts/a-successful-git-branching-model/).
 
 The model includes:
 
@@ -72,7 +43,7 @@ The web is created with PHP and JS. It's obvious that we don't have developed al
     php -r "if (hash('SHA384', file_get_contents('composer-setup.php')) === '41e71d86b40f28e771d4bb662b997f79625196afcca95a5abf44391188c695c6c1456e16154c75a211d238cc3bc5cb47') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
     php composer-setup.php
     php -r "unlink('composer-setup.php');"
-    
+
 After composer is installed properly you can just do **composer install** or **composer update** within the root directory of the **web** repository; this will update all the dependencies if a newer version is available.
 
     composer update
@@ -83,7 +54,7 @@ After composer is installed properly you can just do **composer install** or **c
 [**Bower**](http://bower.io/) is a dependency manager for JS, it's very similar to composer. To install bower you'll need to download **nodejs** and execute following command:
 
     npm -g install bower
-    
+
 After bower is installed you can install or update dependencies within the **/public** directory.
 
     bower update
@@ -94,9 +65,9 @@ After bower is installed you can install or update dependencies within the **/pu
 The web is created with two frameworks and a lot of third-party libraries.
 
 <a name="laravel"></a>
-### Laravel 4.2
+### Laravel 5.4
 
-[**Laravel**]((http://laravel.com) is a very **powerful** and **popular** PHP framework. This is also the main reason why the web is created with Laravel, the community is huge. A lot of people are writing tutorials and recording webcasts. This makes **getting started** with contributing to the web repository so **easy**. You will find all the information you need on the Laravel [**documentation site**](http://laravel.com/docs/4.2).
+[**Laravel**]((http://laravel.com) is a very **powerful** and **popular** PHP framework. This is also the main reason why the web is created with Laravel, the community is huge. A lot of people are writing tutorials and recording webcasts. This makes **getting started** with contributing to the web repository so **easy**. You will find all the information you need on the Laravel [**documentation site**](http://laravel.com/docs/5.4).
 
 <a name="backbonejs"></a>
 ### BackboneJS
