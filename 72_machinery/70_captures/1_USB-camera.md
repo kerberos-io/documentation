@@ -11,10 +11,10 @@ The parameters of the USB-camera can be found in the **config/capture.xml** file
 		<USBCamera>
 	    	<frameWidth type="number">1280</frameWidth>
 	    	<frameHeight type="number">720</frameHeight>
-      	<deviceNumber type="number">0</deviceNumber>
-        <delay type="number">0</delay>
-        <angle type="number">0</angle>
-    </USBCamera>
+        	<deviceNumber type="number">0</deviceNumber>
+            <delay type="number">0</delay>
+            <angle type="number">0</angle>
+	    </USBCamera>
 
 	</captures>
 
