@@ -23,18 +23,21 @@
 
 #### Web
 
-* Upgrade from Laravel 4.2 to Laravel 5.4.
-* Fix bug with heatmap radius slider.
+* Upgrade from Laravel 4.2 to Laravel 5.4 [#70](https://github.com/kerberos-io/web/issues/70).
+* Fix bug with heatmap radius slider [#84](https://github.com/kerberos-io/web/issues/84).
 * Design tweaks toggle button (remove outline).
+* Disabled possibility to timestamp video when using hardware acceleration.
 
 #### Docker
 
-* Fix SSL support.
+* Fix SSL support [#4](https://github.com/kerberos-io/docker/issues/4).
 
 #### Machinery
 
-* OpenMAX IL hardware encoding for Raspberry Pi camera (benchmark 30FPS on Raspberry Pi Zero W).
-* Basic authentication for live stream.
+* OpenMAX IL hardware encoding for Raspberry Pi camera. [#83](https://github.com/kerberos-io/machinery/issues/83)
+  * Optimized live streaming (benchmark 30FPS on Raspberry Pi Zero W).
+  * Optimized h264 recording (benchmark 30FPS on Raspberry Pi Zero W)
+* Basic authentication for live streaming (username and password). [#80](https://github.com/kerberos-io/machinery/issues/80)
 
 <a name="2-3-1"></a>
 ## 2.3.1
