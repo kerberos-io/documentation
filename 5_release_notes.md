@@ -1,5 +1,6 @@
 # Release notes
 
+* [2.4.0](#2-4-0)
 * [2.3.1](#2-3-1)
 * [2.3.0](#2-3-0)
 * [2.2.1](#2-2-1)
@@ -11,6 +12,29 @@
 * [1.0.2](#1-0-2)
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
+
+<a name="2-3-1"></a>
+## 2.4.0
+
+#### Ecosystem
+
+* Enable/Disable force network mode.
+* Enable/Disable auto removal media.
+
+#### Web
+
+* Upgrade from Laravel 4.2 to Laravel 5.4.
+* Fix bug with heatmap radius slider.
+* Design tweaks toggle button (remove outline).
+
+#### Docker
+
+* Fix SSL support.
+
+#### Machinery
+
+* OpenMAX IL hardware encoding for Raspberry Pi camera (benchmark 30FPS on Raspberry Pi Zero W).
+* Basic authentication for live stream.
 
 <a name="2-3-1"></a>
 ## 2.3.1
