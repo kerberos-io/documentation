@@ -27,9 +27,11 @@ The parameters of the Video output device can be found in the **config/io**.xml 
 
 ### FPS
 
-The frames per second of the video being recorded. Please note that this number is limited, and depends heavily on your hardware setup. You'll be receiving following warning in the systems logs, if Kerberos.io can't write the desired FPS. For recommend recording at 5-8FPS for a Rasberry Pi 2/3.
+The frames per second of the video being recorded. Please note that this number is limited and depends heavily on your hardware setup. You'll be receiving following warning in the systems logs, if Kerberos.io can't write the desired FPS. When using an USB or IP camera, we recommend recording at 5-8FPS for a Rasberry Pi 2/3.
 
 	[trivial] IoVideo: framerate is too fast, can't record video at this speed (8/FPS)
+
+Note that when you're a using a Raspberry Pi camera, there is no limitation on the FPS due to the hardware encoding. For example you can record at 1080P 30FPS with a Raspberry Pi Zero W.
 
 ### Record after
 
@@ -49,7 +51,7 @@ The format that will be used for the name of the image. One or more variables ca
 
 ### Directory
 
-The directory where the image will be saved to. By default images are saved to the **/etc/opt/kerberosio/capture** directory.
+The directory where the videos will be saved. By default videos are saved to the **/etc/opt/kerberosio/capture** directory.
 
 ### Hardware directory
 
