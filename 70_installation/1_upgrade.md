@@ -23,13 +23,33 @@ This is what will happen:
 * Systems is rebooted.
 * Post-upgrade scripts are applied.
 
-## Raspbian
+## Raspbian / Armbian
 
-If you want to install a new version of Kerberos.io on Raspbian, there is **no automated versioning** process available like KiOS. To perform an upgrade you'll need to [**follow the traditional installation procedure**](/installation/Raspbian) for Raspbian.
+If you want to install a new version of Kerberos.io on Raspbian or Armbian, there is **no automated versioning** process available like KiOS. To perform an upgrade you'll need to follow the traditional installation procedure for [Raspbian**](/installation/Raspbian) or for [**Armbian**](/installation/Armbian).
 
-## Armbian
+Please read the notes below that matches your current and desired version to upgrade to. If no notes are available, you'll only need to follow the installation guide.
 
-If you want to install a new version of Kerberos.io on Armbian, there is **no automated versioning** process available like KiOS. To perform an upgrade you'll need to [**follow the traditional installation procedure**](/installation/Armbian) for Armbian.
+Install PHP7 packages.
+
+    sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-fpm php7.0-cli php7.0-opcache php7.0-mbstring php7.0-xml php7.0-zip php7.0-mcrypt
+
+Modify the fastcgi_pass parameter in your nginx config.
+
+		sudo nano /etc/nginx/sites-enabled/default
+
+Replace following line.
+
+		- fastcgi_pass unix:/var/run/php5-fpm.sock;
+
+		+ fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+
+Reboot the system (or only Nginx).
+
+		sudo reboot
+
+### Upgrade from 2.3.x to 2.4.0
+
+At 2.4.0 we are now using Laravel 5.4.0, which requires >= PHP 5.6. We recommend you to install PHP 7.0.
 
 ## Docker
 
@@ -66,4 +86,3 @@ Another solution is to start completely over again (clean state). You can do thi
 After you've deleted all your containers and images, you can start the containers again with **docker-compose**. You'll see that the new Kerberos.io images will be downloaded.
 
 	docker-compose up
-
