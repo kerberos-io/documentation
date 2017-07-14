@@ -31,21 +31,20 @@ Please read the notes below that matches your current and desired version to upg
 
 Install PHP7 packages.
 
-    sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-fpm php7.0-cli php7.0-opcache php7.0-mbstring php7.0-xml php7.0-zip php7.0-mcrypt
+  sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-fpm php7.0-cli php7.0-opcache php7.0-mbstring php7.0-xml php7.0-zip php7.0-mcrypt
 
 Modify the fastcgi_pass parameter in your nginx config.
 
-		sudo nano /etc/nginx/sites-enabled/default
+	sudo nano /etc/nginx/sites-enabled/default
 
 Replace following line.
 
-		- fastcgi_pass unix:/var/run/php5-fpm.sock;
-
-		+ fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+	- fastcgi_pass unix:/var/run/php5-fpm.sock;
+	+ fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
 
 Reboot the system (or only Nginx).
 
-		sudo reboot
+	sudo reboot
 
 ### Upgrade from 2.3.x to 2.4.0
 
