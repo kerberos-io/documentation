@@ -29,9 +29,13 @@ If you want to install a new version of Kerberos.io on Raspbian or Armbian, ther
 
 Please read the notes below that matches your current and desired version to upgrade to. If no notes are available, you'll only need to follow the installation guide.
 
+### Upgrade from 2.3.x to 2.4.0
+
+At 2.4.0 we are now using Laravel 5.4.0, which requires >= PHP 5.6. We recommend you to install PHP 7.0.
+
 Install PHP7 packages.
 
-  sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-fpm php7.0-cli php7.0-opcache php7.0-mbstring php7.0-xml php7.0-zip php7.0-mcrypt
+	sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-fpm php7.0-cli php7.0-opcache php7.0-mbstring php7.0-xml php7.0-zip php7.0-mcrypt
 
 Modify the fastcgi_pass parameter in your nginx config.
 
@@ -45,10 +49,6 @@ Replace following line.
 Reboot the system (or only Nginx).
 
 	sudo reboot
-
-### Upgrade from 2.3.x to 2.4.0
-
-At 2.4.0 we are now using Laravel 5.4.0, which requires >= PHP 5.6. We recommend you to install PHP 7.0.
 
 ## Docker
 
