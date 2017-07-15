@@ -15,6 +15,8 @@ Create a **docker-compose.yml** file and following configuration:
 
     web:
         image: kerberos/web
+        environment:
+        - KERBEROSIO_SECURE_SSL=false
         ports:
         - "80"
         volumes_from:

@@ -39,9 +39,10 @@ The cloud is an extra service, which is available by default but is not required
 Kerberos.io comes with **a bunch of features**, below you can find a short list of the most important ones.
 
  * Full range camera support (**USB**, **Raspberry Pi** v1.3 and v2.1, and **IP cameras** which support a RTSP or MJPEG stream).
+ * **Hardware encoding** when using the Raspberry Pi Camera.
  * Constraints to make detection more intelligent (time interval, regions, etc).
  * Ability to save snapshots and **video recording** and execute/trigger a bash script, webhooks or GPIO pin.
- * **Live streaming** (MJPEG) on the web or with another program like VLC or IP camera viewer.
+ * **Live streaming** (MJPEG) on the web or with another program like VLC or IP camera viewer; ability to secure with Basic Authentication.
  * **Heatmap** and latest sequence of activity.
  * Fluent and **responsive overview** (Smartphone, Tablet and PC) of snapshots by day and hour.
  * System information (CPU, disk, network, etc).
@@ -52,11 +53,11 @@ Kerberos.io comes with **a bunch of features**, below you can find a short list 
 
 <a name="installation"></a>
 ## Installation
-	
+
 Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By using our <b>cross-platform</b> installer, you can run a <b>fully configured</b> video surveillance system within <b>3 minutes</b>. Indeed, we also think that's awesome!
 
 <a href="/installation/KiOS" alt="install kios">
 <img src="/images/kios-install.gif" style="border-radius: 0; margin: 0 0 10px 0; width: 100%;"/>
 </a>
 
-By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and **flash KiOS to your SD card**. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; **it can't be easier**. If you **don't want to reflash you SD card**, you can run Kerberos.io on your existing [**Raspbian**](/installation/Raspbian) or [**Armbian**](/installation/armbian) installation, or if you like containers with [**Docker**](/installation/Docker).
+By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and **flash KiOS to your SD card**. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; **it can't be easier**. If you **don't want to reflash you SD card**, you can run Kerberos.io on your existing [**Raspbian**](/installation/Raspbian) or [**Armbian**](/installation/armbian) installation, or if you like containers you can use [**Docker**](/installation/Docker).

@@ -15,7 +15,7 @@ The parameters of the IP capture device can be found in the **config/capture.xml
             <delay type="number">0</delay>
             <angle type="number">0</angle>
         </IPCamera>
-	    
+
 	</captures>
 
 ### URL

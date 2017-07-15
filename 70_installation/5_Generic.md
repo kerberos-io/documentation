@@ -27,7 +27,7 @@ If you want to use IP cameras, make sure to compile FFMPEG with x264 support.
     git clone https://github.com/FFmpeg/FFmpeg ffmpeg
     cd ffmpeg && git checkout remotes/origin/release/2.8
     ./configure --enable-gpl --enable-libx264 --enable-shared --prefix=/usr/local
-    make && sudo make install 
+    make && sudo make install
 
 Go to home directory and pull the machinery from github.
 
@@ -40,7 +40,7 @@ Compile the machinery; this can take some time.
 
 Start the machinery on start-up.
 
-     sudo systemctl enable kerberosio
+    sudo systemctl enable kerberosio
 
 <a name="machinery-configure"></a>
 ### Configure
@@ -58,18 +58,43 @@ After kerberos is installed a binary is available at **/usr/bin/kerberosio**. Ju
 ## Web
 
 <a name="web-installation-webserver"></a>
-### Install webserver + PHP (optional)
+### Install web
 
-Update the packages and kernel.
+If you want to install **the web**, you'll need to have **a webserver** (e.g. Nginx) and **PHP** running with some extensions. You also need **NodeJS** and **npm** installed to install **Bower**. Below you can find the installation procedure to install the web on your preferred environment.
+
+**Install Dependencies**
+
+Install Git, PHP7 (+extensions) and NodeJS.
+
+A) Ubuntu
 
     sudo apt-get update && sudo apt-get upgrade
-
-Install git, nginx, php (+extension) and nodejs.
-
     curl -sL https://deb.nodesource.com/setup | sudo bash -
-    sudo apt-get install git nginx php5-cli php5-fpm php5-gd php5-mcrypt php5-curl nodejs
+    sudo apt-get install git php7.0-cli php7.0-gd php7.0-mcrypt php7.0-curl php7.0-mbstring php7.0-dom php7.0-zip php7.0-fpm nodejs npm
+    sudo ln -s /usr/bin/nodejs /usr/bin/node
 
-Creating a nginx config.
+B) Raspbian
+
+    echo "deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi" | sudo tee --append /etc/apt/sources.list
+    sudo apt-get update
+    sudo apt-get install -t stretch php7.0 php7.0-curl php7.0-gd php7.0-fpm php7.0-cli php7.0-opcache php7.0-mbstring php7.0-xml php7.0-zip php7.0-mcrypt nodejs npm
+    sudo ln -s /usr/bin/nodejs /usr/bin/node
+
+C) OSX
+
+    brew install php7.0 php7.0-curl php7.0-gd php7.0-fpm php7.0-cli php7.0-opcache php7.0-mbstring php7.0-xml php7.0-zip php7.0-mcrypt nodejs npm
+
+**Configure webserver**
+
+Install Nginx,
+
+    sudo apt-get install nginx
+
+or if you're running OSX use brew.
+
+    sudo brew install nginx
+
+Creating a Nginx config.
 
     sudo rm -f /etc/nginx/sites-enabled/default
     sudo nano /etc/nginx/sites-enabled/default
@@ -95,18 +120,13 @@ Copy and paste following config file; this file tells nginx where the web will b
 
         location ~ \.php$
         {
-                fastcgi_pass unix:/var/run/php5-fpm.sock;
+                fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
                 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
                 include fastcgi_params;
         }
     }
 
-Restart nginx
-
-    sudo service nginx restart
-
-<a name="web-installation-source"></a>
-### Install source
+**Clone source**
 
 Create a www location.
 
@@ -124,16 +144,19 @@ Install PHP packages by using composer.
 
 Add write permission for the storage directory, and the kerberos config file.
 
-    sudo chmod -R 777 app/storage
-    sudo chmod 777 app/config/kerberos.php
+    sudo chmod -R 777 storage
+    sudo chmod -R 777 bootstrap/cache
+    sudo chmod 777 config/kerberos.php
 
-Install bower globally by using node package manager, this is installed when installing nodejs.
+Install bower globally by using npm.
 
-    sudo apt-get install npm
-    sudo ln -s /usr/bin/nodejs /usr/bin/node
     sudo npm -g install bower
 
 Install Front-end dependencies with bower
 
     cd public
     sudo bower --allow-root install
+
+Reboot
+
+    sudo reboot

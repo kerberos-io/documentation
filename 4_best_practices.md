@@ -8,19 +8,19 @@ One of the strategies Kerberos.io follows is **the concept of isolation**. Read 
 
 ## IP cameras
 
-This is the most common scenario. Nowadays if you want to buy a camera, there is a 90% chance that it will be an IP camera. 
+This is the most common scenario. Nowadays if you want to buy a camera, there is a 90% chance that it will be an IP camera.
 
 IP cameras have outnumbered the video camera industry, they come with many different flavours and technologies (e.g. ONVIF). Typically a user will **buy one or more IP cameras**, **position them** at various places at home or work, and **install a video surveillance system** to manage them; e.g. Kerberos.io.
 
 ### Desire
 
-What we often see is that users ask for, or desire to have, one single application where they can access and manage all their different IP cameras. This desire may look obvious at first sight, but has **limitations on the long run**. 
+What we often see is that users ask for, or desire to have, one single application where they can access and manage all their different IP cameras. This desire may look obvious at first sight, but has **limitations on the long run**.
 
 Many video surveillance solutions, other than Kerberos.io, uses the approach previously described. However this approach is against the Kerberos.io strategy/philosophy, read more about it on the [**strategy page**](/strategy) and the [**one vs multi camera support**](/strategy#one-vs-multi) discussion.
 
 ### Best practice
 
-When you have an enterprise environment, or just have a lot of IP cameras (>2), you [**should consider to use Docker**](/installation/Multi-camera/Docker). When using **Kerberos.io with Docker**, you create an individual virtual processing units, **a Docker container**, for each camera. 
+When you have an enterprise environment, or just have a lot of IP cameras (>2), you [**should consider to use Docker**](/installation/Multi-camera/Docker). When using **Kerberos.io with Docker**, you create an individual virtual processing units, **a Docker container**, for each camera.
 
 By using this approach the management of your cameras is transparant and you have the ability to pin point them by an IP address (or port). Next to that you will have **a highly scalable solution**, when new cameras are installed you create new containers for each camera. When processing a lot of cameras you can eventually use **Docker swarm** to load balance containers over multiple systems.
 
@@ -46,7 +46,7 @@ Just the like the IP camera scenario, users want to have a single application wh
 
 If you consider to connect multiple local cameras to a processing unit (server, Raspberry Pi or other board), you should take into account following points:
 
-* Did you positioned your cameras properly? 
+* Did you positioned your cameras properly?
 * Has the second (or other) camera a lot of value? Maybe can you give it a better position somewhere else.
 
-In most of the cases a second or third camera can be of a lot of value e.g. a 360° view. However in most of the cases this is totally overkill and you should better use it at a completely other position.
+In some cases a second or third camera can be of a lot of value e.g. a 360° view, but most of the time this is totally overkill and you should better use it elsewhere.

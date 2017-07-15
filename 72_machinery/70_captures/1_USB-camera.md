@@ -15,7 +15,7 @@ The parameters of the USB-camera can be found in the **config/capture.xml** file
             <delay type="number">0</delay>
             <angle type="number">0</angle>
 	    </USBCamera>
-	    
+
 	</captures>
 
 ### Framewidth and -height
