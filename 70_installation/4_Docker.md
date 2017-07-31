@@ -12,7 +12,6 @@ Create a **docker-compose.yml** file and following configuration:
         image: kerberos/machinery
         ports:
         - "8889"
-
     web:
         image: kerberos/web
         environment:
