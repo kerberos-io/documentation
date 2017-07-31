@@ -1,4 +1,4 @@
-#KiOS
+# KiOS
 
 * [Easy Installation](#installer)
 * [Advanced Installation](#advanced)
@@ -63,16 +63,16 @@ Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By usi
 
 <p>So the only thing you'll need to do for flashing, the hard way, is to <b><a target="_blank" href="https://etcher.io">go to Etcher.io</a></b> and download the Etcher installer that matches your OS. After installation you can simply open Etcher and go with the flow: <b>select the KiOS image</b> which you've previously downloaded, <b>select your SD card</b> and <b>click the flash button</b>. Tadaaaa, and you're ready to rumble.</p>
 
-	<a name="network"></a>
-	<h2>3. Network configuration</h2>
+<a name="network"></a>
+<h2>3. Network configuration</h2>
 
-	<p>After the image has been transferred, you can plug the SD card in to your Raspberry Pi and everything will work magically. By default the KiOS image will require an ethernet connection and use DHCP to give you a dynamic IP-address. However if you want to have a <b>static IP-address</b> or/and use a <b>wireless connection</b>, you'll need to do a small configuration. Insert the SD card into your working station and open the SD card, you'll see two files <b>static_ip.conf</b> and <b>wireless.conf</b>.</p>
+<p>After the image has been transferred, you can plug the SD card in to your Raspberry Pi and everything will work magically. By default the KiOS image will require an ethernet connection and use DHCP to give you a dynamic IP-address. However if you want to have a <b>static IP-address</b> or/and use a <b>wireless connection</b>, you'll need to do a small configuration. Insert the SD card into your working station and open the SD card, you'll see two files <b>static_ip.conf</b> and <b>wireless.conf</b>.</p>
 
-	<h3>Static IP-address</h3>
+<h3>Static IP-address</h3>
 
-	<p>Open and edit the file <b>static_ip.conf</b>.</p>
+<p>Open and edit the file <b>static_ip.conf</b>.</p>
 
-	<pre><code>#####################################################################
+<pre><code>#####################################################################
 # Enter the IP-address you want to have, followed by the subnet mask
 # e.g. 192.168.0.10/24
 
@@ -85,9 +85,9 @@ static_ip=""
 static_gw=""
 static_dns=""</code></pre>
 
-	<h3>Wireless connection</h3>
+<h3>Wireless connection</h3>
 
-	<p>Open and edit the file <b>wireless.conf</b>. Fill-in your WIFI credentials: <b>SSID</b> the name of your wireles network, and <b>PSK</b> the password of your wireless network.</p>
+<p>Open and edit the file <b>wireless.conf</b>. Fill-in your WIFI credentials: <b>SSID</b> the name of your wireles network, and <b>PSK</b> the password of your wireless network.</p>
 
 	<pre><code>update_config=1
 ctrl_interface=/var/run/wpa_supplicant
