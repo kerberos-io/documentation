@@ -89,7 +89,7 @@ static_dns=""</code></pre>
 
 <p>Open and edit the file <b>wireless.conf</b>. Fill-in your WIFI credentials: <b>SSID</b> the name of your wireles network, and <b>PSK</b> the password of your wireless network.</p>
 
-	<pre><code>update_config=1
+<pre><code>update_config=1
 ctrl_interface=/var/run/wpa_supplicant
 
 network={
