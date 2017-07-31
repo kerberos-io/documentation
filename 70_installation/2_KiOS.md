@@ -41,56 +41,6 @@ You can install KiOS by using our **own installer**, which gives you a nice GUI 
 
 	<p>By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and flash KiOS to your SD card. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; it can't be easier.</p>
 
-	    <script type="text/javascript">
-		    require([_jsBase + 'main.js'], function(common)
-		    {
-		        require(["jquery", "//kerberos.io/etcher-versions.js", "//kerberos.io/sniffer.min.js"], function($)
-		        {
-		            $(function()
-		            {
-		            	$("#advanced-btn").click(function(){
-		            		$("#installer-btn").css({"background-color":"#ddd"});
-		            		$("#advanced-btn").css({"background-color":"#943633"});
-		            		$("#installer").hide();
-		            		$("#advanced").show();
-		            	})
-
-		            	$("#installer-btn").click(function(){
-		            		$("#installer-btn").css({"background-color":"#943633"});
-		            		$("#advanced-btn").css({"background-color":"#ddd"});
-		            		$("#advanced").hide();
-		            		$("#installer").show();
-		            	})
-
-						// Specify current version
-			            var platform = window.Sniff.os.name;
-			            if(platform === "win")
-			            {
-			                platform += "64";
-			            }
-			            else if (platform !== "osx")
-			            {
-			                platform = "linux64";
-			            }
-
-						var currentVersion = $.grep(versions, function(el){
-						    return el.os == platform;
-						});
-
-						if(currentVersion.length > 0)
-						$(".current-version").html(currentVersion[0].long_name);
-						$(".current-version").attr('href', currentVersion[0].href);
-
-						// Fill dropdowns
-						var dropdown = $(".dropdown-menu");
-						for(var i = 0; i < versions.length; i++)
-						{
-						    dropdown.append('<li><a href="' + versions[i].href + '">' + versions[i].name + '</a></li>');
-						}
-		            });
-		        });
-		    });
-		</script>
 </div>
 <div id="advanced" style="display: none;">
 <h2>Advanced Installation</h2>
