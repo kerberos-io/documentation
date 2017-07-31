@@ -18,28 +18,28 @@ You can install KiOS by using our **own installer**, which gives you a nice GUI 
 <button id="advanced-btn" class="btn" style="width: 49%; height: 50px; background-color: #ddd; font-size: 16px; color: #fff; outline: 0;">Advanced installation</button>
 
 <div id="installer">
-	<h2>Easy Installation</h2>
+<h2>Easy Installation</h2>
 
-	 <p><b>ATTENTION!</b><br/>
-	 We've experiencing <b>issues with the easy installation</b> if you are running <b>Windows 10</b>. When you're also experiencing issues, please follow the advanced installation using the Etcher installer. Meanwhile we'll try to resolve those issues.
-	 </p>
+<p><b>ATTENTION!</b><br/>
+We've experiencing <b>issues with the easy installation</b> if you are running <b>Windows 10</b>. When you're also experiencing issues, please follow the advanced installation using the Etcher installer. Meanwhile we'll try to resolve those issues.
+</p>
 
-	 <p>
-        Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By using our <b>cross-platform</b> installer, you can run a <b>fully configured</b> video surveillance system within <b>3 minutes</b>. Indeed, we also think that's awesome!
-    </p>
+<p>
+Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By using our <b>cross-platform</b> installer, you can run a <b>fully configured</b> video surveillance system within <b>3 minutes</b>. Indeed, we also think that's awesome!
+</p>
 
-	<img src="/images/kios-install.gif" style="border-radius: 0; margin: 0; width: 100%;"/>
+<img src="/images/kios-install.gif" style="border-radius: 0; margin: 0; width: 100%;"/>
 
-	<div id="bottom-download" class="btn-group" style="margin: 20px 0; width: 100%">
-        <a class="current-version btn btn-success btn-lg" style="color: #fff; margin-bottom: 5px;font-size: 18px; width: 90%;" data-track-id="jumbotron button" role="button"></a>
-                        <button type="button" class="btn btn-success btn-lg dropdown-toggle" style="font-size: 18px; width: 10%;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                            <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu" style="width:100%; margin: 0; padding:0"></ul>
-                    </div>
+<div id="bottom-download" class="btn-group" style="margin: 20px 0; width: 100%">
+      <a class="current-version btn btn-success btn-lg" style="color: #fff; margin-bottom: 5px;font-size: 18px; width: 90%;" data-track-id="jumbotron button" role="button"></a>
+                      <button type="button" class="btn btn-success btn-lg dropdown-toggle" style="font-size: 18px; width: 10%;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="caret"></span>
+                          <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu" style="width:100%; margin: 0; padding:0"></ul>
+                  </div>
 
-	<p>By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and flash KiOS to your SD card. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; it can't be easier.</p>
+<p>By using the KiOS installer, you'll get <b>an easy to use GUI</b> which allows you to configure and flash KiOS to your SD card. Just download the installer, select a version, specify your network configurations, select your SD card and press the flash button; it can't be easier.</p>
 
 </div>
 <div id="advanced" style="display: none;">
