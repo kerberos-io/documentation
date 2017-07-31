@@ -13,7 +13,7 @@
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
 
-<a name="2-3-1"></a>
+<a name="2-4-0"></a>
 ## 2.4.0
 
 #### Ecosystem
@@ -31,12 +31,13 @@
 #### Docker
 
 * Fix SSL support [#4](https://github.com/kerberos-io/docker/issues/4).
+* Auto removal if disk is full.
 
 #### Machinery
 
 * OpenMAX IL hardware encoding for Raspberry Pi camera. [#83](https://github.com/kerberos-io/machinery/issues/83)
-  * Optimized live streaming (benchmark 30FPS on Raspberry Pi Zero W).
-  * Optimized h264 recording (benchmark 30FPS on Raspberry Pi Zero W)
+  * Optimized live streaming.
+  * Optimized h264 recording.
 * Basic authentication for live streaming (username and password). [#80](https://github.com/kerberos-io/machinery/issues/80)
 
 <a name="2-3-1"></a>

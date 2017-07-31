@@ -70,7 +70,8 @@ A) Ubuntu
 
     sudo apt-get update && sudo apt-get upgrade
     curl -sL https://deb.nodesource.com/setup | sudo bash -
-    sudo apt-get install git nginx php7.0-cli php7.0-gd php7.0-mcrypt php7.0-curl php7.0-mbstring php7.0-dom php7.0-zip php7.0-fpm nodejs npm
+    sudo apt-get install git php7.0-cli php7.0-gd php7.0-mcrypt php7.0-curl php7.0-mbstring php7.0-dom php7.0-zip php7.0-fpm nodejs npm
+    sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 B) Raspbian
 
