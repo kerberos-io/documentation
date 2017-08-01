@@ -54,7 +54,7 @@ Reboot the system (or only Nginx).
 
 When a new release is available, new docker images are available [**on the docker hub**](https://hub.docker.com/u/kerberos/). There are two possible ways to upgrade your docker containers.
 
-### Append or change versio number
+### Append or change version number
 
 The easiest way is to update your **docker-compose.yml** file by changing or adding the version number.
 
@@ -62,7 +62,6 @@ The easiest way is to update your **docker-compose.yml** file by changing or add
         image: kerberos/machinery:v2.2.0
         ports:
         - "8889"
-
     web:
         image: kerberos/web:v2.2.0
         ports:

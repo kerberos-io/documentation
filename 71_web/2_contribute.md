@@ -67,7 +67,7 @@ The web is created with two frameworks and a lot of third-party libraries.
 <a name="laravel"></a>
 ### Laravel 5.4
 
-[**Laravel**]((http://laravel.com) is a very **powerful** and **popular** PHP framework. This is also the main reason why the web is created with Laravel, the community is huge. A lot of people are writing tutorials and recording webcasts. This makes **getting started** with contributing to the web repository so **easy**. You will find all the information you need on the Laravel [**documentation site**](http://laravel.com/docs/5.4).
+[**Laravel**](http://laravel.com) is a very **powerful** and **popular** PHP framework. This is also the main reason why the web is created with Laravel, the community is huge. A lot of people are writing tutorials and recording webcasts. This makes **getting started** with contributing to the web repository so **easy**. You will find all the information you need on the Laravel [**documentation site**](http://laravel.com/docs/5.4).
 
 <a name="backbonejs"></a>
 ### BackboneJS

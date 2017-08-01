@@ -7,7 +7,6 @@ You can use the Raspberry Pi Camera Module with Kerberos.io. You just need [**to
 The parameters of the Raspberry Pi Camera Module can be found in the **config/capture.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<captures>
-
 	    <RaspiCamera>
 					<frameWidth type="number">640</frameWidth>
 					<frameHeight type="number">480</frameHeight>
@@ -19,7 +18,6 @@ The parameters of the Raspberry Pi Camera Module can be found in the **config/ca
 					<contrast type="number">0</contrast>
 					<brightness type="number">50</brightness>
 			</RaspiCamera>
-
 	</captures>
 
 ### Framewidth and -height

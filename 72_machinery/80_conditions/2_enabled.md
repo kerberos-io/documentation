@@ -7,12 +7,10 @@ This condition makes it possible to **disable/enable Kerberos.io**, with a simpl
 The parameters of the Time condition can be found in the **config/condition.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<conditions>
-
 	    <Enabled>
 	    	<active type="bool">true</active>
 	        <delay type="number">5000</delay>
 	    </Enabled>
-	    
 	</conditions>
 
 ### Active

@@ -11,7 +11,7 @@ If you want to integrate Kerberos.io into your own application, you're at the ri
 
 ## Authentication
 
-To use the RESTfull API of your Kerberos.io instance you need to define an **Authorization header** with each request. We use **Basic Authentication** to secure the different **endpoints**. 
+To use the RESTfull API of your Kerberos.io instance you need to define an **Authorization header** with each request. We use **Basic Authentication** to secure the different **endpoints**.
 
 	"Authorization": "Basic root:root"
 
@@ -54,7 +54,8 @@ A list of all API methods available for version 1.
 	GET api/v1/name
 </div>
 <br/>
-**Description** 
+
+**Description**
 
 Retrieve the name of your instance.
 
@@ -68,7 +69,8 @@ Retrieve the name of your instance.
 	PUT api/v1/name
 </div>
 <br/>
-**Description** 
+
+**Description**
 
 Change the name of your instance.
 
@@ -86,7 +88,8 @@ Similar to **GET api/v1/name**.
 	GET api/v1/condition/enabled
 </div>
 <br/>
-**Description** 
+
+**Description**
 
 Check if enabled or disabled.
 
@@ -101,7 +104,8 @@ Check if enabled or disabled.
 	PUT api/v1/condition/enabled
 </div>
 <br/>
-**Description** 
+
+**Description**
 
 Activate or disable the system
 
@@ -119,7 +123,8 @@ Similar to **GET api/v1/condition/enabled**.
 	GET api/v1/system/health
 </div>
 <br/>
-**Description** 
+
+**Description**
 
 Check if the machinery is running (the stream is connected).
 
@@ -133,7 +138,8 @@ Check if the machinery is running (the stream is connected).
 	POST api/v1/system/reboot
 </div>
 <br/>
-**Description** 
+
+**Description**
 
 Restart the system.
 
@@ -141,6 +147,7 @@ Restart the system.
 	POST api/v1/system/shutdown
 </div>
 <br/>
-**Description** 
+
+**Description**
 
 Shutdown the system.

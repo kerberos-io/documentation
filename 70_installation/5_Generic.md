@@ -105,19 +105,15 @@ Copy and paste following config file; this file tells nginx where the web will b
     {
         listen 80 default_server;
         listen [::]:80 default_server;
-
         root /var/www/web/public;
         index index.html index.htm index.nginx-debian.html;
-
         server_name kerberos.rpi kerberos.rpi;
         index index.php index.html index.htm;
-
         location /
         {
                 autoindex on;
                 try_files $uri $uri/ /index.php?$query_string;
         }
-
         location ~ \.php$
         {
                 fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;

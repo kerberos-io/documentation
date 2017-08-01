@@ -1,4 +1,4 @@
-#Armbian
+# Armbian
 
 * [How to install](#how-to-install)
 * [Machinery](#machinery)
@@ -14,7 +14,7 @@
 ## Machinery
 
 <a name="machinery-install-package"></a>
-###Install package
+### Install package
 
 Update system and install dependency avcodec. These installation instructions assume that a fresh Armbian 5.24 or 5.25 installed.
 
@@ -33,12 +33,12 @@ Start the machinery on start-up, and reboot the system.
      sudo systemctl enable kerberosio && sudo reboot
 
 <a name="machinery-configure"></a>
-###Configure
+### Configure
 
 The configuration files can be found at **/etc/opt/kerberosio/config**. By default the Raspberry Pi Camera module is set as capture device. This must be changed in the **config.xml** to **USBCamera** or **IPCamera** depending on your camera. Images / videos are stored in the **/etc/opt/kerberosio/capture** directory by default; this location can be changed by editing the **io.xml** file.
 
 <a name="machinery-run"></a>
-###Run
+### Run
 
 After kerberos is installed a binary is available at **/usr/bin/kerberosio**. Just run following command in your terminal to start kerberosio
 
@@ -54,8 +54,9 @@ In case kerberosio does not start and complains about missing libraries, install
 <a name="web-installation-webserver"></a>
 ### Install webserver + PHP (optional)
 
-Update the packages and kernel.
+Add Raspbian package repo and update the packages and kernel.
 
+    echo "deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi" | sudo tee --append /etc/apt/sources.list
     sudo apt-get update && sudo apt-get upgrade
 
 Install Nginx and PHP (+extension).
@@ -73,19 +74,15 @@ Copy and paste following config file; this file tells nginx where the web will b
     {
         listen 80 default_server;
         listen [::]:80 default_server;
-
         root /var/www/web/public;
         index index.html index.htm index.nginx-debian.html;
-
         server_name kerberos.rpi kerberos.rpi;
         index index.php index.html index.htm;
-
         location /
         {
                 autoindex on;
                 try_files $uri $uri/ /index.php?$query_string;
         }
-
         location ~ \.php$
         {
                 fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;

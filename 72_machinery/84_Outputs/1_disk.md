@@ -7,15 +7,13 @@ An image can be saved to disk.
 The parameters of the Disk output device can be found in the **config/io**.xml file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<ios>
-
 	    <Disk>        
 	    	<fileFormat type="text">timestamp_microseconds_instanceName_regionCoordinates_numberOfChanges_token.jpg</fileFormat>
     		<directory type="text">/etc/opt/kerberosio/capture/</directory>
         	<markWithTimestamp type="bool">false</markWithTimestamp>
         	<timestampColor type="text">white</timestampColor>
 	        <privacy type="bool">false</privacy>
-    	</Disk>
-		    
+    	</Disk>    
 	</ios>
 
 ### File format

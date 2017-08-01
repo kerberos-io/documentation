@@ -4,7 +4,7 @@
 
 ![Counter heuristic](2_counter-heuristic.png)
 
-The quality of the Counter heuristic depends heavily on the accurancy of the chosen algorithm (Differential, Background subtraction, etc). Therefore **we recommend** to use the **Background Subtraction algorithm** as this is the most accurate one; the algorithm is used for segmentation and it will distinguish background and foreground. 
+The quality of the Counter heuristic depends heavily on the accurancy of the chosen algorithm (Differential, Background subtraction, etc). Therefore **we recommend** to use the **Background Subtraction algorithm** as this is the most accurate one; the algorithm is used for segmentation and it will distinguish background and foreground.
 
 After the algorithm did its magic, the segmented image is used by the Counter heuristic to calculate some features: the **center of mass** is calculated for each foreground segment, and is stored in memory together with the height and width of the segment. By using the coordinates of the center of mass a trajectory is calculated.
 
@@ -19,7 +19,7 @@ While the capture device is taking images, the counter heuristic will calculate 
 
 The idea of the feature list is that it contains the trajectory of an object which is moving from one point to another (a person walking by). A feature list exists for every moving object in the viewport of the camera and each feature list contains the sequence of center of masses (the x- and y-coordinates of the object).
 
-After the center of masses are calculated, existing feature lists are expanded or new feature lists are created (the start of a new object). By using the feature lists, **the direction of the moving objects** can be calculated, as it contains the initial center of mass and the last found center of mass. 
+After the center of masses are calculated, existing feature lists are expanded or new feature lists are created (the start of a new object). By using the feature lists, **the direction of the moving objects** can be calculated, as it contains the initial center of mass and the last found center of mass.
 
 ![Trajectory](2_counter-heuristic-trajectory.png)
 
@@ -28,9 +28,8 @@ As we know the trajectory of an object (and thus its direction), the intersectio
 ## Parameters
 
 The parameters of the Counter heuristic can be found in the **config/heuristic.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.
-	
+
 	<heuristics>
-	    
 		<Counter>
 		    <appearance type="number">5</appearance>
 		    <maxDistance type="number">90</maxDistance>
@@ -40,7 +39,6 @@ The parameters of the Counter heuristic can be found in the **config/heuristic.x
 	        <noMotionDelayTime type="number">1000</noMotionDelayTime>
 			<markers type="twolines">100,100|100,200|200,100|200,200</markers>
 		</Counter>
-
 	</heuristics>
 
 ### Appearance

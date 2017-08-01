@@ -7,7 +7,6 @@ This rectangle is a trivial expositor. A rectangle region can be defined to cons
 The parameters of the rectangle expositor can be found in the **config/expositor.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<expositors>
-	
 		<Rectangle>
 		    <region>
 			    <x1 type="number">0</x1>
@@ -16,7 +15,6 @@ The parameters of the rectangle expositor can be found in the **config/expositor
 			    <y2 type="number">720</y2>
 			 </region>
 		</Rectangle>
-
 	</expositors>
 
 
