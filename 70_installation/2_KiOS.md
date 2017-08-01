@@ -8,6 +8,7 @@
 * [Power on the Raspberry Pi](#poweron)
 * [Access the Raspberry Pi with SSH](#access)
 
+
 ## Introduction
 
 [KiOS](https://github.com/kerberos-io/kios) (Kerberos.io Operating System) is our own **custom linux OS**, which runs Kerberos.io out-of-the-box. KiOS is **installed like every other OS** for the Raspberry Pi, you need to flash the OS (.img) to a SD card. If you want to get Kerberos.io up and running at a short time frame, this is the **most simple** and **basic** installation procedure.
@@ -52,14 +53,14 @@ Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By usi
 
 <p>All releases are stored on the KiOS <a href="https://github.com/kerberos-io/kios"><b>Github repository</b></a>, each release contains several images (for every Raspberry Pi version a different image is created). It's important to download the correct image; installing an image for another Raspberry Pi version will not work. After downloading, make sure to unzip the release.</p>
 
-<a href="https://github.com/kerberos-io/kios/releases"><img alt="Download KiOS" src="2_kerberos-image.png"/></a>
+<a href="https://github.com/kerberos-io/kios/releases"><img src="2_kerberos-image.png" alt="Download KiOS"/></a>
 
 <a name="flash"></a>
 <h2>2. Flash the .img to a SD card with Etcher.io</h2>
 
 <p>For the advanced installation <b>we'll use Etcher</b>, it will handle the flashing for us. As you may have noticed the installer, used in the <b>Basic installation</b>, is forked from the original Etcher application. The major difference between Etcher and our own installer is that we've added some configurational sugar on top of Etcher, setup your network configuration and automatic downloading of the KiOS release.</p>
 
-<a target="_blank" href="https://etcher.io"><img alt="Installing Etcher.io" src="2_etcher.png"/></a>
+<a target="_blank" href="https://etcher.io"><img src="2_etcher.png" alt="Installing Etcher.io"/></a>
 
 <p>So the only thing you'll need to do for flashing, the hard way, is to <b><a target="_blank" href="https://etcher.io">go to Etcher.io</a></b> and download the Etcher installer that matches your OS. After installation you can simply open Etcher and go with the flow: <b>select the KiOS image</b> which you've previously downloaded, <b>select your SD card</b> and <b>click the flash button</b>. Tadaaaa, and you're ready to rumble.</p>
 
@@ -75,13 +76,10 @@ Installing <b>Kerberos.io</b> to your IoT device, has never been so easy. By usi
 <pre><code>#####################################################################
 # Enter the IP-address you want to have, followed by the subnet mask
 # e.g. 192.168.0.10/24
-
 static_ip=""
-
 #####################################################################
 # Enter the Gateway and DNS, this will be your router in most cases
 # e.g. 192.168.0.1
-
 static_gw=""
 static_dns=""</code></pre>
 
@@ -91,7 +89,6 @@ static_dns=""</code></pre>
 
 <pre><code>update_config=1
 ctrl_interface=/var/run/wpa_supplicant
-
 network={
 	scan_ssid=1
 	ssid=""

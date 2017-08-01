@@ -9,11 +9,9 @@ This hull is a more complex expositor than the rectangle. A hull can be selected
 The parameters of the hull expositor can be found in the **config/expositor.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<expositors>
-	
 		<Hull>
 		    <region type="hullselection">347,361|627,266|975,328|1091,328|1148,413|1158,516|1121,534|962,567|699,648|531,700|243,613|423,550|665,453|850,470|666,361|467,385|325,460|165,372</region>
 		</Hull>
-
 	</expositors>
 
 

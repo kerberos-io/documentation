@@ -5,6 +5,7 @@
 	* [Client](#client)
 * [Settings page](#settings-page)
 
+
 The web contains several important concepts and this is the right place where we will explain them briefly.
 
 <a name="file-structure"></a>

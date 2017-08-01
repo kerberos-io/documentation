@@ -9,7 +9,6 @@ The algorithm is described in [**following paper**](http://personal.ee.surrey.ac
 The parameters of the Background images algorithm can be found in the *config/algorithm.xml* file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<algorithms>
-
 		<BackgroundSubtraction>
 			<shadows type="text">true</shadows>
 			<history type="number">50</history>
@@ -19,7 +18,6 @@ The parameters of the Background images algorithm can be found in the *config/al
 			<dilate type="number">7</dilate>
 	    	<threshold type="number">20</threshold>
 	    </BackgroundSubtraction>
-    
 	</algorithms>
 
 ### Shadows
@@ -28,7 +26,7 @@ The shadows parameter is a true or false. By using this parameter you can make t
 
 ### History
 
-This is an integer which tells the system, **the amount of images the system should take into account (history)**, to calculate the background model. The higher the history integer, the more images it will use to calculate the background model. By **increasing the history** you get **a more stable background** model, but a **less flexibl**e. As more images from the past are taken into account, the slower the background model will adapt to a new scenario. E.g. when a car drives into your street, and stands still for 5 minutes. 
+This is an integer which tells the system, **the amount of images the system should take into account (history)**, to calculate the background model. The higher the history integer, the more images it will use to calculate the background model. By **increasing the history** you get **a more stable background** model, but a **less flexibl**e. As more images from the past are taken into account, the slower the background model will adapt to a new scenario. E.g. when a car drives into your street, and stands still for 5 minutes.
 
 Finding the ideal history parameters, depends heavily in the application you want to use it. In practice this **is achieved by trial and error**.
 

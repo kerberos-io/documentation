@@ -7,12 +7,10 @@ It can be helpful to **enable or disable Kerberos.io at specific times**. Theref
 The parameters of the Time condition can be found in the **config/condition.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<conditions>
-
     	<Time>
         	<times type="timeselection">13:00,15:00-0:01,20:58-0:01,20:59-0:01,19:20-0:01,21:59-0,0-0,0</times>
         	<delay type="number">10000</delay>
     	</Time>
-
 	</conditions>
 
 

@@ -7,7 +7,6 @@ Kerberos.io supports a whole range of USB-cameras. You will find a complete list
 The parameters of the USB-camera can be found in the **config/capture.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<captures>
-
 		<USBCamera>
 	    	<frameWidth type="number">1280</frameWidth>
 	    	<frameHeight type="number">720</frameHeight>
@@ -15,7 +14,6 @@ The parameters of the USB-camera can be found in the **config/capture.xml** file
             <delay type="number">0</delay>
             <angle type="number">0</angle>
 	    </USBCamera>
-
 	</captures>
 
 ### Framewidth and -height

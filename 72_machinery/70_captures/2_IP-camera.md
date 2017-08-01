@@ -7,7 +7,6 @@ Kerberos.io can be used with any IP-camera, that provides a RTSP (or MJPEG) stre
 The parameters of the IP capture device can be found in the **config/capture.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<captures>
-
 		<IPCamera>
             <url type="text">http://username:password@ipaddress/image.jpg</url>
             <frameWidth type="number">800</frameWidth>
@@ -15,7 +14,6 @@ The parameters of the IP capture device can be found in the **config/capture.xml
             <delay type="number">0</delay>
             <angle type="number">0</angle>
         </IPCamera>
-
 	</captures>
 
 ### URL

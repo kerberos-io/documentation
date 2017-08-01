@@ -8,11 +8,9 @@ Detailed information (a JSON object) is send as a POST request to a webhook. The
 The parameters of the webhook can be found in the **config/io.xml** file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<ios>
-
 		<Webhook>
-            <url type="text">http://kerberos.web/api/v1/webhook</url>
-        </Webhook>
-	    
+			<url type="text">http://kerberos.web/api/v1/webhook</url>
+		</Webhook>
 	</ios>
 
 ### Url

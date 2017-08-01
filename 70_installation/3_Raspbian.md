@@ -20,7 +20,7 @@ A short video explaining how to install Kerberos.io on Raspbian.
 ## Machinery
 
 <a name="machinery-install-package"></a>
-###Install package
+### Install package
 
 Update system
 
@@ -43,12 +43,12 @@ Start the machinery on start-up, and reboot the system.
      sudo systemctl enable kerberosio && sudo reboot
 
 <a name="machinery-configure"></a>
-###Configure
+### Configure
 
 The configuration files can be found at **/etc/opt/kerberosio/config**. By default the Raspberry Pi Camera module is set as capture device. You can update the **config.xml** file to change it to **USBCamera** or **IPCamera**. Images are stored in the **/etc/opt/kerberosio/capture** directory by default; this location can be changed by editing the **io.xml** file.
 
 <a name="machinery-run"></a>
-###Run
+### Run
 
 After kerberos is installed a binary is available at **/usr/bin/kerberosio**. Just run following command in your terminal to start kerberosio
 
@@ -82,19 +82,15 @@ Copy and paste following config file; this file tells nginx where the web will b
     {
         listen 80 default_server;
         listen [::]:80 default_server;
-
         root /var/www/web/public;
         index index.html index.htm index.nginx-debian.html;
-
         server_name kerberos.rpi kerberos.rpi;
         index index.php index.html index.htm;
-
         location /
         {
                 autoindex on;
                 try_files $uri $uri/ /index.php?$query_string;
         }
-
         location ~ \.php$
         {
                 fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;

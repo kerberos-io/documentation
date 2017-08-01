@@ -7,22 +7,20 @@ When a valid event is detected, a video will be recorded for x seconds. When mor
 The parameters of the Video output device can be found in the **config/io**.xml file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 	<ios>
-
-    	<Video>
-					<fps type="number">3</fps>
-					<recordAfter type="number">5</recordAfter>
-					<maxDuration type="number">120</maxDuration>
-					<extension type="number">mp4</extension>
-					<codec type="number">h264</codec>
-					<fileFormat type="text">timestamp_microseconds_instanceName_regionCoordinates_numberOfChanges_token</fileFormat>
-					<directory type="text">/etc/opt/kerberosio/capture/</directory>
-					<hardwareDirectory type="text">/etc/opt/kerberosio/h264/</hardwareDirectory>
-					<enableHardwareEncoding type="bool">true</enableHardwareEncoding>
-					<markWithTimestamp type="bool">false</markWithTimestamp>
-					<timestampColor type="text">white</timestampColor>
-					<privacy type="bool">false</privacy>
-	    </Video>
-
+		<Video>
+			<fps type="number">3</fps>
+			<recordAfter type="number">5</recordAfter>
+			<maxDuration type="number">120</maxDuration>
+			<extension type="number">mp4</extension>
+			<codec type="number">h264</codec>
+			<fileFormat type="text">timestamp_microseconds_instanceName_regionCoordinates_numberOfChanges_token</fileFormat>
+			<directory type="text">/etc/opt/kerberosio/capture/</directory>
+			<hardwareDirectory type="text">/etc/opt/kerberosio/h264/</hardwareDirectory>
+			<enableHardwareEncoding type="bool">true</enableHardwareEncoding>
+			<markWithTimestamp type="bool">false</markWithTimestamp>
+			<timestampColor type="text">white</timestampColor>
+			<privacy type="bool">false</privacy>
+		</Video>
 	</ios>
 
 ### FPS

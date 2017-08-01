@@ -1,6 +1,6 @@
 # Multi-camera on Raspbian
 
-When you've installed Kerberos.io on your **Raspbian** installation, then you have the possibility **to connect one or more cameras** to the Raspberry Pi. Please note that this functionality **isn't available out-of-the-box**, and therefore requires some technical skills to configure. 
+When you've installed Kerberos.io on your **Raspbian** installation, then you have the possibility **to connect one or more cameras** to the Raspberry Pi. Please note that this functionality **isn't available out-of-the-box**, and therefore requires some technical skills to configure.
 
 ## Install Raspbian
 
@@ -24,7 +24,7 @@ What this will do is start two new kerberosio processes, and **connect each USB 
 
 ## Where can I find those variables?
 
-When Kerberos.io is started it will write to a log file located at**/etc/opt/kerberosio/logs/log.stash**, which you can see on the system page of the web interface. In the log file you'll see the startup configuration with all the different settings. You can overwrite every setting which is listed in this overview, just keep in mind that you have to prefix every option with **a double dash --**.
+When Kerberos.io is started it will write to a log file located at **/etc/opt/kerberosio/logs/log.stash**, which you can see on the system page of the web interface. In the log file you'll see the startup configuration with all the different settings. You can overwrite every setting which is listed in this overview, just keep in mind that you have to prefix every option with **a double dash --**.
 
 	26/10/2016 08:11:36.135 INFO  [trivial] Reading configuration
 	26/10/2016 08:11:36.141 INFO  [trivial] Final configuration:
@@ -57,4 +57,3 @@ When Kerberos.io is started it will write to a log file located at**/etc/opt/ker
 ## Where can I find my images?
 
 All images will be stored at the same location, so they will be mixed in the webinterface. We don't provide a way to see the images independent (on a camera basis), if you would like to have this then you should check out our [**cloud application**](https://cloud.kerberos.io) which has some additional features.
-

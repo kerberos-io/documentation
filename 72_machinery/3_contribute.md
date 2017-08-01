@@ -15,7 +15,7 @@
 	* [Compile](#compile)
 * [Adding a test](#adding-a-test)
 	* [Create the test file](#create-the-test-file)
-    
+
 Contributing to the **machinery** repository requires C++ sklls. This document describes how to contribute to Kerberos.io and describes all the technical stuff you will need to know. If you want to contribute, the first thing you will need to do is installing the source code on your local environment.
 
 <a name="installation"></a>
@@ -41,7 +41,7 @@ That's it..
 <a name="versioning"></a>
 ## Versioning
 
-As you've probably seen in the **installation summary** we are hosting our repositories on [**github**](https://github.com/kerberos-io). As any larger project we are also using a versioning strategy; an easy one :) we don't want to get the things complicated. The version strategy is based on this [**branching model**](http://nvie.com/posts/a-successful-git-branching-model/). 
+As you've probably seen in the **installation summary** we are hosting our repositories on [**github**](https://github.com/kerberos-io). As any larger project we are also using a versioning strategy; an easy one :) we don't want to get the things complicated. The version strategy is based on this [**branching model**](http://nvie.com/posts/a-successful-git-branching-model/).
 
 The model includes:
 
@@ -52,7 +52,7 @@ The model includes:
 The idea is that the **master** branch always contains a stable release and development happens on the **develop** branch. When we plan to create a new release we merge the develop branch to the master branch and create a new release. If **bugs are introduced** in the master branch (stable release), **hotfixes** are pushed to the master branch and merged back to the develop branch. Believe me, it's very straight-forward if you are into it.
 
 <a name="IDE"></a>
-##IDE
+## IDE
 
 <a name="setup-clion"></a>
 ### CLion
@@ -60,7 +60,7 @@ The idea is that the **master** branch always contains a stable release and deve
 Contributing to the machinery by using CLion is **very easy**. You just need to **open the root folder** of the machinery and run the project. CLion will compile the source code by using cmake. You don't have to do anything.
 
 <a name="testing"></a>
-## Testing 
+## Testing
 
 <a name="continous-integration"></a>
 ### Continous integration
@@ -73,7 +73,7 @@ The machinery is build automatically on **Travis-CI**, when a new commit/release
 We strongly recommend testing as a best practice in complex projects. Therefore the machinery uses the popular C++ test library: Google Test and Google Mock. The tests can be found in the **test** directory. You can run the test by executing following command:
 
 	make check
-    
+
 <a name="adding-a-new-class"></a>
 ## Adding a new class
 
@@ -97,12 +97,9 @@ First we will need to create a new header file in the **include/kerberos/machine
 	//  The program(s) may be used and/or copied .
 	//
 	/////////////////////////////////////////////////////
-
 	#ifndef __AnotherAlgorithm_H_INCLUDED__   // if AnotherAlgorithm.h hasn't been included yet...
 	#define __AnotherAlgorithm_H_INCLUDED__   // #define this so the compiler knows it has been included
-
 	#include "machinery/algorithm/Algorithm.h"
-
 	namespace kerberos
 	{
     	char AnotherAlgorithmName[] = "AnotherAlgorithm";
@@ -111,11 +108,9 @@ First we will need to create a new header file in the **include/kerberos/machine
         	private:
         		Image m_result;
             	int m_parameter;
-
         	public:
             	AnotherAlgorithm(){}
             	void setup(const StringMap & settings);
-       
             	void initialize(ImageVector & images);
             	Image evaluate(ImageVector & images, JSON & data);
             	void setParameter(int parameter);
@@ -135,7 +130,6 @@ The inheritance of the creator class can be a little bit strange, but it is requ
 Ofcourse we also need to have an implementation file, therefore we need to create a new source file in the **src/kerberos/machinery/algorithm** directory. Just like the previous example, you can copy an existing class and implement the member functions you've declared in the header file. An example would be:
 
 	#include "machinery/algorithm/AnotherAlgorithm.h"
-
 	namespace kerberos
 	{
 	    void AnotherAlgorithm::setup(const StringMap & settings)
@@ -144,24 +138,19 @@ Ofcourse we also need to have an implementation file, therefore we need to creat
 	        int parameter = std::atoi(settings.at("algorithms.AnotherAlgorithm.parameter").c_str());
 	        setParameter(parameter);
 	    }
-	    
 	    void AnotherAlgorithm::initialize(ImageVector & images)
 	    {
 	        ....
 	    }
-
 	    Image AnotherAlgorithm::evaluate(ImageVector & images, JSON & data)
 	    {
-	    	Image evaluation;
-
-	    	... do something ..
-	        
+	        Image evaluation;
+	        ... do something ..
 	        return evaluation;
 	    }
-
 	    void AnotherAlgorithm::setParameter(int parameter)
 	    {
-	    	m_parameter = parameter;
+	        m_parameter = parameter;
 	    }
 	}
 
@@ -175,7 +164,6 @@ Open the CMakeLists.txt in the **src/kerberos** directory file and append the na
 	#   - classes are registered on compile time, so they
 	#   don't belong to a library. New algorithms, expositors
 	#   or Io classes belong here.
-
     set(KERBEROS_FACTORY_ENTITIES
         capture/USBCamera.cpp
         machinery/condition/Time.cpp
@@ -194,16 +182,14 @@ Open the CMakeLists.txt in the **src/kerberos** directory file and append the na
 <a name="create-a-new-entry-in-the-config-file"></a>
 ### Create a new entry in the config file
 
-Open the algorithm.xml file in the **config** directory, and add a new tag with exactly the same name you've used in the header file; so in our example "AnotherAlgorithm". Within the new tag we can add properties that we will be use to configure our algorithm, in our example we defined a field **parameter** so we can add this field in the config file. 
+Open the algorithm.xml file in the **config** directory, and add a new tag with exactly the same name you've used in the header file; so in our example "AnotherAlgorithm". Within the new tag we can add properties that we will be use to configure our algorithm, in our example we defined a field **parameter** so we can add this field in the config file.
 
 One thing you will need to do is to attach a **type** to a property. The type will be used by the web to **automatically render** the properties. For simplicity we can use the type number, this will show an input box on the settings page of the web where we are able to add numbers.
 
 	<algorithms>
-
 		<AnotherAlgorithm>
 			<parameter type="number">5</parameter>
 	    </AnotherAlgorithm>
-	    
 	</algorithms>
 
 You can retrieve the parameter in the **setup** function with the settings parameter.
@@ -229,40 +215,33 @@ Add a new file to the **test/** directory, prefix the file with **test_** e.g. t
 	#include "gmock/gmock.h"
 	#include "Factory.h"
 	#include "Types.h"
-
 	using ::testing::AtLeast;
 	using ::testing::Return;
 	using namespace kerberos;
-
 	// ----------------------------------------
 	// Enabled condition: allowed function
-
 	TEST(ENABLED_CONDITION, ALLOWED)
 	{
 	    Condition * condition = Factory<Condition>::getInstance()->create("Enabled");
-
 	    // This is only for mocking
 	   	ImageVector images;
-
 	    StringMap settings;
 	    settings["conditions.Enabled.delay"] = "2000";
-
 	    // Enable condition
 	    settings["conditions.Enabled.active"] = "true";
 	    condition->setup(settings);
 	    bool canExecute = condition->allowed(images);
 	    EXPECT_EQ(true, canExecute);
-
 	    // Disable condition
 	    settings["conditions.Enabled.active"] = "false";
 	    condition->setup(settings);
 	    canExecute = condition->allowed(images);
 	    EXPECT_EQ(false, canExecute);
-	}	
+	}
 
 ### Run tests
 
-To execute the test you can run the **make check** in the **build/** directory. When you've added a new test file, you will need to execute the **cmake** command again. 
+To execute the test you can run the **make check** in the **build/** directory. When you've added a new test file, you will need to execute the **cmake** command again.
 
 	cd build/
 	cmake ..
@@ -285,31 +264,26 @@ You will get following output
 	[ RUN      ] ENABLED_CONDITION.ALLOWED
 	[       OK ] ENABLED_CONDITION.ALLOWED (2002 ms)
 	[----------] 1 test from ENABLED_CONDITION (2002 ms total)
-
 	[----------] 2 tests from HELPER
 	[ RUN      ] HELPER.T_TO_STRING
 	[       OK ] HELPER.T_TO_STRING (0 ms)
 	[ RUN      ] HELPER.NORMALIZE_PATH
 	[       OK ] HELPER.NORMALIZE_PATH (0 ms)
 	[----------] 2 tests from HELPER (0 ms total)
-
 	[----------] 1 test from HULL_EXPOSITOR
 	[ RUN      ] HULL_EXPOSITOR.CALCULATE
 	[       OK ] HULL_EXPOSITOR.CALCULATE (1 ms)
 	[----------] 1 test from HULL_EXPOSITOR (1 ms total)
-
 	[----------] 1 test from RECTANGLE_EXPOSITOR
 	[ RUN      ] RECTANGLE_EXPOSITOR.CALCULATE
 	[       OK ] RECTANGLE_EXPOSITOR.CALCULATE (0 ms)
 	[----------] 1 test from RECTANGLE_EXPOSITOR (0 ms total)
-
 	[----------] 1 test from SEQUENCE_HEURISTIC
 	[ RUN      ] SEQUENCE_HEURISTIC.IS_VALID
 	[       OK ] SEQUENCE_HEURISTIC.IS_VALID (1005 ms)
 	[----------] 1 test from SEQUENCE_HEURISTIC (1005 ms total)
-
 	[----------] Global test environment tear-down
 	[==========] 6 tests from 5 test cases ran. (3008 ms total)
 	[  PASSED  ] 6 tests.
 	[100%] Built target check
-	macbook:build cedricverstraeten$ 
+	macbook:build cedricverstraeten$
