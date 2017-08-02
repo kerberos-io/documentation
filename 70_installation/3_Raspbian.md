@@ -134,7 +134,7 @@ Reboot
 
 By default images or videos **aren't removed automatically**. This means that Kerberos.io will keep writing to disk, even if there is no more space available on your SD card. When your **SD card is full** you'll be **experiencing strange errors**: a corrupt web interface, blank images or corrupt videos.
 
-To resolve this your should install a simple **bash script** and initiate **a cronjob** which continiously poll your filesystem, and start removing media when your disk is getting full.
+To resolve this your should install a simple **bash script** and initiate **a cronjob** which continuously poll your filesystem, and start removing media when your disk is getting full.
 
 Create a bash script and copy following script.
 
