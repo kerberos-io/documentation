@@ -135,10 +135,11 @@ Create a bash script and copy following script.
 Copy following script (make sure the partition is correct, this is the default one for a Raspberry Pi).
 
     partition=/dev/mmcblk0p1
+    imagedir=/etc/opt/kerberosio/capture/
     if [[ $(df -h | grep $partition | head -1 | awk -F' ' '{ print $5/1 }' | tr ['%'] ["0"]) -gt 90 ]];
     then
         echo "Cleaning disk"
-        find /etc/opt/kerberosio/capture/ -type f | sort | head -n 100 | xargs -r rm -rf;
+        find $imagedir -type f | sort | head -n 100 | xargs -r rm -rf;
     fi;
 
 Make the script executable.
