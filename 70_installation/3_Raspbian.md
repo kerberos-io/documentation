@@ -138,25 +138,25 @@ To resolve this your should install a simple **bash script** and initiate **a cr
 
 Create a bash script and copy following script.
 
-  nano /home/pi/autoremoval.sh
+    nano /home/pi/autoremoval.sh
 
 Copy following script (make sure the partition is correct, this is the default one for a Raspberry Pi).
 
-  partition=/dev/mmcblk0p1
-  if [[ $(df -h | grep $partition | head -1 | awk -F' ' '{ print $5/1 }' | tr ['%'] ["0"]) -gt 90 ]];
-  then
+    partition=/dev/mmcblk0p1
+    if [[ $(df -h | grep $partition | head -1 | awk -F' ' '{ print $5/1 }' | tr ['%'] ["0"]) -gt 90 ]];
+    then
         echo "Cleaning disk"
         find /etc/opt/kerberosio/capture/ -type f | sort | head -n 100 | xargs -r rm -rf;
-  fi;
+    fi;
 
 Make the script executable.
 
-  chmod +x /home/pi/autoremoval.sh
+    chmod +x /home/pi/autoremoval.sh
 
 Initiate a cronjob, and select the **nano** editor.
 
-  crontab -e
+    crontab -e
 
 Append following line, to execute the **autoremoval.sh** script every 5min.
 
-  */5 * * * * /bin/bash /home/pi/autoremoval.sh
+    */5 * * * * /bin/bash /home/pi/autoremoval.sh
