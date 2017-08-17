@@ -23,9 +23,10 @@ A short video explaining how to install Kerberos.io on Raspbian.
 <a name="machinery-install-package"></a>
 ### Install package
 
-Update system
+Update system and install libav-tools.
 
     sudo apt-get update
+    sudo apt-get update && sudo apt-get install libav-tools
 
 Download the debian file from [**the machinery repository**](https://github.com/kerberos-io/machinery/releases/v%machineryversion%/); Please download the correct version for your Raspberry Pi, **replace X by the version**.
 

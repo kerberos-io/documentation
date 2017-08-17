@@ -1,5 +1,7 @@
 # Release notes
 
+* [2.4.2](#2-4-2)
+* [2.4.1](#2-4-1)
 * [2.4.0](#2-4-0)
 * [2.3.1](#2-3-1)
 * [2.3.0](#2-3-0)
@@ -12,6 +14,28 @@
 * [1.0.2](#1-0-2)
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
+
+<a name="2-4-2"></a>
+## 2.4.2
+
+#### Web
+
+* Typo in french translation, causes the web interface crash.
+
+#### Machinery
+
+* Resolved major bug in livestream: memory leak in stream class. [#94](https://github.com/kerberos-io/machinery/issues/94).
+* Capture health verification: check if the chosen capture device is still grabbing (and didn't stalled).
+* Extra logging when recording with raspberry pi camera.
+* Make sure the cloud upload is functioning properly, after an upload it's verified if the files really exist in the cloud.
+
+<a name="2-4-1"></a>
+## 2.4.1
+
+#### Web
+
+* Show warning when system is disabled. [#88](https://github.com/kerberos-io/web/issues/88).
+* Hull selector in basic view not always working.
 
 <a name="2-4-0"></a>
 ## 2.4.0
