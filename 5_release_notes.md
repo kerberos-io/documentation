@@ -1,5 +1,6 @@
 # Release notes
 
+* [2.5.0](#2-5-0)
 * [2.4.2](#2-4-2)
 * [2.4.1](#2-4-1)
 * [2.4.0](#2-4-0)
@@ -15,6 +16,21 @@
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
 
+<a name="2-5-0"></a>
+## 2.5.0
+
+#### Web
+
+* Added Chinese and Italian language.
+* Resolved issue with INSTALLED=true.
+* Make latest_sequence available with basic auth.  [#99](https://github.com/kerberos-io/web/issues/99)
+
+#### Machinery
+
+* Provide an IO service for publishing events to MQTT. [#89](https://github.com/kerberos-io/machinery/issues/89)
+* Optimize recording with H264_OMX. [#83](https://github.com/kerberos-io/machinery/issues/83)
+* Implement throttler for Io detections . [#96](https://github.com/kerberos-io/machinery/issues/96)
+
 <a name="2-4-2"></a>
 ## 2.4.2
 
@@ -24,7 +40,7 @@
 
 #### Machinery
 
-* Resolved major bug in livestream: memory leak in stream class. [#94](https://github.com/kerberos-io/machinery/issues/94).
+* Resolved major bug in livestream: memory leak in stream class. [#94](https://github.com/kerberos-io/machinery/issues/94)
 * Capture health verification: check if the chosen capture device is still grabbing (and didn't stalled).
 * Extra logging when recording with raspberry pi camera.
 * Make sure the cloud upload is functioning properly, after an upload it's verified if the files really exist in the cloud.
