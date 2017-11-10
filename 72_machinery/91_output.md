@@ -22,3 +22,7 @@ The TCP/IP client will send a TCP packet to a server.
 <a name="webhook"></a>
 ## Webhook
 Detailed information (a JSON object) is send as a POST request to a webhook. The JSON object contains the number of changes, the region, the URL of the image, etc. 
+
+<a name="mqtt"></a>
+## MQTT
+Detailed information (a JSON object) is published to an MQTT topic. The JSON object contains the number of changes, the region, the URL of the image, etc. 
