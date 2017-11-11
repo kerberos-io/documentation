@@ -1,6 +1,6 @@
 # MQTT
 
-MQTT protocol is a light-weight Machine to Machine (M2M) protocol widely used in Internet of things.
+MQTT protocol is a light-weight Machine to Machine (M2M) protocol widely used in Internet of things.  
 Detailed information (a JSON object) is published to an MQTT topic. The JSON object contains the number of changes, the region, the URL of the image, etc.
 
 ## Parameters
@@ -20,7 +20,7 @@ The parameters of the MQTT output can be found in the **config/io.xml** file, bu
 
 ### Secure
 
-If checked, enable SSL/TLS support.
+If checked, enable SSL/TLS support.  
 **PLEASE NOTE**: when SSL/TLS support is enabled, the server certificate issuer is verified against the CA (Certification Authority) files available in /etc/ssl/certs. 
 
 ### Verifycn
