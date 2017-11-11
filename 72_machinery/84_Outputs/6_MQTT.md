@@ -46,7 +46,8 @@ This is only needed if the MQTT broker is configured for authentication.
 
 ### Password
 
-The password to use, together with the username, for authenticating to the MQTT broker. This is only supported by brokers that implement the MQTT spec v3.1. This is only needed if the MQTT broker is configured for authentication,
+The password to use, together with the username, for authenticating to the MQTT broker. This is only supported by brokers that implement the MQTT spec v3.1.  
+This is only needed if the MQTT broker is configured for authentication,
 
 ## Output
 
