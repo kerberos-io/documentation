@@ -41,7 +41,8 @@ The topic to publish to.
 
 ### Username
 
-The username for authenticating to the MQTT broker. This is only supported by brokers that implement the MQTT spec v3.1. If username is not set (empty), the password argument is ignored. This is only needed if the MQTT broker is configured for authentication. 
+The username for authenticating to the MQTT broker. This is only supported by brokers that implement the MQTT spec v3.1. If username is not set (empty), the password argument is ignored.  
+This is only needed if the MQTT broker is configured for authentication. 
 
 ### Password
 
