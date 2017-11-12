@@ -5,6 +5,7 @@
 * [GPIO](#gpio)
 * [TCP/IP client](#tcp-ip-client)
 * [Webhook](#webhook)
+* [MQTT](#mqtt)
 * [Script](#script)
 
 If the heuristic determined that the evaluation was valid, one or more IO operations can be executed. You configure which IO operations that will be executed, by modifying the configuration file or using the web interface.
@@ -27,7 +28,11 @@ The TCP/IP client will send a TCP packet to a server.
 
 <a name="webhook"></a>
 ## Webhook
-Detailed information (a JSON object) is send as a POST request to a webhook. The JSON object contains the number of changes, the region, the URL of the image, etc.
+Detailed information (a JSON object) is send as a POST request to a webhook. The JSON object contains the number of changes, the region, the URL of the image, etc. 
+
+<a name="mqtt"></a>
+## MQTT
+Detailed information (a JSON object) is published to an MQTT topic. The JSON object contains the number of changes, the region, the URL of the image, etc. 
 
 <a name="script"></a>
 ## Script
