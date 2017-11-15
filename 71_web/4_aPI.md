@@ -65,6 +65,22 @@ Retrieve the name of your instance.
  		"name": "frontdoor"
 	}
 
+
+<div class="api-method">
+	PUT api/v1/name
+</div>
+<br/>
+
+**Description**
+
+Change the name of your instance.
+
+**Data**
+
+	{
+ 		"name": "frontdoor-changed"
+	}
+
 <div class="api-method">
 	GET api/v1/images/latest_sequence
 </div>
@@ -94,21 +110,6 @@ Retrieve the latest sequence detected.
             type: "video"
         }
     ]
-
-<div class="api-method">
-	PUT api/v1/name
-</div>
-<br/>
-
-**Description**
-
-Change the name of your instance.
-
-**Data**
-
-	{
- 		"name": "frontdoor-changed"
-	}
 
 **Response**
 
