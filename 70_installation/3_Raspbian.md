@@ -26,7 +26,7 @@ A short video explaining how to install Kerberos.io on Raspbian.
 Update system and install libav-tools.
 
     sudo apt-get update
-    sudo apt-get update && sudo apt-get install libav-tools
+    sudo apt-get update && sudo apt-get install libav-tools libpng12-0
 
 Make sure you have SSL 1.0.0 installed (Raspbian now ships with a newer SSL version).
 
