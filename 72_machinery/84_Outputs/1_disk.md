@@ -13,6 +13,7 @@ The parameters of the Disk output device can be found in the **config/io**.xml f
         	<markWithTimestamp type="bool">false</markWithTimestamp>
         	<timestampColor type="text">white</timestampColor>
 	        <privacy type="bool">false</privacy>
+					<throttler type="number">0</throttler>
     	</Disk>    
 	</ios>
 
@@ -43,3 +44,7 @@ The privacy mode can be activated to remove some parts from the image. This espe
 After updating the configuration, you'll see that the pixels outside your region of interest (ROI) are made black; the image below illustrates this.
 
 ![Video privacy](1_disk-io-privacy.png)
+
+### Throttler
+
+Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the Disk will only be triggered once in 5 seconds, nevertheless more detections occurred.

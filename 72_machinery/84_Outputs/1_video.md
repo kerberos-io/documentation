@@ -20,6 +20,7 @@ The parameters of the Video output device can be found in the **config/io**.xml 
 			<markWithTimestamp type="bool">false</markWithTimestamp>
 			<timestampColor type="text">white</timestampColor>
 			<privacy type="bool">false</privacy>
+			<throttler type="number">0</throttler>
 		</Video>
 	</ios>
 
@@ -78,3 +79,7 @@ The privacy mode can be activated to remove some parts from the video. This espe
 After updating the configuration, you'll see that the pixels outside your region of interest (ROI) are made black; the image below illustrates this.
 
 ![Video privacy](1_video-io-privacy.png)
+
+### Throttler
+
+Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the Video will only be triggered once in 5 seconds, nevertheless more detections occurred.

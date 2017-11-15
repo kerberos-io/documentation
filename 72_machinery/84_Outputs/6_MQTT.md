@@ -10,18 +10,18 @@ The parameters of the MQTT output can be found in the **config/io.xml** file, bu
     <MQTT>
         <secure type="bool">false</secure>
         <verifycn type="bool">false</verifycn>
-	<server type="number">127.0.0.1</server> 
+        <server type="number">127.0.0.1</server>
         <port type="number">1883</port>
-	<topic type="text">kios/mqtt</topic>
+        topic type="text">kios/mqtt</topic>
         <username type="text"></username>
         <password type="text"></password>
-	<throttler type="number">0</throttler> 
+        <throttler type="number">0</throttler>
     </MQTT>
 
 ### Secure
 
 If checked, enable SSL/TLS support.  
-**PLEASE NOTE**: when SSL/TLS support is enabled, the server certificate issuer is verified against the CA (Certification Authority) files available in /etc/ssl/certs. 
+**PLEASE NOTE**: when SSL/TLS support is enabled, the server certificate issuer is verified against the CA (Certification Authority) files available in /etc/ssl/certs.
 
 ### Verifycn
 
@@ -42,12 +42,16 @@ The topic to publish to.
 ### Username
 
 The username for authenticating to the MQTT broker. This is only supported by brokers that implement the MQTT spec v3.1. If username is not set (empty), the password argument is ignored.  
-This is only needed if the MQTT broker is configured for authentication. 
+This is only needed if the MQTT broker is configured for authentication.
 
 ### Password
 
 The password to use, together with the username, for authenticating to the MQTT broker. This is only supported by brokers that implement the MQTT spec v3.1.  
 This is only needed if the MQTT broker is configured for authentication.
+
+### Throttler
+
+Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the MQTT will only be triggered once in 5 seconds, nevertheless more detections occurred.
 
 ## Output
 
@@ -65,6 +69,6 @@ A JSON object is published to the topic of the MQTT broker you have configured.
 
 ## Example
 
-It is possible to subscribe multiple distributed IoT devices to the same MQTT topic and perform specific actions upon the detection of a motion. 
+It is possible to subscribe multiple distributed IoT devices to the same MQTT topic and perform specific actions upon the detection of a motion.
 
-Devices with more resources could fetch the image to perform further elaboration. 
+Devices with more resources could fetch the image to perform further elaboration.

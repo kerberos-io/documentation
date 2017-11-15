@@ -9,12 +9,17 @@ The parameters of the Script output device can be found in the **config/io**.xml
 	<ios>
     	<Script>
 	        <path type="text">/etc/opt/kerberosio/scripts/run.sh</path>
+					<throttler type="number">0</throttler>
 	    </Script>
 	</ios>
 
 ### Path
 
 The location of the script that will be executed on detection.
+
+### Throttler
+
+Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the Script will only be triggered once in 5 seconds, nevertheless more detections occurred.
 
 ## Example
 

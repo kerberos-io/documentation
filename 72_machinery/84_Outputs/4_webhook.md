@@ -10,12 +10,17 @@ The parameters of the webhook can be found in the **config/io.xml** file, but yo
 	<ios>
 		<Webhook>
 			<url type="text">http://kerberos.web/api/v1/webhook</url>
+			<throttler type="number">0</throttler>
 		</Webhook>
 	</ios>
 
 ### Url
 
 This is the URL, to which Kerberos.io will send a JSON object (as a POST request).
+
+### Throttler
+
+Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the Webhook will only be triggered once in 5 seconds, nevertheless more detections occurred.
 
 ## Output
 
