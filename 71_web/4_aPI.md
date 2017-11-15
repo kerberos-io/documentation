@@ -66,6 +66,36 @@ Retrieve the name of your instance.
 	}
 
 <div class="api-method">
+	GET api/v1/images/latest_sequence
+</div>
+<br/>
+
+**Description**
+
+Retrieve the latest sequence detected.
+
+**Response**
+
+    [
+        {
+            time: "10:59:57",
+            src: "https://demo.kerberos.io/capture/1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
+            local_src: "/var/www/web/public/capture/1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
+            metadata: {
+                key: "1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
+                user: "1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
+                timestamp: 1501491597,
+                microseconds: "6-310145",
+                instanceName: "frontdoor",
+                regionCoordinates: "722-691-873-926",
+                numberOfChanges: "703",
+                token: "511"
+            },
+            type: "video"
+        }
+    ]
+
+<div class="api-method">
 	PUT api/v1/name
 </div>
 <br/>
