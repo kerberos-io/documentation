@@ -29,7 +29,8 @@
 
 * Provide an IO service for publishing events to MQTT. [#89](https://github.com/kerberos-io/machinery/issues/89)
 * Optimize recording with H264_OMX. [#83](https://github.com/kerberos-io/machinery/issues/83)
-* Implement throttler for Io detections . [#96](https://github.com/kerberos-io/machinery/issues/96)
+* Implement throttler for Io detections. [#96](https://github.com/kerberos-io/machinery/issues/96)
+* SSL version 1.0.0 is no longer accessible in Raspbian. [#109](https://github.com/kerberos-io/machinery/issues/109)
 
 <a name="2-4-2"></a>
 ## 2.4.2
