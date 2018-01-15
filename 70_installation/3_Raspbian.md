@@ -76,7 +76,7 @@ Install Nginx and PHP (+extension).
 Creating a Nginx config.
 
     sudo rm -f /etc/nginx/sites-enabled/default
-    sudo nano /etc/nginx/sites-enabled/default
+    sudo nano /etc/nginx/sites-enabled/kerberosio.conf
 
 Copy and paste following config file; this file tells nginx where the web will be installed and that it requires PHP.
 
@@ -85,8 +85,7 @@ Copy and paste following config file; this file tells nginx where the web will b
         listen 80 default_server;
         listen [::]:80 default_server;
         root /var/www/web/public;
-        index index.html index.htm index.nginx-debian.html;
-        server_name kerberos.rpi kerberos.rpi;
+        server_name kerberos.rpi;
         index index.php index.html index.htm;
         location /
         {
@@ -110,21 +109,22 @@ Restart nginx
 
 Create a www location.
 
-    sudo mkdir -p /var/www/web && cd /var/www/web
+    sudo mkdir -p /var/www/web && sudo chown www-data:www-data /var/www/web
+    cd /var/www/web
 
 Get the source code from Github.
 
-    sudo wget https://github.com/kerberos-io/web/releases/download/v%webversion%/web.tar.gz
+    sudo -u www-data wget https://github.com/kerberos-io/web/releases/download/v%webversion%/web.tar.gz
 
 Unpack
 
-    sudo tar xvf web.tar.gz .
+    sudo -u www-data tar xvf web.tar.gz .
 
 Change write permission on the storage directory.
 
-    sudo chmod -R 777 storage
-    sudo chmod -R 777 bootstrap/cache
-    sudo chmod 777 config/kerberos.php
+    sudo chown www-data -R storage bootstrap/cache config/kerberos.php
+    sudo chmod -R 775 storage bootstrap/cache
+    sudo chmod 0600 config/kerberos.php
 
 <a name="auto-removal"></a>
 ## Auto removal
