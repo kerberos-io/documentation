@@ -10,9 +10,9 @@
 <a name="why-kerberos-io"></a>
 ## Why Kerberos.io?
 
-As burgalary is very common, we believe that video surveillance is a **trivial tool** in our daily lifes which helps us to **feel** a little bit more **secure**. Responding to this need, a lot of companies have started developing their own video surveillance software in the past few years.
+As burglary is very common, we believe that video surveillance is a **trivial tool** in our daily lifes which helps us to **feel** a little bit more **secure**. Responding to this need, a lot of companies have started developing their own video surveillance software in the past few years.
 
-Nowadays we have a myriad of **expensive** camera's, recorders and software solutions which are mainly **outdated** and **difficult** to install and use. Kerberos.io's goal is to solve these problems and to provide every human being in this world to have its own **ecological**, **affordable**, **easy-to-use** and **innovative** surveillance solution. Read more about [**our strategy here**](/strategy).
+Nowadays we have a myriad of **expensive** cameras, recorders, and software solutions which are mainly **outdated** and **difficult** to install and use. Kerberos.io's goal is to solve these problems and to provide every human being in this world to have their own **ecological**, **affordable**, **easy-to-use** and **innovative** surveillance solution.  Read more about [**our strategy here**](/strategy).
 
 <a name="what-is-kerberos-io"></a>
 ## What's Kerberos.io?
@@ -26,7 +26,7 @@ Kerberos.io is a **low-budget** video surveillance solution, that uses computer 
 
 When installed Kerberos.io on a Raspberry Pi or any other Linux device, two applications are available: the [**machinery**](https://github.com/kerberos-io/machinery) and the [**web**](https://github.com/kerberos-io/web).
 
-The machinery is responsible for the processing. It's **an image processing framework** which takes images from the type of camera (USB-, IP- or RPi-camera) you've configured in the configuration files and executes one ore more algorithms and post-processes (e.g. save a snapshot). The configuration files allow you to define the type of camera, post-processes, conditions and much more; it's **highly configurable**. It's important to note that the machinery, out-of-the-box, can handle only one camera at a time.
+The machinery is responsible for the processing. It's **an image processing framework** which takes images from the type of camera (USB-, IP- or RPi-camera) you've configured in the configuration files and executes one or more algorithms and post-processes (e.g. save a snapshot). The configuration files allow you to define the type of camera, post-processes, conditions and much more; it's **highly configurable**. It's important to note that the machinery, out-of-the-box, can handle only one camera at a time.
 
 The web is responsible for the visualization. It's a **GUI** which helps the user to find activity at a specific period, configure the machinery, view a live stream, see system information and much more. It's important to note that the machinery can work without the web, however we don't recommend this.
 
