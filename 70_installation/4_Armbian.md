@@ -23,7 +23,7 @@ Update system and install dependency avcodec. These installation instructions as
 
 Download the debian file from [**the machinery repository**](https://github.com/kerberos-io/machinery/releases/v%machineryversion%/); This should work on all Armbian supported boards. If not: inform us!.
 
-    sudo wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/armbian-machinery-kerberosio-armhf-%machineryversion%.deb
+    wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/armbian-machinery-kerberosio-armhf-%machineryversion%.deb
 
 Unpackage the file
 
