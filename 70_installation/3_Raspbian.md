@@ -31,7 +31,7 @@ Download the debian file from [**the machinery repository**](https://github.com/
 
     wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
 
-Unpackage the file
+Install the package
 
     sudo dpkg -i rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
 
