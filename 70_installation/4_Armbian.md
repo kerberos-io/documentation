@@ -76,8 +76,7 @@ Copy and paste following config file; this file tells nginx where the web will b
         listen 80 default_server;
         listen [::]:80 default_server;
         root /var/www/web/public;
-        index index.html index.htm index.nginx-debian.html;
-        server_name kerberos.rpi kerberos.rpi;
+        server_name kerberos.rpi;
         index index.php index.html index.htm;
         location /
         {
