@@ -32,7 +32,7 @@ Download the debian file from [**the machinery repository**](https://github.com/
 
     sudo wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
 
-Unpackage the file
+Install the package
 
     sudo dpkg -i rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
 
@@ -42,7 +42,7 @@ Enable Raspberry Pi camera (if needed)
 
 Start the machinery on start-up, and reboot the system.
 
-     sudo systemctl enable kerberosio && sudo reboot
+    sudo systemctl enable kerberosio && sudo reboot
 
 <a name="machinery-configure"></a>
 ### Configure
