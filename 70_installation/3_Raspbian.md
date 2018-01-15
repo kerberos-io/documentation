@@ -35,13 +35,14 @@ Unpackage the file
 
     sudo dpkg -i rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
 
-Enable Raspberry Pi camera (if needed)
+Enable Raspberry Pi camera (if needed).
 
     sudo raspi-config
 
-Start the machinery on start-up, and reboot the system.
+Set machinery to start on boot, and start it now. A reboot is required if you have changed the options in raspi-config in the previous step.
 
-     sudo systemctl enable kerberosio && sudo reboot
+    sudo systemctl enable kerberosio
+    sudo service kerberosio start
 
 <a name="machinery-configure"></a>
 ### Configure
@@ -100,9 +101,9 @@ Copy and paste following config file; this file tells nginx where the web will b
         }
     }
 
-Restart nginx and reboot system
+Restart nginx
 
-    sudo service nginx restart && sudo reboot
+    sudo service nginx restart
 
 <a name="web-installation-source"></a>
 ### Install source
@@ -124,10 +125,6 @@ Change write permission on the storage directory.
     sudo chmod -R 777 storage
     sudo chmod -R 777 bootstrap/cache
     sudo chmod 777 config/kerberos.php
-
-Reboot
-
-    sudo reboot
 
 <a name="auto-removal"></a>
 ## Auto removal
