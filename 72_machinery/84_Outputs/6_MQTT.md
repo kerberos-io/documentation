@@ -12,7 +12,7 @@ The parameters of the MQTT output can be found in the **config/io.xml** file, bu
         <verifycn type="bool">false</verifycn>
         <server type="number">127.0.0.1</server>
         <port type="number">1883</port>
-        topic type="text">kios/mqtt</topic>
+        <topic type="text">kios/mqtt</topic>
         <username type="text"></username>
         <password type="text"></password>
         <throttler type="number">0</throttler>

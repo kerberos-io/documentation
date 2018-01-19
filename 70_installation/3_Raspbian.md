@@ -25,24 +25,24 @@ A short video explaining how to install Kerberos.io on Raspbian.
 
 Update system and install libav-tools.
 
-    sudo apt-get update
     sudo apt-get update && sudo apt-get install libav-tools
 
 Download the debian file from [**the machinery repository**](https://github.com/kerberos-io/machinery/releases/v%machineryversion%/); Please download the correct version for your Raspberry Pi, **replace X by the version**.
 
-    sudo wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
+    wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
 
-Unpackage the file
+Install the package
 
     sudo dpkg -i rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
 
-Enable Raspberry Pi camera (if needed)
+Enable Raspberry Pi camera (if needed).
 
     sudo raspi-config
 
-Start the machinery on start-up, and reboot the system.
+Set machinery to start on boot, and start it now. A reboot is required if you have changed the options in raspi-config in the previous step.
 
-     sudo systemctl enable kerberosio && sudo reboot
+    sudo systemctl enable kerberosio
+    sudo service kerberosio start
 
 <a name="machinery-configure"></a>
 ### Configure
@@ -76,7 +76,7 @@ Install Nginx and PHP (+extension).
 Creating a Nginx config.
 
     sudo rm -f /etc/nginx/sites-enabled/default
-    sudo nano /etc/nginx/sites-enabled/default
+    sudo nano /etc/nginx/sites-enabled/kerberosio.conf
 
 Copy and paste following config file; this file tells nginx where the web will be installed and that it requires PHP.
 
@@ -85,8 +85,7 @@ Copy and paste following config file; this file tells nginx where the web will b
         listen 80 default_server;
         listen [::]:80 default_server;
         root /var/www/web/public;
-        index index.html index.htm index.nginx-debian.html;
-        server_name kerberos.rpi kerberos.rpi;
+        server_name kerberos.rpi;
         index index.php index.html index.htm;
         location /
         {
@@ -101,34 +100,31 @@ Copy and paste following config file; this file tells nginx where the web will b
         }
     }
 
-Restart nginx and reboot system
+Restart nginx
 
-    sudo service nginx restart && sudo reboot
+    sudo service nginx restart
 
 <a name="web-installation-source"></a>
 ### Install source
 
 Create a www location.
 
-    sudo mkdir -p /var/www/web && cd /var/www/web
+    sudo mkdir -p /var/www/web && sudo chown www-data:www-data /var/www/web
+    cd /var/www/web
 
 Get the source code from Github.
 
-    sudo wget https://github.com/kerberos-io/web/releases/download/v%webversion%/web.tar.gz
+    sudo -u www-data wget https://github.com/kerberos-io/web/releases/download/v%webversion%/web.tar.gz
 
 Unpack
 
-    sudo tar xvf web.tar.gz .
+    sudo -u www-data tar xvf web.tar.gz .
 
 Change write permission on the storage directory.
 
-    sudo chmod -R 777 storage
-    sudo chmod -R 777 bootstrap/cache
-    sudo chmod 777 config/kerberos.php
-
-Reboot
-
-    sudo reboot
+    sudo chown www-data -R storage bootstrap/cache config/kerberos.php
+    sudo chmod -R 775 storage bootstrap/cache
+    sudo chmod 0600 config/kerberos.php
 
 <a name="auto-removal"></a>
 ## Auto removal
