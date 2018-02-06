@@ -1,5 +1,6 @@
 # Release notes
 
+* [2.6.0](#2-6-0)
 * [2.5.0](#2-5-0)
 * [2.4.2](#2-4-2)
 * [2.4.1](#2-4-1)
@@ -15,6 +16,22 @@
 * [1.0.2](#1-0-2)
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
+
+<a name="2-6-0"></a>
+## 2.6.0
+
+#### Web
+
+* Add a cloud connection verification. [#112](https://github.com/kerberos-io/web/issues/112)
+
+#### Machinery
+
+* Add background color timestamp. [#128](https://github.com/kerberos-io/machinery/issues/128)
+* Send instanceId in AWS header when uploading to cloud (necessary for new cloud app).
+
+#### Docker
+
+* Bug: Autoremove old images/video within Docker Containers. [#104](https://github.com/kerberos-io/web/issues/104)
 
 <a name="2-5-0"></a>
 ## 2.5.0

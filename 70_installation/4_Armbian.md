@@ -100,25 +100,22 @@ Restart nginx and reboot system
 
 Create a www location.
 
-    sudo mkdir -p /var/www/web && cd /var/www/web
+    sudo mkdir -p /var/www/web && sudo chown www-data:www-data /var/www/web
+    cd /var/www/web
 
 Get the source code from Github.
 
-    sudo wget https://github.com/kerberos-io/web/releases/download/v%webversion%/web.tar.gz
+    sudo -u www-data wget https://github.com/kerberos-io/web/releases/download/v%webversion%/web.tar.gz
 
 Unpack
 
-    sudo tar xvf web.tar.gz
+    sudo -u www-data tar xvf web.tar.gz .
 
 Change write permission on the storage directory.
 
-    sudo chmod -R 777 storage
-    sudo chmod -R 777 bootstrap/cache
-    sudo chmod 777 config/kerberos.php
-
-Reboot
-
-    sudo reboot
+    sudo chown www-data -R storage bootstrap/cache config/kerberos.php
+    sudo chmod -R 775 storage bootstrap/cache
+    sudo chmod 0600 config/kerberos.php
 
 <a name="auto-removal"></a>
 ## Auto removal
