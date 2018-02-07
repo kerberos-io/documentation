@@ -27,13 +27,27 @@ Update system and install libav-tools.
 
     sudo apt-get update && sudo apt-get install libav-tools
 
-Download the debian file from [**the machinery repository**](https://github.com/kerberos-io/machinery/releases/v%machineryversion%/); Please download the correct version for your Raspberry Pi, **replace X by the version**.
+Download the debian file from [**the machinery repository**](https://github.com/kerberos-io/machinery/releases/v%machineryversion%/); Please download the correct version for your Raspberry Pi.
 
-    wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
+Raspberry Pi Zero/Zero W
 
-Install the package
+    wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpi0-machinery-kerberosio-armhf-%machineryversion%.deb
+    sudo dpkg -i rpi0-machinery-kerberosio-armhf-%machineryversion%.deb
 
-    sudo dpkg -i rpiX-machinery-kerberosio-armhf-%machineryversion%.deb
+Raspberry Pi A/B/B+
+
+    wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpi1-machinery-kerberosio-armhf-%machineryversion%.deb
+    sudo dpkg -i rpi1-machinery-kerberosio-armhf-%machineryversion%.deb
+
+Raspberry Pi 2
+
+    wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpi2-machinery-kerberosio-armhf-%machineryversion%.deb
+    sudo dpkg -i rpi2-machinery-kerberosio-armhf-%machineryversion%.deb
+
+Raspberry Pi 3
+
+    wget https://github.com/kerberos-io/machinery/releases/download/v%machineryversion%/rpi3-machinery-kerberosio-armhf-%machineryversion%.deb
+    sudo dpkg -i rpi3-machinery-kerberosio-armhf-%machineryversion%.deb
 
 Enable Raspberry Pi camera (if needed).
 
