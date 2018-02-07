@@ -22,12 +22,13 @@
 
 #### Web
 
-* Add a cloud connection verification. [#112](https://github.com/kerberos-io/web/issues/112)
+* Add a cloud connection verification method. [#112](https://github.com/kerberos-io/web/issues/112)
 
 #### Machinery
 
 * Add background color timestamp. [#128](https://github.com/kerberos-io/machinery/issues/128)
 * Send instanceId in AWS header when uploading to cloud (necessary for new cloud app).
+* Better support for Chinese IP cameras.
 
 #### Docker
 
