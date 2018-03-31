@@ -1,5 +1,6 @@
 # Release notes
 
+* [2.6.1](#2-6-1)
 * [2.6.0](#2-6-0)
 * [2.5.0](#2-5-0)
 * [2.4.2](#2-4-2)
@@ -16,6 +17,18 @@
 * [1.0.2](#1-0-2)
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
+
+<a name="2-6-1"></a>
+## 2.6.1
+
+#### Web
+
+* Solved issue with persisting login configuration. [#111](https://github.com/kerberos-io/web/issues/111)
+
+#### Machinery
+
+* Added Pushbullet. [#139](https://github.com/kerberos-io/machinery/pull/139)
+* Cloud upload was not longer working (hotfix also in 2.6.0).
 
 <a name="2-6-0"></a>
 ## 2.6.0
