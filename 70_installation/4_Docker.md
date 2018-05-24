@@ -2,27 +2,10 @@
 
 **--- For the moment this approach only works for IP cameras, we don't have a cross-platform method to inject a USB camera or Raspberry Pi camera ---**
 
-A Docker image (x86) is available on [**the Docker Hub**](https://hub.docker.com/u/kerberos/). Before you can run this image you will have to get [**Docker**](https://docker.com) installed. After the installation you can use **docker-compose** to get Kerberos.io up and running. More detailed information can be [**found here**](https://blog.cedric.ws/kerberosio-available-on-docker).
+A Docker image (x86) is available on [**the Docker Hub**](https://hub.docker.com/u/kerberos/kerberos). Before you can run this image you will have to get [**Docker**](https://docker.com) installed. After the installation you can use **docker-compose** to get Kerberos.io up and running.
 
-## Docker Compose
+## Run a simple command.
 
-Create a **docker-compose.yml** file and following configuration:
+After you've installed docker, you can open a command prompt and type in following command. This will pull the kerberos image and make the web interface available on port 80 and the livestream on port 8889. You can give the container a custom name using the **--name** property.
 
-    machinery:
-        image: kerberos/machinery
-        ports:
-        - "8889"
-    web:
-        image: kerberos/web
-        environment:
-        - KERBEROSIO_SECURE_SSL=false
-        ports:
-        - "80"
-        volumes_from:
-        - machinery
-        links:
-        - machinery
-
-Run following command; this will download the Kerberos.io docker images and configure them properly.
-
-    docker-compose up
+    docker run --name camera1 -p 80:80 -p 8889:8889 -d kerberos/kerberos
