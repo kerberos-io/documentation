@@ -34,7 +34,7 @@
 
 #### Docker
 
-* No longer need docker-compose, we merged the web and machinery container to a single containers. (http://hub.docker.com/r/kerberos/kerberos)
+* No longer need docker-compose, we merged the web and machinery containers to [a single container](http://hub.docker.com/r/kerberos/kerberos).
 
 #### KiOS
 
