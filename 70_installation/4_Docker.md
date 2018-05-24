@@ -2,7 +2,7 @@
 
 **--- For the moment this approach only works for IP cameras, we don't have a cross-platform method to inject a USB camera or Raspberry Pi camera ---**
 
-A Docker image (x86) is available on [**the Docker Hub**](https://hub.docker.com/u/kerberos/kerberos). Before you can run this image you will have to get [**Docker**](https://docker.com) installed. After the installation you can use **docker-compose** to get Kerberos.io up and running.
+A Docker image (x86) is available on [**the Docker Hub**](https://hub.docker.com/u/kerberos/kerberos). Before you can run this image you will have to get [**Docker**](https://docker.com) installed. After the installation you can use **docker** to get Kerberos.io up and running.
 
 ## Run a simple command.
 
