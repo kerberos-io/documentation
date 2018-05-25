@@ -1,5 +1,6 @@
 # Release notes
 
+* [2.7.0](#2-7-0)
 * [2.6.1](#2-6-1)
 * [2.6.0](#2-6-0)
 * [2.5.0](#2-5-0)
@@ -17,6 +18,28 @@
 * [1.0.2](#1-0-2)
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
+
+<a name="2-7-0"></a>
+## 2.7.0
+
+#### Web
+
+* Unique session cookie, which allows to open multiple web interfaces (e.g. when using docker).
+
+#### Machinery
+
+* Added live streaming feature for app.kerberos.io
+* Upgraded logging library: log file can be max 5MB, and will rotate.
+* Better logging for cloud uploads (failed information).
+
+#### Docker
+
+* No longer need docker-compose, we merged the web and machinery containers to [a single container](http://hub.docker.com/r/kerberos/kerberos).
+
+#### KiOS
+
+* Updated firmware to latest Raspbian.
+* Support for the Raspberry Pi 3B+ [#39](https://github.com/kerberos-io/kios/issues/3)
 
 <a name="2-6-1"></a>
 ## 2.6.1
