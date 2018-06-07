@@ -1,5 +1,6 @@
 # Release notes
 
+* [2.7.1](#2-7-1)
 * [2.7.0](#2-7-0)
 * [2.6.1](#2-6-1)
 * [2.6.0](#2-6-0)
@@ -18,6 +19,19 @@
 * [1.0.2](#1-0-2)
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
+
+<a name="2-7-1"></a>
+## 2.7.1
+
+#### Machinery
+
+* Resolved deadlock with livestreaming while restarting machinery.
+* Revert logging library; enabled log rotating.
+
+#### KiOS
+
+* Updated firmware to latest Raspbian (raspberrypi-kernel_1.20180417-1).
+* Resolved issue with WIFI on Raspberry Pi 3B+
 
 <a name="2-7-0"></a>
 ## 2.7.0
@@ -39,7 +53,7 @@
 #### KiOS
 
 * Updated firmware to latest Raspbian.
-* Support for the Raspberry Pi 3B+ [#39](https://github.com/kerberos-io/kios/issues/3)
+* Support for the Raspberry Pi 3B+.
 
 <a name="2-6-1"></a>
 ## 2.6.1
