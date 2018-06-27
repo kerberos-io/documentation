@@ -22,7 +22,7 @@ Update the packages and kernel.
 
 Install development tools (c++, cmake).
 
-    sudo apt-get install git cmake subversion libav-tools dh-autoreconf libcurl4-openssl-dev yasm libx264-dev pkg-config
+    sudo apt-get install git cmake subversion libav-tools dh-autoreconf libcurl4-openssl-dev yasm libx264-dev pkg-config libssl-dev
 
 If you want to use IP cameras, make sure to compile FFMPEG with x264 support.
 
