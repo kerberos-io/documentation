@@ -1,5 +1,6 @@
 # Release notes
 
+* [2.7.2](#2-7-2)
 * [2.7.1](#2-7-1)
 * [2.7.0](#2-7-0)
 * [2.6.1](#2-6-1)
@@ -19,6 +20,14 @@
 * [1.0.2](#1-0-2)
 * [1.0.1](#1-0-1)
 * [1.0.0](#1-0-0)
+
+<a name="2-7-2"></a>
+## 2.7.2
+
+#### Machinery
+
+* To optimise the cloud experience we've added a proxy.kerberos.io machine in between.
+* We've changed the S3 storage scheme (class:ONEZONE_IA).
 
 <a name="2-7-1"></a>
 ## 2.7.1
