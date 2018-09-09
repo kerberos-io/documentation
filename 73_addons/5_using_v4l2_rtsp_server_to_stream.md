@@ -23,7 +23,7 @@ make
 sudo make install
 ```
 
-## Usage:
+## Usage
 If you want to run it now, issue the following command:
 ```
 v4l2rtspserver -F15 -H 972 -W 1296 -P 8555 /dev/video0
