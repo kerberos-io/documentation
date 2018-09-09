@@ -1,7 +1,7 @@
 ## Using V4L2 and RTSP server
-The following shows how to use a V4L2 with a RTSP server to stream from the Raspberry Pi camera to Kerberos.io.
+The following shows how to use a V4L2 with a RTSP server to stream from the Raspberry Pi camera to Kerberos.io running somewhere else (In my case kerberos.io is running in a docker container on a central server)
 
-This uses another awesome project from [mpromonet/v4l2rtspserver](https://github.com/mpromonet/v4l2rtspserver) and very helpful instructions from [here](http://c.wensheng.org/2017/05/18/stream-from-raspberrypi) and from the Issues in Kerberos.io github help.
+This uses another awesome project from [mpromonet/v4l2rtspserver](https://github.com/mpromonet/v4l2rtspserver) and very helpful instructions from [here](http://c.wensheng.org/2017/05/18/stream-from-raspberrypi) and [here](https://github.com/mpromonet/v4l2rtspserver/issues/97#issuecomment-388908430)
 
 ## Assumptions
 You have a Raspberry Pi running the latest Raspbian
@@ -24,15 +24,19 @@ sudo make install
 ```
 
 ## Usage:
-If you want to now run it, issue the following command:
+If you want to now run it now, issue the following command:
 ```
 v4l2rtspserver -F15 -H 972 -W 1296 -P 8555 /dev/video0
 ```
+and put the following into kerberos.io configuration page:
+`rtsp://<kerberos.io ip>:8555/unicast`
+
 
 ## Automate
 To automate running the RTSP server at boot
 
-### Create start script in /home/pi/startrtspserver.sh with the following contents:
+### Startup script
+Create start script in /home/pi/startrtspserver.sh with the following contents:
 ```
 #!/bin/bash
 
@@ -44,7 +48,8 @@ Make executable:
 chmod +x /home/pi/startrtspserver.sh
 ```
 
-### Change the systemd startup service by replacing the contents of /lib/systemd/system/v4l2rtspserver.service with the following:
+### Change Systemd
+Update the systemd startup service by replacing the contents of /lib/systemd/system/v4l2rtspserver.service with the following:
 ```
 [Unit]
 Description=V4L2 RTSP server
@@ -63,10 +68,15 @@ WantedBy=multi-user.target
 ```
 
 
-### Enable the service by issuing the following:
+### Enable Service
+Enable the service by issuing the following:
 ```
 sudo systemctl enable v4l2rtspserver
 ```
+
+### Update URL
+Put the following URL in the kerberos.io configuation page:
+`rtsp://<kerberos.io ip>:8555/unicast`
 
 ## Optional
 You may want to disable the LED on the camera board as it can produce a glare. To do som add the following line to the end of /boot/config.txt
