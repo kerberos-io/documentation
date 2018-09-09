@@ -49,7 +49,7 @@ chmod +x /home/pi/startrtspserver.sh
 ```
 
 ### Change Systemd
-Update the systemd startup service by replacing the contents of /lib/systemd/system/v4l2rtspserver.service with the following:
+Update the systemd startup service by replacing the contents of `/lib/systemd/system/v4l2rtspserver.service` with the following:
 ```
 [Unit]
 Description=V4L2 RTSP server
@@ -77,6 +77,11 @@ sudo systemctl enable v4l2rtspserver
 ### Update URL
 Put the following URL in the kerberos.io configuation page:
 `rtsp://<kerberos.io ip>:8555/unicast`
+![Click on Configuration](https://i.imgur.com/zh8niaF.png)
+
+![Click on IP Camera](https://i.imgur.com/ESsP5HQ.png)
+
+![Update RTSP IP](https://i.imgur.com/imTz99A.png)
 
 ## Optional
 You may want to disable the LED on the camera board as it can produce a glare. To do som add the following line to the end of /boot/config.txt
