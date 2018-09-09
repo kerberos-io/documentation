@@ -31,6 +31,7 @@ v4l2rtspserver -F15 -H 972 -W 1296 -P 8555 /dev/video0
 and put the following into kerberos.io configuration page:
 `rtsp://<kerberos.io ip>:8555/unicast`
 
+Additonal configuration parameters can be found [here](https://github.com/mpromonet/v4l2rtspserver)
 
 ## Automate
 To automate running the RTSP server at boot
