@@ -84,7 +84,7 @@ Put the following URL in the kerberos.io configuation page:
 ![Update RTSP IP](https://i.imgur.com/imTz99A.png)
 
 ## Optional
-You may want to disable the LED on the camera board as it can produce a glare. To do som add the following line to the end of /boot/config.txt
+You may want to disable the LED on the camera board as it can produce a glare. To do so add the following line to the end of `/boot/config.txt`
 ```
 disable_camera_led=1
 ```
