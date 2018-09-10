@@ -28,7 +28,7 @@ If you want to run it now, issue the following command:
 ```
 v4l2rtspserver -F15 -H 972 -W 1296 -P 8555 /dev/video0
 ```
-and put the following into kerberos.io configuration page:
+and put the following into kerberos.io configuration page (visuals in the next section):
 `rtsp://<kerberos.io ip>:8555/unicast`
 
 Additonal configuration parameters can be found [here](https://github.com/mpromonet/v4l2rtspserver)
