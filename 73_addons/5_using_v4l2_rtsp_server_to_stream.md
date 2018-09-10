@@ -1,5 +1,5 @@
 ## Using V4L2 and RTSP server
-The following shows how to use a V4L2 with a RTSP server to stream from the Raspberry Pi camera to Kerberos.io running somewhere else (In my case kerberos.io is running in a docker container on a central server)
+The following shows how to use V4L2 capture with a RTSP server to stream from the Raspberry Pi camera to Kerberos.io running somewhere else (In my case kerberos.io is running in a docker container on a central server)
 
 This uses another awesome project from [mpromonet/v4l2rtspserver](https://github.com/mpromonet/v4l2rtspserver) and very helpful instructions from [here](http://c.wensheng.org/2017/05/18/stream-from-raspberrypi) and [here](https://github.com/mpromonet/v4l2rtspserver/issues/97#issuecomment-388908430)
 
