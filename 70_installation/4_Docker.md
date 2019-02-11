@@ -11,6 +11,17 @@ After you've installed docker, you can open a command prompt and type in followi
     $ docker run --name camera1 -p 80:80 -p 8889:8889 -d kerberos/kerberos
     $ docker run --name camera2 -p 81:80 -p 8890:8889 -d kerberos/kerberos
     $ docker run --name camera3 -p 82:80 -p 8891:8889 -d kerberos/kerberos
+    
+## Mixed Content
+
+If you're using HTTPS and have mixed content errors or have no login page set **KERBEROSIO_SECURE_SSL** environment flag to 'true', **--env KERBEROSIO_SECURE_SSL=true**
+
+    $ docker run --name camera1 -p 80:80 -p 8889:8889 -env KERBEROSIO_SECURE_SSL=true -d kerberos/kerberos
+    
+For docker-compose add flag to environment section like below:
+ 
+      environment:
+          - KERBEROSIO_SECURE_SSL=true
 
 ## Or use dockeros (our docker creation tool)
 
