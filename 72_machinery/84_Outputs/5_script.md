@@ -40,7 +40,7 @@ By default the script will point to **/etc/opt/kerberosio/scripts/run.sh**, whic
 	# and get the required fields
 	name=$(echo $JSON | python -c "import sys, json; print json.load(sys.stdin)['instanceName']")
 	coordinates=$(echo $JSON | python -c "import sys, json; print json.load(sys.stdin)['regionCoordinates']")
-	changes=$(echo $JSON | pythfon -c "import sys, json; print json.load(sys.stdin)['numberOfChanges']")
+	changes=$(echo $JSON | python -c "import sys, json; print json.load(sys.stdin)['numberOfChanges']")
 	image=$(echo $JSON | python -c "import sys, json; print json.load(sys.stdin)['pathToImage']")
 
 The idea is that you can use **Python** in your bash script, to parse the JSON object send as first parameter. Afterwards you can do with the output what you want.
