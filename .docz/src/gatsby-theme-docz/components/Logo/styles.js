@@ -16,7 +16,6 @@ export const link = {
 export const img = {
     display: 'block',
     position: 'relative',
-    backgroundImage: 'url(../images/kerberos.png)',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '100%',
