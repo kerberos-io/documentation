@@ -16,14 +16,20 @@ export const innerContainer = {
   position: 'relative',
   justifyContent: 'space-between',
   height: 80,
+  [media.tablet]: {
+    height: 51,
+  },
 }
 
 export const menuIcon = {
   display: 'none',
   position: 'absolute',
-  top: 'calc(100% + 15px)',
+  //top: 'calc(100% + 15px)',
+  top: '38px',
   left: 30,
+  zIndex: 10000,
   [media.tablet]: {
+    top: '28px',
     display: 'block',
   },
 }
@@ -46,6 +52,9 @@ export const headerButton = {
   fontSize: 0,
   fontWeight: 600,
   cursor: 'pointer',
+  [media.mobile]: {
+    display: "none",
+  }
 }
 
 export const editButton = {
@@ -115,6 +124,16 @@ export const linksli = {
   width: 'auto',
   float: 'left',
   listStyle: 'none',
+}
+
+export const linksli2 = {
+  padding: '25px 0',
+  width: 'auto',
+  float: 'left',
+  listStyle: 'none',
+  [media.mobile]: {
+    display: 'none',
+  },
 }
 
 export const linksa = {

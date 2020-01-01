@@ -24,7 +24,7 @@ export const Header = props => {
       <div sx={styles.wrapper} data-testid="header">
         <Box sx={styles.menuIcon}>
           <button sx={styles.menuButton} onClick={onOpen}>
-            <Menu size={25} />
+            <Menu size={25} color="white"/>
           </button>
         </Box>
         <div sx={styles.innerContainer}>
@@ -89,10 +89,10 @@ export const Header = props => {
               <li sx={styles.linksli}>
                 <a sx={styles.linksa} href="http://cloud.kerberos.io" title="Cloud">Cloud</a>
               </li>
-              <li sx={styles.linksli}>
+              <li sx={styles.linksli2}>
                 <a sx={styles.linksa} target="_blank" href="https://github.com/kerberos-io" title="Github">Github</a>
               </li>
-              <li sx={styles.linksli}>
+              <li sx={styles.linksli2}>
                 <a sx={styles.linksa} target="_blank" href="https://kerberosio.zendesk.com/" title="Zendesk">Help</a>
               </li>
             </ul>
