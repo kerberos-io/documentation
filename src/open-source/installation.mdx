@@ -142,6 +142,15 @@ wget https://github.com/kerberos-io/machinery/releases/download/v2.8.0/rpi4-libx
 sudo mv rpi4-libx265.so.160 /usr/lib/arm-linux-gnueabihf/libx265.so.160
 ```
 
+Same applies for the libx264 library, download the right share library.
+
+
+> `v2.8.0/rpi4-libx264.so.148` this will download the libx264 shared library for the Raspberry Pi 4.
+
+```ts
+wget https://github.com/kerberos-io/machinery/releases/download/v2.8.0/rpi4-libx264.so.148
+sudo mv rpi4-libx264.so.148 /usr/lib/arm-linux-gnueabihf/libx264.so.148
+```
 
 If you wish to use the Raspberry Pi Camera Module, make sure [to enable it](https://www.raspberrypi.org/documentation/configuration/camera.md) using `sudo raspi-config`.
 
