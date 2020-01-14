@@ -9,10 +9,9 @@ try {
 
 const config = {
   pathPrefix: '/',
-
   siteMetadata: {
-    title: 'Kerberos.io Factory',
-    description: 'My awesome app using docz',
+    title: 'Kerberos.io',
+    description: 'Everything you need to know about Kerberos.io ;)',
   },
   plugins: [
     {
