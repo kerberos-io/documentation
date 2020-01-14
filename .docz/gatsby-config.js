@@ -9,9 +9,10 @@ try {
 
 const config = {
   pathPrefix: '/',
+
   siteMetadata: {
     title: 'Kerberos.io',
-    description: 'Everything you need to know about Kerberos.io ;)',
+    description: 'My awesome app using docz',
   },
   plugins: [
     {
@@ -80,7 +81,7 @@ const config = {
         eb: 'master',
         'edit-branch': 'master',
         config: '',
-        title: 'Kerberos.io Factory',
+        title: 'Kerberos.io',
         description: 'My awesome app using docz',
         host: 'localhost',
         port: 3000,
