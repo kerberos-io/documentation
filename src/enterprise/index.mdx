@@ -6,4 +6,28 @@ route: /enterprise/introduction
 
 # Enterprise
 
-Will be released soon.
+Over the years Kerberos evolved into a mature and stable session. Lots of people and companies started to adopt the system, and requested enhancements. Every
+solution has its limitations, and so has the Open Source version of Kerberos.
+
+Kerberos Open Source is perfect when monitoring a limited set of surveillance cameras, but it is not scalable if you plan to monitor dozens or hundreds. Although Kerberos Open Source ships
+as a docker image, it has no high availability or fail over functionality. Due to these reasons we have developed Kerberos Enterprise, which is suitable for scaling against your ever growing video surveillance landscape, and makes them up and running in whatever situation.
+
+<div class='embed-container'><iframe src='https://player.vimeo.com/video/382090189?background=1' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+## Kubernetes
+
+To provide our customer with the high availability and fail over requirements they have, Kerberos Enterprise was built on top of Kubernetes (k8s). This container orchestrator, Kubernetes, allows us to scale a video surveillance landscape horizontally, and deliver a never-seen high available video surveillance system.
+
+![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes.png)
+
+Kerberos Enterprise is installed inside a Kubernetes cluster. It will create pods/deployments for every surveillance camera you want to monitor. Kubernetes will scale and distrubute them across your nodes (VM's/Baremetal).
+
+## Cloud or on premise
+
+You can install Kerberos Enterprise in whatever cluster you want, as long as its running a Kubernetes cluster. This means that whatever security policy you have, you can run it where you want.
+
+![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes-cloud.png)
+
+## Licensing
+
+Kerberos Enterprise is publicly available but requires a license key to operate correctly. A license key can be requested by contactig **cedric@verstraeten.io**, to have more information about pricing.

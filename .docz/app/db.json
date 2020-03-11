@@ -279,6 +279,461 @@
             "slug": "enterprise",
             "depth": 1,
             "value": "Enterprise"
+          },
+          {
+            "slug": "kubernetes",
+            "depth": 2,
+            "value": "Kubernetes"
+          },
+          {
+            "slug": "cloud-or-on-premise",
+            "depth": 2,
+            "value": "Cloud or on premise"
+          },
+          {
+            "slug": "licensing",
+            "depth": 2,
+            "value": "Licensing"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/enterprise/license.mdx",
+      "value": {
+        "name": "License",
+        "menu": "Enterprise",
+        "route": "/enterprise/license",
+        "id": "692a3e0f1bc0489a5d98bfb87a5efa3e",
+        "filepath": "src/enterprise/license.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/license.mdx",
+        "link": "",
+        "slug": "src-enterprise-license",
+        "headings": [
+          {
+            "slug": "cc-by-nc-sa-40",
+            "depth": 1,
+            "value": "CC BY-NC-SA 4.0"
+          },
+          {
+            "slug": "summary",
+            "depth": 2,
+            "value": "Summary"
+          },
+          {
+            "slug": "the-license",
+            "depth": 2,
+            "value": "The license"
+          },
+          {
+            "slug": "section-1--definitions",
+            "depth": 3,
+            "value": "Section 1 – Definitions."
+          },
+          {
+            "slug": "section-2--scope",
+            "depth": 3,
+            "value": "Section 2 – Scope."
+          },
+          {
+            "slug": "section-3--license-conditions",
+            "depth": 3,
+            "value": "Section 3 – License Conditions."
+          },
+          {
+            "slug": "section-4--sui-generis-database-rights",
+            "depth": 3,
+            "value": "Section 4 – Sui Generis Database Rights."
+          },
+          {
+            "slug": "section-5--disclaimer-of-warranties-and-limitation-of-liability",
+            "depth": 3,
+            "value": "Section 5 – Disclaimer of Warranties and Limitation of Liability."
+          },
+          {
+            "slug": "section-6--term-and-termination",
+            "depth": 3,
+            "value": "Section 6 – Term and Termination."
+          },
+          {
+            "slug": "section-7--other-terms-and-conditions",
+            "depth": 3,
+            "value": "Section 7 – Other Terms and Conditions."
+          },
+          {
+            "slug": "section-8--interpretation",
+            "depth": 3,
+            "value": "Section 8 – Interpretation."
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/enterprise/releases.mdx",
+      "value": {
+        "name": "Releases",
+        "menu": "Enterprise",
+        "route": "/enterprise/releases",
+        "id": "d55649896dc1baed370ad4ea221aefb5",
+        "filepath": "src/enterprise/releases.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/releases.mdx",
+        "link": "",
+        "slug": "src-enterprise-releases",
+        "headings": [
+          {
+            "slug": "release-notes",
+            "depth": 1,
+            "value": "Release notes"
+          },
+          {
+            "slug": "280",
+            "depth": 3,
+            "value": "2.8.0"
+          },
+          {
+            "slug": "web",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "kios",
+            "depth": 4,
+            "value": "KiOS"
+          },
+          {
+            "slug": "272",
+            "depth": 3,
+            "value": "2.7.2"
+          },
+          {
+            "slug": "machinery",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "271",
+            "depth": 3,
+            "value": "2.7.1"
+          },
+          {
+            "slug": "machinery-1",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "kios-1",
+            "depth": 4,
+            "value": "KiOS"
+          },
+          {
+            "slug": "270",
+            "depth": 3,
+            "value": "2.7.0"
+          },
+          {
+            "slug": "web-1",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-2",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "docker",
+            "depth": 4,
+            "value": "Docker"
+          },
+          {
+            "slug": "kios-2",
+            "depth": 4,
+            "value": "KiOS"
+          },
+          {
+            "slug": "261",
+            "depth": 3,
+            "value": "2.6.1"
+          },
+          {
+            "slug": "web-2",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-3",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "260",
+            "depth": 3,
+            "value": "2.6.0"
+          },
+          {
+            "slug": "web-3",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-4",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "docker-1",
+            "depth": 4,
+            "value": "Docker"
+          },
+          {
+            "slug": "250",
+            "depth": 3,
+            "value": "2.5.0"
+          },
+          {
+            "slug": "web-4",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-5",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "242",
+            "depth": 3,
+            "value": "2.4.2"
+          },
+          {
+            "slug": "web-5",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-6",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "241",
+            "depth": 3,
+            "value": "2.4.1"
+          },
+          {
+            "slug": "web-6",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "240",
+            "depth": 3,
+            "value": "2.4.0"
+          },
+          {
+            "slug": "ecosystem",
+            "depth": 4,
+            "value": "Ecosystem"
+          },
+          {
+            "slug": "web-7",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "docker-2",
+            "depth": 4,
+            "value": "Docker"
+          },
+          {
+            "slug": "machinery-7",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "231",
+            "depth": 3,
+            "value": "2.3.1"
+          },
+          {
+            "slug": "machinery-8",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "230",
+            "depth": 3,
+            "value": "2.3.0"
+          },
+          {
+            "slug": "ecosystem-1",
+            "depth": 4,
+            "value": "Ecosystem"
+          },
+          {
+            "slug": "221",
+            "depth": 3,
+            "value": "2.2.1"
+          },
+          {
+            "slug": "ecosystem-2",
+            "depth": 4,
+            "value": "Ecosystem"
+          },
+          {
+            "slug": "web-8",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-9",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "220",
+            "depth": 3,
+            "value": "2.2.0"
+          },
+          {
+            "slug": "ecosystem-3",
+            "depth": 4,
+            "value": "Ecosystem"
+          },
+          {
+            "slug": "web-9",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-10",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "210",
+            "depth": 3,
+            "value": "2.1.0"
+          },
+          {
+            "slug": "web-10",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-11",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "ecosystem-4",
+            "depth": 4,
+            "value": "Ecosystem"
+          },
+          {
+            "slug": "200",
+            "depth": 3,
+            "value": "2.0.0"
+          },
+          {
+            "slug": "web-11",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-12",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "docker-3",
+            "depth": 4,
+            "value": "Docker"
+          },
+          {
+            "slug": "ecosystem-5",
+            "depth": 4,
+            "value": "Ecosystem"
+          },
+          {
+            "slug": "110",
+            "depth": 3,
+            "value": "1.1.0"
+          },
+          {
+            "slug": "web-12",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-13",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "cloud",
+            "depth": 4,
+            "value": "Cloud"
+          },
+          {
+            "slug": "103",
+            "depth": 3,
+            "value": "1.0.3"
+          },
+          {
+            "slug": "web-13",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-14",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "cloud-1",
+            "depth": 4,
+            "value": "Cloud"
+          },
+          {
+            "slug": "102",
+            "depth": 3,
+            "value": "1.0.2"
+          },
+          {
+            "slug": "web-14",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-15",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "101",
+            "depth": 3,
+            "value": "1.0.1"
+          },
+          {
+            "slug": "web-15",
+            "depth": 4,
+            "value": "Web"
+          },
+          {
+            "slug": "machinery-16",
+            "depth": 4,
+            "value": "Machinery"
+          },
+          {
+            "slug": "100",
+            "depth": 3,
+            "value": "1.0.0"
+          },
+          {
+            "slug": "first-commit-of-kerberosio",
+            "depth": 4,
+            "value": "First commit of Kerberos.io"
           }
         ]
       }
