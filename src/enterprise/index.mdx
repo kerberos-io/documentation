@@ -6,10 +6,10 @@ route: /enterprise/introduction
 
 # Enterprise
 
-Over the years Kerberos evolved into a mature and stable session. Lots of people and companies started to adopt the system, and requested enhancements. Every
-solution has its limitations, and so has the Open Source version of Kerberos.
+Over the years Kerberos evolved into a mature and stable solution. Lots of people and companies started to adopt the system, and requested enhancements. Despite the fact that Kerberos Open Source is stable and feature rich, every
+solution has its limitations, especially if you aim to scale it.
 
-Kerberos Open Source is perfect when monitoring a limited set of surveillance cameras, but it is not scalable if you plan to monitor dozens or hundreds. Although Kerberos Open Source ships
+That being said, Kerberos Open Source is perfect when monitoring a limited set of surveillance cameras, but it doesn't scale well if you plan to monitor dozens or hundreds of surveillance cameras. Although Kerberos Open Source ships
 as a docker image, it has no high availability or fail over functionality. Due to these reasons we have developed Kerberos Enterprise, which is suitable for scaling against your ever growing video surveillance landscape, and makes them up and running in whatever situation.
 
 <div class='embed-container'><iframe src='https://player.vimeo.com/video/382090189?background=1' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
@@ -20,14 +20,18 @@ To provide our customer with the high availability and fail over requirements th
 
 ![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes.png)
 
-Kerberos Enterprise is installed inside a Kubernetes cluster. It will create pods/deployments for every surveillance camera you want to monitor. Kubernetes will scale and distrubute them across your nodes (VM's/Baremetal).
+Kerberos Enterprise is installed inside a Kubernetes cluster. It will create pods/deployments for every surveillance camera you want to monitor. Kubernetes will scale and distrubute these pods across your nodes (VM's/Bare-metal machines).
+
+Nodes inside your cluster can fail or crash, Kubernetes will make sure the Kerberos pods running on the failed nodes will be deployed to healthy nodes, to make sure the monitoring of your video surveillance cameras continues seamlessly.
+
+By having the power to add nodes to your cluster, you can anticipate to the ever growing need of surveillance cameras. With the Kubernetes tools you can monitor your cluster and get into the details.
 
 ## Cloud or on premise
 
-You can install Kerberos Enterprise in whatever cluster you want, as long as its running a Kubernetes cluster. This means that whatever security policy you have, you can run it where you want.
+You install Kerberos Enterprise inside a Kubernetes cluster, but there are not limitations where this cluster is running. This means that whatever security policy you have within your company, you can run it where you want: on-premise, public cloud, private cloud, etc.
 
 ![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes-cloud.png)
 
 ## Licensing
 
-Kerberos Enterprise is publicly available but requires a license key to operate correctly. A license key can be requested by contactig **cedric@verstraeten.io**, to have more information about pricing.
+Kerberos Enterprise is publicly available but requires a license key to operate correctly. A license key can be requested by contacting **cedric@verstraeten.io**, send an email to have more information about the pricing.

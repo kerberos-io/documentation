@@ -3,7 +3,7 @@ export default {
     'Introduction',
     'Architectures',
     { name: 'Open Source', menu: ['First things first', 'Releases', 'Upgrade', 'Installation', 'Contribute', 'License', 'Machinery', 'Web'] },
-    'Enterprise',
+    { name: 'Enterprise', menu: ['Introduction', 'Installation', 'License'] },
     'Cloud'
   ],
   repository: "https://github.com/kerberos-io",

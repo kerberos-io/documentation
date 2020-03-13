@@ -1,0 +1,170 @@
+---
+name: Installation
+menu: Enterprise
+route: /enterprise/installation
+---
+
+import ReplaceVersion from "../components/ReplaceVersion";
+
+# Introduction
+
+Start by installing a Kubernetes cluster. This can be done on one of the hyperscalers (**AWS**, **GCP** or **Azure**),
+cloud providers (Digital Ocean, Scaleway, etc) or on-premise in your own private network.
+
+    TODO write tutorial or create link to tutorial.
+
+# Installation
+
+Before setting up Kerberos Enterprise, some configuration needs to happen. First thing that needs to happen is setting up the RBAC permissions (Role Based Access Control),
+we need to do this to query specific endpoints from the Kubernetes API. By default these endpoints are blocked, so we need
+to unblock them.
+
+    kubectl create -f ./clusterrole.yaml
+
+
+clusterrole.yaml
+
+    kind: ClusterRole
+    apiVersion: rbac.authorization.k8s.io/v1
+    metadata:
+      name: pods-list
+    rules:
+    - apiGroups: ["", "apps"]
+      resources: ["pods", "pods/log", "deployments", "services", "endpoints", "nodes"]
+      verbs: ["get", "list", "create", "delete"]
+    ---
+    kind: ClusterRoleBinding
+    apiVersion: rbac.authorization.k8s.io/v1
+    metadata:
+      name: pods-list
+    subjects:
+    - kind: ServiceAccount
+      name: default
+      namespace: default
+    roleRef:
+      kind: ClusterRole
+      name: pods-list
+      apiGroup: rbac.authorization.k8s.io
+
+
+## Helm
+
+[**Helm**](https://helm.sh/) is a package manager for Kubernetes, it helps you setting up services more easily (this could be a MQTT broker, a database, etc).
+Instead of writing yaml files for every service we need, we use so called **Charts** (libraries), that you can reuse and configure the,
+with the appropriate settings.
+
+Use one of the preferred OS package managers to install the Helm client:
+
+    brew install helm
+
+    choco install kubernetes-helm
+
+    scoop install helm
+
+    gofish install helm
+
+### Initiate helm
+
+When you've installed the Helm client, we need to use it to initiate Helm (also called the Tiller service) inside your cluster.
+Tiller is what they call the server component of Helm.
+
+    kubectl create serviceaccount tiller --namespace kube-system
+    kubectl create -f ./tiller-clusterrolebinding.yaml
+    helm init --service-account tiller
+
+tiller-clusterrolebinding.yaml
+
+    kind: ClusterRoleBinding
+    apiVersion: rbac.authorization.k8s.io/v1beta1
+    metadata:
+      name: tiller-clusterrolebinding
+    subjects:
+    - kind: ServiceAccount
+      name: tiller
+      namespace: kube-system
+    roleRef:
+      kind: ClusterRole
+      name: cluster-admin
+      apiGroup: ""
+
+## Traefik
+
+[**Traefik**](https://containo.us/traefik/) is a reverse proxy and load balancer which allows you to
+expose your deployments more easily. Kerberos uses Traefik to expose it's APIs more easily. More info will follow.
+
+    helm install --name traefik -f ./traefik/values.yaml stable/traefik
+
+./traefik/values.yaml
+
+    dashboard:
+      enabled: true
+      domain: your.domain.com
+      serviceType: NodePort
+    rbac:
+        enabled: true
+
+## MongoDB
+
+Kerberos Enterprise generates configurations for every surveillance camera that you want to monitor. These configuration files
+are stored centrally in a MongoDB database. Therefore we use Helm to install a MongoDB instance inside your cluster.
+
+    helm install --name mongodb stable/mongodb --values ./mongodb/values.yaml
+
+ ./mongodb/values.yaml
+
+    ...
+
+## Factory
+
+Kerberos Enterprise is managed through ann application which we call the **Factory**. The Factory is responsible for initiating
+the deployments inside your cluster. These deployments is what we also call (similar to the Open Source version) the machinery.
+The Factory also provide you with the tools to update your machineries easily through a web interface, monitor them, etc. The factory
+is the central portal for managing Kerberos Enterprise inside your cluster.
+
+    kubectl apply -f ./factory/kubernetes.yaml
+
+./factory/kubernetes.yaml
+
+    ... link to yaml ...
+
+# Test out configuration
+
+If everything worked out as expected, you should now have following services in your cluster:
+
+  - MongoDB
+  - Traefik
+  - Factory
+
+It should look like this.
+
+    $ kubectl get pods
+    NAME                              READY   STATUS    RESTARTS   AGE
+    factory-6f5c877d7c-hf77p          1/1     Running   0          2d11h
+    mongodb-55566dc65c-xgmns          2/2     Running   0          4d13h
+    traefik-7d566ccc47-mwslb          1/1     Running   0          4d12h
+
+## DNS configuration
+
+When deploying both Traefik and Factory you had to specify a domain. In this step we need to configure your DNS server. Look for the
+Traefik service, and copy its External IP.
+
+        $ kubectl get svc
+        NAME                 TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)                      AGE
+        factory              ClusterIP      10.0.10.175   <none>          80/TCP,8081/TCP              4d13h
+        kubernetes           ClusterIP      10.0.0.1      <none>          443/TCP                      4d15h
+        mongodb              ClusterIP      10.0.1.0      <none>          27017/TCP,9216/TCP           4d14h
+    --> traefik              LoadBalancer   10.0.10.97    34.66.138.141   443:31683/TCP,80:32053/TCP   4d14h
+        traefik-dashboard    NodePort       10.0.14.209   <none>          80:32044/TCP                 4d14h
+
+Add this External IP to your DNS server, so it will resolve your domains:
+
+  - traefik.domain.com (change to your domain)
+  - factory.domain.com (change to your domain).
+  - api.factory.domain.com (change to your domain).
+
+## Access the system
+
+Once everything is configured correctly your cluster and dns, you should be able to setup the Factory application. By navigating
+to the Factory domain in your browser you will see the Factory login page showing up.
+
+![Factory](../../public/images/factory/kerberos-factory-loginpage.png)

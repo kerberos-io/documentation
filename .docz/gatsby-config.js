@@ -53,7 +53,10 @@ const config = {
               'Web',
             ],
           },
-          'Enterprise',
+          {
+            name: 'Enterprise',
+            menu: ['Introduction', 'Installation', 'License'],
+          },
           'Cloud',
         ],
         mdPlugins: [],
