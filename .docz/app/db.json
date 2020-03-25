@@ -9,6 +9,7 @@
         "name": "Open Source",
         "menu": [
           "First things first",
+          "Get Started",
           "Releases",
           "Upgrade",
           "Installation",
@@ -22,6 +23,7 @@
         "name": "Enterprise",
         "menu": [
           "Introduction",
+          "Get Started",
           "Installation",
           "License"
         ]
@@ -271,6 +273,26 @@
       }
     },
     {
+      "key": "src/enterprise/get-started.mdx",
+      "value": {
+        "name": "Get Started",
+        "menu": "Enterprise",
+        "route": "/enterprise/get-started",
+        "id": "190cf47f9b2f25ec9b7155086f299a78",
+        "filepath": "src/enterprise/get-started.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/get-started.mdx",
+        "link": "",
+        "slug": "src-enterprise-get-started",
+        "headings": [
+          {
+            "slug": "get-started",
+            "depth": 1,
+            "value": "Get Started"
+          }
+        ]
+      }
+    },
+    {
       "key": "src/enterprise/index.mdx",
       "value": {
         "name": "Introduction",
@@ -358,11 +380,6 @@
             "value": "Test out configuration"
           },
           {
-            "slug": "dns-configuration",
-            "depth": 2,
-            "value": "DNS configuration"
-          },
-          {
             "slug": "access-the-system",
             "depth": 2,
             "value": "Access the system"
@@ -383,59 +400,9 @@
         "slug": "src-enterprise-license",
         "headings": [
           {
-            "slug": "cc-by-nc-sa-40",
+            "slug": "eula",
             "depth": 1,
-            "value": "CC BY-NC-SA 4.0"
-          },
-          {
-            "slug": "summary",
-            "depth": 2,
-            "value": "Summary"
-          },
-          {
-            "slug": "the-license",
-            "depth": 2,
-            "value": "The license"
-          },
-          {
-            "slug": "section-1--definitions",
-            "depth": 3,
-            "value": "Section 1 – Definitions."
-          },
-          {
-            "slug": "section-2--scope",
-            "depth": 3,
-            "value": "Section 2 – Scope."
-          },
-          {
-            "slug": "section-3--license-conditions",
-            "depth": 3,
-            "value": "Section 3 – License Conditions."
-          },
-          {
-            "slug": "section-4--sui-generis-database-rights",
-            "depth": 3,
-            "value": "Section 4 – Sui Generis Database Rights."
-          },
-          {
-            "slug": "section-5--disclaimer-of-warranties-and-limitation-of-liability",
-            "depth": 3,
-            "value": "Section 5 – Disclaimer of Warranties and Limitation of Liability."
-          },
-          {
-            "slug": "section-6--term-and-termination",
-            "depth": 3,
-            "value": "Section 6 – Term and Termination."
-          },
-          {
-            "slug": "section-7--other-terms-and-conditions",
-            "depth": 3,
-            "value": "Section 7 – Other Terms and Conditions."
-          },
-          {
-            "slug": "section-8--interpretation",
-            "depth": 3,
-            "value": "Section 8 – Interpretation."
+            "value": "EULA"
           }
         ]
       }
@@ -551,6 +518,26 @@
             "slug": "installation-1",
             "depth": 3,
             "value": "Installation"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/open-source/get-started.mdx",
+      "value": {
+        "name": "Get Started",
+        "menu": "Open Source",
+        "route": "/opensource/get-started",
+        "id": "059e06c8b1653a3b0c3473f90d782c13",
+        "filepath": "src/open-source/get-started.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/open-source/get-started.mdx",
+        "link": "",
+        "slug": "src-open-source-get-started",
+        "headings": [
+          {
+            "slug": "get-started",
+            "depth": 1,
+            "value": "Get Started"
           }
         ]
       }

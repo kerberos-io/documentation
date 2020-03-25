@@ -44,6 +44,7 @@ const config = {
             name: 'Open Source',
             menu: [
               'First things first',
+              'Get Started',
               'Releases',
               'Upgrade',
               'Installation',
@@ -55,7 +56,7 @@ const config = {
           },
           {
             name: 'Enterprise',
-            menu: ['Introduction', 'Installation', 'License'],
+            menu: ['Introduction', 'Get Started', 'Installation', 'License'],
           },
           'Cloud',
         ],

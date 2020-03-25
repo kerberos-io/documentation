@@ -3,11 +3,13 @@ const preferDefault = m => m && m.default || m
 
 exports.components = {
   "component---src-architectures-mdx": () => import("../../src/architectures.mdx" /* webpackChunkName: "component---src-architectures-mdx" */),
-  "component---src-enterprise-installation-mdx": () => import("../../src/enterprise/installation.mdx" /* webpackChunkName: "component---src-enterprise-installation-mdx" */),
   "component---src-index-mdx": () => import("../../src/index.mdx" /* webpackChunkName: "component---src-index-mdx" */),
+  "component---src-enterprise-get-started-mdx": () => import("../../src/enterprise/get-started.mdx" /* webpackChunkName: "component---src-enterprise-get-started-mdx" */),
   "component---src-enterprise-index-mdx": () => import("../../src/enterprise/index.mdx" /* webpackChunkName: "component---src-enterprise-index-mdx" */),
+  "component---src-enterprise-installation-mdx": () => import("../../src/enterprise/installation.mdx" /* webpackChunkName: "component---src-enterprise-installation-mdx" */),
   "component---src-enterprise-releases-mdx": () => import("../../src/enterprise/releases.mdx" /* webpackChunkName: "component---src-enterprise-releases-mdx" */),
   "component---src-open-source-index-mdx": () => import("../../src/open-source/index.mdx" /* webpackChunkName: "component---src-open-source-index-mdx" */),
+  "component---src-open-source-get-started-mdx": () => import("../../src/open-source/get-started.mdx" /* webpackChunkName: "component---src-open-source-get-started-mdx" */),
   "component---src-open-source-upgrade-mdx": () => import("../../src/open-source/upgrade.mdx" /* webpackChunkName: "component---src-open-source-upgrade-mdx" */),
   "component---src-open-source-web-mdx": () => import("../../src/open-source/web.mdx" /* webpackChunkName: "component---src-open-source-web-mdx" */),
   "component---src-cloud-index-mdx": () => import("../../src/cloud/index.mdx" /* webpackChunkName: "component---src-cloud-index-mdx" */),
