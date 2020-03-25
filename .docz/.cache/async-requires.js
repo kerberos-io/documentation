@@ -2,12 +2,10 @@
 const preferDefault = m => m && m.default || m
 
 exports.components = {
-  "component---cache-dev-404-page-js": () => import("dev-404-page.js" /* webpackChunkName: "component---cache-dev-404-page-js" */),
-  "component---src-pages-404-js": () => import("../src/pages/404.js" /* webpackChunkName: "component---src-pages-404-js" */),
   "component---src-architectures-mdx": () => import("../../src/architectures.mdx" /* webpackChunkName: "component---src-architectures-mdx" */),
+  "component---src-enterprise-installation-mdx": () => import("../../src/enterprise/installation.mdx" /* webpackChunkName: "component---src-enterprise-installation-mdx" */),
   "component---src-index-mdx": () => import("../../src/index.mdx" /* webpackChunkName: "component---src-index-mdx" */),
   "component---src-enterprise-index-mdx": () => import("../../src/enterprise/index.mdx" /* webpackChunkName: "component---src-enterprise-index-mdx" */),
-  "component---src-enterprise-installation-mdx": () => import("../../src/enterprise/installation.mdx" /* webpackChunkName: "component---src-enterprise-installation-mdx" */),
   "component---src-enterprise-releases-mdx": () => import("../../src/enterprise/releases.mdx" /* webpackChunkName: "component---src-enterprise-releases-mdx" */),
   "component---src-open-source-index-mdx": () => import("../../src/open-source/index.mdx" /* webpackChunkName: "component---src-open-source-index-mdx" */),
   "component---src-open-source-upgrade-mdx": () => import("../../src/open-source/upgrade.mdx" /* webpackChunkName: "component---src-open-source-upgrade-mdx" */),
@@ -18,6 +16,8 @@ exports.components = {
   "component---src-open-source-license-mdx": () => import("../../src/open-source/license.mdx" /* webpackChunkName: "component---src-open-source-license-mdx" */),
   "component---src-open-source-releases-mdx": () => import("../../src/open-source/releases.mdx" /* webpackChunkName: "component---src-open-source-releases-mdx" */),
   "component---src-open-source-installation-mdx": () => import("../../src/open-source/installation.mdx" /* webpackChunkName: "component---src-open-source-installation-mdx" */),
-  "component---src-open-source-machinery-mdx": () => import("../../src/open-source/machinery.mdx" /* webpackChunkName: "component---src-open-source-machinery-mdx" */)
+  "component---src-open-source-machinery-mdx": () => import("../../src/open-source/machinery.mdx" /* webpackChunkName: "component---src-open-source-machinery-mdx" */),
+  "component---cache-dev-404-page-js": () => import("dev-404-page.js" /* webpackChunkName: "component---cache-dev-404-page-js" */),
+  "component---src-pages-404-js": () => import("../src/pages/404.js" /* webpackChunkName: "component---src-pages-404-js" */)
 }
 
