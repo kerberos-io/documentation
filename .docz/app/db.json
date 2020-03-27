@@ -81,6 +81,7 @@
         "filepath": "src/architectures.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/architectures.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-architectures",
         "menu": "",
         "headings": [
@@ -141,6 +142,7 @@
         "filepath": "src/index.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/index.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-index",
         "menu": "",
         "headings": [
@@ -196,6 +198,7 @@
         "filepath": "src/cloud/index.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/cloud/index.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-cloud-index",
         "menu": "",
         "headings": [
@@ -282,12 +285,53 @@
         "filepath": "src/enterprise/get-started.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/get-started.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-enterprise-get-started",
         "headings": [
           {
             "slug": "get-started",
             "depth": 1,
             "value": "Get Started"
+          },
+          {
+            "slug": "login-page",
+            "depth": 2,
+            "value": "Login page"
+          },
+          {
+            "slug": "license-key",
+            "depth": 2,
+            "value": "License key"
+          },
+          {
+            "slug": "overview",
+            "depth": 2,
+            "value": "Overview"
+          },
+          {
+            "slug": "kubernetes",
+            "depth": 2,
+            "value": "Kubernetes"
+          },
+          {
+            "slug": "nodes",
+            "depth": 3,
+            "value": "Nodes"
+          },
+          {
+            "slug": "deployments",
+            "depth": 2,
+            "value": "Deployments"
+          },
+          {
+            "slug": "adding-a-new-deployment",
+            "depth": 3,
+            "value": "Adding a new deployment"
+          },
+          {
+            "slug": "configuring-a-deployment",
+            "depth": 3,
+            "value": "Configuring a deployment"
           }
         ]
       }
@@ -302,6 +346,7 @@
         "filepath": "src/enterprise/index.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/index.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-enterprise-index",
         "headings": [
           {
@@ -337,6 +382,7 @@
         "filepath": "src/enterprise/installation.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/installation.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-enterprise-installation",
         "headings": [
           {
@@ -397,6 +443,7 @@
         "filepath": "src/enterprise/license.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/license.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-enterprise-license",
         "headings": [
           {
@@ -417,6 +464,7 @@
         "filepath": "src/enterprise/releases.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/releases.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-enterprise-releases",
         "headings": [
           {
@@ -447,6 +495,7 @@
         "filepath": "src/open-source/contribute.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/open-source/contribute.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-open-source-contribute",
         "headings": [
           {
@@ -532,6 +581,7 @@
         "filepath": "src/open-source/get-started.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/open-source/get-started.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-open-source-get-started",
         "headings": [
           {
@@ -552,6 +602,7 @@
         "filepath": "src/open-source/index.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/open-source/index.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-open-source-index",
         "headings": [
           {
@@ -587,6 +638,7 @@
         "filepath": "src/open-source/installation.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/open-source/installation.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-open-source-installation",
         "headings": [
           {
@@ -717,6 +769,7 @@
         "filepath": "src/open-source/license.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/open-source/license.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-open-source-license",
         "headings": [
           {
@@ -787,6 +840,7 @@
         "filepath": "src/open-source/machinery.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/open-source/machinery.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-open-source-machinery",
         "headings": [
           {
@@ -1367,6 +1421,7 @@
         "filepath": "src/open-source/releases.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/open-source/releases.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-open-source-releases",
         "headings": [
           {
@@ -1737,6 +1792,7 @@
         "filepath": "src/open-source/upgrade.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/open-source/upgrade.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-open-source-upgrade",
         "headings": [
           {
@@ -1772,6 +1828,7 @@
         "filepath": "src/open-source/web.mdx",
         "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/open-source/web.mdx",
         "link": "",
+        "hidden": false,
         "slug": "src-open-source-web",
         "headings": [
           {

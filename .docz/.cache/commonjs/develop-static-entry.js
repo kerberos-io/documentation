@@ -112,7 +112,7 @@ var _default = (pagePath, callback) => {
     pathname: pagePath
   });
 
-  const htmlElement = _react.default.createElement(Html, Object.assign({}, bodyProps, {
+  const htmlElement = _react.default.createElement(Html, { ...bodyProps,
     body: ``,
     headComponents: headComponents.concat([_react.default.createElement("script", {
       key: `io`,
@@ -125,7 +125,7 @@ var _default = (pagePath, callback) => {
       key: `commons`,
       src: "/commons.js"
     })])
-  }));
+  });
 
   htmlStr = (0, _server.renderToStaticMarkup)(htmlElement);
   htmlStr = `<!DOCTYPE html>${htmlStr}`;

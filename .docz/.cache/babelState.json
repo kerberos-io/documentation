@@ -3,7 +3,7 @@
     "develop": {
       "plugins": [
         {
-          "name": "@babel/plugin-proposal-object-rest-spread",
+          "name": "/Users/i353408/Vagrant/www/repos/documentation/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
           "options": {}
         },
         {
@@ -31,7 +31,7 @@
     "develop-html": {
       "plugins": [
         {
-          "name": "@babel/plugin-proposal-object-rest-spread",
+          "name": "/Users/i353408/Vagrant/www/repos/documentation/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
           "options": {}
         },
         {
@@ -59,7 +59,7 @@
     "build-html": {
       "plugins": [
         {
-          "name": "@babel/plugin-proposal-object-rest-spread",
+          "name": "/Users/i353408/Vagrant/www/repos/documentation/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
           "options": {}
         },
         {
@@ -87,7 +87,7 @@
     "build-javascript": {
       "plugins": [
         {
-          "name": "@babel/plugin-proposal-object-rest-spread",
+          "name": "/Users/i353408/Vagrant/www/repos/documentation/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
           "options": {}
         },
         {

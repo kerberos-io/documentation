@@ -19,13 +19,15 @@ var _apiRunnerBrowser = require("./api-runner-browser");
 
 var _loader = _interopRequireDefault(require("./loader"));
 
-var _jsonStore = _interopRequireDefault(require("./json-store"));
+var _queryResultStore = require("./query-result-store");
 
 var _ensureResources = _interopRequireDefault(require("./ensure-resources"));
 
 var _errorOverlayHandler = require("./error-overlay-handler");
 
-if (window.__webpack_hot_middleware_reporter__ !== undefined) {
+// TODO: Remove entire block when we make fast-refresh the default
+// In fast-refresh, this logic is all moved into the `error-overlay-handler`
+if (window.__webpack_hot_middleware_reporter__ !== undefined && process.env.GATSBY_HOT_LOADER !== `fast-refresh`) {
   const overlayErrorID = `webpack`; // Report build errors
 
   window.__webpack_hot_middleware_reporter__.useCustomOverlay({
@@ -59,11 +61,11 @@ const RouteHandler = props => _react.default.createElement(_router.BaseContext.P
     baseuri: `/`,
     basepath: `/`
   }
-}, _react.default.createElement(_jsonStore.default, props));
+}, _react.default.createElement(_queryResultStore.PageQueryStore, props));
 
 class LocationHandler extends _react.default.Component {
   render() {
-    let {
+    const {
       location
     } = this.props;
 
@@ -91,7 +93,7 @@ class LocationHandler extends _react.default.Component {
     let custom404;
 
     if (real404PageResources) {
-      custom404 = _react.default.createElement(_jsonStore.default, (0, _extends2.default)({}, this.props, {
+      custom404 = _react.default.createElement(_queryResultStore.PageQueryStore, (0, _extends2.default)({}, this.props, {
         pageResources: real404PageResources
       }));
     }
@@ -126,6 +128,6 @@ const WrappedRoot = (0, _apiRunnerBrowser.apiRunner)(`wrapRootElement`, {
   };
 }).pop();
 
-var _default = () => WrappedRoot;
+var _default = () => _react.default.createElement(_queryResultStore.StaticQueryStore, null, WrappedRoot);
 
 exports.default = _default;

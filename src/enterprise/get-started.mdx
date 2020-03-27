@@ -4,4 +4,88 @@ menu: Enterprise
 route: /enterprise/get-started
 ---
 
+import SettingsIcon from '@material-ui/icons/Settings';
+
 # Get Started
+
+Once you've installed Kerberos Enterprise, you will have the Factory service running inside your cluster, and you will have access to the Factory web application. This web application allows you to administrate your Machinery deployments/pods.
+
+## Login page
+
+Once you open a browser, and navigate to the Factory web application (see installation for the url), you will land on the login page.
+
+![Factory](../../public/images/factory/kerberos-factory-loginpage-small.png)
+
+The default username password of the Factory web applications is:
+
+- username: **root**
+- password: **kerberos**
+
+> The username and password can be changed in the MongoDB database.
+
+## License key
+
+The first time you login you are asked for a license key, this can be obtained by sending a request to cedric@verstraeten.io. An example license key looks like this:
+
+> -----BEGIN LICENSE KEY-----
+L/+DAwEBB2xpY2Vuc2UB/4QAAQIBB1BheWxvYWQBCgABCVNpZ25hdHVyZQEKAAAA
+/9z/hAFUPBAADG1haW4uTGljZW5zZf+BAwEBB0xpY2Vuc2UB/4IAAQIBB0NvbXBh
+bnkBDAABB0V4cFRpbWUBBAAAABb/ghMBCmtlcmJlcm9zaW8B/MC7ZzIAAf+AOaJ+
+8eU3OlZCphr4uJyH/PzfuDkMrqyfIsutc5kSz3rjsRtU4e6vETpHre8CPvFyx5w2
+0O8PKCIR4z1q28qJK2cvHQTK0/zf+KfYLilEcmNczLXgg+bnPvtA/bU/K8ZEwbnw
+Rta3+8zId+xtYQApdmHwo/Ih/vCN579iDeunwVQA
+-----END LICENSE KEY-----
+
+![Factory](../../public/images/factory/kerberos-factory-licensekey.png)
+
+Once you received a license key, and entered it into the web application you will be redirected to the login screen. Enter your credentials again, and you will be guided into the dashboard.
+
+## Overview
+
+On the overview page you will find an intuitive overview of the different pages and functionalities. On the left menu you will see two sections: **Docker** and **Kubernetes**. Kerberos Enterprise can both run in Docker (single-host) and Kubernetes (cluster) mode, however the recommended way is Kubernetes.
+
+![Factory](../../public/images/factory/kerberos-factory-dashboard.png)
+
+## Kubernetes
+
+On the left menu you will find the Kubernetes section. In this section 3 sub menu's are available:
+
+- Nodes
+- Deployments
+- Pods
+
+### Nodes
+
+The nodes section lists all the available nodes inside your Kubernetes cluster.
+
+![Factory](../../public/images/factory/kerberos-factory-nodes.png)
+
+## Deployments
+
+The deployments section will list all the machinery deployments (agents) that you have deployed inside your cluster. It gives you access to deploy new deploments one by one or in bulk.
+
+![Factory](../../public/images/factory/kerberos-factory-deployments.png)
+
+### Adding a new deployment
+
+There are two options to add a new deployment:
+- single deployment
+
+By specifying a name for your deployment and it's corresponding RTSP url, a new deployment will be created for you, and deployed to one of your installed nodes.
+
+![Factory](../../public/images/factory/kerberos-factory-add-single-deployment.png)
+
+
+- in bulk deployment.
+
+By importing an Excel file, deployments can be created in bulk.
+
+![Factory](../../public/images/factory/kerberos-factory-add-bulk-deployment.png)
+
+By specifying the name and corresponding RTSP url in multiple rows, you can deploy your deployments in bulk.
+
+![Factory](../../public/images/factory/kerberos-factory-add-bulk-deployment-excel.png)
+
+### Configuring a deployment
+
+Once you have a running deployment, you should see a green circle next to the deployment, indicating that it is succesfully running. At any time you can configure your deployments by clicking on the <SettingsIcon className="pointer"/> icon.

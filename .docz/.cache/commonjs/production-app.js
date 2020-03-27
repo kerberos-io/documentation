@@ -82,7 +82,7 @@ window.___loader = _loader.publicLoader;
         location: location,
         id: "gatsby-focus-wrapper"
       }, _react.default.createElement(RouteHandler, (0, _extends2.default)({
-        path: encodeURI(pageResources.page.path === `/404.html` ? (0, _stripPrefix.default)(location.pathname, __BASE_PATH__) : pageResources.page.matchPath || pageResources.page.path)
+        path: pageResources.page.path === `/404.html` ? (0, _stripPrefix.default)(location.pathname, __BASE_PATH__) : encodeURI(pageResources.page.matchPath || pageResources.page.path)
       }, this.props, {
         location: location,
         pageResources: pageResources
@@ -109,7 +109,7 @@ window.___loader = _loader.publicLoader;
   }
 
   _loader.publicLoader.loadPage(browserLoc.pathname).then(page => {
-    if (!page || page.status === `error`) {
+    if (!page || page.status === _loader.PageResourceStatus.Error) {
       throw new Error(`page resources for ${browserLoc.pathname} not found. Not rendering React`);
     }
 
@@ -127,7 +127,7 @@ window.___loader = _loader.publicLoader;
       };
     }).pop();
 
-    let NewRoot = () => WrappedRoot;
+    const NewRoot = () => WrappedRoot;
 
     const renderer = (0, _apiRunnerBrowser.apiRunner)(`replaceHydrateFunction`, undefined, _reactDom.default.hydrate)[0];
     (0, _domready.default)(() => {

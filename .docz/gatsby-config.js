@@ -1,10 +1,18 @@
-const { mergeWith } = require('lodash/fp')
+const { mergeWith } = require('docz-utils')
+const fs = require('fs-extra')
 
-let custom
-try {
-  custom = require('./gatsby-config.custom')
-} catch (err) {
-  custom = {}
+let custom = {}
+const hasGatsbyConfig = fs.existsSync('./gatsby-config.custom.js')
+
+if (hasGatsbyConfig) {
+  try {
+    custom = require('./gatsby-config.custom')
+  } catch (err) {
+    console.error(
+      `Failed to load your gatsby-config.js file : `,
+      JSON.stringify(err),
+    )
+  }
 }
 
 const config = {
@@ -35,7 +43,10 @@ const config = {
             },
           },
         },
+        src: './',
+        gatsbyRoot: null,
         themesDir: 'src',
+        mdxExtensions: ['.md', '.mdx'],
         docgenConfig: {},
         menu: [
           'Introduction',
@@ -69,14 +80,14 @@ const config = {
         'props-parser': true,
         debug: false,
         native: false,
-        openBrowser: false,
-        o: false,
-        open: false,
-        'open-browser': false,
+        openBrowser: null,
+        o: null,
+        open: null,
+        'open-browser': null,
         root: '/Users/i353408/Vagrant/www/repos/documentation/.docz',
         base: '/',
         source: './',
-        src: './',
+        'gatsby-root': null,
         files: '**/*.{md,markdown,mdx}',
         public: '/public',
         dest: '.docz/dist',
@@ -100,6 +111,8 @@ const config = {
           app: '/Users/i353408/Vagrant/www/repos/documentation/.docz/app',
           appPackageJson:
             '/Users/i353408/Vagrant/www/repos/documentation/package.json',
+          appTsConfig:
+            '/Users/i353408/Vagrant/www/repos/documentation/tsconfig.json',
           gatsbyConfig:
             '/Users/i353408/Vagrant/www/repos/documentation/gatsby-config.js',
           gatsbyBrowser:
