@@ -214,9 +214,14 @@
             "value": "Architecture"
           },
           {
-            "slug": "public-or-private-cloud-bring-your-own-cloud",
+            "slug": "public-or-private-edition",
             "depth": 3,
-            "value": "Public or Private cloud (Bring Your Own Cloud)"
+            "value": "Public or Private edition"
+          },
+          {
+            "slug": "features",
+            "depth": 2,
+            "value": "Features"
           },
           {
             "slug": "secured-storage",

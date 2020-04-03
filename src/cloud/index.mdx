@@ -28,15 +28,26 @@ A brief list of the key features of Kerberos Cloud are:
 
 A simplified architecture is found below. In this architecture the Kerberos agents are installed on-premise, next to the surveillance cameras. Once one of the agents recorded something it will send the recording to our AWS S3 bucket, using the credentials you've defined inside the agent.
 
-As soon as the recording is succesfully received several engines will be executed, that will further process the recording and extract metadata from it (classification, origin of the surveillance camera, etc). A lot of processing is happening behind the scenes.
+As soon as the recording is succesfully received several engines will be executed, that will further process the recording and extract metadata from it (classification, origin of the surveillance camera, etc). A lot of processing is happening behind the scenes (by what we call microservices).
 
-By using a browser you can navigate to Kerberos Cloud, and review all the recordings made by the Kerberos agents on-premise. On top of that you will receive more context about the recordings, get notifications, view a livestream and much more.
+By using a browser you can navigate to Kerberos Cloud, and review all the recordings made by the Kerberos agents. On top of that you will receive more context about the recordings, get notifications, view a livestream and much more.
 
 ![cloud](../../public/images/kerberos-architecture.png)
 
-### Public or Private cloud (Bring Your Own Cloud)
+### Public or Private edition
 
-We run Kerberos Cloud in the public cloud on different services such as AWS, GCP and Scaleway. However if needed we can host our entire solution within your Private cloud (create a support ticket).
+They are two different versions of using and deploying Kerberos Cloud, we have the public and private dition. What's the difference?
+
+The Public edition of Kerberos Cloud, is running all its services in what we often call the public cloud; and to be more specific on AWS and GCP. The Public cloud is mainly built for people who want to have a low cost and small scale VMS in the cloud. It's easy to (un)subscribe to the system, and you can connect your Kerberos agents in a matter of seconds.
+
+On the other hand we also have the private edition, which is available for enterprises. In contrary to the public edition, a customer can deploy the entire Kerberos Cloud platform (with all its microservices) where it wants (on-premise or cloud). Both public and private edition are built on Kubernetes, this means that you will need to
+have a Kubernetes cluster available at the location you which to install Kerberos Cloud.
+
+For more information about the licensing of Kerberos Cloud private edition, please get in touch with cedric@verstraeten.io. The licensing model of Kerberos Cloud public edition can be found online.
+
+## Features
+
+So you might wonder, what's actually inside the platform? Please find a concrete list of functionalities below, this should give you more insights about how it looks like and what the capabilities are.
 
 ## Secured storage
 
