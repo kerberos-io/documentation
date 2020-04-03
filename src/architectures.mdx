@@ -11,11 +11,11 @@ In this section we will explain some usecases and best practices, which might he
 
 When starting with Kerberos you might ask yourself, how should I deploy these so called, Kerberos agents? Well, there are different options. You can install a Kerberos agent on a Raspberry Pi, VM, Server or even in a Kubernetes cluster. So what should you do, and when? Let's have a closer look at the different options.
 
-The first thing you need to consider is the environment, in which you want to deploy your Kerberos agents. Is it inside your house, your company or a public place? Another important factor is the number of surveillance cameras you would like to monitor, and if you have any high availability requirements.
+The first thing you need to consider is the environment, in which you want to deploy your Kerberos agents. Is it inside your house, your company or at a public place? Another important factor is the number of surveillance cameras you would like to monitor, and if you have any high availability requirements.
 
 ## Agents on-premise
 
-The most common scenario is to install your Kerberos agents on-premise. This has a couple of benefits such as latency, bandwidth and a less complex security model. When installing a Kerberos agent on-premise, you also have different options.
+The most common scenario is to install your Kerberos agents on-premise. This has a couple of benefits such as latency, bandwidth and a less complex security model. When installing a Kerberos agent on-premise, you have a couple of different options.
 
 ### Kerberos Open Source (< 5 Kerberos agents)
 
@@ -33,7 +33,7 @@ Running your Kerberos agents inside Docker containers, allows you to process mul
 
 ### Kerberos Enterprise (> 5 Kerberos agents)
 
-More information coming soon.
+When working within an enterprise context, where you require high availability and have a large amount of surveillance cameras being monitored, [Kerberos Enterprise](/enterprise/introduction) is a good choice. Im comparison to the Open Source version, Kerberos Enterprise will use Kubernetes to help you scale (and secure) your security landscape. Kerberos agents, or Kubernetes deployments, are deployed inside your cluster and load balanced over the different nodes. When a Kerberos agent dies, or the node on which the deployment is running, Kubernetes will reschedule it to another healthy node.
 
 ![architecture kubernetes](../public/images/kerberos-agent-architecture-kubernetes.png)
 
@@ -53,7 +53,7 @@ If you have a limited number of surveillance cameras you would like to monitor, 
 
 ### Kerberos Enterprise (> 5 Kerberos agents)
 
-More information coming soon.
+Similar to [Kerberos Enterprise](/enterprise/introduction) on-premise, you can run the a Kubernetes in the cloud. The exact same solution is available, only the way how you connect to your video surveillance cameras will be different, as they will probably live in a different network. To make this work you will need to setup a VPN tunnel (or whatever your security teams have defined as a back practice). When [Kerberos Enterprise](/enterprise/introduction) is deployed to the cloud, it can be used any where. Public cloud (AWS, Google, Azure, etc) or private cloud. You can run it where you want.
 
 ![architecture kubernetes](../public/images/kerberos-agent-architecture-kubernetes-cloud.png)
 
