@@ -2,8 +2,8 @@ export default {
   menu: [
     'Introduction',
     'Architectures',
-    { name: 'Open Source', menu: ['First things first', 'Get Started', 'Releases', 'Upgrade', 'Installation', 'Contribute', 'License', 'Machinery', 'Web'] },
-    { name: 'Enterprise', menu: ['Introduction', 'Get Started', 'Installation', 'License'] },
+    { name: 'Open Source', menu: ['First things first', 'Get Started', 'Installation', 'Releases', 'License', 'Upgrade', 'Contribute','Machinery', 'Web'] },
+    { name: 'Enterprise', menu: ['First things first', 'Get Started', 'Installation', 'Releases', 'License'] },
     'Cloud'
   ],
   repository: "https://github.com/kerberos-io",

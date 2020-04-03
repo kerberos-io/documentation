@@ -14,7 +14,7 @@ p code {
 
 h2 {
   border-top: 1px solid #c3c3c3;
-  padding-top: 35px
+  padding-top: 35px !important;
 }
 
 h2::before {

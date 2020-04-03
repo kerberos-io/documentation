@@ -10,11 +10,11 @@
         "menu": [
           "First things first",
           "Get Started",
-          "Releases",
-          "Upgrade",
           "Installation",
-          "Contribute",
+          "Releases",
           "License",
+          "Upgrade",
+          "Contribute",
           "Machinery",
           "Web"
         ]
@@ -22,9 +22,10 @@
       {
         "name": "Enterprise",
         "menu": [
-          "Introduction",
+          "First things first",
           "Get Started",
           "Installation",
+          "Releases",
           "License"
         ]
       },
@@ -315,7 +316,7 @@
           },
           {
             "slug": "nodes",
-            "depth": 3,
+            "depth": 2,
             "value": "Nodes"
           },
           {
@@ -332,6 +333,16 @@
             "slug": "configuring-a-deployment",
             "depth": 3,
             "value": "Configuring a deployment"
+          },
+          {
+            "slug": "pods",
+            "depth": 2,
+            "value": "Pods"
+          },
+          {
+            "slug": "storage-and-video-management",
+            "depth": 2,
+            "value": "Storage and video management"
           }
         ]
       }
@@ -339,7 +350,7 @@
     {
       "key": "src/enterprise/index.mdx",
       "value": {
-        "name": "Introduction",
+        "name": "First things first",
         "menu": "Enterprise",
         "route": "/enterprise/introduction",
         "id": "8f8fd9e742255635cf471c3030fa24ac",
@@ -588,6 +599,46 @@
             "slug": "get-started",
             "depth": 1,
             "value": "Get Started"
+          },
+          {
+            "slug": "welcome-page",
+            "depth": 2,
+            "value": "Welcome page"
+          },
+          {
+            "slug": "login-page",
+            "depth": 2,
+            "value": "Login page"
+          },
+          {
+            "slug": "dashboard",
+            "depth": 2,
+            "value": "Dashboard"
+          },
+          {
+            "slug": "media",
+            "depth": 2,
+            "value": "Media"
+          },
+          {
+            "slug": "settings",
+            "depth": 2,
+            "value": "Settings"
+          },
+          {
+            "slug": "region-of-interest",
+            "depth": 3,
+            "value": "Region of interest"
+          },
+          {
+            "slug": "storage",
+            "depth": 3,
+            "value": "Storage"
+          },
+          {
+            "slug": "system",
+            "depth": 2,
+            "value": "System"
           }
         ]
       }

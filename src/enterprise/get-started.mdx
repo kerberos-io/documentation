@@ -54,7 +54,7 @@ On the left menu you will find the Kubernetes section. In this section 3 sub men
 - Deployments
 - Pods
 
-### Nodes
+## Nodes
 
 The nodes section lists all the available nodes inside your Kubernetes cluster.
 
@@ -75,7 +75,6 @@ By specifying a name for your deployment and it's corresponding RTSP url, a new 
 
 ![Factory](../../public/images/factory/kerberos-factory-add-single-deployment.png)
 
-
 - in bulk deployment.
 
 By importing an Excel file, deployments can be created in bulk.
@@ -88,4 +87,26 @@ By specifying the name and corresponding RTSP url in multiple rows, you can depl
 
 ### Configuring a deployment
 
-Once you have a running deployment, you should see a green circle next to the deployment, indicating that it is succesfully running. At any time you can configure your deployments by clicking on the <SettingsIcon className="pointer"/> icon.
+Once you have a running deployment, you should see a green circle next to the deployment, indicating that it is succesfully running. At any time you can configure your deployments by clicking on the <SettingsIcon className="pointer"/> icon. This will open a popup, allowing you to change some settings.
+
+![Factory](../../public/images/factory/kerberos-factory-config-region.png)
+
+Following settings can be changed:
+
+- One or more regions of interest,
+- Time based conditions,
+- Pre- and postrecording
+
+## Pods
+
+When creating a deployment, Kubernetes will create a Pod. This Pod will be deployed to one of your available nodes.
+Once a Pod dies, or crashes, the deployment will make sure it is deployed again to a different (or the same) node.
+
+![Factory](../../public/images/factory/kerberos-factory-pods.png)
+
+
+## Storage and video management
+
+Kerberos Enterprise allows you to scale your video landscape horizontally, it stores its recordings locally for a short amount of time. The idea of Kerberos Enterprise is **not** to have a visual component, for example to browse through recordings, and search for specific events.
+
+To make this functionality possible we have integrated (similar to the open source version), Kerberos Enterprise, to [Kerberos Cloud](/cloud). A full featured, and extensive, platform for managing your video surveillance systems.
