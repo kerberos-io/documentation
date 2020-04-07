@@ -11,20 +11,26 @@ import ReplaceVersion from "../components/ReplaceVersion";
 Start by installing a Kubernetes cluster. This can be done on one of the hyperscalers (**AWS**, **GCP** or **Azure**),
 cloud providers (Digital Ocean, Scaleway, etc) or on-premise in your own private network.
 
-    TODO write tutorial or create link to tutorial.
+<br/>
+<div class='embed-container'><iframe src="https://player.vimeo.com/video/404813147" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+<br/><br/>
 
 # Installation
 
 Before setting up Kerberos Enterprise, some configuration needs to happen. First thing that we need to do is setting up the RBAC permissions (Role Based Access Control). We need to enable this to be able to query specific endpoints from the Kubernetes API. By default these endpoints are locked, so we need to unlock them.
 
+<br/>
+<div class='embed-container'><iframe src="https://player.vimeo.com/video/404767375" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+<br/><br/>
+
 First clone the configrations from our Github repo.
 
-    git clone https://github.com/kerberos-io/enterprise-factory
+    git clone https://github.com/kerberos-io/enterprise
     cd enterprise-factory
 
 Next go into the directory and execute the first Kubernetes configuration file `clusterrole.yaml`.
 
-    kubectl create -f ./clusterrole.yaml
+    kubectl create -f ./yaml/factory/clusterrole.yaml
 
 This will make several actions inside your cluster available. We need this to be able to create deployments from the factory web app.
 
@@ -50,8 +56,7 @@ When you've installed the Helm client, we need to use it to initiate Helm (also 
 Tiller is what they call the server component of Helm.
 
     kubectl create serviceaccount tiller --namespace kube-system
-    kubectl create -f ./tiller-clusterrolebinding.yaml
-
+    kubectl create -f ./yaml/factory/tiller-clusterrolebinding.yaml
     helm init --service-account tiller
 
 Now you have installed **Helm** inside your cluster we can move on by installing the dependencies.
@@ -61,7 +66,7 @@ Now you have installed **Helm** inside your cluster we can move on by installing
 [**Traefik**](https://containo.us/traefik/) is a reverse proxy and load balancer which allows you to
 expose your deployments more easily. Kerberos uses Traefik to expose it's APIs more easily.
 
-By executing following helm command, we will install traefik and link it to a specific DNS name. Open the traefik values file, and update the DNS name to your own domain.
+By executing following helm command, we will install traefik and link it to a specific DNS name. Open the traefik values file, `yaml/traefik/values.yaml`, and update the DNS name to your own domain.
 
         dashboard:
           enabled: true
@@ -72,7 +77,7 @@ By executing following helm command, we will install traefik and link it to a sp
 
 Execute the `helm install` command.
 
-    helm install --name traefik -f ./traefik/values.yaml stable/traefik
+    helm install --name traefik -f ./yaml/traefik/values.yaml stable/traefik
 
 After installation you should have an IP attached to traefik service, look for it by executing the `get service` command. You will see the ip address in the `EXTERNAL-IP` attribute.
 
@@ -92,9 +97,11 @@ When browsing to `traefik.domain.com`, you should see the traefik dashboard show
 Kerberos Enterprise generates configurations for every surveillance camera that you want to monitor. These configuration files
 are stored centrally in a MongoDB database. Therefore we use Helm to install a MongoDB instance inside your cluster.
 
-Have a look into the `mongodb/values.yaml` file, you will find plenty of configurations for your mongodb instance. You will also find the attribute where you can change the root password of mongodb.
+Have a look into the `yaml/mongodb/values.yaml` file, you will find plenty of configurations for your mongodb instance. You will also find the attribute where you can change the root password of mongodb.
 
-    helm install --name mongodb stable/mongodb --values ./mongodb/values.yaml
+
+    helm repo add bitnami https://charts.bitnami.com/bitnami
+    helm install --name mongodb bitnami/mongodb --values ./yaml/mongodb/values.yaml
 
 
 ## Factory
@@ -106,7 +113,7 @@ the deployments inside your cluster. These deployments is what we also call (sim
 
 The Factory comes as a web interface which provides you with a tool to update your machineries easily, monitor them, etc. The Factory is the central portal for managing Kerberos Enterprise inside your cluster.
 
-Before installing the Factory service, open the `factory/kubernetes.yaml` configuration file. At the bottom file you will find two endpoints, similar to the traefik config file. Update the domain names to your own domain, and add these to your DNS server (pointing to the same IP as the traefik EXTERNAL-IP).
+Before installing the Factory service, open the `yaml/factory/kubernetes.yaml` configuration file. At the bottom file you will find two endpoints, similar to the traefik config file. Update the domain names to your own domain, and add these to your DNS server (pointing to the same IP as the traefik EXTERNAL-IP).
 
         spec:
           rules:
@@ -127,7 +134,7 @@ Before installing the Factory service, open the `factory/kubernetes.yaml` config
 
 Once you have corrected the DNS names, install the Factory service inside your cluster.
 
-    kubectl apply -f ./factory/kubernetes.yaml
+    kubectl apply -f ./yaml/factory/kubernetes.yaml
 
 
 # Test out configuration

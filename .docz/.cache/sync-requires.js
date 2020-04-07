@@ -5,7 +5,6 @@ const preferDefault = m => m && m.default || m
 
 
 exports.components = {
-  "component---cache-dev-404-page-js": hot(preferDefault(require("/Users/i353408/Vagrant/www/repos/documentation/.docz/.cache/dev-404-page.js"))),
   "component---src-architectures-mdx": hot(preferDefault(require("/Users/i353408/Vagrant/www/repos/documentation/src/architectures.mdx"))),
   "component---src-index-mdx": hot(preferDefault(require("/Users/i353408/Vagrant/www/repos/documentation/src/index.mdx"))),
   "component---src-enterprise-get-started-mdx": hot(preferDefault(require("/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/get-started.mdx"))),

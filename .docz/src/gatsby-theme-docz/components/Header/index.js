@@ -81,12 +81,6 @@ export const Header = props => {
                 <a sx={styles.linksa} href="http://kerberos.io" title="Welcome">Welcome</a>
               </li>
               <li sx={styles.linksli}>
-                <a sx={styles.linksa} href="http://demo.kerberos.io" title="Demo">Demo</a>
-              </li>
-              <li sx={styles.linksli}>
-                <a sx={styles.linksa} href="/opensource/installation" title="Install">Install</a>
-              </li>
-              <li sx={styles.linksli}>
                 <a sx={styles.linksa} href="http://cloud.kerberos.io" title="Cloud">Cloud</a>
               </li>
               <li sx={styles.linksli2}>
