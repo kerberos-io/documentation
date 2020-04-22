@@ -10,10 +10,20 @@ import ReplaceVersion from "../components/ReplaceVersion";
 
 Kerberos Open Source comes with different installation flavours. So you might think, why?  The reason is simple, depending on the use case one option is better than another. A short list of recommendations:
 
+### Plug and play
 1. [KiOS](/opensource/installation#kios): You have a Raspberry Pi, and you only want to run a Kerberos agent on it.
-2. [Raspbian](/opensource/installation#raspbian): You have a Raspberry Pi, but you want other services running next to the Kerberos agent.
-3. [Docker](/opensource/installation#docker): You have a lot of IP cameras, and/or don't want to mess with dependencies.
-4. [Generic](/opensource/installation#generic): You want to develop/extend Kerberos with your own features, or you want to run a Kerberos agent on a not supported OS/architecure.
+2. [Docker](/opensource/installation#docker): You have a lot of IP cameras, and/or don't want to mess with dependencies.
+3. [Balena](/opensource/installation#balena): Runnning the Kerberos Docker container on top of Balena.
+
+### Advanced
+4. [Raspbian](/opensource/installation#raspbian): You have a Raspberry Pi, but you want other services running next to the Kerberos agent.
+5. [Generic](/opensource/installation#generic): You want to develop/extend Kerberos with your own features, or you want to run a Kerberos agent on a not supported OS/architecure.
+
+---
+
+# Plug and play
+
+Following installation methods aim for the simplicity of installing Kerberos Open Source. With almost no efforts you can have Kerberos Open Source running.
 
 ## KiOS
 
@@ -25,7 +35,7 @@ It can be installed using our own installer, which comes with a nice interface t
 
 KiOS is compiled using Buildroot, the project can be found on [following Github repo](https://github.com/kerberos-io/kios).
 
-### Kerberos installer
+### Kerberos Open Source installer
 
 Installing the Kerberos agent to your Raspberry Pi, has never been so easy. By using our cross-platform installer, you can run a fully configured video surveillance system within 3 minutes. Indeed, we also think that's awesome!
 
@@ -88,7 +98,7 @@ Once you've finished the installation using either the KiOS installer or Etcher,
 You can access the KiOS system with attaching your Raspberry Pi to a HDMI monitor or by using `ssh`.
 
 ```ts
-Cedrics-Mac-mini:build cedricverst$ ssh root@192.168.0.12
+$ ssh root@192.168.0.12
 Welcome to kios-79e30bbb!
 [root@kios-79e30bbb ~]#
 ```
@@ -99,6 +109,82 @@ Note that by default no root password is set, you can define a password in the `
 [root@kios-79e30bbb ~]# nano /data/etc/kios.conf
 [root@kios-79e30bbb ~]# reboot
 ```
+
+## Docker
+
+A Docker image (amd64, armv7, arm64) is available on [the Docker hub](https://hub.docker.com/u/kerberos), which contains all the necessary software to setup the Kerberos agent in a matter of seconds. Before you can run this image, make sure you have Docker installed. Afterwards you can use Docker, to get the Kerberos agent up and running. All Docker images can be found on [the Docker hub](https://hub.docker.com/u/kerberos).
+
+### Prerequisites
+
+> Docker or Docker Desktop (Linux, OS or Windows)
+
+### Github
+
+All technical information, such as Dockerfile, can be found on [following Github repo](https://github.com/kerberos-io/docker).
+
+### Download docker image
+
+Before you are able to run the Kerberos agent inside a container, you will need to pull the docker image from the Docker hub.
+
+```ts
+docker pull kerberos/kerberos
+```
+
+When you pulled succesfully you can run your first Kerberos container as following. This will run Kerberos agent and expose the web interface on port 80, and the livestream on port 8889.
+
+```ts
+docker run --name camera1 -p 80:80 -p 8889:8889 -d kerberos/kerberos
+```
+
+To add more containers, you can change the name parameter and assign another port to expose the web interface and livestream (ports are unique on a OS).
+
+```ts
+docker run --name camera2 -p 81:80 -p 8890:8889 -d kerberos/kerberos
+docker run --name camera3 -p 82:80 -p 8891:8889 -d kerberos/kerberos
+```
+
+When the containers are created, you can open your browser and browse to your different containers.
+```ts
+http://localhost:80
+http://localhost:81
+http://localhost:82
+```
+
+### Volumes
+
+Instead of just running the Kerberos container, you can also persist your configuration by assigning volumes. An example of mounting volumes looks like this; an overview of [the different volumes can be found here](https://github.com/kerberos-io/docker/blob/master/Dockerfile#L171-L177).
+
+- preload configuration,
+- or centralise the images/videos on your working station.
+
+```ts
+docker run --name kerberos-camera1 \
+-p 80:80 -p 8889:8889 \
+-v ~/config:/etc/opt/kerberosio/config \
+-v ~/capture:/etc/opt/kerberosio/capture \
+-v ~/logs:/etc/opt/kerberosio/logs \
+-v ~/webconfig:/var/www/web/config \
+-d kerberos/kerberos
+```
+
+If you want to learn more about Kerberos.io on Docker, have a look at these tutorials.
+- [Kerberos.io — the road to Docker](https://medium.com/@cedricverst/kerberos-io-the-road-to-docker-8e048a480241)
+- [Kerberos.io on Docker](https://medium.com/@cedricverst/kerberos-io-on-docker-19b25fa7efd1)
+
+
+## Balena
+
+Running Kerberos inside a Docker container is great, it makes it possible to run Kerberos everywhere, basically on any Linux OS. These days we have a lot of IoT boards, however by default we only support the Raspberry Pi versions. The reason is simple, it's not our major concern to support any kind of board.
+
+To fill the gap, regarding the latter, we can rely on another solution called [Balena.io](https://balena.io). Balena supports a huge range of IoT boards, the only thing it requires is a Docker image build for the require architecture. As the Docker image for Kerberos Open Source is a multi-architecture image, we can run our Kerberos Docker image on the Balena OS (more info follows).
+
+On top of supporting a lot of boars,
+
+---
+
+# Advanced
+
+Following installation methods are only for advanced users, who need to have more control over the Kerberos Open Source environment.
 
 ## Raspbian
 
@@ -267,52 +353,6 @@ Append following line, to execute the autoremoval.sh script every 5min.
 ```bash
 */5 * * * * /bin/bash /home/pi/autoremoval.sh
 ```
-
-## Docker
-
-A Docker image (x86, ARMv7, ARMv8) is available on the Docker Hub, which contains all the necessary software to setup the Kerberos agent in a matter of seconds. Before you can run this image, make sure you have Docker installed. Afterwards you can use docker, to get the Kerberos agent up and running. All docker images can be found on [the Docker hub](https://hub.docker.com/u/kerberos).
-
-### Prerequisites
-
-> Docker or Docker Desktop (Linux, OS or Windows)
-
-### Github
-
-All technical information, such as Dockerfile, can be found on [following Github repo](https://github.com/kerberos-io/docker).
-
-### Download docker image
-
-Before you are able to run the Kerberos agent inside a container, you will need to pull the docker image from the Docker hub.
-
-```ts
-docker pull kerberos/kerberos
-```
-
-When you pulled succesfully you can run your first Kerberos container as following. This will run Kerberos agent and expose the web interface on port 80, and the livestream on port 8889.
-
-```ts
-docker run --name camera1 -p 80:80 -p 8889:8889 -d kerberos/kerberos
-```
-
-To add more containers, you can change the name parameter and assign another port to expose the web interface and livestream (ports are unique on a OS).
-
-```ts
-docker run --name camera2 -p 81:80 -p 8890:8889 -d kerberos/kerberos
-docker run --name camera3 -p 82:80 -p 8891:8889 -d kerberos/kerberos
-```
-
-When the containers are created, you can open your browser and browse to your different containers.
-```ts
-http://localhost:80
-http://localhost:81
-http://localhost:82
-```
-
-### Volumes
-
-You can assign volumes to the Kerberos container to for example
-- preload configuration,
-- or centralise the images/videos on your working station.
 
 ## Generic
 

@@ -2,11 +2,12 @@
 const preferDefault = m => m && m.default || m
 
 exports.components = {
+  "component---cache-dev-404-page-js": () => import("./dev-404-page.js" /* webpackChunkName: "component---cache-dev-404-page-js" */),
   "component---src-architectures-mdx": () => import("./../../src/architectures.mdx" /* webpackChunkName: "component---src-architectures-mdx" */),
   "component---src-index-mdx": () => import("./../../src/index.mdx" /* webpackChunkName: "component---src-index-mdx" */),
   "component---src-enterprise-get-started-mdx": () => import("./../../src/enterprise/get-started.mdx" /* webpackChunkName: "component---src-enterprise-get-started-mdx" */),
-  "component---src-enterprise-installation-mdx": () => import("./../../src/enterprise/installation.mdx" /* webpackChunkName: "component---src-enterprise-installation-mdx" */),
   "component---src-enterprise-index-mdx": () => import("./../../src/enterprise/index.mdx" /* webpackChunkName: "component---src-enterprise-index-mdx" */),
+  "component---src-enterprise-installation-mdx": () => import("./../../src/enterprise/installation.mdx" /* webpackChunkName: "component---src-enterprise-installation-mdx" */),
   "component---src-enterprise-releases-mdx": () => import("./../../src/enterprise/releases.mdx" /* webpackChunkName: "component---src-enterprise-releases-mdx" */),
   "component---src-open-source-get-started-mdx": () => import("./../../src/open-source/get-started.mdx" /* webpackChunkName: "component---src-open-source-get-started-mdx" */),
   "component---src-open-source-index-mdx": () => import("./../../src/open-source/index.mdx" /* webpackChunkName: "component---src-open-source-index-mdx" */),

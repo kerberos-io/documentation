@@ -703,6 +703,21 @@
             "value": "Installation"
           },
           {
+            "slug": "plug-and-play",
+            "depth": 3,
+            "value": "Plug and play"
+          },
+          {
+            "slug": "advanced",
+            "depth": 3,
+            "value": "Advanced"
+          },
+          {
+            "slug": "plug-and-play-1",
+            "depth": 1,
+            "value": "Plug and play"
+          },
+          {
             "slug": "kios",
             "depth": 2,
             "value": "KiOS"
@@ -713,9 +728,9 @@
             "value": "Github"
           },
           {
-            "slug": "kerberos-installer",
+            "slug": "kerberos-open-source-installer",
             "depth": 3,
-            "value": "Kerberos installer"
+            "value": "Kerberos Open Source installer"
           },
           {
             "slug": "etcher",
@@ -743,31 +758,6 @@
             "value": "Access the Raspberry Pi"
           },
           {
-            "slug": "raspbian",
-            "depth": 2,
-            "value": "Raspbian"
-          },
-          {
-            "slug": "update-os",
-            "depth": 3,
-            "value": "Update OS"
-          },
-          {
-            "slug": "machinery",
-            "depth": 3,
-            "value": "Machinery"
-          },
-          {
-            "slug": "web",
-            "depth": 3,
-            "value": "Web"
-          },
-          {
-            "slug": "auto-removal",
-            "depth": 3,
-            "value": "Auto removal"
-          },
-          {
             "slug": "docker",
             "depth": 2,
             "value": "Docker"
@@ -791,6 +781,41 @@
             "slug": "volumes",
             "depth": 3,
             "value": "Volumes"
+          },
+          {
+            "slug": "balena",
+            "depth": 2,
+            "value": "Balena"
+          },
+          {
+            "slug": "advanced-1",
+            "depth": 1,
+            "value": "Advanced"
+          },
+          {
+            "slug": "raspbian",
+            "depth": 2,
+            "value": "Raspbian"
+          },
+          {
+            "slug": "update-os",
+            "depth": 3,
+            "value": "Update OS"
+          },
+          {
+            "slug": "machinery",
+            "depth": 3,
+            "value": "Machinery"
+          },
+          {
+            "slug": "web",
+            "depth": 3,
+            "value": "Web"
+          },
+          {
+            "slug": "auto-removal",
+            "depth": 3,
+            "value": "Auto removal"
           },
           {
             "slug": "generic",
