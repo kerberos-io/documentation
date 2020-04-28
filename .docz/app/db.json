@@ -788,6 +788,31 @@
             "value": "Balena"
           },
           {
+            "slug": "1-create-a-balena-account",
+            "depth": 3,
+            "value": "1. Create a Balena account"
+          },
+          {
+            "slug": "2-create-a-device-and-flash",
+            "depth": 3,
+            "value": "2. Create a device and flash"
+          },
+          {
+            "slug": "3-connect",
+            "depth": 3,
+            "value": "3. Connect"
+          },
+          {
+            "slug": "4-write",
+            "depth": 3,
+            "value": "4. Write"
+          },
+          {
+            "slug": "5-push",
+            "depth": 3,
+            "value": "5. Push"
+          },
+          {
             "slug": "advanced-1",
             "depth": 1,
             "value": "Advanced"

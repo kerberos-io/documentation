@@ -114,6 +114,11 @@ Note that by default no root password is set, you can define a password in the `
 
 A Docker image (amd64, armv7, arm64) is available on [the Docker hub](https://hub.docker.com/u/kerberos), which contains all the necessary software to setup the Kerberos agent in a matter of seconds. Before you can run this image, make sure you have Docker installed. Afterwards you can use Docker, to get the Kerberos agent up and running. All Docker images can be found on [the Docker hub](https://hub.docker.com/u/kerberos).
 
+This installation guide assumes you already have a good understanding of Docker. If you want to learn more about Kerberos.io on Docker, have a look at these tutorials.
+- [Kerberos.io — the road to Docker](https://medium.com/@cedricverst/kerberos-io-the-road-to-docker-8e048a480241)
+- [Kerberos.io on Docker](https://medium.com/@cedricverst/kerberos-io-on-docker-19b25fa7efd1)
+
+
 ### Prerequisites
 
 > Docker or Docker Desktop (Linux, OS or Windows)
@@ -167,18 +172,98 @@ docker run --name kerberos-camera1 \
 -d kerberos/kerberos
 ```
 
-If you want to learn more about Kerberos.io on Docker, have a look at these tutorials.
-- [Kerberos.io — the road to Docker](https://medium.com/@cedricverst/kerberos-io-the-road-to-docker-8e048a480241)
-- [Kerberos.io on Docker](https://medium.com/@cedricverst/kerberos-io-on-docker-19b25fa7efd1)
-
-
 ## Balena
 
-Running Kerberos inside a Docker container is great, it makes it possible to run Kerberos everywhere, basically on any Linux OS. These days we have a lot of IoT boards, however by default we only support the Raspberry Pi versions. The reason is simple, it's not our major concern to support any kind of board.
+Running Kerberos inside a Docker container is great, it makes it possible to run Kerberos everywhere; basically on any OS. You can deploy Kerberos easily to the many different IoT boards we nowadays have available. The challenge with all these IoT boards is that they have different system architecures, however thanks to Docker (and its multi architecture builds), we can ship Kerberos to any of them. If you have a Raspberry Pi, you have two options: [Docker](/opensource/installation#docker) and [KiOS](/opensource/installation#kios). If you have any other board, then [Docker](/opensource/installation#docker) is the way to go.
 
-To fill the gap, regarding the latter, we can rely on another solution called [Balena.io](https://balena.io). Balena supports a huge range of IoT boards, the only thing it requires is a Docker image build for the require architecture. As the Docker image for Kerberos Open Source is a multi-architecture image, we can run our Kerberos Docker image on the Balena OS (more info follows).
+Once you've deployed the Kerberos Docker container, you can start monitoring your video surveillances cameras, however it doesn't have to stop here. Probably you also want remote access to your IoT board, and maybe some other cool stuff like system control, a VPN, a public url? This is where [Balena.io](https://balena.io) comes in.
 
-On top of supporting a lot of boars,
+Before getting into the details, you can [find a more detailed tutorial at this blog](https://medium.com/@cedricverst/kerberos-io-on-balenacloud-7d5a5dd68992).
+
+### 1. Create a Balena account
+
+Before moving on, make sure you have registered on [Balena](https://www.balena.io).
+
+![Signup balena](../../public/images/opensource/kerberos-opensource-balena-signup.png)
+
+### 2. Create a device and flash
+
+After you signed up, you can create an application for a specific IoT board (e.g. Raspberry Pi 3). Once created you will be able to download the balena OS image, which you can flash to your SD card using [Etcher](https://www.balena.io/etcher/).
+
+![Create device balena](../../public/images/opensource/kerberos-opensource-balena-create.png)
+
+### 3. Connect
+
+Once you've flashed the balena OS, turned on your IoT board, a new device should come up on the Balena dashboard (below the application you've created). At this point you will be able to connect to your device using the **balena-cli** [read more about the installation here](https://github.com/balena-io/balena-cli/blob/master/INSTALL.md#executable-installer).
+
+First connect the **balena-cli** to your account by executing following command. Choose the recommended option.
+
+    balena login
+
+After succesfully logged in you should be able to list your devices.
+
+    balena devices
+
+### 4. Write
+
+Finally, we can push our Kerberos Docker container to our application (and devices). To do this we need to create two files.
+
+1. Create a new directory and the Dockerfile.
+
+The first file is named `Dockerfile` this file will contain a base image which references to our Kerberos image, which [you can find here](https://hub.docker.com/repository/docker/kerberos/kerberos/tags?page=1).
+
+    mkdir kerberosbalena
+    cd kerberosbalena
+    echo 'FROM kerberos/kerberos@sha256:70a8b2791c8605ca6f8442b3d7892bb9bfc0789ab2f9f68911e247f7af50caed
+    CMD ["bash", "/run.sh"]' > Dockerfile
+
+Please note that we specified a sha256 tag, you have to make sure you use the right sha256 tag for your architecure. In the example above we use the sha256 tag for a armv7 architecture (Raspberry Pi3).
+
+2. Create a Docker compose file.
+
+The Docker compose file is optional, but can be very useful. It can be used to deploy multi container application (e.g. a webserver + database). As Kerberos has everything in one single container, this is not needed.
+
+We will use the `docker-compose.yml to mount volumes, so that when we restart our container all our configurations and recordings stay persisted.
+
+Create a new file named `docker-compose.yml`, and copy-paste following content.
+
+    version: '2.1'
+    networks: {}
+    volumes:
+      config: {}
+      capture: {}
+      logs: {}
+      web: {}
+    services:
+      main:
+        build:
+          context: .
+        privileged: true
+        tty: true
+        restart: always
+        network_mode: host
+        volumes:
+          - 'config:/etc/opt/kerberosio/config'
+          - 'capture:/etc/opt/kerberosio/capture'
+          - 'logs:/etc/opt/kerberosio/logs'
+          - 'web:/var/www/web/config'
+        labels:
+          io.balena.features.kernel-modules: '1'
+          io.balena.features.firmware: '1'
+          io.balena.features.dbus: '1'
+          io.balena.features.supervisor-api: '1'
+          io.balena.features.resin-api: '1'
+          io.balena.features.balena-socket: '1'
+
+### 5. Push
+
+Now we created our two files, we can publish the Kerberos container to balena (our application), by executing the push command (replace <application_name> by the name of your application).
+
+    balena push <application_name>
+
+Once finished you should see following message, and on the dashboard you should see your devices updating (Yes you can add multiple devices to an application). You're ready ;)
+
+![Push to balena](../../public/images/opensource/kerberos-opensource-balena-push.png)
 
 ---
 
@@ -229,7 +314,6 @@ sudo mv rpi4-libx265.so.160 /usr/lib/arm-linux-gnueabihf/libx265.so.160
 ```
 
 Same applies for the libx264 library, download the right shared library.
-
 
 > `v2.8.0/rpi4-libx264.so.148` this will download the libx264 shared library for the Raspberry Pi 4.
 
