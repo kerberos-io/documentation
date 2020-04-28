@@ -11,6 +11,7 @@
           "First things first",
           "Get Started",
           "Installation",
+          "Installation - advanced",
           "Releases",
           "License",
           "Upgrade",
@@ -685,6 +686,87 @@
       }
     },
     {
+      "key": "src/open-source/installation-advanced.mdx",
+      "value": {
+        "name": "Installation - advanced",
+        "menu": "Open Source",
+        "route": "/opensource/installation-advanced",
+        "id": "34d4c112da87fe3146ef41fdbfc94ef2",
+        "filepath": "src/open-source/installation-advanced.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/open-source/installation-advanced.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-open-source-installation-advanced",
+        "headings": [
+          {
+            "slug": "installation",
+            "depth": 1,
+            "value": "Installation"
+          },
+          {
+            "slug": "plug-and-play",
+            "depth": 3,
+            "value": "Plug and play"
+          },
+          {
+            "slug": "advanced",
+            "depth": 3,
+            "value": "Advanced"
+          },
+          {
+            "slug": "advanced-1",
+            "depth": 1,
+            "value": "Advanced"
+          },
+          {
+            "slug": "raspbian",
+            "depth": 2,
+            "value": "Raspbian"
+          },
+          {
+            "slug": "update-os",
+            "depth": 3,
+            "value": "Update OS"
+          },
+          {
+            "slug": "machinery",
+            "depth": 3,
+            "value": "Machinery"
+          },
+          {
+            "slug": "web",
+            "depth": 3,
+            "value": "Web"
+          },
+          {
+            "slug": "auto-removal",
+            "depth": 3,
+            "value": "Auto removal"
+          },
+          {
+            "slug": "generic",
+            "depth": 2,
+            "value": "Generic"
+          },
+          {
+            "slug": "machinery-1",
+            "depth": 3,
+            "value": "Machinery"
+          },
+          {
+            "slug": "web-1",
+            "depth": 3,
+            "value": "Web"
+          },
+          {
+            "slug": "auto-removal-1",
+            "depth": 3,
+            "value": "Auto removal"
+          }
+        ]
+      }
+    },
+    {
       "key": "src/open-source/installation.mdx",
       "value": {
         "name": "Installation",
@@ -811,56 +893,6 @@
             "slug": "5-push",
             "depth": 3,
             "value": "5. Push"
-          },
-          {
-            "slug": "advanced-1",
-            "depth": 1,
-            "value": "Advanced"
-          },
-          {
-            "slug": "raspbian",
-            "depth": 2,
-            "value": "Raspbian"
-          },
-          {
-            "slug": "update-os",
-            "depth": 3,
-            "value": "Update OS"
-          },
-          {
-            "slug": "machinery",
-            "depth": 3,
-            "value": "Machinery"
-          },
-          {
-            "slug": "web",
-            "depth": 3,
-            "value": "Web"
-          },
-          {
-            "slug": "auto-removal",
-            "depth": 3,
-            "value": "Auto removal"
-          },
-          {
-            "slug": "generic",
-            "depth": 2,
-            "value": "Generic"
-          },
-          {
-            "slug": "machinery-1",
-            "depth": 3,
-            "value": "Machinery"
-          },
-          {
-            "slug": "web-1",
-            "depth": 3,
-            "value": "Web"
-          },
-          {
-            "slug": "auto-removal-1",
-            "depth": 3,
-            "value": "Auto removal"
           }
         ]
       }

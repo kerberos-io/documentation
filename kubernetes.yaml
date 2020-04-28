@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: kerberos-documentation
-        image: gcr.io/kerberosio-1214/kerberos-documentation:4.0
+        image: gcr.io/kerberosio-1214/kerberos-documentation:7.0
         ports:
         - containerPort: 80
           name: http

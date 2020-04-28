@@ -2,7 +2,7 @@ export default {
   menu: [
     'Introduction',
     'Architectures',
-    { name: 'Open Source', menu: ['First things first', 'Get Started', 'Installation', 'Releases', 'License', 'Upgrade', 'Contribute','Machinery', 'Web'] },
+    { name: 'Open Source', menu: ['First things first', 'Get Started', 'Installation', 'Installation - advanced', 'Releases', 'License', 'Upgrade', 'Contribute','Machinery', 'Web'] },
     { name: 'Enterprise', menu: ['First things first', 'Get Started', 'Installation', 'Releases', 'License'] },
     'Cloud'
   ],
