@@ -25,7 +25,7 @@ Before setting up Kerberos Enterprise, some configuration needs to happen. First
 
 First clone the configrations from our Github repo.
 
-    git clone https://github.com/kerberos-io/enterprise
+    git clone https://github.com/kerberos-io/enterprise enterprise-factory
     cd enterprise-factory
 
 Next go into the directory and execute the first Kubernetes configuration file `clusterrole.yaml`.
@@ -50,14 +50,18 @@ Use one of the preferred OS package managers to install the Helm client:
 
     gofish install helm
 
-### Initiate helm
+### Initiate Helm
 
-When you've installed the Helm client, we need to use it to initiate Helm (also called the Tiller service) inside your cluster.
+When you've installed the Helm client, you have to verify if it's **version 2 or 3**.
+
+For Helm v2 you need to initiate Helm first (also called the Tiller service) inside your cluster.
 Tiller is what they call the server component of Helm.
 
     kubectl create serviceaccount tiller --namespace kube-system
     kubectl create -f ./yaml/factory/tiller-clusterrolebinding.yaml
     helm init --service-account tiller
+
+For Helm v3 nothing has to be done.
 
 Now you have installed **Helm** inside your cluster we can move on by installing the dependencies.
 
@@ -75,9 +79,13 @@ By executing following helm command, we will install traefik and link it to a sp
         rbac:
             enabled: true
 
-Execute the `helm install` command.
+Add Helm repository
 
-    helm install --name traefik -f ./yaml/traefik/values.yaml stable/traefik
+    helm repo add stable https://kubernetes-charts.storage.googleapis.com
+
+Execute the `helm install` command. If using Helm version to write `--name traefik`.
+
+    helm install traefik -f ./yaml/traefik/values.yaml stable/traefik
 
 After installation you should have an IP attached to traefik service, look for it by executing the `get service` command. You will see the ip address in the `EXTERNAL-IP` attribute.
 
@@ -137,7 +145,7 @@ Once you have corrected the DNS names, install the Factory service inside your c
     kubectl apply -f ./yaml/factory/kubernetes.yaml
 
 
-# Test out configuration
+## Test out configuration
 
 If everything worked out as expected, you should now have following services in your cluster:
 

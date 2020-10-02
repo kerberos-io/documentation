@@ -50,6 +50,7 @@ const config = {
         docgenConfig: {},
         menu: [
           'Introduction',
+          'How it works',
           'Architectures',
           {
             name: 'Open Source',
@@ -76,6 +77,7 @@ const config = {
               'License',
             ],
           },
+          { name: 'Storage', menu: ['First things first', 'Installation'] },
           'Cloud',
         ],
         mdPlugins: [],
