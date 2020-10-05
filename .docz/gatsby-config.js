@@ -74,10 +74,17 @@ const config = {
               'Get Started',
               'Installation',
               'Releases',
+            ],
+          },
+          {
+            name: 'Storage',
+            menu: [
+              'First things first',
+              'Get Started',
+              'Installation',
               'License',
             ],
           },
-          { name: 'Storage', menu: ['First things first', 'Installation'] },
           'Cloud',
         ],
         mdPlugins: [],

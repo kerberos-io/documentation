@@ -27,15 +27,16 @@
           "First things first",
           "Get Started",
           "Installation",
-          "Releases",
-          "License"
+          "Releases"
         ]
       },
       {
         "name": "Storage",
         "menu": [
           "First things first",
-          "Installation"
+          "Get Started",
+          "Installation",
+          "License"
         ]
       },
       "Cloud"
@@ -223,9 +224,9 @@
             "value": "What is Kerberos"
           },
           {
-            "slug": "the-kerberos-agent",
-            "depth": 2,
-            "value": "The Kerberos agent"
+            "slug": "kerberos-agent",
+            "depth": 3,
+            "value": "Kerberos Agent"
           }
         ]
       }
@@ -2051,37 +2052,22 @@
       }
     },
     {
-      "key": "src/storage/index.mdx",
+      "key": "src/storage/get-started.mdx",
       "value": {
-        "name": "First things first",
+        "name": "Get Started",
         "menu": "Storage",
-        "route": "/storage/introduction",
-        "id": "80b5f208a419fd50090370744bb3b5c3",
-        "filepath": "src/storage/index.mdx",
-        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/storage/index.mdx",
+        "route": "/storage/get-started",
+        "id": "c7e5dcab89cbb47494e742eaa025320d",
+        "filepath": "src/storage/get-started.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/storage/get-started.mdx",
         "link": "",
         "hidden": false,
-        "slug": "src-storage-index",
+        "slug": "src-storage-get-started",
         "headings": [
           {
-            "slug": "storage",
+            "slug": "get-started",
             "depth": 1,
-            "value": "Storage"
-          },
-          {
-            "slug": "kerberos-cloud",
-            "depth": 2,
-            "value": "Kerberos Cloud"
-          },
-          {
-            "slug": "bring-your-own-cloud",
-            "depth": 2,
-            "value": "Bring Your Own Cloud"
-          },
-          {
-            "slug": "events",
-            "depth": 3,
-            "value": "Events"
+            "value": "Get Started"
           },
           {
             "slug": "login-page",
@@ -2122,6 +2108,42 @@
       }
     },
     {
+      "key": "src/storage/index.mdx",
+      "value": {
+        "name": "First things first",
+        "menu": "Storage",
+        "route": "/storage/introduction",
+        "id": "80b5f208a419fd50090370744bb3b5c3",
+        "filepath": "src/storage/index.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/storage/index.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-storage-index",
+        "headings": [
+          {
+            "slug": "storage",
+            "depth": 1,
+            "value": "Storage"
+          },
+          {
+            "slug": "kerberos-cloud",
+            "depth": 2,
+            "value": "Kerberos Cloud"
+          },
+          {
+            "slug": "bring-your-own-cloud",
+            "depth": 2,
+            "value": "Bring Your Own Cloud"
+          },
+          {
+            "slug": "events",
+            "depth": 3,
+            "value": "Events"
+          }
+        ]
+      }
+    },
+    {
       "key": "src/storage/installation.mdx",
       "value": {
         "name": "Installation",
@@ -2135,49 +2157,29 @@
         "slug": "src-storage-installation",
         "headings": [
           {
-            "slug": "introduction",
-            "depth": 1,
-            "value": "Introduction"
-          },
-          {
             "slug": "installation",
             "depth": 1,
             "value": "Installation"
           },
           {
-            "slug": "helm",
+            "slug": "storage",
             "depth": 2,
-            "value": "Helm"
-          },
-          {
-            "slug": "initiate-helm",
-            "depth": 3,
-            "value": "Initiate helm"
-          },
-          {
-            "slug": "traefik",
-            "depth": 2,
-            "value": "Traefik"
-          },
-          {
-            "slug": "mongodb",
-            "depth": 2,
-            "value": "MongoDB"
-          },
-          {
-            "slug": "factory",
-            "depth": 2,
-            "value": "Factory"
+            "value": "Storage"
           },
           {
             "slug": "test-out-configuration",
-            "depth": 1,
+            "depth": 2,
             "value": "Test out configuration"
           },
           {
             "slug": "access-the-system",
             "depth": 2,
             "value": "Access the system"
+          },
+          {
+            "slug": "storage-cleanup",
+            "depth": 2,
+            "value": "Storage Cleanup"
           }
         ]
       }
