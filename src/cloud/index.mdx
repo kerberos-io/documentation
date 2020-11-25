@@ -26,7 +26,7 @@ A brief list of the key features of Kerberos Cloud are:
 
 ## Architecture
 
-A simplified architecture is found below. In this architecture the Kerberos agents are installed on-premise, next to the surveillance cameras. Once one of the agents recorded something it will send the recording to our AWS S3 bucket, using the credentials you've defined inside the agent.
+A simplified architecture is found below. In this architecture the Kerberos agents are installed on-premise, next to the surveillance cameras. Once one of the agents recorded something it will send the recording to our [Kerberos Storage](/storage/introduction), using the credentials you've defined inside the agent.
 
 As soon as the recording is succesfully received several engines will be executed, that will further process the recording and extract metadata from it (classification, origin of the surveillance camera, etc). A lot of processing is happening behind the scenes (by what we call microservices).
 
@@ -59,7 +59,7 @@ Once you've installed a Kerberos agent, and created an account on [Kerberos Clou
 
 ![cloud linking](../../public/images/kerberos-cloud-linking.png)
 
-After linking your media recorded by a Kerberos agent will be send to a secure cloud storage, AWS S3 (multiple regions are supported). By default our own S3 buckets are used, however we can negotiate to have your own S3 bucket (open a support ticket).
+After linking your media recorded by a Kerberos agent will be send to our secure cloud storage, Kerberos Storage. By default our own [Kerberos Storage](/storage/introduction) service is used, however you can install your own [Kerberos Storage](/storage/introduction) and link it to our public cloud. By doing this all the recordings are stored in your own datacenter of choice, and only metadata is stored inside Kerberos Cloud.
 
 ![cloud](../../public/images/kerberos-network-onprem.png)
 
@@ -128,9 +128,15 @@ When a specific event occurred, a notification can be send to one or more channe
 
 ## Live streaming
 
-Kerberos Cloud allows you to live stream from your Kerberos agents to your account. A low resolution livestream (this will be improved in future), will allow you see what is happening in front of your surveillance camera in real-time.
+Kerberos Cloud allows you to live stream from your Kerberos agents to your Kerberos Cloud account.
+
+For Kerberos Open Source a low resolution livestream is made available, this will allow you to see what is happening in front of your surveillance camera in real-time. The stream is shared over MQTT (TCPS) and visualised in the Kerberos Cloud webinterface using secure websockets (WSS). No port forwarding needs to be enabled.
 
 ![cloud livestream](../../public/images/kerberos-cloud-livestream.png)
+
+For Kerberos Enterprise a HD livestream is made available. The full resolution and FPS is send through a concept called WebRTC. This WebRTC technology, is used my all major conferencing tools such as Zoom, Teams, etc.
+
+![cloud livestream webrtc](../../public/images/kerberos-cloud-livestream-webrtc.png)
 
 ## Accounts
 

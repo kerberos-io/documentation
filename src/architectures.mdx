@@ -82,7 +82,7 @@ A brief list of the key features of Kerberos Cloud are:
 
 ### Architecture
 
-A simplified architecture is found below. In this architecture the Kerberos agents are installed on-premise (but this could also be in the cloud), next to the surveillance cameras. Once one of the agents recorded something it will send the recording to our AWS S3 bucket, using the credentials you've defined inside the agent.
+A simplified architecture is found below. In this architecture the Kerberos agents are installed on-premise (but this could also be in the cloud), next to the surveillance cameras. Once one of the agents recorded a footage it will send the recording to our [Kerberos Storage](/storage/introduction) service, using the credentials you've defined inside the agent.
 
 As soon as the recording is succesfully received several engines will be executed, that will further process the recording and extract metadata from it (classification, origin of the surveillance camera, etc). A lot of processing is happening behind the scenes.
 

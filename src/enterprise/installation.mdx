@@ -102,7 +102,7 @@ When browsing to `traefik.domain.com`, you should see the traefik dashboard show
 Kerberos Enterprise generates configurations for every surveillance camera that you want to monitor. These configuration files
 are stored centrally in a MongoDB database. Therefore we use Helm to install a MongoDB instance inside your cluster.
 
-Have a look into the `yaml/mongodb/values.yaml` file, you will find plenty of configurations for your MongoDB instance. You will also find the attribute where you can change the root password of mongodb. If using Helm version 2, write `--name traefik`.
+Have a look into the `yaml/mongodb/values.yaml` file, you will find plenty of configurations for your MongoDB instance. You will also find the attribute where you can change the root password of mongodb. If using Helm version 2, write `--name mongodb`.
 
     helm repo add bitnami https://charts.bitnami.com/bitnami
     helm install mongodb bitnami/mongodb --values ./yaml/mongodb/values.yaml
@@ -164,7 +164,7 @@ It should look like this.
     $ kubectl get pods
     NAME                              READY   STATUS    RESTARTS   AGE
     factory-6f5c877d7c-hf77p          1/1     Running   0          2d11h
-    mongodb-55566dc65c-xgmns          2/2     Running   0          4d13h
+    mongodb-758d5c5ddd-qsfq9          1/1     Running   0          5m31s
     traefik-7d566ccc47-mwslb          1/1     Running   0          4d12h
 
 ## Access the system
