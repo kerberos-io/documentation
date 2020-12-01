@@ -503,23 +503,28 @@
             "value": "Introduction"
           },
           {
-            "slug": "cleanup",
+            "slug": "docker",
             "depth": 1,
-            "value": "Cleanup"
+            "value": "Docker"
+          },
+          {
+            "slug": "kubernetes",
+            "depth": 1,
+            "value": "Kubernetes"
           },
           {
             "slug": "installation",
-            "depth": 1,
+            "depth": 2,
             "value": "Installation"
           },
           {
             "slug": "untaint-all-nodess",
-            "depth": 1,
+            "depth": 2,
             "value": "Untaint all nodess"
           },
           {
             "slug": "calico",
-            "depth": 1,
+            "depth": 2,
             "value": "Calico"
           },
           {
