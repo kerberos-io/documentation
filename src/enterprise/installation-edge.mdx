@@ -1,0 +1,114 @@
+---
+name: Installation - Edge
+menu: Enterprise
+route: /enterprise/installation-edge
+---
+
+import ReplaceVersion from "../components/ReplaceVersion";
+
+# Introduction
+
+  apt install docker.io -y
+
+  apt update -y
+  apt install apt-transport-https curl -y
+  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add
+  apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+  apt update -y
+
+  apt install kubeadm kubelet kubectl kubernetes-cni -y
+  swapoff -a
+
+# Cleanup
+
+  kubeadm reset
+  rm -rf $HOME/.kube
+
+# Installation
+
+  kubeadm init
+
+      Your Kubernetes control-plane has initialized successfully!
+
+      To start using your cluster, you need to run the following as a regular user:
+
+        mkdir -p $HOME/.kube
+        sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+        sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+      You should now deploy a pod network to the cluster.
+      Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+        https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+      Then you can join any number of worker nodes by running the following on each as root:
+
+      kubeadm join 192.168.1.103:6443 --token ej7ckt.uof7o2iplqf0r2up \
+          --discovery-token-ca-cert-hash sha256:9cbcc00d34be2dbd605174802d9e52fbcdd617324c237bf58767b369fa586209
+
+  mkdir -p $HOME/.kube
+  cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+# Untaint all nodess
+
+  kubectl taint nodes --all node-role.kubernetes.io/master-
+
+# Calico
+
+  curl https://docs.projectcalico.org/manifests/calico.yaml -O
+  kubectl apply -f calico.yaml
+
+# Download Kerberos Enterprise configuration
+
+  git clone https://github.com/kerberos-io/enterprise
+
+# Install metallb (https://metallb.universe.tf/installation/)
+
+  kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/namespace.yaml
+  kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/metallb.yaml
+  kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
+
+  kubectl apply -f ./enterprise/yaml/metallb/configmap.yaml
+
+# Setup helm
+
+  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+  chmod 700 get_helm.sh
+  ./get_helm.sh
+
+# Setup traefik
+
+  helm repo add stable https://charts.helm.sh/stable
+  helm install traefik -f ./enterprise/yaml/traefik/values.yaml stable/traefik
+
+# Setup mongoDB
+
+  mkdir /home/mongodb/
+  kubectl create -f ./enterprise/yaml/mongodb/volume.yaml
+
+  helm repo add bitnami https://charts.bitnami.com/bitnami
+  helm install mongodb bitnami/mongodb --values ./enterprise/yaml/mongodb/values.yaml
+  export MONGODB_ROOT_PASSWORD=$(kubectl get secret --namespace default mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
+  echo $MONGODB_ROOT_PASSWORD
+
+# Setup Kerberos Enterprise
+
+  kubectl apply -f ./enterprise/yaml/factory/clusterrole.yaml
+  kubectl apply -f ./enterprise/yaml/factory/deployment.yaml
+
+# Setup Kerberos Storage
+
+  git clone https://github.com/kerberos-io/storage
+  kubectl apply -f ./storage/yaml/deployment.yaml
+
+# Setup Minio
+
+  kubectl create -f ./storage/yaml/minio/volume.yaml
+  kubectl create -f ./storage/yaml/minio/pvc.yaml
+  kubectl create -f ./storage/yaml/minio/svc.yaml
+  kubectl create -f ./storage/yaml/minio/deployment.yaml
+
+# Setup Kerberos Storage Cleanup
+
+  kubectl apply -f ./storage/yaml/deployment-cleanup.yaml

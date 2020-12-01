@@ -4,8 +4,8 @@ export default {
     'How it works',
     'Architectures',
     { name: 'Open Source', menu: ['First things first', 'Get Started', 'Installation', 'Installation - advanced', 'Releases', 'License', 'Upgrade', 'Contribute','Machinery', 'Web'] },
-    { name: 'Enterprise', menu: ['First things first', 'Get Started', 'Installation', 'Releases'] },
-    { name: 'Storage', menu: ['First things first', 'Get Started', 'Installation', 'License'] },
+    { name: 'Enterprise', menu: ['First things first', 'Get Started', 'Installation', 'Installation - Cloud', 'Installation - Edge', 'Releases'] },
+    { name: 'Storage', menu: ['First things first', 'Get Started', 'Installation', 'Installation - Cloud', 'Installation - Edge', 'License'] },
     'Cloud'
   ],
   repository: "https://github.com/kerberos-io",

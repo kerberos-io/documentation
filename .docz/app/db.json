@@ -27,6 +27,8 @@
           "First things first",
           "Get Started",
           "Installation",
+          "Installation - Cloud",
+          "Installation - Edge",
           "Releases"
         ]
       },
@@ -36,6 +38,8 @@
           "First things first",
           "Get Started",
           "Installation",
+          "Installation - Cloud",
+          "Installation - Edge",
           "License"
         ]
       },
@@ -425,17 +429,17 @@
       }
     },
     {
-      "key": "src/enterprise/installation.mdx",
+      "key": "src/enterprise/installation-cloud.mdx",
       "value": {
-        "name": "Installation",
+        "name": "Installation - Cloud",
         "menu": "Enterprise",
-        "route": "/enterprise/installation",
-        "id": "5cf033b11c0e22a8dad307af4f84a83b",
-        "filepath": "src/enterprise/installation.mdx",
-        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/installation.mdx",
+        "route": "/enterprise/installation-cloud",
+        "id": "b6c218189a84a0b60a84eaa5530cd5da",
+        "filepath": "src/enterprise/installation-cloud.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/installation-cloud.mdx",
         "link": "",
         "hidden": false,
-        "slug": "src-enterprise-installation",
+        "slug": "src-enterprise-installation-cloud",
         "headings": [
           {
             "slug": "introduction",
@@ -481,6 +485,53 @@
             "slug": "access-the-system",
             "depth": 2,
             "value": "Access the system"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/enterprise/installation-edge.mdx",
+      "value": {
+        "name": "Installation - Edge",
+        "menu": "Enterprise",
+        "route": "/enterprise/installation-edge",
+        "id": "5c7d9c582069b1049cdbdab5b688c546",
+        "filepath": "src/enterprise/installation-edge.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/installation-edge.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-enterprise-installation-edge",
+        "headings": [
+          {
+            "slug": "introduction",
+            "depth": 1,
+            "value": "Introduction"
+          },
+          {
+            "slug": "installation",
+            "depth": 1,
+            "value": "Installation"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/enterprise/installation.mdx",
+      "value": {
+        "name": "Installation",
+        "menu": "Enterprise",
+        "route": "/enterprise/installation",
+        "id": "5cf033b11c0e22a8dad307af4f84a83b",
+        "filepath": "src/enterprise/installation.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/enterprise/installation.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-enterprise-installation",
+        "headings": [
+          {
+            "slug": "installation",
+            "depth": 1,
+            "value": "Installation"
           }
         ]
       }
@@ -2139,6 +2190,128 @@
             "slug": "events",
             "depth": 3,
             "value": "Events"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/storage/installation-cloud.mdx",
+      "value": {
+        "name": "Installation - Cloud",
+        "menu": "Storage",
+        "route": "/storage/installation-cloud",
+        "id": "a8b1ddb7fa9459e5d6a4c2ad40a62f97",
+        "filepath": "src/storage/installation-cloud.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/storage/installation-cloud.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-storage-installation-cloud",
+        "headings": [
+          {
+            "slug": "introduction",
+            "depth": 1,
+            "value": "Introduction"
+          },
+          {
+            "slug": "installation",
+            "depth": 1,
+            "value": "Installation"
+          },
+          {
+            "slug": "helm",
+            "depth": 2,
+            "value": "Helm"
+          },
+          {
+            "slug": "initiate-helm",
+            "depth": 3,
+            "value": "Initiate Helm"
+          },
+          {
+            "slug": "traefik",
+            "depth": 2,
+            "value": "Traefik"
+          },
+          {
+            "slug": "mongodb",
+            "depth": 2,
+            "value": "MongoDB"
+          },
+          {
+            "slug": "factory",
+            "depth": 2,
+            "value": "Factory"
+          },
+          {
+            "slug": "test-out-configuration",
+            "depth": 2,
+            "value": "Test out configuration"
+          },
+          {
+            "slug": "access-the-system",
+            "depth": 2,
+            "value": "Access the system"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/storage/installation-edge.mdx",
+      "value": {
+        "name": "Installation - Edge",
+        "menu": "Storage",
+        "route": "/storage/installation-edge",
+        "id": "da0491f238b15af2e27a09197c22b441",
+        "filepath": "src/storage/installation-edge.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/storage/installation-edge.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-storage-installation-edge",
+        "headings": [
+          {
+            "slug": "introduction",
+            "depth": 1,
+            "value": "Introduction"
+          },
+          {
+            "slug": "installation",
+            "depth": 1,
+            "value": "Installation"
+          },
+          {
+            "slug": "helm",
+            "depth": 2,
+            "value": "Helm"
+          },
+          {
+            "slug": "initiate-helm",
+            "depth": 3,
+            "value": "Initiate Helm"
+          },
+          {
+            "slug": "traefik",
+            "depth": 2,
+            "value": "Traefik"
+          },
+          {
+            "slug": "mongodb",
+            "depth": 2,
+            "value": "MongoDB"
+          },
+          {
+            "slug": "factory",
+            "depth": 2,
+            "value": "Factory"
+          },
+          {
+            "slug": "test-out-configuration",
+            "depth": 2,
+            "value": "Test out configuration"
+          },
+          {
+            "slug": "access-the-system",
+            "depth": 2,
+            "value": "Access the system"
           }
         ]
       }
