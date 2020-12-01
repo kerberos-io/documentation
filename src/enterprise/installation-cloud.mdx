@@ -50,18 +50,6 @@ Use one of the preferred OS package managers to install the Helm client:
 
     gofish install helm
 
-### Initiate Helm
-
-When you've installed the Helm client, you have to verify if it's **version 2 or 3**. For Helm version 2 you need to initiate Helm first (also called the Tiller service) inside your cluster. Tiller is what they call the server component of Helm.
-
-    kubectl create serviceaccount tiller --namespace kube-system
-    kubectl create -f ./yaml/factory/tiller-clusterrolebinding.yaml
-    helm init --service-account tiller
-
-For Helm v3 nothing has to be done.
-
-Now you have installed **Helm** inside your cluster we can move on by installing the dependencies.
-
 ## Traefik
 
 [**Traefik**](https://containo.us/traefik/) is a reverse proxy and load balancer which allows you to
@@ -149,7 +137,7 @@ Modify the MongoDB credentials, and make sure they match the credentials of your
 
 Once you have corrected the DNS names, install the Factory service inside your cluster.
 
-    kubectl apply -f ./yaml/factory/kubernetes.yaml
+    kubectl apply -f ./yaml/factory/deployment.yaml
 
 ## Test out configuration
 

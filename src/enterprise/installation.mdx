@@ -14,4 +14,22 @@ Although you might except Kubernetes at the Edge or Kubernetes in the cloud, the
 
 ![enterprise kubernetes](../../public/images/kerberos-enterprise-kubernetes.png)
 
-Compared to Kubernetes at the Edge, there are no predefined LoadBalancers, Storage capabilities, and more. This means more administration work for you, but - with great power comes great responsibility - so no worries. Luckily there is a solution for all the features you find out-of-the-box at the Kubernetes service providers, you just have to spend more time on configuring and installing services/pods/deployments yourself.
+Compared to Kubernetes at the Edge, there are no predefined LoadBalancers, Storage capabilities, and more. This means more administration work for you, but - with great power comes great responsibility - so no worries. In the end there are alternative functionalties available, for features which you find out-of-the-box at the Kubernetes service providers, you just have to spend more time on configuring and installing those services/pods/deployments yourself.
+
+## Installation on a Kubernetes Service Provider
+
+Installing Kerberos Enterprise on a Kubernetes Service Provider (Azure, GCP, AWS) is straight forward, as you can create a Kubernetes cluster in a few clicks, get access to public Load Balancers, storage and more. Running Kerberos Enterprise in such a cluster is just a matter of copy-pasting some configuration (yaml) files, and executing some `kubectl apply` commands.
+
+![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes-cloud.png)
+
+Install Kerberos Enterprise on a Kubernetes Service Provider by [following this step-by-step installation guide](/enterprise/installation-cloud).
+
+## Installation in Private Cloud or Baremetal
+
+No need to install Kerberos Enterprise on a Kubernetes Service Provider, you could install it on your own Kubernetes cluster in your private cloud, or even better inside your own premise. The closer you bring Kerberos Enterprise to your surveillance infrastructure, the more benefits you will experience (low latency, low bandwidth, etc).
+
+![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes.png)
+
+In contradiction to the Kubernetes Service Provider, you will have some work todo. Setting up Kubernetes Cluster, play with MetalLB, Persistent Volumes and claims. Don't be scared, it's pretty ssttraight forward as well. You can't simple expect a: click, click, 💥 approach.
+
+Install Kerberos Enterprise on a Private cloud or Baremetal by [following this step-by-step installation guide](/enterprise/installation-edge).

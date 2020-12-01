@@ -457,11 +457,6 @@
             "value": "Helm"
           },
           {
-            "slug": "initiate-helm",
-            "depth": 3,
-            "value": "Initiate Helm"
-          },
-          {
             "slug": "traefik",
             "depth": 2,
             "value": "Traefik"
@@ -508,9 +503,69 @@
             "value": "Introduction"
           },
           {
+            "slug": "cleanup",
+            "depth": 1,
+            "value": "Cleanup"
+          },
+          {
             "slug": "installation",
             "depth": 1,
             "value": "Installation"
+          },
+          {
+            "slug": "untaint-all-nodess",
+            "depth": 1,
+            "value": "Untaint all nodess"
+          },
+          {
+            "slug": "calico",
+            "depth": 1,
+            "value": "Calico"
+          },
+          {
+            "slug": "download-kerberos-enterprise-configuration",
+            "depth": 1,
+            "value": "Download Kerberos Enterprise configuration"
+          },
+          {
+            "slug": "install-metallb-httpsmetallbuniversetfinstallation",
+            "depth": 1,
+            "value": "Install metallb ( https://metallb.universe.tf/installation/ )"
+          },
+          {
+            "slug": "setup-helm",
+            "depth": 1,
+            "value": "Setup helm"
+          },
+          {
+            "slug": "setup-traefik",
+            "depth": 1,
+            "value": "Setup traefik"
+          },
+          {
+            "slug": "setup-mongodb",
+            "depth": 1,
+            "value": "Setup mongoDB"
+          },
+          {
+            "slug": "setup-kerberos-enterprise",
+            "depth": 1,
+            "value": "Setup Kerberos Enterprise"
+          },
+          {
+            "slug": "setup-kerberos-storage",
+            "depth": 1,
+            "value": "Setup Kerberos Storage"
+          },
+          {
+            "slug": "setup-minio",
+            "depth": 1,
+            "value": "Setup Minio"
+          },
+          {
+            "slug": "setup-kerberos-storage-cleanup",
+            "depth": 1,
+            "value": "Setup Kerberos Storage Cleanup"
           }
         ]
       }
@@ -532,6 +587,16 @@
             "slug": "installation",
             "depth": 1,
             "value": "Installation"
+          },
+          {
+            "slug": "installation-on-a-kubernetes-service-provider",
+            "depth": 2,
+            "value": "Installation on a Kubernetes Service Provider"
+          },
+          {
+            "slug": "installation-in-private-cloud-or-baremetal",
+            "depth": 2,
+            "value": "Installation in Private Cloud or Baremetal"
           }
         ]
       }
