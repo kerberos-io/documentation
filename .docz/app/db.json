@@ -2254,14 +2254,24 @@
             "value": "Kerberos Cloud"
           },
           {
-            "slug": "bring-your-own-cloud",
+            "slug": "kerberos-storage",
             "depth": 2,
-            "value": "Bring Your Own Cloud"
+            "value": "Kerberos Storage"
           },
           {
             "slug": "events",
             "depth": 3,
             "value": "Events"
+          },
+          {
+            "slug": "on-demand-upload",
+            "depth": 3,
+            "value": "On-Demand upload"
+          },
+          {
+            "slug": "open-api",
+            "depth": 3,
+            "value": "Open API"
           },
           {
             "slug": "licensing",

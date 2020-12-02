@@ -6,34 +6,63 @@ route: /storage/introduction
 
 # Storage
 
-Kerberos Open Source and Kerberos Enterprise both store recordings on the local disk. If you want to persist data on premise, additional solutions are available.
+Kerberos Open Source and Kerberos Enterprise both store recordings on the local disk. To centralise your data at a single place, additional solutions are available.
 
-1. You can store your data directly on [Kerberos Cloud](/cloud).
-2. Bring Your Own Cloud (BYOC), you can store data on premise, private cloud or public cloud.
+1. One or more Kerberos Enterprise agents, can store their data directly on [Kerberos Cloud](/cloud).
+2. You have the option to Bring Your Own Storage (BYOS), using Kerberos Storage. Kerberos Storage allows you to configure the storage provider you want. This could be a storage provider in the cloud such as AWS S3, GCP storage or Azure Blob store. Next to that Kerberos Storage can also be installed on premise (at the edge), and use storage providers such as Minio.
 
 ## Kerberos Cloud
 
 Within Kerberos Open Source an Kerberos Enterprise you can choose to send your local recordings to our cloud environment. This means that your data will be hosted and processed (metadata, machine learning) in a Kerberos Cloud datacenter. For more information about how Kerberos Cloud works [can be found here](/cloud).
 
-## Bring Your Own Cloud
+![cloud](../../public/images/kerberos-architecture.png)
 
-If you are using Kerberos Enterprise you have the possibility to bring your own cloud. By installing Kerberos Storage you can send your recordings to your own datacenter, private or public cloud. Following providers are supported:
+## Kerberos Storage
+
+If you are using Kerberos Enterprise you have the possibility to bring your own cloud or on premise storage. By installing Kerberos Storage you can send your recordings to your own datacenter, private or public cloud. Following providers are supported:
 
   - [Google Cloud Platform Storage](https://cloud.google.com/storage)
   - [Microsoft Azure Storage](https://azure.microsoft.com/en-us/services/storage/)
   - [Amazon Web Services S3](https://aws.amazon.com/s3/)
   - [Minio](https://min.io/)
 
-![architecture storage](../../public/images/kerberos-storage.png)
+Having installed Kerberos Storage in the cloud, following architecture can apply. Having your Kerberos Enterprise agents running at the edge, but uploading to Kerberos Storage in the cloud.
+
+![architecture kubernetes](../../public/images/kerberos-storage-architecture-kubernetes-cloud.png)
+
+On the other hand you could also have Kerberos Storage running at the edge, next to your Kubernetes Enterprise agents. This could be useful if you want to do processing, Computer Vision or Machine Learning, at the edge.
+
+![architecture kubernetes](../../public/images/kerberos-storage-architecture-kubernetes-edge.png)
 
 ### Events
 
-Next to uploading and persisting data, Kerberos Storage can also trigger events. Each time a recording is send to Kerberos Storage an event can be triggered through one of the following providers.
+One of the key differentiators compared to other VMS solutions, is the abilitity to extend and integrate. Next to uploading and persisting data, Kerberos Storage can also trigger events. Each time a recording is send to Kerberos Storage an event can be triggered through one of the following providers.
 
   - [Apache Kafka](https://kafka.apache.org/)
   - [Amazon Web Services SQS](https://aws.amazon.com/sqs/)
 
-Those events can be fetched or subscribed by custom applications. For example, one can create a notifications service, machine learning service or an entire cloud application. Allowing you to leverage the power and scalability of Kerberos Enterprise, and building and focussing on your specific application.
+Those events can be fetched or subscribed by custom applications. For example, one can create a notifications service, machine learning service or an entire cloud application. Allowing you to leverage the power and scalability of Kerberos Enterprise, and building and focussing on your specific applications, API's, mobile apps, or whatever you have in mind to build.
+
+![architecture storage](../../public/images/kerberos-storage.png)
+
+### On-Demand upload
+
+Next to the extension and integration capabilities of Kerberos Storage, we are currently working on a feature called On-Demand upload. On-Demand upload allows you to upload a subset of your recordings to a Kerberos Storage in the cloud.
+
+![kerberos-on-demand](../../public/images/kerberos-storage-architecture-kubernetes-ondemand-storage.png)
+
+A couple of usecases are the following ones:
+
+- Continious recording: having continious recordings stored in your Kerberos Storage on premise, you don't want to replicate all your recordings to a Kerberos Storage provider in the cloud (to make them public available). Therefore you could implement custom logic, for example based on a machine learning algorithm, to only replicate recordings which matche a specific scenario.
+
+- On-Demand request: Having Kerberos Cloud, an end-user could initiate a request for upload. By default no recordings are forwarded from your Kerberos Storage on premise to your Kerberos Storage in the cloud. Only when an end user requests one or more recordings, the
+ upload will start for the requested recordings.
+
+### Open API
+
+Both Kerberos Enterprise as Kerberos Storage ships with Swagger API's, which can be used to communicate with the previously mentioned systems. Simply type `/swagger/index.html` after the `api` url, and you will see the Swagger UI popping up. No need to explain the different API's, use the Swagger and see what is available. See something missing, let us know, and we add it ;).
+
+![swgger storage](../../public/images/kerberos-storage-swagger.png)
 
 ## Licensing
 
