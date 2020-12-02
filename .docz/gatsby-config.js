@@ -86,6 +86,8 @@ const config = {
               'Installation',
               'Installation - Cloud',
               'Installation - Edge',
+              'Installation - Recycle',
+              'Installation - Providers',
               'License',
             ],
           },

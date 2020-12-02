@@ -4,82 +4,32 @@ menu: Storage
 route: /storage/installation
 ---
 
+import ReplaceVersion from "../components/ReplaceVersion";
+
 # Installation
 
-Before proceding make sure you have succesfully installed Kerberos Enterprise inside your Kubernetes cluster. The installation guide of Kerberos Storage, expects to have several components already installed: MongoDB, Traefik, Helm, etc.
+Just like Kerberos Enterprise, Kerberos Storage can be installed where Kubernetes can be installed. This means that it can run at the Edge - Baremetal -, in the cloud - VMs - or at Kubernetes service providers - SAAS - such as GCP, Azure, AWS, DigitalOcean, and the list goes on.
 
-Once this is done startt by cloning the configrations from our Github repo.
+Although you might except Kubernetes at the Edge or Kubernetes in the cloud, there are no differences, well sorry to say there are. As Kubernetes service providers implemented features such as LoadBalancers, Persistent Volumes, and others, they have automated and integrated a huge portion of the Kubernetes stack with their related PAAS services. To be more concrete if you are running a Kubernetes Cluster on GCP, you will use the LoadBalancing and Storage services from GCP.
 
-    git clone https://github.com/kerberos-io/storage
-    cd storage
+![enterprise kubernetes](../../public/images/kerberos-enterprise-kubernetes.png)
 
-## Storage
+Compared to Kubernetes at the Edge, there are no predefined LoadBalancers, Storage capabilities, and more. This means more administration work for you, but - with great power comes great responsibility - so no worries. In the end there are alternative functionalties available, for features which you find out-of-the-box at the Kubernetes service providers, you just have to spend more time on configuring and installing those services/pods/deployments yourself.
 
-The last step is to install the storage service. Kerberos Storage is managed through a simple web interface. It allows you to add your storage providers, add queues for messaging, accounts for security and much more.
+## Installation on a Kubernetes Service Provider
 
-Before installing Kerberos Storage, open the `yaml/kubernetes.yaml` configuration file. At the bottom file you will find two endpoints, similar to the traefik config file. Update the domain names to your own domain, and add these to your DNS server (pointing to the same IP as the traefik EXTERNAL-IP).
+Installing Kerberos Storage, just like Kerberos Enterprise, on a Kubernetes Service Provider (Azure, GCP, AWS) is straight forward, as you can create a Kubernetes cluster in a few clicks, get access to public Load Balancers, storage and more. Running Kerberos Storage in such a cluster is just a matter of copy-pasting some configuration (yaml) files, and executing some `kubectl apply` commands.
 
-        spec:
-          rules:
-    -->   - host: storage.domain.com
-            http:
-              paths:
-              - path: /
-                backend:
-                  serviceName: kerberos-storage
-                  servicePort: 80
-    -->   - host: api.storage.domain.com
-            http:
-              paths:
-              - path: /
-                backend:
-                  serviceName: kerberos-storage
-                  servicePort: 8081
+![architecture kubernetes](../../public/images/kerberos-storage-architecture-kubernetes-cloud.png)
 
-Modify the MongoDB credentials, and make sure they match the credentials of your MongoDB instance.
+Install Kerberos Storage on a Kubernetes Service Provider by [following this step-by-step installation guide](/storage/installation-cloud).
 
-        - name: MONGODB_USERNAME
-          value: "root"
-        - name: MONGODB_PASSWORD
-    -->   value: "xxxxxxxxxx"
+## Installation in Private Cloud or Baremetal
 
-Once you have corrected the DNS names and MongoDB credentials, install Kerberos Storage inside your cluster.
+No need to install Kerberos Storage on a Kubernetes Service Provider, you could install it on your own Kubernetes cluster in your private cloud, or even better inside your own premise. The closer you bring Kerberos Storage to your surveillance infrastructure, and Kerberos Enterprise, the more benefits you will experience (low latency, low bandwidth, etc).
 
-    kubectl apply -f ./yaml/kubernetes.yaml
+![architecture kubernetes](../../public/images/kerberos-storage-architecture-kubernetes-edge.png)
 
-## Test out configuration
+In contradiction to the Kubernetes Service Provider, you will have some work todo. Setting up Kubernetes Cluster, play with MetalLB, Persistent Volumes and claims. Don't be scared, it's pretty ssttraight forward as well. You can't simple expect a: click, click, 💥 approach.
 
-If everything worked out as expected, you should now have following services in your cluster:
-
-  - MongoDB
-  - Traefik
-  - Storage
-
-It should look like this.
-
-    $ kubectl get pods
-    NAME                              READY   STATUS    RESTARTS   AGE
-    kerberos-storage-6f5c877d7c-hf77p 1/1     Running   0          2d11h
-    mongodb-55566dc65c-xgmns          2/2     Running   0          4d13h
-    traefik-7d566ccc47-mwslb          1/1     Running   0          4d12h
-
-## Access the system
-
-Once everything is configured correctly your cluster and DNS, you should be able to access the Storage application. By navigating to the Storage domain `storage.domain.com` in your browser you will see the Storage login page showing up.
-
-![Factory](../../public/images/factory/kerberos-factory-loginpage.png)
-
-## Storage Cleanup
-
-Next to storing your recordings, cleaning them up is also important. Therefore we have build a cleanup service called Kerberos Storage Cleanup, which you can use to remove recordings based on different rules.
-
-Modify the MongoDB credentials, as you did for the Kerberos Storage yaml file.
-
-        - name: MONGODB_USERNAME
-          value: "root"
-        - name: MONGODB_PASSWORD
-    -->   value: "xxxxxxxxxx"
-
-Execute following script to deploy the cleanup job.
-
-    kubectl apply -f ./yaml/kubernetes-cleanup.yaml
+Install Kerberos Storage on a Private cloud or Baremetal by [following this step-by-step installation guide](/storage/installation-edge).

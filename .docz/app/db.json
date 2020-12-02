@@ -40,6 +40,8 @@
           "Installation",
           "Installation - Cloud",
           "Installation - Edge",
+          "Installation - Recycle",
+          "Installation - Providers",
           "License"
         ]
       },
@@ -467,9 +469,9 @@
             "value": "MongoDB"
           },
           {
-            "slug": "factory",
+            "slug": "kerberos-enterprise-web-app---the-factory",
             "depth": 2,
-            "value": "Factory"
+            "value": "Kerberos Enterprise Web App - The Factory"
           },
           {
             "slug": "test-out-configuration",
@@ -503,24 +505,29 @@
             "value": "Introduction"
           },
           {
-            "slug": "docker",
+            "slug": "prerequisites",
             "depth": 1,
+            "value": "Prerequisites"
+          },
+          {
+            "slug": "docker",
+            "depth": 2,
             "value": "Docker"
           },
           {
             "slug": "kubernetes",
-            "depth": 1,
+            "depth": 2,
             "value": "Kubernetes"
           },
           {
             "slug": "installation",
-            "depth": 2,
+            "depth": 1,
             "value": "Installation"
           },
           {
-            "slug": "untaint-all-nodess",
+            "slug": "untaint-all-nodes",
             "depth": 2,
-            "value": "Untaint all nodess"
+            "value": "Untaint all nodes"
           },
           {
             "slug": "calico",
@@ -528,49 +535,44 @@
             "value": "Calico"
           },
           {
-            "slug": "download-kerberos-enterprise-configuration",
-            "depth": 1,
-            "value": "Download Kerberos Enterprise configuration"
+            "slug": "kerberos-enterprise",
+            "depth": 2,
+            "value": "Kerberos Enterprise"
           },
           {
-            "slug": "install-metallb-httpsmetallbuniversetfinstallation",
-            "depth": 1,
-            "value": "Install metallb ( https://metallb.universe.tf/installation/ )"
+            "slug": "metallb",
+            "depth": 2,
+            "value": "MetalLB"
           },
           {
-            "slug": "setup-helm",
-            "depth": 1,
-            "value": "Setup helm"
+            "slug": "helm",
+            "depth": 2,
+            "value": "Helm"
           },
           {
-            "slug": "setup-traefik",
-            "depth": 1,
-            "value": "Setup traefik"
+            "slug": "traefik",
+            "depth": 2,
+            "value": "Traefik"
           },
           {
-            "slug": "setup-mongodb",
-            "depth": 1,
-            "value": "Setup mongoDB"
+            "slug": "mongodb",
+            "depth": 2,
+            "value": "MongoDB"
           },
           {
-            "slug": "setup-kerberos-enterprise",
-            "depth": 1,
-            "value": "Setup Kerberos Enterprise"
+            "slug": "kerberos-enterprise-web-app---the-factory",
+            "depth": 2,
+            "value": "Kerberos Enterprise Web App - The Factory"
           },
           {
-            "slug": "setup-kerberos-storage",
-            "depth": 1,
-            "value": "Setup Kerberos Storage"
+            "slug": "test-out-configuration",
+            "depth": 2,
+            "value": "Test out configuration"
           },
           {
-            "slug": "setup-minio",
-            "depth": 1,
-            "value": "Setup Minio"
-          },
-          {
-            "slug": "setup-kerberos-storage-cleanup",
-            "depth": 1,
-            "value": "Setup Kerberos Storage Cleanup"
+            "slug": "access-the-system",
+            "depth": 2,
+            "value": "Access the system"
           }
         ]
       }
@@ -2260,6 +2262,11 @@
             "slug": "events",
             "depth": 3,
             "value": "Events"
+          },
+          {
+            "slug": "licensing",
+            "depth": 2,
+            "value": "Licensing"
           }
         ]
       }
@@ -2283,34 +2290,19 @@
             "value": "Introduction"
           },
           {
+            "slug": "prerequisites",
+            "depth": 1,
+            "value": "Prerequisites"
+          },
+          {
             "slug": "installation",
             "depth": 1,
             "value": "Installation"
           },
           {
-            "slug": "helm",
+            "slug": "storage",
             "depth": 2,
-            "value": "Helm"
-          },
-          {
-            "slug": "initiate-helm",
-            "depth": 3,
-            "value": "Initiate Helm"
-          },
-          {
-            "slug": "traefik",
-            "depth": 2,
-            "value": "Traefik"
-          },
-          {
-            "slug": "mongodb",
-            "depth": 2,
-            "value": "MongoDB"
-          },
-          {
-            "slug": "factory",
-            "depth": 2,
-            "value": "Factory"
+            "value": "Storage"
           },
           {
             "slug": "test-out-configuration",
@@ -2344,34 +2336,19 @@
             "value": "Introduction"
           },
           {
+            "slug": "prerequisites",
+            "depth": 1,
+            "value": "Prerequisites"
+          },
+          {
             "slug": "installation",
             "depth": 1,
             "value": "Installation"
           },
           {
-            "slug": "helm",
+            "slug": "storage",
             "depth": 2,
-            "value": "Helm"
-          },
-          {
-            "slug": "initiate-helm",
-            "depth": 3,
-            "value": "Initiate Helm"
-          },
-          {
-            "slug": "traefik",
-            "depth": 2,
-            "value": "Traefik"
-          },
-          {
-            "slug": "mongodb",
-            "depth": 2,
-            "value": "MongoDB"
-          },
-          {
-            "slug": "factory",
-            "depth": 2,
-            "value": "Factory"
+            "value": "Storage"
           },
           {
             "slug": "test-out-configuration",
@@ -2382,6 +2359,68 @@
             "slug": "access-the-system",
             "depth": 2,
             "value": "Access the system"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/storage/installation-providers.md",
+      "value": {
+        "name": "Installation - Providers",
+        "menu": "Storage",
+        "route": "/storage/installation-providers",
+        "id": "e0dd9967ab8238dfa46bc498578b96ba",
+        "filepath": "src/storage/installation-providers.md",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/storage/installation-providers.md",
+        "link": "",
+        "hidden": false,
+        "slug": "src-storage-installation-providers",
+        "headings": [
+          {
+            "slug": "kerberos-storage---providers",
+            "depth": 1,
+            "value": "Kerberos Storage - Providers"
+          },
+          {
+            "slug": "prerequisites",
+            "depth": 2,
+            "value": "Prerequisites"
+          },
+          {
+            "slug": "installation-minio",
+            "depth": 2,
+            "value": "Installation Minio"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/storage/installation-recycle.md",
+      "value": {
+        "name": "Installation - Recycle",
+        "menu": "Storage",
+        "route": "/storage/installation-recycle",
+        "id": "087374e387724dd770db64dc4a3af2bf",
+        "filepath": "src/storage/installation-recycle.md",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/storage/installation-recycle.md",
+        "link": "",
+        "hidden": false,
+        "slug": "src-storage-installation-recycle",
+        "headings": [
+          {
+            "slug": "kerberos-storage---recycle-mechanism",
+            "depth": 1,
+            "value": "Kerberos Storage - Recycle Mechanism"
+          },
+          {
+            "slug": "prerequisites",
+            "depth": 2,
+            "value": "Prerequisites"
+          },
+          {
+            "slug": "installation",
+            "depth": 2,
+            "value": "Installation"
           }
         ]
       }
@@ -2405,24 +2444,14 @@
             "value": "Installation"
           },
           {
-            "slug": "storage",
+            "slug": "installation-on-a-kubernetes-service-provider",
             "depth": 2,
-            "value": "Storage"
+            "value": "Installation on a Kubernetes Service Provider"
           },
           {
-            "slug": "test-out-configuration",
+            "slug": "installation-in-private-cloud-or-baremetal",
             "depth": 2,
-            "value": "Test out configuration"
-          },
-          {
-            "slug": "access-the-system",
-            "depth": 2,
-            "value": "Access the system"
-          },
-          {
-            "slug": "storage-cleanup",
-            "depth": 2,
-            "value": "Storage Cleanup"
+            "value": "Installation in Private Cloud or Baremetal"
           }
         ]
       }
