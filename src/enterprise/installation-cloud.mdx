@@ -25,12 +25,11 @@ Before setting up Kerberos Enterprise, some configuration needs to happen. First
 
 First clone the configrations from our Github repo.
 
-    git clone https://github.com/kerberos-io/enterprise enterprise
-    cd enterprise
+    git clone https://github.com/kerberos-io/enterprise
 
 Next go into the directory and execute the first Kubernetes configuration file `clusterrole.yaml`.
 
-    kubectl create -f ./yaml/factory/clusterrole.yaml
+    kubectl create -f ./enterprise/yaml/factory/clusterrole.yaml
 
 This will make several actions inside your cluster available. We need this to be able to create deployments from the factory web app.
 
@@ -52,10 +51,9 @@ Use one of the preferred OS package managers to install the Helm client:
 
 ## Traefik
 
-[**Traefik**](https://containo.us/traefik/) is a reverse proxy and load balancer which allows you to
-expose your deployments more easily. Kerberos uses Traefik to expose it's APIs more easily.
+[**Traefik**](https://containo.us/traefik/) is a reverse proxy and load balancer which allows you to expose your deployments more easily. Kerberos uses Traefik to expose it's APIs more easily.
 
-By executing following helm command, we will install traefik and link it to a specific DNS name. Open the traefik values file, `yaml/traefik/values.yaml`, and update the DNS name to your own domain.
+By executing following helm command, we will install traefik and link it to a specific DNS name. Open the traefik values file, `./enterprise/yaml/traefik/values.yaml`, and update the DNS name to your own domain.
 
         dashboard:
           enabled: true
@@ -67,7 +65,7 @@ By executing following helm command, we will install traefik and link it to a sp
 Add Helm repository and install traefik.
 
     helm repo add stable https://kubernetes-charts.storage.googleapis.com
-    helm install traefik -f ./yaml/traefik/values.yaml stable/traefik
+    helm install traefik -f ./enterprise/yaml/traefik/values.yaml stable/traefik
 
 After installation you should have an IP attached to traefik service, look for it by executing the `get service` command. You will see the ip address in the `EXTERNAL-IP` attribute.
 
@@ -87,7 +85,7 @@ When using Kerberos Enterprise, it will generate configurations for every survei
 Have a look into the `yaml/mongodb/values.yaml` file, you will find plenty of configurations for your MongoDB instance. You will also find the attribute where you can change the root password of mongodb.
 
     helm repo add bitnami https://charts.bitnami.com/bitnami
-    helm install mongodb bitnami/mongodb --values ./yaml/mongodb/values.yaml
+    helm install mongodb bitnami/mongodb --values ./enterprise/yaml/mongodb/values.yaml
 
 Once installed succesfully the MongoDB instance, we should copy the password of the MongoDB instance. Once revealed copy the password, as we will need in the next steps.
 
