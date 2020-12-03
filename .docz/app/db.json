@@ -382,6 +382,16 @@
             "value": "Configuring a deployment"
           },
           {
+            "slug": "global-configuration",
+            "depth": 3,
+            "value": "Global configuration"
+          },
+          {
+            "slug": "upgrade-or-reboot-a-kerberos-enterprise-agent",
+            "depth": 3,
+            "value": "Upgrade or reboot a Kerberos Enterprise agent"
+          },
+          {
             "slug": "pods",
             "depth": 2,
             "value": "Pods"
@@ -390,6 +400,16 @@
             "slug": "storage-and-video-management",
             "depth": 2,
             "value": "Storage and video management"
+          },
+          {
+            "slug": "kerberos-storage",
+            "depth": 3,
+            "value": "Kerberos Storage"
+          },
+          {
+            "slug": "kerberos-cloud",
+            "depth": 3,
+            "value": "Kerberos Cloud"
           }
         ]
       }
