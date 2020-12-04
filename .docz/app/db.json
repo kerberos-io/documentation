@@ -484,6 +484,11 @@
             "value": "Traefik"
           },
           {
+            "slug": "ingress-nginx-alternative-for-traefik",
+            "depth": 2,
+            "value": "Ingress-Nginx (alternative for Traefik)"
+          },
+          {
             "slug": "mongodb",
             "depth": 2,
             "value": "MongoDB"
@@ -2270,11 +2275,21 @@
           },
           {
             "slug": "kerberos-cloud",
-            "depth": 2,
+            "depth": 3,
             "value": "Kerberos Cloud"
           },
           {
             "slug": "kerberos-storage",
+            "depth": 3,
+            "value": "Kerberos Storage"
+          },
+          {
+            "slug": "kerberos-cloud-1",
+            "depth": 2,
+            "value": "Kerberos Cloud"
+          },
+          {
+            "slug": "kerberos-storage-1",
             "depth": 2,
             "value": "Kerberos Storage"
           },

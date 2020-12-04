@@ -129,6 +129,16 @@ On the other hand it's an open platform, as it allows you build extensions and i
 
 To connect one or more Kerberos Enterprise agents to your Kerberos Storage instance, you should open the configuration option and navigate to the `cloud` tab. Once selected you need to fill-in the credentials from your Kerberos Storage account.
 
+- Storage URI: this is the API endpoint of your Kerberos Storage instance. Typically this is in the following format: `http(s)://api.yourdomain.com/storage`. Where `api.yourdomain.com` should match your Kerberos Storage API endpoint.
+
+- Provider: the name of the provider, which you created on the Kerberos Storage providers page, to which you want to send your recordings to.
+
+- Directory: this is the subdirectory in which your files will be stored. At the time of writing this should also equal your Kerberos Cloud username, if you plan to upload to Kerberos Cloud.
+
+- Access Key: this should match the access key of one of your Kerberos Storage accounts.
+
+- Secret Access Key: this should match the secret access key of one of your Kerberos Storage accounts.
+
 
 ![kerberos storage configuration](../../public/images/factory/kerberos-enterprise-storage-setup.gif)
 
@@ -139,3 +149,16 @@ For the visualisation part Kerberos Cloud comes into the picture. Kerberos Cloud
 You have two choices when using Kerberos Cloud, either you send your recordings from your Kerberos Enterprise agents directly to Kerberos Cloud, or you send your recordings to Kerberos Storage, and connect Kerberos Storage to Kerberos Cloud. About the latter more is explained on the [Kerberos Storage page](/storage/get-started).
 
 Select the Kerberos Cloud option, and copy-paste the credentials from your Kerberos Cloud subscription.
+
+![kerberos storage configuration](../../public/images/factory/kerberos-enterprise-to-cloud.gif)
+
+
+- Region: this is the region where your recordings will be stored. Only `eu-west-1` for now (will change, on the roadmap).
+
+- Bucket: the name of the Kerberos Cloud bucket.  Only `kerberosaccept` for now (will change, on the roadmap).
+
+- Directory: this is your personal directory, and matches your Kerberos Cloud username.
+
+- Public Key: this should match the public key of your Kerberos Cloud subscription.
+
+- Secret Access Key: this should match the private key of your Kerberos Cloud subscription.

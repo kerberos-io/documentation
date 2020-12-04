@@ -78,6 +78,14 @@ After installation you should have an IP attached to traefik service, look for i
 
 Go to your DNS provider and link the domain you've configured in the first step `traefik.domain.com` to the IP address of the `EXTERNAL-IP` attribute. When browsing to `traefik.domain.com`, you should see the traefik dashboard showing up.
 
+## Ingress-Nginx (alternative for Traefik)
+
+If you don't like `Traefik` but you prefer `Ingress Nginx`, that works as well.
+
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm install ingress-nginx ingress-nginx/ingress-nginx
+
 ## MongoDB
 
 When using Kerberos Enterprise, it will generate configurations for every surveillance camera deployed. These configuration files are stored centrally in a MongoDB database. Therefore we use `helm `to install a MongoDB instance inside your cluster.
@@ -98,7 +106,7 @@ The last step is to install the Kerberos Enterprise application. Kerberos Enterp
 
 The Factory is shipped as a web app (React) which provides you with a tool to update your deployments (agents) easily, monitor them, etc. The Factory is the central portal for managing Kerberos Enterprise inside your cluster. However at any point you can fine-tune or take-over using the `kubectl` command.
 
-Before installing the Factory web app, open the `./enterprise/yaml/factory/deployment.yaml` configuration file. At the bottom file you will find two endpoints, similar to the traefik config file. Update the domain names to your own domain, and add these to your DNS server (pointing to the same IP as the traefik EXTERNAL-IP).
+Before installing the Factory web app, open the `./enterprise/yaml/factory/deployment.yaml` configuration file. At the of the bottom file you will find two endpoints, similar to the Ingres file bewlwo. Update the hostnames to your own perferred domain, and add these to your DNS server or `/etc/hosts` file (pointing to the same IP as the Traefik/Ingress nginx EXTERNAL-IP).
 
         spec:
           rules:
@@ -116,6 +124,16 @@ Before installing the Factory web app, open the `./enterprise/yaml/factory/deplo
                 backend:
                   serviceName: factory
                   servicePort: 8081
+
+If you are using Ingress Nginx, do not forgot to comment `Traefik` and uncomment `Ingress Nginx`.
+
+    apiVersion: extensions/v1beta1
+    kind: Ingress
+    metadata:
+      name: factory
+      annotations:
+        #kubernetes.io/ingress.class: traefik
+        kubernetes.io/ingress.class: nginx
 
 Modify the MongoDB credentials, and make sure they match the credentials of your MongoDB instance.
 

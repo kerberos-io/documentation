@@ -178,10 +178,10 @@ After modified properly you can go ahead with creating the PV.
 
     kubectl create -f ./enterprise/yaml/mongodb/volume.yaml
 
-Have a look into the `yaml/mongodb/values.yaml` file, you will find plenty of configurations for your MongoDB instance. You will also find the attribute where you can change the root password of mongodb. If using Helm version 2, write `--name mongodb`.
+Have a look into the `./enterprise/yaml/mongodb/values.yaml` file, you will find plenty of configurations for your MongoDB instance. You will also find the attribute where you can change the root password of MongoDB. 
 
     helm repo add bitnami https://charts.bitnami.com/bitnami
-    helm install mongodb bitnami/mongodb --values ./yaml/mongodb/values-edge.yaml
+    helm install mongodb bitnami/mongodb --values ./enterprise/yaml/mongodb/values-edge.yaml
 
 Once installed succesfully the MongoDB instance, we should copy the password of the MongoDB instance. Once revealed copy the password, as we will need in the next steps.
 

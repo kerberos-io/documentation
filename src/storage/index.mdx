@@ -8,12 +8,19 @@ route: /storage/introduction
 
 Kerberos Open Source and Kerberos Enterprise both store recordings on the local disk. To centralise your data at a single place, additional solutions are available.
 
-1. One or more Kerberos Enterprise agents, can store their data directly on [Kerberos Cloud](/cloud).
-2. You have the option to Bring Your Own Storage (BYOS), using Kerberos Storage. Kerberos Storage allows you to configure the storage provider you want. This could be a storage provider in the cloud such as AWS S3, GCP storage or Azure Blob store. Next to that Kerberos Storage can also be installed on premise (at the edge), and use storage providers such as Minio.
+### Kerberos Cloud
+
+One or more Kerberos Enterprise agents, can store their data directly on [Kerberos Cloud](/cloud), and benefit from the visualisation layer Kerberos Cloud offers. When doing this your recordings will be uploaded inside the Kerberos datacenter (which is a black box for you).
+
+### Kerberos Storage
+
+In addition to that you have the option to Bring Your Own Storage (BYOS), using Kerberos Storage. Kerberos Storage allows you to configure the storage providers you want, and allows you to connect to [Kerberos Cloud](/cloud) in parrallel. These storage provider could live in the cloud such as AWS S3, GCP storage and Azure Blob store, or can be located on premise - at the edge - such as Minio.
+
+Despite the flexible storage capabilities, Kerberos Storage is also an open platform, which can be used to build extensions (mobile apps, web apps, machine learning services, etc) and integrations. It allows you to leverage a scalable and stable system as a strong backbone for your video analytics solutions, machine learning algorithms, and more.
 
 ## Kerberos Cloud
 
-Within Kerberos Open Source an Kerberos Enterprise you can choose to send your local recordings to our cloud environment. This means that your data will be hosted and processed (metadata, machine learning) in a Kerberos Cloud datacenter. For more information about how Kerberos Cloud works [can be found here](/cloud).
+Within Kerberos Open Source an Kerberos Enterprise you can upload your recordings to our [Kerberos Cloud](/cloud) environment. This means that your data will be hosted and processed (metadata) in our Kerberos datacenter. For more information about how Kerberos Cloud works [can be found here](/cloud).
 
 ![cloud](../../public/images/kerberos-architecture.png)
 
@@ -26,11 +33,11 @@ If you are using Kerberos Enterprise you have the possibility to bring your own 
   - [Amazon Web Services S3](https://aws.amazon.com/s3/)
   - [Minio](https://min.io/)
 
-Having installed Kerberos Storage in the cloud, following architecture can apply. Having your Kerberos Enterprise agents running at the edge, but uploading to Kerberos Storage in the cloud.
+When installing Kerberos Storage in the cloud, following architecture can apply. Having your Kerberos Enterprise agents running at the edge, but uploading to Kerberos Storage in the cloud.
 
 ![architecture kubernetes](../../public/images/kerberos-storage-architecture-kubernetes-cloud.png)
 
-On the other hand you could also have Kerberos Storage running at the edge, next to your Kubernetes Enterprise agents. This could be useful if you want to do processing, Computer Vision or Machine Learning, at the edge.
+On the other hand you could also have Kerberos Storage running at the edge, next to your Kubernetes Enterprise agents. This could be useful if you want to do processing or video analytics suchs as computer bision or machine learning at the edge.
 
 ![architecture kubernetes](../../public/images/kerberos-storage-architecture-kubernetes-edge.png)
 
