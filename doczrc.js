@@ -3,7 +3,7 @@ export default {
     'Introduction',
     'How it works',
     'Architectures',
-    { name: 'Open Source', menu: ['First things first', 'Get Started', 'Installation', 'Installation - advanced', 'Releases', 'License', 'Upgrade', 'Contribute','Machinery', 'Web'] },
+    { name: 'Open Source', menu: ['First things first', 'Get Started', 'Installation', 'Installation - Advanced', 'Releases', 'License', 'Upgrade', 'Contribute','Machinery', 'Web'] },
     { name: 'Enterprise', menu: ['First things first', 'Get Started', 'Installation', 'Installation - Cloud', 'Installation - Edge', 'Releases'] },
     { name: 'Storage', menu: ['First things first', 'Get Started', 'Installation', 'Installation - Cloud', 'Installation - Edge', 'Installation - Recycle', 'Installation - Providers', 'License'] },
     'Cloud'

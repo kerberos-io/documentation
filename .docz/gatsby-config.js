@@ -58,7 +58,7 @@ const config = {
               'First things first',
               'Get Started',
               'Installation',
-              'Installation - advanced',
+              'Installation - Advanced',
               'Releases',
               'License',
               'Upgrade',

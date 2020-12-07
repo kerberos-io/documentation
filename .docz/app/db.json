@@ -12,7 +12,7 @@
           "First things first",
           "Get Started",
           "Installation",
-          "Installation - advanced",
+          "Installation - Advanced",
           "Releases",
           "License",
           "Upgrade",
@@ -850,7 +850,7 @@
     {
       "key": "src/open-source/installation-advanced.mdx",
       "value": {
-        "name": "Installation - advanced",
+        "name": "Installation - Advanced",
         "menu": "Open Source",
         "route": "/opensource/installation-advanced",
         "id": "34d4c112da87fe3146ef41fdbfc94ef2",
@@ -2248,9 +2248,9 @@
             "value": "Media"
           },
           {
-            "slug": "cleanup",
+            "slug": "recycle",
             "depth": 2,
-            "value": "Cleanup"
+            "value": "Recycle"
           }
         ]
       }
@@ -2456,6 +2456,16 @@
             "slug": "kerberos-storage---recycle-mechanism",
             "depth": 1,
             "value": "Kerberos Storage - Recycle Mechanism"
+          },
+          {
+            "slug": "recycling-rules",
+            "depth": 2,
+            "value": "Recycling rules"
+          },
+          {
+            "slug": "account-day-limit",
+            "depth": 3,
+            "value": "Account day limit"
           },
           {
             "slug": "prerequisites",

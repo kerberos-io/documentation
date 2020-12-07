@@ -33,13 +33,13 @@ Running your Kerberos agents inside Docker containers, allows you to process mul
 
 ### Kerberos Enterprise (> 5 Kerberos agents)
 
-When working within an enterprise context, where you require high availability and have a large amount of surveillance cameras being monitored, [Kerberos Enterprise](/enterprise/introduction) is a good choice. Im comparison to the Open Source version, Kerberos Enterprise will use Kubernetes to help you scale (and secure) your security landscape. Kerberos agents, or Kubernetes deployments, are deployed inside your cluster and load balanced over the different nodes. When a Kerberos agent dies, or the node on which the deployment is running, Kubernetes will reschedule it to another healthy node.
+When working within an enterprise context, where you require high availability and have a large amount of surveillance cameras being monitored, [Kerberos Enterprise](/enterprise/introduction) is a good choice. Im comparison to the Open Source version, Kerberos Enterprise uses Kubernetes to help you scale (and secure) your video surveillance landscape. Kerberos agents, or Kubernetes deployments, are deployed inside your cluster and load balanced over the different nodes. When a Kerberos agent dies, or the node on which the deployment is running, Kubernetes will reschedule it to another healthy node.
 
 ![architecture kubernetes](../public/images/kerberos-agent-architecture-kubernetes.png)
 
 ## Agents in the cloud
 
-Instead of processing your surveillance cameras on-premise you could also process them in the cloud. There are a couple advantages, for example, you don't have to manage your owner hardware, you can simply spin up a VM on one of the hyperscalers.
+Instead of processing your surveillance cameras on-premise you could also process them in the cloud. There are a couple advantages, for example, you don't have to manage your own hardware, you can simply spin up a VM on one of the hyperscalers, and add it to your existing cluster.
 
 When dealing with Kerberos agents in the cloud, the complexity starts with the security model. As your surveillance cameras are running somewhere on-premise, you will need to make them available to your Kerberos agents, which are running in the cloud. There are several ways to do that, such as port forwarding (not recommended) or setting up a site-to-site VPN (recommended).
 
