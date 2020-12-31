@@ -86,6 +86,14 @@
       },
       {
         "resolve": "gatsby-remark-grid-tables"
+      },
+      {
+        "resolve": "gatsby-plugin-google-gtag",
+        "options": {
+          "trackingIds": [
+            "UA-53584355-3"
+          ]
+        }
       }
     ]
   },
@@ -285,6 +293,11 @@
             "slug": "4-when-are-we-going-to-be-able-to-install-the-first-version",
             "depth": 3,
             "value": "4. When are we going to be able to install the first version?"
+          },
+          {
+            "slug": "5-change-in-license",
+            "depth": 3,
+            "value": "5. Change in License"
           }
         ]
       }
@@ -2621,28 +2634,6 @@
           "displayName": "Logo",
           "methods": [],
           "actualName": "Logo"
-        }
-      ]
-    },
-    {
-      "key": "src/gatsby-theme-docz/wrapper.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "Wrapper",
-          "methods": [],
-          "actualName": "Wrapper"
-        }
-      ]
-    },
-    {
-      "key": ".docz/src/gatsby-theme-docz/wrapper.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "Wrapper",
-          "methods": [],
-          "actualName": "Wrapper"
         }
       ]
     }

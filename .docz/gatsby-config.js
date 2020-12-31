@@ -159,6 +159,10 @@ const config = {
         gatsbyRemarkPlugins: [
           { resolve: 'gatsby-remark-vscode' },
           { resolve: 'gatsby-remark-grid-tables' },
+          {
+            resolve: 'gatsby-plugin-google-gtag',
+            options: { trackingIds: ['UA-53584355-3'] },
+          },
         ],
       },
     },

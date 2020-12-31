@@ -1,6 +1,6 @@
 var plugins = [{
       plugin: require('/Users/i353408/Vagrant/www/repos/documentation/node_modules/gatsby-plugin-mdx/gatsby-ssr'),
-      options: {"plugins":[],"extensions":[".md",".mdx"],"remarkPlugins":[[null,{"type":"yaml","marker":"-"}],null],"rehypePlugins":[null,null],"gatsbyRemarkPlugins":[{"resolve":"gatsby-remark-vscode"},{"resolve":"gatsby-remark-grid-tables"}],"defaultLayouts":{"default":"/Users/i353408/Vagrant/www/repos/documentation/node_modules/gatsby-theme-docz/src/base/Layout.js"}},
+      options: {"plugins":[],"extensions":[".md",".mdx"],"remarkPlugins":[[null,{"type":"yaml","marker":"-"}],null],"rehypePlugins":[null,null],"gatsbyRemarkPlugins":[{"resolve":"gatsby-remark-vscode"},{"resolve":"gatsby-remark-grid-tables"},{"resolve":"gatsby-plugin-google-gtag","options":{"trackingIds":["UA-53584355-3"]}}],"defaultLayouts":{"default":"/Users/i353408/Vagrant/www/repos/documentation/node_modules/gatsby-theme-docz/src/base/Layout.js"}},
     },{
       plugin: require('/Users/i353408/Vagrant/www/repos/documentation/node_modules/gatsby-plugin-react-helmet-async/gatsby-ssr'),
       options: {"plugins":[]},

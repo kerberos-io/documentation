@@ -44,6 +44,14 @@ export default {
     },
     {
       resolve: 'gatsby-remark-grid-tables',
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "UA-53584355-3", // Google Analytics / GA
+        ],
+      },
     }
   ],
 }
