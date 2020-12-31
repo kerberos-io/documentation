@@ -3,7 +3,8 @@ export default {
     'Introduction',
     'How it works',
     'Architectures',
-    { name: 'Open Source', menu: ['First things first', 'Get Started', 'Installation', 'Installation - Advanced', 'Releases', 'License', 'Upgrade', 'Contribute','Machinery', 'Web'] },
+    { name: 'Open Source (v2)', menu: ['First things first', 'Get Started', 'Installation', 'Installation - Advanced', 'Releases', 'License', 'Upgrade', 'Contribute','Machinery', 'Web'] },
+    'Open Source (v3)',
     { name: 'Enterprise', menu: ['First things first', 'Get Started', 'Installation', 'Installation - Cloud', 'Installation - Edge', 'Releases'] },
     { name: 'Storage', menu: ['First things first', 'Get Started', 'Installation', 'Installation - Cloud', 'Installation - Edge', 'Installation - Recycle', 'Installation - Providers', 'License'] },
     'Cloud'
@@ -43,6 +44,14 @@ export default {
     },
     {
       resolve: 'gatsby-remark-grid-tables',
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "UA-53584355-3", // Google Analytics / GA
+        ],
+      },
     }
   ],
 }

@@ -7,7 +7,7 @@
       "How it works",
       "Architectures",
       {
-        "name": "Open Source",
+        "name": "Open Source (v2)",
         "menu": [
           "First things first",
           "Get Started",
@@ -21,6 +21,7 @@
           "Web"
         ]
       },
+      "Open Source (v3)",
       {
         "name": "Enterprise",
         "menu": [
@@ -233,6 +234,57 @@
             "slug": "kerberos-agent",
             "depth": 3,
             "value": "Kerberos Agent"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/opensource-v3.mdx",
+      "value": {
+        "name": "Open Source (v3)",
+        "route": "/opensource-v3",
+        "id": "48bed1848feb67eece3240f8f173c617",
+        "filepath": "src/opensource-v3.mdx",
+        "fullpath": "/Users/i353408/Vagrant/www/repos/documentation/src/opensource-v3.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-opensource-v3",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "open-source-v3",
+            "depth": 1,
+            "value": "Open Source v3"
+          },
+          {
+            "slug": "what-is-changing",
+            "depth": 2,
+            "value": "What is changing?"
+          },
+          {
+            "slug": "faq",
+            "depth": 2,
+            "value": "FAQ"
+          },
+          {
+            "slug": "1-why-a-mono-repo",
+            "depth": 3,
+            "value": "1. Why a mono repo?"
+          },
+          {
+            "slug": "2-why-a-change-in-technologies",
+            "depth": 3,
+            "value": "2. Why a change in technologies?"
+          },
+          {
+            "slug": "3-what-is-the-difference-with-kerberos-enterprise",
+            "depth": 3,
+            "value": "3. What is the difference with Kerberos Enterprise?"
+          },
+          {
+            "slug": "4-when-are-we-going-to-be-able-to-install-the-first-version",
+            "depth": 3,
+            "value": "4. When are we going to be able to install the first version?"
           }
         ]
       }
@@ -668,7 +720,7 @@
       "key": "src/open-source/contribute.mdx",
       "value": {
         "name": "Contribute",
-        "menu": "Open Source",
+        "menu": "Open Source (v2)",
         "route": "/opensource/contribute",
         "id": "111290db815f0c1a551a7742fd821f6f",
         "filepath": "src/open-source/contribute.mdx",
@@ -754,7 +806,7 @@
       "key": "src/open-source/get-started.mdx",
       "value": {
         "name": "Get Started",
-        "menu": "Open Source",
+        "menu": "Open Source (v2)",
         "route": "/opensource/get-started",
         "id": "059e06c8b1653a3b0c3473f90d782c13",
         "filepath": "src/open-source/get-started.mdx",
@@ -815,7 +867,7 @@
       "key": "src/open-source/index.mdx",
       "value": {
         "name": "First things first",
-        "menu": "Open Source",
+        "menu": "Open Source (v2)",
         "route": "/opensource/introduction",
         "id": "e182a675cff01d9e46eba94b9b98f68a",
         "filepath": "src/open-source/index.mdx",
@@ -851,7 +903,7 @@
       "key": "src/open-source/installation-advanced.mdx",
       "value": {
         "name": "Installation - Advanced",
-        "menu": "Open Source",
+        "menu": "Open Source (v2)",
         "route": "/opensource/installation-advanced",
         "id": "34d4c112da87fe3146ef41fdbfc94ef2",
         "filepath": "src/open-source/installation-advanced.mdx",
@@ -932,7 +984,7 @@
       "key": "src/open-source/installation.mdx",
       "value": {
         "name": "Installation",
-        "menu": "Open Source",
+        "menu": "Open Source (v2)",
         "route": "/opensource/installation",
         "id": "9e9908538be367cca76a80425244646f",
         "filepath": "src/open-source/installation.mdx",
@@ -1063,7 +1115,7 @@
       "key": "src/open-source/license.mdx",
       "value": {
         "name": "License",
-        "menu": "Open Source",
+        "menu": "Open Source (v2)",
         "route": "/opensource/license",
         "id": "b41faa434ffd47abb4b845cb083fff55",
         "filepath": "src/open-source/license.mdx",
@@ -1134,7 +1186,7 @@
       "key": "src/open-source/machinery.mdx",
       "value": {
         "name": "Machinery",
-        "menu": "Open Source",
+        "menu": "Open Source (v2)",
         "route": "/opensource/machinery",
         "id": "8b5e104d90b9ec673d88bf43d6bf99f2",
         "filepath": "src/open-source/machinery.mdx",
@@ -1715,7 +1767,7 @@
       "key": "src/open-source/releases.mdx",
       "value": {
         "name": "Releases",
-        "menu": "Open Source",
+        "menu": "Open Source (v2)",
         "route": "/opensource/releases",
         "id": "0513012dd89890d93de77c3aa4597e7f",
         "filepath": "src/open-source/releases.mdx",
@@ -2086,7 +2138,7 @@
       "key": "src/open-source/upgrade.mdx",
       "value": {
         "name": "Upgrade",
-        "menu": "Open Source",
+        "menu": "Open Source (v2)",
         "route": "/opensource/upgrade",
         "id": "bdff501afe4f3c7e6fc0f2ef0f365d5d",
         "filepath": "src/open-source/upgrade.mdx",
@@ -2122,7 +2174,7 @@
       "key": "src/open-source/web.mdx",
       "value": {
         "name": "Web",
-        "menu": "Open Source",
+        "menu": "Open Source (v2)",
         "route": "/opensource/web",
         "id": "302e6588cf7f47fc4110356883b1761b",
         "filepath": "src/open-source/web.mdx",
@@ -2569,6 +2621,28 @@
           "displayName": "Logo",
           "methods": [],
           "actualName": "Logo"
+        }
+      ]
+    },
+    {
+      "key": "src/gatsby-theme-docz/wrapper.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Wrapper",
+          "methods": [],
+          "actualName": "Wrapper"
+        }
+      ]
+    },
+    {
+      "key": ".docz/src/gatsby-theme-docz/wrapper.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Wrapper",
+          "methods": [],
+          "actualName": "Wrapper"
         }
       ]
     }

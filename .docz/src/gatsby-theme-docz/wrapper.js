@@ -6,6 +6,7 @@ const Wrapper = ({ children, doc }) => {
     <React.Fragment>
       <Helmet>
         <meta charSet="utf-8" />
+        <meta name="description" content="Kerberos.io Documentation for Kerberos Open Source, Kerberos Enterprise, Kerberos Storage and Kerberos Cloud."/>
         <title>{doc.value.name}</title>
         <link
           rel="icon"

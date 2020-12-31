@@ -53,7 +53,7 @@ const config = {
           'How it works',
           'Architectures',
           {
-            name: 'Open Source',
+            name: 'Open Source (v2)',
             menu: [
               'First things first',
               'Get Started',
@@ -67,6 +67,7 @@ const config = {
               'Web',
             ],
           },
+          'Open Source (v3)',
           {
             name: 'Enterprise',
             menu: [

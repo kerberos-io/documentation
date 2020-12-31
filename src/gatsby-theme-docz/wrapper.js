@@ -7,6 +7,7 @@ const Wrapper = ({ children, doc }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>{doc.value.name}</title>
+        <meta name="description" content="Kerberos Documentation for Kerberos Open Source, Kerberos Enterprise, Kerberos Storage and Kerberos Cloud."/>
         <link
           rel="icon"
           type="image/png"
