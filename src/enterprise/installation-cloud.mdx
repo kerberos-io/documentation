@@ -27,9 +27,13 @@ First clone the configrations from our Github repo.
 
     git clone https://github.com/kerberos-io/enterprise
 
+A best practice is to create a separate namespace for your enterprise deployment.
+
+    kubectl create namespace kerberos
+
 Next go into the directory and execute the first Kubernetes configuration file `clusterrole.yaml`.
 
-    kubectl create -f ./enterprise/yaml/factory/clusterrole.yaml
+    kubectl create -n kerberos -f ./enterprise/yaml/factory/clusterrole.yaml
 
 This will make several actions inside your cluster available. We need this to be able to create deployments from the factory web app.
 
@@ -64,8 +68,8 @@ By executing following helm command, we will install traefik and link it to a sp
 
 Add Helm repository and install traefik.
 
-    helm repo add stable https://kubernetes-charts.storage.googleapis.com
-    helm install traefik -f ./enterprise/yaml/traefik/values.yaml stable/traefik
+    helm repo add stable https://charts.helm.sh/stable
+    helm install traefik -n kerberos -f ./enterprise/yaml/traefik/values.yaml stable/traefik
 
 After installation you should have an IP attached to traefik service, look for it by executing the `get service` command. You will see the ip address in the `EXTERNAL-IP` attribute.
 
@@ -84,7 +88,7 @@ If you don't like `Traefik` but you prefer `Ingress Nginx`, that works as well.
 
     helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
     helm repo update
-    helm install ingress-nginx ingress-nginx/ingress-nginx
+    helm install ingress-nginx -n kerberos ingress-nginx/ingress-nginx
 
 ## MongoDB
 
@@ -93,11 +97,11 @@ When using Kerberos Enterprise, it will generate configurations for every survei
 Have a look into the `yaml/mongodb/values.yaml` file, you will find plenty of configurations for your MongoDB instance. You will also find the attribute where you can change the root password of mongodb.
 
     helm repo add bitnami https://charts.bitnami.com/bitnami
-    helm install mongodb bitnami/mongodb --values ./enterprise/yaml/mongodb/values.yaml
+    helm install mongodb -n kerberos bitnami/mongodb --values ./enterprise/yaml/mongodb/values.yaml
 
 Once installed succesfully the MongoDB instance, we should copy the password of the MongoDB instance. Once revealed copy the password, as we will need in the next steps.
 
-    export MONGODB_ROOT_PASSWORD=$(kubectl get secret --namespace default mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
+    export MONGODB_ROOT_PASSWORD=$(kubectl get secret -n kerberos mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
     echo $MONGODB_ROOT_PASSWORD
 
 ## Kerberos Enterprise Web App - The Factory
@@ -144,7 +148,7 @@ Modify the MongoDB credentials, and make sure they match the credentials of your
 
 Once you have corrected the DNS names (or internal /etc/hosts file), install the Factory web app inside your cluster.
 
-    kubectl apply -f ./enterprise/yaml/factory/deployment.yaml
+    kubectl apply -n kerberos -f ./enterprise/yaml/factory/deployment.yaml
 
 ## Test out configuration
 
