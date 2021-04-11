@@ -94,7 +94,12 @@ Calico is an open source networking and network security solution for containers
 Before setting up Kerberos Enterprise, some configuration needs to happen. First thing that we need to do is setting up the RBAC permissions (Role Based Access Control). We need to enable this to be able to query specific endpoints from the Kubernetes API. By default these endpoints are locked, so we need to unlock them.
 
     git clone https://github.com/kerberos-io/enterprise
-    kubectl create -f ./enterprise/yaml/factory/clusterrole.yaml
+
+A best practice is to create a separate namespace for your enterprise deployment.
+
+    kubectl create namespace kerberos
+
+    kubectl create -n kerberos -f ./enterprise/yaml/factory/clusterrole.yaml
 
 This will make several actions, permissions, inside your cluster available. We need this to be able to create deployments from the Kerberos Enterprise web app.
 
@@ -123,7 +128,7 @@ After installing the different MetalLB components, we need to create a `configma
 
 You can change the IP range above to match your needs. MetalLB will use this range as a referance to assign IP addresses to your LoadBalancers. Once ready you can apply the configration map.
 
-    kubectl apply -f ./enterprise/yaml/metallb/configmap.yaml
+    kubectl apply -n kerberos -f ./enterprise/yaml/metallb/configmap.yaml
 
 ## Helm
 
@@ -142,7 +147,7 @@ To access the Kerberos Enterprise web application, we will create a service in t
 The idea is that Traefik, will have a dedicated IP address assigned from MetalLB, and will resolve the Ingress of our Kerberos Enterprise web app. Let's go ahead with installing Traefik.
 
     helm repo add stable https://charts.helm.sh/stable
-    helm install traefik -f ./enterprise/yaml/traefik/values.yaml stable/traefik
+    helm install -n kerberos traefik -f ./enterprise/yaml/traefik/values.yaml stable/traefik
 
 ## MongoDB
 
@@ -176,7 +181,7 @@ Once done open the `./enterprise/yaml/mongodb/volume.yaml` file and make sure to
 
 After modified properly you can go ahead with creating the PV.
 
-    kubectl create -f ./enterprise/yaml/mongodb/volume.yaml
+    kubectl create -n kerberos -f ./enterprise/yaml/mongodb/volume.yaml
 
 Have a look into the `./enterprise/yaml/mongodb/values.yaml` file, you will find plenty of configurations for your MongoDB instance. You will also find the attribute where you can change the root password of MongoDB. 
 
@@ -185,7 +190,7 @@ Have a look into the `./enterprise/yaml/mongodb/values.yaml` file, you will find
 
 Once installed succesfully the MongoDB instance, we should copy the password of the MongoDB instance. Once revealed copy the password, as we will need in the next steps.
 
-    export MONGODB_ROOT_PASSWORD=$(kubectl get secret --namespace default mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
+    export MONGODB_ROOT_PASSWORD=$(kubectl get secret -n kerberos mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
     echo $MONGODB_ROOT_PASSWORD
 
 ## Kerberos Enterprise Web App - The Factory
@@ -222,7 +227,7 @@ Modify the MongoDB credentials, and make sure they match the credentials of your
 
 Once you have corrected the DNS names (or internal /etc/hosts file), install the Factory web app inside your cluster.
 
-    kubectl apply -f ./enterprise/yaml/factory/deployment.yaml
+    kubectl apply -n kerberos -f ./enterprise/yaml/factory/deployment.yaml
 
 ## Test out configuration
 
