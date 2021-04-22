@@ -6,7 +6,7 @@ export const wrapper = {
   color: "#fff",
   position: 'relative',
   zIndex: 1,
-  borderBottom: t => `1px solid ${t.colors.border}`,
+  //borderBottom: t => `1px solid ${t.colors.border}`,
   padding: '15px 0',
   fontFamily: 'Inter var,sans-serif',
 }

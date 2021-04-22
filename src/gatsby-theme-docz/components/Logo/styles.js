@@ -31,10 +31,10 @@ export const img = {
 }
 
 export const circle = {
-    display: 'table',
-    background: '#fff',
-    margin: '-10px 20px 0 0',
-    borderRadius: '50%',
-    padding: '10px',
-    float: 'left',
+  display: 'table',
+  background: '#fff',
+  margin: '-10px 20px 0 0',
+  borderRadius: '50%',
+  padding: '10px',
+  float: 'left',
 }
