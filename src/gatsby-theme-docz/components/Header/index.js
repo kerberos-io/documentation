@@ -74,7 +74,7 @@ export const Header = props => {
       <div>
 
       <div>
-        <nav sx={styles.primary}>
+        <nav sx={styles.external_links}>
           <div class="box">
             <ul sx={styles.links}>
               <li sx={styles.linksli}>

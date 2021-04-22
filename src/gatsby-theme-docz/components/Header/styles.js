@@ -16,7 +16,7 @@ export const innerContainer = {
   px: 4,
   position: 'relative',
   justifyContent: 'space-between',
-  height: 80,
+  height: 60, // 80
   [media.tablet]: {
     height: 51,
   },
@@ -70,9 +70,8 @@ export const editButton = {
   borderRadius: 'radius',
 }
 
-export const primary = {
-  background: '#fff',
-  borderBottom: '1px solid #e5e5e5',
+export const external_links = {
+  borderBottom: t => `1px solid ${t.colors.border}`,
   boxShadow: '0 -5px 0 rgba(0,0,0,.03)',
   float: 'left',
   minHeight: '2.35em',
@@ -143,7 +142,7 @@ export const linksa = {
   margin: '0 25px 0 0',
   width: 'auto',
   fontFamily: 'Inter var,sans-serif',
-  color: '#943633',
+  color: 'sidebar.navLinkActive',
   display: 'block',
   fontWeight: '600',
   letterSpacing: '1px',
