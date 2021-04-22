@@ -78,7 +78,7 @@ export const Header = props => {
           <div class="box">
             <ul sx={styles.links}>
               <li sx={styles.linksli}>
-                <a sx={styles.linksa} href="http://kerberos.io" title="Welcome">Welcome</a>
+                <a sx={styles.linksa} href="http://kerberos.io" title="Homepage">Homepage</a>
               </li>
               <li sx={styles.linksli}>
                 <a sx={styles.linksa} href="http://cloud.kerberos.io" title="Cloud">Cloud</a>

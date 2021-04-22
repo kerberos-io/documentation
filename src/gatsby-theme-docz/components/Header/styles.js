@@ -8,6 +8,7 @@ export const wrapper = {
   zIndex: 1,
   borderBottom: t => `1px solid ${t.colors.border}`,
   padding: '15px 0',
+  fontFamily: 'Inter var,sans-serif',
 }
 
 export const innerContainer = {
@@ -70,23 +71,23 @@ export const editButton = {
 }
 
 export const primary = {
-    background: '#fff',
-    borderBottom: '1px solid #e5e5e5',
-    boxShadow: '0 -5px 0 rgba(0,0,0,.03)',
-    float: 'left',
-    minHeight: '2.35em',
-    position: 'relative',
-    zIndex: '999',
-    width: '100%',
+  background: '#fff',
+  borderBottom: '1px solid #e5e5e5',
+  boxShadow: '0 -5px 0 rgba(0,0,0,.03)',
+  float: 'left',
+  minHeight: '2.35em',
+  position: 'relative',
+  zIndex: '999',
+  width: '100%',
 }
 
 export const branches = {
-    float: 'left',
-    background: '0 0',
-    border: '0',
-    boxShadow: 'none',
-    display: 'block',
-    margin: '0px !important',
+  float: 'left',
+  background: '0 0',
+  border: '0',
+  boxShadow: 'none',
+  display: 'block',
+  margin: '0px !important',
 }
 
 export const branchesli = {
@@ -101,7 +102,7 @@ export const branchesa = {
   fontSize: '12px',
   margin: '0 25px 0 0',
   width: 'auto',
-  fontFamily: 'Source Sans Pro,sans-serif',
+  fontFamily: 'Inter var,sans-serif',
   color: '#943633',
   display: 'block',
   fontWeight: '600',
@@ -111,12 +112,12 @@ export const branchesa = {
 }
 
 export const links = {
-    float: 'right',
-    background: '0 0',
-    border: '0',
-    boxShadow: 'none',
-    display: 'block',
-    margin: '0px !important',
+  float: 'right',
+  background: '0 0',
+  border: '0',
+  boxShadow: 'none',
+  display: 'block',
+  margin: '0px !important',
 }
 
 export const linksli = {
@@ -141,7 +142,7 @@ export const linksa = {
   fontSize: '12px',
   margin: '0 25px 0 0',
   width: 'auto',
-  fontFamily: 'Source Sans Pro,sans-serif',
+  fontFamily: 'Inter var,sans-serif',
   color: '#943633',
   display: 'block',
   fontWeight: '600',
