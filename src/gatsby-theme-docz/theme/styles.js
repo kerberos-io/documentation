@@ -4,7 +4,7 @@ const styles = {
     maxWidth: 920, // 1280
   },
   root: {
-    fontSize: 3,
+    fontSize: '18px',
     color: 'text',
     bg: 'background',
   },
@@ -17,22 +17,30 @@ const styles = {
     },
   },
   h1: {
-    fontSize: 6,
+    fontSize: '36px',
+    marginTop: '16px',
+    marginBottom: '30px',
+    fontFamily: 'Inter var',
   },
   h2: {
-    fontSize: 5,
+    fontSize: '30px',
+    fontFamily: 'Inter var',
   },
   h3: {
-    fontSize: 4,
+    fontSize: '24px',
+    fontFamily: 'Inter var',
   },
   h4: {
-    fontSize: 3,
+    fontSize: '20px',
+    fontFamily: 'Inter var',
   },
   h5: {
     fontSize: 2,
+    fontFamily: 'Inter var',
   },
   h6: {
     fontSize: 1,
+    fontFamily: 'Inter var',
   },
   li: {
     marginBottom: 1,

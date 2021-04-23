@@ -6,6 +6,7 @@ export const link = {
   fontSize: 2,
   '&.active': {
     color: 'sidebar.navLinkActive',
+    fontWeight: '700',
   },
 }
 
@@ -17,13 +18,14 @@ export const smallLink = {
   color: 'sidebar.tocLink',
   '&.active': {
     color: 'sidebar.tocLinkActive',
+    fontWeight: '500',
   },
   '&.active::before': {
     content: '""',
     position: 'absolute',
     display: 'block',
     top: '2px',
-    left: -2,
+    left: '-12px',
     height: '1rem',
     backgroundColor: 'primary',
     transition: 'width 200ms ease 0s',
