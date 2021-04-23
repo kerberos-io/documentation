@@ -36,9 +36,6 @@ html { font-family: 'Inter', sans-serif; }
   --card-footer-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.07);
   --box-shadow: 0 4px 34px 0 rgba(0, 0, 0, 0.04), 0 3px 4px 0 rgba(0, 0, 0, 0.1);
   --modal-shadow: 0 4px 34px 0 rgba(0, 0, 0, 0.24), 0 3px 4px 0 rgba(0, 0, 0, 0.2);
-
-  /* Docs variables */
-  --theme-ui-colors-text: var(var(--text-muted));
 }
 
 ul {

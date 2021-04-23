@@ -1,6 +1,7 @@
 import * as mixins from '~utils/mixins'
 import { media } from '~theme/breakpoints'
 
+// header wrapper
 export const wrapper = {
   bg: 'header.bg',
   color: "#fff",
@@ -11,6 +12,7 @@ export const wrapper = {
   fontFamily: 'Inter var,sans-serif',
 }
 
+// container for inner items (logo, social links)
 export const innerContainer = {
   ...mixins.centerAlign,
   px: 4,
@@ -42,14 +44,15 @@ export const menuButton = {
   cursor: 'pointer',
 }
 
+// social icons
 export const headerButton = {
   ...mixins.centerAlign,
   outline: 'none',
   p: '12px',
   border: 'none',
   borderRadius: 9999,
-  bg: '#fff', //'header.button.bg',
-  color: '#943733', //'header.button.color',
+  bg: 'header.button.bg', //'#fff', //'header.button.bg',
+  color: 'header.button.color',//'#943733', //'header.button.color',
   fontSize: 0,
   fontWeight: 600,
   cursor: 'pointer',
@@ -70,6 +73,7 @@ export const editButton = {
   borderRadius: 'radius',
 }
 
+// links to homepage, cloud, github, help
 export const external_links = {
   borderBottom: t => `1px solid ${t.colors.border}`,
   boxShadow: '0 -5px 0 rgba(0,0,0,.03)',
@@ -119,6 +123,7 @@ export const links = {
   margin: '0px !important',
 }
 
+// external links
 export const linksli = {
   padding: '25px 0',
   width: 'auto',
@@ -126,6 +131,7 @@ export const linksli = {
   listStyle: 'none',
 }
 
+// external links (hidden on mobile)
 export const linksli2 = {
   padding: '25px 0',
   width: 'auto',

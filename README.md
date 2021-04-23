@@ -20,3 +20,9 @@ For a static site build:
 
     $ yarn build
 
+
+## Notes
+
+**Theme colors** are defined in `/doczrc.js` > `themeConfig > colors`, which can then be used in `styles.js` of underlying components.
+
+**Inherited layout files** in `node_modules/gatsby-theme-docz/src/components/`.
