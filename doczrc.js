@@ -1,4 +1,5 @@
 export default {
+  ignore: ['README.md', 'CONTRIBUTING.md'],
   menu: [
     'Introduction',
     'How it works',
