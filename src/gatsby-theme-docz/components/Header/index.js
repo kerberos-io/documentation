@@ -83,10 +83,10 @@ export const Header = props => {
               <li sx={styles.linksli}>
                 <a sx={styles.linksa} href="http://cloud.kerberos.io" title="Cloud">Cloud</a>
               </li>
-              <li sx={styles.linksli2}>
+              <li sx={styles.linksli}>
                 <a sx={styles.linksa} target="_blank" href="https://github.com/kerberos-io" rel="noopener noreferrer" title="Github">Github</a>
               </li>
-              <li sx={styles.linksli2}>
+              <li sx={styles.linksli}>
                 <a sx={styles.linksa} target="_blank" href="https://kerberosio.zendesk.com/" rel="noopener noreferrer" title="Zendesk">Help</a>
               </li>
             </ul>
