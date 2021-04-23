@@ -15,7 +15,7 @@ cloud providers (Digital Ocean, Scaleway, etc) or on-premise in your own private
 <div class='embed-container'><iframe src="https://player.vimeo.com/video/404813147" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
 <br/><br/>
 
-# Installation
+## Installation
 
 Before setting up Kerberos Enterprise, some configuration needs to happen. First thing that we need to do is setting up the RBAC permissions (Role Based Access Control). We need to enable this to be able to query specific endpoints from the Kubernetes API. By default these endpoints are locked, so we need to unlock them.
 
@@ -37,7 +37,7 @@ Next go into the directory and execute the first Kubernetes configuration file `
 
 This will make several actions inside your cluster available. We need this to be able to create deployments from the factory web app.
 
-## Helm
+### Helm
 
 Next we will install a couple of dependencies which are required for Kerberos Enterprise. [**Helm**](https://helm.sh/) is a package manager for Kubernetes, it helps you setting up services more easily (this could be a MQTT broker, a database, etc).
 Instead of writing yaml files for every service we need, we use so called **Charts** (libraries), that you can reuse and configure the,
@@ -53,7 +53,7 @@ Use one of the preferred OS package managers to install the Helm client:
 
     gofish install helm
 
-## Traefik
+### Traefik
 
 [**Traefik**](https://containo.us/traefik/) is a reverse proxy and load balancer which allows you to expose your deployments more easily. Kerberos uses Traefik to expose it's APIs more easily.
 
@@ -82,7 +82,7 @@ After installation you should have an IP attached to traefik service, look for i
 
 Go to your DNS provider and link the domain you've configured in the first step `traefik.domain.com` to the IP address of the `EXTERNAL-IP` attribute. When browsing to `traefik.domain.com`, you should see the traefik dashboard showing up.
 
-## Ingress-Nginx (alternative for Traefik)
+### Ingress-Nginx (alternative for Traefik)
 
 If you don't like `Traefik` but you prefer `Ingress Nginx`, that works as well.
 
@@ -90,7 +90,7 @@ If you don't like `Traefik` but you prefer `Ingress Nginx`, that works as well.
     helm repo update
     helm install ingress-nginx -n kerberos ingress-nginx/ingress-nginx
 
-## MongoDB
+### MongoDB
 
 When using Kerberos Enterprise, it will generate configurations for every surveillance camera deployed. These configuration files are stored centrally in a MongoDB database. Therefore we use `helm `to install a MongoDB instance inside your cluster.
 
@@ -104,7 +104,7 @@ Once installed succesfully the MongoDB instance, we should copy the password of 
     export MONGODB_ROOT_PASSWORD=$(kubectl get secret -n kerberos mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
     echo $MONGODB_ROOT_PASSWORD
 
-## Kerberos Enterprise Web App - The Factory
+### Kerberos Enterprise Web App - The Factory
 
 The last step is to install the Kerberos Enterprise application. Kerberos Enterprise is managed through an application which we call the `Factory`. It is responsible for initiating the deployments inside your cluster. These deployments is what we also call (similar to the Open Source version) the machinery.
 

@@ -1,4 +1,5 @@
 export default {
+  ignore: ['README.md', 'CONTRIBUTING.md'],
   menu: [
     'Introduction',
     'How it works',
@@ -13,12 +14,17 @@ export default {
   themeConfig: {
     colors: {
       primary: '#943733',
-      secondary: '#9e9e9e',
+      secondary: '#772824',
+      //text: '#6D6666',
       h5: {
         color: '#943733',
       },
       header: {
         bg: '#943733',
+        button: {
+          bg: '#fff',
+          color: '#943733',
+        }
       },
       sidebar: {
         bg: '#f9f9f9',
@@ -26,13 +32,18 @@ export default {
       },
       modes: {
         dark: {
-          primary: '#9e9e9e',
-          secondary: '#943733',
+          primary: '#AF79CE',
+          secondary: '#9F4DCE',
+          //text: '#D9D6D6',
           header: {
-            bg: '#943733',
+            bg: '#57356B',
+            button: {
+              bg: '#1D2330',
+              color: '#AF79CE',
+            }
           },
           sidebar: {
-            navLinkActive: '#fff',
+            navLinkActive: '#AF79CE',
           },
         },
       },
