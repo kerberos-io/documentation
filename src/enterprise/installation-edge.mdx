@@ -1,5 +1,5 @@
 ---
-name: Installation - Edge
+name: Installation – Edge
 menu: Enterprise
 route: /enterprise/installation-edge
 ---
@@ -14,15 +14,15 @@ Welcome to the Kerberos Enterprise Edge installation. This is the way to go if y
 
 Before we can actual start installing the different deployments in our cluster, we need to make sure we have one available.
 
-# Prerequisites
+## Prerequisites
 
-## Docker
+### Docker
 
 If you have a fresh Linux installation, make sure you have Docker installed. If not the case, this is how you can install it on a Ubuntu OSS.
 
     apt install docker.io -y
 
-## Kubernetes
+### Kubernetes
 
 After Docker being installed go ahead and install the different Kubernetes servicess and tools.
 
@@ -40,7 +40,7 @@ And if you want to make it permanent after every boot.
 
     sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
-# Installation
+## Installation
 
 Before initiating a new Kubernetes cluster, make sure you have properly cleaned up previous installation (if this was the case ofc).
 
@@ -76,20 +76,20 @@ Now we have a Kubernetes cluster, we need to make sure we add make it available 
     cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     chown $(id -u):$(id -g) $HOME/.kube/config
 
-## Untaint all nodes
+### Untaint all nodes
 
 By default, and in this example, we only have one node our master node. In a production scenario we would have additional worker nodes. By default the master nodes are marked as `tainted`, this means they cannot run workloads. To allow master nodes to run workloads, we need to untaint them. If we wouldn't do this our pods would never be scheduled, as we do not have worker nodes at this moment.
 
     kubectl taint nodes --all node-role.kubernetes.io/master-
 
-## Calico
+### Calico
 
 Calico is an open source networking and network security solution for containers, virtual machines, and native host-based workloads. (https://www.projectcalico.org/). We will use it as our network layer in our Kubernetes cluster. You could use otthers like Flannel aswell, but we prefer Calico.
 
     curl https://docs.projectcalico.org/manifests/calico.yaml -O
     kubectl apply -f calico.yaml
 
-## Kerberos Enterprise
+### Kerberos Enterprise
 
 Before setting up Kerberos Enterprise, some configuration needs to happen. First thing that we need to do is setting up the RBAC permissions (Role Based Access Control). We need to enable this to be able to query specific endpoints from the Kubernetes API. By default these endpoints are locked, so we need to unlock them.
 
@@ -103,7 +103,7 @@ A best practice is to create a separate namespace for your enterprise deployment
 
 This will make several actions, permissions, inside your cluster available. We need this to be able to create deployments from the Kerberos Enterprise web app.
 
-## MetalLB
+### MetalLB
 
 In the Edge world, we do not have fancy Load balancers and Public IP from which we can benefit. To overcome this solutions such as MetalLB - Baremetal Load Balancer - have been developed (https://metallb.universe.tf/installation/). MetalLB will dedicate an internal IP address, or IP range, which will be assigned to one or more Load Balancers.
 
@@ -130,7 +130,7 @@ You can change the IP range above to match your needs. MetalLB will use this ran
 
     kubectl apply -n kerberos -f ./enterprise/yaml/metallb/configmap.yaml
 
-## Helm
+### Helm
 
 Before we can start with the real work, I know we had to do a lot of preparation, we have to install another helpful tool `Helm`. Helm is a package manager for Kubernetes, and really makes you life easier.
 
@@ -140,7 +140,7 @@ Before we can start with the real work, I know we had to do a lot of preparation
 
 This will make sure helm 3 is installed.
 
-## Traefik
+### Traefik
 
 To access the Kerberos Enterprise web application, we will create a service in the next paragraphs. This service will expose the web application as an Ingress. Thanks to our previous installation with MetalLB and Traefik (what we will do now), we will have a neat solution for managing our hostnames and Load Balancing IPs.
 
@@ -149,7 +149,7 @@ The idea is that Traefik, will have a dedicated IP address assigned from MetalLB
     helm repo add stable https://charts.helm.sh/stable
     helm install -n kerberos traefik -f ./enterprise/yaml/traefik/values.yaml stable/traefik
 
-## MongoDB
+### MongoDB
 
 When using Kerberos Enterprise, it will generate configurations for every surveillance camera deployed. These configuration files are stored centrally in a MongoDB database. Therefore we use `helm` to install a MongoDB instance inside your cluster.
 
@@ -193,7 +193,7 @@ Once installed succesfully the MongoDB instance, we should copy the password of 
     export MONGODB_ROOT_PASSWORD=$(kubectl get secret -n kerberos mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
     echo $MONGODB_ROOT_PASSWORD
 
-## Kerberos Enterprise Web App - The Factory
+### Kerberos Enterprise Web App - The Factory
 
 The last step is to install the Kerberos Enterprise application. Kerberos Enterprise is managed through an application which we call the `Factory`. It is responsible for initiating the deployments inside your cluster. These deployments is what we also call (similar to the Open Source version) the machinery.
 
