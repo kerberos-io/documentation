@@ -14,6 +14,7 @@ export default {
     colors: {
       primary: '#943733',
       secondary: '#772824',
+      //text: '#6D6666',
       h5: {
         color: '#943733',
       },
@@ -32,6 +33,7 @@ export default {
         dark: {
           primary: '#AF79CE',
           secondary: '#9F4DCE',
+          //text: '#D9D6D6',
           header: {
             bg: '#57356B',
             button: {
