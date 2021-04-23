@@ -12,13 +12,13 @@ If not already the case, start by installing a Kubernetes cluster. This can be d
 <div class='embed-container'><iframe src="https://player.vimeo.com/video/404813147" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
 <br/><br/>
 
-# Prerequisites
+## Prerequisites
 
 Kerberos Storage is the storage component for Kerberos Enterprise. It is used to store your recordings at a central place, in the storage system you prefer. Next to that it can be used for extension and integration capabilities. Learn more about [Kerberos Storage here](/storage).
 
 To use Kerberos Storage, you will need to have Kerberos Enterprise installed, and deployments running. Independent from that one can also use the Kerberos Storage API `/swagger/index.html` to send recordings from a custom build VMS.
 
-# Installation
+## Installation
 
 Similar to Kerberos Enterprise, Kerberos Storage, requires some initial components to be installed. If you will run Kerberos Storage in the same cluster as where you have Kerberos Enterprise running, there is not much to do.
 
@@ -34,7 +34,7 @@ Once this is done start by cloning the configurations from our [Github repo](htt
 
     git clone https://github.com/kerberos-io/storage
 
-## Storage
+### Storage
 
 Similar to Kerberos Enterprise, Kerberos Storage is managed through a web app. It allows you to add storage providers (S3, minio, etc), add queues for messaging, accounts for security and much more. It also comes with API's, which you can use to interact and retrieve information from Kerberos Storage. All is documented in the form of Swagger APIs `/swagger/index.html`.
 
