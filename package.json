@@ -1,6 +1,6 @@
 {
   "name": "@hyas/doks",
-  "description": "Doks theme",
+  "description": "Kerberos.io documentation",
   "version": "0.2.3",
   "hugo-bin": {
     "buildTags": "extended"
