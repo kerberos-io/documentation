@@ -13,46 +13,27 @@ weight: 100
 toc: true
 ---
 
-## Get started
+# Introduction
 
-There are two main ways to get started with Doks:
+The **Kerberos(dot)io** project, is a video surveillance solution, which was initiated back in 2014. Over the years it has evolved into a trusted, stable and feature-rich video surveillance system. To set the expectations, watch the video below to understand what it can and can't do. If you want to install Kerberos(dot)io, it's recommended to have a look [at the architectures page](/architectures) to find the best solution for your usecase.
 
-### Tutorial
+<div class='embed-container'><iframe src='https://player.vimeo.com/video/382090189?background=1' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-{{< alert icon="👉" text="The Tutorial is intended for novice to intermediate users." >}}
+## The name: Kerberos.io
 
-Step-by-step instructions on how to start a new Doks project. [Tutorial →](https://getdoks.org/tutorial/introduction/)
+Many people are confused, and don't understand why this project is called Kerberos(dot)io. If you've been in the IT world for a while you will notice that Kerberos is already used for the authentication protocol [Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol)).
+We believe that the name Kerberos(dot)io makes sense for this project as well, with a strong emphasize on the suffix **.io**, which stands for input and output devices (e.g. any type of camera). Kerberos(dot)io can be seen as a kind of security protocol driven by hardware devices such as surveillance cameras. To make writing easier we will from now on, refer to Kerberos instead of Kerberos(dot)io.
 
-### Quick Start
+## Why Kerberos
 
-{{< alert icon="👉" text="The Quick Start is intended for intermediate to advanced users." >}}
+As burglary is very common, we believe that video surveillance is a trivial tool in our daily lifes which helps us to feel a little bit more secure. Responding to this need, a lot of companies have started developing their own video surveillance software in the past few years.
 
-One page summary of how to start a new Doks project. [Quick Start →]({{< relref "quick-start" >}})
+Nowadays we have a myriad of expensive cameras, recorders, and software solutions which are mainly outdated and difficult to install and use. Kerberos goal is to solve these problems and to provide every human being or enterprise in this world to have their own ecological, affordable, easy-to-use and innovative surveillance solution.
 
-## Go further
+## What is Kerberos
 
-Recipes, Reference Guides, Extensions, and Showcase.
+Kerberos is a video surveillance solution, that uses computer vision algorithms to detect changes, and that can trigger actions (notifications, api, etc). It comes in two flavors, Kerberos Open Source and Kerberos Enterprise. Kerberos can be deployed to any ARM device, Linux OS, Docker, Balenca Cloud, or cluster such as Kubernetes.
 
-### Recipes
+### Kerberos Agent
 
-Get instructions on how to accomplish common tasks with Doks. [Recipes →](https://getdoks.org/docs/recipes/project-configuration/)
-
-### Reference Guides
-
-Learn how to customize Doks to fully make it your own. [Reference Guides →](https://getdoks.org/docs/reference-guides/security/)
-
-### Extensions
-
-Get instructions on how to add even more to Doks. [Extensions →](https://getdoks.org/docs/extensions/breadcrumb-navigation/)
-
-### Showcase
-
-See what others have build with Doks. [Showcase →](https://getdoks.org/showcase/electric-blocks/)
-
-## Contributing
-
-Find out how to contribute to Doks. [Contributing →](https://getdoks.org/docs/contributing/how-to-contribute/)
-
-## Help
-
-Get help on Doks. [Help →]({{< relref "how-to-update" >}})
+When you install Kerberos Open Source or Kerberos Enterprise we will refer to it as the Kerberos agent. A Kerberos agent, is a software solution that processes the video stream of a single surveillance camera, makes and visualises recordings and takes actions (for example sending notifications).
