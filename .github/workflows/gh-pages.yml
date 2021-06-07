@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - main  # Set a branch to deploy
+      - move-to-hugo-doks
   pull_request:
 
 jobs:
