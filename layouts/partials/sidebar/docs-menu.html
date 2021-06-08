@@ -5,7 +5,6 @@
   <ul class="list-unstyled">
     {{ range .Children -}}
       {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
-      {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
       <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
     {{ end -}}
   </ul>
