@@ -10320,8 +10320,8 @@ table {
   margin-top: 4px; }
 
 .header-bar {
-  border-top: 4px solid;
-  border-image-source: linear-gradient(90deg, #5d2f86, #8ed6fb 50%, #d32e9d);
+  border-top: 6px solid;
+  border-image-source: linear-gradient(90deg, #84559f 0%, #b255b4 58.33%, #943734 100%);
   border-image-slice: 1; }
 
 .home .navbar {

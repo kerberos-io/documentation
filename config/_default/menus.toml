@@ -2,23 +2,27 @@
   name = "Prologue"
   weight = 10
   identifier = "prologue"
-  url = "/docs/prologue/"
-
-[[docs]]
-  name = "Help"
-  weight = 60
-  identifier = "help"
-  url = "/docs/help/"
+  url = "/prologue/"
 
 [[main]]
-  name = "Docs"
-  url = "/docs/prologue/introduction/"
+  name = "Products"
+  url = "https://staging.kerberos.live"
   weight = 10
 
 [[main]]
   name = "Blog"
-  url = "/blog/"
-  weight = 20
+  url = "https://staging.kerberos.live"
+  weight = 11
+
+[[main]]
+  name = "Docs & Guides"
+  url = "/prologue/introduction/"
+  weight = 12
+
+[[main]]
+  name = "About & Contact"
+  url = "https://staging.kerberos.live"
+  weight = 13
 
 [[social]]
   name = "Twitter"

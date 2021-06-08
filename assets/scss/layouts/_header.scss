@@ -73,8 +73,8 @@
 }
 
 .header-bar {
-  border-top: 4px solid;
-  border-image-source: linear-gradient(90deg, $primary, #8ed6fb 50%, #d32e9d);
+  border-top: 6px solid;
+  border-image-source: linear-gradient(90deg, rgb(132, 85, 159) 0%, rgb(178, 85, 180) 58.33%, rgb(148, 55, 52) 100%);
   border-image-slice: 1;
 }
 
