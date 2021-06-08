@@ -83,7 +83,7 @@ Source:
   });
 
   var docs = [
-    {{ range $index, $page := (where .Site.Pages "Section" "docs") -}}
+    {{ range $index, $page := .Site.Pages -}}
       {
         id: {{ $index }},
         href: "{{ .RelPermalink | relURL }}",
