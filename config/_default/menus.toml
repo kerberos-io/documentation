@@ -4,6 +4,12 @@
   identifier = "prologue"
   url = "/prologue/"
 
+[[docs]]
+  name = "Opensource"
+  weight = 11
+  identifier = "opensource"
+  url = "/opensource/"
+
 [[main]]
   name = "Products"
   url = "https://staging.kerberos.live"

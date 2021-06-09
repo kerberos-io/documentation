@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
-description: "Doks is a Hugo theme helping you build modern documentation websites that are secure, fast, and SEO-ready — by default."
-lead: "Doks is a Hugo theme helping you build modern documentation websites that are secure, fast, and SEO-ready — by default."
+description: "A brief introduction into the world of Kerberos.io"
+lead: ""
 date: 2020-10-06T08:48:57+00:00
 lastmod: 2020-10-06T08:48:57+00:00
 draft: false
@@ -12,8 +12,6 @@ menu:
 weight: 100
 toc: true
 ---
-
-# Introduction
 
 The **Kerberos(dot)io** project, is a video surveillance solution, which was initiated back in 2014. Over the years it has evolved into a trusted, stable and feature-rich video surveillance system. To set the expectations, watch the video below to understand what it can and can't do. If you want to install Kerberos(dot)io, it's recommended to have a look [at the architectures page](/architectures) to find the best solution for your usecase.
 
