@@ -13,39 +13,28 @@ weight: 302
 toc: true
 ---
 
-Kerberos Open Source (v3) is the next generation of Kerberos.io, and is the successor of (v1/v2). More specifically it will replace and merge the [machinery](https://github.com/kerberos-io/machinery) and [web](https://github.com/kerberos-io/web) repositories. A switch in technologies and architecture has been made. Version 3 is still under active development, and not yet released. The progress can be followed at the [develop branch](https://github.com/kerberos-io/opensource/tree/develop) and [project overview](https://github.com/kerberos-io/opensource/projects/1).
+Kerberos Enterprise can be installed where Kubernetes can be installed. This means that it can run at the Edge - Baremetal -, in the cloud - VMs - or at Kubernetes service providers - SAAS - such as GCP, Azure, AWS, DigitalOcean, and the list goes on.
 
-## What is changing?
+Although you might except Kubernetes at the Edge or Kubernetes in the cloud, there are no differences, well sorry to say there are. As Kubernetes service providers implemented features such as LoadBalancers, Persistent Volumes, and others, they have automated and integrated a huge portion of the Kubernetes stack with their related PAAS services. To be more concrete if you are running a Kubernetes Cluster on GCP, you will use the LoadBalancing and Storage services from GCP.
 
-At the bottom line, we are rebuilding the project from scratch using a different technology stack. We are saying goodbye to C++, PHP (Laravel), BackboneJS and saying hello to Golang and React. Despite the technology changes, we are also changing the architecture, we have put in place a couple of years ago. The biggest change is to run the show inside a single repository, and no longer over seperate repos (machinery and web). Read more about this in the FAQ.
+![enterprise kubernetes](../../public/images/kerberos-enterprise-kubernetes.png)
 
-![Kerberos Open Source v2 - vs - v3](../public/images/kerberos-agent-v2-v3.png)
+Compared to Kubernetes at the Edge, there are no predefined LoadBalancers, Storage capabilities, and more. This means more administration work for you, but - with great power comes great responsibility - so no worries. In the end there are alternative functionalties available, for features which you find out-of-the-box at the Kubernetes service providers, you just have to spend more time on configuring and installing those services/pods/deployments yourself.
 
-## FAQ
+## Installation on a Kubernetes Service Provider
 
-### 1. Why a mono repo?
+Installing Kerberos Enterprise on a Kubernetes Service Provider (Azure, GCP, AWS) is straight forward, as you can create a Kubernetes cluster in a few clicks, get access to public Load Balancers, storage and more. Running Kerberos Enterprise in such a cluster is just a matter of copy-pasting some configuration (yaml) files, and executing some `kubectl apply` commands.
 
-We have noticed in the past (v1 and v2) splitting the repositories (machinery and web), created a lot of confusion within our community. People didn't understand the different versions and so on. This caused a lack of collaboration, and made it impossible for some people to collaborate and contribute.
+![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes-cloud.png)
 
-Having a mono repo, which is well organised, simplifies the entry point for new people who would like to use, understand and/or contribute to Kerberos Open Source.
+Install Kerberos Enterprise on a Kubernetes Service Provider by [following this step-by-step installation guide](/enterprise/installation-cloud).
 
-### 2. Why a change in technologies?
+## Installation in Private Cloud or Baremetal
 
-In previous versions (v1 and v2) we used technologies like C++, PHP and BackboneJS. 7 years ago this was still acceptable, however time has changed and new technologies such as React and Golang became very popular.
+No need to install Kerberos Enterprise on a Kubernetes Service Provider, you could install it on your own Kubernetes cluster in your private cloud, or even better inside your own premise. The closer you bring Kerberos Enterprise to your surveillance infrastructure, the more benefits you will experience (low latency, low bandwidth, etc).
 
-Due to previous reason we have decided to rebuild the Kerberos Open Source technology from scratch, taking into account all the feedback we acquired over the years. Having these technologies available, we will enable more people to contribute and use our technology.
+![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes.png)
 
-### 3. What is the difference with Kerberos Enterprise?
+In contradiction to the Kubernetes Service Provider, you will have some work todo. Setting up Kubernetes Cluster, play with MetalLB, Persistent Volumes and claims. Don't be scared, it's pretty ssttraight forward as well. You can't simple expect a: click, click, 💥 approach.
 
-We started the developments of Kerberos Enterprise a year ago (January, 2020), our focus here was scalability, and fast development and easy deployment. We noticed that with technologies such as Golang and React, we can still provide a highly performant video surveillance system.
-
-Kerberos Open Source will use the same technology stack, and some code pieces, of Kerberos Enterprise which we have already build. We have a very clear now, of how a well developed and documented video surveillance system needs to look like.
-
-### 4. When are we going to be able to install the first version?
-
-We plan to ship the **first version by the end of Q1**, afterwards we will add more and more features as usual.
-
-
-### 5. Change in License
-
-Kerberos Open Source (v3) is now available under the MIT license.
+Install Kerberos Enterprise on a Private cloud or Baremetal by [following this step-by-step installation guide](/enterprise/installation-edge).

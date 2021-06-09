@@ -13,39 +13,87 @@ weight: 304
 toc: true
 ---
 
-Kerberos Open Source (v3) is the next generation of Kerberos.io, and is the successor of (v1/v2). More specifically it will replace and merge the [machinery](https://github.com/kerberos-io/machinery) and [web](https://github.com/kerberos-io/web) repositories. A switch in technologies and architecture has been made. Version 3 is still under active development, and not yet released. The progress can be followed at the [develop branch](https://github.com/kerberos-io/opensource/tree/develop) and [project overview](https://github.com/kerberos-io/opensource/projects/1).
+Welcome to the Kerberos Storage Edge installation. This is the way to go if you want to install Kerberos Storage on your Baremetal infrastructure or inside your Private Cloud.
 
-## What is changing?
+![architecture kubernetes](../../public/images/kerberos-storage-architecture-kubernetes-edge.png)
 
-At the bottom line, we are rebuilding the project from scratch using a different technology stack. We are saying goodbye to C++, PHP (Laravel), BackboneJS and saying hello to Golang and React. Despite the technology changes, we are also changing the architecture, we have put in place a couple of years ago. The biggest change is to run the show inside a single repository, and no longer over seperate repos (machinery and web). Read more about this in the FAQ.
+Before we can actual start installing the different deployments in our cluster, we need to make sure we have one available.
 
-![Kerberos Open Source v2 - vs - v3](../public/images/kerberos-agent-v2-v3.png)
+## Prerequisites
 
-## FAQ
+Kerberos Storage is the storage component for Kerberos Enterprise. It is used to store your recordings at a central place, in the storage system you prefer. Next to that it can be used for extension and integration capabilities. Learn more about [Kerberos Storage here](/storage).
 
-### 1. Why a mono repo?
+To use Kerberos Storage, you will need to have Kerberos Enterprise installed, and deployments running. Independent from that one can also use the Kerberos Storage API `/swagger/index.html` to send recordings from a custom build VMS.
 
-We have noticed in the past (v1 and v2) splitting the repositories (machinery and web), created a lot of confusion within our community. People didn't understand the different versions and so on. This caused a lack of collaboration, and made it impossible for some people to collaborate and contribute.
+## Installation
 
-Having a mono repo, which is well organised, simplifies the entry point for new people who would like to use, understand and/or contribute to Kerberos Open Source.
+Similar to Kerberos Enterprise, Kerberos Storage, requires some initial components to be installed. If you will run Kerberos Storage in the same cluster as where you have Kerberos Enterprise running, there is not much to do.
 
-### 2. Why a change in technologies?
+However if you plan to run Kerberos Storage in a different cluster (which is perfectly possible), you will need to make sure you complete the initial setup of [Kerberos Enterprise Edge](/enterprise/installation-edge) installation. To be more specific you will need the following components running:
 
-In previous versions (v1 and v2) we used technologies like C++, PHP and BackboneJS. 7 years ago this was still acceptable, however time has changed and new technologies such as React and Golang became very popular.
+- Helm
+- Calico
+- MetalLB
+- MongoDB
+- Traefik
 
-Due to previous reason we have decided to rebuild the Kerberos Open Source technology from scratch, taking into account all the feedback we acquired over the years. Having these technologies available, we will enable more people to contribute and use our technology.
+Once this is done start by cloning the configurations from our [Github repo](https://github.com/kerberos-io/storage).
 
-### 3. What is the difference with Kerberos Enterprise?
+    git clone https://github.com/kerberos-io/storage
 
-We started the developments of Kerberos Enterprise a year ago (January, 2020), our focus here was scalability, and fast development and easy deployment. We noticed that with technologies such as Golang and React, we can still provide a highly performant video surveillance system.
+### Storage
 
-Kerberos Open Source will use the same technology stack, and some code pieces, of Kerberos Enterprise which we have already build. We have a very clear now, of how a well developed and documented video surveillance system needs to look like.
+Similar to Kerberos Enterprise, Kerberos Storage is managed through a web app. It allows you to add storage providers (S3, minio, etc), add queues for messaging, accounts for security and much more. It also comes with API's, which you can use to interact and retrieve information from Kerberos Storage. All is documented in the form of Swagger APIs `/swagger/index.html`.
 
-### 4. When are we going to be able to install the first version?
+Before installing Kerberos Storage, open the `./storage/yaml/deployment.yaml` configuration file. At the bottom file you will find two endpoints, similar to the Traefik config file below. Update the domain names to your own domain, and add these to your DNS server or `/etc/hosts` file (and point to the same IP as the Traefik EXTERNAL-IP).
 
-We plan to ship the **first version by the end of Q1**, afterwards we will add more and more features as usual.
+        spec:
+          rules:
+    -->   - host: storage.domain.com
+            http:
+              paths:
+              - path: /
+                backend:
+                  serviceName: kerberos-storage
+                  servicePort: 80
+    -->   - host: api.storage.domain.com
+            http:
+              paths:
+              - path: /
+                backend:
+                  serviceName: kerberos-storage
+                  servicePort: 8081
 
+Next to that modify the MongoDB credentials, and make sure they match the credentials of your MongoDB instance.
 
-### 5. Change in License
+        - name: MONGODB_USERNAME
+          value: "root"
+        - name: MONGODB_PASSWORD
+    -->   value: "xxxxxxxxxx"
 
-Kerberos Open Source (v3) is now available under the MIT license.
+Once you have corrected the DNS names and MongoDB credentials, install Kerberos Storage inside your cluster.
+
+    kubectl apply -f ./storage/yaml/deployment.yaml
+
+## Test out configuration
+
+If everything worked out as expected, you should now have following services in your cluster:
+
+- MongoDB
+- Traefik
+- Storage
+- Enterprise (optional)
+
+It should look like this.
+
+    $ kubectl get pods
+    NAME                              READY   STATUS    RESTARTS   AGE
+    kerberos-storage-6f5c877d7c-hf77p 1/1     Running   0          2d11h
+    mongodb-55566dc65c-xgmns          2/2     Running   0          4d13h
+    traefik-7d566ccc47-mwslb          1/1     Running   0          4d12h
+
+## Access the system
+
+Once everything is configured correctly your cluster and DNS or `/etc/hosts` file, you should be able to access the Storage application. By navigating to the Storage domain `storage.domain.com` in your browser you will see the Storage login page showing up.
+
+![Storage](../../public/images/factory/kerberos-factory-loginpage.png)

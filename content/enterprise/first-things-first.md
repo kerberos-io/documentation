@@ -13,39 +13,45 @@ weight: 300
 toc: true
 ---
 
-Kerberos Open Source (v3) is the next generation of Kerberos.io, and is the successor of (v1/v2). More specifically it will replace and merge the [machinery](https://github.com/kerberos-io/machinery) and [web](https://github.com/kerberos-io/web) repositories. A switch in technologies and architecture has been made. Version 3 is still under active development, and not yet released. The progress can be followed at the [develop branch](https://github.com/kerberos-io/opensource/tree/develop) and [project overview](https://github.com/kerberos-io/opensource/projects/1).
+Over the years Kerberos evolved into a mature and stable solution. Lots of people and companies started to adopt the system, and requested enhancements. Despite the fact that Kerberos Open Source is stable and feature rich, every
+solution has its limitations, especially if you aim to scale it.
 
-## What is changing?
+That being said, Kerberos Open Source is perfect when monitoring a limited set of surveillance cameras, but it doesn't scale well if you plan to monitor dozens or hundreds of surveillance cameras. Although Kerberos Open Source ships
+as a Docker image, it has no high availability or fail over functionality.
 
-At the bottom line, we are rebuilding the project from scratch using a different technology stack. We are saying goodbye to C++, PHP (Laravel), BackboneJS and saying hello to Golang and React. Despite the technology changes, we are also changing the architecture, we have put in place a couple of years ago. The biggest change is to run the show inside a single repository, and no longer over seperate repos (machinery and web). Read more about this in the FAQ.
+Independent from that we've seen many vendors developing their own custom VMS solutions, usually tightly coupled to there proprietary surveillance hardware, which are delivered to enterprise customers as closed software solutions with limited API's and/or messaging capabilities.
 
-![Kerberos Open Source v2 - vs - v3](../public/images/kerberos-agent-v2-v3.png)
+Due to these reasons we have developed Kerberos Enterprise, Kerberos Storage and Kerberos Cloud, which is an open scalable solution stack, suitable for your ever growing video surveillance landscape, but having extensibility and integration built-in from the ground up.
 
-## FAQ
+The major key differentiators compared to to other solutions are:
 
-### 1. Why a mono repo?
+- Scalability with Kubernetes,
+- Open API's with well documented Swagger API's,
+- Host anywhere, in the cloud or on premise,
+- Integration and extension, allowing to build custom apps, ML services and more.
 
-We have noticed in the past (v1 and v2) splitting the repositories (machinery and web), created a lot of confusion within our community. People didn't understand the different versions and so on. This caused a lack of collaboration, and made it impossible for some people to collaborate and contribute.
+<br/>
+<div class='embed-container'><iframe src="https://player.vimeo.com/video/405037695" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+<br/><br/>
 
-Having a mono repo, which is well organised, simplifies the entry point for new people who would like to use, understand and/or contribute to Kerberos Open Source.
+## Kubernetes
 
-### 2. Why a change in technologies?
+To provide our customer with the high availability and fail over requirements they have, Kerberos Enterprise was built on top of Kubernetes (k8s). This container orchestrator allows us to scale a video surveillance landscape horizontally, and deliver a never-seen high available video surveillance system.
 
-In previous versions (v1 and v2) we used technologies like C++, PHP and BackboneJS. 7 years ago this was still acceptable, however time has changed and new technologies such as React and Golang became very popular.
+![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes.png)
 
-Due to previous reason we have decided to rebuild the Kerberos Open Source technology from scratch, taking into account all the feedback we acquired over the years. Having these technologies available, we will enable more people to contribute and use our technology.
+Kerberos Enterprise is installed inside a Kubernetes cluster. It will create pods/deployments for every surveillance camera you want to monitor. Kubernetes will scale and distrubute these pods across your nodes (VM's/Baremetal machines).
 
-### 3. What is the difference with Kerberos Enterprise?
+Nodes inside your cluster can fail or crash, Kubernetes will make sure the Kerberos pods running on the failed nodes will be deployed to healthy node. This, to make sure the monitoring of your video surveillance cameras continues seamlessly.
 
-We started the developments of Kerberos Enterprise a year ago (January, 2020), our focus here was scalability, and fast development and easy deployment. We noticed that with technologies such as Golang and React, we can still provide a highly performant video surveillance system.
+By having the power to add nodes to your cluster, you can anticipate to the ever growing need of your surveillance cameras. With the Kubernetes tools you can monitor your cluster and get into the details.
 
-Kerberos Open Source will use the same technology stack, and some code pieces, of Kerberos Enterprise which we have already build. We have a very clear now, of how a well developed and documented video surveillance system needs to look like.
+## Cloud or on premise
 
-### 4. When are we going to be able to install the first version?
+You install Kerberos Enterprise inside a Kubernetes cluster, but there are no limitations where this cluster will be actually running. This means that whatever security policy you have within your company, you can run it where you want: on-premise, public cloud, private cloud, etc.
 
-We plan to ship the **first version by the end of Q1**, afterwards we will add more and more features as usual.
+![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes-cloud.png)
 
+## Licensing
 
-### 5. Change in License
-
-Kerberos Open Source (v3) is now available under the MIT license.
+Kerberos Enterprise is publicly available and **does not** require a license key to operate correctly. Everyone can install the Kerberos Enterprise component free of charge.

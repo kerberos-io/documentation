@@ -16,11 +16,23 @@
   identifier = "opensourcev3"
   url = "/opensource-v3/"
 
-  [[docs]]
-    name = "Enterprise"
-    weight = 13
-    identifier = "enterprise"
-    url = "/enterprise/"
+[[docs]]
+  name = "Enterprise"
+  weight = 13
+  identifier = "enterprise"
+  url = "/enterprise/"
+
+[[docs]]
+  name = "Vault"
+  weight = 14
+  identifier = "vault"
+  url = "/vault/"
+
+[[docs]]
+  name = "Hub"
+  weight = 15
+  identifier = "hub"
+  url = "/hub/"
 
 [[main]]
   name = "Products"

@@ -13,39 +13,32 @@ weight: 306
 toc: true
 ---
 
-Kerberos Open Source (v3) is the next generation of Kerberos.io, and is the successor of (v1/v2). More specifically it will replace and merge the [machinery](https://github.com/kerberos-io/machinery) and [web](https://github.com/kerberos-io/web) repositories. A switch in technologies and architecture has been made. Version 3 is still under active development, and not yet released. The progress can be followed at the [develop branch](https://github.com/kerberos-io/opensource/tree/develop) and [project overview](https://github.com/kerberos-io/opensource/projects/1).
+Next to storing your recordings, recycling up is also important. You have to avoid your disk being filled up and locking up the entire system and cluster, or you simply have to reduce cost. To make this possible we offer a recycle service called Kerberos Storage Recycle, which you can use to remove recordings based on different rules.
 
-## What is changing?
+## Recycling rules
 
-At the bottom line, we are rebuilding the project from scratch using a different technology stack. We are saying goodbye to C++, PHP (Laravel), BackboneJS and saying hello to Golang and React. Despite the technology changes, we are also changing the architecture, we have put in place a couple of years ago. The biggest change is to run the show inside a single repository, and no longer over seperate repos (machinery and web). Read more about this in the FAQ.
+Different recycling rules can be configured in the Kerberos Storage app. Based on those rules, the recycle service, will or will not remove a recording from your providers.
 
-![Kerberos Open Source v2 - vs - v3](../public/images/kerberos-agent-v2-v3.png)
+### Account day limit
 
-## FAQ
+When creating an `Account` on the Kerberos Storage app, you have the option to specify the day limit for that account. This day limit tells the recycle service, if it is time or not to remove the recording.
 
-### 1. Why a mono repo?
+![Storage - Day Limit](../../public/images/storage/daylimit.gif)
 
-We have noticed in the past (v1 and v2) splitting the repositories (machinery and web), created a lot of confusion within our community. People didn't understand the different versions and so on. This caused a lack of collaboration, and made it impossible for some people to collaborate and contribute.
+## Prerequisites
 
-Having a mono repo, which is well organised, simplifies the entry point for new people who would like to use, understand and/or contribute to Kerberos Open Source.
+This installation guide assumes you have setup Kerberos Storage properly.
 
-### 2. Why a change in technologies?
+## Installation
 
-In previous versions (v1 and v2) we used technologies like C++, PHP and BackboneJS. 7 years ago this was still acceptable, however time has changed and new technologies such as React and Golang became very popular.
+Modify the MongoDB credentials, as you did for the Kerberos Storage yaml file.
 
-Due to previous reason we have decided to rebuild the Kerberos Open Source technology from scratch, taking into account all the feedback we acquired over the years. Having these technologies available, we will enable more people to contribute and use our technology.
+        - name: MONGODB_USERNAME
+          value: "root"
+        - name: MONGODB_PASSWORD
+    -->   value: "xxxxxxxxxx"
 
-### 3. What is the difference with Kerberos Enterprise?
+Execute following script to deploy the recycle job.
 
-We started the developments of Kerberos Enterprise a year ago (January, 2020), our focus here was scalability, and fast development and easy deployment. We noticed that with technologies such as Golang and React, we can still provide a highly performant video surveillance system.
-
-Kerberos Open Source will use the same technology stack, and some code pieces, of Kerberos Enterprise which we have already build. We have a very clear now, of how a well developed and documented video surveillance system needs to look like.
-
-### 4. When are we going to be able to install the first version?
-
-We plan to ship the **first version by the end of Q1**, afterwards we will add more and more features as usual.
-
-
-### 5. Change in License
-
-Kerberos Open Source (v3) is now available under the MIT license.
+    git clone https://github.com/kerberos-io/storage
+    kubectl apply -f ./storage/yaml/deployment-cleanup.yaml

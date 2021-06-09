@@ -13,39 +13,73 @@ weight: 300
 toc: true
 ---
 
-Kerberos Open Source (v3) is the next generation of Kerberos.io, and is the successor of (v1/v2). More specifically it will replace and merge the [machinery](https://github.com/kerberos-io/machinery) and [web](https://github.com/kerberos-io/web) repositories. A switch in technologies and architecture has been made. Version 3 is still under active development, and not yet released. The progress can be followed at the [develop branch](https://github.com/kerberos-io/opensource/tree/develop) and [project overview](https://github.com/kerberos-io/opensource/projects/1).
+Kerberos Open Source and Kerberos Enterprise both store recordings on the local disk. To centralise your data at a single place, additional solutions are available.
 
-## What is changing?
+## The options 
 
-At the bottom line, we are rebuilding the project from scratch using a different technology stack. We are saying goodbye to C++, PHP (Laravel), BackboneJS and saying hello to Golang and React. Despite the technology changes, we are also changing the architecture, we have put in place a couple of years ago. The biggest change is to run the show inside a single repository, and no longer over seperate repos (machinery and web). Read more about this in the FAQ.
+### Kerberos Cloud
 
-![Kerberos Open Source v2 - vs - v3](../public/images/kerberos-agent-v2-v3.png)
+One or more Kerberos Enterprise agents, can store their data directly on [Kerberos Cloud](/cloud), and benefit from the visualisation layer Kerberos Cloud offers. When doing this your recordings will be uploaded inside the Kerberos datacenter (which is a black box for you).
 
-## FAQ
+### Kerberos Storage
 
-### 1. Why a mono repo?
+In addition to that you have the option to Bring Your Own Storage (BYOS), using Kerberos Storage. Kerberos Storage allows you to configure the storage providers you want, and allows you to connect to [Kerberos Cloud](/cloud) in parrallel. These storage provider could live in the cloud such as AWS S3, GCP storage and Azure Blob store, or can be located on premise - at the edge - such as Minio.
 
-We have noticed in the past (v1 and v2) splitting the repositories (machinery and web), created a lot of confusion within our community. People didn't understand the different versions and so on. This caused a lack of collaboration, and made it impossible for some people to collaborate and contribute.
+Despite the flexible storage capabilities, Kerberos Storage is also an open platform, which can be used to build extensions (mobile apps, web apps, machine learning services, etc) and integrations. It allows you to leverage a scalable and stable system as a strong backbone for your video analytics solutions, machine learning algorithms, and more.
 
-Having a mono repo, which is well organised, simplifies the entry point for new people who would like to use, understand and/or contribute to Kerberos Open Source.
+## Kerberos Cloud
 
-### 2. Why a change in technologies?
+Within Kerberos Open Source an Kerberos Enterprise you can upload your recordings to our [Kerberos Cloud](/cloud) environment. This means that your data will be hosted and processed (metadata) in our Kerberos datacenter. For more information about how Kerberos Cloud works [can be found here](/cloud).
 
-In previous versions (v1 and v2) we used technologies like C++, PHP and BackboneJS. 7 years ago this was still acceptable, however time has changed and new technologies such as React and Golang became very popular.
+![cloud](../../public/images/kerberos-architecture.png)
 
-Due to previous reason we have decided to rebuild the Kerberos Open Source technology from scratch, taking into account all the feedback we acquired over the years. Having these technologies available, we will enable more people to contribute and use our technology.
+## Kerberos Storage
 
-### 3. What is the difference with Kerberos Enterprise?
+If you are using Kerberos Enterprise you have the possibility to bring your own cloud storage or on premise storage. By installing Kerberos Storage you can send your recordings to your own datacenter, private or public cloud. Following providers are supported:
 
-We started the developments of Kerberos Enterprise a year ago (January, 2020), our focus here was scalability, and fast development and easy deployment. We noticed that with technologies such as Golang and React, we can still provide a highly performant video surveillance system.
+- [Google Cloud Platform Storage](https://cloud.google.com/storage)
+- [Microsoft Azure Storage](https://azure.microsoft.com/en-us/services/storage/)
+- [Amazon Web Services S3](https://aws.amazon.com/s3/)
+- [Minio](https://min.io/)
 
-Kerberos Open Source will use the same technology stack, and some code pieces, of Kerberos Enterprise which we have already build. We have a very clear now, of how a well developed and documented video surveillance system needs to look like.
+When installing Kerberos Storage in the cloud, following architecture can apply. Having your Kerberos Enterprise agents running at the edge, but uploading to Kerberos Storage in the cloud.
 
-### 4. When are we going to be able to install the first version?
+![architecture kubernetes](../../public/images/kerberos-storage-architecture-kubernetes-cloud.png)
 
-We plan to ship the **first version by the end of Q1**, afterwards we will add more and more features as usual.
+On the other hand you could also have Kerberos Storage running at the edge, next to your Kubernetes Enterprise agents. This could be useful if you want to do processing or video analytics suchs as computer bision or machine learning at the edge.
 
+![architecture kubernetes](../../public/images/kerberos-storage-architecture-kubernetes-edge.png)
 
-### 5. Change in License
+### Events
 
-Kerberos Open Source (v3) is now available under the MIT license.
+One of the key differentiators compared to other VMS solutions, is the abilitity to extend and integrate. Next to uploading and persisting data, Kerberos Storage can also trigger events. Each time a recording is send to Kerberos Storage an event can be triggered through one of the following providers.
+
+- [Apache Kafka](https://kafka.apache.org/)
+- [Amazon Web Services SQS](https://aws.amazon.com/sqs/)
+
+Those events can be fetched or subscribed by custom applications. For example, one can create a notifications service, machine learning service or an entire cloud application. Allowing you to leverage the power and scalability of Kerberos Enterprise, and building and focussing on your specific applications, API's, mobile apps, or whatever you have in mind to build.
+
+![architecture storage](../../public/images/kerberos-storage.png)
+
+### On-Demand upload
+
+Next to the extension and integration capabilities of Kerberos Storage, we are currently working on a feature called On-Demand upload. On-Demand upload allows you to upload a subset of your recordings to a Kerberos Storage in the cloud.
+
+![kerberos-on-demand](../../public/images/kerberos-storage-architecture-kubernetes-ondemand-storage.png)
+
+A couple of usecases are the following ones:
+
+- Continious recording: having continious recordings stored in your Kerberos Storage on premise, you don't want to replicate all your recordings to a Kerberos Storage provider in the cloud (to make them public available). Therefore you could implement custom logic, for example based on a machine learning algorithm, to only replicate recordings which matche a specific scenario.
+
+- On-Demand request: Having Kerberos Cloud, an end-user could initiate a request for upload. By default no recordings are forwarded from your Kerberos Storage on premise to your Kerberos Storage in the cloud. Only when an end user requests one or more recordings, the
+  upload will start for the requested recordings.
+
+### Open API
+
+Both Kerberos Enterprise as Kerberos Storage ships with Swagger API's, which can be used to communicate with the previously mentioned systems. Simply type `/swagger/index.html` after the `api` url, and you will see the Swagger UI popping up. No need to explain the different API's, use the Swagger and see what is available. See something missing, let us know, and we add it ;).
+
+![swgger storage](../../public/images/kerberos-storage-swagger.png)
+
+## Licensing
+
+Kerberos Storage is publicly available and **requires a license key** to operate correctly. Reach out to **cedric@verstraeten.io** for the commercial matters.
