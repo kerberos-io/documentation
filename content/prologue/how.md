@@ -17,10 +17,10 @@ When you install Kerberos Open Source or Kerberos Enterprise we will refer to it
 
 ![architecture kerberos agent](../public/images/kerberos-agent-structure.png)
 
-### Front-End
+## Front-End
 The Kerberos Agent ships with a web interface (Front-End) and a video processing engine (Back-End). The Front-End allows the user to modify specific settings, and if Kerberos Open Source, watch recordings in a easy-to-use interface; The Front-End for [Kerberos Enterprise](/enterprise/introduction) is only for configuration purposes only.
 
-### Back-End
+## Back-End
 The Back-End piece of the Kerberos Agent is a service that processes the camera feed with computer vision algorithms to detect motion, and makes recordings and/or execute specific actions. Kerberos Enterprise supports any type of IP-camera (RTSP/ONVIF), and Kerberos Open Source also adds support for USB (V4L2) and the popular Raspberry Pi camera.
 
 Depending on which Kerberos Agent, Kerberos Open Source or Kerberos Enterprise, you will have different installation methods. If you would like to learn more about the Kerberos Agent, have a look in the related sections: [Open Source](/opensource/introduction), [Enterprise](/enterprise/introduction).
@@ -35,7 +35,7 @@ Enterprises are more demanding, and have a lot of surveillance cameras, therefor
 
 The Open Source and Enterprise edition are significantly different from a source code point of view. The [Enterprise edition](/enterprise/introduction) is a complete rewrite of the Open Source version, and got all the best practices we discovered over the years implemented. Both version are and will remain updated in the future.
 
-## Storage
+## Kerberos Vault
 
 Users or Enteprises which only have a few surveillance cameras to manage, probably will be fine with Kerberos Open Source. On top of that they might include [Kerberos Cloud](/cloud) for remote access and monitoring.
 
@@ -47,7 +47,7 @@ In addition to the concept of BYOC, Kerberos Storage enables you to connect to K
 
 ![Architecture Storage](../public/images/kerberos-storage.png)
 
-## Cloud
+## Kerberos Hub
 
 When installing a Kerberos Agent inside your local network, it's possible to review your activity by using the agent its web interface. By all network principles, having a local setup, you will not be able to access the web interface from the cloud (outside your local network). On top of that, the Kerberos Agent doesn't come with a consolidated overview. This means that you will need to open multiple web interfaces, one for each connected surveillance camera. To simplify and resolve all of these challenges, [Kerberos Cloud](/cloud) was developed.
 

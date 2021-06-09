@@ -5,10 +5,22 @@
   url = "/prologue/"
 
 [[docs]]
-  name = "Opensource"
+  name = "Opensource v2"
   weight = 11
   identifier = "opensource"
   url = "/opensource/"
+
+[[docs]]
+  name = "Opensource v3"
+  weight = 12
+  identifier = "opensourcev3"
+  url = "/opensource-v3/"
+
+  [[docs]]
+    name = "Enterprise"
+    weight = 13
+    identifier = "enterprise"
+    url = "/enterprise/"
 
 [[main]]
   name = "Products"
