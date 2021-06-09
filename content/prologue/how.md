@@ -5,7 +5,7 @@ lead: ""
 date: 2020-10-06T08:48:57+00:00
 lastmod: 2020-10-06T08:48:57+00:00
 draft: false
-images: []
+images: ["camera.png"]
 menu:
   docs:
     parent: "prologue"
@@ -15,7 +15,9 @@ toc: true
 
 When you install Kerberos Open Source or Kerberos Enterprise we will refer to it as the Kerberos Agent. A Kerberos Agent, is a software solution that consist of two pieces: Front-End and Back-End. The Back-End processes the video stream of a single surveillance camera, makes recordings and takes actions (for example sending notifications). The Front-End allows you to review recordings, and configure the Back-End.
 
-![architecture kerberos agent](../public/images/kerberos-agent-structure.png)
+
+
+<img src="/images/prologue/agent-explanation.svg" style="width: 100%"/>
 
 ## Front-End
 The Kerberos Agent ships with a web interface (Front-End) and a video processing engine (Back-End). The Front-End allows the user to modify specific settings, and if Kerberos Open Source, watch recordings in a easy-to-use interface; The Front-End for [Kerberos Enterprise](/enterprise/introduction) is only for configuration purposes only.
@@ -30,8 +32,6 @@ Depending on which Kerberos Agent, Kerberos Open Source or Kerberos Enterprise, 
 The Kerberos project started as an Open Source project, with a main focus on low-cost devices such as the Raspberry Pi. Later on the Open Source version was bundled inside the Docker technology so that it was easier to distribute. Anyone can use the Open Source version for personal usage.
 
 Enterprises are more demanding, and have a lot of surveillance cameras, therefore they need a scalable surveillance system. The [Enterprise edition](/enterprise/introduction) of Kerberos allows you to operate a video surveillance cluster (Kubernetes) on-premise or in the cloud (AWS/GCP/Azure).
-
-![kerberos agent oss enterprise](../public/images/kerberos-agent.png)
 
 The Open Source and Enterprise edition are significantly different from a source code point of view. The [Enterprise edition](/enterprise/introduction) is a complete rewrite of the Open Source version, and got all the best practices we discovered over the years implemented. Both version are and will remain updated in the future.
 
