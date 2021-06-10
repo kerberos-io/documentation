@@ -15,7 +15,6 @@ toc: true
 
 When you install Kerberos Open Source or Kerberos Enterprise we will refer to it as the Kerberos Agent. A Kerberos Agent, is a software solution that consist of two pieces: Front-End and Back-End. The Back-End processes the video stream of a single surveillance camera, makes recordings and takes actions (for example sending notifications). The Front-End allows you to review recordings, and configure the Back-End.
 
-
 <img src="/images/prologue/agent-explanation.svg" style="width: 100%"/>
 
 ## Front-End

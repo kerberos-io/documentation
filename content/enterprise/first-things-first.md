@@ -38,7 +38,7 @@ The major key differentiators compared to to other solutions are:
 
 To provide our customer with the high availability and fail over requirements they have, Kerberos Enterprise was built on top of Kubernetes (k8s). This container orchestrator allows us to scale a video surveillance landscape horizontally, and deliver a never-seen high available video surveillance system.
 
-![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes.png)
+<img src="/images/prologue/deployments/onpremise-more-then-5.svg" style="width: 100%"/>
 
 Kerberos Enterprise is installed inside a Kubernetes cluster. It will create pods/deployments for every surveillance camera you want to monitor. Kubernetes will scale and distrubute these pods across your nodes (VM's/Baremetal machines).
 
@@ -50,7 +50,7 @@ By having the power to add nodes to your cluster, you can anticipate to the ever
 
 You install Kerberos Enterprise inside a Kubernetes cluster, but there are no limitations where this cluster will be actually running. This means that whatever security policy you have within your company, you can run it where you want: on-premise, public cloud, private cloud, etc.
 
-![architecture kubernetes](../../public/images/kerberos-agent-architecture-kubernetes-cloud.png)
+<img src="/images/prologue/deployments/cloud-more-then-5.svg" style="width: 100%"/>
 
 ## Licensing
 

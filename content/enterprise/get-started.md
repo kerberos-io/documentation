@@ -26,7 +26,7 @@ Important to note is that this web app is relying on the Golang Kubernetes SDK, 
 
 Once you open a browser, and navigate to the Factory web application (see installation for the url), you will land on the login page.
 
-![Factory](../../public/images/factory/login.gif)
+<img src="/images/factory/login.gif" style="width: 100%"/><br/>
 
 The default username password of the Factory web applications is:
 
@@ -41,7 +41,7 @@ On the overview page you will find an intuitive overview of the different pages 
 
 When working with Kubernetes, Kerberos Enterprise agents are deployed as a deployment. When working with Docker, Kerberos Enterprise agents are deployed as traditional Docker containers.
 
-![Factory](../../public/images/factory/docker-kubernetes.gif)
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
 ## Kubernetes
 
@@ -56,18 +56,21 @@ On the left menu you will find the Kubernetes section. In this section 3 sub men
 The nodes section lists all the available nodes inside your Kubernetes cluster. It shows a limited amount of information such as the version, the number of Docker images installed on the node, and some basic hardware information.
 
 ![Factory](../../public/images/factory/kerberos-factory-nodes.png)
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
 ## Deployments
 
 The deployments section will list all the Kerberos Enterprise agents (running as deployments) that you have deployed inside your cluster. This page gives you access to deploy new Kerberos Enterprise agents one by one or in bulk. Next to that you can easily upgrade Kerberos Enterprise agents to a newer version, reboot them, view logging and update the configuration options of the Kerberos Enterprise agent.
 
 ![Factory](../../public/images/factory/kerberos-factory-deployments.png)
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
 ### Adding a new deployment
 
 There are two options to add a new deployment, single deployments and bulk deployment.
 
 ![Factory](../../public/images/factory/single-bulk-deployment.gif)
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
 - single deployment
 
@@ -80,12 +83,14 @@ By importing an Excel file, deployments can be created in bulk.
 By specifying the name and corresponding RTSP url in multiple rows, you can deploy your deployments in bulk.
 
 ![Factory](../../public/images/factory/kerberos-factory-add-bulk-deployment-excel.png)
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
 ### Configuring a deployment
 
 Once you have a running deployment, you should see a green circle next to the deployment, indicating that it is succesfully running. At any time you can configure your deployments by clicking on the <SettingsIcon className="pointer"/> icon. This will open a popup, allowing you to change some settings.
 
 ![Factory](../../public/images/factory/deployment-configuration.gif)
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
 Following settings can be changed:
 
@@ -93,7 +98,7 @@ Following settings can be changed:
 - Time based conditions,
 - Pre- and postrecording
 - Continious recording
-- Linking to [Kerberos Cloud](/cloud) or [Kerberos Storage](/storage/introduction)
+- Linking to [Kerberos Hub](/hub/first-things-first) or [Kerberos Vault](/vault/first-things-first)
 
 ### Global configuration
 
@@ -102,6 +107,7 @@ Configuration can be specified on a Kerberos Enterprise agent level, this means 
 By specifying configurations at a higher level, any Kerberos Enterprise agents will inherit from that configuration, improving the overall maintenance and management of your Kerberos Enterprise agents.
 
 ![Factory Global Config](../../public/images/factory/global-configuration.gif)
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
 ### Upgrade or reboot a Kerberos Enterprise agent
 
@@ -110,61 +116,63 @@ At Kerberos.io we have fast development cycles, which means that new versions wi
 At any moment you can reboot your Kerberos Enterprise agent. When pressing the reboot button, next to your deployment, Kubernetes will destroy the pod of your deployment, and schedule a new one. This comes in handy, when you noticed one of your Kerberos Enterprise agents is in a stale state.
 
 ![Upgrade and reboot](../../public/images/factory/upgrade-reboot.gif)
-
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
 ## Pods
 
 When creating a Kerberos Enterprise agent, Kubernetes will create a deployment and schedule a pod. This pod will be  managed by your deployment, and deployed as a Docker container to one of your available nodes. Once a pod dies/ crashes, or whatever unexpected scenario, the deployment will make sure it is deployed again to a different (or the same) node. This makes sure the Kerberos Enterprise agent is in a healthy state at all times.
 
 ![Factory](../../public/images/factory/kerberos-factory-pods.png)
-
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
 ## Storage and video management
 
 Kerberos Enterprise allows you to scale your video landscape horizontally, using the concept of Kubernetes, and brings a strong backbone for stability and performance. It allows you to avoid reinventing the wheel, and get stuck in the numerious challenges of making an intelligent VMS yourself (we worked on this for 2 years with experienced engineers).
 
-Kerberos Enterprise stores its recordings locally for a short amount of time. This means that long-term storage is not included in the solution. On top of that it also **does not** have a visual component, which allows you te review dashboards or recordings. To overcome these two challenges, long-term storage with extensibility/integration capabilities and visualisation features, following solutions were developed [Kerberos Storage](/storage/introduction) and [Kerberos Cloud](/cloud).
+Kerberos Enterprise stores its recordings locally for a short amount of time. This means that long-term storage is not included in the solution. On top of that it also **does not** have a visual component, which allows you te review dashboards or recordings. To overcome these two challenges, long-term storage with extensibility/integration capabilities and visualisation features, following solutions were developed [Kerberos Vault](/storage/introduction) and [Kerberos Hub](/cloud).
 
-### Kerberos Storage
+### Kerberos Vault
 
-[Kerberos Storage](/storage/introduction) is a solution which makes it able to store recordings from Kerberos Enterprise agents (accross different clusters) at a central place, on the storage provider you want. You can store your recordings in the cloud (AWS S3, Google Cloud Storage, Azure Blob storage) or on premise (Minio).
+[Kerberos Vault](/vault/first-things-first) is a solution which makes it able to store recordings from Kerberos Enterprise agents (accross different clusters) at a central place, on the storage provider you want. You can store your recordings in the cloud (AWS S3, Google Cloud Storage, Azure Blob storage) or on premise (Minio).
 
-On the other hand it's an open platform, as it allows you build extensions and integrations (web apps, mobile apps, machine learning services much more). Kerberos Storage ships with the ability of real-time messaging (Kafka) and a REST API (documented as Swaggger).
+On the other hand it's an open platform, as it allows you build extensions and integrations (web apps, mobile apps, machine learning services much more). Kerberos Vault ships with the ability of real-time messaging (Kafka) and a REST API (documented as Swaggger).
 
 ![architecture storage](../../public/images/kerberos-storage.png)
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
-To connect one or more Kerberos Enterprise agents to your Kerberos Storage instance, you should open the configuration option and navigate to the `cloud` tab. Once selected you need to fill-in the credentials from your Kerberos Storage account.
+To connect one or more Kerberos Enterprise agents to your Kerberos Vault instance, you should open the configuration option and navigate to the `cloud` tab. Once selected you need to fill-in the credentials from your Kerberos Vault account.
 
-- Storage URI: this is the API endpoint of your Kerberos Storage instance. Typically this is in the following format: `http(s)://api.yourdomain.com/storage`. Where `api.yourdomain.com` should match your Kerberos Storage API endpoint.
+- Storage URI: this is the API endpoint of your Kerberos Vault instance. Typically this is in the following format: `http(s)://api.yourdomain.com/storage`. Where `api.yourdomain.com` should match your Kerberos Vault API endpoint.
 
-- Provider: the name of the provider, which you created on the Kerberos Storage providers page, to which you want to send your recordings to.
+- Provider: the name of the provider, which you created on the Kerberos Vault providers page, to which you want to send your recordings to.
 
-- Directory: this is the subdirectory in which your files will be stored. At the time of writing this should also equal your Kerberos Cloud username, if you plan to upload to Kerberos Cloud.
+- Directory: this is the subdirectory in which your files will be stored. At the time of writing this should also equal your Kerberos Hub username, if you plan to upload to Kerberos Hub.
 
-- Access Key: this should match the access key of one of your Kerberos Storage accounts.
+- Access Key: this should match the access key of one of your Kerberos Vault accounts.
 
-- Secret Access Key: this should match the secret access key of one of your Kerberos Storage accounts.
+- Secret Access Key: this should match the secret access key of one of your Kerberos Vault accounts.
 
 
-![kerberos storage configuration](../../public/images/factory/kerberos-enterprise-storage-setup.gif)
+![Kerberos Vault configuration](../../public/images/factory/kerberos-enterprise-storage-setup.gif)
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
-### Kerberos Cloud
+### Kerberos Hub
 
-For the visualisation part Kerberos Cloud comes into the picture. Kerberos Cloud is a web app, backed up with a number of microservices, that shows dashboards, live streams, filter recordings and much more. Learn more [about the features and functions here](/cloud).
+For the visualisation part Kerberos Hub comes into the picture. Kerberos Hub is a web app, backed up with a number of microservices, that shows dashboards, live streams, filter recordings and much more. Learn more [about the features and functions here](/cloud).
 
-You have two choices when using Kerberos Cloud, either you send your recordings from your Kerberos Enterprise agents directly to Kerberos Cloud, or you send your recordings to Kerberos Storage, and connect Kerberos Storage to Kerberos Cloud. About the latter more is explained on the [Kerberos Storage page](/storage/get-started).
+You have two choices when using Kerberos Hub, either you send your recordings from your Kerberos Enterprise agents directly to Kerberos Hub, or you send your recordings to Kerberos Vault, and connect Kerberos Vault to Kerberos Hub. About the latter more is explained on the [Kerberos Vault page](/storage/get-started).
 
-Select the Kerberos Cloud option, and copy-paste the credentials from your Kerberos Cloud subscription.
+Select the Kerberos Hub option, and copy-paste the credentials from your Kerberos Hub subscription.
 
-![kerberos storage configuration](../../public/images/factory/kerberos-enterprise-to-cloud.gif)
-
+![Kerberos Vault configuration](../../public/images/factory/kerberos-enterprise-to-cloud.gif)
+<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
 
 - Region: this is the region where your recordings will be stored. Only `eu-west-1` for now (will change, on the roadmap).
 
-- Bucket: the name of the Kerberos Cloud bucket.  Only `kerberosaccept` for now (will change, on the roadmap).
+- Bucket: the name of the Kerberos Hub bucket.  Only `kerberosaccept` for now (will change, on the roadmap).
 
-- Directory: this is your personal directory, and matches your Kerberos Cloud username.
+- Directory: this is your personal directory, and matches your Kerberos Hub username.
 
-- Public Key: this should match the public key of your Kerberos Cloud subscription.
+- Public Key: this should match the public key of your Kerberos Hub subscription.
 
-- Secret Access Key: this should match the private key of your Kerberos Cloud subscription.
+- Secret Access Key: this should match the private key of your Kerberos Hub subscription.
