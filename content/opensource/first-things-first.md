@@ -22,7 +22,6 @@ In this section we want to make clear what the Open Source version of Kerberos i
 
 The Kerberos Open Source project is licensed with [BY-NC-SA 4.0](/opensource/license), this means that everyone can use Kerberos and modify if to their needs, in a non commercial activity.
 
-
 ## When using the Open Source version
 
 Kerberos Open Source is perfect for personal usage. It's great if you only have a couple of surveillance cameras to be managed. A Kerberos agent (e.g. on a Raspberry Pi or inside a Docker container) runs for each camera. Their are many different installation possibilities, please have a look at the [architecture](/architectures) or [installation page](/opensource/installation).

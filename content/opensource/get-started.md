@@ -19,19 +19,19 @@ Once you've installed Kerberos Open Source, you will have access to the web appl
 
 The first time you open a browser, and navigate to the web application (ip address of your device), you will land on the welcome page. This page will guide you through some basic steps and set simple configurations such as username and password.
 
-![OpenSource](../../public/images/opensource/kerberos-opensource-welcome.png)
+<img src="/images/opensource/kerberos-opensource-welcome.png" style="width: 100%"/>
 
 ## Login page
 
 When you've finished the welcome page, you will be redirected to the login page from now one. Use the credentials you have defined during the configuration of the welcome page. By default the username is **root**, and the password is **root**.
 
-![OpenSource](../../public/images/opensource/kerberos-opensource-login.png)
+<img src="/images/opensource/kerberos-opensource-login.png" style="width: 100%"/>
 
 ## Dashboard
 
 After you have signed in successfully, you will land on the dashboard page. This page will give you an overview of some simple statistics. Such as the the activity per day, per hour, etc.
 
-![OpenSource](../../public/images/opensource/kerberos-opensource-dashboard.png)
+<img src="/images/opensource/kerberos-opensource-dashboard.png" style="width: 100%"/>
 
 ## Media
 
@@ -39,31 +39,31 @@ By selecting a specific day from the left navigation, or choosing the date picke
 
 You can use the timeslider at the top of the page for browsing through the day. The white (no activity) to gray (low activity) to red (high activity), will give you an indications of the amount of recordings for that specific hour.
 
-![OpenSource](../../public/images/opensource/kerberos-opensource-media.png)
+<img src="/images/opensource/kerberos-opensource-media.png" style="width: 100%"/>
 
-![OpenSource](../../public/images/opensource/kerberos-opensource-media-detail.png)
+<img src="/images/opensource/kerberos-opensource-media-detail.png" style="width: 100%"/>
 
 
 ## Settings
 
 Before being able to record anything, you will need to specify your capture device. A capture device is what we call: a camera. This camera can be a USB, RPi or IP camera. By default the RPi camera is selected, so if you are planning to use a IP camera make sure to change it on the settings page.
 
-![OpenSource](../../public/images/opensource/kerberos-opensource-settings.png)
+<img src="/images/opensource/kerberos-opensource-settings.png" style="width: 100%"/>
 
 ### Region of interest
 
 Besides selecting the capture device, you will have different options to make the detection more intelligent, such as defining a regions of interest, or an activation timeline (when Kerberos Open Source should be active).
 
-![OpenSource](../../public/images/opensource/kerberos-opensource-motion.png)
+<img src="/images/opensource/kerberos-opensource-motion.png" style="width: 100%"/>
 
 ### Storage
 
 Storing your recordings on your device is fine, on the other hand you might want to make it available remotely. By giving your [Kerberos Cloud](/cloud) credentials in the storage section, your recordings will be synced to our cloud solution.
 
-![OpenSource](../../public/images/opensource/kerberos-opensource-cloud.png)
+<img src="/images/opensource/kerberos-opensource-cloud.png" style="width: 100%"/>
 
 ## System
 
 This page will gave you overall information of Kerberos Open Source. It will give you information (logging) about the system, shows you some system information, the number of recordings on the system and more.
 
-![OpenSource](../../public/images/opensource/kerberos-opensource-system.png)
+<img src="/images/opensource/kerberos-opensource-system.png" style="width: 100%"/>

@@ -44,7 +44,7 @@ KiOS is compiled using Buildroot, the project can be found on [following Github 
 
 Installing the Kerberos agent to your Raspberry Pi, has never been so easy. By using our cross-platform installer, you can run a fully configured video surveillance system within 3 minutes. Indeed, we also think that's awesome!
 
-![access kerberos installer](../../public/images/kios-install.gif)
+<img src="/images/kios-install.gif" style="width: 100%"/>
 
 Download the correct installer for your OS below:
 
@@ -58,7 +58,7 @@ If you love Etcher, or the Kerberos installer is not working as expected, you ca
 2. flash it to your SD card with Etcher,
 3. and edit some configuration files at the boot directory.
 
-[![use etcher for kios](../../public/images/etcher-install.png)](https://www.balena.io/etcher/)
+<a href="https://www.balena.io/etcher/"><img src="/images/etcher-install.png" style="width: 100%"/></a>
 
 Once you have download the KiOS image (make sure you downloaded the right image) and flashed it to an SD card, put it back into your working station. Navigate to the SD card and creating following files.
 
@@ -96,7 +96,8 @@ static_dns=""
 
 Once you've finished the installation using either the KiOS installer or Etcher, you can put the SD card into your Raspberry Pi and turn it on. Please note that the first time you boot KiOS it can take about 2 mins before the system is operational. When KiOS is ready you can open your favorite browser and type in the IP address of your Raspberry Pi. This will open the Kerberos agent's front-end, which you can access with the username: root and password: root.
 
-![access kerberos interface](../../public/images/access.png)
+<img src="/images/access.png" style="width: 100%"/>
+
 
 ### Access the Raspberry Pi
 
@@ -122,7 +123,6 @@ A Docker image (amd64, armv7, arm64) is available on [the Docker hub](https://hu
 This installation guide assumes you already have a good understanding of Docker. If you want to learn more about Kerberos.io on Docker, have a look at these tutorials.
 - [Kerberos.io — the road to Docker](https://medium.com/@cedricverst/kerberos-io-the-road-to-docker-8e048a480241)
 - [Kerberos.io on Docker](https://medium.com/@cedricverst/kerberos-io-on-docker-19b25fa7efd1)
-
 
 ### Prerequisites
 
@@ -189,13 +189,14 @@ Before getting into the details, you can [find a more detailed tutorial at this 
 
 Before moving on, make sure you have registered on [Balena](https://www.balena.io).
 
-![Signup balena](../../public/images/opensource/kerberos-opensource-balena-signup.png)
+
+<img src="/images/opensource/kerberos-opensource-balena-signup.png" style="width: 100%"/>
 
 ### 2. Create a device and flash
 
 After you signed up, you can create an application for a specific IoT board (e.g. Raspberry Pi 3). Once created you will be able to download the balena OS image, which you can flash to your SD card using [Etcher](https://www.balena.io/etcher/).
 
-![Create device balena](../../public/images/opensource/kerberos-opensource-balena-create.png)
+<img src="/images/opensource/kerberos-opensource-balena-create.png" style="width: 100%"/>
 
 ### 3. Connect
 
@@ -268,4 +269,4 @@ Now we created our two files, we can publish the Kerberos container to balena (o
 
 Once finished you should see following message, and on the dashboard you should see your devices updating (Yes you can add multiple devices to an application). You're ready ;)
 
-![Push to balena](../../public/images/opensource/kerberos-opensource-balena-push.png)
+<img src="/images/opensource/kerberos-opensource-balena-push.png" style="width: 100%"/>
