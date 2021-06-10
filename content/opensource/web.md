@@ -25,7 +25,7 @@ We will shortly discuss the different pages that make up the web interface of Ke
 
 The landing page of the web is the dashboard. On the dashboard a user will see some statistics: activity per hour, activity per day, a live stream, the latest activity and a heatmap.
 
-![web dashboard](../../public/images/web/dashboard.png)
+<img src="/images/web/dashboard.png" style="width: 100%"/><br/>
 
 ### Overview
 
