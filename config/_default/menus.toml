@@ -4,31 +4,31 @@
   identifier = "prologue"
   url = "/prologue/"
 
-[[docs]]
+[[opensource]]
   name = "Opensource v2"
   weight = 11
   identifier = "opensource"
   url = "/opensource/"
 
-[[docs]]
+[[opensourcev3]]
   name = "Opensource v3"
   weight = 12
   identifier = "opensourcev3"
   url = "/opensource-v3/"
 
-[[docs]]
+[[enterprise]]
   name = "Enterprise"
   weight = 13
   identifier = "enterprise"
   url = "/enterprise/"
 
-[[docs]]
+[[vault]]
   name = "Vault"
   weight = 14
   identifier = "vault"
   url = "/vault/"
 
-[[docs]]
+[[hub]]
   name = "Hub"
   weight = 15
   identifier = "hub"

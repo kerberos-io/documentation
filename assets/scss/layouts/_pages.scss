@@ -7,6 +7,18 @@
   content: "";
 }
 
+.docs-content figure {
+  &.stretch img {
+    width: 100%;
+  }
+  figcaption {
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    padding: 10px 0 0 0;
+  }
+}
+
 .anchor {
   visibility: hidden;
   padding-left: 0.5rem;
