@@ -175,4 +175,4 @@ It should look like this.
 
 Once everything is configured correctly your cluster and DNS, you should be able to setup the Factory application. By navigating to the Factory domain `factory.domain.com` in your browser you will see the Factory login page showing up.
 
-<img src="/images/factory/kerberos-factory-loginpage.png" style="width: 100%"/>
+{{< figure src="login.png" alt="Once successfully installed Kerberos Enterprise, it will show you the login page." caption="Once successfully installed Kerberos Enterprise, it will show you the login page." class="stretch">}}

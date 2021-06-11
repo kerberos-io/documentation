@@ -15,7 +15,7 @@ toc: true
 
 Welcome to the Kerberos Enterprise Edge installation. This is the way to go if you want to install Kerberos Enterprise on your Baremetal infrastructure or inside your Private Cloud.
 
-<img src="/images/prologue/deployments/onpremise-more-then-5.svg" style="width: 100%"/>
+{{< figure src="../../prologue/deployments/onpremise-more-then-5.svg" alt="When you start having bigger deployments it's recommended to go with a Kubernetes approach." caption="When you start having bigger deployments it's recommended to go with a Kubernetes approach." class="stretch">}}
 
 Before we can actual start installing the different deployments in our cluster, we need to make sure we have one available.
 
@@ -254,4 +254,4 @@ It should look like this.
 
 Once everything is configured correctly your cluster and DNS, you should be able to setup the Factory application. By navigating to the Factory domain `factory.domain.com` in your browser you will see the Factory login page showing up.
 
-<img src="/images/factory/kerberos-factory-loginpage.png" style="width: 100%"/>
+{{< figure src="login.png" alt="Once successfully installed Kerberos Enterprise, it will show you the login page." caption="Once successfully installed Kerberos Enterprise, it will show you the login page." class="stretch">}}
