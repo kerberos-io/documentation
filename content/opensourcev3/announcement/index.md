@@ -19,7 +19,7 @@ Kerberos Open Source (v3) is the next generation of Kerberos.io, and is the succ
 
 At the bottom line, we are rebuilding the project from scratch using a different technology stack. We are saying goodbye to C++, PHP (Laravel), BackboneJS and saying hello to Golang and React. Despite the technology changes, we are also changing the architecture, we have put in place a couple of years ago. The biggest change is to run the show inside a single repository, and no longer over seperate repos (machinery and web). Read more about this in the FAQ.
 
-<img src="/images/opensourcev3/opensource-version2-version3.svg" style="width: 100%"/>
+{{< figure src="opensource-version2-version3.svg" alt="The Opensource version 3 is a complete new rewrite of the version 2." caption="The Opensource version 3 is a complete new rewrite of the version 2." class="stretch">}}
 
 ## FAQ
 

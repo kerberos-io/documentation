@@ -28,7 +28,7 @@ The steps belong to a four passway; illustrated on the image below. In each cycl
 
 Thanks to the loosly coupling, each step can be developed indepently. So algorithms, expositors, heuristics and conditions can be switched on the fly. This makes it easier for other developers who want to contribute to the machinery. They can create a new algorithm without knowing how a specific expositor or heuristic works. They just need to be aware of the convention an algorithm should meet.
 
-<img src="/images/machinery/project-structure.svg" style="width: 100%"/><br/><br/>
+{{< figure src="project-structure.svg" alt="The Kerberos Opensource agent is composed out of different concepts." caption="The Kerberos Opensource agent is composed out of different concepts." class="stretch">}}
 
 These different steps can be configured by editing a couple of configurationn files located at `config/`. The main configuration file `config/config.xml` looks like this:
 
@@ -256,7 +256,7 @@ The delay value is used when the condition failed, so when the current time isn'
 
 The algorithm is the second step of the four passway. An algorithm will execute some kind of function on a sequence of images, and end up with a black and white image; just like the image below. An example of an algorithm would be one that does motion detection or one that would detect cats or dogs (using TensorFlow, ar any other Deep Learning framework).
 
-<img src="/images/machinery/algorithm.png" style="width: 100%"/><br/>
+{{< figure src="algorithm.png" alt="An algorithm allows us to find the pixels of interests." caption="An algorithm allows us to find the pixels of interests." class="stretch">}}
 
 The white pixels on the image will indicate the object of interest. For example, when looking for motion, the pixels that have been changed; it depends on what the algorithm is looking for. The black pixels are background pixels.
 
@@ -281,13 +281,13 @@ This algorithm is a very simple method to detect motion; in terms of understandi
 
 To get a more technical explanation: the algoritm will substract 2 or more images, and once that is done it will end up with a black and white image. The white pixels will mark the pixels that where different/changed and the black pixels are the pixels that have not changed; background pixels. Please note that there are several different combinations of substracting images. However for the machinery, we will use the method of Collins et al. as this method erases the phenomenon "ghosting".
 
-<img src="/images/machinery/differential_images.png" style="width: 100%"/><br/>
+{{< figure src="differential-images.png" alt="The differential images algorithm takes a sequence of images to calculate motion." caption="The differential images algorithm takes a sequence of images to calculate motion." class="stretch">}}
 
 In the image above the method of Collins et al. is illustrated. For this method we will process three images. The images are a sequence (from left to right), so the first (A) image was taken before the second (B) one, and the second (B) before the third (C) one. Next we will do a first comparision (C-B) of the third (C) image and the second (B) image, and after that we will do a second comparison (C-A) of the third (C) image and first (A) image.
 
 After the comparison we will end up with two difference images (C-B) and (C-A); both will mark the white pixels as changed pixels and black as non-changed pixels. To finish the algorithm we will do a logical AND-operation of the two difference images; this will give us the final black and white image ((C-B)&&(C-A)).
 
-The main idea of the Colins et al. method, is that it will erase "ghosting". In the last step we are doing a logical AND-operation, by doing this we will only keep the pixels, that changed in the first two images; therefore we can elimante false positives.
+The main idea of the Colins et al. method, is that it will erase "ghosting". In the last step we are doing a logical AND-operation, by doing this we will only keep the pixels, that changed in the first two images; therefore we can eliminate false positives.
 
 #### Parameters
 
@@ -364,7 +364,7 @@ The region parameter contains 4 values; x1, y1, x2 and y2 respectively. The valu
 
 This hull is a more complex expositor than the rectangle. A hull can be selected with the web, you can select one or more coordinates to create a flexible region. The coordinates can be adjusted afterwards and be removed by double clicking on the coordinate. You can expand the hull by removing the start coordinate, which is marked by the white bullet.
 
-<img src="/images/machinery/hull.png" style="width: 100%"/><br/>
+{{< figure src="hull.png" alt="A hull, or polygon, allows you to specify a region of interest." caption="A hull, or polygon, allows you to specify a region of interest." class="stretch">}}
 
 #### Parameters
 

@@ -19,19 +19,19 @@ Once you've installed Kerberos Open Source, you will have access to the web appl
 
 The first time you open a browser, and navigate to the web application (ip address of your device), you will land on the welcome page. This page will guide you through some basic steps and set simple configurations such as username and password.
 
-<img src="/images/opensource/kerberos-opensource-welcome.png" style="width: 100%"/>
+{{< figure src="welcome.png" alt="The landing page after successfully installing Kerberos Opensource." caption="The landing page after successfully installing Kerberos Opensource." class="stretch">}}
 
 ## Login page
 
 When you've finished the welcome page, you will be redirected to the login page from now one. Use the credentials you have defined during the configuration of the welcome page. By default the username is **root**, and the password is **root**.
 
-<img src="/images/opensource/kerberos-opensource-login.png" style="width: 100%"/>
+{{< figure src="login.png" alt="After setting up the system you can proceed to login." caption="After setting up the system you can proceed to login." class="stretch">}}
 
 ## Dashboard
 
 After you have signed in successfully, you will land on the dashboard page. This page will give you an overview of some simple statistics. Such as the the activity per day, per hour, etc.
 
-{{< figure src="dashboard.png" alt="Dashboard" caption="This is my caption">}}
+{{< figure src="dashboard.png" alt="The dashboard gives you a high-level overview of what has been happening." caption="The dashboard gives you a high-level overview of what has been happening." class="stretch">}}
 
 ## Media
 
@@ -39,31 +39,31 @@ By selecting a specific day from the left navigation, or choosing the date picke
 
 You can use the timeslider at the top of the page for browsing through the day. The white (no activity) to gray (low activity) to red (high activity), will give you an indications of the amount of recordings for that specific hour.
 
-<img src="/images/opensource/kerberos-opensource-media.png" style="width: 100%"/>
+{{< figure src="media.png" alt="The media page gives an overview of your recordings (grouped into sequences) for that specific day." caption="The media page gives an overview of your recordings (grouped into sequences) for that specific day." class="stretch">}}
 
-<img src="/images/opensource/kerberos-opensource-media-detail.png" style="width: 100%"/>
-
+{{< figure src="media-detail.png" alt="By drilling down into a sequence, you will see all the related recordings." caption="By drilling down into a sequence, you will see all the related recordings." class="stretch">}}
 
 ## Settings
 
 Before being able to record anything, you will need to specify your capture device. A capture device is what we call: a camera. This camera can be a USB, RPi or IP camera. By default the RPi camera is selected, so if you are planning to use a IP camera make sure to change it on the settings page.
 
-<img src="/images/opensource/kerberos-opensource-settings.png" style="width: 100%"/>
+{{< figure src="settings.png" alt="The settings page allows you to modify and tweak the camera and motion settings." caption="The settings page allows you to modify and tweak the camera and motion settings." class="stretch">}}
 
 ### Region of interest
 
 Besides selecting the capture device, you will have different options to make the detection more intelligent, such as defining a regions of interest, or an activation timeline (when Kerberos Open Source should be active).
 
-<img src="/images/opensource/kerberos-opensource-motion.png" style="width: 100%"/>
+{{< figure src="region-of-interest.png" alt="The region of interest allows you to inspect a specific region of the camera." caption="The region of interest allows you to inspect a specific region of the camera." class="stretch">}}
 
 ### Storage
 
-Storing your recordings on your device is fine, on the other hand you might want to make it available remotely. By giving your [Kerberos Cloud](/cloud) credentials in the storage section, your recordings will be synced to our cloud solution.
+Storing your recordings on your device is fine, on the other hand you might want to make it available remotely. By giving your [Kerberos Hub](/hub/first-things-first) credentials in the storage section, your recordings will be synced to our cloud solution.
 
-<img src="/images/opensource/kerberos-opensource-cloud.png" style="width: 100%"/>
+{{< figure src="hub-connection.png" alt="The region of interest allows you to inspect a specific region of the camera." caption="The region of interest allows you to inspect a specific region of the camera." class="stretch">}}
+
 
 ## System
 
 This page will gave you overall information of Kerberos Open Source. It will give you information (logging) about the system, shows you some system information, the number of recordings on the system and more.
 
-<img src="/images/opensource/kerberos-opensource-system.png" style="width: 100%"/>
+{{< figure src="system.png" alt="The system pages show you the current status of your agent." caption="The system pages show you the current status of your agent." class="stretch">}}

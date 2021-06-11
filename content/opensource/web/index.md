@@ -25,27 +25,25 @@ We will shortly discuss the different pages that make up the web interface of Ke
 
 The landing page of the web is the dashboard. On the dashboard a user will see some statistics: activity per hour, activity per day, a live stream, the latest activity and a heatmap.
 
-<img src="/images/web/dashboard.png" style="width: 100%"/><br/>
+{{< figure src="dashboard.png" alt="The dashboard gives a high-level overview of your Kerberos Opensource agent." caption="The dashboard gives a high-level overview of your Kerberos Opensource agent." class="stretch">}}
 
 ### Overview
 
 When selecting a specific day, you'll will get a timeline and overview. By using the timeline you can navigate through a day; the timeline highlights the amount of activity, from gray to red.
 
-![web overview](../../public/images/web/overview.png)
+{{< figure src="overview.png" alt="The media page gives an overview of your recordings (grouped into sequences) for that specific day." caption="The media page gives an overview of your recordings (grouped into sequences) for that specific day." class="stretch">}}
 
 ### Settings
 
 The settings page allows you to configure the machinery. You can define the type of camera, post-processes, conditions and much more; it's highly configurable.
 
-
-
-![web settings](../../public/images/web/settings.png)
+{{< figure src="settings.png" alt="The settings page allows you to modify and tweak the camera and motion settings." caption="The settings page allows you to modify and tweak the camera and motion settings." class="stretch">}}
 
 ### System
 
 The system page allows you to monitor the system. On this page you'll get an overview of the system specifications (CPU, Memory, Network, etc). Several actions are available: you can download system information (for debugging purposes) and download or remove your images.
 
-![web system](../../public/images/web/system.png)
+{{< figure src="system.png" alt="The system pages show you the current status of your agent." caption="The system pages show you the current status of your agent." class="stretch">}}
 
 ## Project structure
 

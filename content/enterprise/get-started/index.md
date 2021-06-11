@@ -26,7 +26,8 @@ Important to note is that this web app is relying on the Golang Kubernetes SDK, 
 
 Once you open a browser, and navigate to the Factory web application (see installation for the url), you will land on the login page.
 
-<img src="/images/factory/login.gif" style="width: 100%"/><br/>
+{{< figure src="login.gif" alt="Login into the Kerberos Enterprise agent interface." caption="Login into the Kerberos Enterprise agent interface." class="stretch">}}
+
 
 The default username password of the Factory web applications is:
 
@@ -41,7 +42,8 @@ On the overview page you will find an intuitive overview of the different pages 
 
 When working with Kubernetes, Kerberos Enterprise agents are deployed as a deployment. When working with Docker, Kerberos Enterprise agents are deployed as traditional Docker containers.
 
-<img src="/images/factory/docker-kubernetes.gif" style="width: 100%"/><br/>
+{{< figure src="overview.gif" alt="Review your Docker or Kubernetes agents." caption="Review your Docker or Kubernetes agents." class="stretch">}}
+
 
 ## Kubernetes
 
@@ -55,19 +57,19 @@ On the left menu you will find the Kubernetes section. In this section 3 sub men
 
 The nodes section lists all the available nodes inside your Kubernetes cluster. It shows a limited amount of information such as the version, the number of Docker images installed on the node, and some basic hardware information.
 
-<img src="/images/factory/kerberos-factory-nodes.png" style="width: 100%"/><br/>
+{{< figure src="nodes.png" alt="Get an entire list of nodes which are connected to your Kubernetes cluster." caption="Get an entire list of nodes which are connected to your Kubernetes cluster." class="stretch">}}
 
 ## Deployments
 
 The deployments section will list all the Kerberos Enterprise agents (running as deployments) that you have deployed inside your cluster. This page gives you access to deploy new Kerberos Enterprise agents one by one or in bulk. Next to that you can easily upgrade Kerberos Enterprise agents to a newer version, reboot them, view logging and update the configuration options of the Kerberos Enterprise agent.
 
-<img src="/images/factory/kerberos-factory-deployments.png" style="width: 100%"/><br/>
+{{< figure src="deployments.png" alt="Get a list of all your Kerberos Enterprise agents." caption="Get a list of all your Kerberos Enterprise agents." class="stretch">}}
 
 ### Adding a new deployment
 
 There are two options to add a new deployment, single deployments and bulk deployment.
 
-<img src="/images/factory/single-bulk-deployment.gif" style="width: 100%"/><br/>
+{{< figure src="single-bulk-deployment.gif" alt="Get a list of all your Kerberos Enterprise agents." caption="Get a list of all your Kerberos Enterprise agents." class="stretch">}}
 
 - single deployment
 
@@ -79,13 +81,13 @@ By importing an Excel file, deployments can be created in bulk.
 
 By specifying the name and corresponding RTSP url in multiple rows, you can deploy your deployments in bulk.
 
-<img src="/images/factory/kerberos-factory-add-bulk-deployment-excel.png" style="width: 100%"/><br/>
+{{< figure src="add-bulk-deployment-excel.png" alt="Add a Kerberos Enterprise agent through a deployment." caption="Add a Kerberos Enterprise agent through a deployment." class="stretch">}}
 
 ### Configuring a deployment
 
 Once you have a running deployment, you should see a green circle next to the deployment, indicating that it is succesfully running. At any time you can configure your deployments by clicking on the <SettingsIcon className="pointer"/> icon. This will open a popup, allowing you to change some settings.
 
-<img src="/images/factory/deployment-configuration.gif" style="width: 100%"/><br/>
+{{< figure src="deployment-configuration.gif" alt="Once you created the Kerberos Enterprise agent, you can configure the agent." caption="Once you created the Kerberos Enterprise agent, you can configure the agent." class="stretch">}}
 
 Following settings can be changed:
 
@@ -101,7 +103,7 @@ Configuration can be specified on a Kerberos Enterprise agent level, this means 
 
 By specifying configurations at a higher level, any Kerberos Enterprise agents will inherit from that configuration, improving the overall maintenance and management of your Kerberos Enterprise agents.
 
-<img src="/images/factory/global-configuration.gif" style="width: 100%"/><br/>
+{{< figure src="global-configuration.gif" alt="You can specify the configurations on a global level, so all agents will inherit from that." caption="You can specify the configurations on a global level, so all agents will inherit from that." class="stretch">}}
 
 ### Upgrade or reboot a Kerberos Enterprise agent
 
@@ -109,13 +111,13 @@ At Kerberos.io we have fast development cycles, which means that new versions wi
 
 At any moment you can reboot your Kerberos Enterprise agent. When pressing the reboot button, next to your deployment, Kubernetes will destroy the pod of your deployment, and schedule a new one. This comes in handy, when you noticed one of your Kerberos Enterprise agents is in a stale state.
 
-<img src="/images/factory/upgrade-reboot.gif" style="width: 100%"/><br/>
+{{< figure src="upgrade-reboot.gif" alt="You can specify the configurations on a global level, so all agents will inherit from that." caption="You can specify the configurations on a global level, so all agents will inherit from that." class="stretch">}}
 
 ## Pods
 
 When creating a Kerberos Enterprise agent, Kubernetes will create a deployment and schedule a pod. This pod will be  managed by your deployment, and deployed as a Docker container to one of your available nodes. Once a pod dies/ crashes, or whatever unexpected scenario, the deployment will make sure it is deployed again to a different (or the same) node. This makes sure the Kerberos Enterprise agent is in a healthy state at all times.
 
-<img src="/images/factory/kerberos-factory-pods.png" style="width: 100%"/><br/>
+{{< figure src="pods.png" alt="When creating a deployment, a Kubernetes pod has created and assigned to a node." caption="When creating a deployment, a Kubernetes pod has created and assigned to a node." class="stretch">}}
 
 ## Storage and video management
 
@@ -129,11 +131,11 @@ Kerberos Enterprise stores its recordings locally for a short amount of time. Th
 
 On the other hand it's an open platform, as it allows you build extensions and integrations (web apps, mobile apps, machine learning services much more). Kerberos Vault ships with the ability of real-time messaging (Kafka) and a REST API (documented as Swaggger).
 
-<img src="/images/factory/kerberos-storage.png" style="width: 100%"/><br/>
+{{< figure src="../../prologue/deployments/deployment-hub-vault.svg" alt="Kerberos Vault allows you to centralise your recordings and build integrations." caption="Kerberos Vault allows you to centralise your recordings and build integrations." class="stretch">}}
 
-To connect one or more Kerberos Enterprise agents to your Kerberos Vault instance, you should open the configuration option and navigate to the `cloud` tab. Once selected you need to fill-in the credentials from your Kerberos Vault account.
+To connect one or more Kerberos Enterprise agents to your Kerberos Vault instance, you should open the configuration option and navigate to the `cloud` tab. When selected you need to fill-in the credentials from your Kerberos Vault account.
 
-- Storage URI: this is the API endpoint of your Kerberos Vault instance. Typically this is in the following format: `http(s)://api.yourdomain.com/storage`. Where `api.yourdomain.com` should match your Kerberos Vault API endpoint.
+- Storage URI: this is the API endpoint of your Kerberos Vault instance. Usually this is in the following format: `http(s)://api.yourdomain.com/storage`. Where `api.yourdomain.com` should match your Kerberos Vault API endpoint.
 
 - Provider: the name of the provider, which you created on the Kerberos Vault providers page, to which you want to send your recordings to.
 
@@ -143,7 +145,7 @@ To connect one or more Kerberos Enterprise agents to your Kerberos Vault instanc
 
 - Secret Access Key: this should match the secret access key of one of your Kerberos Vault accounts.
 
-<img src="/images/factory/kerberos-enterprise-storage-setup.gif" style="width: 100%"/><br/>
+{{< figure src="storage-setup.gif" alt="Using Kerberos Vault you can bring your own storage, and store the recordings of your agents in your own storage provider." caption="Using Kerberos Vault you can bring your own storage, and store the recordings of your agents in your own storage provider." class="stretch">}}
 
 ### Kerberos Hub
 
@@ -153,7 +155,7 @@ You have two choices when using Kerberos Hub, either you send your recordings fr
 
 Select the Kerberos Hub option, and copy-paste the credentials from your Kerberos Hub subscription.
 
-<img src="/images/factory/kerberos-enterprise-to-cloud.gif" style="width: 100%"/><br/>
+{{< figure src="enterprise-to-hub.gif" alt="By linking your Enterprise agent to Kerberos Hub, your recordings and livestreams will become available online." caption="By linking your Enterprise agent to Kerberos Hub, your recordings and livestreams will become available online." class="stretch">}}
 
 - Region: this is the region where your recordings will be stored. Only `eu-west-1` for now (will change, on the roadmap).
 
