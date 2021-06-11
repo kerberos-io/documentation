@@ -1,0 +1,19 @@
+{{/*
+VIDEO SHORTCODE
+Usage:
+{{< video webm="video.webm" mp4="video.mp4" caption="Awesome video" alt="Desc of awesome video" >}}
+*/}}
+<figure class="video">
+    <video controls preload="metadata">
+        {{ with .Get "webm" }}<source src="{{ . }}" type="video/webm">{{ end }}
+        {{ with .Get "mp4" }}<source src="{{ . }}" type="video/mp4">{{ end }}
+    </video>
+    {{/* For figcaption, show "caption" text if provided, else show "alt", else nothing */}}
+    {{ with .Get "caption" }}
+    <figcaption>{{ . }}</figcaption>
+    {{ else }}
+    {{ with .Get "alt" }}
+    <figcaption>{{ . }}</figcaption>
+    {{ end }}
+    {{ end }}
+</figure>
