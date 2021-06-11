@@ -15,7 +15,7 @@ toc: true
 
 When you install Kerberos Open Source or Kerberos Enterprise we will refer to it as the Kerberos Agent. A Kerberos Agent, is a software solution that consist of two pieces: Front-End and Back-End. The Back-End processes the video stream of a single surveillance camera, makes recordings and takes actions (for example sending notifications). The Front-End allows you to review recordings, and configure the Back-End.
 
-<img src="/images/prologue/agent-explanation.svg" style="width: 100%"/>
+{{< figure src="agent-explanation.svg" alt="A Kerberos agent consists of both a backend en frontend." caption="A Kerberos agent consists of both a backend en frontend." class="stretch">}}
 
 ## Front-End
 The Kerberos Agent ships with a web interface (Front-End) and a video processing engine (Back-End). The Front-End allows the user to modify specific settings, and if Kerberos Open Source, watch recordings in a easy-to-use interface; The Front-End for [Kerberos Enterprise](/enterprise/introduction) is only for configuration purposes only.
@@ -31,7 +31,7 @@ The Kerberos project started as an Open Source project, with a main focus on low
 
 Enterprises are more demanding, and have a lot of surveillance cameras, therefore they need a scalable surveillance system. The [Enterprise edition](/enterprise/introduction) of Kerberos allows you to operate a video surveillance cluster (Kubernetes) on-premise or in the cloud (AWS/GCP/Azure).
 
-<img src="/images/prologue/opensource-vs-enterprise-agent.svg" style="width: 100%"/>
+{{< figure src="opensource-vs-enterprise-agent.svg" alt="The different deployment options for Opensource and Enterprise agent." caption="The different deployment options for Opensource and Enterprise agent." class="stretch">}}
 
 The Open Source and Enterprise edition are significantly different from a source code point of view. The [Enterprise edition](/enterprise/introduction) is a complete rewrite of the Open Source version, and got all the best practices we discovered over the years implemented. Both version are and will remain updated in the future.
 
@@ -45,10 +45,10 @@ On the other hand if you plan to manage a larger network of surveillance cameras
 
 In addition to the concept of BYOC, Kerberos Vault enables you to connect to Kerberos Cloud (with your own storage), send events to message brokers (such as Kafka or SQS) and enables you to build custom apps or services (such as a custom machine learning service).
 
-<img src="/images/prologue/deployment-vault.svg" style="width: 100%"/>
+{{< figure src="deployment-vault.svg" alt="Kerberos Vault allows you to bring your own storage, and build extensions and integrations." caption="Kerberos Vault allows you to bring your own storage, and build extensions and integrations." class="stretch">}}
 
 ## Kerberos Hub
 
 When installing a Kerberos Agent inside your local network, it's possible to review your activity by using the agent its web interface. By all network principles, having a local setup, you will not be able to access the web interface from the cloud (outside your local network). On top of that, the Kerberos Agent doesn't come with a consolidated overview. This means that you will need to open multiple web interfaces, one for each connected surveillance camera. To simplify and resolve all of these challenges, [Kerberos Cloud](/cloud) was developed.
 
-<img src="/images/prologue/deployment-hub.svg" style="width: 100%"/>
+{{< figure src="deployment-hub.svg" alt="A Kerberos agent consists of both a backend en frontend." caption="A Kerberos agent consists of both a backend en frontend." class="stretch">}}
