@@ -23,7 +23,7 @@ Different recycling rules can be configured in the Kerberos Storage app. Based o
 
 When creating an `Account` on the Kerberos Storage app, you have the option to specify the day limit for that account. This day limit tells the recycle service, if it is time or not to remove the recording.
 
-![Storage - Day Limit](../../public/images/storage/daylimit.gif)
+{{< figure src="daylimit.gif" alt="You can remove your recordings by specifying the day limit field." caption="You can remove your recordings by specifying the day limit field." class="stretch">}}
 
 ## Prerequisites
 

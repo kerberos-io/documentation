@@ -84,4 +84,4 @@ Adapt the hostname to your needs, and apply the `deployment.yaml` file when appr
 
 You should now see Minio being installed, and able to access it from your favourite web browser. You can use with the credentials you have defined in the `deployment.yaml file.`
 
-![minio kubernetes](../../public/images/minio/webapp.png)
+{{< figure src="minio.png" alt="When installing at the edge, the preferred installation method is MinIO." caption="When installing at the edge, the preferred installation method is MinIO." class="stretch">}}

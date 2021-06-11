@@ -21,17 +21,17 @@ If not already the case, start by installing a Kubernetes cluster. This can be d
 
 ## Prerequisites
 
-Kerberos Storage is the storage component for Kerberos Enterprise. It is used to store your recordings at a central place, in the storage system you prefer. Next to that it can be used for extension and integration capabilities. Learn more about [Kerberos Storage here](/storage).
+Kerberos Vault is the storage component for Kerberos Enterprise. It is used to store your recordings at a central place, in the storage system you prefer. Next to that it can be used for extension and integration capabilities. Learn more about [Kerberos Vault here](/storage).
 
-To use Kerberos Storage, you will need to have Kerberos Enterprise installed, and deployments running. Independent from that one can also use the Kerberos Storage API `/swagger/index.html` to send recordings from a custom build VMS.
+To use Kerberos Vault, you will need to have Kerberos Enterprise installed, and deployments running. Independent from that one can also use the Kerberos Vault API `/swagger/index.html` to send recordings from a custom build VMS.
 
 ## Installation
 
-Similar to Kerberos Enterprise, Kerberos Storage, requires some initial components to be installed. If you will run Kerberos Storage in the same cluster as where you have Kerberos Enterprise running, there is not much to do.
+Similar to Kerberos Enterprise, Kerberos Vault, requires some initial components to be installed. If you will run Kerberos Vault in the same cluster as where you have Kerberos Enterprise running, there is not much to do.
 
-![architecture kubernetes](../../public/images/kerberos-storage-architecture-kubernetes-cloud.png)
+{{< figure src="../first-things-first/arch-kerberos-vault-providers.svg" alt="Bring your own storage using Kerberos Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
 
-However if you plan to run Kerberos Storage in a different cluster (which is perfectly possible), you will need to make sure you complete the initial setup of [Kerberos Enterprise installation](/enterprise/installation). To be more specific you will need the following components running:
+However if you plan to run Kerberos Vault in a different cluster (which is perfectly possible), you will need to make sure you complete the initial setup of [Kerberos Enterprise installation](/enterprise/installation). To be more specific you will need the following components running:
 
 - Helm
 - MongoDB
@@ -43,9 +43,9 @@ Once this is done start by cloning the configurations from our [Github repo](htt
 
 ### Storage
 
-Similar to Kerberos Enterprise, Kerberos Storage is managed through a web app. It allows you to add storage providers (S3, minio, etc), add queues for messaging, accounts for security and much more. It also comes with API's, which you can use to interact and retrieve information from Kerberos Storage. All is documented in the form of Swagger APIs `/swagger/index.html`.
+Similar to Kerberos Enterprise, Kerberos Vault is managed through a web app. It allows you to add storage providers (S3, minio, etc), add queues for messaging, accounts for security and much more. It also comes with API's, which you can use to interact and retrieve information from Kerberos Vault. All is documented in the form of Swagger APIs `/swagger/index.html`.
 
-Before installing Kerberos Storage, open the `./storage/yaml/deployment.yaml` configuration file. At the bottom file you will find two endpoints, similar to the Traefik config file below. Update the domain names to your own domain, and add these to your DNS server or `/etc/hosts` file (and point to the same IP as the Traefik EXTERNAL-IP).
+Before installing Kerberos Vault, open the `./storage/yaml/deployment.yaml` configuration file. At the bottom file you will find two endpoints, similar to the Traefik config file below. Update the domain names to your own domain, and add these to your DNS server or `/etc/hosts` file (and point to the same IP as the Traefik EXTERNAL-IP).
 
         spec:
           rules:
@@ -82,7 +82,7 @@ Next to that modify the MongoDB credentials, and make sure they match the creden
         - name: MONGODB_PASSWORD
     -->   value: "xxxxxxxxxx"
 
-Once you have corrected the DNS names and MongoDB credentials, install Kerberos Storage inside your cluster.
+Once you have corrected the DNS names and MongoDB credentials, install Kerberos Vault inside your cluster.
 
     kubectl apply -f ./storage/yaml/deployment.yaml
 
@@ -107,4 +107,4 @@ It should look like this.
 
 Once everything is configured correctly your cluster and DNS or `/etc/hosts` file, you should be able to access the Storage application. By navigating to the Storage domain `storage.domain.com` in your browser you will see the Storage login page showing up.
 
-![Storage](../../public/images/factory/kerberos-factory-loginpage.png)
+{{< figure src="login.png" alt="Once successfully installed Kerberos Vault, it will show you the login page." caption="Once successfully installed Kerberos Vault, it will show you the login page." class="stretch">}}

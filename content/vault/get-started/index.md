@@ -29,7 +29,7 @@ A [concrete tutorial can be found here](https://github.com/kerberos-io/storage/t
 
 Once you open a browser, and navigate to the Kerberos Storage web app (see installation for the URL), you will land on the login page.
 
-![Storage - Login](../../public/images/storage/login.gif)
+{{< figure src="login.gif" alt="After successful installation you should be able to access the login page." caption="After successful installation you should be able to access the login page." class="stretch">}}
 
 The default username and password of the Kerberos Storage app is:
 
@@ -51,7 +51,7 @@ bnkBDAABB0V4cFRpbWUBBAAAABb/ghMBCmtlcmJlcm9zaW8B/MC7ZzIAAf+AOaJ+
 Rta3+8zId+xtYQApdmHwo/Ih/vCN579iDeunwVQA
 -----END LICENSE KEY-----
 
-![Storage - License Key](../../public/images/storage/licensekey.gif)
+{{< figure src="licensekey.gif" alt="Before you can access the Kerberos Vault system, you will need a license key." caption="Before you can access the Kerberos Vault system, you will need a license key." class="stretch">}}
 
 Once you received a license key, and entered it into the web app you will be redirected to the login screen. Enter your credentials again, and you will land on the providers page (read more about it in the next chapter).
 
@@ -67,9 +67,9 @@ Providers are the actual datasource where you want to store your recordings. The
 
 As explained before, for each provider, the appropriate security settings has to be filled in. For example for AWS you need to define the access and secret key, for GCP you need to define a service account.
 
-Additionaly a provider can be marked as temporary. This is helpful if you wish to store your recordings for a short period, and want to use it for processing purpose only. A benefit of doing this is reducing costs (if you host in the public cloud).
+A provider can be marked as temporary. This is helpful if you wish to store your recordings for a short period, and want to use it for processing purpose only. A benefit of doing this is reducing costs (if you host in the public cloud).
 
-![Storage - Provider](../../public/images/storage/provider.gif)
+{{< figure src="provider.gif" alt="One or more providers can be configured to centralise your storage." caption="One or more providers can be configured to centralise your storage." class="stretch">}}
 
 ## Queues
 
@@ -83,7 +83,7 @@ An example or usecase of Queues is already discussed at the beginning of this pa
 - Counting algorithms,
 - and much more.
 
-![Storage - Queue](../../public/images/storage/queue.gif)
+{{< figure src="queue.gif" alt="Kerberos Vault can be configured to send events to message brokers to create real-time apps of ML models." caption="Kerberos Vault can be configured to send events to message brokers to create real-time apps of ML models." class="stretch">}}
 
 ## Accounts
 
@@ -101,13 +101,13 @@ As explained before, you can choose in which directory, the `Provider directory`
 
 Once an account is created it can be used in Kerberos Enterprise (and soon Kerberos Open Source) to persist your data from your Kerberos Enterprise agent into your own `Provider`.
 
-![Storage - Account](../../public/images/storage/account.gif)
+{{< figure src="account.gif" alt="One or more accounts can be created to secure your storage access." caption="One or more accounts can be created to secure your storage access." class="stretch">}}
 
 ## Media
 
 Once a recording is stored inside a specific `Provider` it will show up on the `Media` page. The `Media` page is an overview, list page, of all your recordings being uploaded to a `Provider`. It is used for quickly reviewing activity as for recycling, for the latter read more at the next paragraph.
 
-![Storage](../../public/images/kerberos-storage-media.png)
+{{< figure src="media.png" alt="All uploaded recordings are visualised through the media page." caption="All uploaded recordings are visualised through the media page." class="stretch">}}
 
 ## Recycle
 
