@@ -10657,5 +10657,148 @@ a.docs-link {
   text-decoration: underline; }
 
 /* Kerberos tweaks & branding */
+/*
+  Override SASS' handling of HSL(a) color functions, don't touch it and let CSS handle it itself.
+  This will enable the trick with variable alpha channels for CSS color variables (see below).
+*/
+/*
+  Function for defining (not only) vertical rhythm by multiplies of 12px
+    Examples:
+    width: size(2); (equals to "width: 24px;")
+    line-height: size(3); (equals to "line-height: 36px;")
+*/
+:root {
+  /*
+    Usage:
+    - regular colors: "color: var(--hub);"
+    - transparent colors: "color: hsla(var(--hub-hsl), 0.3);" (mind the "-hsl" suffix in variable)
+  */
+  --hub: hsl(278, 30%, 48%);
+  --hub-hsl: 278, 30%, 48%;
+  --hub-darker: hsl(278, 34%, 31%);
+  --hub-darker-hsl: 278, 34%, 31%;
+  --oss: hsl(2, 48%, 39%);
+  --oss-hsl: 2, 48%, 39%;
+  --oss-darker: hsl(2, 52%, 25%);
+  --oss-darker-hsl: 2, 52%, 25%;
+  --enterprise: hsl(162, 24%, 38%);
+  --enterprise-hsl: 162, 24%, 38%;
+  --enterprise-darker: hsl(162, 26%, 26%);
+  --enterprise-darker-hsl: 162, 26%, 26%;
+  --vault: hsl(229, 25%, 45%);
+  --vault-hsl: 229, 25%, 45%;
+  --vault-darker: hsl(230, 28%, 31%);
+  --vault-darker-hsl: 230, 28%, 31%;
+  --secondary: hsl(0, 3%, 41%);
+  --secondary-hsl: 0, 3%, 41%;
+  --secondary-darker: hsl(0, 3%, 48%);
+  --secondary-darker-hsl: 0, 3%, 48%;
+  --text: hsl(0, 3%, 15%);
+  --text-hsl: 0, 3%, 15%;
+  --text-muted: hsl(0, 3%, 41%);
+  --text-muted-hsl: 0, 3%, 41%;
+  --text-light: hsl(0, 5%, 63%);
+  --text-light-hsl: 0, 5%, 63%;
+  --card: hsl(0, 0%, 100%);
+  --card-hsl: 0, 0%, 100%;
+  --card-muted: hsl(0, 0%, 98%);
+  --card-muted-hsl: 0, 0%, 98%;
+  --info: hsl(205, 74%, 53%);
+  --info-hsl: 205, 74%, 53%;
+  --success: hsl(131, 31%, 52%);
+  --success-hsl: 131, 31%, 52%;
+  --warning: hsl(47, 86%, 47%);
+  --warning-hsl: 47, 86%, 47%;
+  --alert: hsl(2, 58%, 48%);
+  --alert-hsl: 2, 58%, 48%;
+  --bg: hsl(0, 5%, 93%);
+  --bg-hsl: 0, 5%, 93%;
+  --bg-muted: hsl(0, 4%, 89%);
+  --bg-muted-hsl: 0, 4%, 89%;
+  --bg-white: hsl(0, 0%, 100%);
+  --bg-white-hsl: 0, 0%, 100%;
+  --radius: 4px;
+  --card-paddingV: 24px;
+  --card-paddingH: 12px; }
+  @media only screen and (min-width: 769px) {
+    :root {
+      --card-paddingV: 24px;
+      --card-paddingH: 24px; } }
+  @media only screen and (min-width: 1024px) {
+    :root {
+      --card-paddingV: 36px;
+      --card-paddingH: 36px; } }
+/*
+  Usage:
+  @extend %box-shadow;
+*/
+.navbar {
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.04), 0px 3px 4px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius); }
+
+/*! doc.kerberos.io v2.0.0 | MIT License */
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-muted);
+  background: var(--bg); }
+  @supports (font-variation-settings: normal) {
+    body {
+      font-family: 'Inter var', sans-serif; } }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-weight: 600;
+  color: var(--text);
+  margin: 0; }
+  body.dark h1, body.dark .h1, body.dark h2, body.dark .h2, body.dark h3, body.dark .h3, body.dark h4, body.dark .h4, body.dark h5, body.dark .h5, body.dark h6, body.dark .h6 {
+    color: var(--bg-white); }
+
+h1, .h1 {
+  font-size: 24px;
+  line-height: 36px; }
+  @media only screen and (min-width: 769px) {
+    h1, .h1 {
+      font-size: 30px;
+      line-height: 48px; } }
+  @media only screen and (min-width: 1216px) {
+    h1, .h1 {
+      font-size: 36px; } }
+h2, .h2 {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 6px; }
+  @media only screen and (min-width: 1216px) {
+    h2, .h2 {
+      font-size: 30px;
+      line-height: 48px;
+      margin-bottom: 0; } }
+h3, .h3 {
+  font-size: 20px;
+  line-height: 24px; }
+  @media only screen and (min-width: 1216px) {
+    h3, .h3 {
+      font-size: 24px;
+      line-height: 36px; } }
+p {
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0 0 12px; }
+  @media only screen and (min-width: 1216px) {
+    p {
+      font-size: 18px;
+      line-height: 30px; } }
+  p.lead {
+    color: var(--text-light);
+    margin: 0 0 24px;
+    font-size: 18px;
+    line-height: 24px; }
+    @media only screen and (min-width: 1216px) {
+      p.lead {
+        font-size: 22px;
+        line-height: 36px; } }
+img {
+  max-width: 100%; }
+
+.navbar {
+  margin-top: 6px; }
 
 /*# sourceMappingURL=main.css.map */

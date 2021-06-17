@@ -1,0 +1,180 @@
+/*
+  Override SASS' handling of HSL(a) color functions, don't touch it and let CSS handle it itself.
+  This will enable the trick with variable alpha channels for CSS color variables (see below).
+*/
+@function hsla($args...) { @return #{'hsla(#{$args})'}; }
+
+
+// ----- Mixins ----- //
+
+// Bulma breakpoints
+$gap: 32px;
+$tablet: 769px;
+$desktop:	960px + (2 * $gap);
+$widescreen:	1152px + (2 * $gap);
+$fullhd: 1344px + (2 * $gap);
+
+/*
+  Function for defining (not only) vertical rhythm by multiplies of 12px
+    Examples:
+    width: size(2); (equals to "width: 24px;")
+    line-height: size(3); (equals to "line-height: 36px;")
+*/
+@function size($multiplier) {
+  @return $multiplier * 12px;
+}
+
+// Responsive mixin (Bulma's)
+@mixin break($media) {
+  @if $media == t { 
+    @media only screen and (min-width: $tablet) { @content; }
+  }
+  @else if $media == d {
+    @media only screen and (min-width: $desktop) { @content; }
+  }
+  @else if $media == w {
+    @media only screen and (min-width: $widescreen) { @content; }
+  }
+  @else if $media == f {
+    @media only screen and (min-width: $fullhd) { @content; }
+  }
+}
+
+// Custom responsivity (px-based, for when default breakpoints aren't enough)
+@mixin break-from($size) {
+  // Usage: @include break-from(741px) {  }
+  @media only screen and (min-width: $size) { @content; }
+}
+
+
+// Orientation mixin for landscape/portrait
+@mixin orientation($orientation) {
+  // @include orientation(landscape) { ... }
+  // @include orientation(portrait) { ... }
+  @media only screen and (orientation: $orientation) { @content; }
+}
+
+
+// @include gradient (<top-color>, <bottom-color>);
+@mixin gradient($top, $bottom) {
+  background: $top;
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom));
+  background: -webkit-linear-gradient(top, $top 0%,$bottom 100%);
+  background: -o-linear-gradient(top, $top 0%,$bottom 100%);
+  background: -ms-linear-gradient(top, $top 0%,$bottom 100%);
+  background: linear-gradient(to bottom, $top 0%,$bottom 100%);
+}
+
+
+:root {
+
+  // ---------- COLORS ---------- //
+  /*
+    Usage:
+    - regular colors: "color: var(--hub);"
+    - transparent colors: "color: hsla(var(--hub-hsl), 0.3);" (mind the "-hsl" suffix in variable)
+  */
+  
+  --hub: hsl(278, 30%, 48%);
+  --hub-hsl: 278, 30%, 48%;
+  --hub-darker: hsl(278, 34%, 31%);
+  --hub-darker-hsl: 278, 34%, 31%;
+  --oss: hsl(2, 48%, 39%);
+  --oss-hsl: 2, 48%, 39%;
+  --oss-darker: hsl(2, 52%, 25%);
+  --oss-darker-hsl: 2, 52%, 25%;
+  --enterprise: hsl(162, 24%, 38%);
+  --enterprise-hsl: 162, 24%, 38%;
+  --enterprise-darker: hsl(162, 26%, 26%);
+  --enterprise-darker-hsl: 162, 26%, 26%;
+  --vault: hsl(229, 25%, 45%);
+  --vault-hsl: 229, 25%, 45%;
+  --vault-darker: hsl(230, 28%, 31%);
+  --vault-darker-hsl: 230, 28%, 31%;
+
+  --secondary: hsl(0, 3%, 41%);
+  --secondary-hsl: 0, 3%, 41%;
+  --secondary-darker: hsl(0, 3%, 48%);
+  --secondary-darker-hsl: 0, 3%, 48%;
+
+  --text: hsl(0, 3%, 15%);
+  --text-hsl: 0, 3%, 15%;
+  --text-muted: hsl(0, 3%, 41%);
+  --text-muted-hsl: 0, 3%, 41%;
+  --text-light: hsl(0, 5%, 63%);
+  --text-light-hsl: 0, 5%, 63%;
+
+  --card: hsl(0, 0%, 100%);
+  --card-hsl: 0, 0%, 100%;
+  --card-muted: hsl(0, 0%, 98%);
+  --card-muted-hsl: 0, 0%, 98%;
+
+  --info: hsl(205, 74%, 53%);
+  --info-hsl: 205, 74%, 53%;
+  --success: hsl(131, 31%, 52%);
+  --success-hsl: 131, 31%, 52%;
+  --warning: hsl(47, 86%, 47%);
+  --warning-hsl: 47, 86%, 47%;
+  --alert: hsl(2, 58%, 48%);
+  --alert-hsl: 2, 58%, 48%;
+
+  --bg: hsl(0, 5%, 93%);
+  --bg-hsl: 0, 5%, 93%;
+  --bg-muted: hsl(0, 4%, 89%);
+  --bg-muted-hsl: 0, 4%, 89%;
+  --bg-white: hsl(0, 0%, 100%);
+  --bg-white-hsl: 0, 0%, 100%;
+
+  // ---------- UI ---------- //
+
+  --radius: 4px;
+
+  // default padding for cards ("V" for vertical, "H" for horizontal)
+  --card-paddingV: #{size(2)}; // interpolate to embed the result in CSS var
+  --card-paddingH: #{size(1)};
+  @include break(t) {
+    --card-paddingV: #{size(2)};
+    --card-paddingH: #{size(2)};
+  }
+  @include break(d) {
+    --card-paddingV: #{size(3)};
+    --card-paddingH: #{size(3)};
+  }
+
+}
+
+
+// ========== PLACEHOLDERS ========== //
+/*
+  Usage:
+  @extend %box-shadow;
+*/
+
+%card-header-shadow {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
+}
+
+%card-footer-shadow {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.07) inset;
+}
+
+%box-shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+}
+
+%box-shadow-bigger {
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.04), 0px 3px 4px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+}
+
+%modal-shadow {
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.24), 0px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+%tfx {
+  transition: all 0.15s;
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
+}

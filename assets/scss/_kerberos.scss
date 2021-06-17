@@ -1,0 +1,85 @@
+/*! doc.kerberos.io v2.0.0 | MIT License */
+
+// ----- Basics & Typography ----- //
+
+body {
+  font-family: 'Inter', sans-serif; // use regular Inter font by default..
+  @supports (font-variation-settings: normal) {
+    font-family: 'Inter var', sans-serif; // ..but if supported, use variable Inter font instead (all-in-one)
+  }
+  color: var(--text-muted);
+  background: var(--bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  body.dark & {
+    color: var(--bg-white);
+  }
+}
+
+h1 {
+  font-size: 24px;
+  line-height: size(3);
+  @include break(t) {
+    font-size: 30px;
+    line-height: size(4);
+  }
+  @include break(w) {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: size(2.5);
+  margin-bottom: size(0.5);
+  @include break(w) {
+    font-size: 30px;
+    line-height: size(4);
+    margin-bottom: 0;
+  }
+}
+
+h3 {
+  font-size: 20px;
+  line-height: size(2);
+  @include break(w) { font-size: 24px; line-height: size(3); }
+}
+
+p {
+  font-size: 15px;
+  line-height: size(2);
+  margin: 0 0 size(1);
+  @include break(w) {
+    font-size: 18px;
+    line-height: size(2.5);
+  }
+  &.lead {
+    color: var(--text-light);
+    margin: 0 0 size(2);
+    font-size: 18px;
+    line-height: size(2);
+    @include break(w) {
+      font-size: 22px;
+      line-height: size(3);
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+
+// ----- UI ----- //
+
+
+// ----- Layout ----- //
+
+.navbar {
+  @extend %box-shadow-bigger;
+  margin-top: 6px; // make the whole gradient visible
+}
