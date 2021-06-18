@@ -1,71 +1,52 @@
-/* jost-regular - latin */
+/*
+  Self-hosted fonts
+*/
+
+
 @font-face {
-  font-family: "Jost";
-  font-style: normal;
+  font-family: 'Inter';
+  font-style:  normal;
   font-weight: 400;
   font-display: swap;
-  src:
-    local("Jost"),
-    url("fonts/vendor/jost/jost-v4-latin-regular.woff2") format("woff2"),
-    url("fonts/vendor/jost/jost-v4-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: url("fonts/Inter-Regular.woff2?v=3.18") format("woff2"),
+       url("fonts/Inter-Regular.woff?v=3.18") format("woff");
 }
 
-/* jost-500 - latin */
 @font-face {
-  font-family: "Jost";
-  font-style: normal;
+  font-family: 'Inter';
+  font-style:  normal;
   font-weight: 500;
   font-display: swap;
-  src:
-    local("Jost"),
-    url("fonts/vendor/jost/jost-v4-latin-500.woff2") format("woff2"),
-    url("fonts/vendor/jost/jost-v4-latin-500.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: url("fonts/Inter-Medium.woff2?v=3.18") format("woff2"),
+       url("fonts/Inter-Medium.woff?v=3.18") format("woff");
 }
 
-/* jost-700 - latin */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/Inter-SemiBold.woff2?v=3.18") format("woff2"),
+       url("fonts/Inter-SemiBold.woff?v=3.18") format("woff");
+}
+
+/* -------------------------------------------------------
+Variable font.
+Usage:
+
+  body {
+    font-family: 'Inter', sans-serif; // use regular Inter font by default..
+    @supports (font-variation-settings: normal) {
+      font-family: 'Inter var', sans-serif; // ..but if supported, use variable Inter font instead (all-in-one)
+    }
+  }
+
+*/
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
   font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src:
-    local("Jost"),
-    url("fonts/vendor/jost/jost-v4-latin-700.woff2") format("woff2"),
-    url("fonts/vendor/jost/jost-v4-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* jost-italic - latin */
-@font-face {
-  font-family: "Jost";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src:
-    local("Jost"),
-    url("fonts/vendor/jost/jost-v4-latin-italic.woff2") format("woff2"),
-    url("fonts/vendor/jost/jost-v4-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* jost-500italic - latin */
-@font-face {
-  font-family: "Jost";
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src:
-    local("Jost"),
-    url("fonts/vendor/jost/jost-v4-latin-500italic.woff2") format("woff2"),
-    url("fonts/vendor/jost/jost-v4-latin-500italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* jost-700italic - latin */
-@font-face {
-  font-family: "Jost";
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src:
-    local("Jost"),
-    url("fonts/vendor/jost/jost-v4-latin-700italic.woff2") format("woff2"),
-    url("fonts/vendor/jost/jost-v4-latin-700italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-named-instance: 'Regular';
+  src: url("fonts/Inter-roman.var.woff2?v=3.18") format("woff2");
 }
