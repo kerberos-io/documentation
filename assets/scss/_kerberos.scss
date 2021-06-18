@@ -52,7 +52,7 @@ h4 {
   @include break(w) { font-size: 18px; line-height: size(3); }
 }
 
-p, li:not(.nav-item) {
+p {
   font-size: 15px;
   line-height: size(2);
   margin: 0 0 size(1);
@@ -74,6 +74,23 @@ p, li:not(.nav-item) {
 strong {
   font-weight: 550;
   color: var(--text);
+  body.dark & {
+    color: var(--bg-white);
+  }
+}
+
+li {
+  font-size: 15px;
+  line-height: size(2);
+  @include break(w) {
+    font-size: 16px;
+    line-height: size(2.5);
+  }
+}
+
+hr {
+  margin: 2.5rem 0;
+  opacity: 0.1;
 }
 
 img {

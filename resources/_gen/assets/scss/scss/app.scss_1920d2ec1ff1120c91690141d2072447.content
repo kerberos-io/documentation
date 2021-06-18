@@ -9745,26 +9745,39 @@ h4, .h4 {
     h4, .h4 {
       font-size: 18px;
       line-height: 36px; } }
-p, li:not(.nav-item) {
+p {
   font-size: 15px;
   line-height: 24px;
   margin: 0 0 12px; }
   @media only screen and (min-width: 1200px) {
-    p, li:not(.nav-item) {
+    p {
       font-size: 16px;
       line-height: 30px; } }
-  p.lead, li.lead:not(.nav-item) {
+  p.lead {
     color: var(--text-light);
     margin: 0 0 24px;
     font-size: 18px;
     line-height: 24px; }
     @media only screen and (min-width: 1200px) {
-      p.lead, li.lead:not(.nav-item) {
+      p.lead {
         font-size: 22px;
         line-height: 36px; } }
 strong {
   font-weight: 550;
   color: var(--text); }
+  body.dark strong {
+    color: var(--bg-white); }
+
+li {
+  font-size: 15px;
+  line-height: 24px; }
+  @media only screen and (min-width: 1200px) {
+    li {
+      font-size: 16px;
+      line-height: 30px; } }
+hr {
+  margin: 2.5rem 0;
+  opacity: 0.1; }
 
 img {
   max-width: 100%; }
