@@ -34,10 +34,10 @@
   identifier = "hub"
   url = "/hub/"
 
-[[main]]
-  name = "Quickstart"
-  url = "/prologue/introduction/"
-  weight = 10
+# [[main]]
+#   name = "Quickstart"
+#   url = "/prologue/introduction/"
+#   weight = 10
 
 [[main]]
   name = "Homepage"
