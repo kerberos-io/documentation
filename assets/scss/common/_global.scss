@@ -163,6 +163,11 @@ body {
   }
 }
 
+.dark .docs-content {
+  border-right: 0;
+  background: #262a2d;
+}
+
 .docs-navigation {
   border-top: 1px solid $gray-200;
   margin-top: 2rem;

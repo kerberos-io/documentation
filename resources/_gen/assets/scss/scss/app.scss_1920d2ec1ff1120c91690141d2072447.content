@@ -8472,6 +8472,10 @@ body {
   .docs-content a {
     font-weight: 500; }
 
+.dark .docs-content {
+  border-right: 0;
+  background: #262a2d; }
+
 .docs-navigation {
   border-top: 1px solid #e9ecef;
   margin-top: 2rem;
