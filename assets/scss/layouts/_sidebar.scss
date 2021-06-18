@@ -3,6 +3,12 @@
   @extend %tfx;
   scrollbar-width: thin;
   scrollbar-color: var(--bg) var(--bg);
+  ul {
+    li { // sidebar & TOC links
+      margin: 0;
+      line-height: 24px;
+    }
+  }
 }
 
 .docs-links::-webkit-scrollbar,
@@ -56,25 +62,55 @@
   border-top: 2px solid var(--bg-muted);
 }
 
-a.docs-link {
-  color: $body-color;
+a.docs-link,
+.page-links a {
+  @extend %tfx;
+  color: var(--text-muted);
   display: block;
-  padding: 0.125rem 0;
+  padding: size(0.5) size(1); //0.125rem 0;
+  margin: 0 size(2) 0 0;
   font-size: $font-size-base;
+  line-height: size(2);
+  border-radius: var(--radius);
+  &:hover {
+    color: var(--text);
+    background: var(--bg-muted);
+    text-decoration: none;
+  }
+  &.active {
+    text-decoration: none;
+    color: var(--hub);
+    font-weight: 500;
+    background: hsla(var(--hub-hsl), 0.1);
+  }
 }
 
-.page-links li {
-  margin-top: 0.375rem;
-  padding-top: 0.375rem;
+.page-links { // TOC
+  a {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--text);
+  }
+  li {
+    margin-top: 0.375rem;
+    padding-top: 0.375rem;
+    ul {
+      li {
+        padding-left: 1rem;
+        margin-top: 0.125rem;
+        padding-top: 0.125rem;
+        a {
+          font-weight: 400;
+          color: var(--text-muted);
+        }
+      }
+    }
+  }
 }
 
-.page-links li ul li {
-  border-top: none;
-  padding-left: 1rem;
-  margin-top: 0.125rem;
-  padding-top: 0.125rem;
-}
 
+/*
 .page-links li:not(:first-child) {
   border-top: 1px dashed $gray-200;
 }
@@ -92,6 +128,7 @@ a.docs-link {
   text-decoration: none;
   color: $link-color;
 }
+*/
 
 .docs-links h3.sidebar-link,
 .page-links h3.sidebar-link {

@@ -1,3 +1,19 @@
+/*
+  Override SASS' handling of HSL(a) color functions, don't touch it and let CSS handle it itself.
+  This will enable the trick with variable alpha channels for CSS color variables (see below).
+*/
+@function hsla($args...) { @return #{'hsla(#{$args})'}; }
+
+/*
+  Function for defining (not only) vertical rhythm by multiplies of 12px
+    Examples:
+    width: size(2); (equals to "width: 24px;")
+    line-height: size(3); (equals to "line-height: 36px;")
+*/
+@function size($multiplier) {
+  @return $multiplier * 12px;
+}
+
 // Color system
 
 $white:    #fff;

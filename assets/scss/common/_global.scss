@@ -97,7 +97,7 @@ body {
 @include media-breakpoint-up(lg) {
   .docs-sidebar {
     order: 0;
-    border-right: 2px solid var(--bg-muted);
+    //border-right: 2px solid var(--bg-muted);
   }
 
   @supports ((position:-webkit-sticky) or (position:sticky)) {
@@ -156,6 +156,9 @@ body {
 .docs-content {
   padding-bottom: 3rem;
   order: 1;
+  a {
+    font-weight: 500;
+  }
 }
 
 .docs-navigation {

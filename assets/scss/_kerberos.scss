@@ -57,7 +57,7 @@ p, li:not(.nav-item) {
   line-height: size(2);
   margin: 0 0 size(1);
   @include break(w) {
-    font-size: 18px;
+    font-size: 16px;
     line-height: size(2.5);
   }
   &.lead {
@@ -102,4 +102,5 @@ img {
       margin-right: 1rem;
     }
   }
+  li { margin-bottom: 0; }
 }
