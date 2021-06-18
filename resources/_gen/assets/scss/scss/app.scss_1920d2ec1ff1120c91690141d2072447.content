@@ -10801,4 +10801,8 @@ img {
 .navbar {
   margin-top: 6px; }
 
+.footer {
+  box-shadow: 0 -4px 34px rgba(0, 0, 0, 0.04), 0 -3px 4px rgba(0, 0, 0, 0.1);
+  background: var(--card); }
+
 /*# sourceMappingURL=main.css.map */
