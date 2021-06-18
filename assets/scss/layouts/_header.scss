@@ -11,7 +11,7 @@
 }
 
 .navbar-brand {
-  font-weight: $headings-font-weight;
+  font-weight: 600;
 }
 
 .navbar-light .navbar-brand,
@@ -25,9 +25,11 @@
 }
 
 @include media-breakpoint-up(md) {
+  /*
   .navbar-brand {
     font-size: $font-size-xl;
   }
+  */
 
   .navbar-text {
     margin-left: 1.25rem;

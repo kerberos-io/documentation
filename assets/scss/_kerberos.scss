@@ -89,6 +89,11 @@ img {
 .navbar {
   @extend %box-shadow-bigger;
   margin-top: 6px; // make the whole gradient visible
+  .navbar-nav {
+    .nav-link {
+      color: var(--text-muted);
+    }
+  }
 }
 
 .footer {

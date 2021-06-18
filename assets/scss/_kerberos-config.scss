@@ -111,6 +111,17 @@ $fullhd: 1400px;
   --bg-white: hsl(0, 0%, 100%);
   --bg-white-hsl: 0, 0%, 100%;
 
+  body.dark {
+    --hub: hsl(200, 93%, 77%);
+    --hub-hsl: 200, 93%, 77%;
+
+    --text-muted: hsl(210, 14%, 89%);
+    --text-muted-hsl: 210, 14%, 89%;
+
+    --bg: hsl(210, 11%, 15%);
+    --bg-hsl: 210, 11%, 15%;
+  }
+
   // ---------- UI ---------- //
 
   --radius: 4px;

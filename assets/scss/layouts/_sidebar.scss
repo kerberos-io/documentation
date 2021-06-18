@@ -76,21 +76,31 @@ a.docs-link,
     color: var(--text);
     background: var(--bg-muted);
     text-decoration: none;
+    body.dark & {
+      color: var(--bg-white);
+      background: hsla(var(--bg-muted-hsl), 0.05);
+    }
   }
   &.active {
     text-decoration: none;
     color: var(--hub);
     font-weight: 500;
     background: hsla(var(--hub-hsl), 0.1);
+    body.dark & {
+      color: hsl(200.4, 93.2%, 77.1%);
+      background: hsla(200.4, 93.2%, 77.1%, 0.1);
+    }
   }
 }
 
 .page-links { // TOC
   a {
     margin: 0;
-    font-size: 0.9em;
+    font-size: 13px;
+    line-height: size(1.5);
     font-weight: 500;
     color: var(--text);
+    padding: size(0.5) size(1);
   }
   li {
     margin-top: 0.375rem;
@@ -98,7 +108,6 @@ a.docs-link,
     ul {
       li {
         padding-left: 1rem;
-        margin-top: 0.125rem;
         padding-top: 0.125rem;
         a {
           font-weight: 400;

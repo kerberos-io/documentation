@@ -2,6 +2,19 @@
   border-top: 1px solid $gray-200;
   padding-top: 1.125rem;
   padding-bottom: 1.125rem;
+  body.dark & {
+    background: #212529;
+  }
+  a {
+    color: var(--text);
+    &:hover, &:focus {
+      color: var(--hub);
+      text-decoration: none;
+      body.dark & {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 .footer ul {

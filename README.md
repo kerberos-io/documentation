@@ -22,3 +22,6 @@ Run Hugo dev server with autocompile of assets
 
 - before launch
   - [ ] change baseURL in config/production/config.toml
+
+- nice to haves:
+  - [ ] transform colors to CSS vars (and use for easier dark mode)

@@ -14,8 +14,13 @@
   figcaption {
     text-align: center;
     font-weight: 400;
-    font-size: 13px;
     padding: 10px 0 0 0;
+    p {
+      font-size: 14px;
+      opacity: 0.7;
+      padding: 0 size(2);
+      line-height: size(2);
+    }
   }
 }
 
