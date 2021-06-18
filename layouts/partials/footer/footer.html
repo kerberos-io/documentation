@@ -12,7 +12,7 @@
           </li>
           {{ range .Site.Menus.social -}}
           <li class="nav-item">
-            <a class="link" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}<span class="ms-2 visually-hidden">{{ .Name | safeHTML }}</span></a>
+            <a class="link" href="{{ .URL | relURL }}" title="{{ .Name }}">{{ .Pre | safeHTML }}<span class="ms-2 visually-hidden">{{ .Name | safeHTML }}</span></a>
           </li>
           {{ end -}}
         </ul>
