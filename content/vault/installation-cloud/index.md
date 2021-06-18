@@ -15,9 +15,7 @@ toc: true
 
 If not already the case, start by installing a Kubernetes cluster. This can be done on one of the hyperscalers (**AWS**, **GCP** or **Azure**), cloud providers (Digital Ocean, Scaleway, etc) or on-premise in your own private network.
 
-<br/>
-<div class='embed-container'><iframe src="https://player.vimeo.com/video/404813147" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-<br/><br/>
+{{< vimeo id="404813147" class="responsive-video ratio-16by10" title="Running a Kubernetes cluster in the cloud?" >}}
 
 ## Prerequisites
 

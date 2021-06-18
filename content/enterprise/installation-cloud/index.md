@@ -16,17 +16,14 @@ toc: true
 Start by installing a Kubernetes cluster. This can be done on one of the hyperscalers (**AWS**, **GCP** or **Azure**),
 cloud providers (Digital Ocean, Scaleway, etc) or on-premise in your own private network.
 
-<br/>
-<div class='embed-container'><iframe src="https://player.vimeo.com/video/404813147" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-<br/><br/>
+{{< vimeo id="404813147" class="responsive-video ratio-16by10" title="Running a Kubernetes cluster in the cloud?" >}}
+
 
 ## Installation
 
 Before setting up Kerberos Enterprise, some configuration needs to happen. First thing that we need to do is setting up the RBAC permissions (Role Based Access Control). We need to enable this to be able to query specific endpoints from the Kubernetes API. By default these endpoints are locked, so we need to unlock them.
 
-<br/>
-<div class='embed-container'><iframe src="https://player.vimeo.com/video/404767375" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-<br/><br/>
+{{< vimeo id="404767375" class="responsive-video ratio-16by10" title="Install Kerberos Enterprise in your cluster" >}}
 
 First clone the configrations from our Github repo.
 

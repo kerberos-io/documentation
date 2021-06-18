@@ -18,9 +18,7 @@ Once you've installed Kerberos Enterprise, you will have the Kerberos Enterprise
 
 Important to note is that this web app is relying on the Golang Kubernetes SDK, so that means from an administration point of view, you could simply use the well known `kubectl` command. The webapp just add (a lot of) functionalities on top of the Kubernetes API, which are specific to Kerberos Enterprise agents.
 
-<br/>
-<div class='embed-container'><iframe src="https://player.vimeo.com/video/405039357" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-<br/><br/>
+{{< vimeo id="405039357" class="responsive-video ratio-16by10" title="Kerberos Enterprise - Getting started" >}}
 
 ## Login page
 

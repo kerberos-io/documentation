@@ -30,9 +30,8 @@ The major key differentiators compared to to other solutions are:
 - Host anywhere, in the cloud or on premise,
 - Integration and extension, allowing to build custom apps, ML services and more.
 
-<br/>
-<div class='embed-container'><iframe src="https://player.vimeo.com/video/405037695" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-<br/><br/>
+{{< vimeo id="405037695" class="responsive-video ratio-16by10" title="Kerberos Enterprise introduction" >}}
+
 
 ## Kubernetes
 

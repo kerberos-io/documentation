@@ -9769,6 +9769,25 @@ strong {
 img {
   max-width: 100%; }
 
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin: 2rem 0 0;
+  border-radius: var(--radius); }
+  .responsive-video.ratio-16by10 {
+    padding-bottom: 62.5%; }
+  .responsive-video.ratio-4by3 {
+    padding-bottom: 75%; }
+  .responsive-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; }
+
 .navbar {
   margin-top: 6px; }
   .navbar .navbar-nav .nav-link, .navbar .navbar-nav .banner .nav a, .banner .nav .navbar .navbar-nav a {

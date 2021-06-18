@@ -15,7 +15,7 @@ toc: true
 
 The **Kerberos(dot)io** project, is a video surveillance solution, which was initiated back in 2014. Over the years it has evolved into a trusted, stable and feature-rich video surveillance system. To set the expectations, watch the video below to understand what it can and can't do. If you want to install Kerberos(dot)io, it's recommended to have a look [at the architectures page](/prologue/deployments/) to find the best solution for your usecase.
 
-<div class='embed-container'><iframe src="https://player.vimeo.com/video/382090189" width="100%" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+{{< vimeo id="382090189" class="responsive-video ratio-16by10" title="Kerberos introduction" >}}
 
 ## The name: Kerberos.io
 
