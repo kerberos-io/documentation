@@ -133,7 +133,7 @@ After installing the different MetalLB components, we need to create a `configma
 
 You can change the IP range above to match your needs. MetalLB will use this range as a referance to assign IP addresses to your LoadBalancers. Once ready you can apply the configration map.
 
-    kubectl apply -n kerberos -f ./enterprise/yaml/metallb/configmap.yaml
+    kubectl apply -f ./enterprise/yaml/metallb/configmap.yaml
 
 ### Helm
 
