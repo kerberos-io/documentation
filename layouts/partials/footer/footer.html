@@ -1,16 +1,27 @@
 <footer class="footer text-muted">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 order-last order-lg-first">
-        <ul class="list-inline">
+      <div class="col-lg-6 order-last order-lg-first">
+        <!--ul class="list-inline">
           <li class="list-inline-item">{{ .Site.Params.footer | safeHTML }}</li>
+        </ul-->
+        <ul class="navbar-nav social-nav">
+          <li class="copyright">
+            &copy;&nbsp;{{ with .Site.Params.copyrightSince }}{{ . }}&ndash;{{ end }}{{ now.Format "2006" }}
+            <a href="https://kerberos.io">Kerberos.io</a>
+          </li>
+          {{ range .Site.Menus.social -}}
+          <li class="nav-item">
+            <a class="link" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}<span class="ms-2 visually-hidden">{{ .Name | safeHTML }}</span></a>
+          </li>
+          {{ end -}}
         </ul>
       </div>
-      <div class="col-lg-8 order-first order-lg-last text-lg-end">
+      <div class="col-lg-10 order-first order-lg-last text-lg-end">
         <ul class="list-inline">
           <li class="list-inline-item">Learn more about</li>
           {{ range .Site.Menus.footer -}}
-            <li class="list-inline-item"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+          <li class="list-inline-item"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
           {{ end -}}
         </ul>
       </div>

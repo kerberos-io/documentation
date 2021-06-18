@@ -14,7 +14,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: var(--text);
-  margin: 0;
   body.dark & {
     color: var(--bg-white);
   }
@@ -87,4 +86,12 @@ img {
 .footer {
   box-shadow: 0 -4px 34px rgba(0, 0, 0, 0.04), 0 -3px 4px rgba(0, 0, 0, 0.1);
   background: var(--card);
+  // copyright with social links
+  .navbar-nav {
+    margin-top: 1rem;
+    @include break-from(992px) { margin: 0; }
+    .copyright {
+      margin-right: 1rem;
+    }
+  }
 }

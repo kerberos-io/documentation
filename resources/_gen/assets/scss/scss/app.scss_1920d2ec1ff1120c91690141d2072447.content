@@ -9643,8 +9643,7 @@ body {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 600;
-  color: var(--text);
-  margin: 0; }
+  color: var(--text); }
   body.dark h1, body.dark .h1, body.dark h2, body.dark .h2, body.dark h3, body.dark .h3, body.dark h4, body.dark .h4, body.dark h5, body.dark .h5, body.dark h6, body.dark .h6 {
     color: var(--bg-white); }
 
@@ -9700,5 +9699,12 @@ img {
 .footer {
   box-shadow: 0 -4px 34px rgba(0, 0, 0, 0.04), 0 -3px 4px rgba(0, 0, 0, 0.1);
   background: var(--card); }
+  .footer .navbar-nav {
+    margin-top: 1rem; }
+    @media only screen and (min-width: 992px) {
+      .footer .navbar-nav {
+        margin: 0; } }
+    .footer .navbar-nav .copyright {
+      margin-right: 1rem; }
 
 /*# sourceMappingURL=main.css.map */

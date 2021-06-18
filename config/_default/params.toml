@@ -37,6 +37,7 @@ lqipWidth = "20x"
 
 # Footer
 footer = "Powered by <a href=\"https://www.github.com/\">GitHub</a>, <a href=\"https://gohugo.io/\">Hugo</a>, and <a href=\"https://getdoks.org/\">Doks</a>"
+copyrightSince = 2014
 
 # Alert
 alert = false
