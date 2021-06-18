@@ -1,7 +1,7 @@
 ---
 title: "First things first"
-description: ""
-lead: ""
+description: "A scalable interface to manage all your agents and sites through a single pane of glass."
+lead: "A scalable interface to manage all your agents and sites through a single pane of glass."
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "Deployments"
-description: "Kerberos.io supports many different usecases and deployments."
+description: "Kerberos.io supports many different usecases and deployments, learn more about the architecture."
 lead: ""
 date: 2020-10-06T08:48:57+00:00
 lastmod: 2020-10-06T08:48:57+00:00

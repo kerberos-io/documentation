@@ -1,7 +1,7 @@
 ---
 title: "First things first"
-description: "Answers to frequently asked questions."
-lead: ""
+description: "The Kerberos Open Source agent a low budget but delightful VMS."
+lead: "The Kerberos Open Source agent a low budget but delightful VMS."
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false

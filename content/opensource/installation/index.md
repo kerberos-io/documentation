@@ -1,7 +1,7 @@
 ---
 title: "Installation"
-description: ""
-lead: ""
+description: "Get your Kerberos Open Source agents up and running in just a couple of minutes."
+lead: "Get your Kerberos Open Source agents up and running in just a couple of minutes."
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false

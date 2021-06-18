@@ -1,7 +1,7 @@
 ---
 title: "Web"
-description: ""
-lead: ""
+description: "The web is the front-end for the Kerberos Open Source agent, it allows you to review recordings and update camera settings."
+lead: "The web is the front-end for the Kerberos Open Source agent, it allows you to review recordings and update camera settings."
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false

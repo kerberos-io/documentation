@@ -1,7 +1,7 @@
 ---
 title: "Release notes"
-description: ""
-lead: ""
+description: "Understand what's new in the Kerberos Open Source agent."
+lead: "Understand what's new in the Kerberos Open Source agent."
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false
