@@ -46,10 +46,11 @@ h6,
   }
 }
 
+/*
 .home h1 {
-  /* font-size: calc(1.375rem + 1.5vw); */
   font-size: calc(1.875rem + 1.5vw);
 }
+*/
 
 a:hover,
 a:focus {
@@ -96,7 +97,7 @@ body {
 @include media-breakpoint-up(lg) {
   .docs-sidebar {
     order: 0;
-    border-right: 1px solid $gray-200;
+    border-right: 2px solid var(--bg-muted);
   }
 
   @supports ((position:-webkit-sticky) or (position:sticky)) {

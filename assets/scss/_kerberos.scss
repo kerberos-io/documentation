@@ -34,11 +34,9 @@ h1 {
 h2 {
   font-size: 24px;
   line-height: size(2.5);
-  margin-bottom: size(0.5);
   @include break(w) {
     font-size: 30px;
     line-height: size(4);
-    margin-bottom: 0;
   }
 }
 
@@ -48,7 +46,13 @@ h3 {
   @include break(w) { font-size: 24px; line-height: size(3); }
 }
 
-p {
+h4 {
+  font-size: 16px;
+  line-height: size(2);
+  @include break(w) { font-size: 18px; line-height: size(3); }
+}
+
+p, li:not(.nav-item) {
   font-size: 15px;
   line-height: size(2);
   margin: 0 0 size(1);
@@ -66,6 +70,10 @@ p {
       line-height: size(3);
     }
   }
+}
+strong {
+  font-weight: 550;
+  color: var(--text);
 }
 
 img {

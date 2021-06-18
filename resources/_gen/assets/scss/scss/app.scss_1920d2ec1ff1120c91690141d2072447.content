@@ -8372,10 +8372,11 @@ h6,
   .h6 {
     margin-bottom: 1.125rem; } }
 
-.home h1, .home .h1 {
-  /* font-size: calc(1.375rem + 1.5vw); */
-  font-size: calc(1.875rem + 1.5vw); }
-
+/*
+.home h1 {
+  font-size: calc(1.875rem + 1.5vw);
+}
+*/
 a:hover,
 a:focus {
   text-decoration: underline; }
@@ -8414,7 +8415,7 @@ body {
 @media (min-width: 992px) {
   .docs-sidebar {
     order: 0;
-    border-right: 1px solid #e9ecef; }
+    border-right: 2px solid var(--bg-muted); }
   @supports (position: -webkit-sticky) or (position: sticky) {
     .docs-sidebar {
       position: -webkit-sticky;
@@ -9459,7 +9460,7 @@ p.meta {
 .docs-links,
 .docs-toc {
   scrollbar-width: thin;
-  scrollbar-color: #fff #fff; }
+  scrollbar-color: var(--bg) var(--bg); }
 
 .docs-links::-webkit-scrollbar,
 .docs-toc::-webkit-scrollbar {
@@ -9476,7 +9477,7 @@ p.meta {
 .docs-links:hover,
 .docs-toc:hover {
   scrollbar-width: thin;
-  scrollbar-color: #e9ecef #fff; }
+  scrollbar-color: var(--text-light) var(--bg-muted); }
 
 .docs-links:hover::-webkit-scrollbar-thumb,
 .docs-toc:hover::-webkit-scrollbar-thumb {
@@ -9502,7 +9503,7 @@ p.meta {
     padding: 1.375rem 0 0 0; } }
 
 .docs-links h3:not(:first-child), .docs-links .h3:not(:first-child) {
-  border-top: 1px solid #e9ecef; }
+  border-top: 2px solid var(--bg-muted); }
 
 a.docs-link {
   color: #1d2d35;
@@ -9616,11 +9617,11 @@ a.docs-link {
   --radius: 4px;
   --card-paddingV: 24px;
   --card-paddingH: 12px; }
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 768px) {
     :root {
       --card-paddingV: 24px;
       --card-paddingH: 24px; } }
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 992px) {
     :root {
       --card-paddingV: 36px;
       --card-paddingH: 36px; } }
@@ -9632,6 +9633,13 @@ a.docs-link {
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.04), 0px 3px 4px rgba(0, 0, 0, 0.1);
   border-radius: var(--radius); }
 
+.docs-links,
+.docs-toc {
+  transition: all 0.15s; }
+  @media (prefers-reduced-motion) {
+    .docs-links,
+    .docs-toc {
+      transition: none; } }
 /*! doc.kerberos.io v2.0.0 | MIT License */
 body {
   font-family: 'Inter', sans-serif;
@@ -9650,46 +9658,55 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 h1, .h1 {
   font-size: 24px;
   line-height: 36px; }
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 768px) {
     h1, .h1 {
       font-size: 30px;
       line-height: 48px; } }
-  @media only screen and (min-width: 1216px) {
+  @media only screen and (min-width: 1200px) {
     h1, .h1 {
       font-size: 36px; } }
 h2, .h2 {
   font-size: 24px;
-  line-height: 30px;
-  margin-bottom: 6px; }
-  @media only screen and (min-width: 1216px) {
+  line-height: 30px; }
+  @media only screen and (min-width: 1200px) {
     h2, .h2 {
       font-size: 30px;
-      line-height: 48px;
-      margin-bottom: 0; } }
+      line-height: 48px; } }
 h3, .h3 {
   font-size: 20px;
   line-height: 24px; }
-  @media only screen and (min-width: 1216px) {
+  @media only screen and (min-width: 1200px) {
     h3, .h3 {
       font-size: 24px;
       line-height: 36px; } }
-p {
+h4, .h4 {
+  font-size: 16px;
+  line-height: 24px; }
+  @media only screen and (min-width: 1200px) {
+    h4, .h4 {
+      font-size: 18px;
+      line-height: 36px; } }
+p, li:not(.nav-item) {
   font-size: 15px;
   line-height: 24px;
   margin: 0 0 12px; }
-  @media only screen and (min-width: 1216px) {
-    p {
+  @media only screen and (min-width: 1200px) {
+    p, li:not(.nav-item) {
       font-size: 18px;
       line-height: 30px; } }
-  p.lead {
+  p.lead, li.lead:not(.nav-item) {
     color: var(--text-light);
     margin: 0 0 24px;
     font-size: 18px;
     line-height: 24px; }
-    @media only screen and (min-width: 1216px) {
-      p.lead {
+    @media only screen and (min-width: 1200px) {
+      p.lead, li.lead:not(.nav-item) {
         font-size: 22px;
         line-height: 36px; } }
+strong {
+  font-weight: 550;
+  color: var(--text); }
+
 img {
   max-width: 100%; }
 

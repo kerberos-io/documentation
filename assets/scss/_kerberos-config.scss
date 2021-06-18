@@ -9,10 +9,10 @@
 
 // Bulma breakpoints
 $gap: 32px;
-$tablet: 769px;
-$desktop:	960px + (2 * $gap);
-$widescreen:	1152px + (2 * $gap);
-$fullhd: 1344px + (2 * $gap);
+$tablet: 768px;
+$desktop:	992px;
+$widescreen: 1200px;
+$fullhd: 1400px;
 
 /*
   Function for defining (not only) vertical rhythm by multiplies of 12px
