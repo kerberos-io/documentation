@@ -156,6 +156,8 @@ body {
 .docs-content {
   padding-bottom: 3rem;
   order: 1;
+  background: $white;
+  border-right: 6px solid $gray-100;
   a {
     font-weight: 500;
   }

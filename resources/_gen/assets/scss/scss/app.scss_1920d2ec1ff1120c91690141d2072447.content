@@ -8466,7 +8466,9 @@ body {
 
 .docs-content {
   padding-bottom: 3rem;
-  order: 1; }
+  order: 1;
+  background: #fff;
+  border-right: 6px solid #f8f9fa; }
   .docs-content a {
     font-weight: 500; }
 
@@ -9188,7 +9190,8 @@ table {
   margin-left: 1rem; }
 
 .navbar-brand {
-  font-weight: 600; }
+  font-weight: 600;
+  font-size: 18px; }
 
 .navbar-light .navbar-brand,
 .navbar-light .navbar-brand:hover,
