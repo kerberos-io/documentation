@@ -13,7 +13,7 @@ weight: 100
 toc: true
 ---
 
-The **Kerberos.io** project, pronounced as `/kuh buh ruhs dot i o/`, is a video surveillance solution, which was initiated back in 2014. Over the years it has evolved into a trusted, stable and feature-rich video surveillance system. To set the expectations, watch the video below to understand what it can and can't do. If you want to install Kerberos.io, it's recommended to have a look [at the architectures page](/prologue/deployments/) to find the best solution for your usecase.
+The **Kerberos.io** project, pronounced as `/kuh buh ruhs dot ai o/`, is a video surveillance solution, which was initiated back in 2014. Over the years it has evolved into a trusted, stable and feature-rich video surveillance system. To set the expectations, watch the video below to understand what it can and can't do. If you want to install Kerberos.io, it's recommended to have a look [at the architectures page](/prologue/deployments/) to find the best solution for your usecase.
 
 {{< vimeo id="382090189" class="responsive-video ratio-16by10" title="Kerberos introduction" >}}
 
