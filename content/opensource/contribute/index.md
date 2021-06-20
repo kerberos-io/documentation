@@ -1,7 +1,7 @@
 ---
 title: "Contribute"
-description: ""
-lead: ""
+description: "We are backed up by an amazing community. Feel free the help."
+lead: "We are backed up by an amazing community. Feel free the help."
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false

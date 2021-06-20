@@ -1,7 +1,7 @@
 ---
 title: "Get started"
-description: "The Kerberos Open Source is lightweight but still comes with a bunch of useful features."
-lead: "The Kerberos Open Source is lightweight but still comes with a bunch of useful features."
+description: "What to expect from the Kerberos Open Source agent."
+lead: "What to expect from the Kerberos Open Source agent."
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false

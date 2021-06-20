@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
-description: "A brief introduction into the world of Kerberos.io"
-lead: ""
+description: "And so it began. The ecosystem of Kerberos.io"
+lead: "And so it began.  The ecosystem of Kerberos.io"
 date: 2020-10-06T08:48:57+00:00
 lastmod: 2020-10-06T08:48:57+00:00
 draft: false
@@ -13,19 +13,19 @@ weight: 100
 toc: true
 ---
 
-The **Kerberos(dot)io** project, is a video surveillance solution, which was initiated back in 2014. Over the years it has evolved into a trusted, stable and feature-rich video surveillance system. To set the expectations, watch the video below to understand what it can and can't do. If you want to install Kerberos(dot)io, it's recommended to have a look [at the architectures page](/prologue/deployments/) to find the best solution for your usecase.
+The **Kerberos.io** project, pronounced as `/kuh buh ruhs dot i o/`, is a video surveillance solution, which was initiated back in 2014. Over the years it has evolved into a trusted, stable and feature-rich video surveillance system. To set the expectations, watch the video below to understand what it can and can't do. If you want to install Kerberos.io, it's recommended to have a look [at the architectures page](/prologue/deployments/) to find the best solution for your usecase.
 
 {{< vimeo id="382090189" class="responsive-video ratio-16by10" title="Kerberos introduction" >}}
 
 ## The name: Kerberos.io
 
-Many people are confused, and don't understand why this project is called Kerberos(dot)io. If you've been in the IT world for a while you will notice that Kerberos is already used for the authentication protocol [Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol)).
+Many people are confused, and don't understand why this project is called Kerberos.io. If you've been in the IT world for a while you will notice that Kerberos is already used for the authentication protocol [Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol)).
 
-We believe that the name Kerberos(dot)io makes sense for this project as well, with a strong emphasize on the suffix **.io**, which stands for input and output devices (e.g. any type of camera). Kerberos(dot)io can be seen as a kind of security protocol driven by hardware devices such as surveillance cameras. To make writing easier we will from now on, refer to Kerberos instead of Kerberos(dot)io.
+We believe that the name Kerberos.io makes sense for this project as well, with a strong emphasize on the suffix **.io**, which stands for input and output devices (e.g. any type of camera). Kerberos.io can be seen as a kind of security protocol driven by hardware devices such as surveillance cameras. To make writing easier we will from now on, refer to Kerberos instead of Kerberos.io.
 
 ## Why Kerberos
 
-As burglary is very common, we believe that video surveillance is a trivial tool in our daily lifes which helps us to feel a little bit more secure. Responding to this need, a lot of companies have started developing their own video surveillance software in the past few years.
+As burglary is very common, we believe that video surveillance is a trivial tool in our daily lifes which helps us to feel a bit more secure. Responding to this need, a lot of companies have started developing their own video surveillance software in the past few years.
 
 Nowadays we have a myriad of expensive cameras, recorders, and software solutions which are mainly outdated and difficult to install and use. Kerberos goal is to solve these problems and to provide every human being or enterprise in this world to have their own ecological, affordable, easy-to-use and innovative surveillance solution.
 

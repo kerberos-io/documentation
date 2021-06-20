@@ -1,6 +1,6 @@
 ---
 title: "Quick Start"
-description: "One page summary of how to start a new Doks project."
+description: ""
 lead: ""
 date: 2020-11-16T13:59:39+01:00
 lastmod: 2020-11-16T13:59:39+01:00
@@ -12,5 +12,3 @@ menu:
 weight: 101
 toc: true
 ---
-
-TODO

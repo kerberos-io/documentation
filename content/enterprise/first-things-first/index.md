@@ -1,7 +1,7 @@
 ---
 title: "First things first"
-description: ""
-lead: ""
+description: "A revolutionary design to scale your video analytics and video surveillance landscape."
+lead: "A revolutionary design to scale your video analytics and video surveillance landscape."
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false
