@@ -154,18 +154,18 @@ body {
 }
 
 .docs-content {
+  @extend %box-shadow-bigger;
   padding-bottom: 3rem;
   order: 1;
-  background: $white;
-  //border-right: 6px solid $gray-100;
+  background: var(--card-muted);
+  border-radius: var(--radius);
+  @include break(d) {
+    padding: 0 size(4) size(2);
+    margin: size(4) 0;
+  }
   a {
     font-weight: 500;
   }
-}
-
-.dark .docs-content {
-  border-right: 0;
-  background: #262a2d;
 }
 
 .docs-navigation {

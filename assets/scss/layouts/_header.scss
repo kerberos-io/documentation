@@ -79,9 +79,10 @@
 }
 
 .navbar {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid $gray-200;
-  margin-top: 4px;
+  @extend %box-shadow-bigger;
+  background-color: hsla(var(--card-hsl), 0.95);
+  margin-top: 6px;
+  backdrop-filter: blur(4px);
 }
 
 .header-bar {

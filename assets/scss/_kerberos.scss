@@ -62,9 +62,12 @@ p {
   }
   &.lead {
     color: var(--text-light);
-    margin: size(-1.5) 0 size(2);
+    margin: size(-1) 0 size(2);
     font-size: 18px;
     line-height: size(2);
+    @include break(d) {
+      margin: size(-1.5) 0 size(2);
+    }
     @include break(w) {
       font-size: 22px;
       line-height: size(3);
@@ -122,8 +125,6 @@ img {
 // ----- Layout ----- //
 
 .navbar {
-  @extend %box-shadow-bigger;
-  margin-top: 6px; // make the whole gradient visible
   .navbar-nav {
     .nav-link {
       color: var(--text-muted);

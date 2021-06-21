@@ -48,15 +48,12 @@
   font-size: $font-size-base;
   margin: 1.25rem 0 0.5rem 0;
   padding: 1.5rem 0 0 0;
-}
-
-@include media-breakpoint-up(lg) {
-  .docs-links h3,
-  .page-links h3 {
-    margin: 1.125rem 1.5rem 0.75rem 0;
+  @include break(d) {
+    margin: 1.125rem size(3) 0.75rem 0;
     padding: 1.375rem 0 0 0;
   }
 }
+
 
 .docs-links h3:not(:first-child) {
   border-top: 2px solid var(--bg-muted);
@@ -68,10 +65,12 @@ a.docs-link,
   color: var(--text-muted);
   display: block;
   padding: size(0.5) size(1); //0.125rem 0;
-  margin: 0 size(2) 0 0;
   font-size: $font-size-base;
   line-height: size(2);
   border-radius: var(--radius);
+  @include break(d) {
+    margin: 0 size(3) 0 0;
+  }
   &:hover {
     color: var(--text);
     background: var(--bg-muted);
