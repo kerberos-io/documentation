@@ -9516,24 +9516,23 @@ p.meta {
 
 .docs-links::-webkit-scrollbar-track,
 .docs-toc::-webkit-scrollbar-track {
-  background: #fff; }
+  background: transparent; }
 
 .docs-links::-webkit-scrollbar-thumb,
 .docs-toc::-webkit-scrollbar-thumb {
-  background: #fff; }
+  background: transparent; }
 
 .docs-links:hover,
 .docs-toc:hover {
   scrollbar-width: thin;
   scrollbar-color: var(--text-light) var(--bg-muted); }
-
-.docs-links:hover::-webkit-scrollbar-thumb,
-.docs-toc:hover::-webkit-scrollbar-thumb {
-  background: #e9ecef; }
-
-.docs-links::-webkit-scrollbar-thumb:hover,
-.docs-toc::-webkit-scrollbar-thumb:hover {
-  background: #e9ecef; }
+  .docs-links:hover::-webkit-scrollbar-track,
+  .docs-toc:hover::-webkit-scrollbar-track {
+    background: var(--bg-muted); }
+  .docs-links:hover::-webkit-scrollbar-thumb,
+  .docs-toc:hover::-webkit-scrollbar-thumb {
+    background: var(--text-light);
+    border-radius: var(--radius); }
 
 .docs-links h3, .docs-links .h3,
 .page-links h3,

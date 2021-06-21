@@ -11,36 +11,19 @@
   }
 }
 
-.docs-links::-webkit-scrollbar,
-.docs-toc::-webkit-scrollbar {
-  width: 5px;
+.docs-links,
+.docs-toc {
+  &::-webkit-scrollbar { width: 5px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: transparent; }
+  &:hover {
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-light) var(--bg-muted);
+    &::-webkit-scrollbar-track { background: var(--bg-muted); }
+    &::-webkit-scrollbar-thumb { background: var(--text-light); border-radius: var(--radius); }
+  }
 }
 
-.docs-links::-webkit-scrollbar-track,
-.docs-toc::-webkit-scrollbar-track {
-  background: $white;
-}
-
-.docs-links::-webkit-scrollbar-thumb,
-.docs-toc::-webkit-scrollbar-thumb {
-  background: $white;
-}
-
-.docs-links:hover,
-.docs-toc:hover {
-  scrollbar-width: thin;
-  scrollbar-color: var(--text-light) var(--bg-muted);
-}
-
-.docs-links:hover::-webkit-scrollbar-thumb,
-.docs-toc:hover::-webkit-scrollbar-thumb {
-  background: $gray-200;
-}
-
-.docs-links::-webkit-scrollbar-thumb:hover,
-.docs-toc::-webkit-scrollbar-thumb:hover {
-  background: $gray-200;
-}
 
 .docs-links h3,
 .page-links h3 {
