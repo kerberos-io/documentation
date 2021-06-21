@@ -8467,8 +8467,7 @@ body {
 .docs-content {
   padding-bottom: 3rem;
   order: 1;
-  background: #fff;
-  border-right: 6px solid #f8f9fa; }
+  background: #fff; }
   .docs-content a {
     font-weight: 500; }
 
@@ -9196,7 +9195,19 @@ table {
 .navbar-brand {
   font-weight: 600;
   font-size: 18px; }
-
+  .navbar-brand .logo {
+    width: 24px;
+    height: 24px;
+    margin: 0 6px;
+    position: relative;
+    top: -1px; }
+    @media only screen and (min-width: 768px) {
+      .navbar-brand .logo {
+        margin-left: 0; } }
+    @media only screen and (min-width: 992px) {
+      .navbar-brand .logo {
+        width: 30px;
+        height: 30px; } }
 .navbar-light .navbar-brand,
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-brand:active {
@@ -9762,7 +9773,7 @@ p {
       line-height: 30px; } }
   p.lead {
     color: var(--text-light);
-    margin: 0 0 24px;
+    margin: -18px 0 24px;
     font-size: 18px;
     line-height: 24px; }
     @media only screen and (min-width: 1200px) {

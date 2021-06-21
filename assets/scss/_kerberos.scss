@@ -62,7 +62,7 @@ p {
   }
   &.lead {
     color: var(--text-light);
-    margin: 0 0 size(2);
+    margin: size(-1.5) 0 size(2);
     font-size: 18px;
     line-height: size(2);
     @include break(w) {
