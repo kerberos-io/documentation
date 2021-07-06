@@ -1,0 +1,147 @@
+/*! doc.kerberos.io v2.0.0 | MIT License */
+
+// ----- Basics & Typography ----- //
+
+body {
+  font-family: 'Inter', sans-serif; // use regular Inter font by default..
+  @supports (font-variation-settings: normal) {
+    font-family: 'Inter var', sans-serif; // ..but if supported, use variable Inter font instead (all-in-one)
+  }
+  color: var(--text-muted);
+  background: var(--bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text);
+  body.dark & {
+    color: var(--bg-white);
+  }
+}
+
+h1 {
+  font-size: 24px;
+  line-height: size(3);
+  @include break(t) {
+    font-size: 30px;
+    line-height: size(4);
+  }
+  @include break(w) {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: size(2.5);
+  @include break(w) {
+    font-size: 30px;
+    line-height: size(4);
+  }
+}
+
+h3 {
+  font-size: 20px;
+  line-height: size(2);
+  @include break(w) { font-size: 24px; line-height: size(3); }
+}
+
+h4 {
+  font-size: 16px;
+  line-height: size(2);
+  @include break(w) { font-size: 18px; line-height: size(3); }
+}
+
+p {
+  font-size: 15px;
+  line-height: size(2);
+  margin: 0 0 size(1);
+  @include break(w) {
+    font-size: 16px;
+    line-height: size(2.5);
+  }
+  &.lead {
+    color: var(--text-light);
+    margin: size(-1) 0 size(2);
+    font-size: 18px;
+    line-height: size(2);
+    @include break(d) {
+      margin: size(-1.5) 0 size(2);
+    }
+    @include break(w) {
+      font-size: 22px;
+      line-height: size(3);
+    }
+  }
+}
+strong {
+  font-weight: 550;
+  color: var(--text);
+  body.dark & {
+    color: var(--bg-white);
+  }
+}
+
+li {
+  font-size: 15px;
+  line-height: size(2);
+  @include break(w) {
+    font-size: 16px;
+    line-height: size(2.5);
+  }
+}
+
+hr {
+  margin: 2.5rem 0;
+  opacity: 0.1;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+// ----- UI ----- //
+
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin: 2rem 0 0;
+  border-radius: var(--radius);
+  &.ratio-16by10 { padding-bottom: 62.5%; }
+  &.ratio-4by3 { padding-bottom: 75%; }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+// ----- Layout ----- //
+
+.navbar {
+  .navbar-nav {
+    .nav-link {
+      color: var(--text-muted);
+    }
+  }
+}
+
+.footer {
+  box-shadow: 0 -4px 34px rgba(0, 0, 0, 0.04), 0 -3px 4px rgba(0, 0, 0, 0.1);
+  background: var(--card);
+  // copyright with social links
+  .navbar-nav {
+    margin-top: 1rem;
+    @include break-from(992px) { margin: 0; }
+    .copyright {
+      margin-right: 1rem;
+    }
+  }
+  li { margin-bottom: 0; }
+}

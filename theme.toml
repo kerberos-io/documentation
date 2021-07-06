@@ -1,0 +1,11 @@
+name = "Kerberos.io"
+license = "MIT"
+description = "Kerberos.io is a scalable and cloud agnostic video surveillance and analytics system, which is open for integrations."
+homepage = "https://doc.kerberos.io/"
+tags = ["kerberos.io", "video surveillance", "video analytics", "scalable"]
+features = ["scalable", "high available", "docker", "kubernetes", "opensource", "bring your own storage", "on premise video surveillance"]
+min_version = "0.75.0"
+
+[author]
+  name = "Cedric Verstraeten"
+  homepage = "https://kerberos.io/"

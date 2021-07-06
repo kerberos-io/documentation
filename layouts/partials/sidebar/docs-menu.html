@@ -1,0 +1,78 @@
+{{ $currentPage := . -}}
+{{ range .Site.Menus.docs -}}
+  <h3>{{ .Name }}</h3>
+  {{ if .HasChildren -}}
+  <ul class="list-unstyled">
+    {{ range .Children -}}
+      {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
+      <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+    {{ end -}}
+  </ul>
+  {{ end -}}
+{{ end -}}
+{{ range .Site.Menus.opensource -}}
+  <h3>{{ .Name }}</h3>
+  {{ if .HasChildren -}}
+  <ul class="list-unstyled">
+    {{ range .Children -}}
+    {{- $active := or ($currentPage.IsMenuCurrent "opensource" .) ($currentPage.HasMenuCurrent "opensource" .) -}}
+    <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+    {{ end -}}
+  </ul>
+  {{ end -}}
+{{ end -}}
+{{ range .Site.Menus.opensourcev3 -}}
+  <h3>{{ .Name }}</h3>
+  {{ if .HasChildren -}}
+  <ul class="list-unstyled">
+    {{ range .Children -}}
+    {{- $active := or ($currentPage.IsMenuCurrent "opensourcev3" .) ($currentPage.HasMenuCurrent "opensourcev3" .) -}}
+    <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+    {{ end -}}
+  </ul>
+  {{ end -}}
+{{ end -}}
+{{ range .Site.Menus.enterprise -}}
+  <h3>{{ .Name }}</h3>
+  {{ if .HasChildren -}}
+  <ul class="list-unstyled">
+    {{ range .Children -}}
+    {{- $active := or ($currentPage.IsMenuCurrent "enterprise" .) ($currentPage.HasMenuCurrent "enterprise" .) -}}
+    <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+    {{ end -}}
+  </ul>
+  {{ end -}}
+{{ end -}}
+{{ range .Site.Menus.vault -}}
+  <h3>{{ .Name }}</h3>
+  {{ if .HasChildren -}}
+  <ul class="list-unstyled">
+    {{ range .Children -}}
+    {{- $active := or ($currentPage.IsMenuCurrent "vault" .) ($currentPage.HasMenuCurrent "vault" .) -}}
+    <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+    {{ end -}}
+  </ul>
+  {{ end -}}
+{{ end -}}
+{{ range .Site.Menus.hub -}}
+  <h3>{{ .Name }}</h3>
+  {{ if .HasChildren -}}
+  <ul class="list-unstyled">
+    {{ range .Children -}}
+    {{- $active := or ($currentPage.IsMenuCurrent "hub" .) ($currentPage.HasMenuCurrent "hub" .) -}}
+    <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+    {{ end -}}
+  </ul>
+  {{ end -}}
+{{ end -}}
+{{ range .Site.Menus.help -}}
+  <h3>{{ .Name }}</h3>
+  {{ if .HasChildren -}}
+  <ul class="list-unstyled">
+    {{ range .Children -}}
+    {{- $active := or ($currentPage.IsMenuCurrent "help" .) ($currentPage.HasMenuCurrent "help" .) -}}
+    <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+    {{ end -}}
+  </ul>
+  {{ end -}}
+{{ end -}}

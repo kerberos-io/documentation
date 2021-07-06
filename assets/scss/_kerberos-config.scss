@@ -1,0 +1,127 @@
+:root {
+
+  // ---------- COLORS ---------- //
+  /*
+    Usage:
+    - regular colors: "color: var(--hub);"
+    - transparent colors: "color: hsla(var(--hub-hsl), 0.3);" (mind the "-hsl" suffix in variable)
+  */
+  
+  --hub: hsl(278, 30%, 48%);
+  --hub-hsl: 278, 30%, 48%;
+  --hub-darker: hsl(278, 34%, 31%);
+  --hub-darker-hsl: 278, 34%, 31%;
+  --oss: hsl(2, 48%, 39%);
+  --oss-hsl: 2, 48%, 39%;
+  --oss-darker: hsl(2, 52%, 25%);
+  --oss-darker-hsl: 2, 52%, 25%;
+  --enterprise: hsl(162, 24%, 38%);
+  --enterprise-hsl: 162, 24%, 38%;
+  --enterprise-darker: hsl(162, 26%, 26%);
+  --enterprise-darker-hsl: 162, 26%, 26%;
+  --vault: hsl(229, 25%, 45%);
+  --vault-hsl: 229, 25%, 45%;
+  --vault-darker: hsl(230, 28%, 31%);
+  --vault-darker-hsl: 230, 28%, 31%;
+
+  --secondary: hsl(0, 3%, 41%);
+  --secondary-hsl: 0, 3%, 41%;
+  --secondary-darker: hsl(0, 3%, 48%);
+  --secondary-darker-hsl: 0, 3%, 48%;
+
+  --text: hsl(0, 3%, 15%);
+  --text-hsl: 0, 3%, 15%;
+  --text-muted: hsl(0, 3%, 41%);
+  --text-muted-hsl: 0, 3%, 41%;
+  --text-light: hsl(0, 5%, 63%);
+  --text-light-hsl: 0, 5%, 63%;
+
+  --card: hsl(0, 0%, 100%);
+  --card-hsl: 0, 0%, 100%;
+  --card-muted: hsl(0, 0%, 98%);
+  --card-muted-hsl: 0, 0%, 98%;
+
+  --info: hsl(205, 74%, 53%);
+  --info-hsl: 205, 74%, 53%;
+  --success: hsl(131, 31%, 52%);
+  --success-hsl: 131, 31%, 52%;
+  --warning: hsl(47, 86%, 47%);
+  --warning-hsl: 47, 86%, 47%;
+  --alert: hsl(2, 58%, 48%);
+  --alert-hsl: 2, 58%, 48%;
+
+  --bg: hsl(0, 5%, 93%);
+  --bg-hsl: 0, 5%, 93%;
+  --bg-muted: hsl(0, 4%, 89%);
+  --bg-muted-hsl: 0, 4%, 89%;
+  --bg-white: hsl(0, 0%, 100%);
+  --bg-white-hsl: 0, 0%, 100%;
+
+  body.dark {
+    --hub: hsl(200, 93%, 77%);
+    --hub-hsl: 200, 93%, 77%;
+
+    --text-muted: hsl(210, 14%, 89%);
+    --text-muted-hsl: 210, 14%, 89%;
+
+    --card: hsl(206, 8%, 18%);
+    --card-hsl: 206, 8%, 18%;
+    --card-muted: hsl(206, 8%, 16%);
+    --card-muted-hsl: 206, 8%, 16%;
+
+    --bg: hsl(210, 11%, 15%);
+    --bg-hsl: 210, 11%, 15%;
+  }
+
+  // ---------- UI ---------- //
+
+  --radius: 4px;
+
+  // default padding for cards ("V" for vertical, "H" for horizontal)
+  --card-paddingV: #{size(2)}; // interpolate to embed the result in CSS var
+  --card-paddingH: #{size(1)};
+  @include break(t) {
+    --card-paddingV: #{size(2)};
+    --card-paddingH: #{size(2)};
+  }
+  @include break(d) {
+    --card-paddingV: #{size(3)};
+    --card-paddingH: #{size(3)};
+  }
+
+}
+
+
+// ========== PLACEHOLDERS ========== //
+/*
+  Usage:
+  @extend %box-shadow;
+*/
+
+%card-header-shadow {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
+}
+
+%card-footer-shadow {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.07) inset;
+}
+
+%box-shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+}
+
+%box-shadow-bigger {
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.04), 0px 3px 4px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+}
+
+%modal-shadow {
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.24), 0px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+%tfx {
+  transition: all 0.15s;
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
+}

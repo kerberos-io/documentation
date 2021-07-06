@@ -1,0 +1,4 @@
+baseurl = "https://doc.kerberos.io/"
+canonifyURLs = true
+docsRepo = "https://github.com/kerberos-io/documentation"
+editPage = true
