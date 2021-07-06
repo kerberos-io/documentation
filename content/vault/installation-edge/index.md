@@ -72,7 +72,7 @@ Next to that modify the MongoDB credentials, and make sure they match the creden
 
 Once you have corrected the DNS names and MongoDB credentials, install Kerberos Vault inside your cluster.
 
-    kubectl apply -f ./storage/yaml/deployment.yaml
+    kubectl apply -f ./storage/yaml/deployment.yaml -n kerberos
 
 ## Test out configuration
 
