@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://staging.doc.kerberos.live/sitemap.xml
+Sitemap: https://doc.kerberos.io/sitemap.xml
