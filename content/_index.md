@@ -31,7 +31,7 @@ Nowadays we have a myriad of expensive cameras, recorders, and software solution
 
 ## What is Kerberos
 
-Kerberos is a video surveillance solution, that uses computer vision algorithms to detect changes, and that can trigger actions (notifications, api, etc). It comes in two flavors, Kerberos Open Source and Kerberos Enterprise. Kerberos can be deployed to any ARM device, Linux OS, Docker, Balenca Cloud, or cluster such as Kubernetes.
+Kerberos is a video surveillance solution, that uses computer vision algorithms to detect changes, and that can trigger actions (notifications, api, etc). It comes in two flavors, Kerberos Open Source and Kerberos Enterprise. Kerberos can be deployed to any ARM device, Linux OS, Docker, Balena Cloud, or cluster such as Kubernetes.
 
 ### Kerberos Agent
 
