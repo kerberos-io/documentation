@@ -2,3 +2,6 @@ baseurl = "https://staging.doc.kerberos.live/"
 canonifyURLs = true
 docsRepo = "https://github.com/kerberos-io/documentation"
 editPage = true
+
+[params]
+  env = "production"
