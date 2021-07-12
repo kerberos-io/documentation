@@ -26,7 +26,7 @@ jobs:
           npm install # reads info from package.js
 
       - name: Build
-        run: hugo --minify
+        run: hugo --minify _default/config.toml,_default/menus.toml,_default/params.toml,production/config.toml
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
