@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - move-to-hugo-doks
+      - master
   pull_request:
 
 jobs:
