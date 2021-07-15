@@ -23,8 +23,8 @@ There are two types of agents: an Open Source agent and an Enterprise agent.
 
 ### Open Source agent
 
-The Open Source agent ...
+The Open Source agent is a binary, shipped in different forms such as docker, KiOS, source code, which is Open Source and can be used for any purpose (commercial and non-commercial).
 
 ### Enterprise agent
 
-The Enterprise agent ...
+The Enterprise agent is proprietary, closed source solution, available as a Docker image and optimised to be deployed in a Kubernetes or K3S cluster.
