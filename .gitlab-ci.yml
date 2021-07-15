@@ -17,9 +17,11 @@ stages:
   - kubernetes-production
 
 pages:
+  image: node:10.22.1
   stage: pages
   script:
-    - hugo --config config.yaml,config.prod.yaml
+    - yarn
+    - yarn run build
   artifacts:
     paths:
       - public
@@ -51,4 +53,3 @@ kubernetes-production:
     - kubectl patch deployment kerberos-documentation --patch="{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\":\"kerberos-documentation\",\"image\":\"${REGISTRY}:${CI_VERSION}\"}]}}}}" -n kerberos
   only:
     - master
-
