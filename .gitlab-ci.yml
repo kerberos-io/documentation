@@ -42,7 +42,7 @@ kubernetes-staging:
   environment:
     name: staging
   script:
-    - kubectl patch deployment kerberos-documentation --patch="{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\":\"kerberos-documentation\",\"image\":\"${REGISTRY}:${CI_VERSION}\"}]}}}}" -n kerberos
+    - kubectl patch deployment kerberos-documentation --patch="{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\":\"kerberos-documentation\",\"image\":\"${REGISTRY}:${CI_VERSION}\"}]}}}}" -n kerberos-ecosystem
 
 kubernetes-production:
   image: registry.cn-hangzhou.aliyuncs.com/haoshuwei24/kubectl:1.16.6
@@ -50,6 +50,6 @@ kubernetes-production:
   environment:
     name: production
   script:
-    - kubectl patch deployment kerberos-documentation --patch="{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\":\"kerberos-documentation\",\"image\":\"${REGISTRY}:${CI_VERSION}\"}]}}}}" -n kerberos
+    - kubectl patch deployment kerberos-documentation --patch="{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\":\"kerberos-documentation\",\"image\":\"${REGISTRY}:${CI_VERSION}\"}]}}}}" -n kerberos-ecosystem
   only:
     - master
