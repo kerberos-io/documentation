@@ -51,7 +51,6 @@ docker:
     - docker build --build-arg gitlab_id=${gitlab_id} --build-arg gitlab_token=${gitlab_token} -t $CI_REGISTRY/$REPO_NAME:$CI_VERSION .
     - docker push $CI_REGISTRY/$REPO_NAME:$CI_VERSION
 
-
 kubernetes-staging:
   image: registry.cn-hangzhou.aliyuncs.com/haoshuwei24/kubectl:1.16.6
   stage: kubernetes-staging
