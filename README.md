@@ -1,7 +1,8 @@
 # Kerberos Documentation
 
-> [doc.kerberos.io](https://doc.kerberos.io)
+And so it began. The documentation of the entire Kerberos.io ecosystem.
 
+> [doc.kerberos.io](https://doc.kerberos.io)
 
 ## Development
 
