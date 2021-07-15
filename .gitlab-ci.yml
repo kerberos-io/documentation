@@ -19,7 +19,7 @@ stages:
 
 build-staging:
   image: node:10.22.1
-  stage: build
+  stage: build-staging
   script:
     - yarn
     - yarn run build-staging
@@ -31,7 +31,7 @@ build-staging:
 
 build-production:
   image: node:10.22.1
-  stage: build
+  stage: build-production
   script:
     - yarn
     - yarn run build
