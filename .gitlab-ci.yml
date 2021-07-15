@@ -11,20 +11,35 @@ variables:
   REGISTRY: registry.gitlab.com/kerberos-io/${ARTIFACT_NAME}
 
 stages:
-  - pages
-  - docker
-  - kubernetes-staging
-  - kubernetes-production
+  - build-staging # Staging environment -> develop
+  - build-production # Production environment -> master
+  - docker # All branches
+  - kubernetes-staging # Staging environment -> develop
+  - kubernetes-production # Production environment -> master
 
-pages:
+build-staging:
   image: node:10.22.1
-  stage: pages
+  stage: build
+  script:
+    - yarn
+    - yarn run build-staging
+  artifacts:
+    paths:
+      - public
+  except:
+    - master
+
+build-production:
+  image: node:10.22.1
+  stage: build
   script:
     - yarn
     - yarn run build
   artifacts:
     paths:
       - public
+  only:
+    - master
 
 docker:
   image: docker:stable
@@ -36,6 +51,7 @@ docker:
     - docker build --build-arg gitlab_id=${gitlab_id} --build-arg gitlab_token=${gitlab_token} -t $CI_REGISTRY/$REPO_NAME:$CI_VERSION .
     - docker push $CI_REGISTRY/$REPO_NAME:$CI_VERSION
 
+
 kubernetes-staging:
   image: registry.cn-hangzhou.aliyuncs.com/haoshuwei24/kubectl:1.16.6
   stage: kubernetes-staging
@@ -43,6 +59,8 @@ kubernetes-staging:
     name: staging
   script:
     - kubectl patch deployment kerberos-documentation --patch="{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\":\"kerberos-documentation\",\"image\":\"${REGISTRY}:${CI_VERSION}\"}]}}}}" -n kerberos-ecosystem
+  except:
+    - master
 
 kubernetes-production:
   image: registry.cn-hangzhou.aliyuncs.com/haoshuwei24/kubectl:1.16.6
