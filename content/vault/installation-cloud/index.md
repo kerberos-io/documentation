@@ -39,7 +39,7 @@ Once this is done start by cloning the configurations from our [Github repo](htt
 
     git clone https://github.com/kerberos-io/vault
 
-### Storage
+### Vault
 
 Similar to Kerberos Enterprise, Kerberos Vault is managed through a web app. It allows you to add storage providers (S3, minio, etc), add queues for messaging, accounts for security and much more. It also comes with API's, which you can use to interact and retrieve information from Kerberos Vault. All is documented in the form of Swagger APIs `/swagger/index.html`.
 
