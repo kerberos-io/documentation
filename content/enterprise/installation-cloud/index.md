@@ -59,29 +59,18 @@ Use one of the preferred OS package managers to install the Helm client:
 
 [**Traefik**](https://containo.us/traefik/) is a reverse proxy and load balancer which allows you to expose your deployments more easily. Kerberos uses Traefik to expose it's APIs more easily.
 
-By executing following helm command, we will install traefik and link it to a specific DNS name. Open the traefik values file, `./enterprise/yaml/traefik/values.yaml`, and update the DNS name to your own domain.
+Add Helm repository and install Traefik.
 
-        dashboard:
-          enabled: true
-    -->   domain: traefik.domain.com
-          serviceType: NodePort
-        rbac:
-            enabled: true
+    helm repo add traefik https://helm.traefik.io/traefik
+    helm install -n kerberos traefik traefik/traefik
 
-Add Helm repository and install traefik.
+After the installation is completed, you should have an IP address assigned to Traefik service, look for it by executing the `get service` command. You will see the ip address in the `EXTERNAL-IP` attribute.
 
-    helm repo add stable https://charts.helm.sh/stable
-    helm install traefik -n kerberos -f ./enterprise/yaml/traefik/values.yaml stable/traefik
+    kubectl get svc -n kerberos
 
-After installation you should have an IP attached to traefik service, look for it by executing the `get service` command. You will see the ip address in the `EXTERNAL-IP` attribute.
-
-    kubectl get svc
-
-        NAME                        TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)                      AGE
-        kubernetes                  ClusterIP      10.0.0.1       <none>          443/TCP                      36h
-    --> traefik                     LoadBalancer   10.0.27.93     40.114.168.96   443:31623/TCP,80:31804/TCP   35h
-        traefik-dashboard           NodePort       10.0.252.6     <none>          80:31146/TCP                 35h
-
+      NAME                        TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)                      AGE
+    > traefik                     LoadBalancer   10.0.27.93     xxx.xxx.xxx.96  443:31623/TCP,80:31804/TCP   35h
+       
 Go to your DNS provider and link the domain you've configured in the first step `traefik.domain.com` to the IP address of the `EXTERNAL-IP` attribute. When browsing to `traefik.domain.com`, you should see the traefik dashboard showing up.
 
 ### Ingress-Nginx (alternative for Traefik)
@@ -114,26 +103,32 @@ The Factory is shipped as a web app (React) which provides you with a tool to up
 
 Before installing the Factory web app, open the `./enterprise/yaml/factory/deployment.yaml` configuration file. At the of the bottom file you will find two endpoints, similar to the Ingres file bewlwo. Update the hostnames to your own perferred domain, and add these to your DNS server or `/etc/hosts` file (pointing to the same IP as the Traefik/Ingress nginx EXTERNAL-IP).
 
-        spec:
-          rules:
-    -->   - host: factory.domain.com
-            http:
-              paths:
-              - path: /
-                backend:
-                  serviceName: factory
-                  servicePort: 80
-    -->   - host: api.factory.domain.com
-            http:
-              paths:
-              - path: /
-                backend:
-                  serviceName: factory
-                  servicePort: 8081
+    spec:
+      rules:
+    > - host: factory.domain.com
+        http:
+        paths:
+        - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: factory
+                port:
+                  number: 80
+    > - host: api.factory.domain.com
+        http:
+        paths:
+        - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: factory
+                port:
+                  number: 8082
 
 If you are using Ingress Nginx, do not forgot to comment `Traefik` and uncomment `Ingress Nginx`.
 
-    apiVersion: extensions/v1beta1
+    apiVersion: networking.k8s.io/v1
     kind: Ingress
     metadata:
       name: factory

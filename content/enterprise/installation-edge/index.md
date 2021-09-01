@@ -151,8 +151,15 @@ To access the Kerberos Enterprise web application, we will create a service in t
 
 The idea is that Traefik, will have a dedicated IP address assigned from MetalLB, and will resolve the Ingress of our Kerberos Enterprise web app. Let's go ahead with installing Traefik.
 
-    helm repo add stable https://charts.helm.sh/stable
-    helm install -n kerberos traefik -f ./enterprise/yaml/traefik/values.yaml stable/traefik
+    helm repo add traefik https://helm.traefik.io/traefik
+    helm install -n kerberos traefik traefik/traefik
+
+After the installation is completed, you should have an IP address assigned to Traefik service, look for it by executing the `get service` command. You will see the ip address in the `EXTERNAL-IP` attribute.
+
+    kubectl get svc -n kerberos
+
+      NAME                        TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)                      AGE
+    > traefik                     LoadBalancer   10.0.27.93     xxx.xxx.xxx.96  443:31623/TCP,80:31804/TCP   35h
 
 ### MongoDB
 
@@ -168,13 +175,13 @@ Once done open the `./enterprise/yaml/mongodb/volume.yaml` file and make sure to
 
         spec:
           capacity:
-    -->    storage: 10Gi
+    >       storage: 10Gi
           accessModes:
           - ReadWriteOnce
           persistentVolumeReclaimPolicy: Recycle
           storageClassName: local-storage
           local:
-    -->    path: /home/mongodb/
+    >       path: /home/mongodb/
           nodeAffinity:
             required:
               nodeSelectorTerms:
@@ -182,7 +189,7 @@ Once done open the `./enterprise/yaml/mongodb/volume.yaml` file and make sure to
                 - key: kubernetes.io/hostname
                   operator: In
                   values:
-    -->           - hostname
+    >             - hostname
 
 After modified properly you can go ahead with creating the PV.
 
@@ -206,22 +213,28 @@ The Factory is shipped as a web app (React) which provides you with a tool to up
 
 Before installing the Factory web app, open the `./enterprise/yaml/factory/deployment.yaml` configuration file. At the bottom file you will find two endpoints, similar to the traefik config file. Update the domain names to your own domain, and add these to your DNS server (pointing to the same IP as the traefik EXTERNAL-IP).
 
-        spec:
-          rules:
-    -->   - host: factory.domain.com
-            http:
-              paths:
-              - path: /
-                backend:
-                  serviceName: factory
-                  servicePort: 80
-    -->   - host: api.factory.domain.com
-            http:
-              paths:
-              - path: /
-                backend:
-                  serviceName: factory
-                  servicePort: 8081
+    spec:
+      rules:
+    > - host: factory.domain.com
+        http:
+        paths:
+        - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: factory
+                port:
+                  number: 80
+    > - host: api.factory.domain.com
+        http:
+        paths:
+        - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: factory
+                port:
+                  number: 8082
 
 Modify the MongoDB credentials, and make sure they match the credentials of your MongoDB instance.
 

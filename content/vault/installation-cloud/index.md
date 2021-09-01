@@ -35,32 +35,38 @@ However if you plan to run Kerberos Vault in a different cluster (which is perfe
 - MongoDB
 - Traefik
 
-Once this is done start by cloning the configurations from our [Github repo](https://github.com/kerberos-io/storage).
+Once this is done start by cloning the configurations from our [Github repo](https://github.com/kerberos-io/vault).
 
-    git clone https://github.com/kerberos-io/storage
+    git clone https://github.com/kerberos-io/vault
 
 ### Storage
 
 Similar to Kerberos Enterprise, Kerberos Vault is managed through a web app. It allows you to add storage providers (S3, minio, etc), add queues for messaging, accounts for security and much more. It also comes with API's, which you can use to interact and retrieve information from Kerberos Vault. All is documented in the form of Swagger APIs `/swagger/index.html`.
 
-Before installing Kerberos Vault, open the `./storage/yaml/deployment.yaml` configuration file. At the bottom file you will find two endpoints, similar to the Traefik config file below. Update the domain names to your own domain, and add these to your DNS server or `/etc/hosts` file (and point to the same IP as the Traefik EXTERNAL-IP).
+Before installing Kerberos Vault, open the `./vault/yaml/deployment.yaml` configuration file. At the bottom file you will find two endpoints, similar to the Traefik config file below. Update the domain names to your own domain, and add these to your DNS server or `/etc/hosts` file (and point to the same IP as the Traefik EXTERNAL-IP).
 
-        spec:
-          rules:
-    -->   - host: storage.domain.com
-            http:
-              paths:
-              - path: /
-                backend:
-                  serviceName: kerberos-storage
-                  servicePort: 80
-    -->   - host: api.storage.domain.com
-            http:
-              paths:
-              - path: /
-                backend:
-                  serviceName: kerberos-storage
-                  servicePort: 8081
+    spec:
+      rules:
+    > - host: storage.vault.com
+        http:
+        paths:
+        - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kerberos-vault
+                port:
+                  number: 80
+    > - host: api.vault.domain.com
+        http:
+        paths:
+        - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kerberos-vault
+                port:
+                  number: 8081
 
 If you are using Ingress Nginx, do not forgot to comment `Traefik` and uncomment `Ingress Nginx`. Also note the extra argument `proxy-body-size`, this is required for not reaching the default 1MB body size limit. If you do not enable this, you might experience `413` errors in your Kerberos Enterprise agents.
 
@@ -82,7 +88,7 @@ Next to that modify the MongoDB credentials, and make sure they match the creden
 
 Once you have corrected the DNS names and MongoDB credentials, install Kerberos Vault inside your cluster.
 
-    kubectl apply -f ./storage/yaml/deployment.yaml
+    kubectl apply -f ./vault/yaml/deployment.yaml
 
 ## Test out configuration
 
@@ -90,14 +96,14 @@ If everything worked out as expected, you should now have following services in 
 
 - MongoDB
 - Traefik
-- Storage
+- Vault
 - Enterprise (optional)
 
 It should look like this.
 
     $ kubectl get pods
     NAME                              READY   STATUS    RESTARTS   AGE
-    kerberos-storage-6f5c877d7c-hf77p 1/1     Running   0          2d11h
+    kerberos-vault-6f5c877d7c-hf77p 1/1     Running   0          2d11h
     mongodb-55566dc65c-xgmns          2/2     Running   0          4d13h
     traefik-7d566ccc47-mwslb          1/1     Running   0          4d12h
 
