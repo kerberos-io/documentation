@@ -62,7 +62,8 @@ Use one of the preferred OS package managers to install the Helm client:
 Add Helm repository and install Traefik.
 
     helm repo add traefik https://helm.traefik.io/traefik
-    helm install -n kerberos traefik traefik/traefik
+    kubectl create namespace traefik
+    helm install -n traefik traefik traefik/traefik
 
 After the installation is completed, you should have an IP address assigned to Traefik service, look for it by executing the `get service` command. You will see the ip address in the `EXTERNAL-IP` attribute.
 
