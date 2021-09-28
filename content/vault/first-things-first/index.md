@@ -45,7 +45,7 @@ On the other hand you could also have Kerberos Vault running at the edge, next t
 
 {{< figure src="vault-edge-storage.svg" alt="Store your recordings at the edge with Kerberos Vault" caption="Store your recordings at the edge with Kerberos Vault" class="stretch">}}
 
-### Integration and Events
+## Integration and Events
 
 One of the key differentiators, is the ability to extend and integrate. Next to uploading and persisting recordings on your preferred storage providers, Kerberos Vault can trigger events and be configured through APIs. 
 
@@ -62,7 +62,7 @@ Find more information about events and integrations on [the integrations page](/
 
 {{< figure src="vault-integrations.svg" alt="Build integrations and create your own workflows using the event capability of Kerberos Vault." caption="Build integrations and create your own workflows using the event capability of Kerberos Vault." class="stretch">}}
 
-### Machine learning and Computer Vision
+## Machine learning and Computer Vision
 
 Kerberos Vault allows scaling machine learning and computer vision algorithms through the concept of queueing, decoupling of Kerberos Agents to recordings and NVidia Kubernetes Operator. 
 
@@ -72,7 +72,7 @@ By combining the intelligence of making recordings in small chunks, and distribu
 
 {{< figure src="vault-ml-cv.svg" alt="Machine learning and Computer Vision with Kerberos Vault." caption="Machine learning and Computer Vision with Kerberos Vault" class="stretch">}}
 
-### Remote forwarding and chaining
+## Remote forwarding and chaining
 
 Multiple Kerberos Vaults can be installed in your video landscape. You may have Kerberos Vaults at the edge and/or in a cloud environment, connected to edge and/or cloud storage providers.
 
@@ -82,7 +82,7 @@ Kerberos Vaults can be chained and configured in forwarding mode. This configura
 
 An example of remote forwarding is a machine learning filter. Recordings are stored in a Kerberos Vault at the edge, and are processed by a machine learning model. Every time the machine learning model finds a match, e.g. a pedestrian detected, it will forward the recording to Kerberos Vault in a cloud environment. By doing this you will send limited recordings (storage) into the cloud.
 
-### Open API
+## Open API
 
 Both Kerberos Enterprise as Kerberos Vault ships with Swagger API's, which can be used to communicate with the previously mentioned systems. Simply type `/swagger/index.html` after the `api` url, and you will see the Swagger UI popping up. No need to explain the different API's, use the Swagger and see what is available. See something missing, let us know, and we add it ;).
 
