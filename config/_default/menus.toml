@@ -34,16 +34,10 @@
   identifier = "hub"
   url = "/hub/"
 
-# [[main]]
-#   name = "Quickstart"
-#   url = "/prologue/introduction/"
-#   weight = 10
-
 [[main]]
   name = "Homepage"
   url = "https://kerberos.io"
   weight = 12
-
 
 [[social]]
   name = "Twitter"
