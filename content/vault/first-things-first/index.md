@@ -56,7 +56,7 @@ Each time a Kerberos Agent sends a recording to Kerberos Vault, it is persisted 
 - [Kerberos Hub](/hub/first-things-first/)
 - Kerberos Vault (remote forwarding)
 
-Every time an event is delivered, it will be consumed by the configured integrations. For example in case of a Kafka integration, you could build a Kafka consumer with custom application logic; a notification manager, a machine learning service, etc.
+Every time an event is delivered, it will be consumed by the configured integrations. For example in case of a Kafka integration, one can build a Kafka consumer with custom application logic; a notification manager, a machine learning service, etc.
 
 Find more information about events and integrations on [the integrations page](/vault/integrations).
 
@@ -64,7 +64,7 @@ Find more information about events and integrations on [the integrations page](/
 
 ## Machine learning and Computer Vision
 
-Kerberos Vault allows scaling machine learning and computer vision algorithms through the concept of queueing, decoupling of Kerberos Agents to recordings and NVidia Kubernetes Operator. 
+Kerberos Vault allows scaling machine learning and computer vision algorithms through the concept of queueing, decoupling of Kerberos Agents to recordings and the NVidia Kubernetes Operator. 
 
 Kerberos Agents send recordings to Kerberos Vault. Every time a recording is stored, the Kafka integration is producing an event in a Kafka topic. A machine learning or computer vision consumer is reading from a Kafka topic, downloads the relevant recording from Kerberos Vault, and starts a prediction or execution of an algorithm on one or more GPUs. 
 
@@ -84,7 +84,7 @@ An example of remote forwarding is a machine learning filter. Recordings are sto
 
 ## Open API
 
-Both Kerberos Enterprise as Kerberos Vault ships with Swagger API's, which can be used to communicate with the previously mentioned systems. Simply type `/swagger/index.html` after the `api` url, and you will see the Swagger UI popping up. No need to explain the different API's, use the Swagger and see what is available. See something missing, let us know, and we add it ;).
+All Kerberos products ship with Swagger APIs, which can be used to communicate with, configure and start specific actions of the related solution. Simply type `/swagger/index.html` after the `api` url, and a Swagger UI will be shown. There is no need to explain the different APIs, use the Swagger and see what is available.
 
 {{< figure src="open-api.png" alt="All capabilities of Kerberos Vault are documented through swagger API's." caption="All capabilities of Kerberos Vault are documented through swagger API's" class="stretch">}}
 
