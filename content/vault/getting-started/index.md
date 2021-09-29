@@ -40,13 +40,13 @@ Providers are the persistence layers, where you will store your recording in the
 - [Minio](https://min.io/)
 - [Ceph](https://ceph.io/)
 
-As explained before, for each provider, the appropriate security settings has to be filled in. For example for AWS you need to define the access and secret key, for GCP you need to define a service account.
+As explained before, for each provider, the appropriate security settings has to be filled in. For example for AWS you need to define the access and secret key, for GCP you need to define a service account. Find more information about storage providers [on the providers page](/vault/providers).
 
 {{< figure src="provider.gif" alt="One or more providers can be configured to centralise your storage." caption="One or more providers can be configured to centralise your storage." class="stretch">}}
 
 ## Integrations
 
-Events or messages are generated each time a recording was uploaded to Kerberos Vault, and are sent to one or more integrations. Those integrations are configured through the Kerberos Vault application. Each time a Kerberos Agent sends a recording to Kerberos Vault, it is persisted on a storage provider, and an event is triggered through one of the following integrations.
+Events or messages are generated each time a recording was uploaded to Kerberos Vault, and are sent to one or more integrations. Those integrations are configured through the Kerberos Vault application. Each time a Kerberos Agent sends a recording to Kerberos Vault, it is persisted on a storage provider, and an event is triggered through one of the following integrations. 
 
 - [Apache Kafka](https://kafka.apache.org/)
 - [Amazon Web Services SQS](https://aws.amazon.com/sqs/)
@@ -62,6 +62,8 @@ The idea of an integration is that you can build your own applications and defin
 - Classification with Tensorflow,
 - Counting algorithms,
 - and much more.
+
+Find more information about events and integrations on [the integrations page](/vault/integrations).
 
 ## Accounts
 
@@ -80,6 +82,8 @@ Next to credentials, there are a couple of other fields which are specified on a
 - edge analysis.
 
 {{< figure src="account.gif" alt="One or more accounts can be created to secure your storage access." caption="One or more accounts can be created to secure your storage access." class="stretch">}}
+
+Find more information about accounts on [the accounts page](/vault/accounts).
 
 ## Media
 

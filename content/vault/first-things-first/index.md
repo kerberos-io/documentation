@@ -56,7 +56,9 @@ Each time a Kerberos Agent sends a recording to Kerberos Vault, it is persisted 
 - [Kerberos Hub](/hub/first-things-first/)
 - Kerberos Vault (remote forwarding)
 
-Every time an event is delivered, it will be consumed by the configured integrations. For example in case of a Kafka integration, one can build a Kafka consumer with custom application logic; a notification manager, a machine learning service, etc. Find more information about events and integrations on [the integrations page](/vault/integrations).
+Every time an event is delivered, it will be consumed by the configured integrations. For example in case of a Kafka
+integration, one can build a Kafka consumer with custom application logic; a notification manager, a machine learning
+service, etc. Find more information about events and integrations on [the integrations page](/vault/integrations).
 
 {{< figure src="vault-integrations.svg" alt="Build integrations and create your own workflows using the event capability of Kerberos Vault." caption="Build integrations and create your own workflows using the event capability of Kerberos Vault." class="stretch">}}
 
