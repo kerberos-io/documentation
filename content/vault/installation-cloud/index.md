@@ -15,8 +15,6 @@ toc: true
 
 If not already the case, start by creating a Kubernetes cluster. This can be done though one of the hyperscalers (**AWS**, **GCP** or **Azure**), cloud providers (Digital Ocean, Scaleway, etc) or inside your private cloud; for the latter it is advised [to follow the edge installation](/vault/installation-edge).
 
-{{< vimeo id="404813147" class="responsive-video ratio-16by10" title="Running a Kubernetes cluster in the cloud?" >}}
-
 ## Prerequisites
 
 Kerberos Vault is the storage component of the Kerberos Enterprise Suite. It is used to store your recordings at a central place, on the storage system you prefer. Next to that it can be used for extension and integration capabilities. Learn more about [Kerberos Vault here](/vault).
@@ -88,7 +86,7 @@ Next to that modify the MongoDB credentials, and make sure they match the creden
 
 Once you have corrected the DNS names and MongoDB credentials, install Kerberos Vault inside your cluster.
 
-    kubectl apply -f ./vault/yaml/deployment.yaml
+    kubectl apply -f ./vault/yaml/deployment.yaml -n kerberos-vault
 
 ## Test out configuration
 
