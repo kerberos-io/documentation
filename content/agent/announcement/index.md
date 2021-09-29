@@ -19,7 +19,7 @@ Kerberos Agent is the next generation of Kerberos.io, and is the successor of Ke
 
 Bottom line, we are rebuilding the project from scratch using a different technology stack. We are saying goodbye to C++, PHP (Laravel), BackboneJS and saying hello to Golang and React. Despite the technology changes, we are also changing the architecture which was put in place a couple of years ago. The biggest change is to run the show inside a single repository, and no longer over seperate repos (machinery and web). Read more about this in the FAQ.
 
-{{< figure src="opensource-to-agent.svg" alt="The Kerberos Agent 3 is a complete new rewrite of the Kerberos Open Source version 1 and 2." caption="The Kerberos Agent 3 is a complete new rewrite of the Kerberos Open Source version 1 and 2." class="stretch">}}
+{{< figure src="opensource-to-agent.svg" alt="The Kerberos Agent is a complete new rewrite of the Kerberos Open Source version 1 and 2." caption="The Kerberos Agent is a complete new rewrite of the Kerberos Open Source version 1 and 2." class="stretch">}}
 
 ## FAQ
 
