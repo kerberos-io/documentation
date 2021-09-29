@@ -41,7 +41,7 @@ When installing Kerberos Vault in a cloud environment, following architecture ma
 
 {{< figure src="vault-cloud-storage.svg" alt="Bring your own storage using Kerberos Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
 
-On the other hand you could also have Kerberos Vault running at the edge, next to your Kubernetes Enterprise agents. This could be useful if you want to do processing or video analytics such as computer vision or machine learning at the edge.
+On the other hand you could also have Kerberos Vault running at the edge, next to your Kubernetes Enterprise agents. This could be useful if you want to do processing or video analytics such as computer vision or machine learning at the edge. Find more information about storage providers [on the providers page](/vault/providers).
 
 {{< figure src="vault-edge-storage.svg" alt="Store your recordings at the edge with Kerberos Vault" caption="Store your recordings at the edge with Kerberos Vault" class="stretch">}}
 
@@ -56,9 +56,7 @@ Each time a Kerberos Agent sends a recording to Kerberos Vault, it is persisted 
 - [Kerberos Hub](/hub/first-things-first/)
 - Kerberos Vault (remote forwarding)
 
-Every time an event is delivered, it will be consumed by the configured integrations. For example in case of a Kafka integration, one can build a Kafka consumer with custom application logic; a notification manager, a machine learning service, etc.
-
-Find more information about events and integrations on [the integrations page](/vault/integrations).
+Every time an event is delivered, it will be consumed by the configured integrations. For example in case of a Kafka integration, one can build a Kafka consumer with custom application logic; a notification manager, a machine learning service, etc. Find more information about events and integrations on [the integrations page](/vault/integrations).
 
 {{< figure src="vault-integrations.svg" alt="Build integrations and create your own workflows using the event capability of Kerberos Vault." caption="Build integrations and create your own workflows using the event capability of Kerberos Vault." class="stretch">}}
 
@@ -80,7 +78,7 @@ Kerberos Vaults can be chained and configured in forwarding mode. This configura
 
 {{< figure src="vault-forwarding-chaining.svg" alt="Synchronise recordings between multiple Kerberos Vault" caption="Synchronise recordings between multiple Kerberos Vault" class="stretch">}}
 
-An example of remote forwarding is a machine learning filter. Recordings are stored in a Kerberos Vault at the edge, and are processed by a machine learning model. Every time the machine learning model finds a match, e.g. a pedestrian detected, it will forward the recording to Kerberos Vault in a cloud environment. By doing this you will send limited recordings (storage) into the cloud.
+An example of remote forwarding is a machine learning filter. Recordings are stored in a Kerberos Vault at the edge, and are processed by a machine learning model. Every time the machine learning model finds a match, e.g. a pedestrian detected, it will forward the recording to Kerberos Vault in a cloud environment. By doing this you will send limited recordings (storage) into the cloud. Find more information about forwarding on [the forwarding page](/vault/forwarding).
 
 ## Open API
 
