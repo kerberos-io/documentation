@@ -13,56 +13,62 @@ weight: 303
 toc: true
 ---
 
-If not already the case, start by installing a Kubernetes cluster. This can be done on one of the hyperscalers (**AWS**, **GCP** or **Azure**), cloud providers (Digital Ocean, Scaleway, etc) or on-premise in your own private network.
+If not already the case, start by creating a Kubernetes cluster. This can be done though one of the hyperscalers (**AWS**, **GCP** or **Azure**), cloud providers (Digital Ocean, Scaleway, etc) or inside your private cloud; for the latter it is advised [to follow the edge installation](/vault/installation-edge).
 
 {{< vimeo id="404813147" class="responsive-video ratio-16by10" title="Running a Kubernetes cluster in the cloud?" >}}
 
 ## Prerequisites
 
-Kerberos Vault is the storage component for Kerberos Enterprise. It is used to store your recordings at a central place, in the storage system you prefer. Next to that it can be used for extension and integration capabilities. Learn more about [Kerberos Vault here](/storage).
+Kerberos Vault is the storage component of the Kerberos Enterprise Suite. It is used to store your recordings at a central place, on the storage system you prefer. Next to that it can be used for extension and integration capabilities. Learn more about [Kerberos Vault here](/vault).
 
-To use Kerberos Vault, you will need to have Kerberos Enterprise installed, and deployments running. Independent from that one can also use the Kerberos Vault API `/swagger/index.html` to send recordings from a custom build VMS.
+To use Kerberos Vault, you will need to have one or more Kerberos Agents installed. Independent of that one can also use the Kerberos Vault API `/swagger/index.html` to send recordings from a custom build VMS. Nothing stops you from developing a custom agent.
 
 ## Installation
 
-Similar to Kerberos Enterprise, Kerberos Vault, requires some initial components to be installed. If you will run Kerberos Vault in the same cluster as where you have Kerberos Enterprise running, there is not much to do.
+Kerberos Vault requires some initial components to be installed. If you run Kerberos Vault in the same cluster as where you have a Kerberos Factory installed, there is not much to do.
 
-{{< figure src="../first-things-first/arch-kerberos-vault-providers.svg" alt="Bring your own storage using Kerberos Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
+{{< figure src="vault-cloud-storage.svg" alt="Bring your own storage using Kerberos Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
 
-However if you plan to run Kerberos Vault in a different cluster (which is perfectly possible), you will need to make sure you complete the initial setup of [Kerberos Enterprise installation](/enterprise/installation). To be more specific you will need the following components running:
+If you plan to run Kerberos Vault in a different cluster (which is perfectly possible), you will need to make sure you complete the initial setup of the [Kerberos Factory installation](/enterprise/installation). To be more specific you will need to have following components running:
 
 - Helm
 - MongoDB
-- Traefik
+- Traefik (or alternatively Nginx ingress)
 
-Once this is done start by cloning the configurations from our [Github repo](https://github.com/kerberos-io/storage).
+Once this is done start by cloning the configurations from our [Github repo](https://github.com/kerberos-io/vault).
 
-    git clone https://github.com/kerberos-io/storage
+    git clone https://github.com/kerberos-io/vault
 
-### Storage
+### Vault deployment
 
-Similar to Kerberos Enterprise, Kerberos Vault is managed through a web app. It allows you to add storage providers (S3, minio, etc), add queues for messaging, accounts for security and much more. It also comes with API's, which you can use to interact and retrieve information from Kerberos Vault. All is documented in the form of Swagger APIs `/swagger/index.html`.
+Before installing Kerberos Vault, open the `./vault/yaml/deployment.yaml` configuration file. At the bottom of the file you will find two endpoints, similar to the Traefik configuration file below. 
 
-Before installing Kerberos Vault, open the `./storage/yaml/deployment.yaml` configuration file. At the bottom file you will find two endpoints, similar to the Traefik config file below. Update the domain names to your own domain, and add these to your DNS server or `/etc/hosts` file (and point to the same IP as the Traefik EXTERNAL-IP).
+Update the domain names to your own domain, and add these to your DNS server or `/etc/hosts` file . Make sure to point to the DNS name to the same IP as the Traefik service `EXTERNAL-IP`.
 
-        spec:
-          rules:
-    -->   - host: storage.domain.com
-            http:
-              paths:
-              - path: /
-                backend:
-                  serviceName: kerberos-storage
-                  servicePort: 80
-    -->   - host: api.storage.domain.com
-            http:
-              paths:
-              - path: /
-                backend:
-                  serviceName: kerberos-storage
-                  servicePort: 8081
+    spec:
+      rules:
+    > - host: storage.vault.com
+        http:
+        paths:
+        - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kerberos-vault
+                port:
+                  number: 80
+    > - host: api.vault.domain.com
+        http:
+        paths:
+        - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kerberos-vault
+                port:
+                  number: 8081
 
-If you are using Ingress Nginx, do not forgot to comment `Traefik` and uncomment `Ingress Nginx`. Also note the extra argument `proxy-body-size`, this is required for not reaching the default 1MB body size limit. If you do not enable this, you might experience `413` errors in your Kerberos Enterprise agents.
+If you are using Ingress Nginx, do not forgot to comment `Traefik` and uncomment `Ingress Nginx`. Also note the extra argument `proxy-body-size`, which is required for overcoming the default 1MB body size limit; if you do not enable this, you might experience `413` errors in your Kerberos Agents.
 
     apiVersion: extensions/v1beta1
     kind: Ingress
@@ -82,7 +88,7 @@ Next to that modify the MongoDB credentials, and make sure they match the creden
 
 Once you have corrected the DNS names and MongoDB credentials, install Kerberos Vault inside your cluster.
 
-    kubectl apply -f ./storage/yaml/deployment.yaml
+    kubectl apply -f ./vault/yaml/deployment.yaml
 
 ## Test out configuration
 
@@ -90,19 +96,19 @@ If everything worked out as expected, you should now have following services in 
 
 - MongoDB
 - Traefik
-- Storage
-- Enterprise (optional)
+- Vault
+- Factory (optional)
 
 It should look like this.
 
     $ kubectl get pods
     NAME                              READY   STATUS    RESTARTS   AGE
-    kerberos-storage-6f5c877d7c-hf77p 1/1     Running   0          2d11h
+    kerberos-vault-6f5c877d7c-hf77p 1/1     Running   0          2d11h
     mongodb-55566dc65c-xgmns          2/2     Running   0          4d13h
     traefik-7d566ccc47-mwslb          1/1     Running   0          4d12h
 
 ## Access the system
 
-Once everything is configured correctly your cluster and DNS or `/etc/hosts` file, you should be able to access the Storage application. By navigating to the Storage domain `storage.domain.com` in your browser you will see the Storage login page showing up.
+Once everything is configured correctly your cluster and DNS or `/etc/hosts` file, you should be able to access the Kerberos Vault application. By navigating to the domain `vault.domain.com` in your browser you will see the Kerberos Vault login page showing up.
 
-{{< figure src="login.png" alt="Once successfully installed Kerberos Vault, it will show you the login page." caption="Once successfully installed Kerberos Vault, it will show you the login page." class="stretch">}}
+{{< figure src="login.gif" alt="Once successfully installed Kerberos Vault, it will show you the login page." caption="Once successfully installed Kerberos Vault, it will show you the login page." class="stretch">}}
