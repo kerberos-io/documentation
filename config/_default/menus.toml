@@ -10,11 +10,11 @@
   identifier = "opensource"
   url = "/opensource/"
 
-[[opensourcev3]]
-  name = "Opensource v3"
+[[agent]]
+  name = "Agent"
   weight = 12
-  identifier = "opensourcev3"
-  url = "/opensource-v3/"
+  identifier = "agent"
+  url = "/agent/"
 
 [[enterprise]]
   name = "Enterprise"

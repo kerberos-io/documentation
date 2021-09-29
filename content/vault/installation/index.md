@@ -13,28 +13,29 @@ weight: 302
 toc: true
 ---
 
-Just like Kerberos Enterprise, Kerberos Vault can be installed where Kubernetes can be installed. This means that it can run at the Edge - Baremetal -, in the cloud - VMs - or at Kubernetes service providers - SAAS - such as GCP, Azure, AWS, DigitalOcean, and the list goes on.
+Kerberos Vault is shipped as a Docker container and is preferably installed inside a Kubernetes cluster. This means that it can run at the edge, or in the cloud.
 
-Although you might except Kubernetes at the Edge or Kubernetes in the cloud, there are no differences, well sorry to say there are. As Kubernetes service providers implemented features such as LoadBalancers, Persistent Volumes, and others, they have automated and integrated a huge portion of the Kubernetes stack with their related PAAS services. To be more concrete if you are running a Kubernetes Cluster on GCP, you will use the LoadBalancing and Storage services from GCP.
+Although you might except that Kubernetes at the edge or Kubernetes in the cloud is the same installation, you will notice that there are a few differences. 
 
-{{< figure src="deployment-models.svg" alt="Kerberos Vault can be installed everywhere your Kubernetes cluster can be installed." caption="Kerberos Vault can be installed everywhere your Kubernetes cluster can be installed." class="stretch">}}
+When running a Kubernetes cluster on a Kubernetes service provider, such as [GKE](https://cloud.google.com/kubernetes-engine), [EKS](https://aws.amazon.com/eks/), you will have a couple of superpowers such as a `LoadBalancer` service, automatic `Volume` creation, etc. The latter is something what is missing in an Edge deployment, there you have to prepare the volumes yourself and install an edge load balancer like `MetalLB`. 
 
-Compared to Kubernetes at the Edge, there are no predefined LoadBalancers, Storage capabilities, and more. This means more administration work for you, but - with great power comes great responsibility - so no worries. In the end there are alternative functionalties available, for features which you find out-of-the-box at the Kubernetes service providers, you just have to spend more time on configuring and installing those services/pods/deployments yourself.
+{{< figure src="vault-edge-cloud-deployments.svg" alt="Kerberos Vault can be installed everywhere your Kubernetes cluster can be installed." caption="Kerberos Vault can be installed everywhere your Kubernetes cluster can be installed." class="stretch">}}
 
 ## Installation on a Kubernetes Service Provider
 
-Installing Kerberos Vault, just like Kerberos Enterprise, on a Kubernetes Service Provider (Azure, GCP, AWS) is straight forward, as you can create a Kubernetes cluster in a few clicks, get access to public Load Balancers, storage and more. Running Kerberos Vault in such a cluster is just a matter of copy-pasting some configuration (yaml) files, and executing some `kubectl apply` commands.
+Installing Kerberos Vault on a Kubernetes Service Provider (Azure, GCP, AWS) is straight forward, as you can create a Kubernetes cluster in a few clicks, get access to public load balancers, volumes and more. Running Kerberos Vault in such a cluster is just a matter of copy-pasting some configuration (yaml) files, and execution of `kubectl apply` commands.
 
-{{< figure src="../first-things-first/arch-kerberos-vault-providers.svg" alt="Bring your own storage using Kerberos Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
+Install Kerberos Vault on a Kubernetes Service Provider by [following this step-by-step installation guide](/vault/installation-cloud).
 
-Install Kerberos Vault on a Kubernetes Service Provider by [following this step-by-step installation guide](/storage/installation-cloud).
+{{< figure src="vault-cloud-deployment.svg" alt="Bring your own storage using Kerberos Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
 
 ## Installation in Private cloud or Baremetal
 
-No need to install Kerberos Vault on a Kubernetes Service Provider, you could install it on your own Kubernetes cluster in your private cloud, or even better inside your own premise. The closer you bring Kerberos Vault to your surveillance infrastructure, and Kerberos Enterprise, the more benefits you will experience (low latency, low bandwidth, etc).
+No need to install Kerberos Vault on a Kubernetes Service Provider, it can be installed on your own Kubernetes cluster in your private cloud, or at the edge. The closer you bring Kerberos Vault to your video streams, and Kerberos Agents, the more benefits you will experience (low latency, low bandwidth, etc). 
 
-{{< figure src="../first-things-first/arch-edge-kerberos-vault.svg" alt="Store your recordings at the edge with Kerberos Vault" caption="Store your recordings at the edge with Kerberos Vault" class="stretch">}}
-
-In contradiction to the Kubernetes Service Provider, you will have some work todo. Setting up Kubernetes Cluster, play with MetalLB, Persistent Volumes and claims. Don't be scared, it's pretty straight forward as well. You can't simple expect a: click, click, 💥 approach.
+In contradiction to the Kubernetes Service Provider, there will be more work required. Setting up a Kubernetes Cluster, configure a load balancer, create persistent bolumes and claims.
 
 Install Kerberos Vault on a Private cloud or Baremetal by [following this step-by-step installation guide](/vault/installation-edge).
+
+
+{{< figure src="vault-edge-deployment.svg" alt="Store your recordings at the edge with Kerberos Vault" caption="Store your recordings at the edge with Kerberos Vault" class="stretch">}}
