@@ -1,15 +1,16 @@
 ---
 title: "Installation"
-description: ""
-lead: ""
+description: "Installing Kerberos Hub wherever you want."
+lead: "Installing Kerberos Hub wherever you want."
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
-draft: true
+draft: false
 images: []
 menu:
   hub:
     parent: "hub"
-weight: 302
+weight: 300
 toc: true
 ---
+
 
