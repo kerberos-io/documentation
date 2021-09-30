@@ -1,7 +1,7 @@
 ---
 title: "Machine learning"
-description: ""
-lead: ""
+description: "Our view on Machine Learning Operations (MLOps) for video analytics"
+lead: "Our view on Machine Learning Operations (MLOps) for video analytics"
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false
@@ -45,4 +45,55 @@ The operator solves two main challenges:
 
 ### Installation
 
-The installation of [the NVIDIA operator can be found here](https://github.com/kerberos-io/nvidia-gpu-kubernetes), with a couple of examples of how to integrate with Kerberos Vault.
+The installation of [the NVIDIA operator can be found here](https://github.com/kerberos-io/nvidia-gpu-kubernetes), with a couple of examples of how to integrate a workload (a machine learning model) with Kerberos Vault.
+
+{{< figure src="yolov3-integration-kerberos-vault.png" alt="The NVIDIA operator brings scale to your GPUs." caption="The NVIDIA operator brings scale to your GPUs." class="stretch">}}
+
+### An example
+
+The goal of the integration feature of Kerberos Vault is to allow an enterprise to bring its custom logic, while relying on a stable and scalable video management system. One can build its own notification service, triggering IoT or other kind of sensors, or execute a custom machine learning model trying to detect specific objects, patterns or actions in a recording. As described below [you can found a complete aswer here](https://github.com/kerberos-io/vault-ml).
+
+{{< figure src="yolov3-integration-kerberos-vault-example.png" alt="The NVIDIA operator brings scale to your GPUs." caption="The NVIDIA operator brings scale to your GPUs." class="stretch">}}
+
+So having above example let us get a bit more concrete on how this is functioning. We will describe the different steps and what is happening under the hood.
+
+- **Step 0**: Small chunks of recordings are created, persisted in a storage provider, and a message is sent to a Kafka topic.
+
+- **Step 1**: an extension/workload which executes the YOLOv3 model is consuming Kafka messages from a topic, produced by Kerberos Vault.
+
+- **Step 2**: Before execution of the model, the extension consumes the relevant messages from a specific topic, and downloads the video chunk from Kerberos Vault in memory.
+
+- **Step 3**: The NVIDIA operator has assigned one of the GPUs from the GPU pool to the extension. The assigned GPU is used to execute the YOLOv3 model on the video chunk.
+
+- **Step 4**: Metadata is computed, for example number of objects detected, and is injected into a resulting Kafka topic.
+
+- **Step 5**: An additional (optional) microservice is reading from the resulting Kafka topic, and execute more specific business logic: alerting through sensors or notifications, creation of entries into a support or CCTV system, etc. 
+
+## Scale and expand
+
+As illustrated in previous example, it should become clear that by chunking videos, distributing them over a flexible pool of GPUs, allows to provide a scalable and flexible way. Video streams are decouples from GPUs, and each of them can be scaled independently. Video chunks created by one or more Kerberos Agents are distributed over a pool of GPUs without knowing upfront which GPU will process which video chunk from which Kerberos Agent.
+
+
+-- TODO add illustration where we show the power of decoupling.
+
+## Machine learning at the edge 
+
+Execution of your machine learning at the edge will give you a lot of advantages and allow you to distribute and scale more easily and efficient. By executing at the edge, you will:
+
+- Lower cloud storage and compute,
+- better latency and response times,
+- real distributed processing and computing power,
+- ability to tune and provide only the hardware required.
+
+## Let your data scientist do datascience
+
+Your data scientist want to do datascience, they don't want to set up infrastructure, install GPUs or even modify their models and programming language to select a specific GPU. Hardware and more specific GPUs should remain transparent.
+
+The entire design behind the Kerberos Enterprise Suite is to support and implement the concept of MLOps. This means that your data scientist should focus on the data science and the creation of specific models. 
+
+When delivering or releasing a model, a data scientist should only be required to make a build, a container, of his release and deploy that inside a Kubernetes cluster. Nothing more than that.
+
+A data scientist should make the assumption that once it is deployed:
+1. it is automatically scaled across the different hardware components (GPUs).
+2. it just runs and has fail over and high-availability enabled by default
+3. only works with video chunks and metadata, but not the actual video streams.
