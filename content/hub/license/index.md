@@ -13,5 +13,5 @@ weight: 305
 toc: true
 ---
 
-Kerberos Hub is licensed through a monthly or yearly subscription. Depending on the 
+Kerberos Hub is licensed through a monthly or yearly subscription. Find more information about the licensing and features on [the Kerberos Hub landing page](https://kerberos.io/product/hub/). 
 

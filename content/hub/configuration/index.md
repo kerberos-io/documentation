@@ -46,7 +46,7 @@ You can create a new site, by navigating to the sites page and clicking the `(+ 
 
 {{< figure src="hub-add-site.gif" alt="Structure your Kerberos Agents by using sites, and introduce Access Control for sub accounts." caption="Structure your Kerberos Agents by using sites, and introduce Access Control for sub accounts." class="stretch">}}
 
-### Groups
+## Groups
 
 Groups are similar to sites, the only difference is that it is more abstract than a site. A group can be for example "Cash desks", "Entrance gates", "All stores of Belgium", "EMEA sites", etc. A group can be either a collection of sites, what we call then a **site group**, or it can contain a number of cameras from one or more sites, what we call a **group**.
 
@@ -55,3 +55,37 @@ Similar to sites, groups can also be used to give access to specific Kerberos Ag
 You can create a new group, by navigating to the groups page and clicking the `(+ Add Group)` button at the left top.
 
 {{< figure src="hub-add-group.gif" alt="Structure your Kerberos Agents by using groups, another level of flexibility." caption="Structure your Kerberos Agents by using groups, another level of flexibility." class="stretch">}}
+
+## Cameras
+
+On the cameras page you will have an overview of all the 
+ cameras, Kerberos Agents, your (sub) account has access too. This means that if your account only has access to a couple of sites or groups, the cameras page will only show the Kerberos Agents that belong to the relating groups and sites.
+
+{{< figure src="hub-cameras.gif" alt="Structure your Kerberos Agents by using groups, another level of flexibility." caption="Structure your Kerberos Agents by using groups, another level of flexibility." class="stretch">}}
+
+By clicking on the `(+ Add Camera)` button, you will see a modal explaining you how to connect a Kerberos Agents to Kerberos Hub, and the different deployments which are available.
+
+### Assign a Kerberos Agent
+
+As explained in the modal, there are different possibilities to set up and run a Kerberos Agent. 
+
+Nevertheless, how you deployed a Kerberos Agent, to connect the Kerberos Agent to Kerberos Hub, you will require the account credentials from your Kerberos Hub account to be shared with your Kerberos Agents. By sharing those credentials you are linking your Kerberos Agents to the relevant Kerberos Hub account.
+
+By navigating to the profile page, and selecting your plan you will find the required credentials for your Kerberos Agents.
+
+Please note that when you are using the Kerberos Hub Saas offering you will need both an access and secret key. If you are using Kerberos Hub self-hosted you will only need an access key.
+
+{{< figure src="hub-link-agent.gif" alt="Get your credentials to link your Kerberos Agents." caption="Get your credentials to link your Kerberos Agents." class="stretch">}}
+
+## Integrations
+
+You got your accounts setup, sites and groups created and last but not least some Kerberos Agents connected to your Kerberos Hub.
+
+Now it is time to configure some integrations using alerts and channels. The idea of integrations is that you can send messages to other third-party solutions on your own APIs, when an important/interesting event occurred.
+
+
+{{< figure src="hub-alerts.gif" alt="Get your credentials to link your Kerberos Agents." caption="Get your credentials to link your Kerberos Agents." class="stretch">}}
+
+## What's next
+
+Want to learn more how Kerberos Hub is working under the hood? Then [have a look at the Kerberos Hub pipeline page](/hub/pipeline) where we introduce the microservice architecture.
