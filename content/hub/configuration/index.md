@@ -48,7 +48,7 @@ You can create a new site, by navigating to the sites page and clicking the `(+ 
 
 ### Groups
 
-Groups are similar to sites, the only difference is that it is more abstract than a site. A group can be for example "Cashdesks", "Entrance gates", "All stores of Belgium", "EMEA sites", etc. A group can be either a collection of sites, what we call then a **site group**, or it can contain a number of cameras from one or more sites, what we call a **group**.
+Groups are similar to sites, the only difference is that it is more abstract than a site. A group can be for example "Cash desks", "Entrance gates", "All stores of Belgium", "EMEA sites", etc. A group can be either a collection of sites, what we call then a **site group**, or it can contain a number of cameras from one or more sites, what we call a **group**.
 
 Similar to sites, groups can also be used to give access to specific Kerberos Agents, and introduces a next level of flexibility and access controls. As illustrated before you could have some responsible for all "entrance gates" of all buildings within a specific country. By giving a sub account access to this group, he or she will only see the entrance gates of the different sites and not the other Kerberos Agents belonging to the related sites.
 
