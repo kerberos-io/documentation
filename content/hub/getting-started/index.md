@@ -9,7 +9,7 @@ images: []
 menu:
   hub:
     parent: "hub"
-weight: 300
+weight: 301
 toc: true
 ---
 
@@ -55,7 +55,7 @@ Next to classifying and predicting objects, the model is also tracing the classi
 
 {{< figure src="hub-ml.gif" alt="The media page gives you an overview of all your recordings." caption="The media page gives you an overview of all your recordings." class="stretch">}}
 
-## Alerts
+## Integrations
 
 When a specific event occurred, a notification can be send to one or more channels. A user can compose an event by selecting one or more conditions. Once the event is triggered, a notification is sent to all the enabled channels.
 
@@ -102,10 +102,7 @@ The high definition livestream is made possible through WebRTC. The full resolut
 
 ## Accounts
 
-It is possible to create multiple accounts (also called sub accounts) within your main account. A sub account can be granted access to one or more groups, sites or cameras. The three different roles are:
-
-- Guest: will only see your media recordings. A guest cannot modify, delete or create something.
-- Editor: has full access, same permissions as the main account.
+It is possible to create multiple accounts (also called sub accounts) within your main account. A sub account can be granted access to one or more groups, sites or cameras.
 
 {{< figure src="hub-accounts.gif" alt="Using accounts you can give external people access." caption="Using accounts you can give external people access." class="stretch">}}
 

@@ -44,11 +44,11 @@ Once a recording is successfully stored in Kerberos Vault, it integrates with th
 
 By using a web browser you can navigate to Kerberos Hub, and review all the recordings made by the Kerberos Agents, the corresponding livestreams and more.
 
-{{< figure src="architecture.svg" alt="Kerberos Hub is composed out of different microservices." caption="Kerberos Hub is composed out of different microservices." class="stretch">}}
+{{< figure src="hub-architecture.svg" alt="Kerberos Hub is composed out of different microservices." caption="Kerberos Hub is composed out of different microservices." class="stretch">}}
 
 ## Saas or self-hosted
 
-Kerberos Hub is part of the Kerberos Enterprise Suite, and is made available as a SAAS solution for hobbyists (small scale deployments), and self-hosted for enterprise (large scale deployments). 
+Kerberos Hub is part of the Kerberos Enterprise Suite, and is made available as a SAAS solution for hobbyists (small scale deployments), and self-hosted for enterprises (large scale deployments). 
 
 ### Software as a service (Saas)
 
