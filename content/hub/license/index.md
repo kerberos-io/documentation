@@ -13,9 +13,9 @@ weight: 305
 toc: true
 ---
 
-Kerberos Hub is licensed through a monthly or yearly subscription. Find more information about the licensing and features on [the Kerberos Hub landing page](https://kerberos.io/product/hub/). 
+Kerberos Hub is licensed through a monthly or yearly subscription. Find more information about the licensing and features on [the Kerberos Hub landing page](https://kerberos.io/product/hub). 
 
-## Saas offering
+## Software as a service (Saas)
 
 When testing the Kerberos Hub application or want to publish your personal, or limited, amount of Kerberos Agents, the Saas offering is a good choice.
 
@@ -24,3 +24,9 @@ To activate the Kerberos Hub Saas offering, you should register an account on [a
 When purchased a monthly subscription a license, in the form of credentials, will be provided. These credentials allow you to connect one or more Kerberos Agents to your Kerberos Hub account. Once your Kerberos Agents are connected, they will start consume the requirements of your subscription.
 
 The Saas offering and the related subscription can be cancelled at any time. If we the service doesn't meet your expectations we believe it's more than reasonable to provide a refund.
+
+## Self-hosted
+
+When licensing the self-hosted version of Kerberos Hub, you will need to purchase a license key for installing and consuming the application. After, you received a license you will be able to configure the [Kerberos Hub Helm chart](https://github.com/kerberos-io/hub/blob/master/values.yaml#L6). The self-hosted license will allow you to install unlimited amount of accounts and devices. 
+
+More information about the self-hosted license [can be found on the public website](https://kerberos.io/product/hub).
