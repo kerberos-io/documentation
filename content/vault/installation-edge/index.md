@@ -17,6 +17,8 @@ Welcome to the Kerberos Vault Edge installation. This is the way to go if you wa
 
 Before we can start installing the different deployments in our cluster, we need to make sure we have a Kubernetes cluster available.
 
+{{< figure src="vault-edge-deployment.svg" alt="Store your recordings at the edge with Kerberos Vault" caption="Store your recordings at the edge with Kerberos Vault" class="stretch">}}
+
 ## Prerequisites
 
 Kerberos Vault is the storage component of the Kerberos Enterprise Suite. It is used to store your recordings at a central place, on the storage system you prefer. Next to that it can be used for extension and integration capabilities. Learn more about [Kerberos Vault here](/vault).
@@ -26,6 +28,8 @@ To use Kerberos Vault, you will need to have one or more Kerberos Agents install
 ## Installation
 
 Kerberos Vault requires some initial components to be installed. If you run Kerberos Vault in the same cluster as where you have a Kerberos Factory installed, there is not much to do.
+
+{{< figure src="vault-edge-storage.svg" alt="Store your recordings at the edge with Kerberos Vault" caption="Store your recordings at the edge with Kerberos Vault" class="stretch">}}
 
 If you plan to run Kerberos Vault in a different cluster (which is perfectly possible), you will need to make sure you complete the initial setup of [Kerberos Factory Edge](/enterprise/installation-edge) installation. To be more specific you will need the following components running:
 

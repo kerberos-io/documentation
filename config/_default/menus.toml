@@ -22,15 +22,22 @@
   identifier = "enterprise"
   url = "/enterprise/"
 
+
+[[factory]]
+  name = "Factory"
+  weight = 14
+  identifier = "factory"
+  url = "/factory/"
+
 [[vault]]
   name = "Vault"
-  weight = 14
+  weight = 15
   identifier = "vault"
   url = "/vault/"
 
 [[hub]]
   name = "Hub"
-  weight = 15
+  weight = 16
   identifier = "hub"
   url = "/hub/"
 

@@ -73,8 +73,7 @@ So having above example let us get a bit more concrete on how this is functionin
 
 As illustrated in previous example, it should become clear that by chunking videos, distributing them over a flexible pool of GPUs, allows to provide a scalable and flexible way. Video streams are decouples from GPUs, and each of them can be scaled independently. Video chunks created by one or more Kerberos Agents are distributed over a pool of GPUs without knowing upfront which GPU will process which video chunk from which Kerberos Agent.
 
-
--- TODO add illustration where we show the power of decoupling.
+{{< figure src="gpu-to-cpu.svg" alt="GPUs and CPUs are decoupled. Any recording, independent of any video stream, will be distributed to the GPU pool." caption="GPUs and CPUs are decoupled. Any recording, independent of any video stream, will be distributed to the GPU pool." class="stretch">}}
 
 ## Machine learning at the edge 
 

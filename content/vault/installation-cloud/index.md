@@ -15,6 +15,8 @@ toc: true
 
 If not already the case, start by creating a Kubernetes cluster. This can be done though one of the hyperscalers (**AWS**, **GCP** or **Azure**), cloud providers (Digital Ocean, Scaleway, etc) or inside your private cloud; for the latter it is advised [to follow the edge installation](/vault/installation-edge).
 
+{{< figure src="vault-cloud-deployment.svg" alt="Bring your own storage using Kerberos Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
+
 ## Prerequisites
 
 Kerberos Vault is the storage component of the Kerberos Enterprise Suite. It is used to store your recordings at a central place, on the storage system you prefer. Next to that it can be used for extension and integration capabilities. Learn more about [Kerberos Vault here](/vault).

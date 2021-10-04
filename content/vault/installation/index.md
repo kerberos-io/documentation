@@ -29,13 +29,12 @@ Install Kerberos Vault on a Kubernetes Service Provider by [following this step-
 
 {{< figure src="vault-cloud-deployment.svg" alt="Bring your own storage using Kerberos Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
 
-## Installation in Private cloud or Baremetal
+## Installation in a private cloud or at the edge
 
 No need to install Kerberos Vault on a Kubernetes Service Provider, it can be installed on your own Kubernetes cluster in your private cloud, or at the edge. The closer you bring Kerberos Vault to your video streams, and Kerberos Agents, the more benefits you will experience (low latency, low bandwidth, etc). 
 
 In contradiction to the Kubernetes Service Provider, there will be more work required. Setting up a Kubernetes Cluster, configure a load balancer, create persistent bolumes and claims.
 
-Install Kerberos Vault on a Private cloud or Baremetal by [following this step-by-step installation guide](/vault/installation-edge).
-
+Install Kerberos Vault on a private cloud or at the edge by [following this step-by-step installation guide](/vault/installation-edge).
 
 {{< figure src="vault-edge-deployment.svg" alt="Store your recordings at the edge with Kerberos Vault" caption="Store your recordings at the edge with Kerberos Vault" class="stretch">}}

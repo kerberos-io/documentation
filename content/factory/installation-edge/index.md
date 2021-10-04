@@ -7,17 +7,15 @@ lastmod: 2020-10-06T08:49:31+00:00
 draft: false
 images: []
 menu:
-  enterprise:
-    parent: "enterprise"
+  factory:
+    parent: "factory"
 weight: 304
 toc: true
 ---
 
-Welcome to the Kerberos Enterprise Edge installation. This is the way to go if you want to install Kerberos Enterprise on your Baremetal infrastructure or inside your Private Cloud.
+This is the way to go if you want to install Kerberos Factory on your Kubernetes cluster at the edge or inside a private cloud.  Before installing the different deployments in our cluster, we need to make sure we have one available.
 
-{{< figure src="../../prologue/deployments/onpremise-more-then-5.svg" alt="When you start having bigger deployments it's recommended to go with a Kubernetes approach." caption="When you start having bigger deployments it's recommended to go with a Kubernetes approach." class="stretch">}}
-
-Before we can actual start installing the different deployments in our cluster, we need to make sure we have one available.
+{{< figure src="factory-edge.svg" alt="Process your video streams at the edge. " caption="Process your video streams at the edge." class="stretch">}}
 
 ## Prerequisites
 
@@ -94,19 +92,23 @@ Calico is an open source networking and network security solution for containers
     curl https://docs.projectcalico.org/manifests/calico.yaml -O
     kubectl apply -f calico.yaml
 
-### Kerberos Enterprise
+### Permissions and namespace
 
-Before setting up Kerberos Enterprise, some configuration needs to happen. First thing that we need to do is setting up the RBAC permissions (Role Based Access Control). We need to enable this to be able to query specific endpoints from the Kubernetes API. By default these endpoints are locked, so we need to unlock them.
+Before setting up Kerberos Factory, the first thing that we need to do is enabling RBAC permissions (Role Based Access Control). This needs to be enabled to query specific endpoints from the Kubernetes API. By default, these endpoints are blocked, so we need to unlock them.
 
-    git clone https://github.com/kerberos-io/enterprise
+First clone the configurations from the GitHub repository [kerberos-io/factory]( https://github.com/kerberos-io/factory).
 
-A best practice is to create a separate namespace for your enterprise deployment.
+    git clone https://github.com/kerberos-io/factory
 
-    kubectl create namespace kerberos
+A best practice is to create a separate namespace for your Kerberos Factory and Kerberos Agent deployments.
 
-    kubectl create -n kerberos -f ./enterprise/yaml/factory/clusterrole.yaml
+    kubectl create namespace kerberos-factory
 
-This will make several actions, permissions, inside your cluster available. We need this to be able to create deployments from the Kerberos Enterprise web app.
+Next go into the directory and execute the first Kubernetes configuration file `clusterrole.yaml`.
+
+    kubectl create -n kerberos-factory -f ./factory/yaml/factory/clusterrole.yaml
+
+This will make several APIs inside your Kubernetes cluster available. We need this to be able to create deployments from the factory web app through the Kubernetes Golang SDK.
 
 ### MetalLB
 
@@ -131,9 +133,9 @@ After installing the different MetalLB components, we need to create a `configma
             addresses:
     -->     - 192.168.1.200-192.168.1.210
 
-You can change the IP range above to match your needs. MetalLB will use this range as a referance to assign IP addresses to your LoadBalancers. Once ready you can apply the configration map.
+You can change the IP range above to match your needs. MetalLB will use this range as a reference to assign IP addresses to your LoadBalancers. Once ready you can apply the configuration map.
 
-    kubectl apply -f ./enterprise/yaml/metallb/configmap.yaml
+    kubectl apply -f ./factory/yaml/metallb/configmap.yaml
 
 ### Helm
 
@@ -152,19 +154,28 @@ To access the Kerberos Enterprise web application, we will create a service in t
 The idea is that Traefik, will have a dedicated IP address assigned from MetalLB, and will resolve the Ingress of our Kerberos Enterprise web app. Let's go ahead with installing Traefik.
 
     helm repo add stable https://charts.helm.sh/stable
-    helm install -n kerberos traefik -f ./enterprise/yaml/traefik/values.yaml stable/traefik
+    helm install -n traefik traefik -f ./enterprise/yaml/traefik/values.yaml stable/traefik
+
+### Ingress-Nginx (alternative for Traefik)
+
+If you don't like `Traefik` but you prefer `Ingress Nginx`, that works as well.
+
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    kubectl create namespace ingress-nginx
+    helm install ingress-nginx -n kerberos ingress-nginx/ingress-nginx
 
 ### MongoDB
 
-When using Kerberos Enterprise, it will generate configurations for every surveillance camera deployed. These configuration files are stored centrally in a MongoDB database. Therefore we use `helm` to install a MongoDB instance inside your cluster.
+The last step is to install the Kerberos Factory application. Kerberos Factory is responsible for installing and creating the kubernetes deployments inside your Kubernetes cluster.
 
-Before we can move into the installation of MongoDB, in contrary with the cloud installation, we will need to create a Persistent Volume (PV). For simplicity we will use `local-storage`, and make sure the volume is assigned to a specific node (hostname).
+Before we can move into the installation of MongoDB, we will need to create a Persistent Volume (PV). The reason for that is that we do not have a volume provisioning tool at the edge, which we do have with a cloud provider. For simplicity, we will use `local-storage`, and make sure the volume is assigned to a specific node (hostname). Please note that you could perfectly use your Ceph cluster as well.
 
 Create a folder on the node (VM), where you want to persist the data of MongoDB.
 
     mkdir /home/mongodb/
 
-Once done open the `./enterprise/yaml/mongodb/volume.yaml` file and make sure to change capacity, local path (if changed) and the hostname attribute (VM/machine, on which the directory is made available).
+Once done open the `./factory/yaml/mongodb/volume.yaml` file and make sure to change capacity, local path (if changed), and the hostname attribute (VM/machine, on which the directory is made available).
 
         spec:
           capacity:
@@ -184,27 +195,25 @@ Once done open the `./enterprise/yaml/mongodb/volume.yaml` file and make sure to
                   values:
     -->           - hostname
 
-After modified properly you can go ahead with creating the PV.
+Once completed you can go ahead with creating the PV.
 
-    kubectl create -n kerberos -f ./enterprise/yaml/mongodb/volume.yaml
+    kubectl create -n mongodb -f ./factory/yaml/mongodb/volume.yaml
 
-Have a look into the `./enterprise/yaml/mongodb/values.yaml` file, you will find plenty of configurations for your MongoDB instance. You will also find the attribute where you can change the root password of MongoDB.
+Have a look into the `./factory/yaml/mongodb/values.yaml` file, you will find plenty of configurations for the MongoDB helm chart. To change the username and password of the MongoDB instance, go ahead and [find the attribute where](https://github.com/kerberos-io/factory/blob/master/yaml/mongodb/values.yaml#L75) you can change the root password.
 
     helm repo add bitnami https://charts.bitnami.com/bitnami
-    helm install mongodb bitnami/mongodb -n kerberos --values ./enterprise/yaml/mongodb/values-edge.yaml
+    helm install mongodb -n mongodb bitnami/mongodb --values ./enterprise/yaml/mongodb/values-edge.yaml
 
-Once installed succesfully the MongoDB instance, we should copy the password of the MongoDB instance. Once revealed copy the password, as we will need in the next steps.
+Once installed successfully, we should verify if the password has been set correctly. Print out the password using `echo $MONGODB_ROOT_PASSWORD` and confirm the password is what you've specified in the `values.yaml` file.
 
     export MONGODB_ROOT_PASSWORD=$(kubectl get secret -n kerberos mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
     echo $MONGODB_ROOT_PASSWORD
 
-### Kerberos Enterprise Web App - The Factory
+### Kerberos Factory
 
-The last step is to install the Kerberos Enterprise application. Kerberos Enterprise is managed through an application which we call the `Factory`. It is responsible for initiating the deployments inside your cluster. These deployments is what we also call (similar to the Open Source version) the machinery.
+The last step is to install the Kerberos Factory application. Kerberos Factory is responsible for installing and creating the kubernetes deployments inside your Kubernetes cluster.
 
-The Factory is shipped as a web app (React) which provides you with a tool to update your deployments (agents) easily, monitor them, etc. The Factory is the central portal for managing Kerberos Enterprise inside your cluster. However at any point you can fine-tune or take-over using the `kubectl` command.
-
-Before installing the Factory web app, open the `./enterprise/yaml/factory/deployment.yaml` configuration file. At the bottom file you will find two endpoints, similar to the traefik config file. Update the domain names to your own domain, and add these to your DNS server (pointing to the same IP as the traefik EXTERNAL-IP).
+Before installing Kerberos Factory, open the `./factory/yaml/factory/deployment.yaml` configuration file. At the of the bottom file you will find two endpoints, similar to the Ingres file below. Update the hostnames to your own preferred domain, and add these to your DNS server or `/etc/hosts` file (pointing to the same IP as the Traefik/Ingress-nginx EXTERNAL-IP).
 
         spec:
           rules:
@@ -223,6 +232,16 @@ Before installing the Factory web app, open the `./enterprise/yaml/factory/deplo
                   serviceName: factory
                   servicePort: 8081
 
+If you are using Ingress Nginx, do not forgot to comment `Traefik` and uncomment `Ingress Nginx`.
+
+    apiVersion: extensions/v1beta1
+    kind: Ingress
+    metadata:
+      name: factory
+      annotations:
+        #kubernetes.io/ingress.class: traefik
+        kubernetes.io/ingress.class: nginx
+
 Modify the MongoDB credentials, and make sure they match the credentials of your MongoDB instance.
 
         - name: MONGODB_USERNAME
@@ -232,11 +251,11 @@ Modify the MongoDB credentials, and make sure they match the credentials of your
 
 Once you have corrected the DNS names (or internal /etc/hosts file), install the Factory web app inside your cluster.
 
-    kubectl apply -n kerberos -f ./enterprise/yaml/factory/deployment.yaml
+    kubectl apply -n kerberos-factory -f ./factory/yaml/factory/deployment.yaml
 
 ## Test out configuration
 
-If everything worked out as expected, you should now have following services in your cluster:
+If everything worked out as expected, you should now have following services in your cluster across different namespaces:
 
 - MongoDB
 - Traefik
@@ -244,14 +263,20 @@ If everything worked out as expected, you should now have following services in 
 
 It should look like this.
 
-    $ kubectl get pods -n kerberos
+    $ kubectl get pods -n kerberos-factory
     NAME                              READY   STATUS    RESTARTS   AGE
     factory-6f5c877d7c-hf77p          1/1     Running   0          2d11h
+
+    $ kubectl get pods -n mongodb
+    NAME                              READY   STATUS    RESTARTS   AGE
     mongodb-758d5c5ddd-qsfq9          1/1     Running   0          5m31s
+
+    $ kubectl get pods -n traefik
+    NAME                              READY   STATUS    RESTARTS   AGE
     traefik-7d566ccc47-mwslb          1/1     Running   0          4d12h
 
 ## Access the system
 
-Once everything is configured correctly your cluster and DNS, you should be able to setup the Factory application. By navigating to the Factory domain `factory.domain.com` in your browser you will see the Factory login page showing up.
+Once everything is configured correctly your cluster and DNS, you should be able to set up the Factory application. By navigating to the domain `factory.domain.com` in your browser you will see the login page showing up.
 
-{{< figure src="login.png" alt="Once successfully installed Kerberos Enterprise, it will show you the login page." caption="Once successfully installed Kerberos Enterprise, it will show you the login page." class="stretch">}}
+{{< figure src="login.png" alt="Once successfully installed Kerberos Factory, it will show you the login page." caption="Once successfully installed Kerberos Factory, it will show you the login page." class="stretch">}}
