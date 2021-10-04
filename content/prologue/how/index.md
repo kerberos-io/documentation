@@ -29,6 +29,8 @@ As soon you will process more [Kerberos Agents](/opensource/first-things-first/)
 
 One or more [Kerberos Agents](/opensource/first-things-first/) are perfect for a small scale deployment. The disadvantage, when running a couple of Kerberos Agents, is that an agent is designed to handle a single camera stream. This means if you would like to have an overview of all your [Kerberos Agents](/opensource/first-things-first/), you will need to open multiple interfaces or build something yourself. Another disadvantage is the network, typically a Kerberos Agent is on a local network, and not accessible from the internet. This requires port-forwarding, or a VPN tunnel to properly secure and access them.
 
+{{< figure src="hub-with-vault.svg" alt="Kerberos Vault connected to Kerberos Hub." caption="Kerberos Vault connected to Kerberos Hub." class="stretch">}}
+
 To overcome these disadvantages a tool, [Kerberos Hub](/hub/first-things-first/), was developed that allows to connect a couple, or a thousand of video stream to a single pane of glass. The idea is that you can use either the [Kerberos Hub Saas offering](/hub/first-things-first/) or the [Kerberos Hub self-hosted](/hub/first-things-first/) version, depending on your needs. 
 
 [Kerberos Hub](/hub/first-things-first/) comes with features to manage cameras in groups or sites, view livestreams, delegate access of a subset of cameras to specific accounts, filtering through machine learning, etc.

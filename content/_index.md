@@ -37,9 +37,11 @@ While we moved forward our third mission is to scale, and make Kerberos reach fa
 
 Kerberos.io is a video analytics and monitoring platform, that is focussing on both end-consumer as enterprises. It comes with different solutions to support small deployments, a couple of camera streams and larger deployments, with multiple sites and thousands of camera streams.
 
+{{< figure src="kerberos-agent-edge.svg" alt="A Kerberos Agent is monitoring a single camera stream." caption="A Kerberos Agent is monitoring a single camera stream." class="stretch">}}
+
 With Kerberos.io you start small with one or more [Kerberos Agents](/opensource/first-things-first/), and grow over time while introducing more and more components like [Kerberos Factory](/factory/first-things-first/), [Kerberos Vault](/vault/first-things-first/) and [Kerberos Hub](/hub/first-things-first/), which is coined the [Kerberos Enterprise Suite](/enterprise/first-things-first/). Kerberos.io is shipped through the concept of container technology such as Docker and Kubernetes, and implements the ideas of bring your own cloud, bring your own storage and bring your own technology.
 
-{{< figure src="./kerberos-global.svg" alt="A Kerberos agent consists of both a backend en frontend." caption="A Kerberos agent consists of both a backend en frontend." class="stretch">}}
+{{< figure src="./kerberos-global.svg" alt="A scalable video platform for an ever-growing video landscape." caption="A scalable video platform for an ever-growing video landscape." class="stretch">}}
 
 The whole idea is that any solution you will find at Kerberos.io, is extensible and allows you to integrate by default. For example, you decide where to deploy the solutions (edge/cloud/hybrid), what storage you want (edge/cloud/hybrid), how to integrate it with other third-party solutions, etc. Every solution you'll find in the Kerberos.io space, ships Swagger APIs by default, and will allow you to build your own applications or integrations.
 
