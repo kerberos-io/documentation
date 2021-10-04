@@ -13,4 +13,10 @@ weight: 104
 toc: true
 ---
 
-The mission of Kerberos.io is to provide everyone on this planet with an affordable and revolutionary video surveillance system. We want every human being or enterprise to secure it's family, property(ies), organisations or anything he finds important.
+Kerberos.io initiated as a side project, due to inspiration and motivation in the space of video analytics, computer vision and machine learning. Its first focus was video surveillance only, as nowadays burglary or attacks are very common in this world.
+
+Due to this, our first mission is to provide every human being on this planet with a solution, a video platform, to protect its families, friends, homes, etc in the form of open source (MIT license).
+
+Our second mission is to make this video platform in such a way, that its high-tech and using the latest technologies and UX, to create a seamless, never-seen and delicious user experience.
+
+While we moved forward our third mission is to scale, and make Kerberos reach far beyond a traditional video platform. With the rise of Kerberos Enterprise Suite, we now focus on large scale deployments (covering thousands of cameras), and video intelligence through machine learning.

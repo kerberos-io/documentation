@@ -13,26 +13,34 @@ weight: 100
 toc: true
 ---
 
-The **Kerberos.io** project, pronounced as `/kuh buh ruhs dot ai o/`, is a video surveillance solution, which was initiated back in 2014. Over the years it has evolved into a trusted, stable and feature-rich video surveillance system. To set the expectations, watch the video below to understand what it can and can't do. If you want to install Kerberos.io, it's recommended to have a look [at the architectures page](/prologue/deployments/) to find the best solution for your usecase.
+The **Kerberos.io** project, pronounced as `/kuh buh ruhs dot ai o/`, is a video analytics and video management platform, which was initiated back in 2014. Over the years it has evolved into a stable and feature-rich video platform, which is used for management and analytics such as machine learning.
 
-{{< vimeo id="382090189" class="responsive-video ratio-16by10" title="Kerberos introduction" >}}
+To set the expectations of what is possible and how, it's recommended to have a look [at the architectures page](/prologue/deployments/) to find the best, or most reasonable architecture for your use case.
 
-## The name: Kerberos.io
+## Kerberos.io
 
 Many people are confused, and don't understand why this project is called Kerberos.io. If you've been in the IT world for a while you will notice that Kerberos is already used for the authentication protocol [Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol)).
 
-We believe that the name Kerberos.io makes sense for this project as well, with a strong emphasize on the suffix **.io**, which stands for input and output devices (e.g. any type of camera). Kerberos.io can be seen as a kind of security protocol driven by hardware devices such as surveillance cameras. To make writing easier we will from now on, refer to Kerberos instead of Kerberos.io.
+We believe that the name Kerberos.io makes sense for this project as well, with a strong emphasize on the suffix **.io**, which stands for input and output devices (e.g. any type of camera). Kerberos.io can be seen as a kind of security protocol for images and recordings.
 
-## Why Kerberos
+## Why Kerberos.io
 
-As burglary is very common, we believe that video surveillance is a trivial tool in our daily lifes which helps us to feel a bit more secure. Responding to this need, a lot of companies have started developing their own video surveillance software in the past few years.
+Kerberos.io initiated as a side project, due to inspiration and motivation in the space of video analytics, computer vision and machine learning. Its first focus was video surveillance only, as nowadays burglary or attacks are very common in this world. 
 
-Nowadays we have a myriad of expensive cameras, recorders, and software solutions which are mainly outdated and difficult to install and use. Kerberos goal is to solve these problems and to provide every human being or enterprise in this world to have their own ecological, affordable, easy-to-use and innovative surveillance solution.
+Due to this, our first mission is to provide every human being on this planet with a solution, a video platform, to protect its families, friends, homes, etc in the form of open source (MIT license). 
 
-## What is Kerberos
+Our second mission is to make this video platform in such a way, that its high-tech and using the latest technologies and UX, to create a seamless, never-seen and delicious user experience.
 
-Kerberos is a video surveillance solution, that uses computer vision algorithms to detect changes, and that can trigger actions (notifications, api, etc). It comes in two flavors, Kerberos Open Source and Kerberos Enterprise. Kerberos can be deployed to any ARM device, Linux OS, Docker, Balena Cloud, or cluster such as Kubernetes.
+While we moved forward our third mission is to scale, and make Kerberos reach far beyond a traditional video platform. With the rise of Kerberos Enterprise Suite, we now focus on large scale deployments (covering thousands of cameras), and video intelligence through machine learning.
 
-### Kerberos Agent
+## What is Kerberos.io
 
-When you install Kerberos Open Source or Kerberos Enterprise we will refer to it as the Kerberos agent. A Kerberos agent, is a software solution that processes the video stream of a single surveillance camera, makes and visualises recordings and takes actions (for example sending notifications).
+Kerberos.io is a video analytics and monitoring platform, that is focussing on both end-consumer as enterprises. It comes with different solutions to support small deployments, a couple of camera streams and larger deployments, with multiple sites and thousands of camera streams.
+
+With Kerberos.io you start small with one or more [Kerberos Agents](/opensource/first-things-first/), and grow over time while introducing more and more components like [Kerberos Factory](/factory/first-things-first/), [Kerberos Vault](/vault/first-things-first/) and [Kerberos Hub](/hub/first-things-first/), which is coined the [Kerberos Enterprise Suite](/enterprise/first-things-first/). Kerberos.io is shipped through the concept of container technology such as Docker and Kubernetes, and implements the ideas of bring your own cloud, bring your own storage and bring your own technology.
+
+{{< figure src="./kerberos-global.svg" alt="A Kerberos agent consists of both a backend en frontend." caption="A Kerberos agent consists of both a backend en frontend." class="stretch">}}
+
+The whole idea is that any solution you will find at Kerberos.io, is extensible and allows you to integrate by default. For example, you decide where to deploy the solutions (edge/cloud/hybrid), what storage you want (edge/cloud/hybrid), how to integrate it with other third-party solutions, etc. Every solution you'll find in the Kerberos.io space, ships Swagger APIs by default, and will allow you to build your own applications or integrations.
+
+Machine learning and Artificial Intelligence is a critical component of the Kerberos.io ecosystem. Within Kerberos Vault you can integrate your own machine learning models, and run them at scale. [Learn more about how we support](/vault/machine-learning/) machine learning use cases.
