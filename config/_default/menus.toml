@@ -73,14 +73,14 @@
 [[footer]]
   name = "Factory"
   url = "https://kerberos.io/product/enterprise-agent/"
-  weight = 10
+  weight = 11
 
 [[footer]]
   name = "Vault"
   url = "https://kerberos.io/product/vault/"
-  weight = 10
+  weight = 12
 
 [[footer]]
   name = "Hub"
   url = "https://kerberos.io/product/hub/"
-  weight = 10
+  weight = 13
