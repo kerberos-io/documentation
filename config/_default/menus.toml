@@ -5,7 +5,7 @@
   url = "/prologue/"
 
 [[opensource]]
-  name = "Opensource v2"
+  name = "Opensource"
   weight = 11
   identifier = "opensource"
   url = "/opensource/"
