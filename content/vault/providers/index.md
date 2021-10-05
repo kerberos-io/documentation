@@ -55,11 +55,50 @@ Kerberos Vault integrates with storage providers in the cloud such as AWS S3, GC
 
 ### Storj
 
-> Tutorial to be written.
+#### Introduction
+
+Storj DCS is the world’s first open-source, decentralized cloud storage layer that’s private by design and secure by default - enabling developers to build in the best data protection and privacy into their applications as possible. The zero trust architecture, multi-region high availability, default encryption and edge-based access controls minimize risk and give only you, or those you grant permission to, access to your files. The result is that you take back full ownership and control of your data. 
+
+The Storj DCS Satellite Admin Console supports uploading and managing objects directly through the browser with no command-line tool required. This component uses our hosted S3-compatible Gateway service.
+
+#### Create an Account
+[Sign Up](https://storj.io/ "Sign Up")
+
+__Click on Start__ for free
+![Sign up Image 1](storjsignup1.png)
+
+__Select a Satellite__, and __sign up__ for an account.
+![Sign up Image 2](storjsignup2.png)
+![Sign up Image 3](storjsignup3.png)
+
+After sign up, you will receive a verification email. __Click the button__ prompting you to verify your email.
+![Sign up Image 4](storjsignup4.png)
+
+__Click__ Upload in Browser or __navigate__ to Object Browser to configure your access and bucket 
+
+#### Configure Object Browser Access
+
+__Navigate__ to the Objects page within your project and then click on __Continue__. 
+![Setup Image 1](storjbucketsetup1.png)
+
+_Don't forget to save your __Encryption Passphrase__ generated below, you will need it for future access._
+
+If this is your first time using the object browser, you __must create an encryption passphrase__. We strongly encourage you to use a mnemonic phrase. The GUI automatically generates one on the client-side for you. Alternatively, you can enter your own. 
+![Setup Image 2](storjbucketsetup2.png)
+
+__Enter__ the Encryption Passphrase you just created or used previously. If you enter a new Encryption Passphrase, you will not be able to see files previously uploaded as they would have been encrypted with a separate passphrase. 
+![Setup Image 3](storjbucketsetup3.png)
+
+If you have not yet created a bucket a module window will pop up, ___enter a lowercase alphanumeric name__. Buckets are your containers that store objects. 
+![Setup Image 4](storjbucketsetup4.png)
+
+After creating your first bucket, ___you will be placed into the bucket__ where you can make folders and/or upload files. You can now configure Kerberos using the bucket you just created. 
 
 ## Edge storage providers
 
 Kerberos Vault also integrates with storage providers that are more suitable for edge deployments. Examples are Minio and Ceph, these are storage providers that you can install wherever you want. Therefore, they are interesting when considering edge computing to reduce latency, cloud billing and bandwidth. Examples are machine learning use cases, to trigger events or limit the transfer to a cloud storage. 
+
+If you have not yet created a bucket a module window will pop up, enter a lowercase alphanumeric name. Buckets are your containers that store objects. 
 
 ### Minio
 
