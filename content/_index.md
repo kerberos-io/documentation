@@ -27,19 +27,19 @@ We believe that the name Kerberos.io makes sense for this project as well, with 
 
 Kerberos.io initiated as a side project, due to inspiration and motivation in the space of video analytics, computer vision and machine learning. Its first focus was video surveillance only, as nowadays burglary or attacks are very common in this world. 
 
-Due to this, our first mission is to provide every human being on this planet with a solution, a video platform, to protect its families, friends, homes, etc in the form of open source (MIT license). 
+Due to this, our first mission is to provide every human being on this planet with a solution, a video platform, to protect its families, friends, homes or anything else which you think is important.  
 
-Our second mission is to make this video platform in such a way, that its high-tech and using the latest technologies and UX, to create a seamless, never-seen and delicious user experience.
+Our second mission is to make this video platform affordable and Open Source (MIT), and develop it in such a way, that it's using the latest technologies, to create a seamless, never-seen and delicious user experience.
 
-While we moved forward our third mission is to scale, and make Kerberos reach far beyond a traditional video platform. With the rise of Kerberos Enterprise Suite, we now focus on large scale deployments (covering thousands of cameras), and video intelligence through machine learning.
+While we moved forward our third mission is to scale, and make Kerberos reach far beyond a traditional video platform. With the rise of [Kerberos Enterprise Suite](/enterprise/first-things-first), we now focus on large scale deployments (covering thousands of cameras), and video analytics through machine learning.
 
 ## What is Kerberos.io
 
-Kerberos.io is a video analytics and monitoring platform, that is focussing on both end-consumer as enterprises. It comes with different solutions to support small deployments, a couple of camera streams and larger deployments, with multiple sites and thousands of camera streams.
+Kerberos.io is a video analytics and monitoring platform, that is focussing on both end-consumer and enterprises. It comes with modular solutions to support small deployments, a couple of camera streams and larger deployments, with multiple sites and thousands of camera streams.
 
 {{< figure src="kerberos-agent-edge.svg" alt="A Kerberos Agent is monitoring a single camera stream." caption="A Kerberos Agent is monitoring a single camera stream." class="stretch">}}
 
-With Kerberos.io you start small with one or more [Kerberos Agents](/opensource/first-things-first/), and grow over time while introducing more and more components like [Kerberos Factory](/factory/first-things-first/), [Kerberos Vault](/vault/first-things-first/) and [Kerberos Hub](/hub/first-things-first/), which is coined the [Kerberos Enterprise Suite](/enterprise/first-things-first/). Kerberos.io is shipped through the concept of container technology such as Docker and Kubernetes, and implements the ideas of bring your own cloud, bring your own storage and bring your own technology.
+With Kerberos.io you start small with one or more [Kerberos Agents](/opensource/first-things-first/), and grow over time while introducing more and more components like [Kerberos Factory](/factory/first-things-first/), [Kerberos Vault](/vault/first-things-first/) and [Kerberos Hub](/hub/first-things-first/), which is also referred to as the [Kerberos Enterprise Suite](/enterprise/first-things-first/). Kerberos.io is shipped through the concept of container technology such as Docker and Kubernetes, and implements the ideas of bring your own cloud, bring your own storage and bring your own technology.
 
 {{< figure src="./kerberos-global.svg" alt="A scalable video platform for an ever-growing video landscape." caption="A scalable video platform for an ever-growing video landscape." class="stretch">}}
 

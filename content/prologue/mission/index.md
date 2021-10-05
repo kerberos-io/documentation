@@ -17,6 +17,6 @@ Kerberos.io initiated as a side project, due to inspiration and motivation in th
 
 Due to this, our first mission is to provide every human being on this planet with a solution, a video platform, to protect its families, friends, homes, etc in the form of open source (MIT license).
 
-Our second mission is to make this video platform in such a way, that its high-tech and using the latest technologies and UX, to create a seamless, never-seen and delicious user experience.
+Our second mission is to make this video platform affordable and Open Source (MIT), and develop it in such a way, that it’s using the latest technologies, to create a seamless, never-seen and delicious user experience.
 
 While we moved forward our third mission is to scale, and make Kerberos reach far beyond a traditional video platform. With the rise of Kerberos Enterprise Suite, we now focus on large scale deployments (covering thousands of cameras), and video intelligence through machine learning.

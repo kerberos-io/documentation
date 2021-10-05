@@ -19,6 +19,20 @@ The design principle of Kerberos Enterprise Suite allows to decouple videos stre
 
 {{< figure src="vault-ml-cv.svg" alt="Machine learning and Computer Vision with Kerberos Vault." caption="Machine learning and Computer Vision with Kerberos Vault" class="stretch">}}
 
+## The problem we solve
+
+The complexity not only starts with the creation of a machine learning model, to solve or compute a specific business case, it also starts at the deployment of the machine learning model, and it even becomes more complex when you scale over time.
+
+Especially in the video analytics space, where we apply machine learning to video streams, and more specific videos (mp4) or images (JPEG), there are many challenges. 
+
+1. How do you scale the recording of video streams?
+2. How do GPUs process video streams? One by one?
+3. How do you scale your GPUs, and add more in the future?
+4. What happens if you add more video streams, do you need to add more GPUs?
+
+Previously challenges is where we at Kerberos.io bring value through 
+[the Kerberos Enterprise Suite](/enterprise/first-things-first). We provide an elegant and scalable design for supporting your every-growing machine learning use cases. Read more below.
+
 ## Video chunks
 
 Kerberos Agents are responsible for recording video streams into small chunks, mp4s, of which you can configure the length of the recording; pre and post recording. The main motivation of doing this is that small chunks of videos are easier to process and distribute across different workloads. Therefore, video chunks are the building blocks and basis of the scale Kerberos brings. 
