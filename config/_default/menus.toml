@@ -66,12 +66,12 @@
   weight = 30
 
 [[footer]]
-  name = "Kerberos Opensource"
+  name = "Agent"
   url = "https://kerberos.io/product/open-source/"
   weight = 10
 
 [[footer]]
-  name = "Enterprise Agent"
+  name = "Factory"
   url = "https://kerberos.io/product/enterprise-agent/"
   weight = 10
 
