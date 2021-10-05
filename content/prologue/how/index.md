@@ -13,42 +13,24 @@ weight: 102
 toc: true
 ---
 
-When you install Kerberos Open Source or Kerberos Enterprise we will refer to it as the Kerberos Agent. A Kerberos Agent, is a software solution that consist of two pieces: Front-End and Back-End. The Back-End processes the video stream of a single surveillance camera, makes recordings and takes actions (for example sending notifications). The Front-End allows you to review recordings, and configure the Back-End.
+A [Kerberos Agent](/opensource/first-things-first/), is a piece of software that is responsible for monitoring a single camera stream. It contains two pieces: a front-end and a back-end. The back-end processes the video stream, applies computer vision techniques, makes recordings and takes actions (for example sending notifications). The front-end allows you to review recordings, and configure specific settings for the back-end.
 
 {{< figure src="agent-explanation.svg" alt="A Kerberos agent consists of both a backend en frontend." caption="A Kerberos agent consists of both a backend en frontend." class="stretch">}}
 
-## Front-End
-The Kerberos Agent ships with a web interface (Front-End) and a video processing engine (Back-End). The Front-End allows the user to modify specific settings, and if Kerberos Open Source, watch recordings in a easy-to-use interface; The Front-End for [Kerberos Enterprise](/enterprise/introduction) is only for configuration purposes only.
-
-## Back-End
-The Back-End piece of the Kerberos Agent is a service that processes the camera feed with computer vision algorithms to detect motion, and makes recordings and/or execute specific actions. Kerberos Enterprise supports any type of IP-camera (RTSP/ONVIF), and Kerberos Open Source also adds support for USB (V4L2) and the popular Raspberry Pi camera.
-
-Depending on which Kerberos Agent, Kerberos Open Source or Kerberos Enterprise, you will have different installation methods. If you would like to learn more about the Kerberos Agent, have a look in the related sections: [Open Source](/opensource/introduction), [Enterprise](/enterprise/introduction).
-
-## Open Source vs Enterprise
-
-The Kerberos project started as an Open Source project, with a main focus on low-cost devices such as the Raspberry Pi. Later on the Open Source version was bundled inside the Docker technology so that it was easier to distribute. Anyone can use the Open Source version for personal usage.
-
-Enterprises are more demanding, and have a lot of surveillance cameras, therefore they need a scalable surveillance system. The [Enterprise edition](/enterprise/introduction) of Kerberos allows you to operate a video surveillance cluster (Kubernetes) on-premise or in the cloud (AWS/GCP/Azure).
-
-{{< figure src="opensource-vs-enterprise-agent.svg" alt="The different deployment options for Opensource and Enterprise agent." caption="The different deployment options for Opensource and Enterprise agent." class="stretch">}}
-
-The Open Source and Enterprise edition are significantly different from a source code point of view. The [Enterprise edition](/enterprise/introduction) is a complete rewrite of the Open Source version, and got all the best practices we discovered over the years implemented. Both version are and will remain updated in the future.
-
 ## Kerberos Vault
 
-Users or Enteprises which only have a few surveillance cameras to manage, probably will be fine with Kerberos Open Source. On top of that they might include [Kerberos Cloud](/cloud) for remote access and monitoring.
+End-consumer or enterprises which only have a few camera streams to manage, probably will be fine with just one or more [Kerberos Agents](/opensource/first-things-first/). If remote access is required they could also benefit from the [Kerberos Hub Saas offering](/hub/first-things-first).
 
-On the other hand if you plan to manage a larger network of surveillance cameras, you will have to look into [Kerberos Enterprise](/enterprise/introduction). Backed up with Kubernetes, Kerberos Enterprise, will give you the real super powers to your scale surveillance camera landscape. Kerberos Enterprise comes with a Front-End to manage and scale your deployments inside a Kubernetes Cluster.
+As soon you will process more [Kerberos Agents](/opensource/first-things-first/), it will become interesting to manage your own central storage through [Kerberos Vault](/vault/first-things-first/). If you want to bring your own integrations or machine learning models than [Kerberos Vault](/vault/first-things-first/) is also the way forward.
 
-[Kerberos Enterprise](/enterprise/first-things-first) leverages a service called, [Kerberos Vault](/vault/introduction), for central and hybrid storage. Kerberos Vault implements the concept of BYOC (Bring Your Own Cloud). By selecting a cloud provider (AWS, GCP, AZURE) or on-premise (Minio) you can bring your recordings where you them to be.
-
-In addition to the concept of BYOC, Kerberos Vault enables you to connect to Kerberos Cloud (with your own storage), send events to message brokers (such as Kafka or SQS) and enables you to build custom apps or services (such as a custom machine learning service).
-
-{{< figure src="deployment-vault.svg" alt="Kerberos Vault allows you to bring your own storage, and build extensions and integrations." caption="Kerberos Vault allows you to bring your own storage, and build extensions and integrations." class="stretch">}}
+{{< figure src="vault-edge-cloud-storage.svg" alt="Bring your own storage using Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
 
 ## Kerberos Hub
 
-When installing a Kerberos Agent inside your local network, it's possible to review your activity by using the agent its web interface. By all network principles, having a local setup, you will not be able to access the web interface from the cloud (outside your local network). On top of that, the Kerberos Agent doesn't come with a consolidated overview. This means that you will need to open multiple web interfaces, one for each connected surveillance camera. To simplify and resolve all of these challenges, [Kerberos Cloud](/cloud) was developed.
+One or more [Kerberos Agents](/opensource/first-things-first/) are perfect for a small scale deployment. The disadvantage, when running a couple of Kerberos Agents, is that an agent is designed to handle a single camera stream. This means if you would like to have an overview of all your [Kerberos Agents](/opensource/first-things-first/), you will need to open multiple interfaces or build something yourself. Another disadvantage is the network, typically a Kerberos Agent is on a local network, and not accessible from the internet. This requires port-forwarding, or a VPN tunnel to properly secure and access them.
 
-{{< figure src="deployment-hub.svg" alt="A Kerberos agent consists of both a backend en frontend." caption="A Kerberos agent consists of both a backend en frontend." class="stretch">}}
+{{< figure src="hub-with-vault.svg" alt="Kerberos Vault connected to Kerberos Hub." caption="Kerberos Vault connected to Kerberos Hub." class="stretch">}}
+
+To overcome these disadvantages a tool, [Kerberos Hub](/hub/first-things-first/), was developed that allows to connect a couple, or a thousand of video stream to a single pane of glass. The idea is that you can use either the [Kerberos Hub Saas offering](/hub/first-things-first/) or the [Kerberos Hub self-hosted](/hub/first-things-first/) version, depending on your needs. 
+
+[Kerberos Hub](/hub/first-things-first/) comes with features to manage cameras in groups or sites, view livestreams, delegate access of a subset of cameras to specific accounts, filtering through machine learning, etc.

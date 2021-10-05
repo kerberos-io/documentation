@@ -21,12 +21,12 @@
   </ul>
   {{ end -}}
 {{ end -}}
-{{ range .Site.Menus.opensourcev3 -}}
+{{ range .Site.Menus.agent -}}
   <h3>{{ .Name }}</h3>
   {{ if .HasChildren -}}
   <ul class="list-unstyled">
     {{ range .Children -}}
-    {{- $active := or ($currentPage.IsMenuCurrent "opensourcev3" .) ($currentPage.HasMenuCurrent "opensourcev3" .) -}}
+    {{- $active := or ($currentPage.IsMenuCurrent "agent" .) ($currentPage.HasMenuCurrent "agent" .) -}}
     <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
     {{ end -}}
   </ul>
@@ -42,6 +42,17 @@
     {{ end -}}
   </ul>
   {{ end -}}
+{{ end -}}
+{{ range .Site.Menus.factory -}}
+  <h3>{{ .Name }}</h3>
+  {{ if .HasChildren -}}
+  <ul class="list-unstyled">
+    {{ range .Children -}}
+    {{- $active := or ($currentPage.IsMenuCurrent "factory" .) ($currentPage.HasMenuCurrent "factory" .) -}}
+    <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+    {{ end -}}
+  </ul>
+{{ end -}}
 {{ end -}}
 {{ range .Site.Menus.vault -}}
   <h3>{{ .Name }}</h3>

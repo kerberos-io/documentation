@@ -13,71 +13,81 @@ weight: 300
 toc: true
 ---
 
-Kerberos Opensource and Kerberos Enterprise both store recordings on the local disk. To centralise your data at a single place, additional solutions are available.
+It all starts with your Kerberos Agents. You might set up one or more agents at several locations, sites, rooms, offices, etc. Each Kerberos Agent will monitor a particular video stream and persist recordings on a local disk; taking into account the specific conditions such as region of interest, time window, etc.  
 
-#### Kerberos Hub
+While growing your video landscape, and adding more and more Kerberos Agents, it will become interesting, and probably also required to have a central place of storage. That central place might be at the edge, in the cloud, or both depending on the uses.
 
-One or more Kerberos Enterprise agents, can store their data directly on [Kerberos Hub](/hub/first-things-first), and benefit from the visualisation layer Kerberos Hub offers. When doing this your recordings will be uploaded inside the Kerberos datacenter (which is a black box for you).
+{{< figure src="vault-edge-cloud-storage.svg" alt="Bring your own storage using Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
 
-#### Kerberos Vault
+That central storage place is what we call Kerberos Vault. It allows you to store your data wherever you want, and let you integrate with any kind of process such as machine learning, event systems, CCTV monitoring, etc.
 
-In addition to that you have the option to Bring Your Own Storage (BYOS), using Kerberos Vault. Kerberos Vault allows you to configure the storage providers you want, and allows you to connect to [Kerberos Hub](/hub/first-things-first) in parrallel. These storage provider could live in the cloud such as AWS S3, GCP storage and Azure Blob store, or can be located on premise - at the edge - such as Minio.
+## Kerberos Vault in a nutshell
+
+Kerberos Vault is a solution where you Bring Your Own Storage (BYOS). It allows you to configure the storage providers you want, and makes it possible to connect consuming applications such as [Kerberos Hub](/hub/first-things-first), Machine learning models, Kafka brokers, etc. As discussed before, these so-called storage providers can live in the cloud such as Amazon Web Services S3, Google Cloud Platform Storage, Storj, or reside at the edge such as Minio or Ceph.
 
 Despite the flexible storage capabilities, Kerberos Vault is also an open platform, which can be used to build extensions (mobile apps, web apps, machine learning services, etc) and integrations. It allows you to leverage a scalable and stable system as a strong backbone for your video analytics solutions, machine learning algorithms, and more.
 
-## Kerberos Hub
+## Storage Providers
 
-Within Kerberos Opensource and Kerberos Enterprise you can upload your recordings to our public [Kerberos Hub](/hub/first-things-first) environment. This means that your data will be hosted and processed (metadata) in our Kerberos Vault (datacenteR). For more information about how Kerberos Hub works [can be found here](/hub/first-things-first).
-
-{{< figure src="arch-kerberos-hub.svg" alt="Store your recordings in Kerberos Hub" caption="Store your recordings in Kerberos Hub" class="stretch">}}
-
-## Kerberos Vault
-
-If you are using Kerberos Enterprise you have the possibility to bring your own cloud storage or on premise storage. By installing Kerberos Vault you can send your recordings to your own datacenter, private or public cloud. Following providers are supported:
+When deploying Kerberos Agents you have the possibility to Bring Your Own Storage; at the edge or in the cloud. By configuring Kerberos Vault you persist your recordings in your preferred storage providers. Following providers are supported:
 
 - [Google Cloud Platform Storage](https://cloud.google.com/storage)
-- [Microsoft Azure Storage](https://azure.microsoft.com/en-us/services/storage/)
 - [Amazon Web Services S3](https://aws.amazon.com/s3/)
+- [Storj](https://storj.io/)
 - [Minio](https://min.io/)
+- [Ceph](https://ceph.io/)
 
-When installing Kerberos Vault in the cloud, following architecture can apply. Having your Kerberos Enterprise agents running at the edge, but uploading to Kerberos Vault in the cloud.
+When installing Kerberos Vault in a cloud environment, following architecture may apply. Your Kerberos Agents are running at the edge, but uploading to Kerberos Vault in a cloud environment.
 
-{{< figure src="arch-kerberos-vault-providers.svg" alt="Bring your own storage using Kerberos Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
+{{< figure src="vault-cloud-storage.svg" alt="Bring your own storage using Kerberos Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
 
-On the other hand you could also have Kerberos Vault running at the edge, next to your Kubernetes Enterprise agents. This could be useful if you want to do processing or video analytics such as computer vision or machine learning at the edge.
+On the other hand you could also have Kerberos Vault running at the edge, next to your Kubernetes Enterprise agents. This could be useful if you want to do processing or video analytics such as computer vision or machine learning at the edge. Find more information about storage providers [on the providers page](/vault/providers).
 
-{{< figure src="arch-edge-kerberos-vault.svg" alt="Store your recordings at the edge with Kerberos Vault" caption="Store your recordings at the edge with Kerberos Vault" class="stretch">}}
+{{< figure src="vault-edge-storage.svg" alt="Store your recordings at the edge with Kerberos Vault" caption="Store your recordings at the edge with Kerberos Vault" class="stretch">}}
 
-### Events
+## Integration and Events
 
-One of the key differentiators compared to other VMS solutions, is the abilitity to extend and integrate. Next to uploading and persisting data, Kerberos Vault can also trigger events. Each time a recording is send to Kerberos Vault an event can be triggered through one of the following providers.
+One of the key differentiators, is the ability to extend and integrate. Next to uploading and persisting recordings on your preferred storage providers, Kerberos Vault can trigger events and be configured through APIs. 
+
+Each time a Kerberos Agent sends a recording to Kerberos Vault, it is persisted on a storage provider, and an event is triggered through one of the following integrations.
 
 - [Apache Kafka](https://kafka.apache.org/)
 - [Amazon Web Services SQS](https://aws.amazon.com/sqs/)
+- [Kerberos Hub](/hub/first-things-first/)
+- Kerberos Vault (remote forwarding)
 
-Those events can be fetched or subscribed by custom applications. For example, one can create a notifications service, machine learning service or an entire cloud application. Allowing you to leverage the power and scalability of Kerberos Enterprise, and building and focussing on your specific applications, API's, mobile apps, or whatever you have in mind to build.
+Every time an event is delivered, it will be consumed by the configured integrations. For example in case of a Kafka
+integration, one can build a Kafka consumer with custom application logic; a notification manager, a machine learning
+service, etc. Find more information about events and integrations on [the integrations page](/vault/integrations).
 
-{{< figure src="arch-kerberos-vault-events.svg" alt="Build integrations and create your own workflows using the event capability of Kerberos Vault." caption="Build integrations and create your own workflows using the event capability of Kerberos Vault." class="stretch">}}
+{{< figure src="vault-integrations.svg" alt="Build integrations and create your own workflows using the event capability of Kerberos Vault." caption="Build integrations and create your own workflows using the event capability of Kerberos Vault." class="stretch">}}
 
-### On-demand upload
+## Machine learning and Computer Vision
 
-Next to the extension and integration capabilities of Kerberos Vault, it is also possible to synchronise with a central Kerberos Vault. On-Demand upload allows you to synchronise a subset of your recording with an additional Kerberos Vault in the cloud.
+Kerberos Vault allows scaling machine learning and computer vision algorithms through the concept of queueing, decoupling of Kerberos Agents to recordings and the NVidia Kubernetes Operator. 
 
-{{< figure src="arch-sync-kerberos-vault.svg" alt="Synchronise recordings between multiple Kerberos Vault" caption="Synchronise recordings between multiple Kerberos Vault" class="stretch">}}
+Kerberos Agents send recordings to Kerberos Vault. Every time a recording is stored, the Kafka integration is producing an event in a Kafka topic. A machine learning or computer vision consumer is reading from a Kafka topic, downloads the relevant recording from Kerberos Vault, and starts a prediction or execution of an algorithm on one or more GPUs. 
 
-A couple of usecases are the following ones:
+By combining the intelligence of making recordings in small chunks, and distributing them across multiple GPUs, we allow you to scale your machine learning or computer vision independent of the number of video streams. Learn more about developing your own [machine learning model or computer vision algorithm](/vault/machine-learning/).
 
-- Continious recording: having continious recordings stored in your Kerberos Vault on premise, you don't want to replicate all your recordings to a Kerberos Vault provider in the cloud (to make them public available). Therefore you could implement custom logic, for example based on a machine learning algorithm, to only replicate recordings which matche a specific scenario.
+{{< figure src="vault-ml-cv.svg" alt="Machine learning and Computer Vision with Kerberos Vault." caption="Machine learning and Computer Vision with Kerberos Vault" class="stretch">}}
 
-- On-Demand request: Having Kerberos Hub, an end-user could initiate a request for upload. By default no recordings are forwarded from your Kerberos Vault on premise to your Kerberos Vault in the cloud. Only when an end user requests one or more recordings, the
-  upload will start for the requested recordings.
+## Remote forwarding and chaining
 
-### Open API
+Multiple Kerberos Vaults can be installed in your video landscape. You may have Kerberos Vaults at the edge and/or in a cloud environment, connected to edge and/or cloud storage providers.
 
-Both Kerberos Enterprise as Kerberos Vault ships with Swagger API's, which can be used to communicate with the previously mentioned systems. Simply type `/swagger/index.html` after the `api` url, and you will see the Swagger UI popping up. No need to explain the different API's, use the Swagger and see what is available. See something missing, let us know, and we add it ;).
+Kerberos Vaults can be chained and configured in forwarding mode. This configuration makes it possible to enable offline capabilities and keep the majority of your recordings at the edge. Only a subset of your recordings will be transferred from the edge to the cloud by requesting a forward from Kerberos Hub or building your own forwarding application code.
+
+{{< figure src="vault-forwarding-chaining.svg" alt="Synchronise recordings between multiple Kerberos Vault" caption="Synchronise recordings between multiple Kerberos Vault" class="stretch">}}
+
+An example of remote forwarding is a machine learning filter. Recordings are stored in a Kerberos Vault at the edge, and are processed by a machine learning model. Every time the machine learning model finds a match, e.g. a pedestrian detected, it will forward the recording to Kerberos Vault in a cloud environment. By doing this you will send limited recordings (storage) into the cloud. Find more information about forwarding on [the forwarding page](/vault/forwarding).
+
+## Open API
+
+All Kerberos products ship with Swagger APIs, which can be used to communicate with, configure and start specific actions of the related solution. Simply type `/swagger/index.html` after the `api` url, and a Swagger UI will be shown. There is no need to explain the different APIs, use the Swagger and see what is available.
 
 {{< figure src="open-api.png" alt="All capabilities of Kerberos Vault are documented through swagger API's." caption="All capabilities of Kerberos Vault are documented through swagger API's" class="stretch">}}
 
 ## Licensing
 
-Kerberos Vault is publicly available and **requires a license key** to operate correctly. Reach out to **cedric@kerberos.io** for the commercial matters.
+Kerberos Vault is shipped as a binary in a Docker container and is licensed through the MIT license. The source code is closed, and maintained by the Kerberos.io development team.

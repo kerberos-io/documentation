@@ -5,16 +5,16 @@
   url = "/prologue/"
 
 [[opensource]]
-  name = "Opensource v2"
+  name = "Opensource"
   weight = 11
   identifier = "opensource"
   url = "/opensource/"
 
-[[opensourcev3]]
-  name = "Opensource v3"
+[[agent]]
+  name = "Agent"
   weight = 12
-  identifier = "opensourcev3"
-  url = "/opensource-v3/"
+  identifier = "agent"
+  url = "/agent/"
 
 [[enterprise]]
   name = "Enterprise"
@@ -22,28 +22,29 @@
   identifier = "enterprise"
   url = "/enterprise/"
 
+
+[[factory]]
+  name = "Factory"
+  weight = 14
+  identifier = "factory"
+  url = "/factory/"
+
 [[vault]]
   name = "Vault"
-  weight = 14
+  weight = 15
   identifier = "vault"
   url = "/vault/"
 
 [[hub]]
   name = "Hub"
-  weight = 15
+  weight = 16
   identifier = "hub"
   url = "/hub/"
-
-# [[main]]
-#   name = "Quickstart"
-#   url = "/prologue/introduction/"
-#   weight = 10
 
 [[main]]
   name = "Homepage"
   url = "https://kerberos.io"
   weight = 12
-
 
 [[social]]
   name = "Twitter"
