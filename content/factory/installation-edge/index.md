@@ -153,8 +153,8 @@ To access the Kerberos Enterprise web application, we will create a service in t
 
 The idea is that Traefik, will have a dedicated IP address assigned from MetalLB, and will resolve the Ingress of our Kerberos Enterprise web app. Let's go ahead with installing Traefik.
 
-    helm repo add stable https://charts.helm.sh/stable
-    helm install -n traefik traefik -f ./enterprise/yaml/traefik/values.yaml stable/traefik
+    helm repo add traefik https://helm.traefik.io/traefik
+    helm install traefik traefik/traefik -n traefik
 
 ### Ingress-Nginx (alternative for Traefik)
 
