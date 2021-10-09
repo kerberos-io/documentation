@@ -29,7 +29,17 @@ All recordings from your edge Kerberos Vault will be replicated to a Kerberos Va
 
 Recordings are stored at the edge, and only a subset is forwarded to a Kerberos Vault in the cloud. You can specify the forwarding rules using custom code.
 
+## Configuration
+
+Go to the integrations page, and click (+ Add Integration). Select the Kerberos Vault option, and choose on-demand or continuous forwarding. 
+
+Define the account credentials of the remote Kerberos Vault, to which you are forwarding recordings. If not yet created make sure an account is set up with a valid storage provider.
+
 {{< figure src="vault-forwarding.gif" alt="Two forwarding modes continuous and on demand." caption="Two forwarding modes continuous and on demand." class="stretch">}}
+
+Once the integration is created, you still need to activate the integration for a specific account on the account page. Every recording that's now being uploaded through your account will be stored in the local storage provider, and depending on the use case will be forwarded to the remote storage provider.
+
+{{< figure src="vault-activate-forward.gif" alt="Enable the integration for your account." caption="Enable the integration for your account." class="stretch">}}
 
 ## Examples
 
