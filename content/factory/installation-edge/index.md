@@ -169,37 +169,17 @@ If you don't like `Traefik` but you prefer `Ingress Nginx`, that works as well.
 
 The last step is to install the Kerberos Factory application. Kerberos Factory is responsible for installing and creating the kubernetes deployments inside your Kubernetes cluster.
 
-Before we can move into the installation of MongoDB, we will need to create a Persistent Volume (PV). The reason for that is that we do not have a volume provisioning tool at the edge, which we do have with a cloud provider. For simplicity, we will use `local-storage`, and make sure the volume is assigned to a specific node (hostname). Please note that you could perfectly use your Ceph cluster as well.
+Before we can move into the installation of MongoDB, we will need to prepare some storage or persistent volume. To simplify this we can leverage the OpenEBS storage solution, which can automatically provision PV (Persistent volumes) for us.
 
-Create a folder on the node (VM), where you want to persist the data of MongoDB.
+Let us start with installing the OpenEBS operator.
 
-    mkdir /home/mongodb/
+    kubectl apply -f https://openebs.github.io/charts/openebs-operator.yaml
 
-Once done open the `./factory/yaml/mongodb/volume.yaml` file and make sure to change capacity, local path (if changed), and the hostname attribute (VM/machine, on which the directory is made available).
+Once done it should start installing several resources in the `openebs` namespace. If all resources are created successfully we can launch the `helm install` for MongoDB.
 
-        spec:
-          capacity:
-    -->    storage: 10Gi
-          accessModes:
-          - ReadWriteOnce
-          persistentVolumeReclaimPolicy: Recycle
-          storageClassName: local-storage
-          local:
-    -->    path: /home/mongodb/
-          nodeAffinity:
-            required:
-              nodeSelectorTerms:
-              - matchExpressions:
-                - key: kubernetes.io/hostname
-                  operator: In
-                  values:
-    -->           - hostname
+Have a look into the `./factory/yaml/mongodb/values.yaml` file, you will find plenty of configurations for the MongoDB helm chart. Important to note is [to set the storage class to `openebs-hostpath`](https://github.com/kerberos-io/factory/blob/master/yaml/mongodb/values-edge.yaml#L12), this will automatically create a PV on the host system.
 
-Once completed you can go ahead with creating the PV.
-
-    kubectl create -n mongodb -f ./factory/yaml/mongodb/volume.yaml
-
-Have a look into the `./factory/yaml/mongodb/values.yaml` file, you will find plenty of configurations for the MongoDB helm chart. To change the username and password of the MongoDB instance, go ahead and [find the attribute where](https://github.com/kerberos-io/factory/blob/master/yaml/mongodb/values.yaml#L75) you can change the root password.
+To change the username and password of the MongoDB instance, go ahead and [find the attribute where](https://github.com/kerberos-io/factory/blob/master/yaml/mongodb/values.yaml#L75) you can change the root password.
 
     helm repo add bitnami https://charts.bitnami.com/bitnami
     helm install mongodb -n mongodb bitnami/mongodb --values ./enterprise/yaml/mongodb/values-edge.yaml
