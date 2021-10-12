@@ -63,83 +63,62 @@ Kerberos Vault also integrates with storage providers that are more suitable for
 
 ### Minio
 
-Minio is a recommended solution if you would like to persist your recordings at the edge. To set up Minio you have to configure a few Kubernetes resources. Inside the vault repository there is a Minio example, so let's clone that repository of not already done.
+Minio is a recommended solution if you would like to persist your recordings at the edge. To set up Minio you have to configure a few Kubernetes resources. To simplify the installation, we will go ahead with the Minio operator.
 
-    git clone https://github.com/kerberos-io/vault
+The Minio operator can be used to set up a production ready Minio cluster, with multiple nodes and drives. Using the concept of Minio tenants you can scale your Minio cluster easily.
 
-Now we have the configurations available, let's start with the creation of a `local-storage` volume using `./vault/yaml/minio/volume.yaml` file. While opening the file, focus on following attributes. Please note that you do not need to use `local-storage`, if you would have some external storage already available.
+    kubectl krew update
+    kubectl krew install minio
 
-      spec:
-        capacity:
-    -->   storage: 20Gi
-        accessModes:
-        - ReadWriteOnce
-        persistentVolumeReclaimPolicy: Recycle
-        storageClassName: hdd
-        local:
-    -->   path: /home/minio
-        nodeAffinity:
-          required:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: kubernetes.io/hostname
-                operator: In
-                values:
-    -->         - hostname
+To install krew in your `kubectl` toolkit, following this documentation (https://krew.sigs.k8s.io/docs/user-guide/setup/install/).
 
-Adapt the storage capacity to the amount of storage you want to assign to Minio, change the local path to the directory where you want to persist your recordings. Make sure the hostname is the hostname of your node (where the directory is located). Once ready we should create the `local.path` directory on our host system, and create the volume.
+    kubectl minio version
+    kubectl minio init
 
-    mkdir /home/minio
-    kubectl apply -f ./vault/yaml/minio/volume.yaml
+Run the following command to verify the status of the Operator:
 
-Now we are ready with creating a new volume, we should create a persistent volume claim (pvc). Open the `./vault/yaml/minio/pvc.yaml` file and make sure the storage capacity is aligned with the configurations of the `volume.yaml`.
- 
-      resources:
-        # This is the request for storage. Should be available in the cluster.
-        requests:
-    -->   storage: 20Gi    
+    kubectl get pods -n minio-operator
 
-Once ready, create the PVC.
+Run the following command to create a local proxy to the MinIO Operator Console:
 
-    kubectl apply -f ./vault/yaml/minio/pvc.yaml
+    kubectl minio proxy -n minio-operator
 
-Now we have prepared the prerequisites, the volumes, we can look into the creation of a Minio instance. Open the `./vault/yaml/minio/deployment.yaml` file and scroll down until you see the Ingress resource. Make sure the Ingress hostname is aligned with your expectations, this will be the url to navigate to the Minio dashboard.
+{{< figure src="minio-operator-console.gif" alt="Open the MinIO Operator Console, where your tenants are managed." caption="Open the MinIO Operator Console, where your tenants are managed." class="stretch">}}
 
-      spec:
-        rules:
-    --> - host: minio.domain.com
-          http:
-            paths:
-            - path: /
-              backend:
-                serviceName: minio
-                servicePort: 9000
+Once you have the Console open, you can go ahead and create/configure a MinIO tenant. To simplify the creation of a tenant we will apply following manifests, this will create a tenant for us with the proper configuration; feel free to tweak this to your own needs (testing/production).
 
-Consider [changing the access and secret](https://github.com/kerberos-io/vault/blob/master/yaml/minio/deployment.yaml#L40-L44) credentials.
+In the below manifests we have been using the OpenEBS storage class for local-storage. Please note that you can use whatever storage provider you like, make sure you change the relevant configuration files.
 
-    - name: MINIO_ACCESS_KEY
-      value: "minio"
-    - name: MINIO_SECRET_KEY
-      value: "minio12345"
+    kubectl apply -f https://openebs.github.io/charts/openebs-operator.yaml
 
-Once the configuration is verified, apply the `deployment.yaml`. You might consider deploying the Minio instance in a separate namespace `-n minio`.
+Once you have selected your storage class, or installed OpenEBS, go ahead by applying the different manifests. Below configuration will deploy a single server, with 4 volumes of 10Gb. It will also create a default access key (`minio`) and secret key (`minio123`). 
 
-    kubectl apply -f ./vault/yaml/minio/deployment.yaml
+    git clone https://github.com/kerberos-io/vault && cd vault/yaml/minio
+    kubectl apply -f minio.cred.yaml
+    kubectl apply -f minio.config.tenant.yaml
+    kubectl apply -f minio.tenant.yaml
 
-You should now see Minio being installed, and be able to access it through your favourite web browser. Use the credentials you have defined in the `deployment.yaml` file.
+Once applied the MinIO tenant will be created, and you should see some pods being created in the `minio-tenant` namespace. Once everything is ready you should be able to access to MinIO Tenant console by forwarding the service.
 
-{{< figure src="minio.png" alt="When installing at the edge, the preferred installation method is MinIO." caption="When installing at the edge, a preferred installation method is Minio." class="stretch">}}
+    kubectl get svc -n minio-tenant
+    kubectl port-forward svc/minio 80 -n minio-tenant
+
+While accessing the console, you can create a new Bucket.
+
+{{< figure src="minio-create-bucket.gif" alt="Create a bucket in Minio." caption="Create a bucket in Minio." class="stretch">}}
 
 Now you are ready to assign Minio as a storage provider to Kerberos Vault. Open the `Providers` page of Kerberos Vault, and select the Minio provider.
 
 {{< figure src="minio-setup.gif" alt="Configuring the minio provider in Kerberos Vault." caption="Configuring the minio provider in Kerberos Vault." class="stretch">}}
 
-  - Provider name: this a preferred name for the provider.
-  - Bucket name: the name of a bucket created in minio, make sure this matches.
-  - Region: this is not relevant for an edge deployment and can be left blank.
-  - Hostname: this is the internal DNS name if the Minio instance, for example: **minio:9000**.
-  - Access Key: the `MINIO_ACCESS_KEY` you've defined in the `deployment.yaml` file
-  - Secret Access Key: the `MINIO_SECRET_KEY` you've defined in the `deployment.yaml` file
+- Provider name: this a preferred name for the provider.
+- Bucket name: the name of a bucket created in minio, make sure this matches.
+- Region: this is not relevant for an edge deployment and can be left blank.
+- Hostname: this is the internal DNS name if the Minio instance, for example: **minio.minio-tenant**.
+- Access Key: the `access key` you've defined in the `minio.config.tenant.yaml` file
+- Secret Access Key: the `secret key` you've defined in the `minio.config.tenant.yaml` file
+
+If you needed more information about the Minio configuration, please have a look at the official [MinIO operator Github page.](https://github.com/minio/operator).
 
 ### Ceph
 
