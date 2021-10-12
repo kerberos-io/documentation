@@ -70,7 +70,7 @@ The Minio operator can be used to set up a production ready Minio cluster, with 
     kubectl krew update
     kubectl krew install minio
 
-To install krew in your `kubectl` toolkit, following this documentation (https://krew.sigs.k8s.io/docs/user-guide/setup/install/).
+To install krew in your `kubectl` toolkit, following [the offical documentation](https://krew.sigs.k8s.io/docs/user-guide/setup/install/).
 
     kubectl minio version
     kubectl minio init
@@ -101,7 +101,7 @@ Once you have selected your storage class, or installed OpenEBS, go ahead by app
 Once applied the MinIO tenant will be created, and you should see some pods being created in the `minio-tenant` namespace. Once everything is ready you should be able to access to MinIO Tenant console by forwarding the service.
 
     kubectl get svc -n minio-tenant
-    kubectl port-forward svc/minio 80 -n minio-tenant
+    kubectl port-forward svc/minio 9090:80 -n minio-tenant
 
 While accessing the console, you can create a new Bucket.
 
