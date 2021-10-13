@@ -66,8 +66,8 @@ By executing following helm command, we will install Traefik and link it to a sp
 Add Helm repository and install traefik.
 
     kubectl create namespace traefik
-    helm repo add stable https://charts.helm.sh/stable
-    helm install traefik -n traefik -f ./factory/yaml/traefik/values.yaml stable/traefik
+    helm repo add traefik https://helm.traefik.io/traefik
+    helm install traefik traefik/traefik -n traefik 
 
 After installation, you should have an IP attached to Traefik service, look for it by executing the `get service` command. You will see the ip address in the `EXTERNAL-IP` attribute.
 

@@ -56,7 +56,33 @@ Alternatives to cloud event integrations are self-hosted variants such as a Kafk
 
 ### Kafka
 
-> Tutorial to be written.
+Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
+
+To integrate a Kafka broker with Kerberos vault you could install your existing Kafka installation, or on board a new Kafka broker inside your Kubernetes cluster. Before installing the Kafka broker, we will need to set up a storage class. As previously mentioned we will use OpenEBS for that, but you could use the storage class you prefer.
+
+    kubectl apply -f https://openebs.github.io/charts/openebs-operator.yaml
+
+Once OpenEBS is installed and configured, go ahead with setting up the Kafka broker.
+
+    kubectl create namespace kafka
+    helm install kafka bitnami/kafka -f https://raw.githubusercontent.com/kerberos-io/vault/master/yaml/kafka/kafka.values.yaml -n kafka
+
+Once done you should see the relevant kafka pods and zookeeper being deployed
+
+    kubectl get po -n kafka
+
+Now you are ready to configure the Kerberos Vault integration, by selecting the Kafka option. You should add the Kafka credentials and authentication mechanism.
+
+{{< figure src="kafka.gif" alt="Configure, add and validate the Kafka integration." caption="Configure, add and validate the Kafka integration." class="stretch">}}
+
+- Integration name: this a preferred name for the integration.
+- Broker: the url of the broker `kafka.kafka:9092`.
+- Group: the group to which messages are produced, this can be any value you want.
+- Topic: the topic to which a message is produced, if the topic doesn't exist, it will be created automatically.
+- Username: the username, `Yourusername`.
+- Password: the password, `Yourpassword`.
+- Mechanism: the kafka mechanism, `PLAIN`.
+- Security: the kafka security, `SASL_PLAINTEXT`.
 
 ## Kerberos integrations
 
@@ -64,8 +90,18 @@ Next to third party integrations such as Kafka or AWS SQS, it is possible to int
 
 ### Kerberos Vault
 
-> Tutorial to be written.
+Kerberos Vaults can be chained and configured in forwarding mode. This configuration makes it possible to enable offline capabilities and keep the majority of your recordings at the edge. Only a subset of your recordings will be transferred from the edge to the cloud by requesting a forward from Kerberos Hub or building your own forwarding application code.
+
+{{< figure src="vault-forwarding.gif" alt="Two forwarding modes continuous and on demand." caption="Two forwarding modes continuous and on demand." class="stretch">}}
+
+To learn more about how to enable the Kerberos Vault integration, have [a look at the forwarding page]().
 
 ### Kerberos Hub
 
-> Tutorial to be written.
+The Kerberos Hub integration allows you to send messages from Kerberos Vault and Kerberos Hub, through [the Kerberos Hub pipeline](/hub/pipeline). Messages are sent to the REST API of Kerberos Hub, and injected in the Kerberos Hub pipeline. Once message is injected in the internal message broker (Kafka), it will create all the relevant information and metadata in Kerberos Hub.
+
+{{< figure src="vault-integration-hub.gif" alt="Kerberos Hub integrates with Kerberos Vault to visualise recordings and metadata." caption="Kerberos Hub integrates with Kerberos Vault to visualise recordings and metadata." class="stretch">}}
+
+- Integration name: this a preferred name for the integration.
+- Kerberos Hub Url: the url to the API of Kerberos Hub, `https://api.your.hub.com`
+- Hub Key: this is the cloud key that is assigned to your user (owner accounts), by default this is `AKIAxxxxxxG5Q`.
