@@ -90,8 +90,18 @@ Next to third party integrations such as Kafka or AWS SQS, it is possible to int
 
 ### Kerberos Vault
 
-> Tutorial to be written.
+Kerberos Vaults can be chained and configured in forwarding mode. This configuration makes it possible to enable offline capabilities and keep the majority of your recordings at the edge. Only a subset of your recordings will be transferred from the edge to the cloud by requesting a forward from Kerberos Hub or building your own forwarding application code.
+
+{{< figure src="vault-forwarding.gif" alt="Two forwarding modes continuous and on demand." caption="Two forwarding modes continuous and on demand." class="stretch">}}
+
+To learn more about how to enable the Kerberos Vault integration, have [a look at the forwarding page]().
 
 ### Kerberos Hub
 
-> Tutorial to be written.
+The Kerberos Hub integration allows you to send messages from Kerberos Vault and Kerberos Hub, through [the Kerberos Hub pipeline](/hub/pipeline). Messages are sent to the REST API of Kerberos Hub, and injected in the Kerberos Hub pipeline. Once message is injected in the internal message broker (Kafka), it will create all the relevant information and metadata in Kerberos Hub.
+
+{{< figure src="vault-integration-hub.gif" alt="Kerberos Hub integrates with Kerberos Vault to visualise recordings and metadata." caption="Kerberos Hub integrates with Kerberos Vault to visualise recordings and metadata." class="stretch">}}
+
+- Integration name: this a preferred name for the integration.
+- Kerberos Hub Url: the url to the API of Kerberos Hub, `https://api.your.hub.com`
+- Hub Key: this is the cloud key that is assigned to your user (owner accounts), by default this is `AKIAxxxxxxG5Q`.
