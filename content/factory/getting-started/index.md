@@ -131,7 +131,7 @@ On the other hand it's an open platform, as it allows you build extensions and i
 To connect one or more Kerberos Agents to your Kerberos Vault instance, you should open the configuration option and navigate to the `cloud` tab. After selected you need to fill-in the credentials from your Kerberos Vault account.
 To connect one or more Kerberos Agents to your Kerberos Vault instance, you should open the configuration option and navigate to the `cloud` tab. After selected you need to fill-in the credentials from your Kerberos Vault account.
 
-- Storage URI: this is the API endpoint of your Kerberos Vault instance. Usually this is in the following format: `http(s)://api.yourdomain.com/storage`. Where `api.yourdomain.com` should match your Kerberos Vault API endpoint.
+- Storage URI: this is the API endpoint of your Kerberos Vault instance. Usually this is in the following format: `http(s)://api.yourdomain.com/storage`. Where `api.yourdomain.com` should match your Kerberos Vault API endpoint. If you are deploying Kerberos Vault at the edge, in the same cluster, you can use the internal DNS name, as following `http://kerberos-vault.kerberos-vault:8081/storage`.
 
 - Provider: the name of the provider, which you created on the Kerberos Vault providers page, to which you want to send your recordings to.
 
