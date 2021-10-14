@@ -62,43 +62,41 @@ Storj DCS is the world’s first open-source, decentralized cloud storage layer 
 The Storj DCS Satellite Admin Console supports uploading and managing objects directly through the browser with no command-line tool required. This component uses our hosted S3-compatible Gateway service.
 
 #### Create an Account
-[Sign Up](https://storj.io/ "Sign Up")
 
-__Click on Start__ for free
-![Sign up Image 1](storjsignup1.png)
+To start using Storj, an account has to be created [on the public Storj cloud application](https://eu1.storj.io/signup). Once you are signed up, you will go through the traditional on-boarding and verification flow.
 
-__Select a Satellite__, and __sign up__ for an account.
-![Sign up Image 2](storjsignup2.png)
-![Sign up Image 3](storjsignup3.png)
-
-After sign up, you will receive a verification email. __Click the button__ prompting you to verify your email.
-![Sign up Image 4](storjsignup4.png)
-
-__Click__ Upload in Browser or __navigate__ to Object Browser to configure your access and bucket 
+{{< figure src="storj-signup.gif" alt="Create an account at Storj.io" caption="Create an account at Storj.io" class="stretch">}}
 
 #### Configure Object Browser Access
 
-__Navigate__ to the Objects page within your project and then click on __Continue__. 
-![Setup Image 1](storjbucketsetup1.png)
+Once you activated your account, go ahead and sign in to your profile. The first time you've signed in you will be asked to create a Bucket. Select the Upload In Browser, and give a specific name to your Bucket.
 
-_Don't forget to save your __Encryption Passphrase__ generated below, you will need it for future access._
+{{< figure src="storj-create-bucket.gif" alt="Create a Storj bucket." caption="Create a Storj bucket." class="stretch">}}
 
-If this is your first time using the object browser, you __must create an encryption passphrase__. We strongly encourage you to use a mnemonic phrase. The GUI automatically generates one on the client-side for you. Alternatively, you can enter your own. 
-![Setup Image 2](storjbucketsetup2.png)
+#### Create Access Grant
 
-__Enter__ the Encryption Passphrase you just created or used previously. If you enter a new Encryption Passphrase, you will not be able to see files previously uploaded as they would have been encrypted with a separate passphrase. 
-![Setup Image 3](storjbucketsetup3.png)
+So now we have created a Bucket, we will need to have credentials to interact with it. Go to the "Access" page, select the (Create Access Grant) button at the top. Provide the required fields, and select the option (Generate S3 Gateway Credentials).
 
-If you have not yet created a bucket a module window will pop up, ___enter a lowercase alphanumeric name__. Buckets are your containers that store objects. 
-![Setup Image 4](storjbucketsetup4.png)
+{{< figure src="storj-access.gif" alt="Create a Storj Access Grants." caption="Create a Storj Access Grants." class="stretch">}}
 
-After creating your first bucket, ___you will be placed into the bucket__ where you can make folders and/or upload files. You can now configure Kerberos using the bucket you just created. 
+#### Integrate
+
+Now you are ready to assign Storj as a storage provider to Kerberos Vault. Open the `Providers` page of Kerberos Vault, and select the Storj provider.
+
+{{< figure src="storj-integrate.gif" alt="Integrate Storj.io with Kerberos Vault." caption="Integrate Storj.io with Kerberos Vault." class="stretch">}}
+
+
+- Provider name: this a preferred name for the provider.
+- Bucket name: the name of a bucket created in Storj, make sure this matches.
+- Region: this is not relevant for an edge deployment and can be left blank.
+- Hostname: this is the DNS name for the Storj Gateway and relevant region, for example: **gateway.eu1.storjshare.io**.
+- Access Key: the `access key` you've received when generating the S3 Gateway credentials.
+- Secret Access Key: the `secret key` you've received when generating the S3 Gateway credentials.
+
 
 ## Edge storage providers
 
 Kerberos Vault also integrates with storage providers that are more suitable for edge deployments. Examples are Minio and Ceph, these are storage providers that you can install wherever you want. Therefore, they are interesting when considering edge computing to reduce latency, cloud billing and bandwidth. Examples are machine learning use cases, to trigger events or limit the transfer to a cloud storage. 
-
-If you have not yet created a bucket a module window will pop up, enter a lowercase alphanumeric name. Buckets are your containers that store objects. 
 
 ### Minio
 
@@ -145,6 +143,8 @@ Once applied the MinIO tenant will be created, and you should see some pods bein
 While accessing the console, you can create a new Bucket.
 
 {{< figure src="minio-create-bucket.gif" alt="Create a bucket in Minio." caption="Create a bucket in Minio." class="stretch">}}
+
+#### Integrate
 
 Now you are ready to assign Minio as a storage provider to Kerberos Vault. Open the `Providers` page of Kerberos Vault, and select the Minio provider.
 
