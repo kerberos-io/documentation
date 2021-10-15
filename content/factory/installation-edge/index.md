@@ -149,9 +149,9 @@ This will make sure helm 3 is installed.
 
 ### Traefik
 
-To access the Kerberos Enterprise web application, we will create a service in the next paragraphs. This service will expose the web application as an Ingress. Thanks to our previous installation with MetalLB and Traefik (what we will do now), we will have a neat solution for managing our hostnames and Load Balancing IPs.
+To access the Kerberos Factory application, we will create a service in the next paragraphs. This service will expose the web application as an Ingress. Thanks to our previous installation with MetalLB and Traefik (what we will do now), we will have a neat solution for managing our hostnames and Load Balancing IPs.
 
-The idea is that Traefik, will have a dedicated IP address assigned from MetalLB, and will resolve the Ingress of our Kerberos Enterprise web app. Let's go ahead with installing Traefik.
+The idea is that Traefik, will have a dedicated IP address assigned from MetalLB, and will resolve the Ingress of our Kerberos Factory application. Let's go ahead with installing Traefik.
 
     helm repo add traefik https://helm.traefik.io/traefik
     helm install traefik traefik/traefik -n traefik
@@ -182,7 +182,7 @@ Have a look into the `./factory/yaml/mongodb/values.yaml` file, you will find pl
 To change the username and password of the MongoDB instance, go ahead and [find the attribute where](https://github.com/kerberos-io/factory/blob/master/yaml/mongodb/values.yaml#L75) you can change the root password.
 
     helm repo add bitnami https://charts.bitnami.com/bitnami
-    helm install mongodb -n mongodb bitnami/mongodb --values ./enterprise/yaml/mongodb/values-edge.yaml
+    helm install mongodb -n mongodb bitnami/mongodb --values ./factory/yaml/mongodb/values-edge.yaml
 
 Once installed successfully, we should verify if the password has been set correctly. Print out the password using `echo $MONGODB_ROOT_PASSWORD` and confirm the password is what you've specified in the `values.yaml` file.
 
