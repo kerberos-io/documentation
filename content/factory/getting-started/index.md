@@ -151,7 +151,7 @@ You have two choices when using Kerberos Hub, either you send your recordings fr
 
 Select the Kerberos Hub option, and copy-paste the credentials from your Kerberos Hub subscription.
 
-{{< figure src="enterprise-to-hub.gif" alt="By linking your Enterprise agent to Kerberos Hub, your recordings and livestreams will become available online." caption="By linking your Enterprise agent to Kerberos Hub, your recordings and livestreams will become available online." class="stretch">}}
+{{< figure src="hub-integration.gif" alt="By linking the Kerberos Agent to Kerberos Hub, your recordings and livestreams will become available online." caption="By linking your Enterprise agent to Kerberos Hub, your recordings and livestreams will become available online." class="stretch">}}
 
 - Region: this is the region where your recordings will be stored. Only `eu-west-1` for now (will change, on the roadmap).
 
