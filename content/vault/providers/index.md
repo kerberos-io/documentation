@@ -55,7 +55,44 @@ Kerberos Vault integrates with storage providers in the cloud such as AWS S3, GC
 
 ### Storj
 
-> Tutorial to be written.
+#### Introduction
+
+Storj DCS is the world’s first open-source, decentralized cloud storage layer that’s private by design and secure by default - enabling developers to build in the best data protection and privacy into their applications as possible. The zero trust architecture, multi-region high availability, default encryption and edge-based access controls minimize risk and give only you, or those you grant permission to, access to your files. The result is that you take back full ownership and control of your data. 
+
+The Storj DCS Satellite Admin Console supports uploading and managing objects directly through the browser with no command-line tool required. This component uses our hosted S3-compatible Gateway service.
+
+#### Create an Account
+
+To start using Storj, an account has to be created [on the public Storj cloud application](https://eu1.storj.io/signup). Once you are signed up, you will go through the traditional on-boarding and verification flow.
+
+{{< figure src="storj-signup.gif" alt="Create an account at Storj.io" caption="Create an account at Storj.io" class="stretch">}}
+
+#### Configure Object Browser Access
+
+Once you activated your account, go ahead and sign in to your profile. The first time you've signed in you will be asked to create a Bucket. Select the Upload In Browser, and give a specific name to your Bucket.
+
+{{< figure src="storj-create-bucket.gif" alt="Create a Storj bucket." caption="Create a Storj bucket." class="stretch">}}
+
+#### Create Access Grant
+
+So now we have created a Bucket, we will need to have credentials to interact with it. Go to the "Access" page, select the (Create Access Grant) button at the top. Provide the required fields, and select the option (Generate S3 Gateway Credentials).
+
+{{< figure src="storj-access.gif" alt="Create a Storj Access Grants." caption="Create a Storj Access Grants." class="stretch">}}
+
+#### Integrate
+
+Now you are ready to assign Storj as a storage provider to Kerberos Vault. Open the `Providers` page of Kerberos Vault, and select the Storj provider.
+
+{{< figure src="storj-integrate.gif" alt="Integrate Storj.io with Kerberos Vault." caption="Integrate Storj.io with Kerberos Vault." class="stretch">}}
+
+
+- Provider name: this a preferred name for the provider.
+- Bucket name: the name of a bucket created in Storj, make sure this matches.
+- Region: this is not relevant for an edge deployment and can be left blank.
+- Hostname: this is the DNS name for the Storj Gateway and relevant region, for example: **gateway.eu1.storjshare.io**.
+- Access Key: the `access key` you've received when generating the S3 Gateway credentials.
+- Secret Access Key: the `secret key` you've received when generating the S3 Gateway credentials.
+
 
 ## Edge storage providers
 
@@ -106,6 +143,8 @@ Once applied the MinIO tenant will be created, and you should see some pods bein
 While accessing the console, you can create a new Bucket.
 
 {{< figure src="minio-create-bucket.gif" alt="Create a bucket in Minio." caption="Create a bucket in Minio." class="stretch">}}
+
+#### Integrate
 
 Now you are ready to assign Minio as a storage provider to Kerberos Vault. Open the `Providers` page of Kerberos Vault, and select the Minio provider.
 
