@@ -29,60 +29,46 @@ The default username password, specified in the [`deployment.yaml`](https://gith
 - username: **root**
 - password: **kerberos**
 
-> The username and password [can be changed in the `deployment.yaml` file](https://github.com/kerberos-io/enterprise/blob/master/yaml/factory/deployment.yaml#L54).
+> The username and password [can be changed in the `deployment.yaml` file](https://github.com/kerberos-io/factory/blob/master/yaml/deployment.yaml#L34-L37).
 
 ## Overview
 
-On the overview page you will find an intuitive overview of the different pages and functionalities. On the left menu you will see two sections: **Docker** and **Kubernetes**. Kerberos Factory can run in Docker (single-host) and Kubernetes (cluster) mode, however the recommended way is of course Kubernetes.
+On the overview page you will find an intuitive overview of the different pages and functionalities. As Kerberos Factory is running on top of a Kubernetes cluster, Kerberos Agents are deployed as Kubernetes deployments.
 
-When working with Kubernetes, Kerberos Agents are deployed as a deployment. When working with Docker, Kerberos Agents are deployed as traditional Docker containers.
+Kerberos Factory allows you to inspect and configure your Kerberos Agents, but also provide an overview of the Kubernetes nodes and pods. 
 
 {{< figure src="overview.gif" alt="Review your Docker or Kubernetes agents." caption="Review your Docker or Kubernetes agents." class="stretch">}}
 
+On the left menu you will find pages are available:
 
-## Kubernetes
-
-On the left menu you will find the Kubernetes section. In this section 3 pages are available:
-
+- Settings: the global settings which are inherited by Kerberos Agents.
+- Camera: a list of all the Kerberos Agents running in your cluster.
 - Nodes: a list of all the nodes in your cluster.
-- Deployments: a list of all the Kerberos Agents running in your cluster.
 - Pods: all the pods running in your cluster.
 
 ## Nodes
 
 The nodes section lists all the available nodes inside your Kubernetes cluster. It shows a limited amount of information such as the version, the number of Docker images installed on the node, and some basic hardware information.
 
-{{< figure src="nodes.png" alt="Get an entire list of nodes which are connected to your Kubernetes cluster." caption="Get an entire list of nodes which are connected to your Kubernetes cluster." class="stretch">}}
+{{< figure src="nodes.gif" alt="Get an entire list of nodes which are connected to your Kubernetes cluster." caption="Get an entire list of nodes which are connected to your Kubernetes cluster." class="stretch">}}
 
-## Deployments
+## Cameras
 
-The deployments section will list all the Kerberos Agents (running as deployments) that you have deployed inside your cluster. This page gives you access to deploy new Kerberos Agents one by one or in bulk. Next to that you can easily upgrade Kerberos Agents to a newer version, reboot them, view logging and update the configuration options of the Kerberos Agent.
+The cameras section will list all the Kerberos Agents (running as deployments) that you have deployed inside your cluster. This page gives you access to deploy new Kerberos Agents. Next to that you can easily upgrade Kerberos Agents to a newer version, reboot them, view logging and update the configuration options of the Kerberos Agent.
 
-{{< figure src="deployments.png" alt="Get a list of all your Kerberos Agents." caption="Get a list of all your Kerberos Agents." class="stretch">}}
+{{< figure src="deployments.gif" alt="Get a list of all your Kerberos Agents." caption="Get a list of all your Kerberos Agents." class="stretch">}}
 
 ### Adding a new deployment
 
-There are two options to add a new deployment, single deployments and bulk deployment.
-
-{{< figure src="single-bulk-deployment.gif" alt="Deploy a single Kerberos Agent or in bulk." caption="Deploy a single Kerberos Agent or in bulk." class="stretch">}}
-
-- single deployment
-
 By specifying a name for your Kerberos Agent, and it's corresponding RTSP url, a new Kubernetes deployment will be created for you, and a Kuebrnetes pod will be deployed to one of your installed nodes.
 
-- in bulk deployment.
-
-By importing an Excel file, deployments can be created in bulk.
-
-By specifying the name and corresponding RTSP url in multiple rows, you can deploy your deployments in bulk.
-
-{{< figure src="add-bulk-deployment-excel.png" alt="Add a Kerberos Agent through a deployment." caption="Add a Kerberos Agent through a deployment." class="stretch">}}
+{{< figure src="add-kerberos-agent.gif" alt="Deploy a single Kerberos Agent or in bulk." caption="Deploy a single Kerberos Agent or in bulk." class="stretch">}}
 
 ### Configuring a deployment
 
 Once you have a running Kerberos Agent, you should see a green circle next to the deployment, indicating that it is successfully running. At any time you can configure your Kerberos Agent by clicking on the <SettingsIcon className="pointer"/> icon. This will open a popup, allowing you to change some settings.
 
-{{< figure src="deployment-configuration.gif" alt="Once you created the Kerberos Agent, you can configure the agent." caption="Once you created the Kerberos Agent, you can configure the agent." class="stretch">}}
+{{< figure src="configure-kerberos-agent.gif" alt="Once you created the Kerberos Agent, you can configure the agent." caption="Once you created the Kerberos Agent, you can configure the agent." class="stretch">}}
 
 Following settings can be changed:
 
@@ -98,7 +84,7 @@ Configuration can be specified in a Kerberos Agent, this means that you update t
 
 By specifying configurations at a higher level, any Kerberos Agents will inherit from that configuration. This is improving the overall maintenance and management of your Kerberos Agents.
 
-{{< figure src="global-configuration.gif" alt="You can specify the configurations on a global level, so all Kerberos Agents will inherit from that." caption="You can specify the configurations on a global level, so all Kerberos Agents will inherit from that." class="stretch">}}
+{{< figure src="global-settings.gif" alt="You can specify the configurations on a global level, so all Kerberos Agents will inherit from that." caption="You can specify the configurations on a global level, so all Kerberos Agents will inherit from that." class="stretch">}}
 
 ### Upgrade or reboot a Kerberos Agent
 
@@ -106,13 +92,13 @@ At Kerberos, we have agile development cycles, which means that new versions wil
 
 At any moment you can reboot one of your Kerberos Agents. When pressing the reboot button, next to your deployment, Kubernetes will destroy the pod of your deployment, and schedule a new one. 
 
-{{< figure src="upgrade-reboot.gif" alt="You can specify the configurations on a global level, so all agents will inherit from that." caption="You can specify the configurations on a global level, so all agents will inherit from that." class="stretch">}}
+{{< figure src="upgrade-kerberos-agent.gif" alt="You can specify the configurations on a global level, so all agents will inherit from that." caption="You can specify the configurations on a global level, so all agents will inherit from that." class="stretch">}}
 
 ## Pods
 
 When creating a Kerberos Agent, Kubernetes will create a Kubernetes deployment and schedule a pod. The pod will be managed by your deployment, and deployed as a container to one of your available nodes. Once a pod dies/ crashes, or whatever unexpected scenario, the deployment will make sure it is deployed again to a different (or the same) node. This makes sure the Kerberos Agent is in a healthy state at all times.
 
-{{< figure src="pods.png" alt="When creating a deployment, a Kubernetes pod has created and assigned to a node." caption="When creating a deployment, a Kubernetes pod has created and assigned to a node." class="stretch">}}
+{{< figure src="pods.gif" alt="When creating a deployment, a Kubernetes pod has created and assigned to a node." caption="When creating a deployment, a Kubernetes pod has created and assigned to a node." class="stretch">}}
 
 ## Storage and video management
 
@@ -141,7 +127,7 @@ To connect one or more Kerberos Agents to your Kerberos Vault instance, you shou
 
 - Secret Access Key: this should match the secret access key of one of your Kerberos Vault accounts.
 
-{{< figure src="storage-setup.gif" alt="Using Kerberos Vault you can bring your own storage, and store the recordings of your agents in your own storage provider." caption="Using Kerberos Vault you can bring your own storage, and store the recordings of your agents in your own storage provider." class="stretch">}}
+{{< figure src="kerberos-factory-kerberos-vault.gif" alt="Using Kerberos Vault you can bring your own storage, and store the recordings of your agents in your own storage provider." caption="Using Kerberos Vault you can bring your own storage, and store the recordings of your agents in your own storage provider." class="stretch">}}
 
 ### Kerberos Hub
 
@@ -151,7 +137,7 @@ You have two choices when using Kerberos Hub, either you send your recordings fr
 
 Select the Kerberos Hub option, and copy-paste the credentials from your Kerberos Hub subscription.
 
-{{< figure src="hub-integration.gif" alt="By linking the Kerberos Agent to Kerberos Hub, your recordings and livestreams will become available online." caption="By linking your Enterprise agent to Kerberos Hub, your recordings and livestreams will become available online." class="stretch">}}
+{{< figure src="kerberos-factory-kerberos-hub.gif" alt="By linking the Kerberos Agent to Kerberos Hub, your recordings and livestreams will become available online." caption="By linking your Enterprise agent to Kerberos Hub, your recordings and livestreams will become available online." class="stretch">}}
 
 - Region: this is the region where your recordings will be stored. Only `eu-west-1` for now (will change, on the roadmap).
 
