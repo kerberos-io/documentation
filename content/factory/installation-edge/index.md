@@ -25,6 +25,24 @@ If you have a fresh Linux installation, make sure you have Docker installed. If 
 
     apt install docker.io -y
 
+Once installed modify the `cgroup driver`, so kubernetes will be using it correctly. By default Kubernetes cgroup driver was set to systems but docker was set to systemd.
+
+    sudo mkdir /etc/docker
+    cat <<EOF | sudo tee /etc/docker/daemon.json
+    {
+      "exec-opts": ["native.cgroupdriver=systemd"],
+      "log-driver": "json-file",
+      "log-opts": {
+        "max-size": "100m"
+      },
+      "storage-driver": "overlay2"
+    }
+    EOF
+    
+    sudo systemctl enable docker
+    sudo systemctl daemon-reload
+    sudo systemctl restart docker
+
 ### Kubernetes
 
 After Docker being installed go ahead and install the different Kubernetes servicess and tools.
@@ -106,7 +124,7 @@ A best practice is to create a separate namespace for your Kerberos Factory and 
 
 Next go into the directory and execute the first Kubernetes configuration file `clusterrole.yaml`.
 
-    kubectl create -n kerberos-factory -f ./factory/yaml/factory/clusterrole.yaml
+    kubectl create -n kerberos-factory -f ./factory/yaml/clusterrole.yaml
 
 This will make several APIs inside your Kubernetes cluster available. We need this to be able to create deployments from the factory web app through the Kubernetes Golang SDK.
 
@@ -118,7 +136,7 @@ In the Edge world, we do not have fancy Load balancers and Public IP from which 
     kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/metallb.yaml
     kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 
-After installing the different MetalLB components, we need to create a `configmap.yaml` file. This file contains information of how MetalLB can get and use internal IP's as LoadBalancers.
+After installing the different MetalLB components, we need to modify a `configmap.yaml` file, which you can find here `./factory/yaml/metallb/configmap.yaml`. This file contains information of how MetalLB can get and use internal IP's as LoadBalancers.
 
       apiVersion: v1
       kind: ConfigMap
@@ -163,7 +181,7 @@ If you don't like `Traefik` but you prefer `Ingress Nginx`, that works as well.
     helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
     helm repo update
     kubectl create namespace ingress-nginx
-    helm install ingress-nginx -n kerberos ingress-nginx/ingress-nginx
+    helm install ingress-nginx -n ingress-nginx ingress-nginx/ingress-nginx
 
 ### MongoDB
 
@@ -187,14 +205,22 @@ To change the username and password of the MongoDB instance, go ahead and [find 
 
 Once installed successfully, we should verify if the password has been set correctly. Print out the password using `echo $MONGODB_ROOT_PASSWORD` and confirm the password is what you've specified in the `values.yaml` file.
 
-    export MONGODB_ROOT_PASSWORD=$(kubectl get secret -n kerberos mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
+    export MONGODB_ROOT_PASSWORD=$(kubectl get secret -n mongodb mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
     echo $MONGODB_ROOT_PASSWORD
 
 ### Kerberos Factory
 
 The last step is to install the Kerberos Factory application. Kerberos Factory is responsible for installing and creating the kubernetes deployments inside your Kubernetes cluster.
 
-Before installing Kerberos Factory, open the `./factory/yaml/factory/deployment.yaml` configuration file. At the of the bottom file you will find two endpoints, similar to the Ingres file below. Update the hostnames to your own preferred domain, and add these to your DNS server or `/etc/hosts` file (pointing to the same IP as the Traefik/Ingress-nginx EXTERNAL-IP).
+#### Config Map
+
+Kerberos Factory requires a MongoDB instance to be running, it uses it to store configuration files and other metrics. To specify those credentials a configmap is created and injected into the Kerberos Factory deployment.
+
+    kubectl apply -f ./factory/yaml/mongodb.config.yaml
+
+#### Deployment
+
+Before installing Kerberos Factory, open the `./factory/yaml/deployment.yaml` configuration file. At the of the bottom file you will find two endpoints, similar to the Ingres file below. Update the hostnames to your own preferred domain, and add these to your DNS server or `/etc/hosts` file (pointing to the same IP as the Traefik/Ingress-nginx EXTERNAL-IP).
 
         spec:
           rules:
@@ -232,7 +258,7 @@ Modify the MongoDB credentials, and make sure they match the credentials of your
 
 Once you have corrected the DNS names (or internal /etc/hosts file), install the Factory web app inside your cluster.
 
-    kubectl apply -n kerberos-factory -f ./factory/yaml/factory/deployment.yaml
+    kubectl apply -n kerberos-factory -f ./factory/yaml/deployment.yaml
 
 ## Test out configuration
 
