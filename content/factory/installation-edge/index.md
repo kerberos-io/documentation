@@ -216,6 +216,15 @@ The last step is to install the Kerberos Factory application. Kerberos Factory i
 
 Kerberos Factory requires a MongoDB instance to be running, it uses it to store configuration files and other metrics. To specify those credentials a configmap is created and injected into the Kerberos Factory deployment.
 
+Modify the MongoDB credentials, and make sure they match the credentials of your MongoDB instance.
+
+        - name: MONGODB_USERNAME
+          value: "root"
+        - name: MONGODB_PASSWORD
+    -->   value: "xxxxxxxxxx"
+
+Create the config map.
+
     kubectl apply -f ./factory/yaml/mongodb.config.yaml
 
 #### Deployment
@@ -248,13 +257,6 @@ If you are using Ingress Nginx, do not forgot to comment `Traefik` and uncomment
       annotations:
         #kubernetes.io/ingress.class: traefik
         kubernetes.io/ingress.class: nginx
-
-Modify the MongoDB credentials, and make sure they match the credentials of your MongoDB instance.
-
-        - name: MONGODB_USERNAME
-          value: "root"
-        - name: MONGODB_PASSWORD
-    -->   value: "xxxxxxxxxx"
 
 Once you have corrected the DNS names (or internal /etc/hosts file), install the Factory web app inside your cluster.
 
