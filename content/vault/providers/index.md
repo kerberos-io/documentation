@@ -138,7 +138,7 @@ Once you have selected your storage class, or installed OpenEBS, go ahead by app
 Once applied the MinIO tenant will be created, and you should see some pods being created in the `minio-tenant` namespace. Once everything is ready you should be able to access to MinIO Tenant console by forwarding the service.
 
     kubectl get svc -n minio-tenant
-    kubectl port-forward svc/minio 9090:80 -n minio-tenant
+    kubectl port-forward svc/minio-console 9090 -n minio-tenant
 
 While accessing the console, you can create a new Bucket.
 
