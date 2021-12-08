@@ -54,16 +54,7 @@ Use one of the preferred OS package managers to install the Helm client:
 
 [**Traefik**](https://containo.us/traefik/) is a reverse proxy and load balancer which allows you to expose your deployments more easily. Kerberos uses Traefik to expose its APIs more easily.
 
-By executing following helm command, we will install Traefik and link it to a specific DNS name. Open the Traefik values file, `./factory/yaml/traefik/values.yaml`, and update the DNS name to your own domain.
-
-        dashboard:
-          enabled: true
-    -->   domain: traefik.domain.com
-          serviceType: NodePort
-        rbac:
-            enabled: true
-
-Add Helm repository and install traefik.
+Add the Helm repository and install traefik.
 
     kubectl create namespace traefik
     helm repo add traefik https://helm.traefik.io/traefik
