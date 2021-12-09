@@ -111,7 +111,7 @@ Modify the MongoDB credentials, and make sure they match the credentials of your
 
 Create the config map.
 
-    kubectl apply -f ./factory/yaml/mongodb.config.yaml
+    kubectl apply -f ./factory/yaml/mongodb.config.yaml -n kerberos-factory
 
 #### Deployment
 
