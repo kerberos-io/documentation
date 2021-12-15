@@ -87,6 +87,7 @@ When using Kerberos Factory, it will generate configurations for every video str
 Have a look into the `./factory/yaml/mongodb/values.yaml` file, you will find plenty of configurations for the MongoDB helm chart. To change the username and password of the MongoDB instance, go ahead and [find the attribute where](https://github.com/kerberos-io/factory/blob/master/yaml/mongodb/values.yaml#L75) you can change the root password.
 
     helm repo add bitnami https://charts.bitnami.com/bitnami
+    kubectl create namespace mongodb
     helm install mongodb -n mongodb bitnami/mongodb --values ./factory/yaml/mongodb/values.yaml
 
 Once installed successfully, we should verify if the password has been set correctly. Print out the password using `echo $MONGODB_ROOT_PASSWORD` and confirm the password is what you've specified in the `values.yaml` file.
