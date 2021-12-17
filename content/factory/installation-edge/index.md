@@ -189,9 +189,21 @@ The last step is to install the Kerberos Factory application. Kerberos Factory i
 
 Before we can move into the installation of MongoDB, we will need to prepare some storage or persistent volume. To simplify this we can leverage the OpenEBS storage solution, which can automatically provision PV (Persistent volumes) for us.
 
-Let us start with installing the OpenEBS operator.
+Let us start with installing the OpenEBS operator. Please note that you might need to change the mount folder. Download the `openebs-operator.yaml` and scroll to the bottom, until you hit the `StorageClass` section. Modify the `BasePath` value to the destination (external mount) you prefer.
 
-    kubectl apply -f https://openebs.github.io/charts/openebs-operator.yaml
+    #Specify the location (directory) where
+    # where PV(volume) data will be saved.
+    # A sub-directory with pv-name will be
+    # created. When the volume is deleted,
+    # the PV sub-directory will be deleted.
+    #Default value is /var/openebs/local
+    - name: BasePath
+      value: "/var/openebs/local/"
+  
+Once you are ok with the `BasePath` go ahead and apply the operator.
+
+    wget https://openebs.github.io/charts/openebs-operator.yaml
+    kubectl apply -f openebs-operator.yaml
 
 Once done it should start installing several resources in the `openebs` namespace. If all resources are created successfully we can launch the `helm install` for MongoDB.
 
