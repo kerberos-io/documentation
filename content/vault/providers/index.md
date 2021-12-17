@@ -131,6 +131,7 @@ In the below manifests we have been using the OpenEBS storage class for local-st
 Once you have selected your storage class, or installed OpenEBS, go ahead by applying the different manifests. Below configuration will deploy a single server, with 4 volumes of 10Gb. It will also create a default access key (`minio`) and secret key (`minio123`). 
 
     git clone https://github.com/kerberos-io/vault && cd vault/yaml/minio
+    kubectl create namespace minio-tenant
     kubectl apply -f minio.cred.yaml
     kubectl apply -f minio.config.tenant.yaml
     kubectl apply -f minio.tenant.yaml
