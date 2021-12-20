@@ -83,8 +83,38 @@ You got your accounts setup, sites and groups created and last but not least som
 
 Now it is time to configure some integrations using alerts and channels. The idea of integrations is that you can send messages to other third-party solutions on your own APIs, when an important/interesting event occurred.
 
-
 {{< figure src="hub-alerts.gif" alt="Get your credentials to link your Kerberos Agents." caption="Get your credentials to link your Kerberos Agents." class="stretch">}}
+
+### Channels
+
+Multiple channels can be configured and used as an event endpoint. Each channel has its own API and visualisation to the end user, therefore we will discuss them below.
+
+#### Webhook
+
+By configuring a webhook, you will be able to receive the event/notification through an HTTP (POST) call. The notification will contain basic information and the actual video recordings. An example of the event looks like this.
+
+    "body": {
+        "id": "c704244e6js97h3ob9k0",
+        "type": "detection",
+        "timestamp": 1639989520,
+        "title": "Hey martin something happend at your ingarage.",
+        "body": "A pedestrian was detected at 09:38.",
+        "unread": true,
+        "user": "martin",
+        "userid": "57e1011e3178aa6c5cc774d6",
+        "sequenceid": "61c040e27dc0c8cf9fb851a2",
+        "media": [
+            {
+                "timestamp": 1639989500,
+                "type": "video",
+                "url": "https://storage.googleapis.com/kstorage-europe-west1/martin/1639989500_6-967003_ingarage_200-200-400-400_24_769.mp4?Expires=1640162320&GoogleAccessId=xxx"
+            }
+        ]
+    }
+
+An easy way to verify if the POST request is happening, you can use a public webhook service like `https://pipedream.com/`. By creating an account, you will receive your own HTTP endpoint and all the required inspection tools.
+
+{{< figure src="configure-webhook.gif" alt="Configure the webhook channel." caption="Configure the webhook channel." class="stretch">}}
 
 ## What's next
 
