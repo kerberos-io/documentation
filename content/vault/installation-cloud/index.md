@@ -79,12 +79,18 @@ If you are using Ingress Nginx, do not forgot to comment `Traefik` and uncomment
         kubernetes.io/ingress.class: nginx
         nginx.ingress.kubernetes.io/proxy-body-size: 200m
 
-Next to that modify the MongoDB credentials, and make sure they match the credentials of your MongoDB instance.
+Kerberos Vault requires a MongoDB instance to be running, it uses it to store media, configurations, etc. To specify those credentials a configmap is created and injected into the Kerberos Factory deployment.
+
+Modify the MongoDB credentials in the configmap `./vault/yaml/mongodb.config.yaml`, and make sure they match the credentials of your MongoDB instance.
 
         - name: MONGODB_USERNAME
           value: "root"
         - name: MONGODB_PASSWORD
-    -->   value: "xxxxxxxxxx"
+    -->   value: "yourmongodbpassword"
+
+Create the config map.
+
+    kubectl apply -f ./vault/yaml/mongodb.config.yaml -n kerberos-vault
 
 Once you have corrected the DNS names and MongoDB credentials, install Kerberos Vault inside your cluster.
 

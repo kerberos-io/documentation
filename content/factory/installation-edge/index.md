@@ -228,12 +228,12 @@ The last step is to install the Kerberos Factory application. Kerberos Factory i
 
 Kerberos Factory requires a MongoDB instance to be running, it uses it to store configuration files and other metrics. To specify those credentials a configmap is created and injected into the Kerberos Factory deployment.
 
-Modify the MongoDB credentials, and make sure they match the credentials of your MongoDB instance.
+Modify the MongoDB credentials in the configmap `./factory/yaml/mongodb.config.yaml`, and make sure they match the credentials of your MongoDB instance.
 
         - name: MONGODB_USERNAME
           value: "root"
         - name: MONGODB_PASSWORD
-    -->   value: "xxxxxxxxxx"
+    -->   value: "yourmongodbpassword"
 
 Create the config map.
 
