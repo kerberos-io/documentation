@@ -41,4 +41,4 @@ Modify the Mongodb credentials, as you did for the Kerberos Vault deployment.
 Create the recycle deployment as following.
 
     git clone https://github.com/kerberos-io/vault
-    kubectl apply -f ./vault/yaml/deployment-cleanup.yaml
+    kubectl apply -f ./vault/yaml/deployment-cleanup.yaml -n kerberos-vault
