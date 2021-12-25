@@ -172,6 +172,7 @@ To access the Kerberos Factory application, we will create a service in the next
 The idea is that Traefik, will have a dedicated IP address assigned from MetalLB, and will resolve the Ingress of our Kerberos Factory application. Let's go ahead with installing Traefik.
 
     helm repo add traefik https://helm.traefik.io/traefik
+    kubectl create namespace traefik
     helm install traefik traefik/traefik -n traefik
 
 ### Ingress-Nginx (alternative for Traefik)
