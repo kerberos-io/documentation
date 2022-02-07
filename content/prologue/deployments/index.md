@@ -17,7 +17,7 @@ In this section we will explain some use cases and best practices, which might h
 
 > Please read the [introduction page](/prologue/introduction/) first, before moving forward.
 
-When starting with Kerberos you might ask yourself, how should I deploy these so called, Kerberos Agents? Well, there are different options. You can install a Kerberos Sgent on a Raspberry Pi, VM, Server or even in a Kubernetes cluster. So what should you do, and when? Let's have a closer look at the different options.
+When starting with Kerberos you might ask yourself, how should I deploy these so called, Kerberos Agents? Well, there are different options. You can install a Kerberos Agent on a Raspberry Pi, VM, Server or even in a Kubernetes cluster. So what should you do, and when? Let's have a closer look at the different options.
 
 The first thing you need to consider is the environment, in which you want to deploy your Kerberos Agents. Is it inside your house, your company or at a public place? Another important factor is the number of camera streams you would like to monitor, and if you have any high availability requirements.
 
