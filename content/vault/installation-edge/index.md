@@ -92,6 +92,11 @@ Modify the MongoDB credentials in the configmap `./vault/yaml/mongodb.config.yam
         - name: MONGODB_PASSWORD
     -->   value: "yourmongodbpassword"
 
+
+Create namespace
+
+    kubectl create namespace kerberos-vault
+    
 Create the config map.
 
     kubectl apply -f ./vault/yaml/mongodb.config.yaml -n kerberos-vault
