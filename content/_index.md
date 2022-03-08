@@ -15,6 +15,8 @@ toc: true
 
 The **Kerberos.io** project, pronounced as `/kuh buh ruhs dot ai o/`, is a video analytics and video management platform, which was initiated back in 2014. Over the years it has evolved into a stable and feature-rich video platform, which is used for management and analytics such as machine learning.
 
+[![An Introduction to Kerberos.io](youtube-introduction-kerberosio.png)](http://www.youtube.com/watch?v=LjCaMMKJCGc "An Introduction to Kerberos.io")
+
 To set the expectations of what is possible and how, it's recommended to have a look [at the architectures page](/prologue/deployments/) to find the best, or most reasonable architecture for your use case.
 
 ## Kerberos.io
