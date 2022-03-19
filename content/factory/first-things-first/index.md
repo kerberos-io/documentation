@@ -13,6 +13,12 @@ weight: 300
 toc: true
 ---
 
+
+[![Scale your video landscape with Kerberos Factory
+](youtube-factory-kerberosio.png)](http://www.youtube.com/watch?v=ZGV7w8haUCU "Scale your video landscape with Kerberos Factory")
+
+<br/>
+
 Kerberos Factory brings the Kerberos Agent to another level. The Kerberos Agent can be deployed anywhere you want, it can run as a binary, Docker container and inside a Kubernetes cluster. The latter is where Kerberos Factory shines, it is a UI that allows you to deploy and configure your Kerberos Agents into your Kubernetes cluster more easily.
 
 {{< figure src="kerberos-enterprise-suite.svg" alt="Kerberos Enterprise Suite contains Kerberos Agent, Kerberos Factory, Kerberos Vault and Kerberos Hub." caption="Kerberos Enterprise Suite contains Kerberos Agent, Kerberos Factory, Kerberos Vault and Kerberos Hub." class="stretch">}}
