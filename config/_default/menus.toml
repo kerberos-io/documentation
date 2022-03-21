@@ -60,6 +60,13 @@
   weight = 20
 
 [[social]]
+  name = "Youtube"
+  pre = "<svg width=\"29\" height=\"20\" viewBox=\"0 0 29 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M27.311 1.71686C26.2852 0.497419 24.3912 0 20.7742 0H7.64427C3.94443 0 2.01837 0.529505 0.996397 1.82778C0 3.09361 0 4.9587 0 7.54004V12.4601C0 17.4609 1.18222 20 7.64427 20H20.7743C23.911 20 25.6491 19.5611 26.7735 18.4849C27.9267 17.3814 28.4187 15.5795 28.4187 12.4601V7.54004C28.4187 4.8178 28.3416 2.9417 27.311 1.71686ZM18.2449 10.6793L12.2827 13.7954C12.1494 13.865 12.0036 13.8996 11.858 13.8996C11.6932 13.8996 11.5287 13.8552 11.3831 13.767C11.1088 13.6008 10.9413 13.3035 10.9413 12.9829V6.77072C10.9413 6.45059 11.1083 6.15357 11.3821 5.98728C11.6559 5.82098 11.9965 5.80961 12.2806 5.95721L18.2428 9.0532C18.5461 9.21069 18.7366 9.52385 18.7371 9.86552C18.7375 10.2075 18.5478 10.5211 18.2449 10.6793Z\" fill=\"black\"/></svg>"
+  url = "https://www.youtube.com/channel/UCnd9q7iRNNw4W95eQwQuECA"
+  post = "v0.1.0"
+  weight = 30
+
+[[social]]
   name = "Reddit"
   pre = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-message-circle\"><path d=\"M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z\"></path></svg>"
   url = "https://www.reddit.com/r/kerberos_io/"
@@ -67,12 +74,12 @@
 
 [[footer]]
   name = "Agent"
-  url = "https://kerberos.io/product/open-source/"
+  url = "https://kerberos.io/product/agent/"
   weight = 10
 
 [[footer]]
   name = "Factory"
-  url = "https://kerberos.io/product/enterprise-agent/"
+  url = "https://kerberos.io/product/factory/"
   weight = 11
 
 [[footer]]
