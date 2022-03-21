@@ -72,9 +72,27 @@ If you wish to use the Raspberry Pi Camera Module, make sure [to enable it](http
 sudo raspi-config
 ```
 
+Add the libopenmaxil library path to the shared libraries.
+
+```ts
+sudo nano /etc/ld.so.conf
+```
+
+Copy and paste the following path in a new line.
+
+```ts
+/opt/vc/lib
+```
+
+Update the library cache.
+
+```ts
+sudo ldconfig
+```
+
 Enable machinery to start on boot, and start the service.
 
-```
+```ts
 sudo systemctl enable kerberosio
 sudo service kerberosio start
 ```
@@ -83,9 +101,13 @@ sudo service kerberosio start
 
 Before you can run the web interface, you'll need to download and configure a webserver. We recommend to use Nginx, as it is a light-weight and fast webserver. The web interface is written in PHP, so we also need to download PHP and some packages. Update the packages and kernel.
 
-Install Nginx and PHP (+extensions).
+Install Nginx and PHP 7.1 (+extensions). It is required to add another repository to download PHP 7.1.
 
 ```ts
+sudo apt -y install lsb-release apt-transport-https ca-certificates
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list
+sudo apt update
 sudo apt-get install -y nginx php7.1 php7.1-curl php7.1-gd php7.1-fpm php7.1-cli php7.1-opcache php7.1-mbstring php7.1-xml php7.1-zip php7.1-mcrypt php7.1-readline
 ```
 
