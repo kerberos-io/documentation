@@ -39,7 +39,6 @@ By creating the configmap, the file contents of your `ca-certificates.crt` will 
 
 To inject your certificates file into your Kerberos Agents, you'll need to make Kerberos Factory aware of the configmap `rootcerts` that holds the certificate file. Go to your relevant `deployment.yaml` file and specify the name of your configmap in `CERTIFICATES_CONFIGMAP` variable. 
 
-
     - name: CERTIFICATES_CONFIGMAP
       value: "rootcerts" 
 
