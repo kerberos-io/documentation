@@ -60,9 +60,19 @@ The cameras section will list all the Kerberos Agents (running as deployments) t
 
 ### Adding a new deployment
 
-By specifying a name for your Kerberos Agent, and it's corresponding RTSP url, a new Kubernetes deployment will be created for you, and a Kuebrnetes pod will be deployed to one of your installed nodes.
+By specifying a name for your Kerberos Agent, and it's corresponding RTSP url, a new Kubernetes deployment will be created for you, and a Kubernetes pod will be deployed to one of your installed nodes.
 
 {{< figure src="add-kerberos-agent.gif" alt="Deploy a single Kerberos Agent or in bulk." caption="Deploy a single Kerberos Agent or in bulk." class="stretch">}}
+
+#### Adding through ONVIF
+
+Instead of creating a new Kerberos Agent through a RTSP stream, you can discover streams through ONVIF, and enable additional features through ONVIF such as PTZ. Enable the ONVIF toggle, and type in the IP address, ONVIF username and ONVIF password. Click the verify connection, and select an RTSP stream from the profile list. 
+
+{{< figure src="add-through-onvif.gif" alt="Deploy a Kerberos Agent with ONVIF capabilities." caption="Deploy a Kerberos Agent with ONVIF capabilities." class="stretch">}}
+
+Once the Kerberos Agent is added, PTZ and other ONVIF capabilities will be enabled through Kerberos Hub.
+
+{{< figure src="ptz-onvif.gif" alt="Moving a camera through ONVIF PTZ." caption="Moving a camera through ONVIF PTZ." class="stretch">}}
 
 ### Configuring a deployment
 
