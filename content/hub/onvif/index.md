@@ -30,4 +30,3 @@ When browsing to the livestream page of a specific camera or groups of camera, y
 ![PTZ on Kerberos Hub](ptz.gif)
 
 A couple of more features will be added shortly and are scheduled on our roadmap: such as Zoom out and Zoom in control, and the ability to set/get presets PTZ positions.
-
