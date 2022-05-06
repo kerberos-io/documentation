@@ -33,7 +33,7 @@ Install Kerberos Vault on a Kubernetes Service Provider by [following this step-
 
 No need to install Kerberos Factory on a Kubernetes Service Provider, it can be installed on your own Kubernetes cluster in your private cloud, or at the edge. The closer you bring Kerberos Vault to your video streams, and Kerberos Agents, the more benefits you will experience (low latency, low bandwidth, etc).
 
-In contradiction to the Kubernetes Service Provider, there will be more work required. Setting up a Kubernetes Cluster, configure a load balancer, create persistent bolumes and claims.
+In contradiction to the Kubernetes Service Provider, there will be more work required. Setting up a Kubernetes Cluster, configure a load balancer, create persistent volumes and claims.
 
 Install Kerberos Factory on a private cloud or at the edge by [following this step-by-step installation guide](/factory/installation-edge).
 
