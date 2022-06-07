@@ -80,7 +80,7 @@ To make this work an additional `volumeMount` has to be created and relevant PVC
 
 ## Custom email templates
 
-Within the Kerberos Hub application different events and notifications are send; for example below email. Notifications are send upon different events such as sccount creation, forgot password, event detection (object found in a region or crossing a counting line), etc.
+Within the Kerberos Hub application different events and notifications are send; for example below email. Notifications are send upon different events such as account creation, forgot password, event detection (object found in a region or crossing a counting line), etc.
 
 ![Email example](./email-example.png).
 
