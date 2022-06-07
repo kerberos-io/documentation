@@ -41,13 +41,13 @@ To share the PVC, you need to make a few changes in the Kerberos Hub Helm chart 
 
 If all set, commit your changes by doing an `helm install` or `helm upgrade`.
 
-## Add custom logo
+## Custom logo
 
 Similar to **overriding the Kerberos Hub styling** you can inject your own company logo as well. This logo will be used on the login page and sidebar once signed in. Make sure to name your company logo as following, `logo-sidebar.svg`. 
 
 To inject your logo, upload it into the same PV as you used for the custom styling.
 
-## Add custom icons
+## Custom icons
 
 If you do not like the icons we are using, you can also modify those by injecting your own SVG icon library. An example of the icon library can be found here: [icon.js](https://github.com/kerberos-io/hub/blob/master/custom-layout/icons.js).
 
@@ -72,9 +72,65 @@ Make sure you are using SVG icons, we do not support other formats at the moment
 
     ...
 
-## Add custom favicons
+## Custom favicons
 
 Favicons are injected into the container just like the custom stylesheet, logo and icons. The only difference is that they are not stored in the `custom` directory, but are stored in the `favicons` directory. An example of the [favicons content can be found here](https://github.com/kerberos-io/hub/tree/master/custom-layout/favicons).
 
 To make this work an additional `volumeMount` has to be created and relevant PVC. Once you've done that you will see your own favicons appear.
 
+## Custom email templates
+
+Within the Kerberos Hub application different events and notifications are send; for example below email. Notifications are send upon different events such as sccount creation, forgot password, event detection (object found in a region or crossing a counting line), etc.
+
+![Email example](./email-example.png).
+
+As Kerberos Hub can be whitelabeled, you can bring your own email templates and styled them similar to the Kerberos Hub interface. By doing so you will have an uniqiue styling for the entire Kerberos Hub application.
+
+Within Kerberos Hub we use a couple of different [email templates](https://github.com/kerberos-io/hub/tree/master/custom-layout/templates), which are used in different scenarios (as described above). For each template there is a `.txt` and `.html` which respectively provides the email in a text-only mode and for the latter a designed email that the email client is able to render.
+
+Email templates are injected into the container just like the custom stylesheet, logo and icons. The only difference is that they are not stored in the `custom` directory, but are stored in the `templates` directory. An example of the [email templates can be found here](https://github.com/kerberos-io/hub/tree/master/custom-layout/templates).
+
+To make this work an additional `volumeMount` has to be created and relevant PVC. The `volumeMount` needs to be pointed to `/mail/templates`. Once you've done that you will see your own email templates appear.
+
+To activate and inject your email templates, make sure to uncomment the `volumes` and `volumeMounts` in the `values.yaml` inside the `kerberoshub.api`, `kerberospipeline.notify` and `kerberospipeline.notifyTest`.
+
+    kerberoshub:
+        api:
+            ...
+            schema: "https"
+            url: "api.yourdomain.com"
+
+            # E-mail templates
+            volumeMounts:
+              - name: custom-email-templates
+                mountPath: /mail
+            volumes:
+              - name: custom-email-templates
+                persistentVolumeClaim:
+                  claimName: custom-layout-claim
+    kerberospipeline:
+        ...
+        notify: 
+            repository: registry.gitlab.com/kerberos-io/kcloud-notify-queue
+            pullPolicy: IfNotPresent
+            tag: "1.0.2552864490"
+            # E-mail templates
+            volumeMounts:
+            - name: custom-email-templates
+                mountPath: /mail
+            volumes:
+            - name: custom-email-templates
+                persistentVolumeClaim:
+                claimName: custom-layout-claim
+        notifyTest:
+            repository: registry.gitlab.com/kerberos-io/kcloud-notify-test-queue
+            pullPolicy: IfNotPresent
+            tag: "1.0.2552881172"
+            # E-mail templates
+            volumeMounts:
+            - name: custom-email-templates
+                mountPath: /mail
+            volumes:
+            - name: custom-email-templates
+                persistentVolumeClaim:
+                claimName: custom-layout-claim
