@@ -27,7 +27,7 @@ The most common scenario is to install your Kerberos Agents at the edge. This ha
 
 ### Less than 5 cameras streams
 
-If you have a limited number of cameras streams you would like to monitor, and don't have any high availability or scaling requirements, then multiple Kerberos Agents are a good choice. For example, you can install the Kerberos Agent on a Raspberry Pi, by using [KiOS](/opensource/installation#kios), [Raspbian OS](/opensource/installation-advanced#raspbian) or compile it from source.
+When having limited number of cameras streams, and there is no need for any high availability or scaling, then multiple individual Kerberos Agents are a good choice. For example, you can install the Kerberos Agent on a Raspberry Pi, by using [KiOS](/opensource/installation#kios), [Raspbian OS](/opensource/installation-advanced#raspbian) or compile it from source.
 
 On below architecture, a couple of Kerberos Agents are installed at the edge (inside the local network). A Kerberos Agent is installed for each camera stream, and each Kerberos Agent runs on a separate host (Raspberry Pi, VM, etc). The front-end of the Kerberos Agents can be reached from the internal network, but cannot be accessed from the internet.
 
@@ -43,6 +43,6 @@ Running your Kerberos Agents inside Docker containers, allows you to process mul
 
 Having more camera streams and Kerberos Agents will become a bit tedious to manage, and you might start looking for other solutions in terms of scaling and also storage.
 
-When having more than 5 [Kerberos Agents](/opensource/first-things-first/), the Kerberos Enterprise Suite starts to become interesting. While building on Kubernetes, your Kerberos Agents will be scheduled and deployed more easily through [Kerberos Factory](/factory/first-things-first/). Your recordings will be stored centrally using [Kerberos Vault](/vault/first-things-first/), and you will be able to review every thing from within a single pane of glass with [Kerberos Hub](/hub/first-things-first/).
+When having more than 5 [Kerberos Agents](/opensource/first-things-first/), the Kerberos Enterprise Suite starts to become interesting. While building on Kubernetes, your Kerberos Agents will be scheduled and deployed more easily through [Kerberos Factory](/factory/first-things-first/). Your recordings will be stored centrally using [Kerberos Vault](/vault/first-things-first/), and you will be able to review everything from within a single pane of glass with [Kerberos Hub](/hub/first-things-first/).
 
 {{< figure src="kerberos-enterprise-suite.svg" alt="When you start having bigger deployments it's recommended to go with a Kubernetes approach." caption="When you start having bigger deployments it's recommended to go with a Kubernetes approach." class="stretch">}}

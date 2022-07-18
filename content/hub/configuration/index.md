@@ -79,11 +79,31 @@ Please note that when you are using the Kerberos Hub Saas offering you will need
 
 ## Integrations
 
-You got your accounts setup, sites and groups created and last but not least some Kerberos Agents connected to your Kerberos Hub.
+You got your accounts setup, sites and groups created and last but not least, one or more Kerberos Agents connected to your Kerberos Hub.
 
-Now it is time to configure some integrations using alerts and channels. The idea of integrations is that you can send messages to other third-party solutions on your own APIs, when an important/interesting event occurred.
+Now it is time to configure some integrations using alerts and channels. The idea of integrations is that you can send messages to other 3rd-party services, or your own APIs, when an interesting event/alert occurred.
 
 {{< figure src="hub-alerts.gif" alt="Get your credentials to link your Kerberos Agents." caption="Get your credentials to link your Kerberos Agents." class="stretch">}}
+
+### Alerts
+
+Alerts can be configured to trigger one or more channels on a specific events. Generic or customer alerts can be configured to meet specific requirements and behaviours. A more indepth configuration of both generic and customer alerts are explained below.
+
+![Configuring alerts](hub-customalerts.png)
+
+#### Generic Alerts
+
+Generic alerts (legacy) are the first alerts created in Kerberos Hub. Three different alerts can be configured:
+
+![Configuring alerts](hub-alerts.gif)
+
+- **Detections**: send a notification if a recording was received from a specific Kerberos agent, within a time range, with a specific classification, etc.
+- **Devices**: when one of your Kerberos Agents stops working, a notification will be sent.
+- **High upload**: when a lot of recordings are generated within a specific period of time, a notification can be send.
+
+#### Custom Alerts
+
+To be written
 
 ### Channels
 

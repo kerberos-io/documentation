@@ -13,7 +13,7 @@ weight: 100
 toc: true
 ---
 
-The **Kerberos.io** project, pronounced as `/kuh buh ruhs dot ai o/`, is a video analytics and video management platform, which was initiated back in 2014. Over the years it has evolved into a stable and feature-rich video platform, which is used for management and analytics such as machine learning.
+The **Kerberos.io** project, pronounced as `/kuh buh ruhs dot ai o/`, is a video analytics and video management platform, which was initiated back in 2014. Over the years it has evolved into a stable and feature-rich video platform, which is used for video management and analytics such as machine learning.
 
 [![An Introduction to Kerberos.io](youtube-introduction-kerberosio.png)](http://www.youtube.com/watch?v=LjCaMMKJCGc "An Introduction to Kerberos.io")
 

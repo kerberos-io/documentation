@@ -47,11 +47,11 @@ Next to showing your recordings in a single overview, we provide the capability 
 
 ## Machine learning
 
-Machine learning is a crucial part of the Kerberos Enterprise Suite. From Kerberos Vault and Kerberos Hub, you can trigger different machine learning models, and even bring your own.
+Machine learning is a crucial part of the Kerberos Enterprise Suite. From Kerberos Hub and Kerberos vault, you can trigger different machine learning models, and even bring your own.
 
-An out-of-the-box machine learning model that we apply is the YOLOv3 classification. All recordings being uploaded to Kerberos Vault will be interfered by the model, and have a prediction and metadata as a result. That information is stored into the Kerberos Hub application, and is used for features such as advanced search and notifications.
+An out-of-the-box machine learning model that we apply is the YOLOv3 classification, which is part of the Kerberos Hub pipeline; read more about it at the [Github repo](https://github.com/kerberos-io/hub-objecttracker). All recordings being uploaded to Kerberos Vault will be interfered by the model, and have a prediction and metadata as a result. That information is stored into the Kerberos Hub application, and is used for features such as advanced search and notifications.
 
-Next to classifying and predicting objects, the model is also tracing the classified objects. By doing this we can label the recording with the object of interest.
+Next to classifying and predicting objects, the model is also tracing the classified objects. By doing this we can label the recording with the object of interest. More information about the analytical capabilities of Kerberos Hub can be [found on the analytics page](/hub/analytics).
 
 {{< figure src="hub-ml.gif" alt="The media page gives you an overview of all your recordings." caption="The media page gives you an overview of all your recordings." class="stretch">}}
 
@@ -61,13 +61,25 @@ When a specific event occurred, a notification can be send to one or more channe
 
 ### Alerts
 
-Kerberos Hub supports different types of alerts:
+Kerberos Hub supports different types of alerts: generic alerts (1st generation) and customer alerts (2nd generation).
+
+#### Generic alerts
+
+Generic alerts are the first generation alerts we have in Kerberos Hub, they are less flexible then custom alerts and can only be configured once for the entire account. If you require the need to configure multiple alerts then customer alerts will be a better choice.
 
 - **Detections**: send a notification if a recording was received from a specific Kerberos agent, within a time range, with a specific classification, etc.
 - **Devices**: when one of your Kerberos Agents stops working, a notification will be sent.
 - **High upload**: when a lot of recordings are generated within a specific period of time, a notification can be send.
 
 {{< figure src="hub-alerts.gif" alt="Configure specific scenarios to trigger alerts." caption="Configure specific scenarios to trigger alerts." class="stretch">}}
+
+#### Custom alerts
+
+Custom alerts are the second generation alerts, and are designed to create multiple and different alerts to match different usecases. Custom alerts provide you with more capabilities then the generic alerts, such as counting lines and regions of interests.
+
+As of this moment custom alerts are only available for detections, and not devices or high upload notifications (this is [on our roadmap](https://github.com/kerberos-io/roadmap/projects/2)).
+
+![Setting up custom alerts](hub-customalerts.png)
 
 ### Channels
 
