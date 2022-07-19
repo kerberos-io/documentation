@@ -111,9 +111,7 @@ To activate and inject your email templates, make sure to uncomment the `volumes
     kerberospipeline:
         ...
         notify: 
-            repository: registry.gitlab.com/kerberos-io/kcloud-notify-queue
-            pullPolicy: IfNotPresent
-            tag: "1.0.2552864490"
+            ...
             # E-mail templates
             volumeMounts:
             - name: custom-email-templates
@@ -123,9 +121,7 @@ To activate and inject your email templates, make sure to uncomment the `volumes
                 persistentVolumeClaim:
                 claimName: custom-layout-claim
         notifyTest:
-            repository: registry.gitlab.com/kerberos-io/kcloud-notify-test-queue
-            pullPolicy: IfNotPresent
-            tag: "1.0.2552881172"
+            ...
             # E-mail templates
             volumeMounts:
             - name: custom-email-templates
