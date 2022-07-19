@@ -13,7 +13,7 @@ weight: 301
 toc: true
 ---
 
-Welcome to our family! This page will explain and showcase how to connect and configure the Kerberos Enterprise Suite. We will go through some configuration steps so your data will flow from your Kerberos Agents in Kerberos Factory to Kerberos Vault to Kerberos Hub. Let's go.
+Welcome to our family! This page will explain and showcase how to connect and configure the Kerberos Enterprise Suite. We will go through some configuration steps, so your data will flow from your Kerberos Factory and Kerberos Agents to Kerberos Vault to Kerberos Hub. What are we waiting for, let's go.
 
 ## Prerequisites
 
@@ -31,9 +31,11 @@ Once recordings are entering in the underlaying central storage an event is send
 
 Once done navigating through the different microservices the recording will become available in Kerberos Hub. Within Kerberos Hub you will able to view livestreams from your Kerberos Agents, create alerts and more.
 
-![Kerberos Enterprise Suite](./enterprise.png)
+![Kerberos Enterprise Suite](./kerberos-enterprise-architecture.svg)
 
 ## Kerberos Hub
+
+Ok let's start! Before we can continue we will need to gather some information, which we will use in the next sections to configure and setup the different solutions and integrations properly.
 
 Once you have your Kerberos Hub installed, or you have purchased a subscription on our Kerberos Hub SAAS, you will need following information: 
 
@@ -47,6 +49,8 @@ You will find those details on the `Plans & Integrations` page of your Kerberos 
 ![Public key](./publickey.png)
 
 Next to the Kerberos Hub information we will also need details from other components that make up the Kerberos Enterprise Suite. We will need credentials from our MQTT broker, TURN server and Kafka broker. While moving forward we will configure Kerberos Vault and our Kerberos Factory and Kerberos Agents. We will come back at our Kerberos Hub application for a last minimal configuration step, but let's move forward for now.
+
+![Kerberos Hub and components](./kerberos-hub-architecture-with-comp.svg)
 
 ### MQTT
 
@@ -106,6 +110,8 @@ If you are running a private edition of Kerberos Hub managed by the Kerberos.io 
 
 Once we have above information we can start by setting up our Kerberos Vault, create storage provider and create an integration with our Kerberos Hub.
 
+![Kerberos Vault and components](./kerberos-vault-architecture.svg)
+
 ### Storage Provider 
 
 Before starting you should have made a decision where you want to have your recordings stored. At the moment of writing we are supporting all S3 compliant providers such as: S3, Minio, Storj, Ceph, etc and Google Cloud Storage as well. To get a better understanding of how to setup and configure your storage provider [have a look at our providers page in the Kerberos Vault section](/vault/providers).
@@ -148,6 +154,8 @@ We are done here, you know have setup your Kerberos Vault and linked it to Kerbe
 ## Kerberos Factory
 
 Yes, we are ready to hook up our Kerberos Factory and Kerberos Agents to Kerberos Vault and Kerberos Hub, so finally we are able to view some recordings. Let's get started.
+
+![Kerberos Factory and components](./kerberos-factory-architecture.svg)
 
  When running the stand-alone agent go to the settings page of your Kerberos Agent, when running Kerberos Factory go to your Kerberos Factory portal and navigate to the Global settings. We will focus on Kerberos Factory for now as Kerberos Agent is similar but easier.
 
@@ -200,6 +208,8 @@ Hurray, we're almost ready. You should now see recordings popping up in your sto
 ![Kerberos Agents connected to Kerberos Hub](./hub-cameras.png)
 
 Before closing, this a last configuration is required in Kerberos Hub. At this stage everything is connected integrated, expect Kerberos Hub and Kerberos Vault. We have added an integration from Kerberos Vault to Kerberos Hub, but not from Kerberos Hub to Kerberos Vault.
+
+![Kerberos Enterprise Suite](./kerberos-enterprise-architecture.svg)
 
 You might wonder why? Well, next to sending a message from Kerberos Vault to Kerberos Hub to announce a new recording was stored, Kerberos Hub also need to permissions to visualises recordings managed by Kerberos Vault. Without these credentials Kerberos Hub will not be able to show any recording, and any microservices included in Kerberos Hub will be able to access the recordings. The main reason for this is security.
 
