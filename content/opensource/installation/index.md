@@ -146,7 +146,7 @@ When you pulled succesfully you can run your first Kerberos container as followi
 docker run --name camera1 -p 80:80 -p 8889:8889 -d kerberos/kerberos
 ```
 
-To add more containers, you can change the name parameter and assign another port to expose the web interface and livestream (ports are unique on a OS).
+To add more containers to run more cameras, you can change the name parameter and assign another port to expose the web interface and livestream (ports are unique on a OS).
 
 ```ts
 docker run --name camera2 -p 81:80 -p 8890:8889 -d kerberos/kerberos
@@ -159,6 +159,9 @@ http://localhost:80
 http://localhost:81
 http://localhost:82
 ```
+
+By default the new container username is root, and the password is root. You will not be presented with the default welcome landing page when you set up your first container. Change the login credentials immediately from the default values.
+
 
 ### Volumes
 
