@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:18
 
 ENV NODE_ENV=production
 RUN yarn global add bower gulp
