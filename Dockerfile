@@ -1,8 +1,8 @@
-FROM node:18
+FROM node:10.22.1
 
 ENV NODE_ENV=production
-RUN yarn global add bower gulp rimraf
 
+# Build the documentation website
 RUN mkdir -p /app
 WORKDIR /app
 ADD . /app
