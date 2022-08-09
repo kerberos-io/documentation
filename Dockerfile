@@ -1,10 +1,13 @@
-FROM node:10.22.1
-
+FROM node:15
 ENV NODE_ENV=production
 
 # Install dependencies
-RUN apt update -y &&  apt-get install -y hugo
+RUN apt update -y
 RUN yarn global add bower gulp rimraf
+RUN wget https://github.com/gohugoio/hugo/releases/download/v0.101.0/hugo_0.101.0_Linux-64bit.deb && \
+    dpkg -i hugo_0.101.0_Linux-64bit.deb && \
+    apt-get install -f && \
+    hugo version
 
 # Build the documentation website
 RUN mkdir -p /app
