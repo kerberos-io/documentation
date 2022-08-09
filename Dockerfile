@@ -1,7 +1,7 @@
 FROM node:18
 
 ENV NODE_ENV=production
-RUN yarn global add bower gulp
+RUN yarn global add bower gulp rimraf
 
 RUN mkdir -p /app
 WORKDIR /app
