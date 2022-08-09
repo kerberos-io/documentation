@@ -4,8 +4,8 @@ ENV NODE_ENV=production
 # Install dependencies
 RUN apt update -y
 RUN yarn global add bower gulp rimraf
-RUN wget https://github.com/gohugoio/hugo/releases/download/v0.78.0/hugo_0.78.0_Linux-64bit.deb && \
-    dpkg -i hugo_0.78.0_Linux-64bit.deb && \
+RUN wget https://github.com/gohugoio/hugo/releases/download/v0.81.0/hugo_0.81.0_Linux-64bit.deb && \
+    dpkg -i hugo_0.81.0_Linux-64bit.deb && \
     apt-get install -f && \
     hugo version
 
