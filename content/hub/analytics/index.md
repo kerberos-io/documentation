@@ -49,21 +49,25 @@ The classification service executes a YOLOv3 algorithm on the recorded media. Mo
 
 The GPU workload is not available in the Kerberos Hub pipeline by default, and requires to be installed seperately. More information about the installation of the `hub-objecttracker` can be found on our [Github page](https://github.com/kerberos-io/hub-objecttracker).
 
+![Analytics in Hub](analytics-media.png)
+
 ### Heatmap
 
 The detected objects are displayed on a canvas when drilling down to the media page. On top of that a heatmap is shown which visualises the occurence of objects using a colormap.
 
-![Counted some pedestrians](counting.png)
+![Counted some pedestrians](heatmap.png)
 
 ### Counting 
 
 The results of the object detection are passed to the counting service. Objects moving over a distance and crossing a line segment (defined in an alert) are counted.
 
+![Counted some pedestrians](counting.png)
+
 ### Region detection
 
 One or more regions can be specified. Objects of interest moving in a region will trigger
 
-![Counted some pedestrians](counting.png)
+![Regions detected](region.png)
 
 ## Analytics overview page
 
