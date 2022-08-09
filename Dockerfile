@@ -2,6 +2,10 @@ FROM node:10.22.1
 
 ENV NODE_ENV=production
 
+# Install dependencies
+RUN apt update -y &&  apt-get install -y hugo
+RUN yarn global add bower gulp rimraf
+
 # Build the documentation website
 RUN mkdir -p /app
 WORKDIR /app
