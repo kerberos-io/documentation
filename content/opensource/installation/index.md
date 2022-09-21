@@ -162,7 +162,7 @@ http://localhost:82
 
 ### Volumes
 
-Instead of just running the Kerberos container, you can also persist your configuration by assigning volumes. An example of mounting volumes looks like this; an overview of [the different volumes can be found here](https://github.com/kerberos-io/docker/blob/master/Dockerfile#L171-L177).
+Instead of just running the Kerberos container, you can also persist your configuration by assigning volumes. An example of mounting volumes looks like this; an overview of [the different volumes can be found here](https://github.com/kerberos-io/kerberos-docker/blob/master/Dockerfile#L189-L194).
 
 - preload configuration,
 - or centralise the images/videos on your working station.
