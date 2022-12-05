@@ -25,7 +25,7 @@ When running a managed Kubernetes cluster, such as [GKE](https://cloud.google.co
 
 Installing Kerberos Factory in a managed Kubernetes cluster (Azure, GCP, AWS) is straight forward, as you create Kubernetes clusters in a few clicks, get access to public load balancers, volumes and more. Running Kerberos Factory in a managed Kubernetes cluster is just a matter of copy-pasting some configuration (yaml) files, and execution of `kubectl apply` commands.
 
-Install Kerberos Factory in a managed Kubernetes cluster by [following this step-by-step installation guide](https://github.com/kerberos-io/factory/tree/master/kubernetes#b-managed-kubernetes-1).
+> Install Kerberos Factory in a managed Kubernetes cluster by [following this step-by-step installation guide](https://github.com/kerberos-io/factory/tree/master/kubernetes#b-managed-kubernetes-1).
 
 {{< figure src="factory-cloud.svg" alt="Kerberos Factory managed cluster" caption="Kerberos Factory managed cluster" class="stretch">}}
 
@@ -35,6 +35,6 @@ No need to install Kerberos Factory on a Kubernetes Service Provider, it can be 
 
 In contradiction to the Kubernetes Service Provider, there will be more work required. Setting up a Kubernetes Cluster, configure a load balancer, create persistent bolumes and claims.
 
-Install Kerberos Factory on a private cloud or at the edge by [following this step-by-step installation guide](https://github.com/kerberos-io/factory/tree/master/kubernetes#a-self-hosted-kubernetes-1).
+> Install Kerberos Factory on a private cloud or at the edge by [following this step-by-step installation guide](https://github.com/kerberos-io/factory/tree/master/kubernetes#a-self-hosted-kubernetes-1).
 
 {{< figure src="factory-edge.svg" alt="Kerberos Factory self-hosted cluster" caption="Kerberos Factory self-hosted cluster" class="stretch">}}
