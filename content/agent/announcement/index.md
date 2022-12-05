@@ -43,11 +43,6 @@ The Kerberos Agent which is currently part of the Kerberos Enterprise Suite will
 
 The Kerberos Agent will be used both in the open source as the B2B communities. Other solutions such as Factory, Vault and Hub will be made available through different licensing.
 
-### 4. When are we going to be able to install the first version?
-
-We plan to ship the **first version by the end of Q1**, afterwards we will add more and more features as usual.
-
-
-### 5. Change in License
+### 4. Change in License
 
 Kerberos Agent is now available under the MIT license.
