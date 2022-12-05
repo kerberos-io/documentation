@@ -41,7 +41,7 @@ Kerberos.io is a video analytics and monitoring platform, that is focussing on b
 
 {{< figure src="kerberos-agent-edge.svg" alt="A Kerberos Agent is monitoring a single camera stream." caption="A Kerberos Agent is monitoring a single camera stream." class="stretch">}}
 
-With Kerberos.io you start small with one or more [Kerberos Agents](/opensource/first-things-first/), and grow over time while introducing more and more components like [Kerberos Factory](/factory/first-things-first/), [Kerberos Vault](/vault/first-things-first/) and [Kerberos Hub](/hub/first-things-first/), which is also referred to as the [Kerberos Enterprise Suite](/enterprise/first-things-first/). Kerberos.io is shipped through the concept of container technology such as Docker and Kubernetes, and implements the ideas of bring your own cloud, bring your own storage and bring your own technology.
+With Kerberos.io you start small with one or more [Kerberos Agents](/agent/first-things-first/), and grow over time while introducing more and more components like [Kerberos Factory](/factory/first-things-first/), [Kerberos Vault](/vault/first-things-first/) and [Kerberos Hub](/hub/first-things-first/), which is also referred to as the [Kerberos Enterprise Suite](/enterprise/first-things-first/). Kerberos.io is shipped through the concept of container technology such as Docker and Kubernetes, and implements the ideas of bring your own cloud, bring your own storage and bring your own technology.
 
 {{< figure src="./kerberos-global.svg" alt="A scalable video platform for an ever-growing video landscape." caption="A scalable video platform for an ever-growing video landscape." class="stretch">}}
 

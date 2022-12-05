@@ -21,8 +21,6 @@ The steps we have to go through to get a functional Kerberos Vault are as follow
 2. implement and configure one or more integrations,
 3. create an account, so Kerberos Vault can be consumed.
 
--- TODO show an image illustrating what has to be done.
-
 ## 1. Providers
 
 Storage providers are the foundation of Kerberos Vault. As an administrator you bring your own cloud or edge storage, so there is no need to install a specific Kerberos Vault storage, we are open and integrate with others.

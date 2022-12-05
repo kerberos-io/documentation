@@ -13,6 +13,8 @@ weight: 201
 toc: true
 ---
 
+***Kerberos Open Source is deprecated, please [use Kerberos Agent](/agent/first-things-first) instead.***
+
 Kerberos started as an Open Source project back in 2014. Our main goal was, and still is, to provide everyone in this world with a free, professional and complete video surveillance system, which they can install in a couple of minutes.
 Kerberos was initially developed for the Raspberry Pi, due to this many of the tools we have been using are lightweight and fast (such as C++). Over the years we have found other ways to make Kerberos available, such as KiOS (our custom Linux), Docker and Kubernetes.
 

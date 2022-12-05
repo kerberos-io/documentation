@@ -4,42 +4,41 @@
   identifier = "prologue"
   url = "/prologue/"
 
-[[opensource]]
-  name = "Opensource"
-  weight = 11
-  identifier = "opensource"
-  url = "/opensource/"
-
 [[agent]]
   name = "Agent"
-  weight = 12
+  weight = 11
   identifier = "agent"
   url = "/agent/"
 
 [[enterprise]]
   name = "Enterprise"
-  weight = 13
+  weight = 12
   identifier = "enterprise"
   url = "/enterprise/"
 
-
 [[factory]]
   name = "Factory"
-  weight = 14
+  weight = 13
   identifier = "factory"
   url = "/factory/"
 
 [[vault]]
   name = "Vault"
-  weight = 15
+  weight = 14
   identifier = "vault"
   url = "/vault/"
 
 [[hub]]
   name = "Hub"
-  weight = 16
+  weight = 15
   identifier = "hub"
   url = "/hub/"
+
+[[opensource]]
+  name = "Open Source (deprecated)"
+  weight = 16
+  identifier = "opensource"
+  url = "/opensource/"
 
 [[main]]
   name = "Homepage"
