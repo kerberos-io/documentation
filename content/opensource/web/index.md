@@ -13,6 +13,8 @@ weight: 210
 toc: true
 ---
 
+**_Kerberos Open Source is deprecated, please [use Kerberos Agent](/agent/first-things-first) instead._**
+
 The web is responsible for the visualization. It's a GUI which helps the user to find activity at a specific period, configure the machinery, view a live stream, see system information and much more.
 
 It's written in PHP using the extremely popular PHP Framework Laravel, and Javascript using the client-side framework BackboneJS. We will discuss the different pages and functionality briefly. Please check out [the demo environment](https://demo.kerberos.io) if you want to see a real life example.
@@ -115,7 +117,7 @@ All endpoints are prefixed with api/v[version]/, in which the last part defines 
 
 ```json
 {
-	"error": "API method does not exists"
+  "error": "API method does not exists"
 }
 ```
 
@@ -130,9 +132,10 @@ Below you'll find a list of all API methods which are available for version 1.
 Retrieve the name of your instance.
 
 **Response**
+
 ```json
 {
-	"name": "frontdoor"
+  "name": "frontdoor"
 }
 ```
 
@@ -143,16 +146,18 @@ Retrieve the name of your instance.
 Change the name of your instance.
 
 **Payload**
+
 ```json
 {
-	"name": "frontdoor-changed"
+  "name": "frontdoor-changed"
 }
 ```
 
 **Response**
+
 ```json
 {
-	"name": "frontdoor-changed"
+  "name": "frontdoor-changed"
 }
 ```
 
@@ -163,24 +168,25 @@ Change the name of your instance.
 Retrieve the latest sequence detected.
 
 **Response**
+
 ```json
 [
-    {
-        time: "10:59:57",
-        src: "https://demo.kerberos.io/capture/1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
-        local_src: "/var/www/web/public/capture/1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
-        metadata: {
-            key: "1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
-            user: "1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
-            timestamp: 1501491597,
-            microseconds: "6-310145",
-            instanceName: "frontdoor",
-            regionCoordinates: "722-691-873-926",
-            numberOfChanges: "703",
-            token: "511"
-        },
-        type: "video"
-    }
+  {
+    "time": "10:59:57",
+    "src": "https://demo.kerberos.io/capture/1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
+    "local_src": "/var/www/web/public/capture/1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
+    "metadata": {
+      "key": "1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
+      "user": "1501491597_6-310145_frontdoor_722-691-873-926_703_511.mp4",
+      "timestamp": 1501491597,
+      "microseconds": "6-310145",
+      "instanceName": "frontdoor",
+      "regionCoordinates": "722-691-873-926",
+      "numberOfChanges": "703",
+      "token": "511"
+    },
+    "type": "video"
+  }
 ]
 ```
 
@@ -191,10 +197,11 @@ Retrieve the latest sequence detected.
 Check if enabled or disabled.
 
 **Response**
+
 ```json
 {
- 	"active": "true",
- 	"delay": "5000"
+  "active": "true",
+  "delay": "5000"
 }
 ```
 
@@ -205,17 +212,19 @@ Check if enabled or disabled.
 Activate or disable the system.
 
 **Payload**
+
 ```json
 {
- 	"active": "false"
+  "active": "false"
 }
 ```
 
 **Response**
+
 ```json
 {
- 	"active": "false",
- 	"delay": "5000"
+  "active": "false",
+  "delay": "5000"
 }
 ```
 
@@ -226,8 +235,9 @@ Activate or disable the system.
 Check if the machinery is running (the stream is connected).
 
 **Response**
+
 ```json
 {
- 	"status": "false"
+  "status": "false"
 }
 ```

@@ -13,6 +13,8 @@ weight: 206
 toc: true
 ---
 
+**_Kerberos Open Source is deprecated, please [use Kerberos Agent](/agent/first-things-first) instead._**
+
 ## Summary
 
 You are free to:

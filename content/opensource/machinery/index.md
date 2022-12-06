@@ -13,6 +13,8 @@ weight: 209
 toc: true
 ---
 
+**_Kerberos Open Source is deprecated, please [use Kerberos Agent](/agent/first-things-first) instead._**
+
 The machinery is the processing engine of Kerberos Open Source. It's an image processing framework, written in C++, who benefits from other third party libraries (OpenCV, etc). It takes images from the type of camera (USB-, IP- or RPi-camera) you've configured in the configuration files and executes one ore more algorithms and post-processes (e.g. save a snapshot). The configuration files allow you to define the type of camera, post-processes, conditions and much more; it's highly configurable. It's important to note that the machinery, out-of-the-box, can handle only one camera at a time.
 
 ## Project structure
@@ -56,6 +58,7 @@ These different steps can be configured by editing a couple of configurationn fi
 You can choose which capture device you will be using, you can use your old USB webcam, the popular Raspberry Pi camera or a state-of-the-art IP camera. The capture device will take pictures and deliver them to the algorithm if the conditions (the first step of the four passway) are valid.
 
 You can change the capture device by changing the `config/config.xml` file, and choose one of the following:
+
 - USBCamera
 - RaspiCamera
 - IPCamera
@@ -321,6 +324,7 @@ After the algorithm is executed, the expositor will determine, a region, where t
 An expositor receives a black and white image as parameter and should modify a JSON object with all the information it processed. The JSON object must include: the bounding rectangle(s) of the positions where the pixels of interest are located and the number of pixels of interest. But can also include other optional parameters.
 
 You can change the expositor by changing the `config/config.xml` file, and choose one of the following:
+
 - Hull
 - Rectangle
 
@@ -379,6 +383,7 @@ The parameters of the hull expositor can be found in the config/expositor.xml fi
 ```
 
 ##### Region
+
 The region parameter contains n values. Each value represents a coordinate (x,y) and are seperated by the "|" delimiter. These coordinates are used to calculate the concave hull. Pixels of interest that lie within the concave hull are valid pixels; if not they are invalid.
 
 ## Heuristic
@@ -386,6 +391,7 @@ The region parameter contains n values. Each value represents a coordinate (x,y)
 The heuristic is the last step in the four passway which will decide if the detection is valid or not. It will do this by using information from the previous steps (the expositor and the algorithm); e.g. number of changed pixels.
 
 You can change the heuristic by changing the `config/config.xml` file, and choose one of the following:
+
 - Sequence
 
 ```xml
@@ -445,6 +451,7 @@ If the heuristic determined that the evaluation was valid, one or more output op
 ```
 
 You can choose which output devices you will be using. If you select multiple outputs, seperate them with an `,`. You can change the output device by changing the `config/config.xml` file, and choose one of the following:
+
 - Disk
 - Video
 - GPIO
@@ -487,18 +494,23 @@ The directory where the image will be saved to. By default images are saved to t
 When this settings is set to true, the image is marked with a timestamp.
 
 ##### Timestamp color
+
 A color can be defined for timestamp: white, black, red, green and blue.
 
 ##### Privacy
-The privacy mode can be activated to remove some parts from the image. This especially helpful if you want to filter out public areas.  When this option is enabled you will seee that after configuring the Hull expositor, you'll see that the pixels outside your region of interest (Hull) are made black.
+
+The privacy mode can be activated to remove some parts from the image. This especially helpful if you want to filter out public areas. When this option is enabled you will seee that after configuring the Hull expositor, you'll see that the pixels outside your region of interest (Hull) are made black.
 
 ##### Throttler
+
 Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the Disk will only be triggered once in 5 seconds, nevertheless more detections occurred.
 
 ### Video
+
 When a valid event is detected, a video will be recorded for x seconds. When more valid events are detected, while a video is recording, the video file will further record for x seconds; so no new video file be recorded, but the existing one will be expanded.
 
 #### Parameters
+
 The parameters of the Video output device can be found in the `config/io.xml` file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 ```xml
@@ -522,45 +534,59 @@ The parameters of the Video output device can be found in the `config/io.xml` fi
 ```
 
 ##### FPS
+
 The frames per second of the video being recorded. Please note that this number is limited and depends heavily on your hardware setup. You'll be receiving following warning in the systems logs, if the machinery can't write the desired FPS.
 
 ```text
 [trivial] IoVideo: framerate is too fast, can't record video at this speed (8/FPS)
 ```
+
 ##### Record after
+
 The number of seconds recorded after the last valid event was detected. This means that when a video is already recording, and a valid event was detected, the video will be expanded with x more seconds.
 
 ##### Extensions
+
 The extension or container of the video file. We highly recommend to use the MP4 container if you want cross-browser support. Leave this setting by default, if you don't know what you're doing.
 
 ##### Codec
+
 The codec that is used to encode the video file.
 
 ##### File format
+
 The format that will be used for the name of the image. One or more variables can be defined and will be replaced by the machinery. Note that when you're using a variables name in the file format, that this name should be defined in the JSON object.
 
 ##### Directory
+
 The directory where the videos will be saved. By default videos are saved to the /etc/opt/kerberosio/capture directory.
 
 ##### Hardware directory
+
 When using onboard hardware encoding (e.g. with Raspberry Pi camera), h264 video files are generated and stored in this directory. Afterwards these h264 files will be containerized to mp4 files, and stored in the Directory path.
 
 ##### Enable Hardware encoding
+
 A boolean which can enable or disable hardware encoding. Please note that this option is enabled by default, but does not mean that it will work if you choose to use an USB camera.
 
 ##### Mark with timestamp
+
 When this settings is set to true, the video is marked with a timestamp (similar to the Disk device).
 
 ##### Timestamp color
+
 A color can be defined for timestamp: white, black, red, green and blue.
 
 ##### Privacy
+
 The privacy mode can be activated to remove some parts from the video. This especially helpful if you want to filter out public areas.
 
 ##### Video privacy
+
 After updating the configuration, you'll see that the pixels outside your region of interest (ROI) are made black; the image below illustrates this.
 
 ##### Throttler
+
 Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the Video will only be triggered once in 5 seconds, nevertheless more detections occurred.
 
 ### TCP/IP client
@@ -568,6 +594,7 @@ Control the number of executions by setting a throttling value. E.g. if you set 
 The TCP/IP client will send a TCP packet to a server.
 
 #### Parameters
+
 The parameters of the TCP/IP client can be found in the config/io.xml file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 ```xml
@@ -582,21 +609,27 @@ The parameters of the TCP/IP client can be found in the config/io.xml file, but 
 ```
 
 ##### Server
+
 The IP of the TCP server.
 
 ##### Port
+
 This is the port of the TCP server.
 
 ##### Message
+
 You can send some data to a TCP server.
 
 ##### Throttler
+
 Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the TCP will only be triggered once in 5 seconds, nevertheless more detections occurred.
 
 ### GPIO
+
 A GPIO pin can be set as output device.
 
 #### Parameters
+
 The parameters of the GPIO pin can be found in the `config/io.xml` file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 ```xml
@@ -611,23 +644,29 @@ The parameters of the GPIO pin can be found in the `config/io.xml` file, but you
 ```
 
 ##### Pin
+
 The pin that will be triggered.
 
 ##### Periods
+
 The number of times the pin will be triggered.
 
 ##### Period time
+
 The time in microseconds that the pin will be set high.
 
 ##### Throttler
+
 Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the GPIO will only be triggered once in 5 seconds, nevertheless more detections occurred.
 
-###  Webhook
+### Webhook
+
 Detailed information (a JSON object) is send as a POST request to a webhook. The JSON object contains the number of changes, the region, the URL of the image, etc. This is useful if you want to integrate with your own application.
 
 Make sure that the Webhook comes after the Disk device, otherwise the URL of the image is not included.
 
 #### Parameters
+
 The parameters of the webhook can be found in the config/io.xml file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 ```xml
@@ -640,12 +679,15 @@ The parameters of the webhook can be found in the config/io.xml file, but you ca
 ```
 
 ##### Url
+
 This is the URL, to which the machinery will send a JSON object (as a POST request).
 
 ##### Throttler
+
 Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the Webhook will only be triggered once in 5 seconds, nevertheless more detections occurred.
 
 ##### Output
+
 A JSON object is POSTed to the url you've defined.
 
 ```json
@@ -661,9 +703,11 @@ A JSON object is POSTed to the url you've defined.
 ```
 
 ### Script
+
 A bash script can be executed after a valid event was detected. A JSON object is send in the first parameter to the script you've defined.
 
 #### Parameters
+
 The parameters of the Script output device can be found in the config/io.xml file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 ```xml
@@ -676,12 +720,15 @@ The parameters of the Script output device can be found in the config/io.xml fil
 ```
 
 ##### Path
+
 The location of the script that will be executed on detection.
 
 ##### Throttler
+
 Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the Script will only be triggered once in 5 seconds, nevertheless more detections occurred.
 
 ##### Example
+
 By default the script will point to /etc/opt/kerberosio/scripts/run.sh, which contains a template how you should start your script. Note that when using KiOS, this script will be read-only, copy it to the /data folder and change the path parameter.
 
 ```python
@@ -706,10 +753,12 @@ The idea is that you can use Python in your bash script, to parse the JSON objec
 ```
 
 ### MQTT
+
 MQTT protocol is a light-weight Machine to Machine (M2M) protocol widely used in Internet of things.
 Detailed information (a JSON object) is published to an MQTT topic. The JSON object contains the number of changes, the region, the URL of the image, etc.
 
 #### Parameters
+
 The parameters of the MQTT output can be found in the config/io.xml file, but you can also use the web to modify the parameters. Below you see a default configuration file.
 
 ```xml
@@ -728,30 +777,39 @@ The parameters of the MQTT output can be found in the config/io.xml file, but yo
 ```
 
 ##### Secure
+
 If checked, enable SSL/TLS support. Please note that when SSL/TLS support is enabled, the server certificate issuer is verified against the CA (Certification Authority) files available in /etc/ssl/certs.
 
 ##### Verifycn
+
 If checked, the MQTT server FQDN or ip address must match the CN (Common Name) of the server certificate.
 
 ##### Server
+
 IP address or FQDN of the MQTT broker.
 
 ##### Port
+
 TCP port of the MQTT broker.
 
 ##### Topic
+
 The topic to publish to.
 
 ##### Username
+
 The username for authenticating to the MQTT broker. This is only supported by brokers that implement the MQTT spec v3.1. If username is not set (empty), the password argument is ignored. This is only needed if the MQTT broker is configured for authentication.
 
 ##### Password
+
 The password to use, together with the username, for authenticating to the MQTT broker. This is only supported by brokers that implement the MQTT spec v3.1. This is only needed if the MQTT broker is configured for authentication.
 
 ##### Throttler
+
 Control the number of executions by setting a throttling value. E.g. if you set throttling to 5, the MQTT will only be triggered once in 5 seconds, nevertheless more detections occurred.
 
 ##### Output
+
 A JSON object is published to the topic of the MQTT broker you have configured.
 
 ```json
@@ -767,6 +825,7 @@ A JSON object is published to the topic of the MQTT broker you have configured.
 ```
 
 ##### Example
+
 It is possible to subscribe multiple distributed IoT devices to the same MQTT topic and perform specific actions upon the detection of a motion. Devices with more resources could fetch the image to perform further elaboration.
 
 ## Streaming

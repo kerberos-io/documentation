@@ -13,6 +13,8 @@ weight: 202
 toc: true
 ---
 
+**_Kerberos Open Source is deprecated, please [use Kerberos Agent](/agent/first-things-first) instead._**
+
 Once you've installed Kerberos Open Source, you will have access to the web application. This web application allows you to administrate the machinery.
 
 ## Welcome page
@@ -60,7 +62,6 @@ Besides selecting the capture device, you will have different options to make th
 Storing your recordings on your device is fine, on the other hand you might want to make it available remotely. By giving your [Kerberos Hub](/hub/first-things-first) credentials in the storage section, your recordings will be synced to our cloud solution.
 
 {{< figure src="hub-connection.png" alt="The region of interest allows you to inspect a specific region of the camera." caption="The region of interest allows you to inspect a specific region of the camera." class="stretch">}}
-
 
 ## System
 

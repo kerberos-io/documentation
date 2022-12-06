@@ -13,14 +13,18 @@ weight: 203
 toc: true
 ---
 
-Kerberos Open Source comes with different installation flavours. So you might think, why?  The reason is simple, depending on the use case one option is better than another. A short list of recommendations:
+**_Kerberos Open Source is deprecated, please [use Kerberos Agent](/agent/first-things-first) instead._**
+
+Kerberos Open Source comes with different installation flavours. So you might think, why? The reason is simple, depending on the use case one option is better than another. A short list of recommendations:
 
 ### Plug and play
+
 1. [KiOS](/opensource/installation#kios): You have a Raspberry Pi, and you only want to run a Kerberos agent on it.
 2. [Docker](/opensource/installation#docker): You have a lot of IP cameras, and/or don't want to mess with dependencies.
 3. [Balena](/opensource/installation#balena): Runnning the Kerberos Docker container on top of Balena.
 
 ### Advanced
+
 4. [Raspbian](/opensource/installation-advanced#raspbian): You have a Raspberry Pi, but you want other services running next to the Kerberos agent.
 5. [Generic](/opensource/installation-advanced#generic): You want to develop/extend Kerberos with your own features, or you want to run a Kerberos agent on a not supported OS/architecure.
 
@@ -98,7 +102,6 @@ Once you've finished the installation using either the KiOS installer or Etcher,
 
 {{< figure src="dashboard.png" alt="After successful installation you should land on the starting page." caption="After successful installation you should land on the starting page." class="stretch">}}
 
-
 ### Access the Raspberry Pi
 
 You can access the KiOS system with attaching your Raspberry Pi to a HDMI monitor or by using `ssh`.
@@ -121,6 +124,7 @@ Note that by default no root password is set, you can define a password in the `
 A Docker image (amd64, armv7, arm64) is available on [the Docker hub](https://hub.docker.com/u/kerberos), which contains all the necessary software to setup the Kerberos agent in a matter of seconds. Before you can run this image, make sure you have Docker installed. Afterwards you can use Docker, to get the Kerberos agent up and running. All Docker images can be found on [the Docker hub](https://hub.docker.com/u/kerberos).
 
 This installation guide assumes you already have a good understanding of Docker. If you want to learn more about Kerberos.io on Docker, have a look at these tutorials.
+
 - [Kerberos.io — the road to Docker](https://medium.com/@cedricverst/kerberos-io-the-road-to-docker-8e048a480241)
 - [Kerberos.io on Docker](https://medium.com/@cedricverst/kerberos-io-on-docker-19b25fa7efd1)
 
@@ -154,6 +158,7 @@ docker run --name camera3 -p 82:80 -p 8891:8889 -d kerberos/kerberos
 ```
 
 When the containers are created, you can open your browser and browse to your different containers.
+
 ```ts
 http://localhost:80
 http://localhost:81
@@ -196,7 +201,6 @@ Before moving on, make sure you have registered on [Balena](https://www.balena.i
 After you signed up, you can create an application for a specific IoT board (e.g. Raspberry Pi 3). Once created you will be able to download the balena OS image, which you can flash to your SD card using [Etcher](https://www.balena.io/etcher/).
 
 {{< figure src="balena-create.png" alt="After signed up, create an application for your Kerberos Opensource agent." caption="After signed up, create an application for your Kerberos Opensource agent." class="stretch">}}
-
 
 ### 3. Connect
 

@@ -13,6 +13,8 @@ weight: 204
 toc: true
 ---
 
+**_Kerberos Open Source is deprecated, please [use Kerberos Agent](/agent/first-things-first) instead._**
+
 Following installation methods are only for advanced users, who need to have more control over the Kerberos Open Source environment.
 
 ## Raspbian
@@ -37,6 +39,7 @@ sudo apt-get update && sudo apt-get install -y ffmpeg
 ### Machinery
 
 Download the debian file from the machinery repository.
+
 > https://github.com/kerberos-io/machinery/releases
 
 A `.deb` file is available for every version of the Raspberry Pi. For example if you are using a Raspberry Pi 4 for version 2.8.0, execute following command. You can change the version and Raspberry Pi board to your needs.
@@ -81,7 +84,7 @@ sudo nano /etc/ld.so.conf
 Copy and paste the following path in a new line.
 
 ```ts
-/opt/vc/lib
+/opt/cv / lib;
 ```
 
 Update the library cache.

@@ -13,6 +13,8 @@ weight: 208
 toc: true
 ---
 
+**_Kerberos Open Source is deprecated, please [use Kerberos Agent](/agent/first-things-first) instead._**
+
 In this document we describe the different things you need to know if you would like to add a new feature to Kerberos Open Source, or change some of its behaviour for your own use case.
 
 Before starting, as you might have read already, you need to know that Kerberos Open Source consists of two solutions. A front-end, also called **web**, which allows you to review the recordings and to configure the back-end settings. A back-end, also called **machinery**, which is computer vision solution that processes the video stream of surveillance camera.
@@ -166,16 +168,16 @@ One thing you will need to do is to attach a type to a property. The type will b
 
 ```ts
 <algorithms>
-	<AnotherAlgorithm>
-		<parameter type="number">5</parameter>
-    </AnotherAlgorithm>
+  <AnotherAlgorithm>
+    <parameter type="number">5</parameter>
+  </AnotherAlgorithm>
 </algorithms>
 ```
 
 You can retrieve the parameter in the setup function with the settings parameter.
 
 ```ts
-settings.at("algorithms.AnotherAlgorithm.parameter")
+settings.at("algorithms.AnotherAlgorithm.parameter");
 ```
 
 ### Compile
@@ -190,7 +192,7 @@ Contributing to [the web repository](https://github.com/kerberos-io/web) require
 
 Make sure you have following services installed on your working station.
 
->\>= PHP 7.1.0, NodeJS and NPM and Nginx or Apache
+> \>= PHP 7.1.0, NodeJS and NPM and Nginx or Apache
 
 ### Installation
 

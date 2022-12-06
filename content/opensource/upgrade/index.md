@@ -13,6 +13,8 @@ weight: 207
 toc: true
 ---
 
+**_Kerberos Open Source is deprecated, please [use Kerberos Agent](/agent/first-things-first) instead._**
+
 To upgrade your Kerberos agent to a new version you should follow the approach which fits your initial installation method. If you installed KiOS follow the KiOS upgrade procedure, if installed on Raspbian follow the Raspbian upgrade procedure, etc.
 
 Please note that it might be possible that some new files are added or existing files were updated. To make sure everything works as expected, you should clear your browser cache.
