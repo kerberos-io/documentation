@@ -29,6 +29,8 @@ Feel free to use another port if your host system already has a workload running
 
     docker run -p 81:80 --name mycamera -d kerberos/agent-dev:latest
 
+Login with default username and password which are root/root.
+
 ### Attach a volume
 
 By default your Kerberos agent will store all its configuration and recordings inside the container. It might be interesting to store both configuration and your recordings outside the container, on your local disk. This helps persisting your storage even after you decide to wipe out your Kerberos agent.
@@ -48,3 +50,15 @@ You attach a volume to your container by leveraging the `-v` option. To mount yo
 3. Run the docker command as following to attach your config directory and recording directory.
 
         docker run -p 80:80 --name mycamera -v $(pwd)/agent/config:/home/agent/data/config  -v $(pwd)/agent/recordings:/home/agent/data/recordings -d kerberos/agent:latest
+        
+Login with default username and password which are root/root.
+        
+### Configure using environment variables
+
+If you prefer to configure Kerberos Agent using environment variables instead of or in addition to mounted config file, you can do that as well. See the [list of available environment variables](https://github.com/kerberos-io/agent#configure-with-environment-variables). 
+
+For example, to pre-configure a different username and password, use this docker run command:
+
+        docker run -p 80:80 --name mycamera -v $(pwd)/agent/config:/home/agent/data/config  -v $(pwd)/agent/recordings:/home/agent/data/recordings -d -e AGENT_USERNAME=user -e AGENT_PASSWORD=secret kerberos/agent:latest
+        
+This will let you login using username `user` and password `secret`.
