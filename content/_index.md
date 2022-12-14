@@ -17,34 +17,48 @@ The **Kerberos.io** project, pronounced as `/kuh buh ruhs dot ai o/`, is a video
 
 [![An Introduction to Kerberos.io](youtube-introduction-kerberosio.png)](http://www.youtube.com/watch?v=LjCaMMKJCGc "An Introduction to Kerberos.io")
 
-To set the expectations of what is possible and how, it's recommended to have a look [at the architectures page](/prologue/deployments/) to find the best, or most reasonable architecture for your use case.
+Kerberos.io scales from small home deployments to large scale enterprise deployments. To set the expectations of what is possible and how, it's recommended to have a look [at the deployments page](/prologue/deployments/) to find the most suitable architecture for your use case.
 
-## Kerberos.io
+## The name: Kerberos.io
 
-Many people are confused, and don't understand why this project is called Kerberos.io. If you've been in the IT world for a while you will notice that Kerberos is already used for the authentication protocol [Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol)).
+Many people are confused, and don't understand why this project is called Kerberos.io. If you've been in the IT world for a while you will notice that Kerberos is already used for the authentication protocol [Kerberos](<https://en.wikipedia.org/wiki/Kerberos_(protocol)>).
 
-We believe that the name Kerberos.io makes sense for this project as well, with a strong emphasize on the suffix **.io**, which stands for input and output devices (e.g. any type of camera). Kerberos.io can be seen as a kind of security protocol for images and recordings.
-
-## Why Kerberos.io
-
-Kerberos.io initiated as a side project, due to inspiration and motivation in the space of video analytics, computer vision and machine learning. Its first focus was video surveillance only, as nowadays burglary or attacks are very common in this world. 
-
-Due to this, our first mission is to provide every human being on this planet with a solution, a video platform, to protect its families, friends, homes or anything else which you think is important.  
-
-Our second mission is to make this video platform affordable and Open Source (MIT), and develop it in such a way, that it's using the latest technologies, to create a seamless, never-seen and delicious user experience.
-
-While we moved forward our third mission is to scale, and make Kerberos reach far beyond a traditional video platform. With the rise of [Kerberos Enterprise Suite](/enterprise/first-things-first), we now focus on large scale deployments (covering thousands of cameras), and video analytics through machine learning.
+After all those years, we still believe that the name Kerberos.io makes sense for this project as well. With a strong emphasize on the suffix **.IO**, which stands for any **(I) input** of camera, and any **(O) output** such as a webhook, bash script, mqtt, etc. Kerberos itself is keeping an eye, using the configured input, and triggers the required outputs.
 
 ## What is Kerberos.io
 
 Kerberos.io is a video analytics and monitoring platform, that is focussing on both end-consumer and enterprises. It comes with modular solutions to support small deployments, a couple of camera streams and larger deployments, with multiple sites and thousands of camera streams.
 
-{{< figure src="kerberos-agent-edge.svg" alt="A Kerberos Agent is monitoring a single camera stream." caption="A Kerberos Agent is monitoring a single camera stream." class="stretch">}}
+{{< figure src="introduction-kerberos-io.svg" alt="A Kerberos Agent is monitoring a single camera stream." caption="A Kerberos Agent is monitoring a single camera stream." class="stretch">}}
 
-With Kerberos.io you start small with one or more [Kerberos Agents](/agent/first-things-first/), and grow over time while introducing more and more components like [Kerberos Factory](/factory/first-things-first/), [Kerberos Vault](/vault/first-things-first/) and [Kerberos Hub](/hub/first-things-first/), which is also referred to as the [Kerberos Enterprise Suite](/enterprise/first-things-first/). Kerberos.io is shipped through the concept of container technology such as Docker and Kubernetes, and implements the ideas of bring your own cloud, bring your own storage and bring your own technology.
+With Kerberos.io you start small, with just one or more [Kerberos Agents](/agent/first-things-first/), and grow over time while introducing more and more components like [Kerberos Factory](/factory/first-things-first/), [Kerberos Vault](/vault/first-things-first/) and [Kerberos Hub](/hub/first-things-first/); which we refer to as the [Kerberos Enterprise Suite](/enterprise/first-things-first/). Each solution is shipped through the concept of containers and can be leveraged by using Docker, Docker compose, Kubernetes, OpenShift, Terraform, Ansible, and many more.
 
-{{< figure src="./kerberos-global.svg" alt="A scalable video platform for an ever-growing video landscape." caption="A scalable video platform for an ever-growing video landscape." class="stretch">}}
+{{< figure src="./introduction-enterprise.svg" alt="A scalable video platform for an ever-growing video landscape." caption="A scalable video platform for an ever-growing video landscape." class="stretch">}}
 
-The whole idea is that any solution you will find at Kerberos.io, is extensible and allows you to integrate by default. For example, you decide where to deploy the solutions (edge/cloud/hybrid), what storage you want (edge/cloud/hybrid), how to integrate it with other third-party solutions, etc. Every solution you'll find in the Kerberos.io space, ships Swagger APIs by default, and will allow you to build your own applications or integrations.
+## Why Kerberos.io
+
+Kerberos.io initiated as a side project, due to inspiration and motivation in the space of video analytics, computer vision and machine learning. Its first focus was video surveillance only, as nowadays burglary or attacks are very common in this world.
+
+Due to this, our first mission is to provide every human being on this planet with a solution, a video platform, to protect its families, friends, homes or anything else which you think is important.
+
+Our second mission is to make this video platform affordable and Open Source (MIT), and develop it in such a way, that it's using the latest technologies, to create a seamless, never-seen and delicious user experience.
+
+While we move forward our third mission is to scale, and make Kerberos.io reach far beyond a traditional video platform. With the rise of the [Kerberos Enterprise Suite](/enterprise/first-things-first), we allow our users to scale from a home deployment to a full-blown production ready deployment; covering thousands of cameras.
+
+## Integration and extension
+
+The majority of VMS systems out there are owned by multi-national manufacturers who are building closed systems which, as an hobbiest or professional, are unaccessible in any programmatical way; such as a REST API. This forced people to create workarounds (headless browser) to fetch the desired data from the NVRs or cameras.
+
+The whole idea behind Kerberos.io is to challenge previous statement.
+
+> We want open and integratable systems for anyone and anywhere. You generate the data, you own the data.
+
+The response of Kerberos.io is, that any solution you'll find in our portfolio allows you to integrate and extend by default; no work-a-rounds, the data that is in our solutions belongs to you.
+
+You decide where (cloud, self-hosted) and how (Docker, Kubernetes, OpenShift, Terraform, etc) to deploy our solutions, what storage you want (local SSE, S3, etc), how to integrate it with other third-party solutions (Kafka, SQS, etc).
+
+If you want to build your own application, you can use the Swagger APIs we ship by default, and will allow you to build your own applications or integrations, without any limitations.
+
+## Machine learning
 
 Machine learning and Artificial Intelligence is a critical component of the Kerberos.io ecosystem. Within Kerberos Vault you can integrate your own machine learning models, and run them at scale. [Learn more about how we support](/vault/machine-learning/) machine learning use cases.
