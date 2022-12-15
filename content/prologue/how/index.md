@@ -21,7 +21,7 @@ At the foundation of any Kerberos.io deployment you'll find one or more [Kerbero
 
 {{< figure src="agent-explanation.svg" alt="A Kerberos agent consists of both a backend en frontend." caption="A Kerberos agent consists of both a backend en frontend." class="stretch">}}
 
-The Kerberos Agent is responsible for a single camera. It is a piece of software which has two responsibilities: it acts as an user interface (frontend) and an API (backend). The API processes the video stream, applies computer vision techniques, makes recordings and takes desired actions; e.g. a webhook. On the otherhand, the user interface allows a user to review recordings and configure specific settings for the API.
+The Kerberos Agent is responsible for a single camera. It is a piece of software which has two responsibilities: it acts as an user interface (frontend) and an API server (backend). The API processes the video stream, applies computer vision techniques, makes recordings and takes desired actions; e.g. a webhook. On the otherhand, the user interface allows a user to review recordings and configure specific settings for the API.
 
 The Kerberos Agent itself is bundled in a single container, which includes all the dependencies and libraries required to have it running. For each camera, a Kerberos Agent container will be created.
 
@@ -31,11 +31,11 @@ The appealing thing with this approach is that you'll experience complete isolat
 
 ## Scaling out Kerberos Agents
 
-Starting with a few Kerberos Agents, is straight forward. Scaling your Kerberos Agents is not a complex task as well, you can benefit [from the different deployments models](https://github.com/kerberos-io/agent#how-to-run-and-deploy-a-kerberos-agent) we have documented.
+Starting with a few Kerberos Agents is straight forward, and scaling your Kerberos Agents is not a complex task at all. You can benefit [from the different deployments models](https://github.com/kerberos-io/agent#how-to-run-and-deploy-a-kerberos-agent) we have documented, to start exploring and scaling your Kerberos.io configuration.
 
 {{< figure src="scaling-out.svg" alt="Scaling out your Kerberos Agents is not a complex task." caption="Scaling out your Kerberos Agents is not a complex task." class="stretch">}}
 
-Depending on your scenario [you choose one deployment over the other](https://github.com/kerberos-io/agent#how-to-run-and-deploy-a-kerberos-agent), however there is no golden rule, you should move forward with what you prefer and have experience with. A few examples:
+Depending on your scenario [you choose one deployment over the other](https://github.com/kerberos-io/agent#how-to-run-and-deploy-a-kerberos-agent). There is no golden rule for the best deployment, you should move forward with your preference and experience. A few examples:
 
 - If you are not into `kubernetes`, and you have only a dozen of cameras, it might be more suitable to utilise `docker compose`.
 
@@ -53,16 +53,24 @@ In most cases, especially with a growing video landscape, it's more convenient t
 
 {{< figure src="agents-to-vault.svg" alt="Bring your own storage using Kerberos Vault" caption="Bring your own storage using Kerberos Vault" class="stretch">}}
 
-[Kerberos Vault](/vault/first-things-first/) acts like a interface between your Kerberos Agents and your storage system. It is responsible for receiving recordings from your Kerberos Agents, and storing them in the right storage system you've configured. By decoupling your Kerberos Agents with [Kerberos Vault](/vault/first-things-first/), you can switch your underlaying storage system on the fly.
+[Kerberos Vault](/vault/first-things-first/) acts like a interface between your Kerberos Agents and your storage system. It is responsible for receiving recordings from your Kerberos Agents, and storing them in the storage system you've configured. By decoupling your Kerberos Agents with [Kerberos Vault](/vault/first-things-first/), you can switch the underlaying storage system on the fly, without requiring to reconfiguring all your Kerberos Agents.
 
 Next to persisting your data in your storage system, [Kerberos Vault](/vault/first-things-first/) also acts as an event producers. Each time a recording is successfully stored in your storage system, it will send a message to the configure [Integration](/vault/integrations/), such as Kafka, SQS, etc.
 
-## Centralise your video landscape
+## Centralise and governance
 
-One or more [Kerberos Agents](/agent/first-things-first/) are perfect for a small scale deployment. The disadvantage, when running a couple of Kerberos Agents, is that an agent is designed to handle a single camera stream. This means if you would like to have an overview of all your [Kerberos Agents](/agent/first-things-first/), you will need to open multiple interfaces or build something yourself. Another disadvantage is the network, typically a Kerberos Agent is on a local network, and not accessible from the internet. This requires port-forwarding, or a VPN tunnel to properly secure and access them.
+Scaling your [Kerberos Agents](/agent/first-things-first/) and having a scalable and flexible storage system with [Kerberos Vault](/vault/first-things-first/) is a strong foundation. However data just being stored in your storage system doesn't bring any value.
 
-{{< figure src="hub-with-vault.svg" alt="Kerberos Vault connected to Kerberos Hub." caption="Kerberos Vault connected to Kerberos Hub." class="stretch">}}
+Utilising that data to give your stakeholders insights through analytics, providing them with a decent data governance and combining it with live data is where the magic starts.
 
-To overcome these disadvantages a tool, [Kerberos Hub](/hub/first-things-first/), was developed that allows to connect a couple, or a thousand of video stream to a single pane of glass. The idea is that you can use either the [Kerberos Hub Saas offering](/hub/first-things-first/) or the [Kerberos Hub self-hosted](/hub/first-things-first/) version, depending on your needs.
+{{< figure src="introduction-hub.svg" alt="Kerberos Vault connected to Kerberos Hub." caption="Kerberos Vault connected to Kerberos Hub." class="stretch">}}
 
-[Kerberos Hub](/hub/first-things-first/) comes with features to manage cameras in groups or sites, view livestreams, delegate access of a subset of cameras to specific accounts, filtering through machine learning, etc.
+[Kerberos Hub](/hub/first-things-first/) is our answer. It's a highly scalable platform to connect stakeholders to sites and groups of cameras. It comes with all the features you would imagine: live streaming, object detection, fine-grained user access, alerts and more.
+
+[Kerberos Hub](/hub/first-things-first/) is build on top of Kubernetes and can be deployed, just like all the other components, where you want. It's composed of a serie of microservices that can independently scale towards any demand, and utilises Open Source components such as Kafka for high throughput messaging.
+
+## Takeaways
+
+Kerberos.io comes with different components which you only install when required, there is no need to setup a sophisticated system from the beginning. Each component works on its own and is open and extensible through APIs. Our vision is to start small, with just a few [Kerberos Agents](/agent/first-things-first/), scaling up and introduce more components such as [Kerberos Vault](/vault/first-things-first/) and [Kerberos Hub](/hub/first-things-first/) when required for your use case.
+
+If you need some help on possible deployments, have [a look at the deployment page](/prologue/deployments/) where we illustrate some examples.
