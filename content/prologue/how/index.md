@@ -1,7 +1,7 @@
 ---
 title: "How it works"
-description: "From one to a myriad of cameras"
-lead: "From one to a myriad of cameras"
+description: "From zero to a myriad of cameras"
+lead: "From zero to a myriad of cameras"
 date: 2020-10-06T08:48:57+00:00
 lastmod: 2022-12-14T22:37:57+00:00
 draft: false
