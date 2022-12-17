@@ -15,7 +15,7 @@ toc: true
 
 Kerberos Hub provides insights through video analytics. Recordings being uploaded to Kerberos Vault are triggering [the Kerberos Hub pipeline](/hub/pipeline/). Inside the pipeline, several computations are being done: sequencing, alerting and video analytics.  
 
-Having said that, please note that [you can build your own pipeline by](/vault/machine-learning/) integrating with Kerberos Vault. For example you could create your own cat/dog detector and inject your own machine learning algorithms, or interfere with your most favourable data sciene solution stack.
+Having said that, please note that [you can build your own pipeline by](/vault/machine-learning/) integrating with Kerberos Vault. For example you could create your own cat/dog detector and inject your own machine learning algorithms, or interface with your favorite data science solution stack.
 
 So what can you expect from the video analytics in Kerberos Hub? It provides two types of analytics: CPU  and GPU enabled computations.
 
