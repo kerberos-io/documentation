@@ -1,7 +1,7 @@
 ---
 title: "Installation"
-description: "Install a Kerberos Agent where and how you want."
-lead: "Install a Kerberos Agent where and how you want."
+description: "Run Kerberos Agents everywhere"
+lead: "Run Kerberos Agents everywhere"
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false
@@ -13,52 +13,15 @@ weight: 202
 toc: true
 ---
 
-The easiest to get your Kerberos Agent up and running is to use our Docker image on Docker hub. Once you selected a specific tag, run below command, which will open the web interface of your Kerberos agent on port 80. For persisting your configuration and/or recordings attach a volume. For more in depth configuration and installation verify [the Kerberos Agent repo](https://github.com/kerberos-io/agent).
+As described before a Kerberos Agent is a container, which can be deployed through various ways and automation tools such as docker, docker compose, kubernetes and the list goes on. To simplify your life we have come with concrete and working examples of deployments to help you speed up your Kerberos.io journey.
 
-### Running as a container
+We have documented the different deployment models in the [Kerberos Agent GitHub repository](ttps://github.com/kerberos-io/agent/tree/master/deployments). There you'll learn and find how to deploy using:
 
-We are creating Docker images as part of our CI/CD process. You'll find our Docker images on [Docker hub](https://hub.docker.com/r/kerberos/agent). Pick a specific tag of choice, or use latest. Once done run below command, this will open the web interface of your Kerberos agent on port 80.  
-    
-    docker run -p 80:80 --name mycamera -d kerberos/agent:latest
+- [Docker](https://github.com/kerberos-io/agent/tree/master/deployments#1-docker)
+- [Docker Compose](https://github.com/kerberos-io/agent/tree/master/deployments#2-docker-compose)
+- [Kubernetes](https://github.com/kerberos-io/agent/tree/master/deployments#3-kubernetes)
+- [Red Hat OpenShift with Ansible](https://github.com/kerberos-io/agent/tree/master/deployments#4-red-hat-ansible-and-openshift)
+- [Terraform](https://github.com/kerberos-io/agent/tree/master/deployments#5-terraform)
+- [Salt](https://github.com/kerberos-io/agent/tree/master/deployments#6-salt)
 
-Or for a develop build:
-
-    docker run -p 80:80 --name mycamera -d kerberos/agent-dev:latest
-
-Feel free to use another port if your host system already has a workload running on `80`. For example `81`.
-
-    docker run -p 81:80 --name mycamera -d kerberos/agent-dev:latest
-
-Login with default username and password which are root/root.
-
-### Attach a volume
-
-By default your Kerberos agent will store all its configuration and recordings inside the container. It might be interesting to store both configuration and your recordings outside the container, on your local disk. This helps persisting your storage even after you decide to wipe out your Kerberos agent.
-
-You attach a volume to your container by leveraging the `-v` option. To mount your own configuration file, execute as following:
-
-1. Decide where you would like to store your configuration and recordings; create a new directory for the config file and recordings folder accordingly.
-
-        mkdir agent
-        mkdir agent/config
-        mkdir agent/recordings
-
-2. Once you have located your desired directory, copy the latest [`config.json`](https://github.com/kerberos-io/agent/blob/master/machinery/data/config/config.json) file into your config directory.
-
-        wget https://raw.githubusercontent.com/kerberos-io/agent/master/machinery/data/config/config.json -O agent/config/config.json
-
-3. Run the docker command as following to attach your config directory and recording directory.
-
-        docker run -p 80:80 --name mycamera -v $(pwd)/agent/config:/home/agent/data/config  -v $(pwd)/agent/recordings:/home/agent/data/recordings -d kerberos/agent:latest
-        
-Login with default username and password which are root/root.
-        
-### Configure using environment variables
-
-If you prefer to configure Kerberos Agent using environment variables instead of or in addition to mounted config file, you can do that as well. See the [list of available environment variables](https://github.com/kerberos-io/agent#configure-with-environment-variables). 
-
-For example, to pre-configure a different username and password, use this docker run command:
-
-        docker run -p 80:80 --name mycamera -v $(pwd)/agent/config:/home/agent/data/config  -v $(pwd)/agent/recordings:/home/agent/data/recordings -d -e AGENT_USERNAME=user -e AGENT_PASSWORD=secret kerberos/agent:latest
-        
-This will let you login using username `user` and password `secret`.
+By default your Kerberos Agents will store all its configuration and recordings inside the container. To help you automate and have a more consistent data governance, you can [attach volumes](https://github.com/kerberos-io/agent#configure-and-persist-with-volume-mounts) to configure and persist data of your Kerberos Agents, and/or configure each Kerberos Agent [through environment variables](https://github.com/kerberos-io/agent#configure-with-environment-variables).
