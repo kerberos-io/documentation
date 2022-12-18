@@ -25,7 +25,7 @@ A [Kerberos Agent](/agent/first-things-first/) is a collection of binaries, ship
 
 ### Kerberos Factory
 
-Kerberos Agents are scaled [through various deployments](): `docker`, `kubernetes`, `terraform`, etc. The main goal of [Kerberos Factory](/factory/first-things-first/) is to serve as a non-technical user interface that allows business users to deploy and manage [Kerberos Agents](/agent/first-things-first/) without entering into the complexity of Kubernetes resources.
+Kerberos Agents are scaled [through various deployments](https://github.com/kerberos-io/agent#how-to-run-and-deploy-a-kerberos-agent): `docker`, `kubernetes`, `terraform`, etc. The main goal of [Kerberos Factory](/factory/first-things-first/) is to serve as a non-technical user interface that allows business users to deploy and manage [Kerberos Agents](/agent/first-things-first/) without entering into the complexity of Kubernetes resources.
 
 ### Kerberos Vault
 
