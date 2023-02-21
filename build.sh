@@ -1,3 +1,1 @@
-docker build -t documentation .
-docker tag documentation kerberos/documentation:1.14
-docker push kerberos/documentation:1.14
+docker buildx build --platform linux/amd64 -t kerberos/documentation:1.15 --push .

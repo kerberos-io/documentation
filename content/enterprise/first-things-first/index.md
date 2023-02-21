@@ -15,7 +15,9 @@ toc: true
 
 Kerberos Enterprise Suite is a consequence of supporting enterprises and customers for more than 7 years in the video analytics and video streaming industry. Kerberos Enterprise Suite is a collection of best practices supporting the ever-growing needs of enterprises rolling out huge amounts of video streams, requiring extreme flexibility in terms of deployment and customization, and putting strong focus on video analytics and more specific machine learning and AI.
 
-As a result to the developments of the Kerberos Agent, previously called Kerberos Open Source, the Kerberos Enterprise Suite is here to enable more flexibility through concepts such as Bring Your Own Cloud, Bring Your Own Storage and Bring Your Own Technology. 
+[![An end-to-end scenario with Kerberos.io Enterprise Suite](youtube-end-to-end.png)](http://www.youtube.com/watch?v=JzC8vJ0xZS0 "An end-to-end scenario with Kerberos.io Enterprise Suite")
+
+As a result to the developments of the Kerberos Agent, previously called Kerberos Open Source, the Kerberos Enterprise Suite is here to enable more flexibility through concepts such as Bring Your Own Cloud, Bring Your Own Storage and Bring Your Own Technology.
 
 Kerberos Enterprise Suite is taking the Kerberos Agent to another level, by building additional tools on top such as [Kerberos Vault](/vault/first-things-first) and [Kerberos Hub](/vault/first-things-first). It scales your Kerberos Agents through the concept of [Kerberos Factory](/factory/first-things-first) which helps to deploy your Kerberos Agents in bulk.
 
@@ -25,7 +27,7 @@ Kubernetes is a proven, and a widely spread technology which is gaining more mom
 
 {{< figure src="kubernetes-enterprise.svg" alt="" caption="" class="stretch">}}
 
-Kubernetes sits at the center of the Kerberos Enterprise Suite. Every solution within the suite is build on top of Kubernetes, so it allows you to bring your own cloud, bring your own  storage and bring your own technology.
+Kubernetes sits at the center of the Kerberos Enterprise Suite. Every solution within the suite is build on top of Kubernetes, so it allows you to bring your own cloud, bring your own storage and bring your own technology.
 
 ### Bring your own cloud
 
@@ -37,7 +39,7 @@ One thing you don't want, is to store your most precious data on someone else st
 
 ### Bring your own technology
 
-Kubernetes brings a lot of advantages in terms of deployment, scalability, resilience, and also high availability, but there is more. Due to the nature of Kubernetes, enterprises and administrators can bring any tool, service, solution or application inside their cluster. As the Kubernetes Enterprise Suite has specific dependencies, there is no need to install already existing tools, but you can reuse the ones you already have. 
+Kubernetes brings a lot of advantages in terms of deployment, scalability, resilience, and also high availability, but there is more. Due to the nature of Kubernetes, enterprises and administrators can bring any tool, service, solution or application inside their cluster. As the Kubernetes Enterprise Suite has specific dependencies, there is no need to install already existing tools, but you can reuse the ones you already have.
 
 Next to that, all solutions within the Kerberos Enterprise Suite ships Swagger APIs by default. This allows you to extend or integrate your own solutions or extend them with the technology you already master or prefer within your organisation.
 
@@ -51,7 +53,7 @@ The Kerberos Enterprise Suite is a collection of modular solutions that can be d
 
 ### Kerberos Agents and Kerberos Factory
 
-An agent is deployed for each video stream. An agent is responsible for a specific video stream: recording, livestreaming and alerting. Kerberos Factory is used to scale and deploy the Kerberos Agents in your Kubernetes clusters by providing a UI. 
+An agent is deployed for each video stream. An agent is responsible for a specific video stream: recording, livestreaming and alerting. Kerberos Factory is used to scale and deploy the Kerberos Agents in your Kubernetes clusters by providing a UI.
 
 {{< figure src="kerberos-enterprise-suite.svg" alt="Kerberos Enterprise Suite contains Kerberos Agent, Kerberos Factory, Kerberos Vault and Kerberos Hub." caption="Kerberos Enterprise Suite contains Kerberos Agent, Kerberos Factory, Kerberos Vault and Kerberos Hub." class="stretch">}}
 
@@ -67,7 +69,7 @@ Events and messages [are sent through integrations](/vault/integrations/) to ini
 
 ### Kerberos Hub
 
-[Kerberos Hub](/vault/first-things-first) is a scale UI that consolidates the entire Kerberos ecosystem. It shows livestreams/alerts from your Kerberos Agents and recordings stored in Kerberos Vault through a single pane of glass. 
+[Kerberos Hub](/vault/first-things-first) is a scale UI that consolidates the entire Kerberos ecosystem. It shows livestreams/alerts from your Kerberos Agents and recordings stored in Kerberos Vault through a single pane of glass.
 
 [Kerberos Hub](/vault/first-things-first) is build out of modular and scalable microservices which you can install and scale independently, wherever you want.
 
