@@ -15,7 +15,7 @@ toc: true
 
 As described before a Kerberos Agent is a container, which can be deployed through various ways and automation tools such as docker, docker compose, kubernetes and the list goes on. To simplify your life we have come with concrete and working examples of deployments to help you speed up your Kerberos.io journey.
 
-We have documented the different deployment models in the [Kerberos Agent GitHub repository](ttps://github.com/kerberos-io/agent/tree/master/deployments). There you'll learn and find how to deploy using:
+We have documented the different deployment models in the [Kerberos Agent GitHub repository](https://github.com/kerberos-io/agent/tree/master/deployments). There you'll learn and find how to deploy using:
 
 - [Docker](https://github.com/kerberos-io/agent/tree/master/deployments#1-docker)
 - [Docker Compose](https://github.com/kerberos-io/agent/tree/master/deployments#2-docker-compose)
