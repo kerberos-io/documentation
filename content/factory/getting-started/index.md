@@ -13,7 +13,6 @@ weight: 301
 toc: true
 ---
 
-
 Once you've installed Kerberos Factory, you will have the web application running inside your cluster. This web application allows you to administrate and automate the creation of your Kerberos Agents through the concept of [Kubernetes deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) and pods.
 
 Important to note is that this web application is relying [on the official Golang Kubernetes API](https://github.com/kubernetes/client-go), so that means from an administration point of view, you could simply use the well known `kubectl` command instead. The web application adds some functionalities on top of the Kubernetes API, which are specific to a Kerberos Agent; for example region of interests, livestreaming settings, etc.
@@ -35,7 +34,7 @@ The default username password, specified in the [`deployment.yaml`](https://gith
 
 On the overview page you will find an intuitive overview of the different pages and functionalities. As Kerberos Factory is running on top of a Kubernetes cluster, Kerberos Agents are deployed as Kubernetes deployments.
 
-Kerberos Factory allows you to inspect and configure your Kerberos Agents, but also provide an overview of the Kubernetes nodes and pods. 
+Kerberos Factory allows you to inspect and configure your Kerberos Agents, but also provide an overview of the Kubernetes nodes and pods.
 
 {{< figure src="overview.gif" alt="Review your Docker or Kubernetes agents." caption="Review your Docker or Kubernetes agents." class="stretch">}}
 
@@ -66,7 +65,7 @@ By specifying a name for your Kerberos Agent, and it's corresponding RTSP url, a
 
 #### Adding through ONVIF
 
-Instead of creating a new Kerberos Agent through a RTSP stream, you can discover streams through ONVIF, and enable additional features through ONVIF such as PTZ. Enable the ONVIF toggle, and type in the IP address, ONVIF username and ONVIF password. Click the verify connection, and select an RTSP stream from the profile list. 
+Instead of creating a new Kerberos Agent through a RTSP stream, you can discover streams through ONVIF, and enable additional features through ONVIF such as PTZ. Enable the ONVIF toggle, and type in the IP address, ONVIF username and ONVIF password. Click the verify connection, and select an RTSP stream from the profile list.
 
 {{< figure src="add-through-onvif.gif" alt="Deploy a Kerberos Agent with ONVIF capabilities." caption="Deploy a Kerberos Agent with ONVIF capabilities." class="stretch">}}
 
@@ -100,7 +99,7 @@ By specifying configurations at a higher level, any Kerberos Agents will inherit
 
 At Kerberos, we have agile development cycles, which means that new versions will be released every day, week or month. To make sure you can upgrade or downgrade these Kerberos Agent easily, an upgrade feature is built-in. When pressing the upgrade button, you will be able to select the version to which you would like to upgrade or downgrade. Once submitted, **a zero downtime upgrade will take place**. Kubernetes will download the new release, create a new pod, and destroy the old one.
 
-At any moment you can reboot one of your Kerberos Agents. When pressing the reboot button, next to your deployment, Kubernetes will destroy the pod of your deployment, and schedule a new one. 
+At any moment you can reboot one of your Kerberos Agents. When pressing the reboot button, next to your deployment, Kubernetes will destroy the pod of your deployment, and schedule a new one.
 
 {{< figure src="upgrade-kerberos-agent.gif" alt="You can specify the configurations on a global level, so all agents will inherit from that." caption="You can specify the configurations on a global level, so all agents will inherit from that." class="stretch">}}
 
@@ -127,7 +126,7 @@ On the other hand it's an open platform, as it allows you build extensions and i
 To connect one or more Kerberos Agents to your Kerberos Vault instance, you should open the configuration option and navigate to the `cloud` tab. After selected you need to fill-in the credentials from your Kerberos Vault account.
 To connect one or more Kerberos Agents to your Kerberos Vault instance, you should open the configuration option and navigate to the `cloud` tab. After selected you need to fill-in the credentials from your Kerberos Vault account.
 
-- Kerberos Vault URI: this is the API endpoint of your Kerberos Vault instance. Usually this is in the following format: `http(s)://api.yourdomain.com`. Where `api.yourdomain.com` should match your Kerberos Vault API endpoint. If you are deploying Kerberos Vault at the edge, in the same cluster, you can use the internal DNS name, as following `http://kerberos-vault.kerberos-vault:8081`.
+- Kerberos Vault URI: this is the API endpoint of your Kerberos Vault instance. Usually this is in the following format: `http(s)://yourdomain.com/api`. Where `yourdomain.com` should match your Kerberos Vault endpoint. If you are deploying Kerberos Vault at the edge, in the same cluster, you can use the internal DNS name, as following `http://vault.kerberos-vault/api`. Where `vault` is the `service name` and `kerberos-vault` is the `namespace`.
 
 - Provider: the name of the provider, which you created on the Kerberos Vault providers page, to which you want to send your recordings to.
 
@@ -153,7 +152,7 @@ Select the Kerberos Hub option, and copy-paste the credentials from your Kerbero
 
 - Region: this is the region where your recordings will be stored. Only `eu-west-1` for now (will change, on the roadmap).
 
-- Bucket: the name of the Kerberos Hub bucket.  Only `kerberosaccept` for now (will change, on the roadmap).
+- Bucket: the name of the Kerberos Hub bucket. Only `kerberosaccept` for now (will change, on the roadmap).
 
 - Directory: this is your personal directory, and matches your Kerberos Hub username.
 
