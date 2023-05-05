@@ -55,7 +55,7 @@ In most cases, especially with a growing video landscape, it's more convenient t
 
 [Kerberos Vault](/vault/first-things-first/) acts like a interface between your Kerberos Agents and your storage system. It is responsible for receiving recordings from your Kerberos Agents, and storing them in the storage system you've configured. By decoupling your Kerberos Agents with [Kerberos Vault](/vault/first-things-first/), you can switch the underlaying storage system on the fly, without requiring to reconfiguring all your Kerberos Agents.
 
-Next to persisting your data in your storage system, [Kerberos Vault](/vault/first-things-first/) also acts as an event producers. Each time a recording is successfully stored in your storage system, it will send a message to the configure [Integration](/vault/integrations/), such as Kafka, SQS, etc.
+Next to persisting your data in your storage system, [Kerberos Vault](/vault/first-things-first/) also acts as an event producers. Each time a recording is successfully stored in your storage system, it will send a message to the configure [Integration](/vault/integrations/), such as Kafka, RabbitMQ, SQS, etc.
 
 ## Centralise and governance
 
@@ -67,7 +67,7 @@ Utilising that data to give your stakeholders insights through analytics, provid
 
 [Kerberos Hub](/hub/first-things-first/) is our answer. It's a highly scalable platform to connect stakeholders to sites and groups of cameras. It comes with all the features you would imagine: live streaming, object detection, fine-grained user access, alerts and more.
 
-[Kerberos Hub](/hub/first-things-first/) is build on top of Kubernetes and can be deployed, just like all the other components, where you want. It's composed of a serie of microservices that can independently scale towards any demand, and utilises Open Source components such as Kafka for high throughput messaging.
+[Kerberos Hub](/hub/first-things-first/) is build on top of Kubernetes and can be deployed, just like all the other components, where you want. It's composed of a serie of microservices that can independently scale towards any demand, and utilises Open Source components such as Kafka, RabbitMQ, SQS, and others for high throughput messaging.
 
 ## Takeaways
 
