@@ -27,19 +27,19 @@ Kerberos Vault allows you to attach one or more (and different) storage provider
 
 Before you can configure a provider, make sure [you have installed a Kerberos Vault](/vault/installation) inside a Kubernetes cluster.
 
-## Configuration of a provider 
+## Configuration of a provider
 
 Once you have set up your Kerberos Vault instance, and have successfully login to the application, you should see the provider navigation item on the left.
 
 {{< figure src="provider.gif" alt="One or more providers can be configured to centralise your storage." caption="One or more providers can be configured to centralise your storage." class="stretch">}}
 
-When selecting the `+ Add Storage Provider` button, a modal will open that allows you to configure a specific storage provider. Go a head and select one from the list. 
+When selecting the `+ Add Storage Provider` button, a modal will open that allows you to configure a specific storage provider. Go a head and select one from the list.
 
 {{< figure src="add-provider.gif" alt="Configure, add and validate a new storage provider." caption="Configure, add and validate a new storage provider." class="stretch">}}
 
 Once completed the necessary credentials, specific to your storage provider, you can verify the connection by click the `Validate` button. If ok, it should return a `green` confirmation box, if something went wrong you should see the relevant error message in a `red` alert box.
 
-Once configured you can add multiple and different providers. Have some fun. 
+Once configured you can add multiple and different providers. Have some fun.
 
 ## Cloud storage providers
 
@@ -47,7 +47,7 @@ Kerberos Vault integrates with storage providers in the cloud such as AWS S3, GC
 
 ### AWS S3
 
-  > Tutorial to be written.
+> Tutorial to be written.
 
 ### GCP Storage
 
@@ -57,7 +57,7 @@ Kerberos Vault integrates with storage providers in the cloud such as AWS S3, GC
 
 #### Introduction
 
-Storj DCS is the world’s first open-source, decentralized cloud storage layer that’s private by design and secure by default - enabling developers to build in the best data protection and privacy into their applications as possible. The zero trust architecture, multi-region high availability, default encryption and edge-based access controls minimize risk and give only you, or those you grant permission to, access to your files. The result is that you take back full ownership and control of your data. 
+Storj DCS is the world’s first open-source, decentralized cloud storage layer that’s private by design and secure by default - enabling developers to build in the best data protection and privacy into their applications as possible. The zero trust architecture, multi-region high availability, default encryption and edge-based access controls minimize risk and give only you, or those you grant permission to, access to your files. The result is that you take back full ownership and control of your data.
 
 The Storj DCS Satellite Admin Console supports uploading and managing objects directly through the browser with no command-line tool required. This component uses our hosted S3-compatible Gateway service.
 
@@ -85,7 +85,6 @@ Now you are ready to assign Storj as a storage provider to Kerberos Vault. Open 
 
 {{< figure src="storj-integrate.gif" alt="Integrate Storj.io with Kerberos Vault." caption="Integrate Storj.io with Kerberos Vault." class="stretch">}}
 
-
 - Provider name: this a preferred name for the provider.
 - Bucket name: the name of a bucket created in Storj, make sure this matches.
 - Region: this is not relevant for an edge deployment and can be left blank.
@@ -93,14 +92,13 @@ Now you are ready to assign Storj as a storage provider to Kerberos Vault. Open 
 - Access Key: the `access key` you've received when generating the S3 Gateway credentials.
 - Secret Access Key: the `secret key` you've received when generating the S3 Gateway credentials.
 
-
 ## Edge storage providers
 
-Kerberos Vault also integrates with storage providers that are more suitable for edge deployments. Examples are Minio and Ceph, these are storage providers that you can install wherever you want. Therefore, they are interesting when considering edge computing to reduce latency, cloud billing and bandwidth. Examples are machine learning use cases, to trigger events or limit the transfer to a cloud storage. 
+Kerberos Vault also integrates with storage providers that are more suitable for edge deployments. Examples are Minio and Ceph, these are storage providers that you can install wherever you want. Therefore, they are interesting when considering edge computing to reduce latency, cloud billing and bandwidth. Examples are machine learning use cases, to trigger events or limit the transfer to a cloud storage.
 
 ### Minio
 
-Minio is a recommended solution if you would like to persist your recordings at the edge. To set up Minio you have to configure a few Kubernetes resources. To simplify the installation, we will go ahead with the Minio operator.
+Minio is a recommended solution if you would like to persist your recordings at the edge. To set up Minio [you have to configure a few Kubernetes resources](https://github.com/kerberos-io/vault/tree/master/kubernetes/minio). To simplify the installation, we will go ahead with the Minio operator.
 
 The Minio operator can be used to set up a production ready Minio cluster, with multiple nodes and drives. Using the concept of Minio tenants you can scale your Minio cluster easily.
 
@@ -128,9 +126,9 @@ In the below manifests we have been using the OpenEBS storage class for local-st
 
     kubectl apply -f https://openebs.github.io/charts/openebs-operator.yaml
 
-Once you have selected your storage class, or installed OpenEBS, go ahead by applying the different manifests. Below configuration will deploy a single server, with 4 volumes of 10Gb. It will also create a default access key (`minio`) and secret key (`minio123`). 
+Once you have selected your storage class, or installed OpenEBS, go ahead by applying the different manifests. Below configuration will deploy a single server, with 4 volumes of 10Gb. It will also create a default access key (`minio`) and secret key (`minio123`).
 
-    git clone https://github.com/kerberos-io/vault && cd vault/yaml/minio
+    git clone https://github.com/kerberos-io/vault && cd kubernetes/minio
     kubectl create namespace minio-tenant
     kubectl apply -f minio.cred.yaml
     kubectl apply -f minio.config.tenant.yaml
@@ -162,4 +160,4 @@ If you needed more information about the Minio configuration, please have a look
 
 ### Ceph
 
-  > Tutorial to be written.
+> Tutorial to be written.
