@@ -7,8 +7,8 @@ lastmod: 2020-10-06T08:49:31+00:00
 draft: false
 images: []
 menu:
-    vault:
-        parent: "vault"
+  vault:
+    parent: "vault"
 weight: 306
 toc: true
 ---
@@ -44,7 +44,7 @@ Once completed the necessary credentials, specific to your integration, you can 
 
 ## Cloud event integrations
 
-Kerberos Vault integrates with queues and message brokers in the cloud such as AWS SQS. The advantage is that it takes the complete control of your every growing messaging/event requirements. 
+Kerberos Vault integrates with queues and message brokers in the cloud such as AWS SQS. The advantage is that it takes the complete control of your every growing messaging/event requirements.
 
 ### AWS SQS
 
@@ -98,10 +98,32 @@ To learn more about how to enable the Kerberos Vault integration, have [a look a
 
 ### Kerberos Hub
 
-The Kerberos Hub integration allows you to send messages from Kerberos Vault and Kerberos Hub, through [the Kerberos Hub pipeline](/hub/pipeline). Messages are sent to the REST API of Kerberos Hub, and injected in the Kerberos Hub pipeline. Once message is injected in the internal message broker (Kafka), it will create all the relevant information and metadata in Kerberos Hub.
+The Kerberos Hub integration allows you to visualise your recordings, stored in your Kerberos Vault, in you Kerberos Hub account. By using the integration, events are send to [the Kerberos Hub pipeline](/hub/pipeline) and visualised in the Kerberos Hub interface. Each time a recording is uploaded to Kerberos Vault, an event is sent to the REST API of Kerberos Hub, and injected in the Kerberos Hub pipeline. The Kerberos Hub pipeline will start evaluating the recording and generate various metadata.
 
 {{< figure src="vault-integration-hub.gif" alt="Kerberos Hub integrates with Kerberos Vault to visualise recordings and metadata." caption="Kerberos Hub integrates with Kerberos Vault to visualise recordings and metadata." class="stretch">}}
 
 - Integration name: this a preferred name for the integration.
 - Kerberos Hub Url: the url to the API of Kerberos Hub, `https://api.your.hub.com`
 - Hub Key: this is the cloud key that is assigned to your user (owner accounts), by default this is `AKIAxxxxxxG5Q`.
+
+#### Kerberos Hub username
+
+When creating a Kerberos Hub account and linking it to your own Kerberos Vault, you have to make sure the Kerberos Hub username is matching the Kerberos Agent destination directory. If this not matching, your recordings will not be shown in the Kerberos Hub interface.
+
+Once you logged in, or created an account, you will see your Kerberos Hub username at the left top of the navigation. You have to make sure this username, equals the directory field of the Kerberos Agent (or Kerberos Factory settings).
+
+![Kerberos Hub Account](./hub-integration-account-1.png)
+
+Make sure the `directory` field of your Kerberos Agents or Kerberos Factory is configured with the Kerberos Hub username.
+
+![Kerberos Agent directory](./hub-integration-account-2.png)
+
+#### Kerberos Vault credentials
+
+Once you have added the integration to Kerberos Vault, and made sure the Kerberos Hub account name matches the Kerberos Agent directory field, you should see some recordings landing into your Kerberos Hub account. However to view your recordings in Kerberos Hub, you'll need to add your Kerberos Vault credentials to your Kerberos Hub account (or installation).
+
+As you are the owner of the Kerberos Vault, you'll need to make Kerberos Hub (SAAS or self-hosted) aware of where your Kerberos Vault is located (DNS name) and the Kerberos Vault account you have used.
+
+![Kerberos Hub configure Kerberos Vault](./hub-integration-vault.png)
+
+As soon as you have configured the Kerberos Vault settings in your Kerberos Hub account, you'll should be able to open the recordings and view them in the application. Note that you are in full control (and the owner) of your recordings, so once you change the Kerberos Vault credentials or your disconnect the Kerberos Vault, you won't be able to view the recordings in Kerberos Hub anymore.
