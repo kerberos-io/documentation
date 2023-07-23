@@ -30,7 +30,7 @@ Starting something new is not easy, there is always a steep learning curve. Whil
 
 We will discuss some of the most common setups we have seen, however this doesn't mean that your setup will not work if it's not shown as identical in the sections below.
 
-{{< figure src="overview.svg" alt="Kerberos Deployments" caption="Kerberos Deployments" class="stretch">}}
+{{< figure src="overview.svg" alt="The Kerberos.io solution stack" caption="The Kerberos.io solution stack" class="stretch">}}
 
 ## Basic setup
 
@@ -38,7 +38,7 @@ If you are starting with a basic deployment - for example for your home - then y
 
 {{< figure src="deployment-basic.svg" alt="The basic deployment" caption="The basic deployment" class="stretch">}}
 
-In a home setup you'll probably rely on [`docker`](https://github.com/kerberos-io/agent/tree/master/deployments/docker#1-running-a-single-container) instead of [`kubernetes`](https://github.com/kerberos-io/agent/tree/master/deployments/kubernetes), mainly because of simplicity. However nothing is stopping you utilise Kubernetes for your local deployment.
+In a home setup you'll probably rely on [`docker`](https://github.com/kerberos-io/agent/tree/master/deployments/docker#1-running-a-single-container) or [`a binary`](https://github.com/kerberos-io/agent/tree/master/deployments/snap) instead of [`kubernetes`](https://github.com/kerberos-io/agent/tree/master/deployments/kubernetes), mainly because of simplicity. However nothing is stopping you utilise Kubernetes for your local deployment.
 
 ## Extended setup
 
