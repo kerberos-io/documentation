@@ -30,6 +30,8 @@ Starting something new is not easy, there is always a steep learning curve. Whil
 
 We will discuss some of the most common setups we have seen, however this doesn't mean that your setup will not work if it's not shown as identical in the sections below.
 
+{{< figure src="overview.svg" alt="Kerberos Deployments" caption="Kerberos Deployments" class="stretch">}}
+
 ## Basic setup
 
 If you are starting with a basic deployment - for example for your home - then you probably prefer to have it rather simple. In this case you can host one or more [Kerberos Agents](/agent/first-things-first) on a compute of choice, in the network you desire.
