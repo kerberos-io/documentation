@@ -29,7 +29,11 @@ After all those years, we still believe that the name Kerberos.io makes sense fo
 
 [Kerberos.io](/prologue/how/) is a video analytics and monitoring platform for everyone, from a traditional user to a multinational corporation, we have different solutions and components to help you grow.
 
-Within the portfolio of [Kerberos.io](/prologue/how/) you leverage more or less components depending on the stage you are in, there is no need to overcomplicate things. The backbone of the Kerberos.io ecosystem is the [Kerberos Agent](/agent/first-things-first/). This [Kerberos Agent](/agent/first-things-first/), installed [through various possibilities](https://github.com/kerberos-io/agent#how-to-run-and-deploy-a-kerberos-agent), is deployed to a compute - VM, baremetal, Kubernetes cluster or other - of choice and connected to a camera stream you control.
+Within the portfolio of [Kerberos.io](/prologue/how/) you leverage more or less components depending on the stage you are in, there is no need to overcomplicate things.
+
+{{< figure src="overview.svg" alt="The Kerberos.io solution stack" caption="The Kerberos.io solution stack" class="stretch">}}
+
+The backbone of the Kerberos.io ecosystem is the [Kerberos Agent](/agent/first-things-first/). This [Kerberos Agent](/agent/first-things-first/), installed [through various possibilities](https://github.com/kerberos-io/agent#how-to-run-and-deploy-a-kerberos-agent), is deployed to a compute - VM, baremetal, Kubernetes cluster or other - of choice and connected to a camera stream you control.
 
 {{< figure src="introduction-kerberos-io.svg" alt="A Kerberos Agent is monitoring a single camera stream." caption="A Kerberos Agent is monitoring a single camera stream." class="stretch">}}
 

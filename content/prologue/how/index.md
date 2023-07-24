@@ -15,6 +15,14 @@ toc: true
 
 As described at the [introduction page](/) and [mission statement](/prologue/mission/), Kerberos.io has a strong vision and roadmap to help anyone on this planet to setup a video management platform to fit its needs. In this section we'll describe the different building blocks and illustrate how they complement and enrich each other, to build up an [ideal deployment model](/prologue/deployments/).
 
+## An overview
+
+As shown below there are 3 critical steps in setting up a video management solution: camera processing, persisting of recordings and analysing. Instead of building a single solution, which many other vendors have build, which covers those 3 functions, we have divided and concur each role and responsibility in a stand-alone solution: [Kerberos Agents](/agent/first-things-first/), [Kerberos Factory](/factory/first-things-first/), [Kerberos Vault](/vault/first-things-first/) and [Kerberos Hub](/hub/first-things-first/).
+
+{{< figure src="overview.svg" alt="The Kerberos.io solution stack" caption="The Kerberos.io solution stack" class="stretch">}}
+
+Due to this approach the Kerberos.io solution stack can be scaled and deployed independently. This means you can deploy specific parts on-premise and other parts on a cloud provider, or the other way arround. Next to that it also allows you to only install what you need: start small and grow over time when your business requires it.
+
 ## The Kerberos Agent
 
 At the foundation of any Kerberos.io deployment you'll find one or more [Kerberos Agents](/agent/first-things-first/). These Kerberos Agents are installed [through various possibilities](https://github.com/kerberos-io/agent#how-to-run-and-deploy-a-kerberos-agent) and are deployed to a compute - VM, baremetal, Kubernetes cluster or other - of choice and connected to camera streams you control.
