@@ -38,6 +38,10 @@ To overcome these challenges, Kerberos Hub can be linked to multiple OIDC provid
 
 Once authenticated with the OIDC provider, you will redirected back to the `redirectUrl`, and an access token is verified to reveal the identity of the authentication request. Once verified, a user in the Kerberos Hub is located, and used to sign in. Hence you'll still need to create a user in Kerberos Hub that matches the identity of your OIDC provider, but the credentials for that user will reside in the OIDC provider and not in the Kerberos Hub application.
 
+
+{{< figure src="sso-kerberos-hub.gif" alt="Example of how SSO works with Kerberos Hub." caption="Example of how SSO works with Kerberos Hub." class="stretch">}}
+
+
 ## Configuration
 
 To configure Kerberos Hub with one or more OIDC providers you'll need to provide a configuration in the `values.yaml` file (as shown above). Each OIDC provider is assigned to a domain, which is then activated by signing in. For example if your user would signin with an email address like `tom@uug.ai`, the user will be redirected to the `auth0` OIDC provider, if signing with an email address like `john@kerberos.io`, the user will be redirected to the `google` OIDC provider.
