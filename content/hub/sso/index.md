@@ -19,18 +19,20 @@ By default a user is authenticating using their username/email and password. The
 
 {{< figure src="hub-add-account.gif" alt="Give another user limited access to Kerberos Hub by creating a sub account." caption="Give another user limited access to Kerberos Hub by creating a sub account." class="stretch">}}
 
-To overcome these challenges, Kerberos Hub can be linked to multiple OIDC providers. Depending on the domain you use to sign in `@customer1.com` or `@customer2.com`, you will be redirected to the relevant OIDC provider.
+To overcome these challenges, Kerberos Hub can be linked to multiple OIDC providers. Depending on the domain you use to sign in `@customer1.com` or `@customer2.com`, you will be redirected to the relevant OIDC provider. You can use following `environment variables` to configure one ore more SSO domains having the specific `SSO credentials`; more information can be found in the configuration section.
 
     sso: # OIDC settings for allowing SSO.
       - domain: "uug.ai"
         redirectUrl: "https://api.cloud.kerberos.io/sso/callback/uug.ai"
         issuer: "https://xxx.eu.auth0.com/"
+        claimId: "email"
         clientId: "xxx"
         clientSecret: "xxx"
         clientVerificationId: "" # This is only required for SSO chaining.
       - domain: "kerberos.io"
         redirectUrl: "https://api.cloud.kerberos.io/sso/callback/kerberos.io"
         issuer: "https://accounts.google.com"
+        claimId: "email"
         clientId: "xxx"
         clientSecret: "xxx"
         clientVerificationId: "" # This is only required for SSO chaining.
@@ -38,9 +40,7 @@ To overcome these challenges, Kerberos Hub can be linked to multiple OIDC provid
 
 Once authenticated with the OIDC provider, you will redirected back to the `redirectUrl`, and an access token is verified to reveal the identity of the authentication request. Once verified, a user in the Kerberos Hub is located, and used to sign in. Hence you'll still need to create a user in Kerberos Hub that matches the identity of your OIDC provider, but the credentials for that user will reside in the OIDC provider and not in the Kerberos Hub application.
 
-
 {{< figure src="sso-kerberos-hub.gif" alt="Example of how SSO works with Kerberos Hub." caption="Example of how SSO works with Kerberos Hub." class="stretch">}}
-
 
 ## Configuration
 
@@ -78,6 +78,7 @@ What happens behind the scene is that Kerberos Hub will look for the SSO definit
     - domain: "uug.ai"
       redirectUrl: "https://api.cloud.kerberos.io/sso/callback/uug.ai"
       issuer: "https://uugai.eu.auth0.com/"
+      claimId: "email"
       clientId: "xxx"
       clientSecret: "xxx"
       clientVerificationId: "NSkr7Ezyyyyyyyyz8HqmF2iGDb" # This is only required for SSO chaining.
@@ -97,3 +98,62 @@ While having both applications setup with their own OIDC configuration (targetti
 Once deployed this new configuration and setting up the relevant wrapper application, you will now be able to receive an `accessToken` from the OIDC provider. By sending that `accessToken` to following endpoint `https://hub.kerberos.io/sso/verify/{domain}?accesstoken={accessToken}`, it will be validated against the `clientVerificationId` value in your Kerberos Hub configuration (linked to the specific domain).
 
 By embedding following url `https://hub.kerberos.io/sso/verify/{domain}?accesstoken={accessToken}` in forexample an `iframe` you will now seamless login into Kerberos Hub without providing any credentials.
+
+## Database
+
+As detailed above you can configure your Kerberos Hub tenant to include one ore more SSO domains. Depending on the users domain name or suffix, you redirect a user to a specific SSO domain which authenticates the user on your behalf. 
+
+There are two options to configure the SSO domain feature.
+
+1. Through environment variables as described above.
+2. Using the database and by creating an entry in the `settings` collection.
+
+### Environment variables
+
+Within the `values.yaml` of the Kerberos Hub installation you have the option to specify one or more SSO domains by creating seperate list items. When applying the `values.yaml` configuration you will have those SSO domains available in the Kerberos Hub application. 
+
+    sso: # OIDC settings for allowing SSO.
+      - domain: "uug.ai"
+        redirectUrl: "https://api.cloud.kerberos.io/sso/callback/uug.ai"
+        issuer: "https://xxx.eu.auth0.com/"
+        claimId: "email"
+        clientId: "xxx"
+        clientSecret: "xxx"
+        clientVerificationId: "" # This is only required for SSO chaining.
+      - domain: "kerberos.io"
+        redirectUrl: "https://api.cloud.kerberos.io/sso/callback/kerberos.io"
+        issuer: "https://accounts.google.com"
+        claimId: "email"
+        clientId: "xxx"
+        clientSecret: "xxx"
+        clientVerificationId: "" # This is only required for SSO chaining.
+      - ...
+
+### Database
+
+Another possibility to provide SSO domains is by defining them in the database. By creating a new item in the `settings` collection of your database, your Kerberos Hub application will read the SSO domains in memory.
+
+    { 
+        "_id" : ObjectId("xxxxx"), 
+        "key" : "sso", 
+        "map" : {
+            "uug.ai" : {
+                "domain" : "uug.ai", 
+                "issuer" : "https://uugai.xxx.com/", 
+                "claim_id" : "email",
+                "client_id" : "xxxx", 
+                "client_secret" : "xxxx", 
+                "client_verification_id" : "xxxx", 
+                "redirect_url" : "httpd://xxxx/sso/callback/uug.ai"
+            },
+            "kerberos.io" : {
+                "domain" : "kerberos.io", 
+                "issuer" : "https://kerberosio.xxx.com/", 
+                "claim_id" : "email",
+                "client_id" : "xxxx", 
+                "client_secret" : "xxxx", 
+                "client_verification_id" : "xxxx", 
+                "redirect_url" : "httpd://xxxx/sso/callback/kerberos.io"
+            }
+        }
+    }
