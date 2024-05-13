@@ -14,7 +14,7 @@ toc: true
 ---
 
 [![Scale your video landscape with Kerberos Factory
-](youtube-factory-kerberosio.png)](http://www.youtube.com/watch?v=ZGV7w8haUCU "Scale your video landscape with Kerberos Factory")
+](youtube-factory-kerberosio.png)](https://www.youtube.com/watch?v=uMv_6cubq6I "Scale your video landscape with Kerberos Factory")
 
 <br/>
 

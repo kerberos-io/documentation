@@ -15,7 +15,7 @@ toc: true
 
 Kerberos Enterprise Suite is a consequence of supporting enterprises and customers for more than 7 years in the video analytics and video streaming industry. Kerberos Enterprise Suite is a collection of best practices supporting the ever-growing needs of enterprises rolling out huge amounts of video streams, requiring extreme flexibility in terms of deployment and customization, and putting strong focus on video analytics and more specific machine learning and AI.
 
-[![An end-to-end scenario with Kerberos.io Enterprise Suite](youtube-end-to-end.png)](http://www.youtube.com/watch?v=JzC8vJ0xZS0 "An end-to-end scenario with Kerberos.io Enterprise Suite")
+[![An end-to-end scenario with Kerberos.io Enterprise Suite](youtube-end-to-end.png)](https://www.youtube.com/watch?v=OnmN99dq4tk "An end-to-end scenario with Kerberos.io Enterprise Suite")
 
 As a result to the developments of the Kerberos Agent, previously called Kerberos Open Source, the Kerberos Enterprise Suite is here to enable more flexibility through concepts such as Bring Your Own Cloud, Bring Your Own Storage and Bring Your Own Technology.
 
