@@ -77,6 +77,7 @@ What happens behind the scene is that Kerberos Hub will look for the SSO definit
 
     - domain: "uug.ai"
       redirectUrl: "https://api.cloud.kerberos.io/sso/callback/uug.ai"
+      forceSSO: "false"
       issuer: "https://uugai.eu.auth0.com/"
       claimId: "email"
       clientId: "xxx"
@@ -84,6 +85,12 @@ What happens behind the scene is that Kerberos Hub will look for the SSO definit
       clientVerificationId: "NSkr7Ezyyyyyyyyz8HqmF2iGDb" # This is only required for SSO chaining.
 
 The `clientVerificationId` should be the same clientId you have used to configure the wrapper application, otherwise you will not be able to validate the `accessToken`. Once validated the user credentials are extracted from the `accessToken` and the user is automatically signed in.
+
+## Force SSO for Domain
+
+When leveraging the domain feature, you can force the SSO usage, by setting the `forceSSO` value to `true`. This will make sure that once you arrive on the domain page, the SSO redirection is shown by default and the username/password fields are hidden.
+
+{{< figure src="force-sso-domains.gif" alt="Forcing SSO for domains, this will hide the username and password fields." caption="Forcing SSO for domains, this will hide the username and password fields." class="stretch">}}
 
 ### Configuration
 
@@ -115,6 +122,7 @@ Within the `values.yaml` of the Kerberos Hub installation you have the option to
     sso: # OIDC settings for allowing SSO.
       - domain: "uug.ai"
         redirectUrl: "https://api.cloud.kerberos.io/sso/callback/uug.ai"
+        forceSSO: "false"
         issuer: "https://xxx.eu.auth0.com/"
         claimId: "email"
         clientId: "xxx"
@@ -122,6 +130,7 @@ Within the `values.yaml` of the Kerberos Hub installation you have the option to
         clientVerificationId: "" # This is only required for SSO chaining.
       - domain: "kerberos.io"
         redirectUrl: "https://api.cloud.kerberos.io/sso/callback/kerberos.io"
+        forceSSO: "false"
         issuer: "https://accounts.google.com"
         claimId: "email"
         clientId: "xxx"
@@ -139,21 +148,23 @@ Another possibility to provide SSO domains is by defining them in the database. 
         "map" : {
             "uug.ai" : {
                 "domain" : "uug.ai", 
+                "redirect_url" : "httpd://xxxx/sso/callback/uug.ai",
+                "force_sso": "false",
                 "issuer" : "https://uugai.xxx.com/", 
                 "claim_id" : "email",
                 "client_id" : "xxxx", 
                 "client_secret" : "xxxx", 
                 "client_verification_id" : "xxxx", 
-                "redirect_url" : "httpd://xxxx/sso/callback/uug.ai"
             },
             "kerberos.io" : {
                 "domain" : "kerberos.io", 
+                "redirect_url" : "httpd://xxxx/sso/callback/kerberos.io",
+                "force_sso": "false",
                 "issuer" : "https://kerberosio.xxx.com/", 
                 "claim_id" : "email",
                 "client_id" : "xxxx", 
                 "client_secret" : "xxxx", 
-                "client_verification_id" : "xxxx", 
-                "redirect_url" : "httpd://xxxx/sso/callback/kerberos.io"
+                "client_verification_id" : "xxxx"
             }
         }
     }
