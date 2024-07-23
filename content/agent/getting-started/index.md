@@ -23,7 +23,7 @@ Once you open a browser, and navigate to the Kerberos Agent user app (see instal
 
 {{< figure src="login.gif" alt="After successful installation you should be able to access the login page." caption="After successful installation you should be able to access the login page." class="stretch">}}
 
-The default username and password of the Kerberos Vault app is:
+The default username and password of the Kerberos Agent app is:
 
 - username: **root**
 - password: **root**
