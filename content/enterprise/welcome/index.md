@@ -44,7 +44,7 @@ Once you have your Kerberos Hub installed, or you have purchased a subscription 
 - Private key (only with a subscription on Kerberos SAAS)
 - Kerberos Hub API url (you retrieve this by opening the Swagger API docs in the left navigation)
     
-You will find those details on the `Plans & Integrations` page of your Kerberos Hub installation. Use you username and password to sign into Kerberos Hub and navigate to the `Plans & Integrations` page.
+You will find those details on the `Plans & Integrations` page of your Kerberos Hub installation. Use your username and password to sign into Kerberos Hub and navigate to the `Plans & Integrations` page.
 
 ![Public key](./publickey.png)
 
@@ -69,7 +69,7 @@ If you are running a private edition of Kerberos Hub managed by the Kerberos.io 
 
 ### Kafka (optional)
 
-Within Kerberos Hub we are leveraging multiple microservices which are tied a scalable message broker Kafka. As part of your installation you will be required [to setup a Kafka broker in your Kubernetes cluster](https://github.com/kerberos-io/hub#kafka).As we will show later, Kafka will be added as an integration in Kerberos Vault to push an event into Kafka everytime a recording is stored in the underlaying storage system. [The default credentials](https://github.com/kerberos-io/hub/blob/master/kafka/values.yaml) will look like this:
+Within Kerberos Hub we are leveraging multiple microservices which are tied a scalable message broker Kafka. As part of your installation you will be required [to setup a Kafka broker in your Kubernetes cluster](https://github.com/kerberos-io/hub#kafka). As we will show later, Kafka will be added as an integration in Kerberos Vault to push an event into Kafka everytime a recording is stored in the underlaying storage system. [The default credentials](https://github.com/kerberos-io/hub/blob/master/kafka/values.yaml) will look like this:
 
 - host: `kafka1.domain.com:9094,kafka2.domain.com:9094`
 - group: `mygroup`
