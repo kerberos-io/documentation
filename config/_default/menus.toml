@@ -1,8 +1,14 @@
 [[docs]]
   name = "Prologue"
-  weight = 10
+  weight = 9
   identifier = "prologue"
   url = "/prologue/"
+
+[[machinelearning]]
+  name = "Machine learning"
+  weight = 10
+  identifier = "machinelearning"
+  url = "/machinelearning/"
 
 [[agent]]
   name = "Agent"
