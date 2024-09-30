@@ -1,4 +1,4 @@
-FROM node:10.22.1
+FROM node:12.18.3
 
 # Build the documentation website
 RUN mkdir -p /app
