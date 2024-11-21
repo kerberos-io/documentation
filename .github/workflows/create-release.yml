@@ -47,7 +47,7 @@ jobs:
           gitops-file: "environments/staging/doc.kerberos.io/deployment.yaml"
           gitops-pr-branch: "release-kerberos-documentation-${{ github.event.inputs.tag || github.ref_name }}"
           gitops-key: ".spec.template.spec.containers[0].image"
-          gitops-value: "uugai/kerberos-documentation:${{ github.event.inputs.tag || github.ref_name }}"
+          gitops-value: "core.harbor.uug.ai/images/uugai/kerberos-documentation:${{ github.event.inputs.tag || github.ref_name }}"
           commit-email: "gitops@uug.ai"
           commit-name: "GitOps - UUG.AI"
           commit-message: "A new release for Kerberos documentation  - ${{ github.event.inputs.tag || github.ref_name }}"
