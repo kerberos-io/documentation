@@ -65,7 +65,7 @@ Kerberos Hub supports different types of alerts: generic alerts (1st generation)
 
 #### Generic alerts
 
-Generic alerts are the first generation alerts we have in Kerberos Hub, they are less flexible then custom alerts and can only be configured once for the entire account. If you require the need to configure multiple alerts then customer alerts will be a better choice.
+Generic alerts are the first generation alerts we have in Kerberos Hub, they are less flexible than custom alerts and can only be configured once for the entire account. If you require the need to configure multiple alerts then customer alerts will be a better choice.
 
 - **Detections**: send a notification if a recording was received from a specific Kerberos agent, within a time range, with a specific classification, etc.
 - **Devices**: when one of your Kerberos Agents stops working, a notification will be sent.
