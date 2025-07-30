@@ -65,11 +65,11 @@ Kerberos Hub supports different types of alerts: generic alerts (1st generation)
 
 #### Generic alerts
 
-Generic alerts are the first generation alerts we have in Kerberos Hub, they are less flexible then custom alerts and can only be configured once for the entire account. If you require the need to configure multiple alerts then customer alerts will be a better choice.
+Generic alerts are the first generation alerts we have in Kerberos Hub, they are less flexible than custom alerts and can only be configured once for the entire account. If you require the need to configure multiple alerts then customer alerts will be a better choice.
 
 - **Detections**: send a notification if a recording was received from a specific Kerberos agent, within a time range, with a specific classification, etc.
 - **Devices**: when one of your Kerberos Agents stops working, a notification will be sent.
-- **High upload**: when a lot of recordings are generated within a specific period of time, a notification can be send.
+- **High upload**: when a lot of recordings are generated within a specific period of time, a notification can be sent.
 
 {{< figure src="hub-alerts.gif" alt="Configure specific scenarios to trigger alerts." caption="Configure specific scenarios to trigger alerts." class="stretch">}}
 
@@ -77,7 +77,7 @@ Generic alerts are the first generation alerts we have in Kerberos Hub, they are
 
 Custom alerts are the second generation alerts, and are designed to create multiple and different alerts to match different usecases. Custom alerts provide you with more capabilities then the generic alerts, such as counting lines and regions of interests.
 
-As of this moment custom alerts are only available for detections, and not devices or high upload notifications (this is [on our roadmap](https://github.com/kerberos-io/roadmap/projects/2)).
+As of this moment custom alerts are only available for detections, and not devices or high upload notifications (this is [on our roadmap](https://github.com/orgs/uug-ai/projects/4).
 
 ![Setting up custom alerts](hub-customalerts.png)
 

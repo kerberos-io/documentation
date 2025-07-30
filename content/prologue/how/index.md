@@ -75,7 +75,7 @@ Utilising that data to give your stakeholders insights through analytics, provid
 
 [Kerberos Hub](/hub/first-things-first/) is our answer. It's a highly scalable platform to connect stakeholders to sites and groups of cameras. It comes with all the features you would imagine: live streaming, object detection, fine-grained user access, alerts and more.
 
-[Kerberos Hub](/hub/first-things-first/) is build on top of Kubernetes and can be deployed, just like all the other components, where you want. It's composed of a serie of microservices that can independently scale towards any demand, and utilises Open Source components such as Kafka, RabbitMQ, SQS, and others for high throughput messaging.
+[Kerberos Hub](/hub/first-things-first/) is build on top of Kubernetes and can be deployed, just like all the other components, where you want. It's composed of a series of microservices that can independently scale towards any demand, and utilises Open Source components such as Kafka, RabbitMQ, SQS, and others for high throughput messaging.
 
 ## Takeaways
 
