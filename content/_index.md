@@ -41,7 +41,7 @@ With [Kerberos.io](/prologue/how/) you start small, with just one or more [Kerbe
 
 {{< figure src="./introduction-enterprise.svg" alt="A scalable video platform for an ever-growing video landscape." caption="A scalable video platform for an ever-growing video landscape." class="stretch">}}
 
-As previously mentioned, the [Kerberos Enterprise Suite](/enterprise/first-things-first) brings additional components into the picture which help you build a more scalable and resilient video landscape through concepts such as Kubernetes, bring you own storage, bring your own cloud, single-pane of glass, live streaming, machine learning, etc.
+As previously mentioned, the [Kerberos Enterprise Suite](/enterprise/first-things-first) brings additional components into the picture which help you build a more scalable and resilient video landscape through concepts such as Kubernetes, bring your own storage, bring your own cloud, single-pane of glass, live streaming, machine learning, etc.
 
 ## Why Kerberos.io
 
