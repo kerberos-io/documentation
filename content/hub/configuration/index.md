@@ -23,7 +23,7 @@ Once you have executed the post installation you should now have a user with the
 
 ## Sub accounts
 
-Sub accounts are created to delegate access to other users, and have a limited scope or access to the different Kerberos Agents and there related recordings and livestreams.
+Sub accounts are created to delegate access to other users, and have a limited scope or access to the different Kerberos Agents and their related recordings and livestreams.
 
 An example of sub account would be a site owner, a store owner, etc. Who only needs access to the livestreams or cameras from the specific site or store.
 
@@ -38,7 +38,7 @@ You can create a new sub account by navigation to the accounts page and clicking
 
 While scaling and installing more and more Kerberos Agents, it might become tedious to manage and structure them properly. Due to this reason the concept of sites was created. A site is a logical grouping of a number of Kerberos Agents that are physically installed at the same location.
 
-By creating sites and assigning Kerberos Agents to a specific site, it is easier to monitor specific video streams and there related recordings/events.
+By creating sites and assigning Kerberos Agents to a specific site, it is easier to monitor specific video streams and their related recordings/events.
 
 Next to that sites also gives an additional advantage in terms of authorization and access control. As described in the accounts paragraph, a sub account can be granted access to only a limited number of sites, and therefore will only be able to view the Kerberos Agents at a specific location.
 
