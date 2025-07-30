@@ -69,7 +69,7 @@ Generic alerts are the first generation alerts we have in Kerberos Hub, they are
 
 - **Detections**: send a notification if a recording was received from a specific Kerberos agent, within a time range, with a specific classification, etc.
 - **Devices**: when one of your Kerberos Agents stops working, a notification will be sent.
-- **High upload**: when a lot of recordings are generated within a specific period of time, a notification can be send.
+- **High upload**: when a lot of recordings are generated within a specific period of time, a notification can be sent.
 
 {{< figure src="hub-alerts.gif" alt="Configure specific scenarios to trigger alerts." caption="Configure specific scenarios to trigger alerts." class="stretch">}}
 
